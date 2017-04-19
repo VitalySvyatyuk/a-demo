@@ -1,0 +1,27 @@
+{% load i18n %}
+<div class="media">
+  <div class="media-left">
+    <div class="media-object">
+      <i class="fa fa-money fa-fw fa-2x"></i>
+    </div>
+  </div>
+
+  <div class="media-body">
+    <small class="pull-right" title="[[::contactPayment.object.data.creation_ts|moment:'LLL']]">[[::contactPayment.object.data.creation_ts|moment:'calendar']]</small>
+    <span title="[[::contactPayment.object.data.status]]" class="label" ng-class="::{
+      'label-success': contactPayment.object.data.status == 'done',
+      'label-danger': contactPayment.object.data.status.startsWith('canceled'),
+      'label-warning': contactPayment.object.data.status != 'done' && !contactPayment.object.data.status.startsWith('canceled')
+    }">
+      [[::contactPayment.object.data.type=='deposit'?'{% trans "Deposit to account" %}':'{% trans "Withdrawal from account" %}']]
+    </span>
+
+    <small>
+      [[::contactPayment.object.data.account.mt4_id]] ([[::contactPayment.object.data.account.group_name]])
+
+      [[::contactPayment.object.data.amount.display]]
+
+      [[::contactPayment.object.data.payment_system]]
+    </small>
+  </div>
+</div>

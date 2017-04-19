@@ -1,0 +1,157 @@
+{% load staticfiles inbox i18n app_tags %}
+<!DOCTYPE html>
+<html ng-app="My" lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" ng-controller="MyPageController" ng-strict-di>
+  <head>
+    <title>{% trans "Private office" %}</title>
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+    <link rel="shortcut icon" href="{% static "img/arum-capital/favicon.ico" %}" type="image/x-icon"/>
+    <link rel="icon" href="{% static "img/arum-capital/favicon.ico" %}" type="image/x-icon"/>
+
+    {% for code, settings in LANGUAGE_SETTINGS.iteritems %}
+      {% if LANGUAGE_CODE not in code %}<link rel="alternate" hreflang="{{ code }}" href="{{ settings.redirect_to }}{{ request.path }}" />{% endif %}
+    {% endfor %}
+
+    {# Placing it here, because it should go in the head, unlike other counters #}
+    {% block pingdom_rum %}
+    {% endblock %}
+    {# for Google Tag Manager #}
+    <script>
+      dataLayer = [];
+    </script>
+
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="{% versioned 'css/private_office.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'jquery-ui/1.10.4/jquery-ui-1.10.4.custom.min.css' %}"/>
+    <!--STYLES END-->
+  </head>
+
+  <body class="my my-new" ng-cloak>
+    {% block external_analytics %}{% endblock %}
+    <!--Scroll to top-->
+    {# <div id="scroll-to-top-button"></div> #}
+
+    {% include "js/my/my_topbar.html" %}
+    {% include "js/my/my_header.html" %}
+
+
+    {% if config %}
+        <base href="{{ config.url }}" ng-init="init({{ config }})" />
+    {% else %}
+        <base href="/account/" ng-init="init()" />
+    {% endif %}
+    <div class="row main offset-bottom-40">
+      <div ng-view></div>
+      {% if company_news %}
+        <div class="arum-news">
+          <div class="clearfix offset-top-30 offset-bottom-40">
+            <div class="news-header left">{% trans "News" %}</div>
+            <a href="{% url 'company_news_list' %}" class="news-link right"><span>{% trans "All news" %}</span></a>
+          </div>
+          <div>
+            {% for news in company_news %}
+              <div class="small-3 column">
+                <a class="news" href="{% url 'company_news_by_slug' news.slug %}">{{ news.title }}</a>
+                <br>
+                <span class="time">{{ news.event_date|date:"d E Y" }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    {# {% include "js/my/my_footer.html" %} #}
+    {% comment %}
+    <div class="row offset-top-5" ng-hide="hideDebug">
+      <h3>Total WATCHERS: [[getTotalWatchers()]] <button ng-click="hideDebug = true">hide</button></h3>
+    </div>
+    {% endcomment %}
+
+    <script type="text/javascript" src="{% url 'jsi18n' %}"></script>
+
+    <script src="{% static 'js/compiled/bundle.base.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery-ui-1.10.4.custom.min.js' %}"></script>
+    <script src="{% static 'js/vendor/baron.min.js' %}"></script>
+
+    <script>
+      var CSRFTOKEN = '{{ csrf_token|escapejs }}';
+
+      /* Scroll to top scripts */
+      $(window).scroll(function() {
+          if ($(document).scrollTop() > 109) {
+              $("#scroll-to-top-button").addClass('visible');
+          } else {
+              $("#scroll-to-top-button").removeClass('visible');
+          }
+      });
+      $("#scroll-to-top-button").click(function() {
+        $("html, body").animate({ scrollTop: 0 }, 400, "swing");
+        return false;
+      });
+
+      /*customize scrollbar*/
+      baron({
+          scroller: '.vscroller',
+          barOnCls: 'baron',
+          bar: '.third-vscroller-bar',
+          track: '.third-vscroller-track'
+      });
+
+      //todo: это ПРИМЕРЫ работы
+      $(".archive-filters li a").click(function (e) {
+          e.preventDefault();
+          $(this).parent().toggleClass('active');
+      });
+
+      //datepicker
+      $(function(){
+          $.datepicker.setDefaults({dateFormat:gettext('yy-mm-dd')});
+          $("input.datepicker").datepicker();
+      });
+    </script>
+    <script>
+        $(function () {
+            Foundation.global.namespace = ''; /* Disable possible namespaces bugs */
+            $(document).foundation();
+
+            var p = $("ul#hover-lang");
+            p.find("li").click(function () {
+                p.find("input#lang").val($(this).data("value"));
+                p.find("form").submit();
+            });
+        });
+    </script>
+
+    <script src="{% static 'underscore.string/dist/underscore.string.min.js' %}"></script>
+    <script>
+      _.mixin(_.string.exports());
+    </script>
+    <script src="{% static 'jquery.maskedinput/dist/jquery.maskedinput.min.js' %}"></script>
+    <script src="{% static 'ng-file-upload/angular-file-upload-shim.min.js' %}"></script>
+
+    <script src="{% static 'js/compiled/bundle.angular.js' %}"></script>
+
+    <script src="{% static 'angular-mm-foundation/mm-foundation-tpls.min.js' %}"></script>
+    <script src="{% static 'ng-file-upload/angular-file-upload.min.js' %}"></script>
+    <script src="{% static 'equalize/js/equalize.min.js' %}"></script>
+    <script src="{% static 'moment/min/moment-with-locales.min.js' %}"></script>
+    {% with LANGUAGE_CODE|lower as lang %}
+    <script src="{% static 'angular-i18n/angular-locale_'|add:lang|add:'.js' %}"></script>
+    {% endwith %}
+    <script src="{% static 'ng-infinite-scroller-origin/build/ng-infinite-scroll.min.js' %}"></script>
+    <script>
+      moment.locale('{{LANGUAGE_CODE|lower}}');
+    </script>
+    <!--SCRIPTS-->
+    <script src="{% versioned 'js/compiled/my.min.js' %}"></script>
+    {% include 'includes/snapengage_code.html' %}
+    {% if debug %}
+      <script src="{% static "livereload-js/dist/livereload.js" %}?host=localhost"></script>
+    {% endif %}
+    <!--SCRIPTS END-->
+
+  </body>
+</html>

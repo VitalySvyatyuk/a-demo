@@ -1,0 +1,66 @@
+{% load tree_menu_tags shared_tags %}
+
+{% if menu_type == "main_basic" %}
+    <li class="nav__item">
+        <div class="nav__link js-open-subnav">
+            <a class="actual-link" href="{{ menu_item.get_url }}" {% if menu_item.target_blank %} target="_blank" {% endif %}>{{ menu_item.caption }}</a>
+            {% if menu_item.all_children %}
+                <div class="nav__subnav_item js-subnav">
+                    <ul class="nav__subnav_item__list">
+                        {% for child in menu_item.all_children %}
+                            {% if child.is_visible %}
+                                <li class="nav__subnav_item__list__item">
+                                    <a href="{{ child.get_url }}" class="nav__subnav_item__list__item__link" {% if child.target_blank %} target="_blank" {% endif %}>
+                                        {{ child.caption }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+    </li>
+{% endif %}
+{% if menu_type == "main_mobile" %}
+    <div class="header__menu__item">
+      <div class="header-menu-wrap js-open-submenu" data-breakpoint="1279">
+          <a href="{{ menu_item.get_url }}" class="header__menu__title" {% if menu_item.target_blank %} target="_blank" {% endif %}>
+              {{ menu_item.caption }}
+          </a>
+      </div>
+      {% if menu_item.all_children %}
+            <ul class="header__menu__list js-menu-list">
+                {% for child in menu_item.all_children %}
+                    {% if child.is_visible %}
+                        <li class="header__menu__list__item">
+                            <a href="{{ child.get_url }}" class="header__menu__list__item__link" {% if child.target_blank %} target="_blank" {% endif %}>
+                                {{ child.caption }}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+      {% endif %}
+    </div>
+{% endif %}
+{% if menu_type == "bottom_menu" %}
+    <div class="col-xs-12 col-md-20">
+        <a href="{{ menu_item.get_url }}" class="footer_nav__title js-open-submenu" data-breakpoint="767" {% if menu_item.target_blank %} target="_blank" {% endif %}>
+            {{ menu_item.caption }}
+        </a>
+        {% if menu_item.all_children %}
+            <ul class="footer_nav__list js-menu-list">
+                {% for child in menu_item.all_children %}
+                    {% if child.is_visible %}
+                        <li class="footer_nav__item">
+                          <a href="{{ child.get_url }}" class="footer_nav__link" {% if child.target_blank %} target="_blank" {% endif %}>
+                              {{ child.caption }}
+                          </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endif %}

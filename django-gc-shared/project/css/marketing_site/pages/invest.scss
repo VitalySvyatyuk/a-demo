@@ -1,0 +1,195 @@
+.invest-page{
+  padding-top: 61px;
+  h2{
+    margin-top: 0;
+    margin-bottom: 53px;
+  }
+  table{
+    tr{
+      td{
+        .strategies__cell__time, .strategies__cell__sum, .strategies__cell__link{
+          position: relative;
+          bottom: 9px;
+          color: black;
+          font-size: 0.9375em;
+        }
+      }
+    }
+  }
+  .invest-page-under-table{
+    padding-top: 24px;
+    > div{
+      > div:last-child{
+        text-align: right;
+        span{
+          margin-right: -15px;
+        }
+      }
+    }
+  }
+  .invest-page-ramm{
+    padding-top: 91px;
+    h2{
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+    p{
+      margin-top: 0;
+      color: #1f1f1f;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    img{
+      width: 100%;
+    }
+  }
+}
+.invest-page-ramm-advantages{
+  background-image: url(../img/marketing-site/bg/bg-invest-page-ramm.jpg);
+  background-size: cover;
+  margin-top: 85px;
+  padding-bottom: 120px;
+  h2{
+    color: #fff;
+    padding-top: 76px;
+  }
+  > div{
+    > div:nth-of-type(1){
+      margin-bottom: 32px;
+    }
+  }
+  .invest-page-ramm-advantages-element{
+    background-color: #fff;
+    height: 204px;
+    overflow: hidden;
+    padding: 31px 20px 35px 27px;
+    p.title{
+      color: #262626;
+      font-family: Lato;
+      font-size: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    p{
+      color: #262626;
+      font-size: 15px;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+}
+.invest-page-pamm{
+  padding: 66px 0;
+  .strategies__buttons_box{
+    margin-top: 50px;
+  }
+  h2{
+    margin-top: 0;
+  }
+  table{
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.19);
+    tr{
+      th{
+        color: #e8072a;
+        font-size: 15px;
+        font-weight: 400;
+        border-bottom: 0.5px solid #ededed;
+        padding:26px 26px 22px;
+      }
+    }
+    tr:not(:first-child):hover{
+      background-color: rgba(228, 228, 228, 0.5);
+    }
+    tbody{
+      tr{
+        td:first-child{
+          text-align: left;
+          color: #262626;
+          font-size: 15px;
+          font-weight: 400;
+          padding-left: 31px;
+        }
+        td{
+          border-bottom: 0.5px solid #ededed;
+          padding-top: 26px;
+          padding-bottom: 22px;
+          .invest-checkmark{
+            width: 23px;
+            height: 16px;
+          }
+          .invest-cross{
+            width: 17px;
+            height: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .invest-page{
+    .invest-top-table{
+      td:first-child{
+        min-width: 235px;
+      }
+    }
+    .invest-page-ramm{
+      > div{
+        > div:last-child{
+          text-align: center;
+        }
+      }
+      img{
+        width: 50%;
+      }
+    }
+    .invest-page-under-table{
+      > div{
+        > div:last-child{
+          text-align: left;
+        }
+      }
+    }
+  }
+  .invest-page-ramm-advantages{
+    padding-bottom: 0;
+    > div{
+      > div:nth-of-type(1){
+        margin-bottom: 0px;
+      }
+    }
+    .invest-page-ramm-advantages-element{
+      height: auto;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px){
+  .invest-page-ramm-advantages{
+    .invest-page-ramm-advantages-element{
+      height: 320px;
+    }
+  }
+}
+
+@media(min-width: 992px) and (max-width: 1199px){
+  .invest-page-ramm-advantages{
+    .invest-page-ramm-advantages-element{
+      height: 250px;
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 1199px){
+  .invest-page{
+    .arrow_link:before{
+      right: -14px;
+    }
+  }
+}

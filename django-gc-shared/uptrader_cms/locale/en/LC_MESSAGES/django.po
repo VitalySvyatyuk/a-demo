@@ -1,0 +1,630 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-07 13:37+0300\n"
+"PO-Revision-Date: 2015-10-01 15:29+0230\n"
+"Last-Translator: Elena Girman <e.girman@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.7.6\n"
+
+msgid "Group profile"
+msgstr "Group profile"
+
+msgid "Countries"
+msgstr "Countries"
+
+msgid "All countries"
+msgstr "All countries"
+
+msgid "Importance"
+msgstr "Importance"
+
+msgid "Any"
+msgstr "Any"
+
+msgid "first name"
+msgstr "first name"
+
+msgid "last name"
+msgstr "last name"
+
+msgid "middle name"
+msgstr "middle name"
+
+msgid "Country"
+msgstr "Country"
+
+msgid "Example: Russia"
+msgstr "Example: Greece"
+
+msgid "City"
+msgstr "City"
+
+msgid "The city where you live"
+msgstr "The city where you live"
+
+msgid "Address"
+msgstr "Address"
+
+msgid "Example: pr. Stachek, 8A"
+msgstr "Example: Maple avenue, 8"
+
+msgid "Account"
+msgstr "Account"
+
+msgid "Select one of your accounts."
+msgstr "Select one of your accounts."
+
+msgid "Password"
+msgstr "Password"
+
+#, python-format
+msgid ""
+"Account password. Password can be recovered in the section <a href=\"%s\">My "
+"accounts</a>."
+msgstr ""
+"An account password. The password can be recovered in the section <a href="
+"\"%s\">My accounts</a>."
+
+#, python-format
+msgid ""
+"You should <a href=\"%(link)s\" target=\"_blank\">complete the verification "
+"process</a> before withdrawing from account %(account)s"
+msgstr ""
+"You should <a href=\"%(link)s\" target=\"_blank\">complete the verification "
+"process</a> before withdrawing from the account %(account)s"
+
+msgid "Error accessing account."
+msgstr "Error accessing an account."
+
+msgid "The password you entered is incorrect."
+msgstr "The password you entered is incorrect."
+
+msgid "Internal error while checking password"
+msgstr "An error occurred. Please try again later."
+
+#, python-format
+msgid "%s: %s in %d hours"
+msgstr ""
+
+msgid "Financial news"
+msgstr "Financial news"
+
+msgid "Financial news plural"
+msgstr "Financial news"
+
+msgid "Analytic page"
+msgstr "Analytic page"
+
+msgid "Analytic pages"
+msgstr "Analytic pages"
+
+msgid "Analytic reviews"
+msgstr "Analytic reviews"
+
+msgid "Video analytics"
+msgstr "Video analytics"
+
+msgid "Audio analytics"
+msgstr "Audio analytics"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Forum topic"
+msgstr "Forum topic"
+
+msgid "Categories"
+msgstr "Categories"
+
+msgid "Company news"
+msgstr "Company news"
+
+msgid "Economic indicator"
+msgstr "Economic indicator"
+
+msgid "Economic indicators"
+msgstr "Economic indicators"
+
+msgid "Usual"
+msgstr "Usual"
+
+msgid "Important"
+msgstr "Important"
+
+msgid "Very important"
+msgstr "Very important"
+
+msgid "a week before"
+msgstr "a week before"
+
+msgid "quarter"
+msgstr "quarter"
+
+msgid "month"
+msgstr "month"
+
+msgid "Period"
+msgstr "Period"
+
+msgid "m/m"
+msgstr "m/m"
+
+msgid "q/q"
+msgstr "q/q"
+
+msgid "y/y"
+msgstr "y/y"
+
+msgid "1th quarter"
+msgstr "1th quarter"
+
+msgid "2nd quarter"
+msgstr "2nd quarter"
+
+msgid "3rd quarter"
+msgstr "3rd quarter"
+
+msgid "4th quarter"
+msgstr "4th quarter"
+
+msgid "bln"
+msgstr "bln"
+
+msgid "mln"
+msgstr "mln"
+
+msgid "thousand"
+msgstr "thousand"
+
+msgid "barr"
+msgstr "barr"
+
+msgid "4th quarter of"
+msgstr "4th quarter of"
+
+msgid "3rd quarter of"
+msgstr "3rd quarter of"
+
+msgid "2nd quarter of"
+msgstr "2nd quarter of"
+
+msgid "1st quarter of"
+msgstr "1st quarter of"
+
+msgid "Economic event"
+msgstr "Economic event"
+
+msgid "Economic events"
+msgstr "Economic events"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Neutral"
+msgstr "Neutral"
+
+msgid "Sell"
+msgstr "Sell"
+
+msgid "Strong Sell"
+msgstr "Strong Sell"
+
+msgid "Buy"
+msgstr "Buy"
+
+msgid "Strong Buy"
+msgstr "Strong Buy"
+
+msgid "Moving Averages"
+msgstr "Moving Averages"
+
+msgid "Indicators"
+msgstr "Indicators"
+
+msgid "Summary"
+msgstr "Summary"
+
+msgid "Calendar of events"
+msgstr "Economic calendar"
+
+msgid ""
+"\n"
+"                            The economic calendar is one of the most "
+"important tools in Forex trading. It is formed by\n"
+"                            specialists on the basis of past and current "
+"performance and demonstrates\n"
+"                            future projections.\n"
+"                            "
+msgstr ""
+"\n"
+"Economic Calendar is one of the most important tools in Forex trading."
+
+msgid ""
+"\n"
+"                            Reading economic calendar is easy. It contains "
+"the following parameters:\n"
+"                            the time of the news, the country index, period, "
+"previous value, forecast,\n"
+"                            the actual value, the degree of importance.\n"
+"                            "
+msgstr ""
+"\n"
+"It displays all the events that can affect the direction of the market and "
+"helps traders make educated decisions."
+
+msgid ""
+"\n"
+"                            Which Forex news are the most important? The "
+"first is: the discount rate, gross domestic\n"
+"                            product, unemployment data, sales data for new "
+"building; inflation.\n"
+"                            "
+msgstr ""
+"\n"
+"Among the most market-moving events are: changes in GDP (gross domestic "
+"product), unemployment data and interest rates."
+
+msgid "Current time"
+msgstr "Current time"
+
+msgid "Prior to the news left"
+msgstr "Next event in"
+
+msgid "Time"
+msgstr "Time"
+
+msgid "Event"
+msgstr "Event"
+
+msgid "Past"
+msgstr "Past"
+
+msgid "Forecast"
+msgstr "Forecast"
+
+msgid "Fact"
+msgstr "Fact"
+
+msgid "There are no events"
+msgstr "There are no events"
+
+msgid "Analytics"
+msgstr "Analytics"
+
+msgctxt "analytics"
+msgid "Subscribe"
+msgstr "Subscribe"
+
+msgid "Analytics reviews"
+msgstr "Analytics reviews"
+
+msgid "Read more..."
+msgstr "Read more..."
+
+msgid "Economic calendar"
+msgstr "Economic calendar"
+
+msgid "Index"
+msgstr "Index"
+
+msgid "Previous value"
+msgstr "Previous value"
+
+msgid "No events"
+msgstr "No events"
+
+msgid "Capitalize on the news"
+msgstr "Profit on news"
+
+msgid "Select"
+msgstr "Select"
+
+msgid "Current interest rates"
+msgstr "Current interest rates"
+
+msgid "Holidays schedule"
+msgstr "Holiday schedule"
+
+msgid "Current value"
+msgstr "Current value"
+
+msgid "Latest consideration"
+msgstr "Latest consideration"
+
+msgid "Following consideration"
+msgstr "Following consideration"
+
+msgid "There are no bids"
+msgstr "There are no bids"
+
+msgid "National holiday"
+msgstr "National holiday"
+
+msgid "There are no holidays"
+msgstr "There are no holidays"
+
+msgid "All holidays"
+msgstr "All holidays"
+
+msgid "Grand Capital video analytics"
+msgstr "Grand Capital video analytics"
+
+#, fuzzy
+#| msgid "Grand Capital video analytics"
+msgid "Subscribe to video analytics"
+msgstr "Grand Capital video analytics"
+
+msgid ""
+"Dozens of economic indicators are published in the world every day. The "
+"heads of central banks and other influential persons make their statements. "
+"Weekly webinar &quot;Market review&quot; is summarizing major news and "
+"publications relevant to past and current week."
+msgstr ""
+
+msgid "Podcasts: forex audio analytics"
+msgstr "Audio analytics"
+
+msgid "Podcasts: audio analytics"
+msgstr "Podcasts: audio analytics"
+
+msgid "Author"
+msgstr "Author"
+
+msgid "Other news in category"
+msgstr "Other news in category"
+
+msgid "News in category"
+msgstr "News in category"
+
+msgid "Hide"
+msgstr "Hide"
+
+msgid "My accounts"
+msgstr "My accounts"
+
+msgid "already have an account?"
+msgstr "Already have an account?"
+
+msgid "login"
+msgstr "login"
+
+msgid "Read more"
+msgstr "Read more"
+
+msgid "Economic calendar. Forex economic calendar"
+msgstr "Economic calendar. Forex economic calendar"
+
+msgid "Forex economic calendar"
+msgstr "Forex economic calendar"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Indicator"
+msgstr "Indicator"
+
+msgid "Previous"
+msgstr "Previous"
+
+msgid "Facts"
+msgstr "Facts"
+
+msgid "Moscow time (GMT +04:00)"
+msgstr "GMT+3"
+
+#, fuzzy
+#| msgid "Financial news plural"
+msgid "Financial reviews"
+msgstr "Financial news"
+
+msgid "News by date:"
+msgstr "News by date:"
+
+msgid "Holidays"
+msgstr "Holidays"
+
+msgid ""
+"The national holidays of various countries can have a substantial effect on "
+"the volatility of the financial markets. As such, we recommend taking into "
+"account such information when planning your trading operations."
+msgstr ""
+
+msgid "Holiday"
+msgstr "Holiday"
+
+msgid "News by categories"
+msgstr "News by categories"
+
+msgid "All"
+msgstr "All"
+
+msgid "In this page, you can listen to the analyst in video"
+msgstr "On this page, you can listen to the analyst in video"
+
+#, fuzzy
+#| msgid "Podcasts: forex audio analytics"
+msgid "You can listen to audio analytics here"
+msgstr "Audio analytics"
+
+msgid ""
+"\n"
+"        Forex News from Dow Jones is one of leading world agencies of "
+"financial information.\n"
+"        The Wall Street Journal publisher is included into News Corporation\n"
+"    "
+msgstr ""
+"\n"
+"Forex news from Dow Jones - one of the leading world agencies providing "
+"financial information.\n"
+"The Wall Street Journal is included into News Corporation"
+
+msgid ""
+"\n"
+"        Fundamental analysis by Grand Capital experts: key national economic "
+"indicators affecting\n"
+"        Forex traders and currency rates, Forex market forecasts\n"
+"    "
+msgstr ""
+"\n"
+"        Fundamental analysis from Grand Capital experts: key national "
+"economic indicators affecting\n"
+"        Forex traders and currency rates, Forex market forecasts\n"
+"    "
+
+msgid ""
+"Daily market reviews from Sergei Kostenko, senior trader of Grand Capital"
+msgstr ""
+"Daily market reviews from Sergei Kostenko, the senior trader of Grand Capital"
+
+msgid ""
+"\n"
+"        Technical Forex market analysis by Grand Capital experts:\n"
+"        forecasting the direction of prices through the study of past price "
+"changes.\n"
+"    "
+msgstr ""
+"\n"
+"Technical Forex market analysis from Grand Capital experts:\n"
+"forecast of the price direction based on the price changes in the past."
+
+msgid "Reviews by categories"
+msgstr "Reviews by categories"
+
+msgid "Fundamental reviews"
+msgstr "Fundamental reviews"
+
+msgid "Technical reviews"
+msgstr "Technical reviews"
+
+msgid "Premarkets"
+msgstr "Premarkets"
+
+msgid "Reviews by date:"
+msgstr "Reviews by date:"
+
+msgid "Access to this part is limited"
+msgstr "Access to this part is limited"
+
+msgid ""
+"\n"
+"        <p>Grand Capital company has wide staff of analytics, who place "
+"actual information about Forex market daily.</p>\n"
+"        <p>In order to get access it is necessary to log into Private Office "
+"and keep the following conditions:</p>\n"
+"        <strong>\n"
+"            <p>Presence of a real account with at least $100 on it</p>\n"
+"        </strong>\n"
+"        "
+msgstr ""
+"\n"
+"<p>The Grand Capital company has a team of analysts who provide our traders "
+"with information about Forex market on a daily basis.</p>\n"
+"<p>To learn the basics of Forex trading you can take part in our seminar. To "
+"participate you need:</p>\n"
+"<strong>\n"
+"<p>Have a real account with at least $100 on it</p>\n"
+"</strong>"
+
+msgid "FOREX ANALYTICS - Forex forecast, Forex analytics, Forex news"
+msgstr "FOREX ANALYTICS - Forex forecast, Forex analytics, Forex news"
+
+msgid "Online Forex news"
+msgstr "Online Forex news"
+
+msgid "Forex Analytics"
+msgstr "Forex Analytics"
+
+msgid ""
+"\n"
+"                Daily Forex market reviews.\n"
+"                <span style=\"color: #099999;\">Unique articles</span> from "
+"analytics of the company.\n"
+"            "
+msgstr ""
+"\n"
+"Daily Forex market reviews.\n"
+"<span style=\"color: #099999;\">Unique articles</span> from GC leading "
+"analysts."
+
+#, python-format
+msgid ""
+"\n"
+"                            In order to get access it is nececcary to log in "
+"into\n"
+"                            <a href=\"%(link)s?next=%(request.path)s\"> "
+"Private Office </a>\n"
+"                            and keep the following conditions:\n"
+"                        "
+msgstr ""
+"\n"
+"                            In order to get access it is necessary to login "
+"to the\n"
+"                            <a href=\"%(link)s?next=%(request.path)s\"> "
+"Private Office </a>\n"
+"                            and keep the following conditions:\n"
+"                        "
+
+msgid "In order to get access it is nececcary to keep the following conditions"
+msgstr ""
+"In order to get access it is necessary to keep the following conditions"
+
+msgid "Your access to analytics content"
+msgstr "Your access to analytics content"
+
+msgid "Analytics type"
+msgstr "Analytics type"
+
+msgid "Access conditions"
+msgstr "Access conditions"
+
+msgid "Access"
+msgstr "Access"
+
+msgid "Available"
+msgstr "Available"
+
+msgid "Unavailable"
+msgstr "Unavailable"
+
+msgid "Public access"
+msgstr "Public access"
+
+msgid "Percent pays"
+msgstr "Interest rates"
+
+msgid "Forexpros.ru news"
+msgstr "Forexpros.ru news"
+
+msgid ""
+"\n"
+"            This page holds information about which analytics content types "
+"you are allowed to access.\n"
+"        "
+msgstr ""
+"\n"
+"This page contains information about the types of analytical reviews you "
+"have access to."
+
+msgid "Authors"
+msgstr "Authors"
+
+msgid "Video archive"
+msgstr "Video archive"

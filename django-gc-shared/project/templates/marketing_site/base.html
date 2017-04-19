@@ -1,0 +1,323 @@
+{% load staticfiles i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Just Broker</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static "fullpage.js/jquery.fullPage.css" %}">
+  <link rel="stylesheet" href="{% static "css/marketing_site.min.css" %}">
+  <link rel="shortcut icon" href="{% static "img/just-broker/favicon.ico" %}" type="image/x-icon"/>
+</head>
+<body class="{% block body_class %}{% endblock body_class %}">
+  <header>
+    <div class="container">
+      <div class="logo-wrapper" data-menuanchor="promo-slide">
+        <a href="#promo">
+          {% include "logo.svg" %}
+        </a>
+      </div>
+      <ul id="scroll-menu" class="menu">
+        <li data-menuanchor="about-slide"><a href="#about">{% trans "About the service" %}</a></li>
+        <li data-menuanchor="tariffs-slide"><a href="#tariffs">{% trans "Plans" %}</a></li>
+        <li data-menuanchor="inout_conditions-slide" data-menuanchor-extra="trading_conditions-slide"><a href="#inout_conditions">{% trans "Terms" %}</a></li>
+        <li data-menuanchor="safety-slide"><a href="#safety">{% trans "Security" %}</a></li>
+        <li data-menuanchor="platforms-slide"><a href="#platforms">{% trans "Platforms" %}</a></li>
+        <li data-menuanchor="risks-slide"><a href="#risks">{% trans "Risks" %}</a></li>
+        <li data-menuanchor="faq-slide"><a href="#faq">F. A. Q.</a></li>
+      </ul>
+      <ul class="menu login-buttons">
+        {% if LANGUAGE_CODE != 'en' %}
+        <li><a class="language-switch" href="https://justbroker.co/">English</a></li>
+        {% endif %}
+        {% if LANGUAGE_CODE != 'ru' %}
+        <li><a class="language-switch" href="https://justbroker.ru/">Русский</a></li>
+        {% endif %}
+        <li><a href="{% url 'registration_register' %}" class="register-button">{% trans "Register</a></li>
+        <li><a href="{% url 'auth_login' %}">{% trans "Log in" %}</a></li>
+      </ul>
+    </div>
+  </header>
+  {% block content %}
+  {% endblock content %}
+  <script src="{% static "jquery/dist/jquery.min.js" %}"></script>
+  <script src="{% static "jquery.cookie/jquery.cookie.js" %}"></script>
+  <script src="{% static "foundation-sites/dist/foundation.min.js" %}"></script>
+  <script src="{% static "fullpage.js/vendors/scrolloverflow.min.js" %}"></script>
+  <script src="{% static "js/JBfullpage.js" %}"></script>
+  <script src="{% static "createjs-combined/createjs-2015.11.26.min.js" %}"></script>
+  <script src="{% static "js/animations.js" %}"></script>
+  <script>
+    $(document).ready(function() {
+      var Stages = {};
+      function initAnimation(animationName) {
+        var canvas = document.getElementById(animationName);
+        var exportRoot = new Libs[animationName][animationName]();
+        Stages[animationName] = new createjs.Stage(canvas);
+
+        Stages[animationName].addChild(exportRoot);
+        Stages[animationName].update();
+
+        createjs.Ticker.setFPS(Libs[animationName].properties.fps);
+        createjs.Ticker.addEventListener("tick", Stages[animationName]);
+      }
+
+      function clearAnimation(animationName) {
+        setTimeout(function(){
+          Stages[animationName].removeAllChildren();
+          Stages[animationName].update();
+        }, 500)
+      }
+
+      var isSmall = false;
+      function resizeHandler() {
+        if ($(window).width() < 1020) {
+          // $('#fullpage').fullpage.setAutoScrolling(false);
+          isSmall = true;
+        } else {
+          // $('#fullpage').fullpage.setAutoScrolling(true);
+          $("header").css("left", "");
+          isSmall = false;
+        }
+        if ($(window).width() < 680) {
+          $('video').removeAttr("data-autoplay");
+        } else {
+          $('video').attr("data-autoplay", true)
+        }
+      }
+
+      var animationsLoaded = {};
+      var leaveAttempts = 0;
+      var youShallNotPass = false;
+      $('#fullpage').fullpage({
+        navigation: false,
+        anchors: ['promo', 'about', 'tariffs',
+        'inout_conditions', 'trading_conditions', 'safety',
+        'platforms', 'risks', 'faq'],
+        menu: "#scroll-menu",
+        verticalCentered: false,
+        scrollOverflow: false,
+        scrollingSpeed: 1000,
+        // responsiveWidth: 990,
+        // paddingBottom: '10px',
+        fitToSection: false,
+        css3: false,
+        animateAnchor: true,
+        scrollBar: true,
+        scrollOverflowOptions: {
+          momentum: false,
+          interactiveScrollbars: true,
+          click: false,
+          tap: false,
+          // useTransform: false,
+          bounce: false,
+          preventDefault: false,
+          // invertWheelDirection: true,
+        },
+        afterLoad: function(anchorLink, index){
+          if (anchorLink == 'safety' && !animationsLoaded['safety']){
+            initAnimation("shield");
+            initAnimation("safe");
+            animationsLoaded['safety'] = true;
+          }
+
+          if (anchorLink == 'risks' && !animationsLoaded['risks']){
+            initAnimation("intuition");
+            initAnimation("impulsive");
+            initAnimation("gambling");
+            animationsLoaded['risks'] = true;
+          }
+
+          if (anchorLink == 'inout_conditions') {
+            animateTable();
+          }
+          if (anchorLink == 'tariffs') {
+            animateTable();
+          }
+        },
+        onLeave: function(index, nextIndex, direction){
+          // various slowings of slide change
+          if (nextIndex != 1) {
+            window.stopPromoAnimation = true;
+          } else {
+            window.stopPromoAnimation = false;
+          }
+          if (leaveAttempts < 5 || youShallNotPass) {
+            leaveAttempts++;
+            return false;
+          } else {
+            leaveAttempts = 0;
+            youShallNotPass = true;
+            window.setTimeout(function() {
+              youShallNotPass = false;
+            }, 1500);
+            return true;
+          }
+          if (stickedBlock) {
+            stickedBlock.destroy()
+          }
+        },
+        afterRender: function () {
+          var faqSection = $("#faq-section");
+          var fixed = faqSection.find("#watchs");
+          iscrollHandler.iScrollInstances.forEach(function(instance ,i) {
+            if (jQuery.contains(faqSection.get(0), instance.wrapper)) {
+              instance.onInnerScroll = function() {
+                fixed.css({
+                  "-webkit-transform": "translate(0px, " + instance.y * -1 +"px)",
+                  "transform": "translate(0px, " + instance.y * -1 +"px)",
+                })
+              }
+            }
+          })
+        },
+        afterResize: resizeHandler
+      });
+
+      resizeHandler();
+
+      // hack for fixed header
+      $(window).scroll(function() {
+        if (isSmall) {
+          var scrollLeft = $(document).scrollLeft();
+          $("header").css("left", - scrollLeft + 'px')
+        }
+      });
+
+      $("[data-menuanchor] a").on("click", function() {
+        leaveAttempts = 100;
+        youShallNotPass = false;
+      });
+
+      $(document).foundation();
+      $("[data-tabs]").on("change.zf.tabs", function() {
+        $('#fullpage').fullpage.reBuild(true);
+      });
+
+      var animateTable = function() {
+        if ($(".animate-rows").length) {
+          $(".fp-section.active .animate-rows:visible").find("tr").each(function(i, el) {
+            setTimeout(function() {
+              $(el).css({opacity: 1});
+            }, i * 150)
+          })
+        }
+      };
+      $("[data-tabs]").on("change.zf.tabs", function() {
+        animateTable();
+      })
+    });
+
+$(function() {
+  var container = $(".main-chart");
+  var chart = $(".animation-chart");
+  var mainGroup = chart.find(".main");
+  var groups = mainGroup.children("g");
+  for (var i = 0; i < groups.length; i++) {
+    if (($(groups[i]).offset().left - container.offset().left) < container.width()) {
+      function a(i) {
+        setTimeout(function() {
+         $(groups[i]).attr("class", "zoom-in")
+       }, i * 200)
+      }
+      a(i)
+    } else {
+      setTimeout(infiniteAnimation, (i - 1) * 200);
+      break;
+    }
+  }
+  function infiniteAnimation() {
+    var coof = 371 / 297;
+    function animateGroup(element, start) {
+      var i = start;
+      element.css({
+        "-webkit-transform": "translateX("+ start * coof + "px)",
+        "transform": "translateX("+ start * coof + "px)"});
+      var interval = setInterval(function() {
+        if (window.stopPromoAnimation) return;
+        i-=1;
+        element.css({
+          "-webkit-transform": "translateX("+ i + "px)",
+          "transform": "translateX("+ i + "px)"
+        });
+        if (i == Math.floor(-1 * (782 - container.width()) * coof )) {
+          element.each(function(i, el) {
+            var parent = $(el).parent();
+            var elementClone = $(el).clone();
+            elementClone.children("g").attr("class", "");
+            var a = elementClone.appendTo(parent);
+            groups = chart.find(".main").children("g");
+            animateGroup(a, Math.floor(container.width() * coof));
+          });
+        }
+        if (i == Math.floor(-782 * coof)) {
+          element.remove();
+          clearInterval(interval);
+        }
+      }, 45);
+    }
+
+    animateGroup(mainGroup, 0);
+    setInterval(function() {
+      if (window.stopPromoAnimation) return;
+      groups.not(".zoom-in").first().attr("class", "zoom-in")
+    }, 700);
+  }
+});
+</script>
+<script type="text/javascript">
+  jQuery.expr[":"].Contains = jQuery.expr.createPseudo(function(arg) {
+    return function( elem ) {
+      return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+    };
+  });
+
+  $(function () {
+    var buttons = $("[data-spec]");
+    var tables = $("[data-spec-table]");
+    var pseudoOptions = $("[data-pseudo-select]");
+
+    function changeTable(slug) {
+      buttons.removeClass("is-active");
+      $("[data-spec="+ slug +"]").addClass("is-active");
+      $("[data-spec-table="+ slug +"]").siblings("table").addClass("hide");
+      tables.find("tr").css({opacity: 0});
+      $("[data-spec-table="+ slug +"]").removeClass("hide").find("tr").each(function(i, el) {
+        setTimeout(function() {
+          $(el).css({opacity: 1});
+        }, i * 150)
+      });
+      $('#fullpage').fullpage.reBuild(true);
+    }
+
+    buttons.on("click", function(){
+      changeTable(this.dataset.spec);
+    });
+
+    pseudoOptions.on("click", function(e) {
+      e.stopImmediatePropagation();
+
+      $this = $(this);
+        // pseudoOptions.removeClass('active');
+        // $this.addClass('active');
+
+        //change selected-option
+        var copyContent = $this.html();
+        $this.parent().siblings(".selected-option").html(copyContent);
+
+        //close options after selection is done
+        $this.parent().addClass('hide');
+        setTimeout(function(){
+          $this.parent().removeClass('hide')
+        }, 300);
+
+        //change target of parent button
+        // $this.closest(buttons).get(0).dataset.spec = this.dataset.pseudoSelect;
+        changeTable(this.dataset.pseudoSelect);
+      });
+
+  })
+</script>
+{% block scripts %}
+{% endblock scripts %}
+</body>
+</html>

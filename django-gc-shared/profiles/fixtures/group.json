@@ -1,0 +1,66 @@
+[
+   {
+      "model" : "auth.group",
+      "fields" : {
+         "permissions" : [],
+         "name" : "Dealing room"
+      },
+      "pk" : 1
+   },
+   {
+      "model" : "auth.group",
+      "fields" : {
+         "name" : "Portfolio management",
+         "permissions" : []
+      },
+      "pk" : 2
+   },
+   {
+      "model" : "auth.group",
+      "fields" : {
+         "name" : "Back office",
+         "permissions" : []
+      },
+      "pk" : 3
+   },
+   {
+      "fields" : {
+         "permissions" : [],
+         "name" : "Compliance"
+      },
+      "pk" : 4,
+      "model" : "auth.group"
+   },
+   {
+      "model" : "auth.group",
+      "fields" : {
+         "permissions" : [],
+         "name" : "Partnership"
+      },
+      "pk" : 5
+   },
+   {
+      "fields" : {
+         "name" : "CEO",
+         "permissions" : []
+      },
+      "pk" : 6,
+      "model" : "auth.group"
+   },
+   {
+      "pk" : 7,
+      "fields" : {
+         "permissions" : [],
+         "name" : "Sales"
+      },
+      "model" : "auth.group"
+   },
+   {
+      "fields" : {
+         "name" : "IT",
+         "permissions" : []
+      },
+      "pk" : 8,
+      "model" : "auth.group"
+   }
+]

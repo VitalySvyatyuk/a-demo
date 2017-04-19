@@ -1,0 +1,115 @@
+{% load staticfiles inbox i18n %}
+{% load mt4_tags %}
+<div class="stocks-container">
+
+    <h1 class="offset-top-35 offset-bottom-35">{% trans "Create account" %}</h1>
+
+    <div class="row offset-bottom-55" equalize>
+        <div class="columns small-4">
+            <div class="create-account-item po-white-block">
+                <div class="header-block">
+                    <div class="logo mt4"></div>
+                    <div class="header">
+                        ECN.MT
+                    </div>
+                </div>
+                <div class="content" equalize-me>
+                    {% trans "Deep ECN liquidity and excellent execution on a popular trading platform MetaTrader4" %}
+                </div>
+                <div class="footer-block">
+                    <div>
+                    {% if LANGUAGE_CODE == 'ru' %}
+                        <a href="{% url 'mt4_process_create_account' 'demostandard' %}" class="button medium inverted not-ready-platform-ru" data-reveal-form>
+                            {% trans "Demo account" %}
+                            <span class="desc">{% trans "No investments" %}</span>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'mt4_process_create_account' 'demostandard' %}" class="button medium inverted not-ready-platform-en" data-reveal-form>
+                            {% trans "Demo account" %}
+                            <span class="desc">{% trans "No investments" %}</span>
+                        </a>
+                    {% endif %}
+                    </div>
+                    <div>
+                    {% if LANGUAGE_CODE == 'ru' %}
+                        <a href="{% url 'mt4_process_create_account' 'realstandard' %}" class="button medium not-ready-platform-ru" data-reveal-form>
+                            {% trans "Live account" %}
+                            <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "" %}
+                            </span>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'mt4_process_create_account' 'realstandard' %}" class="button medium not-ready-platform-en" data-reveal-form>
+                            {% trans "Live account" %}
+                            <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "" %}
+                            </span>
+                        </a>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns small-4">
+            <div class="create-account-item po-white-block">
+                <div class="header-block">
+                    <div class="logo pro half"></div>
+                    <div class="logo web half"></div>
+                    <div class="header">
+                        ECN.PRO
+                    </div>
+                </div>
+                <div class="content" equalize-me>
+                    {% trans "ARUM.PRO professional platform and its browser version ARUM.WEB" %}
+                </div>
+                <div class="footer-block">
+                    <div>
+                    {% if LANGUAGE_CODE == 'ru' %}
+                        <a href="{% url 'mt4_process_create_account' 'demostandard_cfh' %}" class="button medium inverted not-ready-platform-ru" data-reveal-form>
+                            {% trans "Demo account" %}
+                            <span class="desc">{% trans "No investments" %}</span>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'mt4_process_create_account' 'demostandard_cfh' %}" class="button medium inverted not-ready-platform-en" data-reveal-form>
+                            {% trans "Demo account" %}
+                            <span class="desc">{% trans "No investments" %}</span>
+                        </a>
+                    {% endif %}
+                    </div>
+                    <div>
+                    {% if LANGUAGE_CODE == 'ru' %}
+                        <a href="{% url 'mt4_process_create_account' 'realstandard_cfh' %}" class="button medium not-ready-platform-ru" data-reveal-form>
+                            {% trans "Live account" %}
+                            <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "cfh" %}</span>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'mt4_process_create_account' 'realstandard_cfh' %}" class="button medium not-ready-platform-en" data-reveal-form>
+                            {% trans "Live account" %}
+                            <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "cfh" %}</span>
+                        </a>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns small-4">
+            <div class="create-account-item po-white-block">
+                <div class="header-block">
+                    <div class="logo invest"></div>
+                    <div class="header">
+                        ECN.Invest
+                    </div>
+                </div>
+                <div class="content" equalize-me>
+                    {% trans "Single account for trading as a trader or as an investor in the investment system ARUM.Invest" %}
+                </div>
+                <div class="footer-block">
+                    <div>
+                        <a href="{% url 'mt4_process_create_account' 'realstandard_ss' %}" class="button medium" data-reveal-form>
+                            {% trans "Live account" %}
+                            <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "ss" %}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

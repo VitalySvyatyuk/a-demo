@@ -1,0 +1,40 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {{ node.title|capfirst }} {{ block.super }}
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title
+            | {{ node.title|capfirst }}
+
+  .news-item-page: .container
+    .row
+      .col-md-7
+        if node.image
+          img(src="{{ node.image.url }}", alt="").news-item-image
+        .news-item-content
+          .col-sm-2
+            div.news-item-date
+              span.date-day {{ node.event_date.day }}
+              span.date-month {{ node.event_date|date:"E" }}
+          .col-sm-10.content-text
+            | {{ node.body|safe }}
+      .col-md-4.right-block
+          .card.trust_pageblock__card
+            h2.page_title.card__title
+              - trans "News"
+            for other_article in other_news
+              a.card__link(href="{% url 'company_news_by_slug' other_article.slug %}")
+                span.card__text
+                  | {{ other_article.title }}
+                span.card__date
+                  | {{ other_article.event_date|date:"d E Y" }}
+            a.arrow_link(href="{% url 'company_news_list' %}")
+              - trans "All news"

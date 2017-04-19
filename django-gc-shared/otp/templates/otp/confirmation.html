@@ -1,0 +1,31 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags profiles_tags %}
+
+{% block extrahead %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block title %}{{ block.super }} - {% trans "Phone confirmation" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Confirm your phone" %}</h1>
+    <div class="container">
+        {% if have_sms_binding %}
+            {% url 'otp_security' as link %}
+            {% blocktrans %}
+                You already have text message authentication binded to your phone number.
+                You can change your phone number <a href="{{ link }}">here</a>
+            {% endblocktrans %}
+        {% else %}
+            <script type="text/javascript">
+                TARGET = "preview";
+            </script>
+            <form method="POST" id="otp_form">
+                {% include "otp/includes/otp_form.html" %}
+                {% csrf_token %}
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

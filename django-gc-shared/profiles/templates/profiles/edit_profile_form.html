@@ -1,0 +1,38 @@
+{% extends "includes/form.html" %}
+
+{% load i18n app_tags profiles_tags %}
+
+{% block validation_marks %}
+    {% with field.status as validation %}
+        {% include "includes/status.html" %}
+    {% endwith %}
+{% endblock %}
+
+{% block validation_edit_links %}
+    {% if field.name == "email" and not field.status.is_valid %}
+        <a href="{% url "profiles_edit_email" %}"
+           title="{% trans "Edit your e-mail" %}">
+            {% trans "Edit your e-mail" %}</a>
+    {% endif %}
+
+    {% if field.name == "phone_mobile" and not field.status.is_valid %}
+        <a href="{% url 'confirm_phone' %}"
+           title="{% trans "Confirm your mobile phone number" %}"
+           id="phone_confirm">{% trans "Confirm" %}</a>
+    {% endif %}
+{% endblock %}
+
+{% block description %}
+    {% if field.name == "phone_mobile" and user.profile.auth_scheme == "sms" %}
+        {% url "otp_security" as link %}
+        {% blocktrans %}
+            To change your phone number - follow this <a href="{{ link }}">link</a>
+        {% endblocktrans %}
+    {% else %}
+        {{ block.super }}
+        {% if field.name == "phone_mobile" and not field.status.is_valid %}
+            <br/>
+            {% trans "Click <strong>Check</strong> to confirm your mobile phone number" %}
+        {% endif %}
+    {% endif %}
+{% endblock %}

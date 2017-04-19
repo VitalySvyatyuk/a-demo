@@ -1,0 +1,441 @@
+@mixin accordion-arrow-basic-up{&:before{background-position: -240px -120px;}}
+@mixin accordion-arrow-basic-down{&:before{background-position: -200px -120px;}}
+
+@mixin accordion-arrow-first-up{&:before{background-position: -280px -120px;}}
+@mixin accordion-arrow-first-down{&:before{background-position: -320px -120px;}}
+
+@mixin accordion-arrow-inverted-up{&:before{background-position: -160px -120px;}}
+@mixin accordion-arrow-inverted-down{&:before{background-position: -120px -120px;}}
+
+.gc-accordion-item {
+  background: $gc-inverted-color;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  box-shadow: 1px 0px 15px 0px rgba(0, 1, 1, 0.06);
+  .title {
+    cursor: pointer;
+    display: inline-block;
+    font: 1.125rem $font-med;
+    min-height: 8px;
+    padding: 0 0 0 0.5rem;
+    vertical-align: middle;
+    &:before {
+      background: url(../img/arrow-up.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      content:"";
+      display: inline-block;
+      height: 25px;
+      margin-right: 0.5rem;
+      padding: 6px;
+      width: 20px;
+      vertical-align: middle;
+      @include single-transition;
+    }
+    // &:hover, &:active, &:focus {color: $gc-first-color; @include accordion-arrow-first-up;}
+  }
+  .content {
+    display: none;
+    margin:0 14px;
+    padding: 1.25rem 0.5rem;
+    u{text-decoration: none;}
+    a {
+      border-bottom: 1px $gc-first-color solid;
+      color: $gc-first-color;
+      text-decoration: none;
+      &:hover {border-bottom-color: transparent;}
+    }
+    ul {list-style: disc inside; margin-left: 1.5rem;}
+  }
+  &.active {
+    box-shadow: 2px 0px 25px 2px rgba(0, 1, 1, 0.1);
+    .content {display: block;}
+    .title {
+      &:before {@include transform-rotate(180deg) }
+      // &:hover, &:active, &:focus {@include accordion-arrow-first-down;}
+    }
+  }
+}
+
+/*------------------------------------------------green--------------------------------------------------*/
+.gc-accordion.green{
+  & > .gc-accordion-item{
+    @include single-transition;
+    background: none;
+    padding: 0;
+    .button{
+      display: inline-block;
+      margin-left: 30px;
+      vertical-align: middle;
+    }
+    .title-wrapper{
+      @include single-transition;
+      @include user-select-none;
+      background: $gc-inverted-color;
+      cursor: pointer;
+      line-height: 32px;
+      min-height: 32px;
+      padding: .15rem 1rem;
+      position: relative;
+      .title{
+        color: $basic-color;
+        font-family: $font-med;
+        font-size: rem-calc(18);
+        // @include accordion-arrow-inverted-down;
+      }
+    }
+    [content]{
+      opacity: 0;
+      position: relative;
+      visibility: hidden;
+    }
+    &.active{
+      padding: 0;
+      [content]{
+        opacity: 1;
+        visibility: visible;
+      }
+      .title-wrapper{
+        background: none;
+        border: none;
+        padding: .875rem 1rem;
+      }
+    }
+
+    /*for 1024*/
+    // @include respond-to(gc-large-down){
+    //   .title-wrapper{
+    //     &:hover, &:active, &:focus{
+    //       background: $gc-first-color;
+    //       border-color: $gc-first-color;
+    //     }
+    //   }
+    //   &.active{
+    //     .title-wrapper{
+    //       &:hover, &:active, &:focus{
+    //         background: none;
+    //         border: none;
+    //         .title{
+    //           color: $basic-color;
+    //           &:before {
+    //             // background-position: -240px -120px;
+    //           }
+    //         }
+    //         .button{
+    //           background: $gc-first-color;
+    //           color: $gc-inverted-color;
+    //           &:hover, &:active, &:focus{
+    //             background: $gc-first-color-hover;
+    //             color: $gc-inverted-color;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+  }
+}
+
+/*------------------------------------------------------white---------------------------------------------------------*/
+/*arrow in right side*/
+.accordion.arrow-right{
+  .accordion-navigation{
+    box-shadow: 2px 0px 15px 0px rgba(0, 1, 1, 0.05);
+    margin: 1.5rem 0;
+    & > a{
+      background: $gc-inverted-color;
+      color: $basic-color;
+      font-family: $font-reg;
+      font-size: rem-calc(18);
+      padding: 1rem .625rem;
+      position: relative;
+      &:hover, &:active, &:focus{
+        background: $gc-inverted-color;
+        // color: $gc-first-color;
+        &:after{
+          // background-position: -280px -120px;
+        }
+      }
+      &.with-icon:before{
+        background: url(../img/common/link.svg) no-repeat;
+        content: '';
+        display: inline-block;
+        height: 35px;
+        margin: -.3125rem 0.5rem 0 .5rem;
+        width: 28px;
+        vertical-align: middle;
+        background-position: center center;
+      }
+      &.pointer:before {
+        background-image: url(../img/common/hand-pointer.svg);
+      }
+      &.dollar:before {
+        background-image: url(../img/common/dollar.svg);
+      }
+      &.folder:before {
+        background-image: url(../img/common/folder.svg);
+      }
+      // &.folder:before{background-position: -80px -360px;}
+      // &.link:before{background-position: -120px -360px;}
+      // &.dollar:before{background-position: -160px -360px;}
+      // &.checkbox:before{background-position: -200px -360px;}
+      // &.pointer:before{background-position: -240px -360px;}
+      // &.browser:before{background-position: -280px -360px;}
+      &:after{
+        background: url(../img/icons.png) no-repeat -200px -120px;
+        content: '';
+        display: inline-block;
+        height: 8px;
+        margin-top: -.25rem;
+        position: absolute;
+        right: 1.25rem;
+        top: 50%;
+        width: 14px;
+      }
+    }
+    .content{
+      padding: 1rem 2.5rem 2.5rem;
+    }
+    &.active{
+      & > a{
+        background: $gc-inverted-color;
+        &:after{
+          // background-position: -240px -120px;
+        }
+        &:hover, &:active, &:focus{
+          // background: darken($bg-color, 5%);
+          &:after{
+            // background-position: -320px -120px;
+          }
+        }
+      }
+      .content{
+        background: $gc-inverted-color;
+        display: block;
+      }
+    }
+  }
+}
+
+/* with data */
+// example in private office - issues
+.gc-accordion.with-data{
+  .gc-accordion-item{
+    padding: 0;
+    .title-wrapper{
+      cursor: pointer;
+      display: table;
+      padding: .75rem;
+      width: 100%;
+      &:hover, &:active, &:focus {
+        // background: darken($bg-color, 5%);
+        time{color: lighten($basic-color, 15%);}
+      }
+      *{
+        display: table-cell;
+        padding: 0 .625rem;
+        vertical-align: middle;
+      }
+      .title{
+        font: 1rem $font-light;
+        width:18%;
+        &:hover, &:active, &:focus {
+          color: $basic-color;
+          // @include accordion-arrow-basic-down;
+        }
+      }
+      time{
+        color: lighten($basic-color, 35%);
+        text-align: center;
+        width: 13%;
+      }
+      .request-message{
+        font-family: $font-med;
+        max-width: 600px;
+        @extend .overflow-td;
+      }
+      .request-status{
+        color: lighten($basic-color, 35%);
+        width:13%;
+        &:before{
+          content: '';
+          margin-right: .625rem;
+          @include icon(-120px, -440px, 16px, 15px);
+        }
+      }
+    }
+    &.processing{
+      .request-status{
+        &:before{
+          background-position: -80px -440px;
+        }
+      }
+    }
+    &.done{
+      .request-status{
+        color: #208900;
+        &:before{
+          background-position: -200px -440px;
+        }
+      }
+    }
+    &.closed{
+      .request-status{
+        &:before{
+          background-position: -40px -440px;
+        }
+      }
+    }
+    &.rejected{
+      .request-status{
+        color: saturate($gc-second-color, 10%);
+        &:before{
+          background-position: -160px -440px;
+        }
+      }
+    }
+    .content{
+      margin: 0;
+      padding: 1.5rem 5rem;
+      a{
+        border-color: transparentize($basic-color, .5);
+        color: $basic-color;
+        &:hover, &:active, &:focus{border-color: transparent;}
+        &.button{color: $gc-inverted-color;}
+      }
+    }
+    &.active{
+      .title{
+        &:hover, &:active, &:focus {
+          // @include accordion-arrow-basic-up;
+        }
+      }
+    }
+  }
+  @include respond-to-custom(0, 1222px){
+    .gc-accordion-item{
+      .title-wrapper{
+        time{width: 20%;}
+        .request-message{max-width: 500px;}
+        .request-status{width: 20%;}
+      }
+      .content{
+        padding: 1.5rem;
+      }
+    }
+  }
+}
+
+.gc-accordion.transparent{
+  .gc-accordion-item{
+    background: none;
+    margin: .75rem 0;
+    padding: 0;
+    .title{
+      background: transparentize($gc-inverted-color, .73);
+      border-radius: .3rem;
+      border-bottom: none;
+      color: $basic-color;
+      cursor: pointer;
+      display: block;
+      padding: .7rem;
+      span{
+        display: inline-block;
+        width: 95%;
+        vertical-align: top;
+      }
+      &:hover, &:active, &:focus {
+        background: transparentize($gc-inverted-color, .5);
+        // @include accordion-arrow-basic-down;
+      }
+    }
+    .content{margin: 0; padding: .7rem 0;}
+    &.active{
+      .title{
+        &:hover, &:active, &:focus {
+          // @include accordion-arrow-basic-up;
+        }
+      }
+    }
+  }
+}
+
+/*------------------------------------------------------third---------------------------------------------------------*/
+.gc-accordion.third{
+  .gc-accordion-item{
+    padding: 0;
+    .title{
+      background: $gc-third-color;
+      border-radius: .3125rem;
+      display: block;
+      padding: .75rem;
+      &:hover, &:active, &:focus{
+        color: $basic-color;
+        // @include accordion-arrow-basic-down;
+      }
+    }
+    .content{
+      margin: 0;
+      padding: 0;
+    }
+    &.active{
+      .title{
+        border-radius: .3125rem .3125rem 0 0;
+        &:hover, &:active, &:focus{
+          color: $basic-color;
+          // @include accordion-arrow-basic-up;
+        }
+      }
+    }
+  }
+}
+
+
+/*-------------------------------------------------------------
+other faq stuff------------------------------------------------*/
+.gc-accordion.faq{
+  .gc-accordion-item{
+    padding: 0;
+    .title{
+      outline: none;
+      display: block;
+      padding: 1rem 1.75rem;
+      &:hover {
+        color: $gc-first-color-dark;
+        background-color: darken($bg-color, 3%);
+      }
+    }
+    &.active{
+      .title{
+        background-color: darken($bg-color, 6%);
+        color: $gc-first-color-dark-hover;
+        // @include accordion-arrow-first-down;
+      }
+    }
+  }
+}
+
+.first-select-block {
+  @include clearfix;
+  background: $gc-first-color;
+  padding: 0 1.5rem;
+  color: $gc-inverted-color;
+  @include respond-to(gc-medium-down){
+    padding: 0 0.5rem;
+  }
+}
+
+.faq-button-group {
+  input[type="search"] {
+    border-radius: 5px 0 0 5px;
+  }
+  #faq_search_btn {
+    height: 2.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+  }
+}

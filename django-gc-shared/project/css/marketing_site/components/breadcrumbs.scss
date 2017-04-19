@@ -1,0 +1,34 @@
+.breadcrumbs{
+
+}
+.breadcrumbs__list{
+	@include clear_list;
+	@include clearfix;
+
+}
+
+.breadcrumbs__item{
+	float: left;
+	margin-right: 5px;
+	.white-bc & {
+		color: white;
+	}
+}
+.breadcrumbs__text{
+	@include clear_link;
+
+	color: #262626;
+	font-size: 15px;
+
+	.white-bc & {
+		color: white;
+
+		&:hover, &:focus, &:active {
+			color: white;
+		}
+
+		&:after{
+			background-color: white;
+		}
+	}
+}

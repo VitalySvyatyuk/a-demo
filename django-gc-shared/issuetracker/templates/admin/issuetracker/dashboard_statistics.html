@@ -1,0 +1,39 @@
+{% extends 'admin/issuetracker/base_statistics.html' %}
+
+{% load i18n %}
+
+{% block content %}
+    <div class="container-fluid" ng-app="dashboard_statistics">
+        <div ng-controller="QueryController" class="row">
+            <div class="col-sm-9 col-sm-offset-1 col-md-10 col-md-offset-1">
+
+                <h2>{% trans "Statistics of" %}</h2>
+                <select ng-model="selected_mode">
+                    <option value="queries" selected>{% trans "clients requests' processing" %}</option>
+                    <option value="docs">{% trans "document verification" %}</option>
+                </select>
+
+                <div>
+                    <div ng-show="occurred_error" class="alert alert-danger">[[occurred_error]]</div>
+                    <h4>{% trans "Select period" %}: </h4> <p> {% trans "from" %} <input ng-model="from_date" type="text" id="from_datepicker"> {% trans "to" %} <input ng-model="to_date" type="text" id="to_datepicker"> <button type="button" ng-click="get_data()" class="btn btn-default">{% trans "Update stats" %}</button> </p>
+                    [[name]]
+                </div>
+
+                <div class="col-sm-7 col-md-7">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>{% trans "Number of processed requests" %}</th><th>User id</th><th>{% trans "Name" %}</th>
+                        </tr>
+
+                        <tr ng-repeat="raw in data | orderBy:'-count'">
+                            <td>[[ raw.count ]]</td>
+                            <td>[[ raw.user ]]</td>
+                            <td>[[ raw.user__first_name]] [[raw.user__last_name]]</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% load i18n %}
+{% trans "Internal transfer request has been submitted" %}
+
+{% trans "Sender account" %}: {{ sender.mt4_id }}
+{% trans "Recipient account" %}: {{ recipient.mt4_id|safe }}
+{% trans "Amount" %}: {{ amount }} {{ issue.currency_as_text|safe }}
+
+{% trans "The request will be processed within three business days" %}

@@ -1,0 +1,29 @@
+# encoding: utf-8
+from settings import DATABASES
+
+DEBUG = True
+ALLOWED_HOSTS = ['*']
+
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ENGINES = {
+    'demo': {
+        'db': '',
+        'sock': ('10.0.0.30', 7543),
+        'custom': ('10.0.0.30', 7101),
+    },
+}
+
+for db in ('demo', ):
+    if db in DATABASES:
+        DATABASES[db]['HOST'] = '10.0.0.13'
+
+SMS_BACKENDS = (
+    "sms.backends.PrintBackend",
+)
+
+SMS_BACKENDS_MASKS = (
+)

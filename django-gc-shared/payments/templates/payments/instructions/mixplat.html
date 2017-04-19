@@ -1,0 +1,11 @@
+{% load i18n app_tags staticfiles %}
+
+{% trans "Payment system" as msg context "redirect_button" %}
+
+<br/>
+<p style="text-align: center; font-weight: bold;">Для того, чтобы оплатить выставленный счет в системе Mixplat, следуйте инструкциям которые должны прийти на телефон в виде СМС сообщения.</p>
+<br/><br/>
+
+<div class="text-center">
+    <a class="button medium" href="{% url 'account_app' %}">Перейти в личный кабинет</a>
+</div>

@@ -1,0 +1,57 @@
+{% extends "design_2014/marketing_site/base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+    <h1 class="{{ css_classes.color }}">{% trans 'Your access to analytics content' %}</h1>
+    <div class="container">
+        <table class="gctable">
+            <thead>
+                <th>{% trans 'Analytics type' %}</th>
+                <th>{% trans 'Access conditions' %}</th>
+                <th>{% trans 'Access' %}</th>
+            </thead>
+            <tbody>
+            {% for content_type in content_types %}
+                <tr>
+                    <td>
+                        {% if content_type.available %}
+                            <a href="{{ content_type.url }}">{{ content_type.title }}</a>
+                        {% else %}
+                            {{ content_type.title }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ content_type.access_description }}
+                    </td>
+                    <td>
+                        {% if content_type.available %}
+                            {% trans 'Available' %}
+                        {% else %}
+                            {% trans 'Unavailable' %}
+                        {% endif %}
+                    </td>
+                </tr>
+           {% endfor %}
+                <tr>
+                    <td><a href="/analytics/economic_calendar/">{% trans 'Economic calendar' %}</a></td>
+                    <td>{% trans 'Public access' %}</td>
+                    <td>{% trans 'Available' %}</td>
+                </tr>
+                <tr>
+                    <td><a href = "http://grandcapital.ru/percent_pays.html">{% trans 'Percent pays' %}</a></td>
+                    <td>{% trans 'Public access' %}</td>
+                    <td>{% trans 'Available' %}</td>
+                </tr>
+                <tr>
+                    <td><a href = "http://grandcapital.ru/analytics/forexpros/">{% trans 'Forexpros.ru news' %}</a></td>
+                    <td>{% trans 'Public access' %}</td>
+                    <td>{% trans 'Available' %}</td>
+                </tr>
+        </tbody>
+        {% blocktrans %}
+            This page holds information about which analytics content types you are allowed to access.
+        {% endblocktrans %}
+        </table>
+    </div>
+{% endblock %}

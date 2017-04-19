@@ -1,0 +1,293 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+	| About | Arum Capital
+block content
+	.page_head(style="background-image: url({% static 'img/marketing-site/bg/bg--buildings.jpg' %})")
+		.container
+			.row
+				.col-xs-12
+					- breadcrumbs
+					h1.page_head__title
+						- trans "About Us"
+
+	.bonuses
+		.container
+			.row
+				.col-xs-12.col-md-4.bonuses__box
+					.bonuses__item
+						span.bonuses__number
+							| 01
+						.subtitle.subtitle--red
+							- trans "Regulatory compliance"
+						span.bonuses__text
+							- trans "We are under the regulatory requirements of the CySec, corporate risk management, cybersecurity and trading safety." context "about-security"
+				.col-xs-12.col-md-4.bonuses__box
+					.bonuses__item
+						span.bonuses__number
+							| 02
+						.subtitle.subtitle--red
+							- trans "Cutting edge technology"
+						span.bonuses__text
+							- trans "Our clients have access to state-of-the-art technology in FOREX trading: direct access to a Market Depth, tick quotes, operation under FIX-protocol, investment platform with risk-management taking the side of the investor and many more."
+				.col-xs-12.col-md-4.bonuses__box
+					.bonuses__item
+						span.bonuses__number
+							| 03
+						.subtitle.subtitle--red
+							- trans "Integrity"
+						span.bonuses__text
+							- trans "Great trading conditions, no deposits/withdrawals fees and qualified client support enable the clients to enjoy the best customer service and the best trading experience. "
+
+	.working_principles_pageblock(style="")
+		.container
+			.row
+				.col-md-6.col-xs-12.working_presentation_pageblock__steps
+					h2.page_title
+						- trans "How we work"
+					.working_process
+						.working_process__item.working_process__item--icon-magnifier
+							h3.working_process__title
+								- trans "Trading transparency"
+							span.working_process__text
+								- trans "All client transactions are directly linked to the liquidity providers. The conditions of our license and that of our provider oblige us to link every transaction to an independent service provider."
+						.working_process__item.working_process__item--icon-arrows
+							h3.working_process__title
+								- trans "No market manipulation"
+							span.working_process__text
+								- trans "We do not use the tools of betting and filtering of exchange rates. Our clients receive real stock exchange ECN/STP quotes under FIX-protocol on each specific moment."
+						.working_process__item.working_process__item--icon-bid-ask
+							h3.working_process__title
+								- trans "Best price execution"
+							span.working_process__text
+								- trans "Thanks to cooperation with a leading liquidity provider our clients get the best conditions in the market – prompt execution of transactions under FIX-protocol and the best price execution in the Market Depth."
+
+		.working_presentation_pageblock__img_box
+			img.working_presentation_pageblock__img(src="{% static 'img/marketing-site/pictures/pic--man.png' %}")
+
+	.liquidity.liquidity--with-text
+		.container.liquidity__container
+			.liquidity__item
+				img.liquidity__img(src="{% static 'img/marketing-site/etc/logo-arum--word.png' %}")
+				.liquidity__item__title
+					a.link(href="#")
+						- trans "STP/ECN License from CySec"
+				span.liquidity__item__text
+					- trans "Mandatory execution of all the transactions<br> with an independent service provider."
+
+			img.liquidity__arrow.liquidity__arrow--laptop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray.png' %}")
+			img.liquidity__arrow.liquidity__arrow--desktop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--small.png' %}")
+			img.liquidity__arrow.liquidity__arrow--tablet-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--vertical.png' %}")
+			.liquidity__item
+				img.liquidity__img(src="{% static 'img/marketing-site/etc/logo--cfh.png' %}")
+				.liquidity__item__title
+					a.link(href="#")
+						- trans "STP/ECN License from FCA"
+				span.liquidity__item__text
+					- trans "Mandatory execution of all the transactions<br> with an independent service provider."
+
+			img.liquidity__arrow.liquidity__arrow--laptop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray.png' %}")
+			img.liquidity__arrow.liquidity__arrow--desktop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--small.png' %}")
+			img.liquidity__arrow.liquidity__arrow--tablet-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--vertical.png' %}")
+			.liquidity__item
+				img.liquidity__img(src="{% static 'img/marketing-site/etc/logo--set-1.png' %}")
+				//img.liquidity__img.liquidity__img--desktop-hidden(src="{% static 'img/marketing-site/etc/logo-liquidity_suppliers--small.png' %}")
+				//img.liquidity__img.liquidity__img--tablet-hidden(src="{% static 'img/marketing-site/etc/logo-liquidity_suppliers.png' %}")
+				.liquidity__item__title
+					a.link(href="#")
+						- trans "Liquidity of our Liquidity Provider"
+				span.liquidity__item__text
+					- trans "from leading high street banks and largest<br> prime-brokers. "
+
+	.regularity(style="background-image: url({% static 'img/marketing-site/bg/bg--choosing-man.jpg' %})")
+		.container
+			.row
+				.col-xs-12.col-lg-offset-6.col-lg-6.regularity__col
+					h2.page_title.regularity__title
+						- trans "Regulation by CySEC (MIFID)"
+					p.regularity__text
+						- trans "ARUM Capital is the holder of a license of the Cyprus Securities and Exchange Commission of the Republic of Cyprus that is part of the EU regulation of MiFID."
+					ul.regularity__list.dashed_list
+						li.regularity__item.dashed_list__item
+							- trans "Transaction quality guarantee"
+						li.regularity__item.dashed_list__item
+							- trans "Client support rules and procedures"
+						li.regularity__item.dashed_list__item
+							- trans "Audit and risk management"
+						li.regularity__item.dashed_list__item
+							- trans "Corporate governance"
+
+					h2.page_title.regularity__title
+						- trans "Fund security guarantee"
+					ul.regularity__list.dashed_list
+						li.regularity__item.dashed_list__item
+							- trans "Custodianship with the majour high street banks"
+						li.regularity__item.dashed_list__item
+							- trans "Participant in the Investment Compensation Fund"
+						li.regularity__item.dashed_list__item
+							- trans "Client funds are kept on a segregated account"
+
+					.regularity__info
+						img.regularity__img(src="{% static 'img/marketing-site/icons/i--clock.png' %}")
+						.regularity__text_box
+							p.regularity__text_box__content
+								- trans "Withdrawal of client funds is made within 3-5 banking days after the application is made. Reference to the regulations for processing of non-trading orders"
+							//- br
+							//- a.arrow_link(href="uploads/uploads/legal_documents/5cb10db0e85e11e6acf9525400a10119.pdf", target="_blank")
+							//- 	- trans "Order Execution Policy" context "about page pdf link"
+		img.regularity__man_img(src="{% static 'img/marketing-site/pictures/pic--choosing-man.png' %}")
+
+
+	.numbers
+		.container-fluid
+			h2.page_title.numbers__title
+				- trans "ARUM Capital in numbers"
+			.numbers__row
+				.numbers__item
+					span.numbers__value
+						| 110+
+					span.numbers__info
+						- trans "Financial<br>instruments"
+				.numbers__item
+					span.numbers__value
+						| 0.1
+					span.numbers__info
+						- trans "Narrow market<br>spreads"
+				.numbers__item
+					span.numbers__value
+						| 3
+					span.numbers__info
+						- trans "Professional<br>trading platforms"
+
+				.numbers__item
+					span.numbers__value
+						| 0.0%
+					span.numbers__info
+						- trans "No fees<br>for deposits/withdrawals"
+
+
+	.techs(style="background-image: url({% static 'img/marketing-site/bg/bg--imac-02.png' %})")
+		.container
+			h2.techs__title.page_title.page_title--white
+				- trans "Trading technologies to suit all tastes"
+		.techs__container.container
+			button.tech__slider_arrow.tech__slider_arrow--left.slider_arrow.slider_arrow--white.slider_arrow--left.js-slider-prev-arrow(type="button")
+			button.tech__slider_arrow.tech__slider_arrow--right.slider_arrow.slider_arrow--white.slider_arrow--right.js-slider-next-arrow(type="button")
+
+		.techs__slider.js-slider(data-slick="{\"slidesToShow\": 4, \"slidesToScroll\": 1, \"fade\": false, \"arrows\": true, \"dots\": false, \"prevArrow\": \".js-slider-prev-arrow\", \"nextArrow\": \".js-slider-next-arrow\", \"autoplay\": true, \"autoplaySpeed\": 1000099, \"responsive\": [{\"breakpoint\": 1200, \"settings\": {\"slidesToShow\": 3}}, {\"breakpoint\": 1000, \"settings\": {\"slidesToShow\": 2}}, {\"breakpoint\": 780, \"settings\": {\"slidesToShow\": 1}}]}")
+			{% if LANGUAGE_CODE == 'ru' %}
+			a.techs__slider__item.not-ready-platform-ru(href="{% url 'mt4' %}")
+				.techs__slider__item_box.borders_box
+					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--mt4.png' %}")
+					span.techs__slider__text
+						- trans "MetaTrader4<br> platform" context "arum-mt4"
+					.borders.borders--top-bottom
+					.borders.borders--sides
+			{% else %}
+			a.techs__slider__item.not-ready-platform-en(href="{% url 'mt4' %}")
+				.techs__slider__item_box.borders_box
+					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--mt4.png' %}")
+					span.techs__slider__text
+						- trans "MetaTrader4<br> platform" context "arum-mt4"
+					.borders.borders--top-bottom
+					.borders.borders--sides
+			{% endif %}
+
+			{% if LANGUAGE_CODE == 'ru' %}
+			a.techs__slider__item.not-ready-platform-ru(href="{% url 'arumpro' %}")
+				.techs__slider__item_box.borders_box
+					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--web.png' %}")
+					span.techs__slider__text
+						- trans "ARUM.WEB<br> platform" context "arum-web"
+					.borders.borders--top-bottom
+					.borders.borders--sides
+			{% else %}
+			a.techs__slider__item.not-ready-platform-en(href="{% url 'arumpro' %}")
+				.techs__slider__item_box.borders_box
+					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--web.png' %}")
+					span.techs__slider__text
+						- trans "ARUM.WEB<br> platform" context "arum-web"
+					.borders.borders--top-bottom
+					.borders.borders--sides
+			{% endif %}
+
+			{% if LANGUAGE_CODE == 'ru' %}
+			a.techs__slider__item.not-ready-platform-ru(href="{% url 'arumpro' %}")
+				.techs__slider__item_box.borders_box
+					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--pro.png' %}")
+					span.techs__slider__text
+						- trans "ARUM.PRO<br> platform" context "arum-pro"
+					.borders.borders--top-bottom
+					.borders.borders--sides
+			{% else %}
+			a.techs__slider__item.not-ready-platform-en(href="{% url 'arumpro' %}")
+				.techs__slider__item_box.borders_box
+					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--pro.png' %}")
+					span.techs__slider__text
+						- trans "ARUM.PRO<br> platform" context "arum-pro"
+					.borders.borders--top-bottom
+					.borders.borders--sides
+			{% endif %}
+
+			a.techs__slider__item(href="{% url 'invest' %}")
+				.techs__slider__item_box.borders_box
+					img.techs__slider__img.techs__slider__img--invest-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--invest.png' %}")
+					span.techs__slider__text
+						- trans "Investments<br> with ARUM.Invest"
+
+					.borders.borders--top-bottom
+					.borders.borders--sides
+
+			a.techs__slider__item(href="{% url 'trading_calculator' %}")
+				.techs__slider__item_box.borders_box
+					img.techs__slider__img(src="{% static 'img/marketing-site/etc/techs_logos/logo--calc.png' %}")
+					span.techs__slider__text
+						- trans "Traders<br>calculator"
+
+					.borders.borders--top-bottom
+					.borders.borders--sides
+
+			a.techs__slider__item(href="{% url 'economic_calendar' %}")
+				.techs__slider__item_box.borders_box
+					img.techs__slider__img(src="{% static 'img/marketing-site/etc/techs_logos/logo--calendar.png' %}")
+					span.techs__slider__text
+						- trans "Financial<br> calendar"
+
+					.borders.borders--top-bottom
+					.borders.borders--sides
+
+			a.techs__slider__item(href="{% url 'education_frontpage' %}")
+				.techs__slider__item_box.borders_box
+					img.techs__slider__img(src="{% static 'img/marketing-site/etc/techs_logos/logo--book.png' %}")
+					span.techs__slider__text
+						- trans "Study<br> centre"
+
+					.borders.borders--top-bottom
+					.borders.borders--sides
+
+		.tech__buttons_box
+			{% if LANGUAGE_CODE == 'ru' %}
+			div.risk-hidden-ru.mobile-view
+				a.tech__buttons_box__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+					span.button__text
+						- trans "Open a demo account"
+			{% else %}
+			div.risk-hidden-en.mobile-view
+				a.tech__buttons_box__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+					span.button__text
+						- trans "Open a demo account"
+			{% endif %}
+			{% if LANGUAGE_CODE == 'ru' %}
+			div.risk-hidden-ru.mobile-view
+				a.tech__buttons_box__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+					span.button__text
+						- trans "Open an account"
+			{% else %}
+			div.risk-hidden-en.mobile-view
+				a.tech__buttons_box__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+					span.button__text
+						- trans "Open an account"
+			{% endif %}
+

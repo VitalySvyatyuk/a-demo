@@ -1,0 +1,22 @@
+- load video_tags
+- if LANGUAGE_CODE == "ru"
+    - if operation == "deposit"
+        - with details=form.payment_system.transfer_details.deposit
+            - if details.video_youtube_id
+                %a{rel: "facebox", href: "#{{form.payment_system.slug}}", style: "display: block" }
+                    Видеоинструкция
+                %br
+                %div{id: "{{form.payment_system.slug}}", style:"display:none"}
+                    {% embed_youtube details.video_youtube_id %}
+    - else
+        - if operation == "withdraw"
+            - with details=form.payment_system.transfer_details.withdraw
+                - if details.video_youtube_id
+                    %a{rel: "facebox", href: "#{{form.payment_system.slug}}", style: "display: block"}
+                        Видеоинструкция
+                    %br
+                    %div{id: "{{form.payment_system.slug}}", style:"display:none"}
+                        {% embed_youtube details.video_youtube_id %}
+
+
+

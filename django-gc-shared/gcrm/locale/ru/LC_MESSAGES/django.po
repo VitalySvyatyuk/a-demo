@@ -1,0 +1,625 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-17 20:42+0300\n"
+"PO-Revision-Date: 2016-05-26 15:28+0230\n"
+"Last-Translator: Denis Tom <d.tomilin@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Translated-Using: django-rosetta 0.7.8\n"
+
+msgid "Manager has been assigned manualy"
+msgstr "Менеджер перекреплен вручную"
+
+msgid "Manager has been assigned"
+msgstr "Менеджер перекрелен"
+
+msgid "Reasign request to selected manager already exists"
+msgstr "Такая заявка уже существует"
+
+msgid "Reasign request has been created"
+msgstr "Заявка на перекрепление создана"
+
+msgid "You can't select more than 20 contacts for indirect reassign"
+msgstr "Вы не можете перекрепить более чем 20 контактов собственоручно."
+
+#| msgid "Reassignments"
+msgid "Mass assignment"
+msgstr "Массовые перекрепление"
+
+#| msgid "Reasign request has been created"
+msgid "Reassign requests was created"
+msgstr "Заявки на перекрепление созданы"
+
+msgid "This code does not exists"
+msgstr "Такой код не существует"
+
+msgid "Agent code was updated successfully"
+msgstr "Код агента обновлен успешно"
+
+msgid "Contacts"
+msgstr "Контакты"
+
+msgid "Tasks"
+msgstr "Задачи"
+
+msgid "My tasks"
+msgstr "Мои задачи"
+
+msgid "All tasks"
+msgstr "Все задачи"
+
+msgid "Reassignments"
+msgstr "Перекрепления"
+
+msgid "Accounts"
+msgstr "Счета"
+
+msgid "Analytics"
+msgstr "Аналитика"
+
+msgid "Calls"
+msgstr "Звонки"
+
+msgid "Managers"
+msgstr "Менеджеры"
+
+msgid "Search by contacts"
+msgstr "Поиск по контактам"
+
+msgid "All Time"
+msgstr "Все время"
+
+msgid "Today"
+msgstr "Сегодня"
+
+msgid "Yesterday"
+msgstr "Вчера"
+
+msgid "Last 3 Days"
+msgstr "Последние 3 дня"
+
+msgid "Last 7 Days"
+msgstr "Последние 7 дней"
+
+msgid "Last 30 Days"
+msgstr "Последние 30 дней"
+
+msgid "This Month"
+msgstr "Этот месяц"
+
+msgid "Main page"
+msgstr "Главная страница"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Contact"
+msgstr "Контакт"
+
+msgid "Balance"
+msgstr "Баланс"
+
+msgid "Account type"
+msgstr "Тип счета"
+
+msgid "Creation time"
+msgstr "Время создания"
+
+msgid "No items to display"
+msgstr "Нет элементов для отображения"
+
+msgid "Payments"
+msgstr "Платежи"
+
+msgid "Totals calls"
+msgstr "Всего звонков"
+
+msgid "Answered calls"
+msgstr "Отвеченные звонки"
+
+msgid "Not answered calls"
+msgstr "Неотвеченные звонки"
+
+msgid "In/Out"
+msgstr "Ввод/Вывод"
+
+msgid "In"
+msgstr "Ввод"
+
+msgid "Out"
+msgstr "Вывод"
+
+msgid "Count"
+msgstr "Кол-во"
+
+msgid "Hours"
+msgstr "Часы"
+
+msgid "By button"
+msgstr "По кнопке"
+
+msgid "All"
+msgstr "Все"
+
+msgid "h."
+msgstr "ч."
+
+msgid "Summary"
+msgstr "Суммарно"
+
+msgid "Search by phone number"
+msgstr "Поиск по номеру телефона"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "From"
+msgstr "От"
+
+msgid "To"
+msgstr "До"
+
+msgid "Disposition"
+msgstr "Статус"
+
+msgid "Duration"
+msgstr "Длительность"
+
+msgid "Record"
+msgstr "Запись"
+
+msgid "Answered"
+msgstr "Отвеченные звонки"
+
+msgid "Not answered"
+msgstr "Неотвеченные звонки"
+
+msgid "minutes"
+msgstr "минут"
+
+msgid "sec"
+msgstr "сек"
+
+msgid "Play"
+msgstr "Прослушать"
+
+msgid "Types"
+msgstr "Типы"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Show on map"
+msgstr "Показать на карте"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Revert"
+msgstr "Отменить"
+
+msgid "by"
+msgstr "кем"
+
+msgid "bonus"
+msgstr "бонус"
+
+msgid "History"
+msgstr "История"
+
+msgid "Edit"
+msgstr "Изменить"
+
+msgid "Comment"
+msgstr "Комментарий"
+
+msgid "Cancel"
+msgstr "Отменить"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Deposit to account"
+msgstr "Ввод на счёт"
+
+msgid "Withdrawal from account"
+msgstr "Вывод со счёта"
+
+msgid "Task for"
+msgstr "Задача для"
+
+msgid "Complete"
+msgstr "Завершить"
+
+msgid "completed at"
+msgstr "завершено"
+
+msgid "Result"
+msgstr "Результат"
+
+msgid "deadline"
+msgstr "Срок"
+
+msgid "In 30 minutes"
+msgstr "Через 30 минут"
+
+msgid "In an hour"
+msgstr "Через час"
+
+msgid "Tomorrow"
+msgstr "Завтра"
+
+msgid "In a week"
+msgstr "Через неделю"
+
+#| msgid "Count"
+msgid "Country"
+msgstr "Страна"
+
+msgid "Languages"
+msgstr "Языки"
+
+msgid "Overdue"
+msgstr "Просрочено"
+
+msgid "Next"
+msgstr "Следующий"
+
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Get-a-client™"
+msgstr "Получить клиента"
+
+#| msgid "Registration"
+msgid "Region"
+msgstr "Регион"
+
+msgid "Totals: "
+msgstr "Всего: "
+
+msgid "Tags"
+msgstr "Теги"
+
+msgid "Reassign tasks"
+msgstr "Задачи перекрепления"
+
+msgid "Overdue tasks"
+msgstr "Просроченные задачи"
+
+msgid "Today tasks"
+msgstr "Мои задачи на сегодня"
+
+msgid "Manager"
+msgstr "Менеджер"
+
+msgid "No manager"
+msgstr "Без менеджера"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Client"
+msgstr "Клиент"
+
+msgid "Lead"
+msgstr "Лид"
+
+msgid "ADD TAG"
+msgstr "ДОБАВИТЬ ТЕГ"
+
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+msgid "---Manager not set---"
+msgstr "---Менеджер не задан---"
+
+msgid "Comment/reason"
+msgstr "Комментарий/причина"
+
+msgid "Create request"
+msgstr "Создать заявку"
+
+msgid "Author's comment:"
+msgstr "Комментарий автора:"
+
+msgid "Account data"
+msgstr "Данные ЛК"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "Profile"
+msgstr "Профиль"
+
+msgid "Registration"
+msgstr "Регистрация"
+
+msgid "Activity"
+msgstr "Активность"
+
+msgid "Details"
+msgstr "Подробности"
+
+msgid "Last 10 actions"
+msgstr "Последние 10 действий"
+
+msgid "Agent code"
+msgstr "Код агента"
+
+msgid "Partner office"
+msgstr "Партнёрский офис"
+
+msgid "OTP using phone"
+msgstr "ОТП-привязка через телефон"
+
+msgid "No OTP assigned"
+msgstr "Без ОТП-привязки"
+
+msgid "OTP application"
+msgstr "ОТП-привязка через приложение"
+
+msgid "Documents"
+msgstr "Документы"
+
+msgid "Identity confirmed"
+msgstr "Личность подтверждена"
+
+msgid "Identity not confirmed"
+msgstr "Личность не подтверждена"
+
+msgid "Partner domains"
+msgstr "Партнёрские домены"
+
+msgid "Additional details"
+msgstr "Дополнительные данные"
+
+msgid "Add"
+msgstr "Добавить"
+
+msgid "Feed"
+msgstr "Лента"
+
+msgid "Logs"
+msgstr "Логи"
+
+msgid "Add a new contact"
+msgstr "Добавить новый контакт"
+
+msgid "Save and continue editing"
+msgstr "Сохранить и продолжить редактирование"
+
+#| msgid "Rejected"
+msgid "Selected"
+msgstr "Выбрано"
+
+#| msgid "Reassignments"
+msgid "Reassign"
+msgstr "Перекрепление"
+
+#| msgid "Agent code"
+msgid "Set agent code"
+msgstr "Установить код агента"
+
+msgid "Create"
+msgstr "Создать"
+
+msgid "Activity types"
+msgstr "Активность"
+
+#| msgid "Additional details"
+msgid "Additional filters"
+msgstr "Дополнительные фильтры"
+
+#| msgid "Clear filters"
+msgid "Hide filters"
+msgstr "Скрыть фильтры"
+
+msgid "Add manager"
+msgstr "Добавить менеджера"
+
+msgid "Manager contact"
+msgstr "Менеджеры"
+
+msgid "Change password"
+msgstr "Сменить пароль"
+
+msgid "Revoke user"
+msgstr "Удалить"
+
+msgid "Add new manager"
+msgstr "Добавление нового менеджера"
+
+msgid "Register manager on site"
+msgstr "Зарегистрируйте менеджера на сайте"
+
+msgid "Enter email or phone number and press Search"
+msgstr "Введите почту или номер телефона и нажмите Найти"
+
+msgid "Email or phone number"
+msgstr "Почта или номер телефона"
+
+msgid "Select manager"
+msgstr "Выберите менеджера"
+
+msgid "Select office"
+msgstr "Выберите офис"
+
+#| msgid "Agent code"
+msgid "New code"
+msgstr "Новый код"
+
+msgid ""
+"I want to set agent code to [[objects.countSelected()||objects.count]] "
+"contacts"
+msgstr ""
+"Я хочу установить код агента для [[objects.countSelected()||objects.count]] "
+"контактов"
+
+#| msgid "Reassignments"
+msgid "Reassigne managers"
+msgstr "Перекрепление менеджеров"
+
+msgid ""
+"You want to assign these [[objects.countSelected()||objects.count]] contacts"
+" to"
+msgstr ""
+"Вы хотите установить код агента для "
+"[[objects.countSelected()||objects.count]] контактов"
+
+msgid "Reason"
+msgstr "Причина"
+
+msgid "I want to reassign [[objects.countSelected()||objects.count]] contacts"
+msgstr ""
+"Я хочу перекрепить [[objects.countSelected()||objects.count]] контактов"
+
+msgid "Added at"
+msgstr "Добавлено"
+
+msgid "TAG"
+msgstr "ТЕГ"
+
+msgid "Lost OTP"
+msgstr "Утеряно OTP"
+
+msgid "Verification"
+msgstr "Верификация"
+
+msgid "Uses Mobile application"
+msgstr "Использует мобильное приложение"
+
+msgid "UTM"
+msgstr "UTM"
+
+msgid "Task"
+msgstr "Задача"
+
+msgid "Account"
+msgstr "Счет"
+
+msgid "Deposit"
+msgstr "Ввод"
+
+msgid "Withdraw"
+msgstr "Вывод"
+
+msgid "Payment system"
+msgstr "Платежная система"
+
+msgid "Totals"
+msgstr "Всего"
+
+msgid "Author"
+msgstr "Автор"
+
+msgid "From whom"
+msgstr "С кого"
+
+msgid "To whom"
+msgstr "На кого"
+
+msgid "Author's comment"
+msgstr "Комментарий автора"
+
+msgid "New"
+msgstr "Новый"
+
+msgid "Accepted"
+msgstr "Одобрено"
+
+msgid "Rejected"
+msgstr "Отклонено"
+
+msgid "Accept"
+msgstr "Одобрить"
+
+msgid "Reject"
+msgstr "Отклонить"
+
+msgid "Waiting review"
+msgstr "Ожидает рассмотрения"
+
+msgid "My Tasks"
+msgstr "Мои Задачи"
+
+msgid "Deadline"
+msgstr "Срок"
+
+msgid "All types"
+msgstr "Все типы"
+
+msgid "All status"
+msgstr "Все статусы"
+
+msgid "Opened"
+msgstr "Открытые"
+
+msgid "Closed"
+msgstr "Закрытые"
+
+#~ msgid "Account created"
+#~ msgstr "Создан счёт"
+
+#~ msgid "Office"
+#~ msgstr "Офис"
+
+#~ msgid "Back to search"
+#~ msgstr "Назад к поиску"
+
+#~ msgid "Phone Call"
+#~ msgstr "Звонок"
+
+#~ msgid "Meeting"
+#~ msgstr "Встреча"
+
+#~ msgid "Monitoring"
+#~ msgstr "Наблюдение"
+
+#~ msgid "Letter"
+#~ msgstr "Письмо"
+
+#~ msgid "For"
+#~ msgstr "Для"
+
+#~ msgid "via"
+#~ msgstr "через"
+
+#~ msgid "Postpone"
+#~ msgstr "Отложить"
+
+#~ msgid "Assigned to"
+#~ msgstr "Исполнитель"
+
+#~ msgid "---Select a manager---"
+#~ msgstr "---Выбрать менеджера---"
+
+#~ msgid "Note"
+#~ msgstr "Примечание"
+
+#~ msgid "Today/Tomorrow"
+#~ msgstr "Сегодня/Завтра"
+
+#~ msgid "Calendar"
+#~ msgstr "Календарь"

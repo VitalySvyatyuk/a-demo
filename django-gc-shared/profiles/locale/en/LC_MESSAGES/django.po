@@ -1,0 +1,910 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-16 17:51+0300\n"
+"PO-Revision-Date: 2011-07-05 13:47\n"
+"Last-Translator:   <valexeev@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.6.0\n"
+
+msgid "Personal"
+msgstr "Personal"
+
+msgid "Location"
+msgstr "Location"
+
+msgid "Other"
+msgstr "Other"
+
+msgid "Contacts"
+msgstr "Contacts"
+
+msgid "Unsupported file extension"
+msgstr "Unsupported file extension"
+
+msgid "File is too big."
+msgstr "The file is too big."
+
+#, python-format
+msgid "Supported extensions: %(ext)s. Filesize limit: %(limit)s Mb"
+msgstr "Supported extensions: %(ext)s. Filesize limit: %(limit)s Mb"
+
+msgid "Forum username"
+msgstr "Forum username"
+
+msgid ""
+"Your username on the forum, only english letters, numbers or underscores "
+"allowed"
+msgstr ""
+"Your username on the forum, only English letters, numbers or underscores allowed"
+
+msgid "First name"
+msgstr "First name"
+
+msgid "Last name"
+msgstr "Last name"
+
+msgid "Middle name"
+msgstr "Middle name"
+
+msgid "e-mail address"
+msgstr "e-mail address"
+
+msgid "ICQ"
+msgstr "ICQ"
+
+msgid "Enter a valid ICQ number."
+msgstr "Enter a valid ICQ number."
+
+msgid "Example: 629301132"
+msgstr "Example: 629301132"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Enter a valid Skype account."
+msgstr "Enter a valid Skype account."
+
+msgid "Example: gc_clients"
+msgstr "Example: gc_clients"
+
+msgid "Birthday"
+msgstr "Birthday"
+
+msgid "Example: 28.12.1987"
+msgstr "Example: 1987-12-28"
+
+msgid "Country"
+msgstr "Country"
+
+msgid ""
+"You will receive the subscriptions                you select to your e-mail "
+"and via text messages on your phone"
+msgstr ""
+"You will receive the subscriptions                you select to your e-mail and via text messages on your phone"
+
+msgid "Illegal symbols"
+msgstr "Illegal symbols"
+
+msgid "This username already exists"
+msgstr "This username already exists"
+
+msgid "Email you provided is already registered in our system."
+msgstr "Email you have provided is already registered in our system."
+
+msgid "You will receive only those         newsletter types you choose here."
+msgstr "You will receive only those         newsletter types you choose here."
+
+msgid "E-mail address"
+msgstr "E-mail address"
+
+msgid "Account activation link will         be sent to this e-mail address."
+msgstr "Account activation link will         be sent to this e-mail address."
+
+msgid "Wrong password"
+msgstr "Wrong password"
+
+msgid "Example: Russia"
+msgstr "Example: Russia"
+
+msgid "City"
+msgstr "City"
+
+msgid "The city where you live"
+msgstr "The city where you live"
+
+msgid "State / Province"
+msgstr "State / Province"
+
+msgid "Address"
+msgstr "Address"
+
+msgid "Example: pr. Stachek, 8A"
+msgstr "Example: pr. Stachek, 8A"
+
+msgid "Home phone"
+msgstr "Home phone"
+
+msgid "Example: 8-800-333-1003"
+msgstr "Example: 8-800-333-1003"
+
+msgid "Work phone"
+msgstr "Work phone"
+
+msgid "Example: +7 (812) 300-81-96"
+msgstr "Example: +7 (812) 300-81-96"
+
+msgid "Mobile phone"
+msgstr "Mobile phone"
+
+msgid "Example: +7 (911) 200-19-55"
+msgstr "Example: +7 (911) 200-19-55"
+
+msgid "Avatar"
+msgstr "Avatar"
+
+msgid "Your photo"
+msgstr "Your photo"
+
+msgid "Social security number"
+msgstr "Social security number"
+
+msgid "TIN"
+msgstr "TIN"
+
+msgid "Tax identification number"
+msgstr "Tax identification number"
+
+msgid "Last manager call at"
+msgstr "Last manager's call at"
+
+msgid "Assigned to manager at"
+msgstr "Assigned to a manager at"
+
+msgid "Taken by manager at"
+msgstr "Taken by a manager at"
+
+msgid "Agent code"
+msgstr "Agent code"
+
+msgid "If you don't know what it is, leave empty"
+msgstr "If you do not know what it is, leave empty"
+
+msgid "Did user lose his OTP"
+msgstr "Did user lose his OTP?"
+
+msgid "Ask authorization on login"
+msgstr "Ask authorization on login"
+
+msgid "Details"
+msgstr "Details"
+
+msgid "Source"
+msgstr "Source"
+
+msgid "Registered from"
+msgstr "Registered from"
+
+msgid "User profile"
+msgstr "User profile"
+
+msgid "User profiles"
+msgstr "User profiles"
+
+msgid "Gold"
+msgstr "Gold"
+
+msgid "Silver"
+msgstr "Silver"
+
+msgid "Bronze"
+msgstr "Bronze"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Parameter"
+msgstr "Parameter"
+
+msgid "Is the data valid?"
+msgstr "Is the data valid?"
+
+msgid "Manager comment"
+msgstr "Manager's comment"
+
+msgid "Identity document"
+msgstr "Identity document"
+
+msgid "Driver license"
+msgstr "Driver license"
+
+msgid "Certificate of birth"
+msgstr "Certificate of birth"
+
+msgid "Real IB agreement"
+msgstr "Real IB Agreement"
+
+msgid "FX+ agreement"
+msgstr "FX+ agreement"
+
+msgid "Client's receipt"
+msgstr "Client's receipt"
+
+msgid "Other document"
+msgstr "Other document"
+
+msgid "Number"
+msgstr "Number"
+
+msgid "Issue date"
+msgstr "Issue date"
+
+msgid "Document name"
+msgstr "Document name"
+
+msgid "Document description"
+msgstr "Document description"
+
+msgid "File"
+msgstr "File"
+
+msgid "Creation timestamp"
+msgstr "Creation timestamp"
+
+msgid "Document fields"
+msgstr "Document fields"
+
+msgid "Password successfully changed"
+msgstr "Password is successfully changed"
+
+msgid "Password successfully recovered"
+msgstr "Password is successfully recovered"
+
+msgid "Cannot edit mobile phone number because it is binded for OTP"
+msgstr "Cannot edit mobile phone number because it is binded for OTP"
+
+msgid "Cannot edit partner code"
+msgstr "Cannot edit partner code"
+
+msgid "Wrong partner code"
+msgstr "Wrong partner code"
+
+msgid "username"
+msgstr "username"
+
+msgid "History"
+msgstr "History"
+
+msgid "View on site"
+msgstr "View on the website"
+
+msgid "Please correct the error below."
+msgid_plural ""
+"Please\n"
+"Please\n"
+"Please\n"
+"Please\n"
+"                            correct the errors below."
+"                            correct the errors below."
+"                            correct the errors below."
+"                            correct the errors below."
+msgstr[0] "Please correct the error below."
+msgstr[1] "Please"
+"                            correct the errors below."
+
+msgid "Profile settings"
+msgstr "Profile settings"
+
+msgid "Personal information"
+msgstr "Personal information"
+
+msgid "Documents"
+msgstr "Documents"
+
+msgid "Security"
+msgstr "Security"
+
+msgid "Subscriptions"
+msgstr "Subscriptions"
+
+#, fuzzy
+#| msgid "Upload copy a document that confirms your date of birth"
+msgid "Upload a copy of the document confirming your personal information"
+msgstr "Upload copy of a document that confirms your data"
+
+msgid ""
+"Please upload documents which contain your name in Latin- or Cyrillic-based "
+"script."
+msgstr ""
+"Please upload documents which contain your name in Latin or Cyrillic-based script."
+
+msgid "Upload document"
+msgstr "Upload document"
+
+msgid "You have uploaded"
+msgstr "You have uploaded"
+
+msgid "Use Security section to change phone number"
+msgstr "Use Security section to change the phone number"
+
+msgid ""
+"To confirm phone number, you should create OTP device in Security section"
+msgstr ""
+"To confirm your phone number, you should create OTP device in the Security section"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Security settings"
+msgstr "Security settings"
+
+msgid "You have no OTP device."
+msgstr "You have no OTP device."
+
+msgid "Currently you use SMS with phone"
+msgstr "Currently you use SMS with phone"
+
+msgid "Currently you use mobile application"
+msgstr "Currently you use mobile application"
+
+msgid "Change device"
+msgstr "Change device"
+
+msgid "Password change"
+msgstr "Password change"
+
+msgid "Old password"
+msgstr "Old password"
+
+msgid "New password"
+msgstr "New password"
+
+msgid "Confirm password"
+msgstr "Confirm password"
+
+msgid "Password confirmation doesn't match new password"
+msgstr "Password confirmation does not match a new password"
+
+msgid "Why should I set up security settings?"
+msgstr "Why should I set up the security settings?"
+
+msgid ""
+"\n"
+"        <p class=\"offset-bottom-20\">\n"
+"            The following actions will require authentication code, which "
+"will be generated using a special mobile app or texted to you via SMS:\n"
+"        </p>\n"
+"        <ul class=\"ul-dashed offset-bottom-20\">\n"
+"            <li>Editing profile data</li>\n"
+"            <li>Creating or editing withdraw details</li>\n"
+"            <li>Funds withdrawal</li>\n"
+"            <li>Internal transfer</li>\n"
+"            <li>Real account leverage change</li>\n"
+"            <li>Real account password change</li>\n"
+"        </ul>\n"
+"        <p>\n"
+"            The authentication code will help verify that it is really you "
+"who request the operation\n"
+"            and your account was not stolen. This will help to protect you "
+"from money theft.\n"
+"            The authentication code is generated by a special mobile app or\n"
+"            is sent to your mobile phone via text message (SMS).\n"
+"        </p>\n"
+"    "
+msgstr ""
+"\n"
+"        <p class=\"offset-bottom-20\">\n"
+"            The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+"        </p>\n"
+"        <ul class=\"ul-dashed offset-bottom-20\">\n"
+"            <li>Editing profile data</li>\n"
+"            <li>Creating or editing withdraw details</li>\n"
+"            <li>Funds withdrawal</li>\n"
+"            <li>Internal transfer</li>\n"
+"            <li>Real account leverage change</li>\n"
+"            <li>Real account password change</li>\n"
+"        </ul>\n"
+"        <p>\n"
+"            The authentication code will help verify that it is really you who requests the operation\n"
+"            and your account was not stolen. This will help to protect you from money theft.\n"
+"            The authentication code is generated by a special mobile app or\n"
+"            is sent to your mobile phone via text message (SMS).\n"
+"        </p>\n"
+"    "
+
+msgid "Select active subscriptions:"
+msgstr "Select active subscriptions:"
+
+msgid "Account statements"
+msgstr "Account statements"
+
+msgid "Your password has been changed successfully"
+msgstr "Your password has been changed successfully"
+
+msgid ""
+"\n"
+"    <p>Your password has been changed.</p>\n"
+"    "
+msgstr ""
+"\n"
+"    <p>Your password has been changed.</p>\n"
+"    "
+
+msgid "Edit profile e-mail"
+msgstr "Edit profile e-mail"
+
+msgid "Edit your e-mail"
+msgstr "Edit your e-mail"
+
+msgid "My profile"
+msgstr "My profile"
+
+msgid "Edit your profile"
+msgstr "Edit your profile"
+
+#, python-format
+msgid ""
+"\n"
+"                <p>To verify your information, you can\n"
+"                    <a href=\"%(profiles_upload_document_url)s\">upload a "
+"copy of your document</a></p>\n"
+"            "
+msgstr ""
+"\n"
+"                <p>To verify your information, you can\n"
+"                    <a href=\"%(profiles_upload_document_url)s\">upload a copy of your document</a></p>\n"
+"            "
+
+msgid "Confirm your mobile phone number"
+msgstr "Confirm your mobile phone number"
+
+msgid "Confirm"
+msgstr "Confirm"
+
+#, python-format
+msgid ""
+"\n"
+"            To change your phone number - follow this <a href=\"%(link)s"
+"\">link</a>\n"
+"        "
+msgstr ""
+"\n"
+"            To change your phone number - follow this <a href=\"%(link)s\">link</a>\n"
+"        "
+
+msgid "Click <strong>Check</strong> to confirm your mobile phone number"
+msgstr "Click <strong>Check</strong> to confirm your mobile phone number"
+
+msgid "Настройки профиля"
+msgstr "Profile settings"
+
+msgid "Личные данные"
+msgstr "Personal details"
+
+msgid "Загрузка документов"
+msgstr "Upload documents"
+
+msgid "Безопасность"
+msgstr "Security"
+
+msgid "Настройка рассылок"
+msgstr "Email settings"
+
+msgid "Загрузите копию документа, подтверждающую Ваши данные"
+msgstr "Upload a copy of the document confirming your details"
+
+msgid "Вы уже загрузили"
+msgstr "You have already uploaded"
+
+msgid "Паспорт"
+msgstr "National identity document"
+
+msgid "Данные для верификации"
+msgstr "Verification details"
+
+msgid "Send"
+msgstr "Send"
+
+msgid "Настройки безопасности"
+msgstr "Security settings"
+
+msgid "В данный момент используются SMS на телефон"
+msgstr "Currently you use SMS with phone"
+
+msgid "Сменить устройство"
+msgstr "Change a device"
+
+msgid "Обн. статуса счета"
+msgstr "replication ratio changed"
+
+msgid "Удачный логин"
+msgstr "Successful login"
+
+msgid "Неудачный логин"
+msgstr "login fail"
+
+msgid "Восстановление пароля"
+msgstr "password restored"
+
+msgid "Удачная смена пароля"
+msgstr "Password changed"
+
+msgid "Неуд. смена пароля"
+msgstr "Password changed fail"
+
+msgid "Изменение профиля"
+msgstr "Profile changed"
+
+msgid "Сохранение профиля"
+msgstr "Profile saved"
+
+msgid "Сохранение юзера"
+msgstr "User saved"
+
+msgid "Валидация профиля"
+msgstr "Profile validation"
+
+msgid "Снятие валидации"
+msgstr "Validation revoked"
+
+msgid "Валидация телефона"
+msgstr "Phone validation"
+
+msgid "Загружен документ"
+msgstr "Document uploaded"
+
+msgid "Менеджер изменён"
+msgstr "Manager changed"
+
+msgid "IB-Менеджер изменён"
+msgstr "IB manager changed"
+
+msgid "Запрос на смену менеджера одобрен"
+msgstr "Manager reassign request accepted"
+
+msgid "Был взят менеджером"
+msgstr "Has been taken by manager"
+
+msgid "Удачный OTP логин"
+msgstr "OTP login ok"
+
+msgid "Неудачный OTP логин"
+msgstr "OTP login fail"
+
+msgid "Удачная OTP аутентиф."
+msgstr "OTP auth ok"
+
+msgid "Неудачная OTP аутентиф."
+msgstr "OTP auth fail"
+
+msgid "Создание OTP"
+msgstr "OTP binding created"
+
+msgid "OTP потерян"
+msgstr "OTP is lost"
+
+msgid "Создание счета"
+msgstr "Account created"
+
+msgid "Удаление счета"
+msgstr "Account deleted"
+
+msgid "Восст. пароля от счета"
+msgstr "Account password restored"
+
+msgid "Смена плеча"
+msgstr "Leverage changed"
+
+msgid "Сменя стиля опционов"
+msgstr "Options style changed"
+
+msgid "Изменён возврат спреда"
+msgstr "Rebate changed"
+
+msgid "Логин в веб-трейдер"
+msgstr "Webtrader login"
+
+msgid "Счет заблокирован"
+msgstr "Account block"
+
+msgid "Счет разблокирован"
+msgstr "Account block"
+
+msgid "Создание реквизита"
+msgstr "Requisit created"
+
+msgid "Изменение реквизита"
+msgstr "Requisit changed"
+
+msgid "Обновление валидации"
+msgstr "Requisit validation update"
+
+msgid "Удаление реквизита"
+msgstr "Requisit deleted"
+
+msgid "Созд. заявки на ввод"
+msgstr "Deposit request created"
+
+msgid "Созд. заявки на вывод"
+msgstr "Withdraw request created"
+
+msgid "Внутренний перевод"
+msgstr "Internal transfer"
+
+msgid "Оплата обучения"
+msgstr "Education payment"
+
+msgid "Оплата консультации"
+msgstr "Consultation payment"
+
+msgid "Изм. коэфф. копир."
+msgstr "Copy ratio changed"
+
+msgid "Изм. коэфф. уведомл."
+msgstr "Notification ratio changed"
+
+msgid "Изменение порога откл."
+msgstr "Minimal equity changed"
+
+msgid "Сраб. порога откл."
+msgstr "Max loss reached"
+
+msgid "Подписка GC VPS"
+msgstr "VPS subscription"
+
+msgid "Продление GC VPS"
+msgstr "VPS subscription extended"
+
+msgid "Превышен лимит на просмотр данных пользователей"
+msgstr "Account data view exceeded"
+
+msgid "Группа заявок на вывод создана"
+msgstr "Withdraw requests group created"
+
+msgid "Группа заявок на вывод закрыта"
+msgstr "Withdraw requests group closed"
+
+msgid "Группа заявок на вывод: одобрение изменено"
+msgstr "Withdraw requests group approval changed"
+
+msgid "Группа заявок на вывод: одобрение снято"
+msgstr "Withdraw requests group approval reset"
+
+msgid "Заявка на вывод: неудачное снятие"
+msgstr "Withdraw requests failed"
+
+msgid "Заявка на вывод: заявка отклонена"
+msgstr "Withdraw request fast declined"
+
+msgid "Заявка на вывод: выплата через плагин"
+msgstr "Withdraw requests webmoney plugin payed"
+
+msgid "Заявка на вывод: успешное снятие средств"
+msgstr "Withdraw requests payed"
+
+msgid "Заявка на вывод готова к выплате"
+msgstr "Withdraw request ready for payment"
+
+msgid "Заявка на вывод не готова к выплате"
+msgstr "Withdraw request ready for payment reset"
+
+msgid "Заявка на вывод: выплачено"
+msgstr "Withdraw request committed"
+
+msgid "Контакт создан"
+msgstr "GCRM contact created"
+
+msgid "Менеджер изменён по запросу"
+msgstr "GCRM manager changed by request"
+
+msgid "Контакт взят менеджером"
+msgstr "GCRM manager changed by button"
+
+msgid "Менеджеру изменен пароль"
+msgstr "GCRM manager set new password"
+
+msgid "Менеджеру изменено имя"
+msgstr "GCRM manager rename"
+
+msgid "Менеджер удален"
+msgstr "GCRM manager revoke"
+
+msgid "Добавлен новый менеджер вручную"
+msgstr "GCRM new manager manually"
+
+msgid "запись лога"
+msgstr "Log record"
+
+msgid "записи лога"
+msgstr "Log records"
+
+
+
+msgid ""
+"\n"
+"                    <p class=\"offset-bottom-20\">\n"
+"                        The following actions will require authentication "
+"code, which will be generated using a special mobile app or texted to you "
+"via SMS:\n"
+"                    </p>\n"
+"                    <ul class=\"ul-dashed offset-bottom-20\">\n"
+"                        <li>Editing profile data</li>\n"
+"                        <li>Creating or editing withdraw details</li>\n"
+"                        <li>Funds withdrawal</li>\n"
+"                        <li>Internal transfer</li>\n"
+"                        <li>Real account leverage change</li>\n"
+"                        <li>Real account password change</li>\n"
+"                    </ul>\n"
+"                    <p>\n"
+"                        The authentication code will help verify that it is "
+"really you who request the operation\n"
+"                        and your account was not stolen. This will help to "
+"protect you from money theft.\n"
+"                        The authentication code is generated by a special "
+"mobile app or\n"
+"                        is sent to your mobile phone via text message "
+"(SMS).\n"
+"                    </p>\n"
+"                "
+msgstr ""
+"\n"
+"                    <p class=\"offset-bottom-20\">\n"
+"                        The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+"                    </p>\n"
+"                    <ul class=\"ul-dashed offset-bottom-20\">\n"
+"                        <li>Editing profile data</li>\n"
+"                        <li>Creating or editing withdraw details</li>\n"
+"                        <li>Funds withdrawal</li>\n"
+"                        <li>Internal transfer</li>\n"
+"                        <li>Real account leverage change</li>\n"
+"                        <li>Real account password change</li>\n"
+"                    </ul>\n"
+"                    <p>\n"
+"                        The authentication code will help verify that it is really you who requests the operation\n"
+"                        and your account was not stolen. This will help to protect you from money theft.\n"
+"                        The authentication code is generated by a special mobile app or\n"
+"                        is sent to your mobile phone via text message (SMS).\n"
+"                    </p>\n"
+"                "
+
+#, python-format
+msgid ""
+"\n"
+"                                To change your phone number - follow this <a "
+"href=\"%(link)s\">link</a>\n"
+"                            "
+msgstr ""
+"\n"
+"                                To change your phone number - follow this <a href=\"%(link)s\">link</a>\n"
+"                            "
+
+msgid "My manager"
+msgstr "My manager"
+
+msgid "My personal broker"
+msgstr "My personal broker"
+
+msgid "No photo available"
+msgstr "No photo is available"
+
+msgid "E-mail"
+msgstr "Email"
+
+msgid "Only english letters, numbers or underscores allowed"
+msgstr "Only english letters, numbers or underscores allowed"
+
+msgid "Work Phone"
+msgstr "Work phone"
+
+msgid ""
+"You can get contacts of the manager after you deposit at least $100 to your "
+"account."
+msgstr ""
+"You can get contacts of the manager after you deposited at least $100 to your account."
+
+msgid "Ask a question"
+msgstr "Ask a question"
+
+msgid "Our contact information:"
+msgstr "Our contact information:"
+
+msgid "Phone: 8-800-333-1003 (free accross Russia)"
+msgstr "Phone: 8-800-333-1003 (free across Russia)"
+
+msgid "E-mail: eng@grandcapital.net"
+msgstr "E-mail: eng@grandcapital.net"
+
+msgid "Skype:  gc_clients"
+msgstr "Skype:  gc_clients"
+
+msgid "ICQ:  629301132"
+msgstr "ICQ:  629301132"
+
+msgid "Edit profile"
+msgstr "Edit profile"
+
+msgid "State"
+msgstr "State"
+
+msgid "Home Phone"
+msgstr "Home phone"
+
+msgid "Mobile Phone"
+msgstr "Mobile phone"
+
+msgid "Documents you uploaded"
+msgstr "Documents you have uploaded"
+
+msgid "Account id"
+msgstr "Account ID"
+
+msgid "Account type"
+msgstr "Account type"
+
+msgid "Complete your profile!"
+msgstr "Complete your profile!"
+
+msgid "Verify your e-mail"
+msgstr "Verify your email"
+
+msgid "Verify phone number"
+msgstr "Verify the phone number"
+
+msgid "Upload a scan of ID"
+msgstr "Upload a scan of ID"
+
+msgid "Specify your address"
+msgstr "Specify your address"
+
+#, python-format
+msgid ""
+"To verify your email address, please follow the link you received when you "
+"registered. If you\n"
+"mistyped your email address or didn't receive an activation email, please "
+"check if your email is correct\n"
+"<a href=\"%(edit_email_url)s\">here</a> and click \"Save\" to receive "
+"another activation email."
+msgstr ""
+"To verify your email address, please follow the link you received when you registered. If you\n"
+"mistyped your email address or did not receive an activation email, please check if your email is correct\n"
+"<a href=\"%(edit_email_url)s\">here</a> and click \"Save\" to receive another activation email."
+
+msgid "Edit your subscription"
+msgstr "Edit your subscription"
+
+msgid "Upload avatar"
+msgstr "Upload avatar"
+
+msgid "Upload copy a document that confirms your date of birth"
+msgstr "Upload copy of a document that confirms your data"
+
+#, python-format
+msgid "Successfully uploaded document %s"
+msgstr "Successfully uploaded document %s"
+
+msgid "Avatar was uploaded successfully"
+msgstr "Avatar was uploaded successfully"
+
+msgid "You can not change e-mail address more than once every fifteen minutes."
+msgstr "You cannot change e-mail address more than once every fifteen minutes."
+
+msgid "E-mail you provided is already registered in our system."
+msgstr "E-mail you provided is already registered in our system."
+
+msgid "Your e-mail successfully updated"
+msgstr "Your email is successfully updated"
+
+msgid "Your subscription successfully updated"
+msgstr "Your subscription is successfully updated"
+

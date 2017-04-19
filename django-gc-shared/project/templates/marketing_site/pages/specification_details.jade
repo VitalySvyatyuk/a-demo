@@ -1,0 +1,77 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {{ instrument.instrument }} {{ block.super }}
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title= instrument.instrument
+
+  .specification-eurusd
+    .container
+      .row
+        .col-md-9
+          .specification-eurusd-info!= instrument.description|safe
+          .table-responsive.adaptive-table-wrapper
+            table.table.adaptive-table
+              tbody
+                tr
+                  td.strategies__cell__title
+                    - trans "Features"
+                  td.strategies__cell__title
+                    - trans "Value"
+                tr
+                  td
+                    span.tooltip.js-tooltip(title="{% trans 'Currency is a trading tool currency that is used for recording the transactions.' %}")
+                      - trans "Currency"
+                  td= instrument.currency
+                tr
+                  td
+                    span
+                      - trans "Minimum price change"
+                  td= instrument.min_price_change
+                tr
+                  td
+                    span.tooltip.js-tooltip(title="{% trans 'Minimum size contract is a minimum size contract of a trading tool' %}")
+                      - trans "Minimum size contract"
+                  td= instrument.min_order_size
+                tr
+                  td
+                    span
+                      - trans "Minimum contract size change"
+                  td= instrument.min_order_size_change
+                tr
+                  td
+                    span.tooltip.js-tooltip(title="{% trans 'The cost of 1 pip of the minimum size contract – a pip is the fourth digit after the point in a 4-digit quoting system. For instance, in USD/EUR pair a pip would be 0,0001' %}")
+                      - trans "The cost of 1 pip of the minimum size contract"
+                  td= instrument.min_order_pip_value
+                tr
+                  td
+                    span.tooltip.js-tooltip(title="{% trans 'Margin Requirement on a business day is the level of the required marginal volume from the opening of the trading week until Friday 20:00 UTC required for opening and sustaining of such position. It is calculated with a formula: Margin level divided by the position volume*100' %}")
+                      - trans "Margin Requirement on a business day"
+                  td= instrument.weekday_margin
+                tr
+                  td
+                    span.tooltip.js-tooltip(title="{% trans 'Margin Requirement at the weekend and from 20:00 UTC Friday - is the level of the required marginal volume from Friday 20:00 UTC until a trading week required for opening and sustaining of such position. It is calculated with a formula: Margin level divided by the position volume*100' %}")
+                      - trans "Margin Requirement at the weekend and from 20:00 UTC Friday"
+                  td= instrument.weekend_margin
+                tr
+                  td
+                    span.tooltip.js-tooltip(title="{% trans 'SWAP Long is the cost for rolling over a position to the next day against the minimum size contract in case where a short Sell position on an instrument is kept' %}")
+                      | SWAP Long
+                  td= instrument.swap_long
+                tr
+                  td
+                    span.tooltip.js-tooltip(title="{% trans 'SWAP Short is the cost for rolling over a position to the next day against the minimum size contract in case where a long Buy position on an instrument is kept' %}")
+                      | SWAP Short
+                  td= instrument.swap_short
+
+
+
+

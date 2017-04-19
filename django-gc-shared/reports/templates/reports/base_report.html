@@ -1,0 +1,98 @@
+{% extends "site_base.html" %}
+
+{% load i18n app_tags%}
+
+{% block external_analytics %}{% endblock %}
+
+{% block css %}{{ block.super }}
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/style_private_office.css" />
+  <link rel="stylesheet" href="{{ STATIC_URL }}js/facebox/facebox.css" media="screen" type="text/css"/>
+  <style type="text/css">
+    body { background-color: white; }
+    .report-title .back { color: white; }
+  </style>
+  <link rel="stylesheet"
+        href="{{ STATIC_URL }}css/gcapital-ui/jquery-ui-1.8.9.custom.css" />
+{% endblock css %}
+
+{#{% block extrahead %}#}
+{#  {{ form.media }}#}
+{#{% endblock %}#}
+
+{% block main %}
+  <h1 class="green report-title">
+    {% block report_title %}{% endblock %}
+    {% if account %}
+      {% trans "for account" %} {{ account }}{% if from_time %}, {{ from_time }} — {{ to_time }}{% endif %}
+    {% endif %}
+    <a class="fright back"
+       href="{% url "reports_report_list" %}"
+       title="{% trans "Back" %}">← {% trans "Back" %}</a>
+  </h1>
+
+  <div class="container">
+  {% if should_show_form %}
+    {% block report_form %}
+      <form method="POST" id="report-form" action="{{ request.path }}">
+        {% include "includes/form.html" %}
+
+        {% if account %}
+          <input type="hidden" name="account_id" value="{{ account.mt4_id }}" />
+        {% endif %}
+          {% gcbutton "submit" _("Calculate report") "black"%}
+      </form>
+      {% if account and request.user.is_superuser %}
+          <p><a href="{% url "mt4_agent_list" account.mt4_id %}">Посмотреть все счета, открытые под этим счетом</a></p>
+      {% endif %}
+    {% endblock %}
+  {% endif %}
+
+    {% if report %}
+    {% if report.data %}
+       {% block report_table %}
+       {% endblock %}
+    {% else %}
+      <hr/>
+      {% block report_nodata %}
+        <p>{% trans "No data found" %}</p>
+      {% endblock %}
+    {% endif %}
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block js %}{{ block.super }}
+  <script type="text/javascript" src="/jsi18n/"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.0.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.23.custom.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/tablesorter/jquery.metadata.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/tablesorter/jquery.tablesorter.min.js"></script>
+  <script type="text/javascript">
+      (function() {
+        $.tablesorter.addParser({
+          id: 'russian_float',
+          is: function(s, table) {
+            return s.search(/\-?\d+,\d+/) > -1;
+          },
+          format: function(s) {
+            return $.tablesorter.formatFloat(s.replace('{{ DECIMAL_SEPARATOR }}', '.'));
+          },
+          type: "numeric"
+        });
+        $(document).ready(function() {
+          return $("table.tablesorter").each(function(index) {
+            return $(this).tablesorter();
+          });
+        });
+      }).call(this);
+  </script>
+    <script type="text/javascript"
+            src="{{ STATIC_URL }}js/facebox/facebox.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // Facebox initialization.
+            $('a[rel*=facebox]').facebox();
+        });
+    </script>
+    {{ form.media.js }}
+{% endblock %}

@@ -1,0 +1,266 @@
+{% load i18n %}
+
+<div class="row">
+  <div class="col-md-6">
+    <form class="form-group" ng-submit="saveName()" name="nameForm">
+      <div class="input-group">
+        <input class="form-control form-control-transparent form-control-lg" type="text" name="name" placeholder="{% trans "Name" %}" ng-model="::object.data.name" ng-required="::!object.data.user">
+        <i class="fa fa-times input-group-addon" ng-show="nameForm.name.$dirty" ng-click="revertName()"></i>
+      </div>
+    </form>
+
+    <p>
+      <span ng-repeat="tag in object.data.system_tags" class="label" style="color: white; background-color: [[::tag|toColor]]">[[::tag]]</span>
+      <span class="label compact"
+        style="color: white; background-color: [[::tag|toColor]]"
+        ng-repeat="tag in object.data.tags"
+        ng-click="editTag(tag)">
+        [[::tag]]
+      </span>
+      <span class="label label-default" ng-click="editTag()" style="color: #373a3c;cursor:pointer;">
+        <i class="fa fa-plus"></i>
+        {% blocktrans %}TAG{% endblocktrans %}
+      </span>
+      <br>
+    </p>
+
+    <table class="table table-sm table-active">
+      <tbody>
+        <tr>
+          <th>{% trans "Manager" %}</th>
+          <td>
+            <user-select model="object.data.manager"></user-select>
+          </td>
+          <td ng-if="object.data.manager">
+            <i class="fa fa-building"></i>
+            [[Users.mapping[object.data.manager].data.office.name]]
+          </td>
+        </tr>
+        <tr ng-if="object.data.manager != object.state.manager">
+          <td colspan="3">
+            <form name="reassignForm" ng-submit="reassign(reassignReason)">
+              <div class="input-group">
+                <input class="form-control"
+                    type="text"
+                    placeholder="{% trans "Reason" %}"
+                    ng-model="reassignReason"
+                    name="comment"
+                    ng-required="!Users.mapping[object.data.manager].data.is_managable || !Users.mapping[object.state.manager].data.is_managable"
+                >
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-check"></i>
+                  </button>
+                  <button type="button" class="btn btn-secondary" ng-click="object.data.manager = object.state.manager">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </span>
+              </div>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="table table-sm table-active" ng-if="::object.data.user">
+      <thead class="thead-default">
+        <tr>
+          <th colspan="2">
+            {% blocktrans %}Account data{% endblocktrans %}
+
+
+            <div class="pull-right btn-group btn-group-sm" uib-dropdown>
+              <button type="button" class="btn btn-info dropdown-toggle" uib-dropdown-toggle>
+                {% trans "Actions" %} <span class="caret"></span>
+              </button>
+              <div uib-dropdown-menu class="dropdown-menu">
+                <a ng-if="::object.data.user.otp.resetable" class="dropdown-item" ng-click="object.userResetOTP()">{% trans "Lost OTP" %}</a>
+              </div>
+            </div>
+            {% if user.is_superuser %}
+              <div class="pull-right btn-group btn-group-sm">
+                <a target="_blank" href="[[::object.data.user.links.user_admin]]" class="btn btn-secondary">{% trans "User" %}</a>
+                <a target="_blank" href="[[::object.data.user.links.user_profile_admin]]" class="btn btn-secondary">{% trans "Profile" %}</a>
+              </div>
+            {% endif %}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>{% trans "Name" %}</th>
+          <td>[[::object.data.user.name]]</td>
+        </tr>
+        <tr>
+          <td>{% trans "Language" %}</td>
+          <td>[[::object.data.user.language]]</td>
+        </tr>
+        <tr>
+          <th>{% trans "Registration" %}</th>
+          <td title="[[::object.data.user.registration_ts|moment:'LLL']]">[[::object.data.user.registration_ts|moment:'calendar']]</td>
+        </tr>
+        <tr>
+          <th>{% trans "Activity" %}</th>
+          <td title="[[::object.data.user.last_activity_ts|moment:'LLL']]">
+            [[::object.data.user.last_activity_ts|moment:'calendar']]
+            <button class="btn btn-secondary btn-sm pull-right" ng-click="activitiesShow = !activitiesShow">{% trans "Details" %}</button>
+            <div ng-if="activitiesShow">
+              <p class="text-center">{% blocktrans %}Last 10 actions{% endblocktrans %}</p>
+              <ul>
+                <li ng-repeat="act in object.data.user.last_activities track by $index">[[::act]]</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr ng-if="::object.data.user.agent_code.value">
+          <th>{% trans "Agent code" %}</th>
+          <td>
+            <a ng-if="::object.data.user.agent_code.contact" ui-sref="contact.feed({id: object.data.user.agent_code.contact})">[[::object.data.user.agent_code.value]]</a>
+            <span ng-if="::!object.data.user.agent_code.contact">[[::object.data.user.agent_code.value]]</span>
+            <span ng-if="::object.data.user.agent_code.from_partner" class="label label-warning">
+              <i class="building icon"></i>
+              {% blocktrans %}Partner office{% endblocktrans %}
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <th>{% trans "Phone" %}</th>
+          <td>
+            [[::object.data.user.phone.value]]
+            <i class="fa" ng-class="::object.data.user.phone.is_verified?'fa-check text-success':'fa-question text-warning'" title="{% trans "Verification" %}"></i>
+            <i class="fa fa-lock text-success" ng-if="object.data.user.otp.device=='SMS'" title="{% trans "OTP using phone" %}"></i>
+            <div class="pull-right btn-group btn-group-sm">
+              <a class="btn btn-secondary text-info" href="skype:[[::object.data.user.phone.value]]?call" title="Skype">
+                <i class="fa fa-skype"></i>
+              </a>
+              <a class="btn btn-secondary text-info" href="sip:[[::object.data.user.phone.value]]" title="SIP">
+                <i class="fa fa-phone"></i>
+              </a>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="text-danger" ng-if="!object.data.user.otp.device">
+          <td></td>
+          <td><i class="fa fa-exclamation"></i> {% trans "No OTP assigned" %}</td>
+        </tr>
+
+        <tr class="text-success" ng-if="object.data.user.otp.device=='TOTP'">
+          <td></td>
+          <td><i class="fa fa-checkmark"></i> {% trans "OTP application" %}</td>
+        </tr>
+
+        <tr class="text-success" ng-if="::object.data.user.uses_mobile_app">
+          <td></td>
+          <td><i class="fa fa-mobile"></i> {% trans "Uses Mobile application" %}</td>
+        </tr>
+
+        <tr>
+          <th>Email</th>
+          <td>
+            [[::object.data.user.email]]
+            <div class="pull-right btn-group btn-group-sm">
+              <a class="btn btn-secondary text-info" href="https://teamwox.grandgroup.net/email/new?to=[[::object.data.user.email]]&name=[[::object.data.user.name]]" title="TeamWox">
+                TW
+              </a>
+              <a class="btn btn-secondary text-info" href="mailto:[[::object.data.user.email]]">
+                <i class="fa fa-envelope"></i>
+              </a>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th>{% trans "Address" %}</th>
+          <td>
+            [[::object.data.user.location.address]]
+            <span class="label label-default">[[::'now'|moment:'HH:mm':object.data.user.location.timezone]]</span>
+            <a class="pull-right btn btn-sm btn-secondary text-info" target="_blank" href="https://www.google.ru/maps/search/[[::object.data.user.location.address]]/" title="{% trans "Show on map" %}"><i class="fa fa-globe"></i></a>
+          </td>
+        </tr>
+
+        <tr ng-if="::object.data.user.utm">
+          <th>{% trans "UTM" %}</th>
+          <td class="small">
+            <ul class="list-unstyled">
+              <li>utm_campaign: [[::object.data.user.utm.utm_campaign]]</li>
+              <li>utm_medium: [[::object.data.user.utm.utm_medium]]</li>
+              <li>utm_source: [[::object.data.user.utm.utm_source]]</li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr>
+          <th>{% trans "Documents" %}</th>
+          <td>
+            <p class="text-center text-success" ng-if="::object.data.user.has_valid_documents">
+              <i class="fa fa-check"></i> {% blocktrans %}Identity confirmed{% endblocktrans %}
+            </p>
+            <p class="text-center text-warning" ng-if="::!object.data.user.has_valid_documents">
+              <i class="fa fa-question"></i> {% blocktrans %}Identity not confirmed{% endblocktrans %}
+            </p>
+            <ul ng-if="object.data.user.documents.length">
+              <li ng-repeat="doc in object.data.user.documents">
+                <a ng-if="doc.url" href="[[::doc.url]]" target="_blank]]">[[::doc.name]]</a>
+                <span ng-if="!doc.url">[[::doc.name]]</span>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr ng-if="object.data.user.partnership.domains.length">
+          <th>{% trans "Partner domains" %}</th>
+          <td>
+            <ul>
+              <li ng-repeat="domain in object.data.user.partnership.domains">
+                <a href="http://[[::domain]]" target="_blank">[[::domain]]</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <contact-info object="object">
+  </div>
+
+  <div class="col-md-10">
+
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" ui-sref="contact.feed({id: object.data.id})">{% trans "Feed" %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" ui-sref="contact.mt4accounts({id: object.data.id})">{% trans "Accounts" %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" ui-sref="contact.payments({id: object.data.id})">{% trans "In/Out" %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" ui-sref="contact.calls({id: object.data.id})">{% trans "Calls" %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" ui-sref="contact.logs({id: object.data.id})">{% trans "Logs" %}</a>
+      </li>
+      <li class="nav-item">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" ng-click="initNew('task')">
+            <i class="fa fa-plus"></i>
+            {% trans "Task" %}
+          </button>
+          <button type="button" class="btn btn-secondary" ng-click="initNew('note')">
+            <i class="fa fa-sticky-note-o"></i>
+          </button>
+        </div>
+      </li>
+    </ul>
+
+    <br>
+
+    <div class="">
+      <contact-task class="event" ng-if="newTask" object="newTask" on-delete="cancelNew('task')" on-save="feedRecordAdded(newTask); cancelNew('task')"></contact-task>
+      <contact-note class="event" ng-if="newNote" object="newNote" on-delete="cancelNew('note')" on-save="feedRecordAdded(newNote); cancelNew('note')"></contact-note>
+      <ui-view></ui-view>
+    </div>
+
+  </div>
+</div>

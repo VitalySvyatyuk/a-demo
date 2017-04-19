@@ -1,0 +1,22 @@
+.overlay{
+	display: none;
+
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+
+	z-index: 200;
+
+	background-color: rgba(#0c0c0c, 0.31);
+
+	cursor: pointer;
+
+	transition: opacity 0.3s ease;
+
+	//&.state-visible{
+	//	opacity: 1;
+	//	height: 100%;
+	//}
+}

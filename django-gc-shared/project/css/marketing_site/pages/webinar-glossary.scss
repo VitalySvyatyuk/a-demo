@@ -1,0 +1,80 @@
+.education-glossary{
+  margin-top: 92px;
+  margin-bottom: 55px;
+  .education-glossary-letter{
+    position: relative;
+    padding-bottom: 43px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 44px;
+    ul{
+      margin: 0;
+      padding-left: 102px;
+      li{
+        display: inline-block;
+        vertical-align: top;
+        width: 33%;
+        margin-bottom: 31px;
+        a.link{
+          color: #1f5060;
+          border-bottom: 1px solid #1f5060;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .education-glossary-letter:first-child{
+    margin-top: 0;
+  }
+  .education-glossary-letter:last-child{
+    border-bottom: none;
+  }
+  .education-glossary-letter:after{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #797979;
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  .education-glossary-letter.letter-one:after{
+    content:"а";
+  }
+  .education-glossary-letter.letter-two:after{
+    content:"б";
+  }
+  .education-glossary-letter.letter-three:after{
+    content:"в";
+  }
+  .education-glossary-letter.letter-four:after{
+    content:"г";
+  }
+}
+
+@media(max-width: 767px){
+  .education-glossary{
+    .education-glossary-letter{
+      ul{
+        padding-left: 40px;
+        li{
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 1199px){
+  .education-glossary{
+    .education-glossary-letter{
+      ul{
+        padding-left: 40px;
+        li{
+          width: 32%;
+        }
+      }
+    }
+  }
+}

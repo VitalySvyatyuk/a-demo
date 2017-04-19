@@ -1,0 +1,130 @@
+{% extends 'site_base.html' %}
+
+{% block doctype %}<!DOCTYPE html>{% endblock %}
+
+{% load i18n app_tags shared_tags admin_list coffeescript %}
+
+{% block title %}Reception Call Form{% endblock %}
+{% block css %}{{block.super}}
+    <link rel="stylesheet" href="/static/css/style.css?v7" />
+
+    <link rel="stylesheet" href="{% MEDIA_URL 'css/gcapital-ui/jquery-ui-1.8.9.custom.css' %}" />
+    <style>
+        #reception_call_form {
+        background-color: #ffffff;
+        padding: 2em;
+        }
+
+        #reception_call_form label{
+        width: 100px;
+        float: left;
+        }
+
+        #personal_manager {
+        margin-left: 2em;
+        }
+
+        div#operation-status {
+            border-radius: 5px 5px 0 0;
+            background-color: #aaec92;
+            padding: 3px;
+            text-align: left;
+        }
+
+        div.crm-main {
+            width: 1000px;
+        }
+    </style>
+{% endblock %}
+{% block extrahead %}{{ block.super }}
+    <script type="text/javascript" src="{% MEDIA_URL 'js/jquery-1.8.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% MEDIA_URL 'js/jquery-ui-1.8.23.custom.min.js' %}"></script>
+    <script type="text/javascript" src="{% MEDIA_URL 'js/jquery.tooltip.min.js' %}"></script>
+    <script type="text/javascript" src="{% MEDIA_URL 'js/jquery.dd.js' %}"></script>
+    <script type="text/javascript" src="{% MEDIA_URL 'js/facebox/facebox.js' %}"></script>
+    <script type="text/javascript" src="{% MEDIA_URL 'js/datepicker.js?v6' %}"></script>
+    <script type="text/javascript" src="{% MEDIA_URL 'js/jquery.ui.datepicker-ru.js' %}"></script>
+    <script type="text/javascript" src="{% MEDIA_URL 'js/jquery.lightbox-0.5.min.js' %}"></script>
+    <script type="text/javascript" src="{% MEDIA_URL "js/knockout-2.1.0.js" %}"></script>
+    <script type="text/javascript" src="{% coffeescript 'coffee/sources/reception_call.coffee' %}"></script>
+
+{% endblock %}
+{% block main %}
+<div class="crm-main">
+    <div id="operation-status">
+        <p class="error" data-bind="visible: show_account_error() && !(education())">Неверный номер счёта!</p>
+        {# if switch_to == personal_manager show information about personal manager #}
+        <div id="personal_manager" data-bind="visible: show_manager_info() && !hide_manager_info()">
+            Персональный менеджер:
+            <div id="pm_name" data-bind="text: 'Имя: '+pm_name()"></div>
+            <div id="pm_internal_phone" data-bind="text: 'Внутренний телефон: '+pm_internal_phone()"></div>
+        </div>
+        {% if form.errors %}
+        <p>Ошибка заполнения формы</p>
+        {% endif %}
+    </div>
+    <form method="post" id="reception_call_form">
+        {% csrf_token %}
+        <p>{{ form.switch_to }}</p>
+
+        {# show only certain fields for selected department #}
+        <p><label for="fio">ФИО: </label>{{ form.name }}</p>
+        <div data-bind="visible: show_account">
+            <label for="account">Номер счёта: </label>
+            {{ form.account }}
+            <input type="button" value="Получить данные менеджера" id="get_manager_info" data-bind="enable: can_get_manager">
+        </div>
+        <p data-bind="visible: !education()"><label for="company">Компания: </label>{{ form.company }}</p>
+        <p data-bind="visible: education"><label for="phone">Телефон: </label>{{ form.phone }}</p>
+        <p data-bind="visible: education"><label for="applied">Записался: </label>{{ form.applied }}</p>
+        <p data-bind="visible: education"><label for="lesson_date">На какое число записался: </label>{{ form.lesson_date }}</p>
+        <p data-bind="visible: education"><label for="experienced">С опытом: </label>{{ form.experienced }}</p>
+        <p data-bind="visible: show_description"><label for="description">Описание: </label>{{ form.description }}</p>
+
+        {# if caller has no personal manager - auto assign manager and keep notice here #}
+        {{ form.manager_assigned }}
+        <p><input type="submit" value="Сохранить" data-bind="enable: can_submit"></p>
+    </form>
+
+
+</div>
+<script type="text/javascript">
+    {% inlinecoffeescript %}
+        $ ->
+            get_cookie = (name) ->
+                if document.cookie?
+                    cookies = document.cookie.split(';')
+                    for i in cookies
+                        cookie = jQuery.trim(i)
+                        if cookie.substring(0, name.length+1) == "#{name}="
+                            cookie_value = decodeURIComponent(cookie.substring(name.length+1))
+                            break
+                return cookie_value
+
+            get_pm_info = (reception_call) ->
+                $.ajax({
+                    type: 'POST',
+
+                    url: "{% url "crm_load_manager_data_ajax" %}",
+                    data: {
+                        csrfmiddlewaretoken: get_cookie('csrftoken'),
+                        account: $("input[name='account']").val()
+                    },
+                    success: (data, textStatus, jqXHR) ->
+                        reception_call.set_pm_data(data["manager_name"], data["internal_phone"], data["manager_assigned"], data["show_account_error"])
+                })
+                return false
+
+            viewPort = new ReceptionCall()
+            ko.applyBindings(viewPort)
+            $("#get_manager_info").click(
+                    () ->
+                        get_pm_info(viewPort)
+                        return false
+                )
+            return false
+
+    {% endinlinecoffeescript %}
+    </script>
+{% endblock %}
+{% block external_analytics %}{% endblock %}

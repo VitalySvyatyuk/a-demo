@@ -1,0 +1,23 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+<h2 class="modal-title offset-bottom-30">
+    {% trans "Change options style" %}
+    <span>{% trans "Account" %} [[account.mt4_id]]</span>
+</h2>
+
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+
+<form ng-submit="changeStyle()">
+    <div class="reveal-form">
+        <div class="radio-wrapper" ng-repeat="r in formData.style.choices">
+            <input type="radio"
+              id="change-options-[[$index]]"
+              ng-disabled="isLoading"
+              ng-model="form.options_style" ng-value="r.value">
+            <label for="change-options-[[$index]]">[[r.display_name]]</label>
+        </div>
+        <p class="form-error" ng-repeat="err in errors.style" ng-bind="err"></p>
+    </div>
+    <div class="text-center offset-top-30">
+        <button class="medium third-black to-white" ng-disabled="isLoading">{% trans "Change style" %}</button>
+    </div>
+</form>

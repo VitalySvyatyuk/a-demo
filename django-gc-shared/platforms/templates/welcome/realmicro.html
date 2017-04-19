@@ -1,0 +1,20 @@
+{% extends "mt4//base.html" %}
+
+{% load i18n %}
+
+{% block title %}{{ block.super }} — {% trans "Account created" %}!{% endblock %}
+
+{% block extra %}
+    <p>
+        {% blocktrans with link="http://grandcapital.ru/actions/micro_trade/?utm_source=welcomepage&utm_medium=welcomepage&utm_campaign=microtradewelcomepage" %}
+            Now you can take part in&nbsp;<a href="{{ link }}">"Micro Trade"</a>&nbsp;
+            contest and get additional profit
+        {% endblocktrans %}
+    </p>
+    {% if LANGUAGE_CODE == "ru" %}
+        <p>
+            Также вы можете получить <a href="{% url "bonus_list" %}">бездепозитный бонус 10$</a>,
+            если подтвердите свою личность.
+        </p>
+    {% endif %}
+{% endblock %}

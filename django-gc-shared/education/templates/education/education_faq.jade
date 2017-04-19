@@ -1,0 +1,23 @@
+extends education/education_base
+
+- load i18n
+
+block tabs
+  - var tab_category = 'faq'
+  | {{ block.super }}
+
+block title
+  - trans "About FOREX"
+  |  {{ block.super }}
+
+block tabs_content
+    - regroup questions by categories.first.name as questions_list
+    div.benefits__info.js-tab-content.state-visible
+      .education-terms
+        for question_group in questions_list
+            .education-terms-questions
+              .question= question_group.grouper
+              ul
+                for question in question_group.list
+                    li
+                      a.link(href="{% url 'term_details' question.pk %}")= question.question

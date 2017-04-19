@@ -1,0 +1,34 @@
+{#<object wmode="transparent" id="flash_fallback_1" class="vjs-flash-fallback" width="{{ width }}" height="{{ height }}" type="application/x-shockwave-flash"#}
+{#    data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">#}
+{#    <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />#}
+{#    <param name="allowfullscreen" value="true" />#}
+{#    <param name="wmode" value="transparent" />#}
+{##}
+{#    <param name="flashvars" value='config={"playlist":["{{ domain }}/{{ STATIC_URL }}{{ img_src }}",#}
+{#       { "url": "{{ domain }}{{ src }}","autoPlay":false,"autoBuffering":false}]}' />#}
+{#    <!-- Image Fallback. Typically the same as the poster image. -->#}
+{#    <img src="{{ domain }}/{{ STATIC_URL }}{{ img_src }}" width="{{ width }}" height="{{ height }}" alt="Poster Image"#}
+{#      title="{{ lesson }}" />#}
+{#</object>#}
+
+<div id="vid{{ id }}"></div>
+
+<script type="text/javascript">
+    var player = $f("vid{{ id }}", "https://releases.flowplayer.org/swf/flowplayer-3.2.6.swf", {
+        playlist:['{{ STATIC_URL }}{{ img_src }}',
+                    {
+                        url: '{{ domain }}{{ src }}',
+                        autoPlay:false,
+                        autoBuffering:false,
+                            onStart: function() {
+                                $.ajax({
+                                        url:'{% url "video_view_count" %}',
+                                        data:{url:'{{ src }}'}
+                                })
+                            }
+                    }
+        ]
+    });
+    $('#vid{{ id }}').height({{ height }});
+    $('#vid{{ id }}').width({{ width }});
+</script>

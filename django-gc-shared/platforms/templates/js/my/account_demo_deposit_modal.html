@@ -1,0 +1,37 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+<h2 class="modal-title offset-bottom-30">
+    {% trans "Deposit to demo account" %}
+    <span>{% trans "Account" %} [[account.mt4_id]]</span>
+</h2>
+
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+
+<form ng-submit="ok()">
+    <div class="reveal-form">
+        <div class="form-item row">
+            <div class="small-5 large-5 column">
+                <label ng-class="{required: formData.value.required}" ng-bind="formData.value.label|capitalize"></label>
+            </div>
+            <div class="small-7 large-7 column">
+                <input
+                    name="amount"
+                    ng-model="form.amount"
+                    ng-disabled="isLoading"
+                    min="0"
+                    type="number"/>
+                [[account.currency.slug]]
+                <div
+                    ng-if="errors.value"
+                    ng-repeat="err in errors.value"
+                    ng-bind="err"
+                    class="error">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center offset-top-30">
+        <button class="medium third-black to-white" ng-disabled="isLoading">{% trans "Deposit" %}</button>
+    </div>
+
+</form>

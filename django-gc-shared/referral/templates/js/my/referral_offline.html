@@ -1,0 +1,25 @@
+{% load i18n staticfiles app_tags %}
+<a class="with-icon folder" easy-slide-block default="true">{% trans "Offline materials" %}</a>
+<div class="partner-offline content" content-block>
+  <p class="row offset-bottom-30">
+    {% blocktrans %}
+        We provide our partners with high quality branded products. These products will help you to attract new clients and enable brand awareness.
+    {% endblocktrans %}
+  </p>
+  <div class="row">
+    <a class="small-5 medium-6 large-5 column" href="{% static "GC_guide2014.pdf" %}">
+      <span class="small-2 medium-2 large-2 column file-icon pdf"></span>
+      <span class="left small-10 medium-10 large-10 column">
+        <span>{% trans "Guidebook" %}</span><br>
+        {% trans "Corporate style in printed products usage recommendations" %}
+      </span>
+    </a>
+    <a class="left small-5 medium-6 large-5 column" href="{% static "poligraphy_vector.zip" %}">
+      <span class="small-2 medium-2 large-2 column file-icon zip"></span>
+      <span class="left small-10 medium-10 large-10 column">
+        <span>Adobe Illustrator</span><br>
+        {% trans "Guidebook's materials in vector format" %}
+      </span>
+    </a>
+  </div>
+</div>

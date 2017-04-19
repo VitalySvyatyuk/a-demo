@@ -1,0 +1,415 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+<h2 class="modal-title">{% trans "History for account" %} [[account.mt4_id]]</h2>
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+<div id="throbber" class="hide text-center offset-top-30">
+</div>
+
+<ul class="offset-bottom-20 archive-filters">
+    <li class="active"><a href="#">{% trans "Сегодня" %}</a></li>
+    <li><a href="#">{% trans "Вчера" %}</a></li>
+    <li><a href="#">{% trans "Текущая неделя" %}</a></li>
+    <li><a href="#">{% trans "Текущий месяц" %}</a></li>
+    <li><a href="#">{% trans "Прошлый месяц" %}</a></li>
+    <li>{% trans "Указать интервал" %}</li>
+</ul>
+<div class="offset-bottom-20 archive-interval">
+    с
+    <div class="select-wrapper interval-day">
+        <select name="" id="">
+            <option value="">13</option>
+            <option value="">14</option>
+            <option value="">15</option>
+        </select>
+    </div>
+    <div class="select-wrapper interval-month">
+        <select name="" id="">
+            <option value="">июнь</option>
+            <option value="">июль</option>
+            <option value="">август</option>
+        </select>
+    </div>
+    <div class="select-wrapper interval-year">
+        <select name="" id="">
+            <option value="">2012</option>
+            <option value="">2013</option>
+            <option value="">2014</option>
+        </select>
+    </div>
+    по
+    <div class="select-wrapper interval-day">
+        <select name="" id="">
+            <option value="">13</option>
+            <option value="">14</option>
+            <option value="">15</option>
+        </select>
+    </div>
+    <div class="select-wrapper interval-month">
+        <select name="" id="">
+            <option value="">december</option>
+            <option value="">июль</option>
+            <option value="">август</option>
+        </select>
+    </div>
+    <div class="select-wrapper interval-year">
+        <select name="" id="">
+            <option value="">2012</option>
+            <option value="">2013</option>
+            <option value="">2014</option>
+        </select>
+    </div>
+    <button class="button third-black medium">{% trans "Показать" %}</button>
+</div>
+<div class="scroller-wrapper" baron>
+    <table class="table-vscroll-body">
+        <thead>
+            <tr>
+                <td>Дата</td>
+                <td>Остаток</td>
+                <td>Динамика</td>
+                <td>Источник</td>
+            </tr>
+        </thead>
+        <tbody id="finance-scroll" class="vscroller">
+            <tr class="third-vscroller-track right-track">
+                <td class="third-vscroller-bar">
+                </td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>на торгах</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за победу на дуэли</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>на торгах</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за победу на дуэли</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>на торгах</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за вычет комиссии</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за победу на дуэли</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>на торгах</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>за победу на дуэли</td>
+            </tr>
+            <tr>
+                <td>18 ноября 2014</td>
+                <td>413 р.</td>
+                <td>+ 413</td>
+                <td>на торгах</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

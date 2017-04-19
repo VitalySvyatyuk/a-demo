@@ -1,0 +1,32 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block content
+  .page_head(style="background-image: url({% static 'img/marketing-site/bg/bg-education-webinar.jpg' %})")
+    .container
+      .row
+        .col-xs-12.white-bc
+          - breadcrumbs
+      .row
+        .col-md-12.strategies_pageblock__info
+          h2.page_head__title.page_head__title--white
+            - trans "Educational Center" context "educational page"
+          .benefits
+            block tabs
+              .tabs__box.benefits__tabs_box.education-full__tabs
+                a.benefits__tabs_box__button.tabs__button(href="{% url 'education_faq' %}")(class=('state-active-tab' if tab_category == 'faq' else ''))
+                  .tabs__button__text_box
+                    span.tabs__button__text
+                      - trans "About FOREX"
+                a.benefits__tabs_box__button.tabs__button(href="{% url 'education_glossary' %}")(class=('state-active-tab' if tab_category == 'glossary' else ''))
+                  .tabs__button__text_box
+                    span.tabs__button__text
+                      - trans "Glossary"
+                a.benefits__tabs_box__button.tabs__button(href="{% url 'education_webinars' %}")(class=('state-active-tab' if tab_category == 'webinars' else ''))
+                  .tabs__button__text_box
+                    span.tabs__button__text
+                      - trans "Webinars"
+
+  .container
+    block tabs_content

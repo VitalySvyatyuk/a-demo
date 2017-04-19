@@ -1,0 +1,34 @@
+{% extends "reports/base_report.html" %}
+
+{% block report_title %}Статистика по группам{% endblock %}
+
+{% block report_table %}
+    {% with report.data as data %}
+        Всего новых пользователей: {{ data.user_count }}
+
+        <table class="gctable report">
+           <thead>
+               <tr>
+                   <th></th>
+                   {% for group in data.groups %}
+                   <th>{{ group }}</th>
+                   {% endfor %}
+               </tr>
+           </thead>
+           <tbody>
+               <tr>
+                   <td>Открыто счетов</td>
+                   {% for count in data.groups_count %}
+                   <td>{{ count }}</td>
+                   {% endfor %}
+               </tr>
+               <tr>
+                   <td>Сумма пополнений, $</td>
+                   {% for total in data.groups_deposit %}
+                   <td>{{ total }}</td>
+                   {% endfor %}
+               </tr>
+           </tbody>
+        </table>
+    {% endwith %}
+{% endblock %}

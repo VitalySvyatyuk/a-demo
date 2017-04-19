@@ -1,0 +1,60 @@
+{% extends "private_office/base.html" %}
+
+{% load staticfiles i18n shared_tags app_tags %}
+
+{% block title %}
+    {{ block.super }} — {% blocktrans with account_type.name as account_type_name %}Create {{ account_type_name }}
+    account{% endblocktrans %}
+{% endblock %}
+
+{% block css %}
+  {% if mobile %}
+    <link rel="stylesheet" href="{% static 'css/mobile_office.min.css' %}">
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% block inner_content %}{% endblock %}
+    {% block forms %}
+        {% if too_many_accounts %}
+            <h1 class="green">{% trans "Account details" %}</h1>
+                <div class="container">
+            {% blocktrans count acc_type.max_per_user as max_number %}
+                You can't have more than one {{ acc_type }} account and
+            {% plural %}
+                You can't have more than {{ max_number }} {{ acc_type  }} accounts and
+            {% endblocktrans %}
+            {% blocktrans count num_of_accounts as current_number %}
+                you already have an account of this type
+            {% plural %}
+                you already have {{ current_number }} accounts of this type
+            {% endblocktrans %}
+                </div>
+        {% else %}
+            <form method="POST" enctype="multipart/form-data">
+                {% with forms.account as form %}
+                <h1 class="green">{% if form.form_label %}{{ form.form_label }}{% else %}{% trans "Account details" %}{% endif %}</h1>
+
+                <div class="container">
+                  <div class="mobile-third-light-wrapper">
+                      {% if form.global_help %}<div>{{ form.global_help }}</div>{% endif %}
+                          {% include "_form.html" %}
+                      <div class="form-item">
+                          <div class="description">{% trans "mt4.sucurity.obligation" %}</div>
+                      </div>
+                    {% csrf_token %}
+                    {% gcbutton "submit" _("Create account") "medium" 'name="submit"' %}
+                  </div>
+                </div>
+                {% endwith %}
+
+            </form>
+        {% endif %}
+    {% endblock %}
+{% endblock %}
+
+{% block extrahead %}{{ block.super }}
+    {{ forms.account.media }}
+{% endblock %}

@@ -1,0 +1,54 @@
+extends education/education_base
+
+- load i18n calendar_tags app_tags tz
+
+block title
+  - trans "Webinars"
+  |  {{ block.super }}
+
+block tabs
+  - var tab_category = 'webinars'
+  | {{ block.super }}
+
+block tabs_content
+  .benefits__info.state-visible
+      .education-webinar
+        .row
+          .col-md-12
+            .pagination
+              a.pagination__button.pagination__arrow_button.pagination__arrow_button--left.link(href="?{% mixquery year=calendar.previous_month.year month=calendar.previous_month.month %}")
+                - get_month_name calendar.previous_month.month
+              a.pagination__number_button.link
+                span.pagination__button
+                  - get_month_name calendar.month
+              a.pagination__button.pagination__arrow_button.pagination__arrow_button--right.link(href="?{% mixquery year=calendar.next_month.year month=calendar.next_month.month %}")
+                - get_month_name calendar.next_month.month
+            .education-webinar-schedule
+              table
+                thead
+                  tr
+                    for week_day in calendar.week_days
+                      if week_day < 5
+                        th
+                          - get_day_name week_day
+                tbody
+                  for week in calendar.weeks
+                    tr
+                      for day in week
+                        if day.1 < 5 
+                          - get_day_events day.0 as day_events
+                          td
+                            if day.0
+                              p.subtitle.subtitle--red= day.2|date:"j E"
+                            for event in day_events
+                              .link-wrap
+                                a.link(href="{% url 'webinar_details' event.slug %}")= event.webinar.name
+                              p.time(class=('to-hide' if event.in_future else ''))
+                                if tz
+                                  | {{ event.starts_at|timezone:tz|date:"H:i" }}
+                                else
+                                  | {{ event.starts_at|date:"H:i" }}
+                              if event.in_future
+                                a.button.button--outline(href="{% url 'webinar_registration' event.slug %}")
+                                  span.button__text
+                                    - trans "Register"

@@ -1,0 +1,47 @@
+{% extends "design_2014/private_office/base.html" %}
+{% load app_tags i18n staticfiles %}
+{% block css %}
+    {{ block.super }}
+    <style type="text/css">
+        img.certificate {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 class="{{ css_classes.color }}">{% trans "Get partner's certificate" %}</h1>
+    <div class="container">
+        <p>
+            {% blocktrans %}
+                Get a Partner's Certificate, proving that you are an official Grand Capital Partner.
+                We'll be happy to send you the certificate as soon as you upload to your Private Office
+                these documents:
+            {% endblocktrans %}
+        </p>
+        <ol>
+            <li>{% trans "A scan or photo of your ID" %}</li>
+            <li>
+                {% with "real_ib_partner"|agreement_url as link %}
+                {% blocktrans %}
+                    <a href="{{ link }}">Additional Partner's Agreement</a> signed by you
+                {% endblocktrans %}
+                {% endwith %}
+            </li>
+        </ol>
+        <p>
+            {% url "profiles_upload_document" as upload_url %}
+            {% blocktrans %}
+                You can upload the documents <a href="{{ upload_url }}">here</a>
+            {% endblocktrans %}
+        </p>
+
+        <form action="{% url "referral_partner_certificate" %}" method="POST">
+            {% include 'includes/form.html' %}
+            {% gcbutton "submit" _("Get printed certificate") "black" %}
+
+        </form>
+    </div>
+{% endblock %}
+

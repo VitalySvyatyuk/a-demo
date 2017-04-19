@@ -1,0 +1,15 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags %}
+
+{% block title %}{{ block.super }} — {% trans "Choose new options style" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Choose new options style" %}</h1>
+    <div class="container">
+        <form method="POST">
+            {% include "includes/form.html" %}
+            {% gcbutton "submit" _("Change options style") "black" %}
+        </form>
+    </div>
+{% endblock %}

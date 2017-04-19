@@ -1,0 +1,22 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags staticfiles %}
+
+{% block title %}{{ block.super }} — {% trans "OTP check" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "OTP check" %}</h1>
+    <div class="container">
+        {% if session_expired %}
+            {% trans "Your session has been expired. Please, refresh the page and try again" %}
+        {% else %}
+            <script type="text/javascript">
+                TARGET = "main";
+            </script>
+            <form method="POST" id="otp_form">
+                {% include "otp/includes/otp_form.html" %}
+                {% csrf_token %}
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{#% extends "site_base.html" %#}
+
+{% load i18n app_tags %}
+
+{% block content %}
+  <h1 class="green">{% trans "Create issue" %}</h1>
+  <div class="container">
+    <form action="{% url "issuetracker_issue_create" %} " method="POST" enctype="multipart/form-data">
+      {% include "includes/form.html" %}
+      {% gcbutton "submit" _("Create") "black" 'name="submit"' %}
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "private_office/base.html" %}
+
+{% load i18n app_tags %}
+
+{% block title %}{{ block.super }} — {% trans "Sign in" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Sign in" %}</h1>
+    <div class="container">
+        {% url "auth_logout" as logout_url %}
+        {% url "registration_register" as register_url %}
+
+        <div class="offset-bottom-30">
+            {% if user.is_authenticated %}
+                {% blocktrans %}
+                    You're already signed in as <strong>{{ user }}</strong>,
+                    <a href="{{ logout_url }}" title="logout">logout</a>?
+                {% endblocktrans %}
+            {% elif not first_login %}
+                {% blocktrans %}
+                    Please login to open an account or
+                    <a href="{{ register_url }}?next={{ next }}">register</a> in 30 seconds!
+                {% endblocktrans %}
+            {% endif %}
+        </div>
+        <form method="POST" id="login-form">
+            <input type="hidden" name="next" value="{{ next }}"/>
+                {% include "includes/form.html" %}
+            {% for name, value in extra_fields.iteritems %}
+                <input type="hidden" name="{{ name }}" value="{{ value }}" />
+            {% endfor %}
+
+            {% gcbutton "submit" _("Sign in") "first medium" %}
+
+            {% url "password_reset" as password_reset_url %}
+
+            <span>
+            {% blocktrans %}
+                or maybe you've <a href="{{ password_reset_url }}" title="reset password">forgotten</a> your password?
+            {% endblocktrans %}
+            </span>
+        </form>
+    </div>
+{% endblock %}
+
+{% block js %}{{ block.super }}
+    <script>
+        $(function () {
+            $("input:first").focus();
+        })
+    </script>
+{% endblock %}}

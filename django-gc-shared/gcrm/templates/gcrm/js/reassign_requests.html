@@ -1,0 +1,100 @@
+{% load i18n %}
+
+<div class="row">
+  <div class="input-group col-sm-5">
+    <form ng-submit="filter()">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="{% trans "Search" %}" ng-model="filters.search">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button" ng-click="filter()"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-16">
+    <table class="table table-bordered table-hover table-sm">
+      <thead class="thead-default">
+        <tr>
+          <th class="text-sm-center column-fixed" sorter="creation_ts" objects="objects">{% trans "Creation time" %}</th>
+          <th class="text-sm-center column-fixed" sorter="author" objects="objects">{% trans "Author" %}</th>
+          <th class="text-sm-center column-fixed" sorter="contact" objects="objects">{% trans "Contact" %}</th>
+          <th class="text-sm-center column-fixed" sorter="previous_manager" objects="objects">{% trans "From whom" %}</th>
+          <th class="text-sm-center column-fixed" sorter="new_manager" objects="objects">{% trans "To whom" %}</th>
+          <th class="text-sm-center" sorter="comment" objects="objects">{% trans "Author's comment" %}</th>
+          <th class="text-sm-center" sorter="result" objects="objects">{% trans "Result" %}</th>
+        </tr>
+        <tr>
+          <th>
+            <daterangepicker
+              classes="'form-control-sm'"
+              start="filters.creation_ts_0"
+              end="filters.creation_ts_1"
+              on-change="filter()">
+            </daterangepicker>
+          </th>
+          <th><user-select-filter
+              model="filters.author"
+              on-change="filter()"
+              hide-null-manager="true">
+            </user-select-filter>
+          </th>
+          <th></th>
+          <th><user-select-filter
+              model="filters.previous_manager"
+              on-change="filter()"
+              hide-null-manager="true">
+            </user-select-filter>
+          </th>
+          <th><user-select-filter
+              model="filters.new_manager"
+              on-change="filter()"
+              hide-null-manager="true">
+            </user-select-filter>
+          </th>
+          <th colspan="2">
+            <select  class="form-control form-control-sm" ng-model="filters.result" ng-change="filter()">
+              <option value="all" selected>{% trans "All" %}</option>
+              <option value="null">{% trans "New" %}</option>
+              <option value="true">{% trans "Accepted" %}</option>
+              <option value="false">{% trans "Rejected" %}</option>
+            </select>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in objects.items"
+            ng-class="item.data.result ? 'table-success' : (item.data.result===false ? 'table-danger' : '') ">
+          <td class="text-sm-center" title="[[::item.data.creation_ts|moment:'LLL']]">
+            [[::item.data.creation_ts|moment:'calendar']]
+          </td>
+          <td class="text-sm-center">[[::Users.mapping[item.data.author].data.name.short]]</td>
+          <td class="text-sm-center">
+            <a ui-sref="contact.feed({id: item.data.contact.id})">
+              [[::item.data.contact.name]]
+            </a>
+          </td>
+          <td class="text-sm-center">[[::Users.mapping[item.data.previous_manager].data.name.short]]</td>
+          <td class="text-sm-center">[[::Users.mapping[item.data.new_manager].data.name.short]]</td>
+          <td class="text-sm-center" colspan="2" ng-switch="item.data.result">
+            [[::item.data.comment]]<br>
+            <span ng-switch-when="null" ng-switch="::item.data.editable">
+              <span ng-switch-when="true">
+                <a ng-click="accept(item)" class="btn btn-sm btn-success-outline">{% trans "Accept" %}</a>
+                <a ng-click="reject(item)" class="btn btn-sm btn-danger-outline">{% trans "Reject" %}</a>
+              </span>
+              <span ng-switch-when="false"><i>{% trans "Waiting review" %}</i></span>
+            </span>
+            <span ng-switch-default><i>
+            [[::item.data.close_comment||'-']]
+            <strong>[[::Users.mapping[item.data.closed_by].data.name.short]]</strong></i>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <tablefooter objects="objects" class="buttons"></tablefooter>
+  </div>
+</div>

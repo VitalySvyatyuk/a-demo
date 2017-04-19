@@ -1,0 +1,22 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags profiles_tags %}
+
+{% block css %}{{ block.super }}
+  <style>
+    .label { float: left; }
+    .status { float: left; margin-left: .5em; }
+  </style>
+{% endblock %}
+
+{% block title %}{{ block.super }} - {% trans "My profile" %}{% endblock %}
+
+{% block content %}
+  <h1>{% trans "Edit your subscription" %}</h1>
+  <div class="container">
+    <form method="POST" action="{{ request.path }}" enctype="multipart/form-data">
+        {% include 'includes/form.html' %}
+        {% gcbutton "submit" _("Save") "black" 'name="submit"'%}
+    </form>
+  </div>
+{% endblock %}

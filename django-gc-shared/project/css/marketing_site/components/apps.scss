@@ -1,0 +1,150 @@
+.apps{
+}
+.apps__item{
+	padding: 80px 0 90px;
+	
+	&:nth-child(even){
+		background-color: $milk;
+	}
+
+	@media (#{$max_ipad}){
+		padding-top: 60px;
+		padding-bottom: 70px;
+	}
+	@media (#{$max_phones}){
+		padding-top: 30px;
+	}
+}
+.apps__item__col{
+	&--left{
+		float: left;
+	}
+	&--right{
+		float: right;
+	}
+}
+.apps__title{
+	margin-bottom: 34px;
+	margin-top: 0;
+}
+.apps__links_box{
+	margin-top: 40px;
+
+	@media (#{$max_laptop}){
+		text-align: center;
+	}
+}
+.apps__link{
+	display: inline-block;
+
+	margin-right: 34px;
+	vertical-align: middle;
+
+	&:last-child{
+		margin-right: 0;
+	}
+
+	@media (#{$max_laptop}){
+		margin-bottom: 20px;
+	}
+}
+.apps__slider_item_box{
+	text-align: center;
+}
+.apps__slider_item_pic{
+	display: inline-block;
+
+	margin: 70px auto auto;
+
+	max-width: 400px;
+	width: 100%;
+
+	@media (#{$max_phones}){
+		margin-top: 30px;
+	}
+
+	&--small{
+		max-width: 167px;
+	}
+	&--big{
+		max-width: 499px;
+	}
+	.apps__slider_box--windows &{
+		margin-top: 70px;
+
+		@media (#{$max_phones}){
+			margin-top: 30px;
+		}
+	}
+	.apps__slider_box--android &{
+		@media (#{$max_tablets}){
+			margin-top: 100px;
+		}
+		@media (#{$max_phones}){
+			width: 50%;
+
+			margin-top: 40px;
+		}
+	}
+
+}
+.apps__slider_box{
+	padding: 0 $_slider_arrow_width;
+}
+.apps__slider{
+	text-align: center;
+}
+.apps__slider_arrow_box{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+	margin: auto;
+
+	width: 100%;
+	height: $_slider_arrow_width;
+
+	.apps__slider_box--windows &{
+		top: 70px;
+	}
+	.apps__slider_box--android &{
+		@media (#{$max_tablets}){
+			top: 100px;
+		}
+	}
+
+	@media (#{$max_ipad}){
+		display: none;
+	}
+}
+.apps__slider_arrow{
+	height: 100%;
+
+	&--left{
+		left: 0;
+	}
+	&--right{
+		right: 0;
+	}
+}
+.apps__dots{
+	@extend .slider__dots_box;
+
+	left: 50%;
+	bottom: -30px;
+	transform: translateX(-50%);
+
+	li{
+		height: 11px;
+		width: 11px;
+	}
+
+	button{
+		border: 1px solid #8d8d8d;
+	}
+}
+.apps__dots .slick-active button{
+	border-color: transparent;
+}

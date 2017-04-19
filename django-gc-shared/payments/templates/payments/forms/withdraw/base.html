@@ -1,0 +1,25 @@
+{% load i18n %}
+<div class="{% if withdraw_form.payment_system != "webmoney" %}small-3 medium-3 large-3{% else %}small-4 medium-4 large-4{% endif %} columns">
+    {% with field=withdraw_form.account %}
+        {% include "payments/includes/field.html" %}
+    {% endwith %}
+</div>
+
+{% block ps %}{% endblock ps %}
+
+<div class="small-3 medium-3 large-3 columns">
+    {% with field=withdraw_form.amount %}
+        {% include "payments/includes/field.html" %}
+    {% endwith %}
+</div>
+{% if withdraw_form.payment_system != "webmoney" %}
+    <div class="small-2 medium-2 large-2 columns">
+        {% with field=withdraw_form.currency %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+{% endif %}
+
+<input type="submit" class="button medium" value="{% trans 'Continue' context 'button' %}"/>
+
+{% csrf_token %}

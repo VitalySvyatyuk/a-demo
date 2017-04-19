@@ -1,0 +1,1203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-16 17:47+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Category name"
+msgstr "Category name"
+
+msgid "List of quotes"
+msgstr "List of quotes"
+
+msgid "Example: EURUSD, GBPUSD, AUDCAD"
+msgstr "Example: EURUSD, GBPUSD, AUDCAD"
+
+msgid "buy"
+msgstr "Buy"
+
+msgid "sell"
+msgstr "Sell"
+
+msgid "buy limit"
+msgstr "Buy Limit"
+
+msgid "sell limit"
+msgstr "Sell Limit"
+
+msgid "buy stop"
+msgstr "Buy Stop"
+
+msgid "sell stop"
+msgstr "Sell Stop"
+
+msgid "withdraw/deposit"
+msgstr "withdraw/deposit"
+
+msgid "credit"
+msgstr "credit"
+
+msgid "Market execution"
+msgstr "Market execution"
+
+msgid "Instant execution"
+msgstr "Instant execution"
+
+msgid "American-style options"
+msgstr "American-style Options"
+
+msgid "European-style options"
+msgstr "European-style Options"
+
+msgid "Leverage"
+msgstr "Leverage"
+
+msgid "Initial deposit"
+msgstr "Initial deposit"
+
+msgid "Available to demo accounts only."
+msgstr "Available to demo accounts only."
+
+msgid "Execution system"
+msgstr "Execution system"
+
+msgid "Currency"
+msgstr "Currency"
+
+msgid "Binary options style"
+msgstr "Binary Options style"
+
+msgid ""
+"American-style options can be closed before expiration date, but have much "
+"lower reward rate than European-style options"
+msgstr ""
+"American-style Options can be closed before expiration date, but have much lower reward rate than European-style Options"
+
+msgid ""
+"The following leverage settings are available for the current balance of "
+"your account:"
+msgstr ""
+"The following leverage settings are available for the current balance of your account:"
+
+msgid "Leverage for this acccount should be less than or equal to 1:100"
+msgstr "Leverage for this account should be less or equal to 1:100"
+
+#, python-format
+msgid ""
+"Warning! Account %d is close to the margin call! We recommend you to top up "
+"the account to prevent your trades from being forcibly closed. Grand Capital"
+msgstr ""
+"Warning! The account %d is close to the margin call! We recommend you to top up the account to prevent your trades from being forcibly closed. Grand Capital"
+
+msgid "Account id"
+msgstr "Account ID"
+
+msgid "Account id in previos version of private office"
+msgstr "Account ID in previous version of the Private Office"
+
+msgid "Account type"
+msgstr "Account type"
+
+msgid "Creation timestamp"
+msgstr "Creation timestamp"
+
+msgid "Your account doesn't take part in the promotion"
+msgstr "Your account does not take part in the promotion"
+
+#, python-format
+msgid ""
+"Accounts with leverage higher than 1:100 do not take part in the promotion. "
+"You can change the leverage <a href='%(link)s?max_leverage=100&next="
+"%(next)s'>here</a>"
+msgstr ""
+"Accounts with leverage higher than 1:100 do not take part in the promotion. You can change the leverage <a href='%(link)s?max_leverage=100&next=%(next)s'>here</a>"
+
+msgid "This account has a bonus"
+msgstr "This account has a bonus"
+
+msgid "Accounts of this type do not take part in the promotion"
+msgstr "Accounts of this type do not take part in the promotion"
+
+msgid "Insufficient funds on the account"
+msgstr "Insufficient funds on the account"
+
+msgid "This account has credit"
+msgstr "This account has credit"
+
+msgid " You need to verify your phone number to get the bonus"
+msgstr "You need to verify your phone number to get the bonus"
+
+msgid "You need to upload a document to get the bonus"
+msgstr "You need to upload a document to get the bonus"
+
+#, python-format
+msgid ""
+"Accounts with leverage higher than 1:100 do not take part in the promotion. "
+"You can change the leverage <a href='%(link)s?max_leverage=100&"
+"%(next)s'>here</a>"
+msgstr ""
+"Accounts with leverage higher than 1:100 do not take part in the promotion. You can change the leverage <a href='%(link)s?max_leverage=100&%(next)s'>here</a>"
+
+msgid "Please deposit funds on the account to get the bonus"
+msgstr "Please deposit funds on the account to get the bonus"
+
+#, python-format
+msgid ""
+"Accounts with leverage higher than 1:100 do not take part in the promotion. "
+"You can change the leverage <a href='%(link)s'>here</a>"
+msgstr ""
+"Accounts with leverage higher than 1:100 do not take part in the promotion. You can change the leverage <a href='%(link)s'>here</a>"
+
+msgid "You need to verify your phone number to get the bonus"
+msgstr "You need to verify your phone number to get the bonus"
+
+msgid "Password recovered and sent on your email"
+msgstr "Password is recovered and sent to your email"
+
+msgid "Leverage successfully changed"
+msgstr "Leverage is successfully changed"
+
+msgid "Options style successfully changed"
+msgstr "Options style is successfully changed"
+
+msgid "Request to restore account has be created"
+msgstr "Request to restore an account has been created"
+
+msgid "Rebate successfully changed"
+msgstr "Rebate is successfully changed"
+
+msgid "Balance successfully changed"
+msgstr "Balance is successfully changed"
+
+msgid "Leverage should be different from current one"
+msgstr "Leverage should be different from the current one"
+
+msgid "You need to close all trades before changing options style"
+msgstr "You need to close all the trades before changing Options style"
+
+msgid "Sum of the rebate"
+msgstr "Sum of the rebate"
+
+msgid "In USD, from $0.01 to $10.00"
+msgstr "In USD, from $0.01 to $10.00"
+
+msgid "Amount"
+msgstr "Amount"
+
+msgid "Deposit"
+msgstr "Deposit"
+
+msgid "Demo deposit"
+msgstr "Demo deposit"
+
+msgid "bank transfer"
+msgstr "bank transfer"
+
+msgid "other"
+msgstr "other"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Password recovery"
+msgstr "Password recovery"
+
+msgid "Change options style"
+msgstr "Change Options style"
+
+msgid "Become a LAMM manager"
+msgstr "Become a LAMM manager"
+
+msgid "Become investor"
+msgstr "Become an investor"
+
+msgid "Change comission type"
+msgstr "Change comission type"
+
+msgid "Accept investors manualy"
+msgstr "Accept investors manualy"
+
+msgid "Auto accept investors"
+msgstr "Accept investors automatically"
+
+msgid "Change rebate"
+msgstr "Change rebate"
+
+msgid "Withdraw"
+msgstr "Withdraw"
+
+msgid "Internal transfer"
+msgstr "Internal transfer"
+
+msgid "Account history"
+msgstr "Account history"
+
+msgid "Other actions"
+msgstr "Other actions"
+
+msgid "Account [[acc.mt4_id]] blocked"
+msgstr "The account [[acc.mt4_id]] is blocked"
+
+msgid "Same problem?"
+msgstr "Same problem?"
+
+msgid ""
+"For transactions larger than $800 our payment system requires us to verify "
+"the customer's data for security reasons. To pass this verification you need "
+"to upload scans or photos of the following documents:"
+msgstr ""
+"For transactions larger than $800 our payment system requires us to verify the client's data for the security reasons. To pass this verification you need to upload scans or photos of the following documents:"
+
+msgid "Your ID or passport"
+msgstr "Your ID or passport"
+
+msgid ""
+"Your card which was used to make the payment. The first 4 and the last 4 "
+"digits of its number should be visible. Please cover all the other digits."
+msgstr ""
+"Your card which was used to make the payment. The first 4 and the last 4 digits of its number should be visible. Please cover all the other digits."
+
+msgid ""
+"A document which can verify your address (not more than 6 months old). For "
+"example, utility bill, rental agreement, bank statement, etc."
+msgstr ""
+"A document which can verify your address (no more than 6 months old). For example, utility bill, rental agreement, bank statement, etc."
+
+msgid " - or - "
+msgstr " - or - "
+
+msgid "A second document confirming your ID (driving license, etc.)"
+msgstr "A second document confirming your ID (driving license, etc.)"
+
+msgid ""
+"Request was created, but you can still <a href='/account/profile/"
+"documents'>upload more documents</a> if you need."
+msgstr ""
+"Request was created, but you can still <a href='/account/profile/documents'>upload more documents</a> if you need."
+
+msgid ""
+"You can <a href='/account/profile/documents'>upload documents</a> in your "
+"Private Office."
+msgstr ""
+"You can <a href='/account/profile/documents'>upload documents</a> in your Private Office."
+
+msgid "You haven't uploaded any documents."
+msgstr "You have not uploaded any documents."
+
+msgid "Request created "
+msgstr "Request is created "
+
+msgid "Request unlock"
+msgstr "Request to unlock"
+
+msgid "Change leverage"
+msgstr "Change leverage"
+
+msgid "Account"
+msgstr "Account"
+
+msgid "Change style"
+msgstr "Change style"
+
+msgid "Create account"
+msgstr "Create an account"
+
+msgid "Trading accounts"
+msgstr "Trading accounts"
+
+msgid "PAMM accounts"
+msgstr "PAMM accounts"
+
+msgid "Demo accounts"
+msgstr "Demo accounts"
+
+msgid "Partner's account"
+msgstr "Partner account"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid ""
+"The widest range of trading instruments: currency, metals, CFD-contracts"
+msgstr ""
+"The widest range of trading instruments: currency, metals, CFD-contracts"
+
+msgid "Open account"
+msgstr "Open an account"
+
+msgid "Options"
+msgstr "Options"
+
+msgid "You only need to determine market direction."
+msgstr "You only need to determine the market direction."
+
+#, python-format
+msgid "Profit up to 86%% per transaction"
+msgstr "Profit up to 86%% per transaction"
+
+msgid "SwapFree"
+msgstr "Swap Free"
+
+msgid ""
+"Account without commissions which are charged when transferring positions "
+"through midnight"
+msgstr ""
+"An account without commissions which are charged when transferring positions through midnight"
+
+msgid "ECN"
+msgstr "ECN"
+
+msgid "Ideal for scalping, trading on news, well suited for using robots"
+msgstr "Ideal for scalping, trading on news, well suited for using robots"
+
+msgid "Micro"
+msgstr "Micro"
+
+msgid "Great opportunity to try trading with real money"
+msgstr "Great opportunity to try trading with real money"
+
+msgid "Minimum deposit is just $10"
+msgstr "Minimum deposit is just $10"
+
+msgid "PAMM-Master"
+msgstr "PAMM-Master"
+
+msgid "Manage investments, get fees and earn more. Minimal capital $100"
+msgstr "Manage investments, get fees and earn more. Minimal capital is $100"
+
+msgid "PAMM-Investor"
+msgstr "PAMM-Investor"
+
+msgid ""
+"Invest in successful PAMM-accounts and get profit without trading yourself"
+msgstr ""
+"Invest in successful PAMM-accounts and get profit without trading yourself"
+
+msgid "Partnership"
+msgstr "Partnership"
+
+msgid "Partnership agreement with Grand Capital"
+msgstr "Partnership Agreement with Grand Capital"
+
+msgid "Deposit to demo account"
+msgstr "Deposit to a demo account"
+
+msgid "Deposit and withdraw requests"
+msgstr "Deposit and withdraw requests"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Created at"
+msgstr "Created at"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Comment"
+msgstr "Comment"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "History for account"
+msgstr "History for an account"
+
+msgid "Today"
+msgstr "Today"
+
+msgid "Yesterday"
+msgstr "Yesterday"
+
+msgid "Last week"
+msgstr "Last week"
+
+msgid "Last month"
+msgstr "Last month"
+
+msgid "All"
+msgstr "All"
+
+msgid "Choose date range"
+msgstr "Choose date range"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Open orders"
+msgstr "Open orders"
+
+msgid "Closed orders"
+msgstr "Closed orders"
+
+msgid "Order ID"
+msgstr "Order ID"
+
+msgid "Symbol"
+msgstr "Symbol"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Open time"
+msgstr "Open time"
+
+msgid "Close time"
+msgstr "Close time"
+
+msgid "Price"
+msgstr "Price"
+
+msgid "Lots"
+msgstr "Lots"
+
+msgid "S/L"
+msgstr "S/L"
+
+msgid "T/P"
+msgstr "T/P"
+
+msgid "Commission"
+msgstr "Commission"
+
+msgid "Swap"
+msgstr "Swap"
+
+msgid "Profit"
+msgstr "Profit"
+
+msgid "Loading"
+msgstr "Loading"
+
+msgid "Сегодня"
+msgstr "Today"
+
+msgid "Вчера"
+msgstr "Yesterday"
+
+msgid "Текущая неделя"
+msgstr "Current week"
+
+msgid "Текущий месяц"
+msgstr "Current month"
+
+msgid "Прошлый месяц"
+msgstr "Last month"
+
+msgid "Указать интервал"
+msgstr "Specify the interval "
+
+msgid "Показать"
+msgstr "Show"
+
+msgid ""
+"A new password will be sent within an hour to e-mail address you set when "
+"account was created."
+msgstr ""
+"A new password will be sent within an hour to the email address you set when the account was created."
+
+msgid "Request password recovery"
+msgstr "Request password recovery"
+
+msgid "Days of contiguous<br>trading"
+msgstr "Days of contiguous<br>trading"
+
+msgid "Client status"
+msgstr "Client status"
+
+msgid "Payback<br>amount"
+msgstr "Payback<br>amount"
+
+msgid "Accounts archive"
+msgstr "Accounts archive"
+
+msgid "Here you can find all your archived accounts"
+msgstr "Here you can find all your archived accounts"
+
+msgid "In progress"
+msgstr "In progress"
+
+msgid "Restore"
+msgstr "Restore"
+
+msgid "Бонусы"
+msgstr "Bonuses"
+
+msgid "получить бонус"
+msgstr "Get a bonus"
+
+msgid "Contests"
+msgstr "Contests"
+
+msgid "Participate in a contest"
+msgstr "Participate in a contest"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Place"
+msgstr "Place"
+
+msgid "Balance"
+msgstr "Balance"
+
+msgid "Equity"
+msgstr "Equity"
+
+msgid "There is no accounts to display"
+msgstr "There are no accounts to display"
+
+msgid "LAMM Investments"
+msgstr "LAMM Investments"
+
+msgid "Create portfolio"
+msgstr "Create portfolio"
+
+msgid "Profitability"
+msgstr "Profitability"
+
+msgid "Portfolio"
+msgstr "Portfolio"
+
+msgid "Master"
+msgstr "Master"
+
+msgid "Replication ratio"
+msgstr "Replication ratio"
+
+msgid "Comission"
+msgstr "Comission"
+
+msgid "Max Loss"
+msgstr "Max loss"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Disconnect from the manager"
+msgstr "Disconnect from the manager"
+
+msgid "Cancel investment request"
+msgstr "Cancel investment request"
+
+msgid "My LAMM investors"
+msgstr "My LAMM investors"
+
+msgid "Reward"
+msgstr "Reward"
+
+msgid "Demo"
+msgstr "Demo"
+
+msgid "Real"
+msgstr "Real"
+
+msgid "Binding date"
+msgstr "Binding date"
+
+msgid "Disconnect investor"
+msgstr "Disconnect an investor"
+
+msgid "Confirm request"
+msgstr "Confirm request"
+
+msgid "Reject request"
+msgstr "Reject request"
+
+msgid "PAMM Investments"
+msgstr "PAMM investments"
+
+msgid "Invest"
+msgstr "Invest"
+
+msgid "There is no account to display"
+msgstr "There are no accounts to display"
+
+msgid "Total account balance"
+msgstr "Total account balance"
+
+msgid "Invetsments amount"
+msgstr "Investment amount"
+
+msgid "Rollover time"
+msgstr "Rollover time"
+
+msgid "My PAMM investors"
+msgstr "My PAMM investors"
+
+msgid "Open PAMM account"
+msgstr "Open a PAMM account"
+
+msgid "Investments amount"
+msgstr "Investment amount"
+
+msgid "Investment creation date"
+msgstr "Investment creation date"
+
+msgid "Total investments"
+msgstr "Total investments"
+
+msgid "came in"
+msgstr "came in"
+
+msgid "came out"
+msgstr "came out"
+
+msgid "Date"
+msgstr "Date"
+
+msgctxt "short"
+msgid "Name"
+msgstr "Name"
+
+msgctxt "short"
+msgid "Phone"
+msgstr "Phone"
+
+msgctxt "short"
+msgid "Email"
+msgstr "Email"
+
+msgid "demo"
+msgstr "demo"
+
+msgid "Total<br> on real accounts"
+msgstr "Total<br> on real accounts"
+
+msgid ""
+"\n"
+"                        Total<br> on <a ng-href=\"[[::BASE_URL]]partnership"
+"\">referral</a> accounts\n"
+"                    "
+msgstr ""
+"\n"
+"                        Total<br> on <a ng-href=\"[[::BASE_URL]]partnership\">referral</a> accounts\n"
+"                    "
+
+msgid "Hide accounts balance"
+msgstr "Hide account's balance"
+
+msgid "Trading"
+msgstr "Trading"
+
+msgid "Trade online"
+msgstr "Trade online"
+
+msgid "Account was disabled because of"
+msgstr "The account was disabled because of"
+
+msgid "More"
+msgstr "More"
+
+#, python-format
+msgid "Account history for account %(account)s"
+msgstr "Account history for the account %(account)s"
+
+msgid "Status on"
+msgstr "Status on"
+
+msgid "Close price"
+msgstr "Close price"
+
+msgid "Totals"
+msgstr "Totals"
+
+msgid "ago"
+msgstr "ago"
+
+msgid "Open"
+msgstr "Open"
+
+msgid "No account history available."
+msgstr "No account history is available."
+
+msgid "My accounts"
+msgstr "My accounts"
+
+msgid "Demo and contest accounts"
+msgstr "Demo and contest accounts"
+
+msgid "Real accounts"
+msgstr "Real accounts"
+
+msgid "Registraton date"
+msgstr "Registraton date"
+
+msgid "Filled documents"
+msgstr "Filled documents"
+
+msgid "Deposit money"
+msgstr "Deposit money"
+
+msgid "Withdraw money"
+msgstr "Withdraw money"
+
+msgid "Become PAMM master"
+msgstr "Become a PAMM master"
+
+msgid "You have no accounts associated with your profile"
+msgstr "You have no accounts associated with your profile"
+
+msgid "If you want to open a new account, then click"
+msgstr "If you want to open a new account, then click"
+
+msgid "Archived accounts"
+msgstr "Archived accounts"
+
+msgid "You have already requested to restore this account"
+msgstr "You have already requested to restore this account"
+
+msgid "Request this account to be restored"
+msgstr "Request for this account to be restored"
+
+msgid "bonus"
+msgstr "bonus"
+
+#, python-format
+msgid "Agent list for account %(account)s"
+msgstr "Agent list for the account %(account)s"
+
+#, python-format
+msgid "Account %(account)s has no Real clients."
+msgstr "The account %(account)s has no real clients."
+
+#, python-format
+msgid "List of demo agents for account %(account)s"
+msgstr "List of demo agents for the account %(account)s"
+
+#, python-format
+msgid "Account %(account)s has no Demo clients."
+msgstr "The account %(account)s has no demo clients."
+
+msgid "Choose account"
+msgstr "Choose an account"
+
+msgid "Choose"
+msgstr "Choose"
+
+msgid "Country"
+msgstr "Country"
+
+msgid "City"
+msgstr "City"
+
+msgid "Choose new leverage"
+msgstr "Choose the new leverage"
+
+msgid "Choose new options style"
+msgstr "Choose new Options style"
+
+#, python-format
+msgid ""
+"Create %(account_type_name)s\n"
+"    account"
+msgstr ""
+"Create the %(account_type_name)s\n"
+"    account"
+
+msgid "Account details"
+msgstr "Account details"
+
+#, python-format
+msgid "You can't have more than one %(acc_type)s account and"
+msgid_plural "You cannot have more than %(max_number)s %(acc_type)s"
+msgstr[0] "You cannot have more than one %(acc_type)s account and"
+msgstr[1] "You cannot have more than %(max_number)s %(acc_type)s accounts and"
+
+#, python-format
+msgid "you already have an account of this type"
+msgid_plural "you already have %(current_number)s accounts of this type"
+msgstr[0] "you already have an account of this type"
+msgstr[1] "you already have %(current_number)s accounts of this type"
+
+msgid "Follow us"
+msgstr "Follow us"
+
+msgid "mt4.sucurity.obligation"
+msgstr "All the data we receive will be used within the company only. We will never provide the data to the third-parties."
+
+msgid "Create"
+msgstr "Create"
+
+msgid "Private office access"
+msgstr "Private Office access"
+
+#, python-format
+msgid ""
+"\n"
+"                                If you are already regisered, please\n"
+"                                <a href=\"%(auth_login_url)s?next="
+"%(request_path)s\" title=\"Sign in\">Sign in</a>.\n"
+"                            "
+msgstr ""
+"\n"
+"                                If you have already registered, please\n"
+"                                <a href=\"%(auth_login_url)s?next=%(request_path)s\" title=\"Sign in\">Sign in</a>.\n"
+"                            "
+
+msgid "After signing in, you will be redirected back to this page"
+msgstr "After signing in, you will be redirected back to this page"
+
+msgid "already have an account?"
+msgstr "already have an account?"
+
+msgid "login"
+msgstr "login"
+
+msgid "Personal details"
+msgstr "Personal details"
+
+msgid "Account settings"
+msgstr "Account settings"
+
+msgid "Please wait while account is being created"
+msgstr "Please wait while an account is being created"
+
+#, python-format
+msgid ""
+"Congratulations! You just opened %(acc_type)s account! Please, save its "
+"password in a secure place. You will also receive account's details by email."
+msgstr ""
+"Congratulations! You have just opened the %(acc_type)s account! Please, save its password in a secure place. You will also receive account's details by email."
+
+msgid "Account number"
+msgstr "Account number"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Open Web-trader"
+msgstr "Open WebTrader"
+
+msgctxt "button"
+msgid "Continue"
+msgstr "Continue"
+
+msgid "Account creation failed, please try again later"
+msgstr "Account creation failed, please try again later"
+
+#, python-format
+msgid "Password recovery for account %(account)s"
+msgstr "Password recovery for the account %(account)s"
+
+msgid "Your account is being created"
+msgstr "Your account is being created"
+
+msgid ", please wait"
+msgstr ", please wait"
+
+msgid ""
+"We're sorry, the account creation seems to have failed. Please <a "
+"href='javascript:window.history.back();'>press 'Back'</a> in your browser "
+"and try again after 5 minutes. If the problem persists, please contact our "
+"support."
+msgstr ""
+"We are sorry, the account creation seems to have failed. Please <a href='javascript:window.history.back();'>press 'Back'</a> in your browser and try again after 5 minutes. If the problem persists, please contact our technical support."
+
+msgid "Account created"
+msgstr "Account is created"
+
+#, python-format
+msgid ""
+"\n"
+"                        Congratulations! You have opened a new "
+"%(account_type)s account in Grandcapital LTD!\n"
+"                        Your account id is %(account_id)s.\n"
+"                    "
+msgstr ""
+"\n"
+"                        Congratulations! You have opened a new %(account_type)s account in Grand Capital LTD!\n"
+"                        Your account ID is %(account_id)s.\n"
+"                    "
+
+#, python-format
+msgid ""
+"\n"
+"                Access password was emailed to %(email)s\n"
+"            "
+msgstr ""
+"\n"
+"                Access password was emailed to %(email)s\n"
+"            "
+
+msgid "Go to your account list management"
+msgstr "Go to your account list management"
+
+#, python-format
+msgid ""
+"\n"
+"        In order to start trading it is necessary to <a href="
+"\"%(account_app)spayments/deposit\">make a deposit</a> into trade account\n"
+"        and choose a manager from the <a href=\"%(pamm_url)s\">rating</a>.\n"
+"    "
+msgstr ""
+"\n"
+"        In order to start trading it is necessary to <a href=\"%(account_app)spayments/deposit\">make a deposit</a> into a trading account\n"
+"        and choose a manager from the <a href=\"%(pamm_url)s\">rating</a>.\n"
+"    "
+
+msgid "Click here to go to the Investor's office"
+msgstr "Click here to go to the investor's office"
+
+msgid "Click here to go to the Manager's office"
+msgstr "Click here to go to the manager's office"
+
+#, python-format
+msgid ""
+"\n"
+"            Now you can take part in&nbsp;<a href=\"%(link)s\">\"Micro Trade"
+"\"</a>&nbsp;\n"
+"            contest and get additional profit\n"
+"        "
+msgstr ""
+"\n"
+"            Now you can take part in the&nbsp;<a href=\"%(link)s\">\"Micro Trade\"</a>&nbsp;\n"
+"            contest and get additional profit\n"
+"        "
+
+#, python-format
+msgid ""
+"\n"
+"Dear, %(username)s!\n"
+"\n"
+"\n"
+"We congratulate you on the successful registration as a Partner of "
+"%(site_name)s. You can now start earning with rewards from the Company.\n"
+"\n"
+"\n"
+"How to start working\n"
+"\n"
+"Your main task is to attract clients to %(site_name)s. You can do this using "
+"any of your online resources: site, blog, forum or your private contacts.\n"
+"\n"
+"Your main tool for the job is the referral link (code) (https://"
+"%(site_domain)s%(account_app_url)sreferral), It’s available in the Private "
+"Office. Use it in all marketing materials and provide it to your clients "
+"offline.\n"
+"\n"
+"\n"
+"\n"
+"How to attract clients\n"
+"\n"
+"There are advertising banners in your Private Office (https://%(site_domain)s"
+"%(account_app_url)spartnership). Insert code of a banner on your website, "
+"and clients will start to register.\n"
+"\n"
+"Our informer is a great advertising instrument. Just set it up on your "
+"website or blog, and your clients will be up to date with current quotes for "
+"the most popular instruments.\n"
+msgstr ""
+"\n"
+"Dear, %(username)s!\n"
+"\n"
+"\n"
+"We congratulate you on the successful registration as a partner of %(site_name)s. You can now start earning with rewards from the company.\n"
+"\n"
+"\n"
+"How to start working\n"
+"\n"
+"Your main task is to attract clients to %(site_name)s. You can do this using any of your online resources: website, blog, forum or your private contacts.\n"
+"\n"
+"Your main tool for the job is the referral link (code) (https://%(site_domain)s%(account_app_url)sreferral), It is available in the Private Office. Use it in all marketing materials and provide it to your clients offline.\n"
+"\n"
+"\n"
+"\n"
+"How to attract clients\n"
+"\n"
+"There are advertising banners in your Private Office (https://%(site_domain)s%(account_app_url)spartnership). Insert code of a banner on your website and clients will start to register.\n"
+"\n"
+"Our informer is a great advertising instrument. Just set it up on your website or blog and your clients will be up to date with current quotes for the most popular instruments.\n"
+
+#, python-format
+msgid ""
+"\n"
+"The Company regularly has promotions which will help you to attract clients. "
+"You can use them actively. (https://%(site_domain)s%(bonus_frontpage_url)s)\n"
+"\n"
+"\n"
+"\n"
+"How to receive a reward\n"
+"\n"
+"Your partnership reports are available in the Private Office. You receive a "
+"reward for the clients’ trading. The amount is calculated monthly and "
+"transferred on your IB-account.\n"
+"\n"
+"You need this account because:\n"
+"\n"
+"·  you can withdraw your reward from it;\n"
+"\n"
+"·  deposit it in any way (https://%(site_domain)s"
+"%(operations_with_money_url)s);\n"
+"\n"
+"·  make a transfer to the trading account (https://%(site_domain)s"
+"%(trading_account_types_url)s).\n"
+"\n"
+"Please note that you can't trade on a Real IB account.\n"
+"Advanced partnership options\n"
+msgstr ""
+"\n"
+"The company has regularly promotions which will help you to attract clients. You can use them actively. (https://%(site_domain)s%(bonus_frontpage_url)s)\n"
+"\n"
+"\n"
+"\n"
+"How to receive a reward\n"
+"\n"
+"Your partnership reports are available in the Private Office. You receive a reward for the clients’ trading. The amount is calculated monthly and transferred to your IB-account.\n"
+"\n"
+"You need this account because:\n"
+"\n"
+"·  you can withdraw your reward from it;\n"
+"\n"
+"·  deposit it in any way (https://%(site_domain)s%(operations_with_money_url)s);\n"
+"\n"
+"·  make a transfer to the trading account (https://%(site_domain)s%(trading_account_types_url)s).\n"
+"\n"
+"Please note that you cannot trade on a real IB account.\n"
+"Advanced partnership options\n"
+
+#, python-format
+msgid ""
+"\n"
+"Your type of partnership – web-partnership – is the simplest way to join a "
+"running business on favorable terms and without any investments. If you’re "
+"interested in other types of partnership (opening of the Company’s office in "
+"your city, making the franchising or White Label) please email us at "
+"%(DEFAULT_PARTNER_SUPPORT_EMAIL)s (be sure to include your phone number and "
+"email).\n"
+"\n"
+"\n"
+"We wish your work to be productive and yielding high profits! If you have "
+"ideas of joint promotions, bonuses or any other questions please email us: "
+"%(DEFAULT_PARTNER_SUPPORT_EMAIL)s. We’ll be glad to do something just for "
+"you.\n"
+msgstr ""
+"\n"
+"Your type of partnership – web-partnership – is the simplest way to join a running business on favorable terms and without any investments. If you are interested in other types of partnership (opening of the company’s office in your city, making the franchising or White Label), please email us at %(DEFAULT_PARTNER_SUPPORT_EMAIL)s (be sure to include your phone number and email).\n"
+"\n"
+"\n"
+"We wish your work to be productive and yielding high profits! If you have ideas of joint promotions, bonuses or any other questions, please email us: %(DEFAULT_PARTNER_SUPPORT_EMAIL)s. We will be glad to do something just for you.\n"
+
+msgid "Demo micro"
+msgstr "Demo Micro"
+
+msgid "Real Micro"
+msgstr "Real Micro"
+
+msgid "Demo standard"
+msgstr "DEMO"
+
+msgid "Real Standard"
+msgstr "Real Standard"
+
+msgid "Welcome Bonus $500"
+msgstr "Welcome Bonus $500"
+
+msgid "Islamic Account"
+msgstr "Islamic Account"
+
+msgid "Demo professional"
+msgstr "Demo professional"
+
+msgid "Demo Options"
+msgstr "Demo Options"
+
+msgid "Real Binary"
+msgstr "Real Binary"
+
+msgid "Real professional"
+msgstr "Real professional"
+
+msgid "Real IB"
+msgstr "Real IB"
+
+msgid "FX+"
+msgstr "FX+"
+
+msgid "FX+ Demo"
+msgstr "FX+ Demo"
+
+msgid "Trust found"
+msgstr "Trust fond"
+
+msgid "Fixed income"
+msgstr "Fixed income"
+
+msgid "Rally trade"
+msgstr "Rally Trade"
+
+msgid "Drag trade"
+msgstr "Drag Trade"
+
+msgid "FXTrade 5"
+msgstr "FXTrade 5"
+
+msgid "FXTrade 30"
+msgstr "FXTrade 30"
+
+msgid "Future trade"
+msgstr "Futures Trade"
+
+msgid "Micro trade"
+msgstr "Micro Trade"
+
+msgid "Sprint $2000"
+msgstr "Sprint $2000"
+
+msgid "Gelan Trawler"
+msgstr "Gelan Trawler"
+
+msgid "ECN Demo"
+msgstr "ECN Demo"
+
+msgid ""
+"You need to set up a secure authentication method before opening a Real "
+"account."
+msgstr ""
+"You need to set up a secure authentication method before opening a real account."
+
+msgid "Error while loading account data. Using cached data."
+msgstr "Error while loading account data. Using cached data."
+
+#, python-format
+msgid ""
+"Password recovery request for account #%(id)s created successfully. "
+"Notification with the account password has been sent to your e-mail."
+msgstr ""
+"Password recovery request for the account #%(id)s is created successfully. Notification with the account password has been sent to your email."
+
+#, python-format
+msgid "Leverage for account #%(id)s changed successfully."
+msgstr "Leverage for the account #%(id)s is changed successfully."
+
+#, python-format
+msgid "Options style for account #%(id)s changed successfully."
+msgstr "Options style for the account #%(id)s is changed successfully."
+
+#, python-format
+msgid "Request #%(id)s created successfully."
+msgstr "Request #%(id)s is created successfully."
+
+#, python-format
+msgid ""
+"Investor agreement for account %s is accepted. Now you can use this account "
+"to connect to a manager's account."
+msgstr ""
+"Investor Agreement for the account %s is accepted. Now you can use this account to connect to the manager's account."
+

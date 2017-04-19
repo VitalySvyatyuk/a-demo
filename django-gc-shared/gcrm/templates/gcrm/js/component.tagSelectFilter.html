@@ -1,0 +1,26 @@
+{% load i18n %}
+
+<span class="label label-default"
+   ng-repeat="tag in tagSelectFilter.model|orderBy:'tag' "
+   ng-click="tagSelectFilter.removeTag(tag)">
+  [[::tag]]
+  <i class="fa fa-times"></i>
+</span>
+<div class="dropdown open" ng-class="::tagSelectFilter.classes">
+  <div class="form-control form-control-sm text-center">
+    <span ng-click="tagSelectFilter.open = !tagSelectFilter.open">---{% trans "Tags" %}---</span>
+    <i ng-click="tagSelectFilter.open = !tagSelectFilter.open" class="fa fa-fw fa-caret-down pull-right"></i>
+  </div>
+
+  <div class="dropdown-menu" ng-if="tagSelectFilter.open" style="text-align: center;max-height: none !important;z-index: 777;font-size: 110%">
+      <span ng-repeat="item in tagSelectFilter.tagsInfo|orderBy:'tag' "
+            ng-if="tagSelectFilter.model.indexOf(item.tag)<0"
+            ng-click="tagSelectFilter.addTag(item.tag)"
+            class="label"
+            style="color: [[::item.tag|toColor]]; display: inline-block;padding: 7px 7px">
+        [[::item.tag]]
+        <sub>[[::item.count]]</sub>
+      </span>
+    </div>
+  </div>
+</div>

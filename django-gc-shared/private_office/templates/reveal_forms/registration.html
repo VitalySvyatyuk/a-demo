@@ -1,0 +1,72 @@
+{% load app_tags i18n staticfiles %}
+<div class="reveal-modal-inner medium">
+<form action="{% url 'registration_register' %}" method="POST" id="registration-form">
+    <h2 class="modal-title">{% trans "Register" %}</h2>
+    <a class="close-reveal-modal icon cross"></a>
+    <div id="throbber" class="text-center hide offset-top-40">
+        <img src="{% static 'img/ajax-loader-2.gif' %}" alt="throbber"/>
+    </div>
+    <div id="content">
+        <div class="fields inverted-checkbox">
+            <p>
+                {% trans "If you have already registered please" %}
+                <a href="{% url 'auth_login' %}?next={{ next }}" data-reveal-form>
+                    {% trans "log in" %}
+                </a>
+            </p>
+            <div class="hide errors" id="__all__">
+                <span></span>
+            </div>
+            {% for field in form.visible_fields %}
+                {% if not field|is_checkbox %}
+                    <div class="hide errors" id="{{ field.name }}">
+                        <span></span>
+                    </div>
+                    {% if field.name == "agent_code" %}
+                    <div class="form-field">
+                        <p class="description"><span class="link-show-hidden" onclick="$(this).hide(); $('#agent-code-div').slideDown();">{% trans "I have an agent code" %}</span></p>
+                    </div>
+                    <div class="form-field" id="agent-code-div" style="display: none;">
+                    {% else %}
+                    <div class="form-field">
+                    {% endif %}
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {% if field.help_text %}<p class="description">{{ field.help_text }}</p>{% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% for field in form %}
+                {% if field|is_checkbox %}
+                    <div class="checkbox-wrapper">
+                        {{ field }}<label for="{{ field.auto_id }}"></label>
+                        {{ field.label_tag }}
+                        {% if field.help_text %}<p class="description">{{ field.help_text }}</p>{% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="oauth-block">
+            {% trans "Register using social network account" %}:
+            <p class="auth-icons">
+                {% if LANGUAGE_CODE == "ru" %}
+                <a href="{% url "social:begin" backend='vk-oauth2' %}" class="auth-icon vkontakte"></a>
+                <a href="{% url "social:begin" backend='mailru-oauth2' %}" class="auth-icon mailru"></a>
+                <a href="{% url "social:begin" backend='odnoklassniki-oauth2' %}" class="auth-icon ok"></a>
+                {% endif %}
+                <a href="{% url "social:begin" backend='facebook' %}" class="auth-icon facebook"></a>
+                <a href="{% url "social:begin" backend='google-oauth2' %}" class="auth-icon google"></a>
+            </p>
+        </div>
+        {% for field in form.hidden_fields %}
+            {{ field }}
+        {% endfor %}
+        <div class="text-center">
+            <input type="submit" value="{% trans 'Register' %}" class="button third-black medium">
+        </div>
+        {% csrf_token %}
+    </div>
+</form>
+</div>
+{{ form.media }}

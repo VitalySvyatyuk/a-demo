@@ -1,0 +1,60 @@
+- load i18n currency_tags app_tags
+
+:javascript
+    $("#reason_choices").change(function() {
+        if($(this).val())
+            $('#reason').val($(this).val());
+    });
+    $("#comment_choices").change(function() {
+        if($(this).val())
+            $('#comment').val($(this).val());
+    });
+
+.modal-dialog
+    .modal-content
+        %form.form-horizontal{role:"form", action:"{% url 'payments_withdraw_request_decline_modal' wrequest.id %}", method:"POST"}
+            - csrf_token
+            .modal-header
+                %button.close{type:"button", data-dismiss:"modal", aria-hidden:"true"}&times;
+                %h4.modal-title {% trans "Declining request" %} #{{wrequest.id}}
+            .modal-body
+                - if wrequest.is_payed
+                    {% trans "This request can't be declined because it is already withdrawn from trading account." %}
+                - else
+                    - if wrequest.is_payed != None
+                        %p.text-danger {% trans "This request is already processed" %}
+                    .form
+                        .form-group
+                            %label= form.public_comment.label
+                            %p.help-block= form.public_comment.help_text
+                            - if form.public_comment.errors
+                                = form.public_comment.errors
+                            %textarea#reason.form-control{rows:"4", name:"{{form.public_comment.name}}", placeholder:"{% trans 'Enter comment or choose one from the list' %}"}= form.public_comment.value|default:""
+                            %select#reason_choices.form-control
+                                %option{value:""} -----
+                                - for t in form.reason_choices
+                                    %option{value:"{{t.text}}"}= t.text
+                        .form-group
+                            %label= form.private_comment.label
+                            %p.help-block= form.private_comment.help_text
+                            - if form.private_comment.errors
+                                = form.private_comment.errors
+                            %textarea#comment.form-control{rows:"3", name:"{{form.private_comment.name}}", placeholder:"{% trans 'Enter comment or choose one from the list' %}"}= form.private_comment.value|default:""
+                            %select#comment_choices.form-control
+                                %option{value:""} -----
+                                - for t in form.comment_choices
+                                    %option{value:"{{t.text}}"}= t.text
+                        .form-group
+                            .checkbox
+                                %label
+                                    - if form.needs_manager_attention.value
+                                        %input{type:"checkbox", name:"needs_manager_attention", checked:None}= form.needs_manager_attention.label
+                                    - else
+                                        %input{type:"checkbox", name:"needs_manager_attention"}= form.needs_manager_attention.label
+                                %p.help-block= form.needs_manager_attention.help_text
+            .modal-footer
+                %button.btn.btn-default{type:"button", data-dismiss:"modal"}
+                    {% trans "Cancel" %}
+                %button.btn.btn-success{type:"submit"}
+                    {% trans "Save" %}
+

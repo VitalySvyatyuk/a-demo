@@ -1,0 +1,45 @@
+{% load i18n staticfiles %}
+{% if percent_complete < 100 %}
+<div class="profile-todo-list">
+    <p>{% trans "Complete your profile!" %}</p>
+    <div class="meter">
+	    <span style="width: {{ percent_complete }}%"></span>
+    </div>
+    <ul>
+        {% if not verified_email %}
+            <li>
+                <a href="#verify-email-description" rel="facebox">
+                    <img src="{% static "img/profiles/email.png" %}" width="16" height="16"/>{% trans "Verify your e-mail" %}
+                </a>
+            </li>
+        {% endif %}
+        {% if not verified_phone %}
+            <li>
+                <a href="{% url "profiles_edit_profile" %}">
+                    <img src="{% static "img/profiles/phone.png" %}" width="16" height="16"/>{% trans "Verify phone number" %}
+                </a>
+            </li>
+        {% endif %}
+        {% if not uploaded_document %}
+            <li>
+                <a href="{% url "profiles_upload_document" %}">
+                    <img src="{% static "img/profiles/id.png" %}" width="16" height="16"/>{% trans "Upload a scan of ID" %}
+                </a>
+            </li>
+        {% endif %}
+        {% if not filled_out_address %}
+            <li>
+                <a href="{% url "profiles_edit_profile" %}">
+                    <img src="{% static "img/profiles/house.png" %}" width="16" height="16"/>{% trans "Specify your address" %}
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</div>
+<div id="verify-email-description" style="display: none;">
+{% url "profiles_edit_email" as edit_email_url %}
+{% blocktrans %}To verify your email address, please follow the link you received when you registered. If you
+mistyped your email address or didn't receive an activation email, please check if your email is correct
+<a href="{{ edit_email_url }}">here</a> and click "Save" to receive another activation email.{% endblocktrans %}
+</div>
+{% endif %}

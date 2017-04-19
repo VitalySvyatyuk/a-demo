@@ -1,0 +1,1804 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-16 17:45+0300\n"
+"PO-Revision-Date: 2016-04-12 14:07+0230\n"
+"Last-Translator: Name109414 Surname109414 <e.girman@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.7.6\n"
+
+msgid "Beneficiary"
+msgstr "Beneficiary"
+
+msgid "Beneficiary Bank"
+msgstr "Beneficiary Bank"
+
+msgid "Beneficiary Bank's Code"
+msgstr "Beneficiary Bank's Code"
+
+msgid "Beneficiary Bank's Address"
+msgstr "Beneficiary Bank's Address"
+
+msgid "Beneficiaries Account Number"
+msgstr "Beneficiary Account Number"
+
+msgid "Recipient"
+msgstr "Recipient"
+
+msgid "Recipient's tax ID"
+msgstr "Recipient's tax ID"
+
+msgid "KPP"
+msgstr "KPP (Tax Registration Reason Code)"
+
+msgid "Recipient's bank"
+msgstr "Recipient's bank"
+
+msgid "Recipient's bank account"
+msgstr "Recipient's bank account"
+
+msgid "Recipient's bank correspondent account"
+msgstr "Recipient's bank correspondent account"
+
+msgid "Recipient's bank BIC"
+msgstr "Recipient's bank BIC"
+
+msgid "Bank transfer"
+msgstr "Bank transfer"
+
+msgid "Payment card"
+msgstr "Payment card"
+
+msgid "Electronic payment systems"
+msgstr "Electronic payment systems"
+
+msgid "Money order"
+msgstr "Money order"
+
+msgid "Online banking"
+msgstr "Online banking"
+
+msgid "General"
+msgstr "General"
+
+msgid "Details"
+msgstr "Details"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "scan of receipt"
+msgstr "scan of receipt"
+
+msgid "manager"
+msgstr "manager"
+
+msgid "regional office"
+msgstr "regional office"
+
+msgid "Account"
+msgstr "Account"
+
+msgid "Transaction type"
+msgstr "Transaction type"
+
+msgid "Withdraw the funds I earn"
+msgstr "Withdraw the funds I earned"
+
+msgid "In need of money"
+msgstr "In need of money"
+
+msgid "Not satisfied with the service"
+msgstr "Not satisfied with the service"
+
+msgid "Other reasons"
+msgstr "Other reasons"
+
+msgid "Amount"
+msgstr "Amount"
+
+msgid "Example: 5.2"
+msgstr "Example: 5.2"
+
+msgid "Payment system"
+msgstr "Payment system"
+
+msgid "Balance"
+msgstr "Balance"
+
+msgid "Balance on getting request"
+msgstr "Balance on getting request"
+
+msgid "Currency"
+msgstr "Currency"
+
+msgid "Creation timestamp"
+msgstr "Creation timestamp"
+
+msgid "Trade ID"
+msgstr "Trade ID"
+
+msgid "Is payed"
+msgstr "Is payed"
+
+msgid "Is committed"
+msgstr "Is committed"
+
+msgid "Request is rejected by client"
+msgstr "Request is rejected by a client"
+
+msgid "Purse"
+msgstr "Purse"
+
+msgid "Select one of your accounts"
+msgstr "Select one of your accounts"
+
+msgid "Deposit request"
+msgstr "Deposit request"
+
+msgid "Deposit requests"
+msgstr "Deposit requests"
+
+msgid "Sender"
+msgstr "Sender"
+
+msgid "Passport data"
+msgstr "Passport data"
+
+msgid "Intermediary Bank’s code"
+msgstr "Intermediary Bank’s code"
+
+msgid "Payment Details"
+msgstr "Payment details"
+
+msgid "Your account didn't have enough funds when the request was processed."
+msgstr ""
+"Your account did not have enough funds when the request was processed."
+
+msgid "Withdraw Requests Group"
+msgstr "Withdraw Requests Group"
+
+msgid "Requisit"
+msgstr "Bank details"
+
+msgid "Select one of your requisits"
+msgstr "Select the bank details"
+
+msgid "Reason of withdrawal"
+msgstr "Reason of withdrawal"
+
+msgid "Choose the reason of withdrawal"
+msgstr "Choose the reason of withdrawal"
+
+msgid "Withdraw request"
+msgstr "Withdraw request"
+
+msgid "Withdraw requests"
+msgstr "Withdraw requests"
+
+msgid "Error getting balance"
+msgstr "Error getting balance"
+
+msgid "Author"
+msgstr "Author"
+
+msgid "Comment"
+msgstr "Comment"
+
+msgid "It is too late to cancel this request"
+msgstr "It is too late to cancel this request"
+
+msgid "Request successfuly canceled"
+msgstr "Request is successfully canceled"
+
+msgid "Due to technical issues service is temporarily unavailable"
+msgstr "Due to the technical issue the service is temporarily unavailable"
+
+msgid "Invalid payment system name"
+msgstr "Invalid payment system name"
+
+msgid "You should provide operation type"
+msgstr "You should provide operation type"
+
+msgid "Payment system not found"
+msgstr "Payment system is not found"
+
+msgid "Data is invalid"
+msgstr "Data is invalid"
+
+msgid "qiwi_bad_request"
+msgstr "qiwi_bad_request"
+
+msgid "Your documents will be checked soon"
+msgstr "Your documents will be checked soon"
+
+msgid "15 minutes"
+msgstr "15 minutes"
+
+msgid "Anelik"
+msgstr "Anelik"
+
+msgid "anelik.deposit.info"
+msgstr "Anelik deposits are processed within one day."
+
+msgid "Transfer code"
+msgstr "Transfer code"
+
+msgid "Unique transfer code given by Anelik"
+msgstr "Unique transfer code given by Anelik"
+
+msgid ""
+"Amount of money to deposit in selected "
+"currency<br/><strong>Attention!</strong> Specify amount on your account "
+"after deduction of the system's charge"
+msgstr ""
+"Amount of money to deposit in the selected "
+"currency<br/><strong>Attention!</strong> Specify amount on your account "
+"after deduction of the system's charge"
+
+msgid "anelik.withdraw.info"
+msgstr "Anelik withdrawals are processed within 3 business days."
+
+msgid "The country in which you receive transfer"
+msgstr "The country in which you will receive transfer"
+
+msgid "The city in which you receive transfer"
+msgstr "The city in which you will receive transfer"
+
+msgid "Correspondent"
+msgstr "Correspondent"
+
+msgid "Passport_Data"
+msgstr "Passport_Data"
+
+msgid "Bank_Account"
+msgstr "Bank_Account"
+
+msgid "Tin"
+msgstr "TIN"
+
+msgid "Bic"
+msgstr "BIC"
+
+msgid "bankbase.deposit.info"
+msgstr "Bank transfer deposits are processed within 3-5 banking days."
+
+msgid "Address"
+msgstr "Address"
+
+msgid "Beneficiary address"
+msgstr "Beneficiary address"
+
+msgid "Your city and street address"
+msgstr "Your city and street address"
+
+msgid "Your bank's name"
+msgstr "Your bank's name"
+
+msgid "Enter up to 34 symbols"
+msgstr "Enter up to 34 symbols"
+
+msgid "Incorrect IBAN"
+msgstr "Incorrect IBAN"
+
+msgid "SWIFT code. Enter up to 11 symbols"
+msgstr "SWIFT code. Enter up to 11 symbols"
+
+msgid "Incorrect SWIFT code"
+msgstr "Incorrect SWIFT code"
+
+msgid "Your country is not using IBAN codes"
+msgstr "Your country is not using IBAN codes"
+
+msgid "Not valid bank account"
+msgstr "Not valid bank account"
+
+msgid "bankbase.withdraw.info"
+msgstr "Bank transfer withdrawals are processed within 3-5 banking days."
+
+msgid "Bank transfer (CNY)"
+msgstr "Bank transfer (CNY)"
+
+msgid "depends on the originating bank"
+msgstr "depends on the originating bank"
+
+msgid "3 to 5 days"
+msgstr "3 to 5 days"
+
+#, python-format
+msgid "Deposit of funds to the account - %(time)s"
+msgstr "Deposit of funds to the account - %(time)s"
+
+#, python-format
+msgid "USD transfer commission - %(fee)s"
+msgstr "USD transfer commission - %(fee)s"
+
+msgid "Please fill out the form to request deposit of funds"
+msgstr "Please fill out the form to request deposit of funds"
+
+msgid ""
+"First, last and middle name (if any) in latin transcription. Example: Andrei"
+" Ivanovich Denisov"
+msgstr ""
+"First, last and middle name (if any) in Latin transcription. Example: Andrei"
+" Ivanovich Denisov"
+
+msgid "Country of residention of beneficiary"
+msgstr "Country of residence of beneficiary"
+
+#, python-format
+msgid "Withdrawal of funds from the account - %(time)s"
+msgstr "Withdrawal of funds from the account - %(time)s"
+
+#, python-format
+msgid "Minimal sum of withdrawal - %(min_amount)s"
+msgstr "Minimal sum of withdrawal - %(min_amount)s"
+
+msgid "Please fill out the form to request withdrawal of funds"
+msgstr "Please fill out the form to request withdrawal of funds"
+
+msgid "Bank transfer (EUR)"
+msgstr "Bank transfer (EUR)"
+
+#, python-format
+msgid "Euro transfer commission - %(fee)s"
+msgstr "Euro transfer commission - %(fee)s"
+
+msgid "Bank transfer (IDR)"
+msgstr "Bank transfer (IDR)"
+
+msgid "from 15 minutes"
+msgstr "from 15 minutes"
+
+#, python-format
+msgid "Rouble transfer commission - %(fee)s"
+msgstr "Rouble transfer commission - %(fee)s"
+
+#, python-format
+msgid "Minimal sum of deposit - %(min_amount)s"
+msgstr "Minimum sum of deposit - %(min_amount)s"
+
+msgid "Payment_Details"
+msgstr "Payment_Details"
+
+msgid "Credit_Card_Number"
+msgstr "Credit_Card_Number"
+
+msgid "Bank transfer (RUR)"
+msgstr "Bank transfer (RUB)"
+
+msgid "3%, but not less than 100 roubles"
+msgstr "3%, but not less than 100 roubles"
+
+msgid "First name"
+msgstr "First name"
+
+msgid "Please use Cyrillic letters"
+msgstr "Please use Cyrillic letters"
+
+msgid "Enter Cyrillic letters"
+msgstr "Enter Cyrillic letters"
+
+msgid "Last name"
+msgstr "Last name"
+
+msgid "Middle name"
+msgstr "Middle name"
+
+msgid "Tax ID of bank (or your tax ID)"
+msgstr "Tax ID of a bank (or your tax ID)"
+
+msgid "Enter up to 12 digits"
+msgstr "Enter up to 12 digits"
+
+msgid "Bank"
+msgstr "Bank"
+
+msgid "Bank name, address"
+msgstr "Bank name, address"
+
+msgid "Bank account"
+msgstr "Bank account"
+
+msgid "Enter 20 digits"
+msgstr "Enter 20 digits"
+
+msgid "Credit card number"
+msgstr "Credit card number"
+
+msgid "Enter up to 19 digits"
+msgstr "Enter up to 19 digits"
+
+msgid "Enter from 12 to 19 digits"
+msgstr "Enter from 12 to 19 digits"
+
+msgid "Correspondent account"
+msgstr "Correspondent account"
+
+msgid "Bank Identifier Code"
+msgstr "Bank Identifier Code"
+
+msgid "Enter 9 digits"
+msgstr "Enter 9 digits"
+
+msgid ""
+"<b>Please make sure </b> that your name in payment details matches the one "
+"in your account details"
+msgstr ""
+"<b>Please make sure </b> that your name in payment details matches the one "
+"in your account details"
+
+msgid "Bank transfer (UAH)"
+msgstr "Bank transfer (UAH)"
+
+msgid "0.1%, but not less than 1 hryvnia"
+msgstr "0.1%, but not less than 1 hryvnia"
+
+msgid "Your name"
+msgstr "Your name"
+
+msgid "Please use Cyrillic letters for your name"
+msgstr "Please use Cyrillic letters for your name"
+
+msgid "Bank account "
+msgstr "Bank account "
+
+msgid "Enter 14 digits"
+msgstr "Enter 14 digits"
+
+msgid "Bank Identifier Code "
+msgstr "Bank Identifier Code "
+
+msgid "Enter 6 digits"
+msgstr "Enter 6 digits"
+
+msgid "Bank transfer (USD)"
+msgstr "Bank transfer (USD)"
+
+msgid "Unknown type of account field"
+msgstr "Unknown type of account field"
+
+msgid "Account does not exist"
+msgstr "An account does not exist"
+
+msgid "Can't operate on a demo account."
+msgstr "Cannot operate on a demo account."
+
+msgid "Deposit/withdrawal operations are unavailable for this account type."
+msgstr "Deposit/withdrawal operations are unavailable for this account type."
+
+msgid "Choose currency"
+msgstr "Choose currency"
+
+msgid "Amount of money to deposit."
+msgstr "Amount of money to deposit."
+
+msgid ""
+"Attention! Specify amount on your account after deduction of the system's "
+"charge"
+msgstr ""
+"Attention! Specify amount on your account after deduction of the system's "
+"charge"
+
+#, python-format
+msgid "Your %(payment_system)s purse, e.g. %(example)s"
+msgstr "Your %(payment_system)s purse, e.g. %(example)s"
+
+#, python-format
+msgid "Wrong %s purse number."
+msgstr "Wrong %s purse number."
+
+#, fuzzy, python-format
+msgid "You cant deposit more than %(amount)s with %(system)s"
+msgstr ""
+"Attention! Deposit and withdrawal must be done through the same payment "
+"system"
+
+#, fuzzy
+msgid ""
+"You can deposit money on an ECN account only through USD or EUR bank "
+"transfer"
+msgstr ""
+"Attention! Deposit and withdrawal must be done through the same payment "
+"system"
+
+msgid "Wrong amount"
+msgstr "Wrong amount"
+
+#, python-format
+msgid "Minimum deposit amount is %(amount)s %(currency)s"
+msgstr "Minimum deposit amount is %(amount)s %(currency)s"
+
+msgid ""
+"Cannot determine the account balance. Try again later or contact support"
+msgstr ""
+"Cannot determine the account balance. Try again later or contact technical "
+"support"
+
+msgid "Amount of money to withdraw"
+msgstr "Amount of money to withdraw"
+
+msgid ""
+"Your account is not activated. You must activate your account to be able to "
+"withdraw money. To activate your account please follow the link you received"
+" by email. If you have any problems with account activation, please contact "
+"your personal manager."
+msgstr ""
+"Your account is not activated. You must activate your account to be able to "
+"withdraw money. To activate your account please follow the link you received"
+" by email. If you have any problems with account activation, please contact "
+"your personal manager."
+
+#, python-format
+msgid ""
+"You should <a href=\"%(link)s\" target=\"_blank\">complete the verification "
+"process</a> before withdrawing from account %(account)s"
+msgstr ""
+"You should <a href=\"%(link)s\" target=\"_blank\">complete the verification "
+"process</a> before withdrawing from the account %(account)s"
+
+msgid "You can't withdraw funds from this account"
+msgstr "You cannot withdraw funds from this account"
+
+#, python-format
+msgid ""
+"Minimal amount of money you can withdraw with this payment system is "
+"%(limit_value)s%(currency)s"
+msgstr ""
+"Minimal amount of money you can withdraw with this payment system is "
+"%(limit_value)s%(currency)s"
+
+#, python-format
+msgid "Enter amount more than %s"
+msgstr "Enter amount more than %s"
+
+#, python-format
+msgid ""
+"Maximal amount of money you can withdraw for a chosen account is "
+"%(limit_value)s%(currency)s "
+msgstr ""
+"Maximal amount of money you can withdraw for the chosen account is "
+"%(limit_value)s%(currency)s "
+
+#, python-format
+msgid "(including %s commission due to Welcome Bonus)"
+msgstr "(including %s commission due to the Welcome Bonus)"
+
+msgid ""
+"First, last and middle name (if any). Example: Andrei Ivanovich Denisov"
+msgstr ""
+"First, last and middle name (if any). Example: Andrei Ivanovich Denisov"
+
+msgid ""
+"Name, surname. You could use capital Latin letters, hyphen and spaces. "
+"Example: ANDREI DENISOV"
+msgstr ""
+"Name, last name. You could use capital Latin letters, hyphen and spaces. "
+"Example: ANDREI DENISOV"
+
+msgid "Country"
+msgstr "Country"
+
+msgid "The country where you live"
+msgstr "The country where you live"
+
+msgid "City"
+msgstr "City"
+
+msgid "The city where you live"
+msgstr "The city where you live"
+
+msgid "up to 3 days"
+msgstr "up to 3 days"
+
+msgid "Expiry date"
+msgstr "Expiry date"
+
+msgid "ID number"
+msgstr "ID number"
+
+msgid "Birthday"
+msgstr "Birthday"
+
+msgid "As specified on your credit card"
+msgstr "As specified on your credit card"
+
+msgid "Invalid credit card number!"
+msgstr "Invalid credit card number!"
+
+msgid "Invalid expiry date"
+msgstr "Invalid expiry date"
+
+msgid "2% + $10"
+msgstr "2% + $10"
+
+msgid "Chronopay"
+msgstr "Chronopay"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "contact.deposit.info"
+msgstr "Contact deposits are processed within one day."
+
+msgid "Elecsnet"
+msgstr "Elecsnet"
+
+msgid "a day"
+msgstr "a day"
+
+msgid "Account Number"
+msgstr "An account number"
+
+msgid "Your account number at FasaPay. For example FP0023"
+msgstr "Your account number at FasaPay. For example FP0023"
+
+msgid "depends on amount and region"
+msgstr "depends on amount and region"
+
+msgid "3 days"
+msgstr "3 days"
+
+msgid "Verification number"
+msgstr "Verification number"
+
+msgid "Date of transaction"
+msgstr "Date of transaction"
+
+msgid "Please specify the date the transfer was committed"
+msgstr "Please specify the date the transfer was committed"
+
+msgid "Please specify the country specified in transfer"
+msgstr "Please specify the country specified in transfer"
+
+msgid "Please specify the city specified in transfer"
+msgstr "Please specify the city specified in transfer"
+
+msgid "Handy Bank"
+msgstr "Handy Bank"
+
+msgid "Unique transfer code given by Лидер"
+msgstr "Unique transfer code given by Lider"
+
+msgid "Date sent"
+msgstr "Date sent"
+
+msgid "Your account number at Liberty Reserve. For example U0650930"
+msgstr "Your account number at Liberty Reserve. For example U0650930"
+
+msgid "LiqPay.com"
+msgstr "LiqPay.com"
+
+msgid ""
+"LiqPay withdrawal is temporarily disabled due to technical issues. Please "
+"use another system."
+msgstr ""
+"LiqPay withdrawal is temporarily disabled due to the technical issues. "
+"Please use another system."
+
+msgid "Migom"
+msgstr "Migom"
+
+msgid "Transaction numer"
+msgstr "Transaction number"
+
+msgid ""
+"The country from which you sent the money.(not the country you are from, "
+"etc.)"
+msgstr ""
+"The country from which you sent the money (not the country you are from, "
+"etc.)"
+
+msgid ""
+"Amount of money to deposit in RUR<br/><strong>Attention!</strong> Specify "
+"amount on your account after deduction of the system's charge"
+msgstr ""
+"Amount of money to deposit in RUB<br/><strong>Attention!</strong> Specify "
+"amount on your account after deduction of the system's charge"
+
+msgid "The name should consist of at least 3 words"
+msgstr "The name should consist of at least 3 words"
+
+msgid "Receiver"
+msgstr "Receiver"
+
+msgid "Fill in your first, last and middle name (if any)"
+msgstr "Fill in your first, last and middle name (if any)"
+
+msgid "Skrill"
+msgstr "Skrill"
+
+msgid "Amount of money to deposit in USD (at least 10 currency units)"
+msgstr "Amount of money to deposit in USD (at least 10 currency units)"
+
+msgid "Skrill Cards"
+msgstr "Skrill Cards"
+
+msgid "MoneyGram"
+msgstr "MoneyGram"
+
+#, python-format
+msgid "According to %s fees"
+msgstr "According to %s fees"
+
+msgid "State"
+msgstr "State"
+
+msgid "Only for transfers from the U.S."
+msgstr "Only for transfers from the U.S."
+
+msgid "Please specify the address specified in transfer"
+msgstr "Please specify the address specified in transfer"
+
+msgid "Referral number"
+msgstr "Referral number"
+
+msgid ""
+"8-digit verification number for the copy of the form. For example, 12345678"
+msgstr ""
+"8-digit verification number for the copy of the form. For example, 12345678"
+
+msgid "Answer to the security question"
+msgstr "Answer the security question"
+
+msgid "Answer to the question specified while committing the transfer"
+msgstr "Answer the question specified while committing the transfer"
+
+msgid ""
+"First name, last name. Please, fill in the data strictly in this order."
+msgstr ""
+"First name, last name. Please, fill in the data strictly in this order."
+
+msgid "Only uppercase latin letters and space are allowed"
+msgstr "Only uppercase Latin letters and space are allowed"
+
+msgid "Neteller"
+msgstr "Neteller"
+
+msgid "2%, but not less than $1"
+msgstr "2%, but not less than $1"
+
+msgid "Net account"
+msgstr "Net account"
+
+msgid ""
+"Your Neteller's 12-digit Account ID or email address that is associated with"
+" their NETELLER account"
+msgstr ""
+"Your Neteller's 12-digit Account ID or email address that is associated with"
+" their NETELLER account"
+
+msgid "Secure ID"
+msgstr "Secure ID"
+
+msgid "Your Neteller's 6-digit Secure ID"
+msgstr "Your Neteller's 6-digit Secure ID"
+
+msgid "You can't deposit less than $30"
+msgstr "You cannot deposit less than $30"
+
+msgid "Scan of receipt"
+msgstr "Scan of receipt"
+
+msgid "Your account (e-mail) at OKPAY"
+msgstr "Your account (e-mail) at OKPAY"
+
+msgid "Dengi Online"
+msgstr "Dengi Online"
+
+msgid "MTS, MegaFon"
+msgstr "MTS, MegaFon"
+
+msgid "Grand Capital Prepaid MasterCard powered by Payoneer"
+msgstr "Grand Capital Prepaid MasterCard powered by Payoneer"
+
+msgid "payoneer.withdraw.info"
+msgstr "Payoneer withdrawals are processed in 3 business days."
+
+#, python-format
+msgid ""
+"\n"
+"                Для работы с системой Payoneer необходимо <a id=\"payoneer_req_link\" href=\"%(payoneer_reg_url)s\" title=\"перейти к заполнению формы\">заказать</a> карту.\n"
+"                "
+msgstr ""
+"\n"
+"To be able to use Grand Capital prepaid MasterCard, please, <a id=\"payoneer_req_link\" href=\"%(payoneer_reg_url)s\" title=\"Go to Payoneer site\">register for your prepaid MasterCard</a>."
+
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                Для вывода средств через систему Payoneer необходимо заполнить\n"
+#| "                <a title=\"перейти к заполнению формы\" href=\"%(form_url)s\">форму</a>.\n"
+#| "                "
+msgid ""
+"\n"
+"                Для вывода средств через систему Payoneer необходимо заполнить\n"
+"                <a title=\"перейти к заполнению формы\" href=\"payments/%(operation)s?s=payoneer\">форму</a>.\n"
+"                "
+msgstr ""
+"\n"
+"To withdraw money to your Grand Capital prepaid MasterCard, please, <a id=\"payoneer_req_link\" href=\"%(form_url)s\" title=\"Go to Payoneer site\">fill in the form</a>."
+
+msgid "Your account number at Perfect Money. For example U1234567"
+msgstr "Your account number at Perfect Money. For example U1234567"
+
+msgid "Qiwi"
+msgstr "Qiwi"
+
+msgid ""
+"QIWI doesn't support one-time payments of more than 15000 roubles. If you "
+"need to deposit more money via QIWI, just commit several payments."
+msgstr ""
+"QIWI does not support one-time payments of more than 15000 roubles. If you "
+"need to deposit more money via QIWI, just commit several payments."
+
+msgid "Amount should be above 5 roubles"
+msgstr "Amount should be above 5 roubles"
+
+#, python-format
+msgid "Maximal sum of withdrawal - %(max_amount)s"
+msgstr "Maximum sum of withdrawal - %(max_amount)s"
+
+#, python-format
+msgid "You cannot withdraw more than %(amount)s in one request"
+msgstr "You cannot withdraw more than %(amount)s for one request"
+
+msgid "RBKCard"
+msgstr "RBKCard"
+
+msgid "RBKMoney"
+msgstr "RBKMoney"
+
+msgid "Roboxchange"
+msgstr "Roboxchange"
+
+msgid "Amount of money to deposit"
+msgstr "Amount of money to deposit"
+
+msgid "Union Pay"
+msgstr "Union Pay"
+
+msgid "Webmoney"
+msgstr "Webmoney"
+
+#, python-format
+msgid "0.8% for USD, EUR, RUR; 12% for UAH"
+msgstr "0.8% for USD, EUR, RUB; 12% for UAH"
+
+msgid "0% (compensated by Grand Capital) for USD, EUR, RUR; 12% for UAH"
+msgstr "0% (compensated by Grand Capital) for USD, EUR, RUB; 12% for UAH"
+
+msgid "Not enough money."
+msgstr "Not enough money."
+
+msgid ""
+"You should first make a deposit from this requisit. If you already have done"
+" this, please, contact support."
+msgstr ""
+"You should first make a deposit using these bank details. If you have "
+"already done this, please, contact technical support."
+
+msgid "Please use WMZ, WMR or WME purse"
+msgstr "Please use WMZ, WMR or WME purse"
+
+msgid "Instant withdrawal for Micro accounts up to 100$"
+msgstr "Instant withdrawal for Micro accounts are up to $100"
+
+msgid ""
+"For instant withdrawal make sure that your WebMoney Keeper is activated and "
+"WMID details is open (your name and contacts)"
+msgstr ""
+"For instant withdrawal make sure that your WebMoney Keeper is activated and "
+"WMID details are open (your name and contacts)"
+
+msgid "Protection code"
+msgstr "Protection code"
+
+msgid ""
+"Enter protection code to protect the payment. If you don't know what it is, "
+"leave empty"
+msgstr ""
+"Enter protection code to protect the payment. If you do not know what it is,"
+" leave empty"
+
+msgid "Amount of money to withdraw (in your account's currency)"
+msgstr "Amount of money to withdraw (in your account's currency)"
+
+msgid "Western Union"
+msgstr "Western Union"
+
+msgid "Money Transfer Control Number (MTCN)"
+msgstr "Money Transfer Control Number (MTCN)"
+
+msgid ""
+"10-digit verification number for the copy of the form. For example, "
+"555-555-5555"
+msgstr ""
+"10-digit verification number for the copy of the form. For example, "
+"555-555-5555"
+
+msgid "WireCapital"
+msgstr "WireCapital"
+
+msgid "Yandex.Money"
+msgstr "Yandex.Money"
+
+msgid "Attention! Funds withdrawal is only possible for the same currencies"
+msgstr "Attention! Funds withdrawal is only possible for the same currencies"
+
+msgid "Please choose payment system"
+msgstr "Please choose payment system"
+
+msgid "Financial operations"
+msgstr "Financial operations"
+
+msgid "Deposit funds"
+msgstr "Deposit funds"
+
+msgid "Withdraw funds"
+msgstr "Withdraw funds"
+
+msgid "Internal transfer"
+msgstr "Internal transfer"
+
+msgid "Step 1. Transaction details"
+msgstr "Step 1. Transaction details"
+
+msgid "Step 2. Verification"
+msgstr "Step 2. Verification"
+
+msgid "Step 3. Payment"
+msgstr "Step 3. Payment"
+
+msgctxt "deposit"
+msgid "Payment system"
+msgstr "Payment system"
+
+msgid ""
+"\n"
+"                        Print out or download the payment order and bring it to a local branch of your bank to conduct\n"
+"                        the transaction.\n"
+"                        "
+msgstr ""
+"\n"
+"                        Print out or download the payment order and bring it to a local branch of your bank to conduct\n"
+"                        the transaction.\n"
+"                        "
+
+msgid "Please verify the details:"
+msgstr "Please verify the details:"
+
+msgid ""
+"Payments from your country may be restricted, in case your payment fails, "
+"see the instructions <a href='/faq/#/SKRILL'>here</a>"
+msgstr ""
+"Payments from your country may be restricted, in case your payment fails, "
+"see the instructions <a href='/faq/#/SKRILL'>here</a>"
+
+msgid "Back"
+msgstr "Back"
+
+msgid "Transfer funds"
+msgstr "Transfer funds"
+
+msgid "Download requisits"
+msgstr "Download bank details"
+
+msgid "print requisits"
+msgstr "print bank details"
+
+msgid "Print requisits"
+msgstr "Print bank details"
+
+msgid ""
+"\n"
+"                    <p class=\"info offset-top-20\">\n"
+"                        We do not accept transfers from 3rd parties. All expenditures for returning a transfer to the sender are paid for\n"
+"                        by the customer.<br>\n"
+"                        Deposit of funds to customer's account, currency conversion between accounts and while withdrawing funds\n"
+"                        is carried out according to company's internal rates effective at the time of funds arrival or at the\n"
+"                        time of the withdrawal.<br>\n"
+"                        \"Amount\" field is only for information, we do not guarantee deposit of the exact amount of funds stated.<br>\n"
+"                        One customer may create not more than 10 withdrawal requests in a day.<br>\n"
+"                        Funds withdrawal is conducted by our Financial department from Monday to Friday from 9:00 to 18:00 (MSK).\n"
+"                        Withdrawal requests, created after 16:00 (MSK) are processed the next working day.\n"
+"                    </p>\n"
+"                "
+msgstr ""
+"\n"
+"                    <p class=\"info offset-top-20\">\n"
+"                        We do not accept transfers from 3rd parties. All expenditures for returning a transfer to the sender are paid\n"
+"                        by the client.<br>\n"
+"                        Deposit of funds to client's account, currency conversion between accounts and withdrawing funds\n"
+"                        are carried out according to the company's internal rates effective at the time of funds arrival or at the\n"
+"                        time of withdrawal.<br>\n"
+"                        \"Amount\" field is only for information, we do not guarantee deposit of the exact amount of funds stated.<br>\n"
+"                        One client may create no more than 10 withdrawal requests in a day.<br>\n"
+"                        Funds withdrawal is conducted by our Financial department from Monday to Friday from 9:00 a.m. to 6:00 p.m. (Moscow time).\n"
+"                        Withdrawal requests, created after 4:00 p.m. (Moscow time) are processed the next working day.\n"
+"                    </p>\n"
+"                "
+
+msgid "Exchange rates"
+msgstr "Exchange rates"
+
+msgctxt "withdraw"
+msgid "Payment system"
+msgstr "Payment system"
+
+msgid ""
+"\n"
+"                <p class=\"info offset-top-20\">\n"
+"                    We do not accept transfers from 3rd parties. All expenditures for returning a transfer to the sender are paid for\n"
+"                    by the customer.<br>\n"
+"                    Deposit of funds to customer's account, currency conversion between accounts and while withdrawing funds\n"
+"                    is carried out according to company's internal rates effective at the time of funds arrival or at the\n"
+"                    time of the withdrawal.<br>\n"
+"                    \"Amount\" field is only for information, we do not guarantee deposit of the exact amount of funds stated.<br>\n"
+"                    One customer may create not more than 10 withdrawal requests in a day.<br>\n"
+"                    Funds withdrawal is conducted by our Financial department from Monday to Friday from 9:00 to 18:00 (MSK).\n"
+"                    Withdrawal requests, created after 16:00 (MSK) are processed the next working day.\n"
+"                </p>\n"
+"            "
+msgstr ""
+"\n"
+"                <p class=\"info offset-top-20\">\n"
+"                    We do not accept transfers from 3rd parties. All expenditures for returning a transfer to the sender are paid for\n"
+"                    by the client.<br>\n"
+"                    Deposit of funds to client's account, currency conversion between accounts and withdrawing funds\n"
+"                    are carried out according to the company's internal rates effective at the time of funds arrival or at the\n"
+"                    time of withdrawal.<br>\n"
+"                    \"Amount\" field is only for information, we do not guarantee deposit of the exact amount of funds stated.<br>\n"
+"                    One client may create no more than 10 withdrawal requests in a day.<br>\n"
+"                    Funds withdrawal is conducted by our Financial department from Monday to Friday from 9:00 a.m. to 6:00 p.m. (Moscow time).\n"
+"                    Withdrawal requests, created after 4:00 p.m. (Moscow time) are processed the next working day.\n"
+"                </p>\n"
+"            "
+
+#, python-format
+msgid ""
+"Dear client!\n"
+"\n"
+"You just made a deposit of %(usd_amount)s to your account %(account)s.\n"
+"For transactions larger than $800 our payment system requires us to verify the customer's data for security reasons.\n"
+"\n"
+"To pass this verification you need to upload scans or photos of the following documents:\n"
+"\n"
+"1. Your ID or passport\n"
+"2. Your card which was used to make the payment. The first 4 and the last 4 digits of its number should be visible.\n"
+"Please cover all the other digits.\n"
+"3. A document which can verify your address (not more than 6 months old). For example, utility bill, rental agreement,\n"
+"bank statement, etc.\n"
+"- or -\n"
+"3. A second document confirming your ID (driving license, etc.)\n"
+"\n"
+"After you pass the verification, you will be able to start trading on your account %(account)s.\n"
+"\n"
+"We care about your security!"
+msgstr ""
+"Dear client!\n"
+"\n"
+"You have just made a deposit of %(usd_amount)s to your account %(account)s.\n"
+"For transactions larger than $800 our payment system requires us to verify the client's data for security reasons.\n"
+"\n"
+"To pass this verification you need to upload scans or photos of the following documents:\n"
+"\n"
+"1. Your ID or passport\n"
+"2. Your card which was used to make the payment. The first 4 and the last 4 digits of its number should be visible.\n"
+"Please cover all the other digits.\n"
+"3. A document which can verify your address (no more than 6 months old). For example, utility bill, rental agreement,\n"
+"bank statement, etc.\n"
+"- or -\n"
+"3. A second document confirming your ID (driving license, etc.)\n"
+"\n"
+"After you pass the verification, you will be able to start trading on your account %(account)s.\n"
+"\n"
+"We care about your security!"
+
+msgid "We need to verify your deposit"
+msgstr "We need to verify your deposit"
+
+#, python-format
+msgid ""
+"\n"
+"Your deposit on account %(account)s SUCCEEDED\n"
+"-------------------------------------------------------\n"
+"Payment system: %(payment_system)s\n"
+"Purse: %(purse)s\n"
+"Amount: %(amount)s\n"
+"Currency: %(currency)s\n"
+"Other info:\n"
+msgstr ""
+"\n"
+"Your deposit on the account %(account)s is succeeded\n"
+"-------------------------------------------------------\n"
+"Payment system: %(payment_system)s\n"
+"Purse: %(purse)s\n"
+"Amount: %(amount)s\n"
+"Currency: %(currency)s\n"
+"Other info:\n"
+
+msgid "Manager comment"
+msgstr "Manager's comment"
+
+msgid ""
+"\n"
+"Please upload your ID scan or photo to your Private Office during 10 days\n"
+msgstr ""
+"\n"
+"Please upload your ID scan or a photo to your Private Office during 10 days\n"
+
+#, python-format
+msgid ""
+"\n"
+"Your deposit on account %(account)s SUCCEEDED\n"
+msgstr ""
+"\n"
+"Your deposit on the account %(account)s is succeeded \n"
+
+msgid "(Automatic)"
+msgstr "(Automatic)"
+
+#, python-format
+msgid "Deposit request on account %(account)s created."
+msgstr "Deposit request on the account %(account)s is created."
+
+msgid "Other info"
+msgstr "Other info"
+
+msgid "Current account balance"
+msgstr "Current account balance"
+
+#, python-format
+msgid ""
+"\n"
+"Deposit request on account %(account)s created\n"
+msgstr ""
+"\n"
+"Deposit request on the account %(account)s is created\n"
+
+#, python-format
+msgid ""
+"\n"
+"Your deposit on account %(account)s FAILED\n"
+"\n"
+"Reason: %(comment)s\n"
+"-------------------------------------------------------\n"
+"Payment system: %(payment_system)s\n"
+"Purse: %(purse)s\n"
+"Amount: %(amount)s\n"
+"Currency: %(currency)s\n"
+"Request date and time: %(datetime)s\n"
+"Other info:\n"
+msgstr ""
+"\n"
+"Your deposit on the account %(account)s failed\n"
+"\n"
+"Reason: %(comment)s\n"
+"-------------------------------------------------------\n"
+"Payment system: %(payment_system)s\n"
+"Purse: %(purse)s\n"
+"Amount: %(amount)s\n"
+"Currency: %(currency)s\n"
+"Request date and time: %(datetime)s\n"
+"Other info:\n"
+
+#, python-format
+msgid ""
+"\n"
+"You deposit on account %(account)s FAILED\n"
+msgstr ""
+"\n"
+"You deposit on the account %(account)s failed\n"
+
+#, python-format
+msgid ""
+"Hello! Your application for withdrawal of funds on the account "
+"№%(account_id)s is transferred in the financial department for approval and "
+"money transfer. It won’t take long. If you have any questions, please, write"
+" to us in Private Office https://grandbroker.com/account/trading"
+msgstr ""
+"Hello! Your application for withdrawal of funds on the account "
+"№%(account_id)s is transferred to the financial department for approval and "
+"money transfer. It will not take long. If you have any questions, please, "
+"write to us in the Private Office https://grandbroker.com/account/trading"
+
+#, python-format
+msgid ""
+"\n"
+"The application for withdrawal of %(amount_money)s is received in the finance department\n"
+msgstr ""
+"\n"
+"The application for withdrawal of %(amount_money)s is received by the finance department\n"
+
+#, python-format
+msgid ""
+"Hello! Your application for withdrawal of funds on the account "
+"№%(account_id)s is ready to the money transfer to your payment system: "
+"%(payment_system)s If you have any questions, please, write to us in Private"
+" Office https://grandbroker.com/account/trading"
+msgstr ""
+"Hello! Your application for withdrawal of funds on the account "
+"№%(account_id)s is ready to the money transfer to your payment system: "
+"%(payment_system)s If you have any questions, please, write to us in the "
+"Private Office https://grandbroker.com/account/trading"
+
+#, python-format
+msgid ""
+"\n"
+"Your %(amount_money)s are transferred to these requisites\n"
+msgstr ""
+"\n"
+"Your %(amount_money)s are transferred to these bank details\n"
+
+#, python-format
+msgid ""
+"Hello! Your application for withdrawal of funds on the account "
+"№%(account_id)s is transferred to check in the technical department. It "
+"won’t take long. If you have any questions, please, write to us in Private "
+"Office https://grandbroker.com/account/trading"
+msgstr ""
+"Hello! Your application for withdrawal of funds on the account "
+"№%(account_id)s is transferred to check to the technical department. It will"
+" not take long. If you have any questions, please, write to us in the Office"
+" https://grandbroker.com/account/trading"
+
+#, python-format
+msgid ""
+"\n"
+"The application for withdrawal of %(amount_money)s is verified\n"
+msgstr ""
+"\n"
+"The application for withdrawal of %(amount_money)s is verified\n"
+
+#, python-format
+msgid ""
+"Your withdrawal from account %(account)s SUCCEEDED\n"
+"-------------------------------------------------------\n"
+"Payment system: %(payment_system)s\n"
+"Purse: %(purse)s\n"
+"Amount: %(amount)s\n"
+"Currency: %(currency)s"
+msgstr ""
+"Your withdrawal from the account %(account)s is succeeded \n"
+"-------------------------------------------------------\n"
+"Payment system: %(payment_system)s\n"
+"Purse: %(purse)s\n"
+"Amount: %(amount)s\n"
+"Currency: %(currency)s"
+
+#, fuzzy
+msgid "Requisit info"
+msgstr "QIWI-purse deposits are processed automatically (instantly)."
+
+#, python-format
+msgid ""
+"\n"
+"Your withdrawal from account %(account)s SUCCEEDED\n"
+msgstr ""
+"\n"
+"Your withdrawal from the account %(account)s is succeeded\n"
+
+#, python-format
+msgid "Withdraw request on account %(account)s created."
+msgstr "Withdraw request on the account %(account)s is created."
+
+#, python-format
+msgid ""
+"\n"
+"Withdraw request on account %(account)s created\n"
+msgstr ""
+"\n"
+"Withdraw request on the account %(account)s is created\n"
+
+#, python-format
+msgid ""
+"Your withdrawal from account %(account)s FAILED\n"
+"\n"
+"Reason: %(comment)s\n"
+"-------------------------------------------------------\n"
+"Payment system: %(payment_system)s\n"
+"Purse: %(purse)s\n"
+"Amount: %(amount)s\n"
+"Currency: %(currency)s\n"
+"Request date and time: %(datetime)s"
+msgstr ""
+"Your withdrawal from the account %(account)s failed\n"
+"\n"
+"Reason: %(comment)s\n"
+"-------------------------------------------------------\n"
+"Payment system: %(payment_system)s\n"
+"Purse: %(purse)s\n"
+"Amount: %(amount)s\n"
+"Currency: %(currency)s\n"
+"Request date and time: %(datetime)s"
+
+#, python-format
+msgid ""
+"\n"
+"Your withdrawal from account %(account)s FAILED\n"
+msgstr ""
+"\n"
+"Your withdrawal from the account %(account)s failed\n"
+
+msgid "Make transaction"
+msgstr "Make transaction"
+
+msgid "Make"
+msgstr "Make"
+
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li> Get to any Elexnet terminal; </li>\n"
+"        <li> Choose \"Payment systems\" option; </li>\n"
+"        <li> Choose \"HandyBank\"; </li>\n"
+"        <li> Choose \"Handy-number\"; </li>\n"
+"        <li>\n"
+"            Enter Handy-number: 218280 and company's co-number: 5509, in a field \"sender's comments\"\n"
+"            enter Your trading account number (login).\n"
+"        </li>\n"
+"        <li>\n"
+"            <strong>Take printed receipt that verifies your payment.</strong>\n"
+"        </li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li> Get to any Elexnet terminal; </li>\n"
+"        <li> Choose the \"Payment systems\" option; </li>\n"
+"        <li> Choose \"HandyBank\"; </li>\n"
+"        <li> Choose \"Handy-number\"; </li>\n"
+"        <li>\n"
+"            Enter Handy-number: 218280 and the company's co-number: 5509, in the field \"sender's comments\"\n"
+"            enter your trading account number (login).\n"
+"        </li>\n"
+"        <li>\n"
+"            <strong>Take printed receipt that verifies your payment.</strong>\n"
+"        </li>\n"
+"    </ol>\n"
+
+#, python-format
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            Fill out an application for the money transfer at any Lider service location,\n"
+"            providing the following information:\n"
+"            <ul>\n"
+"                <li>\n"
+"                    Your name, date and place of birth, passport information,\n"
+"                    including the residence address (registration); </li>\n"
+"                <li> Receiver's name - <strong>%(PAYMENTS_RECEIVER)s</strong>; </li>\n"
+"                <li> In the field \"Purpose of transfer\" choose \"Financial aid\". </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show the identification document; </li>\n"
+"        <li> Make a payment and commission fee according to system’s tariffs. </li>\n"
+"        <li><strong> Don't forget to get a verification number – transaction number from the operator. </strong></li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            Fill out an application for the money transfer at any Lider service location,\n"
+"            providing the following information:\n"
+"            <ul>\n"
+"                <li>\n"
+"                    Your name, date and place of birth, national identity document information,\n"
+"                    including the residence address (registration); </li>\n"
+"                <li> Receiver's name - <strong>%(PAYMENTS_RECEIVER)s</strong>; </li>\n"
+"                <li> In the field \"Purpose of transfer\" choose \"Financial aid\". </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show the identification document; </li>\n"
+"        <li> Make a payment and commission fee according to system’s tariffs. </li>\n"
+"        <li><strong> Do not forget to get a verification number – transaction number from the operator. </strong></li>\n"
+"    </ol>\n"
+
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li> On the home page www.handybank.ru go to the \"Enter the system\" section; </li>\n"
+"        <li> Enter your personal Handy-number and access password; </li>\n"
+"        <li> Choose 'Service payments' section, then – 'Financial services', then – 'GrandCapital Ltd'; </li>\n"
+"        <li> Choose payment verification method – 'Handy-code' or 'Handy-key' and execute the transfer; </li>\n"
+"        <li> In a field \"Trading account number\" fill in your login (trading account number). </li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li> On the home page www.handybank.ru go to the \"Enter the system\" section; </li>\n"
+"        <li> Enter your personal Handy-number and access password; </li>\n"
+"        <li> Choose the 'Service payments' section, then – 'Financial services', then – 'Grand Capital Ltd'; </li>\n"
+"        <li> Choose payment verification method – 'Handy-code' or 'Handy-key' and execute the transfer; </li>\n"
+"        <li> In the field \"Trading account number\" fill in your login (trading account number). </li>\n"
+"    </ol>\n"
+
+#, python-format
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any MIGOM’s bank-partner branch fill in the form to make the transaction. While filling in the blank it is necessary to sign the following data:\n"
+"            <ul>\n"
+"                <li> Transfer recipient: <strong>%(PAYMENTS_RECEIVER)s</strong>; </li>\n"
+"                <li> Recipient's country: Russia; </li>\n"
+"                <li> Recipient's city: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID; </li>\n"
+"        <li> Put in the sum in cash desk; </li>\n"
+"        <li> Take the transaction number consisting of 9 figures from the bank manager; </li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any MIGOM bank-partner branch fill in the form to make the transaction. While filling in the blank it is necessary to sign the following data:\n"
+"            <ul>\n"
+"                <li> Transfer recipient: <strong>%(PAYMENTS_RECEIVER)s</strong>; </li>\n"
+"                <li> Recipient's country: Russia; </li>\n"
+"                <li> Recipient's city: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID; </li>\n"
+"        <li> Put in the sum in cash desk; </li>\n"
+"        <li> Take the transaction number consisting of 9 figures from the bank manager; </li>\n"
+"    </ol>\n"
+
+#, python-format
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any MoneyGram office fill in the blank for the transaction specifying the following data:\n"
+"            <ul>\n"
+"                <li> The receiver of transfer: <strong>%(PAYMENTS_RECEIVER)s</strong>\n"
+"                    (It is necessary to fill in that field using Capital Latin letters); </li>\n"
+"                <li> Country of the transfer receiver: Russia; </li>\n"
+"                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID; </li>\n"
+"        <li> Put in the sum in cash desk. </li>\n"
+"        <li> Take copy of the blank with 8-figured referral number of the money transfer; </li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any MoneyGram office fill in the blank for the transaction specifying the following data:\n"
+"            <ul>\n"
+"                <li> The receiver of transfer: <strong>%(PAYMENTS_RECEIVER)s</strong>\n"
+"                    (It is necessary to fill in that field using capital Latin letters); </li>\n"
+"                <li> Country of the transfer receiver: Russia; </li>\n"
+"                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID; </li>\n"
+"        <li> Put in the sum in cash desk. </li>\n"
+"        <li> Take copy of the blank with 8-figured referral number of the money transfer; </li>\n"
+"    </ol>\n"
+
+#, python-format
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any Western Union office fill in the blank for the transaction specifying the following data:\n"
+"            <ul>\n"
+"                <li> The receiver of transfer: <strong>%(PAYMENTS_RECEIVER)s</strong>\n"
+"                    (It is necessary to fill in that field using Capital Latin letters); </li>\n"
+"                <li> Country of the transfer receiver: Russia; </li>\n"
+"                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID; </li>\n"
+"        <li> Put in the sum in cash desk. </li>\n"
+"        <li> Take copy of the blank with 10-figured control number of the money transfer; </li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any Western Union office fill in the blank for the transaction specifying the following data:\n"
+"            <ul>\n"
+"                <li> The receiver of transfer: <strong>%(PAYMENTS_RECEIVER)s</strong>\n"
+"                    (It is necessary to fill in that field using capital Latin letters); </li>\n"
+"                <li> Country of the transfer receiver: Russia; </li>\n"
+"                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID; </li>\n"
+"        <li> Put in the sum in cash desk. </li>\n"
+"        <li> Take copy of the blank with 10-figured control number of the money transfer; </li>\n"
+"    </ol>\n"
+
+msgctxt "button"
+msgid "Continue"
+msgstr "Continue"
+
+msgid "Max deposit per day"
+msgstr "Max deposit per day"
+
+msgid "Max deposit per month"
+msgstr "Max deposit per month"
+
+msgid "Max one-time deposit"
+msgstr "Max one-time deposit"
+
+msgid "Max transactions per day"
+msgstr "Max transactions per day"
+
+msgid "commission"
+msgstr "commission"
+
+msgctxt "redirect_button"
+msgid "Payment system"
+msgstr "Payment system"
+
+msgid "Press the button to go to the payment system"
+msgstr "Press the button to go to the payment system"
+
+#, python-format
+msgid ""
+"\n"
+"    In order to make a pay-in transaction by <strong>%(ps.name)s</strong> you should:\n"
+msgstr ""
+"\n"
+"    In order to make a pay-in transaction by <strong>%(ps.name)s</strong> you should:\n"
+
+msgid ""
+"After your payment is completed, verify your payment for the financial "
+"department."
+msgstr ""
+"After your payment is completed, verify your payment for the financial "
+"department."
+
+msgid "Automatic payment failed."
+msgstr "Automatic payment failed."
+
+#~ msgid "chronopay.deposit.info"
+#~ msgstr "Contact deposits are processed within one day."
+
+#~ msgid "elecsnet.deposit.info"
+#~ msgstr "Elecsnet deposits are processed within one day."
+
+#~ msgid "fastpost.deposit.info"
+#~ msgstr "FastPost deposits are processed within one day."
+
+#~ msgid "handybank.deposit.info"
+#~ msgstr "Handybank deposits are processed within one day."
+
+#~ msgid "leader.deposit.info"
+#~ msgstr "Handybank withdrawals are processed within one day."
+
+#~ msgid "leader.withdraw.info"
+#~ msgstr "Leader withdrawals are processed within one day."
+
+#~ msgid "libertyreserve.deposit.info"
+#~ msgstr "Liberty Reserve deposits are processed automatically (instantly)."
+
+#~ msgid "liqpay.deposit.info"
+#~ msgstr "LiqPay deposits are processed automatically (instantly)."
+
+#~ msgid "migom.deposit.info"
+#~ msgstr "MIGOM deposits are processed during one day."
+
+#~ msgid "moneybookers.deposit.info"
+#~ msgstr "MoneyBookers deposits are processed automatically (instantly)."
+
+#~ msgid "onlinedengi.deposit.info"
+#~ msgstr "Deposit via VISA, MasterCard cards"
+
+#~ msgid "qiwi.deposit.info"
+#~ msgstr "QIWI-purse deposits are processed automatically (instantly)."
+
+#~ msgid "rbkmoney.deposit.info"
+#~ msgstr "RBK Money deposits are processed automatically (instantly)."
+
+#~ msgid "webmoney.deposit.info"
+#~ msgstr ""
+#~ "WebMoney deposits are processed automatically (instantly).\n"
+#~ "\n"
+#~ "If you deposit more than $200, we will automatically compensate the service fee of the WebMoney system."
+
+#~ msgid "westernunion.deposit.info"
+#~ msgstr "Western Union deposits are processed during one day."
+
+#~ msgid "yandex.deposit.info"
+#~ msgstr "Yandex.Money deposits are processed automatically (instantly)."
+
+#~ msgid ""
+#~ "Карта заказана, ожидается активация. Подтверждение данных может длиться до "
+#~ "2-х рабочих дней."
+#~ msgstr "The card issuing is in progress."
+
+#~ msgid "Ваша карта готова к использованию."
+#~ msgstr "Your card is ready for use."
+
+#~ msgid "Ваша карта, заблокирована системой Payoneer."
+#~ msgstr "Your card is blocked by Payoneer."
+
+#~ msgid ""
+#~ "\n"
+#~ "                    Please, <a href=\"%(link)s\">create an account</a> to deposit funds.\n"
+#~ "                "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Please, <a href=\"%(link)s\">create an account</a> to deposit funds.\n"
+#~ "            "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Please, <a href=\"%(link)s\">create an account</a> to withdraw funds.\n"
+#~ "            "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "                    Deposit money through %(ps)s\n"
+#~ "                "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "                    Withdraw money through %(ps)s\n"
+#~ "                "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "      Withdraw money from %(account)s through %(payment_system)s\n"
+#~ "    "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "      Withdraw money through %(payment_system)s\n"
+#~ "    "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "    Withdraw money from %(account)s through %(payment_system)s\n"
+#~ "  "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "      Deposit money on %(account)s through %(payment_system)s\n"
+#~ "    "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "      Deposit money through %(payment_system)s\n"
+#~ "    "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Withdraw money from %(account)s through %(payment_system)s\n"
+#~ "            "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Withdraw money through %(payment_system)s\n"
+#~ "            "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid "Deposit and withdraw payment systems must be the same"
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "              Withdraw money from %(account)s through %(payment_system)s\n"
+#~ "          "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid ""
+#~ "\n"
+#~ "              Withdraw money through %(payment_system)s\n"
+#~ "          "
+#~ msgstr ""
+#~ "Attention! Deposit and withdrawal must be done through the same payment "
+#~ "system"
+
+#~ msgid "moneybookers.withdraw.info"
+#~ msgstr "MoneyBookers withdrawals are processed in 3 business days."
+
+#~ msgid "qiwi.withdraw.info"
+#~ msgstr "QIWI-purse withdrawals are processed in 3 business days."
+
+#~ msgid "webmoney.withdraw.info"
+#~ msgstr ""
+#~ "WebMoney withdrawals are processed:\n"
+#~ "                    for MICRO accounts – automatically,\n"
+#~ "                    for STANDARD accounts – within 3 business business days"
+
+#~ msgid "westernunion.withdraw.info"
+#~ msgstr "Wester Union withdrawals are processed in 3 business days."
+
+#~ msgid "yandex.withdraw.info"
+#~ msgstr "Yandex.Money withdrawals are processed in 3 business days."
+
+#~ msgid "rbkcard.withdraw.info"
+#~ msgstr "Bank transfer withdrawals are processed within 3-5 banking days."
+
+#~ msgid "rbkmoney.withdraw.info"
+#~ msgstr ""
+#~ "WebMoney withdrawals are processed:\n"
+#~ "                    for MICRO accounts – automatically,\n"
+#~ "                    for STANDARD accounts – within 3 business business days"
+
+#~ msgid "bankeur.withdraw.info"
+#~ msgstr "Bank transfer withdrawals are processed within 3-5 banking days."
+
+#~ msgid "bankusd.withdraw.info"
+#~ msgstr "Bank transfer withdrawals are processed within 3-5 banking days."
+
+#~ msgid "fastpost.withdraw.info"
+#~ msgstr "FastPost withdrawals are processed within one day."
+
+#~ msgid "libertyreserve.withdraw.info"
+#~ msgstr "Liberty Reserve withdrawals are processed in 3 business days."
+
+#~ msgid "liqpay.withdraw.info"
+#~ msgstr "Payoneer withdrawals are processed in 2 business days."
+
+#~ msgid "bankrur.withdraw.info"
+#~ msgstr "Bank transfer withdrawals are processed within 3-5 banking days."
+
+#~ msgid "office.deposit.info"
+#~ msgstr "QIWI-purse deposits are processed automatically (instantly)."
+
+#~ msgid "office.withdraw.info"
+#~ msgstr "QIWI-purse withdrawals are processed in 3 business days."
+
+#~ msgid "Payoneer"
+#~ msgstr "Payoneer"

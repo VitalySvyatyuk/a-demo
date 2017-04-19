@@ -1,0 +1,12 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags%}
+
+{% block title %}{{ block.super }} — {% trans "Choose account" %}{% endblock %}
+
+{% block content %}
+  <form method="POST" action="mt4">
+    {% include "includes/form.html" %}
+    {% gcbutton "submit" _("Choose") "black" 'name="submit"'%}
+  </form>
+{% endblock %}

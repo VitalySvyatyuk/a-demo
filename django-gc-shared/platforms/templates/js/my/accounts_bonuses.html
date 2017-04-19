@@ -1,0 +1,53 @@
+{% load staticfiles inbox i18n %}
+
+<div class="gc-accordion-item" accordion-show="selectedCategory === 'bonuses'" accordion-click="selectCategory('bonuses')">
+    <div class="title-wrapper" title>
+        <a href="#" class="title">{% trans "Бонусы" %}</a>
+        <a href="#" class="button white"><span>+</span> {% trans "получить бонус" %}</a>
+    </div>
+    <div content {# ng-if="!isDataHidden" #}>
+        {% include "js/my/_accounts_local_nav.html" %}
+        <table class="table-big-green accounts">
+          <thead>
+            <tr>
+                <td>№ счета</td>
+                <td>Тип счета</td>
+                <td>Бонусные средства</td>
+                <td>Торговый оборот</td>
+                <td>Доступно к выводу</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="notification">
+                <td colspan="5">Бонусов нет. <a href="#">Получить бонус</a></td>
+            </tr>
+            <tr class="active">
+                <td><a href="#">123456798</a></td>
+                <td>standart<p class="description">Реальный</p></td>
+                <td>7550 $</td>
+                <td>7550 $</td>
+                <td><span>7550 $</span></td>
+            </tr>
+            <tr class="with-active">
+                <td colspan="5">
+                    {% include "js/my/_accounts_local_nav_adaptive.html" %}
+                </td>
+            </tr>
+            <tr>
+                <td><a href="#">123456798</a></td>
+                <td>standart<p class="description">Реальный</p></td>
+                <td>7550 $</td>
+                <td>7550 $</td>
+                <td><span>7550 $</span></td>
+            </tr>
+            <tr>
+                <td><a href="#">123456798</a></td>
+                <td>standart<p class="description">Реальный</p></td>
+                <td>7550 $</td>
+                <td>7550 $</td>
+                <td><span>7550 $</span></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>

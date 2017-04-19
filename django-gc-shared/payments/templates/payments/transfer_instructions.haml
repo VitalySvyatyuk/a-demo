@@ -1,0 +1,14 @@
+- load i18n app_tags
+
+{% blocktrans %}
+    In order to make a pay-in transaction by <strong>{{ ps.name }}</strong> you should:
+{% endblocktrans %}
+
+- include form.payment_system.deposit_description_template
+
+%br
+%br
+%b {% trans "After your payment is completed, verify your payment for the financial department." %}
+%br
+%br
+

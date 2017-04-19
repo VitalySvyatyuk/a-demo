@@ -1,0 +1,45 @@
+@mixin arrow-bg($arrow-bg, $arrow-wrapper-position, $arrow-ba-height, $arrow-ba-width, $arrow-before-x, $arrow-before-y, $arrow-after-x, $arrow-after-y){
+  background: $arrow-bg;
+  position: $arrow-wrapper-position;
+  *{position: relative; z-index: 2;}
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    height: $arrow-ba-height;
+    width: $arrow-ba-width;
+    background: $arrow-bg;
+    z-index: 0;
+  }
+  &:before {
+    @include transform-skew($arrow-before-x, $arrow-before-y);
+  }
+  &:after {
+    @include transform-skew($arrow-after-x, $arrow-after-y);
+  }
+}
+@mixin arrow-to-bottom($arrow-ba-top, $arrow-ba-bottom){
+  &:before,
+  &:after {
+    bottom: $arrow-ba-bottom;
+    top: $arrow-ba-top;
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
+}
+@mixin arrow-ltr{
+  &:before,
+  &:after {
+    left: 0;
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
+}

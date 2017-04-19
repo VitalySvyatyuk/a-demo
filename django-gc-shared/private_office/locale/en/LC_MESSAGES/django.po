@@ -1,0 +1,5374 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-16 17:46+0300\n"
+"PO-Revision-Date: 2016-03-01 14:48+0230\n"
+"Last-Translator:   <valexeev@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.7.6\n"
+
+msgid "Personal Manager"
+msgstr "Personal Manager"
+
+msgid "privacy policy"
+msgstr "Privacy Policy"
+
+msgid "Client agreement"
+msgstr "Client Agreement"
+
+msgid "Risk disclosure"
+msgstr "Risk Disclosure"
+
+msgid "Terms and Definitions"
+msgstr "Terms and Definitions"
+
+msgid "Regulation NTO"
+msgstr "Regulation NTO"
+
+msgid "Regulation RTO"
+msgstr "Regulation RTO"
+
+msgid "Regulation RTO for Options"
+msgstr "Regulation RTO for Options"
+
+msgid "Regulation RTO for ECN"
+msgstr "Regulation RTO for ECN"
+
+msgid "\"Managed Accounts\" service regulation"
+msgstr "\"Managed Accounts\" Service Regulation"
+
+msgid ""
+"Regulation of procession and effectuation of trading transactions for CFD "
+"contracts"
+msgstr ""
+"Regulation of Procession and Effectuation of Trading Transactions for CFD-"
+"contracts"
+
+msgid "Islamic Accounts Supplementary Agreement"
+msgstr "Islamic Accounts Supplementary Agreement"
+
+msgid "Partner agreement"
+msgstr "Partner Agreement"
+
+msgid "Additional agreement for the Partner agreement"
+msgstr "Additional Agreement for the Partner Agreement"
+
+msgid "Franchising agreement"
+msgstr "Franchising Agreement"
+
+msgid "Terms and Conditions of the ACTION"
+msgstr "Terms and Conditions of the ACTION"
+
+msgid "\"Micro Trade\" contest rules"
+msgstr "\"Micro Trade\" Contest Rules"
+
+msgid "\"Future Trade\" contest conditions"
+msgstr "\"Future Trade\" Contest Rules"
+
+msgid "\"Drag Trade\" contest conditions"
+msgstr "\"Drag Trade\" Contest Rules"
+
+msgid "\"Rally Trade\" contest conditions"
+msgstr "\"Rally Trade\" Contest Rules"
+
+msgid "contest conditions"
+msgstr "contest rules"
+
+msgid "terms of the offer"
+msgstr "terms of the offer"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Not allowed filetype!"
+msgstr "Not allowed filetype!"
+
+msgid "Managers department"
+msgstr "Managers' department"
+
+msgid "Financial department"
+msgstr "Financial department"
+
+msgid "Tech support"
+msgstr "Technical support"
+
+msgid "Partnership department"
+msgstr "Partnership department"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "OnClick"
+msgstr "OnClick"
+
+msgid "Show on front"
+msgstr "Show on front"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Filesize"
+msgstr "Filesize"
+
+msgid "Icon Name"
+msgstr "Icon Name"
+
+msgid "Creation timestamp"
+msgstr "Creation timestamp"
+
+msgid "Weight"
+msgstr "Weight"
+
+msgid "Creation date"
+msgstr "Creation date"
+
+msgid "Position"
+msgstr "Position"
+
+msgid "Vacancy description"
+msgstr "Vacancy description"
+
+msgid "Active"
+msgstr "Active"
+
+msgid "Vacancy"
+msgstr "Vacancy"
+
+msgid "Vacancies"
+msgstr "Vacancies"
+
+msgid "First name"
+msgstr "First name"
+
+msgid "Last name"
+msgstr "Last name"
+
+msgid "Middle name"
+msgstr "Middle name"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Photo"
+msgstr "Photo"
+
+msgctxt "job"
+msgid "Position"
+msgstr "Position"
+
+msgid "Quote"
+msgstr "Quote"
+
+msgid "Employee"
+msgstr "Employee"
+
+msgid "Employees"
+msgstr "Employees"
+
+msgid "Resume file"
+msgstr "Resume file"
+
+msgid "Resume"
+msgstr "Resume"
+
+msgid "Resumes"
+msgstr "Resumes"
+
+msgid "Country code is required"
+msgstr "Country code is required"
+
+msgid "Phone number is required"
+msgstr "Phone number is required"
+
+msgid "Invalid country"
+msgstr "Invalid country"
+
+msgid "Invalid phone tail"
+msgstr "Invalid phone number"
+
+msgid "Error 404: Page not found"
+msgstr "Error 404: Page not found"
+
+msgid "Page not found"
+msgstr "Page not found"
+
+msgid ""
+"\n"
+"                        Probably it was deleted, or you have mistyped the address.\n"
+"                    "
+msgstr ""
+"\n"
+"                        Probably it was deleted, or you have mistyped the address.\n"
+"                    "
+
+msgid "404 Not Found"
+msgstr "404 Not Found"
+
+msgid "Error 500: Internal Server Error"
+msgstr "Error 500: Internal Server Error"
+
+msgid "Internal Server Error"
+msgstr "Internal Server Error"
+
+msgid ""
+"\n"
+"                        Our service staff was notified of the problem and will fix it as soon as possible.\n"
+"                        Please try again later.\n"
+"                    "
+msgstr ""
+"\n"
+"                        Our service staff was notified of the problem and will fix it as soon as possible.\n"
+"                        Please try again later.\n"
+"                    "
+
+msgid "500 Internal Server Error"
+msgstr "500 Internal Server Error"
+
+msgid "Open account"
+msgstr "Open an account"
+
+msgid "Private office"
+msgstr "Private Office"
+
+msgid "Signed in as"
+msgstr "Signed in as"
+
+msgid "Sign out"
+msgstr "Sign out"
+
+#, fuzzy
+msgid "Contacts"
+msgstr "354577138"
+
+msgid "Free phone in Russia"
+msgstr "Call me back"
+
+msgid "Online support"
+msgstr "Online support"
+
+msgid "Request a call"
+msgstr "Request a call"
+
+msgid ""
+"You are using an outdated version of Internet Explorer.  For security "
+"reasons you should upgrade your browser."
+msgstr ""
+"You are using an outdated version of Internet Explorer.  For security "
+"reasons you should upgrade your browser."
+
+msgid "go to"
+msgstr "go to"
+
+#, fuzzy
+#| msgid "Login to WebTrader"
+msgid "Log into WebTrader"
+msgstr "Log into WebTrader"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Help"
+msgstr "Help"
+
+msgid "We are offline"
+msgstr "We are offline"
+
+msgid "Grand Capital in your region"
+msgstr "Grand Capital in your region"
+
+msgctxt "Awards rotator"
+msgid "Best Forex Broker in China"
+msgstr "Best Forex Broker in China"
+
+msgid "Best Binary Option Broker"
+msgstr "Best Binary Options Broker"
+
+msgid "Best Standard-Forex Broker"
+msgstr "Best Standard-Forex Broker"
+
+msgid "Invest"
+msgstr "Invest"
+
+msgid "Promotions and bonuses"
+msgstr "Promotions and Bonuses"
+
+msgid ""
+"\n"
+"                before starting to trade on currency exchange markets, please make sure that you understand the risks\n"
+"                connected with trading using leverage and that you have sufficient level of training.\n"
+"            "
+msgstr ""
+"\n"
+"                before starting to trade on currency exchange markets, please make sure that you understand the risks\n"
+"                connected with trading using leverage and that you have sufficient level of training.\n"
+"            "
+
+msgid "Privacy policy"
+msgstr "Privacy Policy"
+
+msgid ""
+"describes in which way Company collects, keeps and protects Clients personal"
+" data"
+msgstr ""
+"describes in which way the company collects, keeps and protects clients' "
+"personal data"
+
+msgid "Our social network accounts"
+msgstr "Our social network accounts"
+
+msgid "We are online"
+msgstr "We are online"
+
+msgid "Callback has been planned"
+msgstr "Callback has been scheduled"
+
+msgid "We pay for the time<br>you spend with us"
+msgstr "We pay for the time<br>you spend with us"
+
+#, fuzzy
+#| msgid "Rebate for pleased clients"
+msgid "Payback for all clients"
+msgstr "Forex rebate"
+
+msgid "Learn more"
+msgstr "Learn more"
+
+msgid "Watch<br>your profit increase"
+msgstr "Watch<br>your profit increase"
+
+msgid "with the new commission system <br>for our partners"
+msgstr "with the new commission system <br>for our partners"
+
+msgctxt "link for news"
+msgid "increased-commissions-gc-affiliate-partners-have-b"
+msgstr "increased-commissions-gc-affiliate-partners-have-b"
+
+msgctxt "new partners commission"
+msgid "Learn more"
+msgstr "Learn more"
+
+msgid "Free $500 for your <br>real account"
+msgstr "Free $500 for your <br>real account"
+
+msgid "No deposit $500 bonus —<br> kickstart your trading"
+msgstr "No deposit $500 bonus —<br> kickstart your trading"
+
+msgid "Get a bonus"
+msgstr "Get a bonus"
+
+msgid "Binary Options <br>at Grand Capital"
+msgstr "Binary Options <br>at Grand Capital"
+
+msgid "+100&#37; bonus on each deposit"
+msgstr "+100&#37; bonus on each deposit"
+
+msgid "Trading</br>platforms"
+msgstr "Trading</br>Platforms"
+
+msgid "MT4, WebTrader"
+msgstr "MT4, WebTrader"
+
+msgid "Binary<br/>options"
+msgstr "Binary<br/>Options"
+
+msgid "Open an account"
+msgstr "Open an account"
+
+msgctxt "frontpage"
+msgid "Investment"
+msgstr "Investment"
+
+msgid "Managers<br>rating"
+msgstr "Managers'<br>rating"
+
+msgid "Education"
+msgstr "Education"
+
+msgid "Webinars<br/>schedule"
+msgstr "Webinar<br/>schedule"
+
+msgctxt "frontpage teaser"
+msgid "Partnership"
+msgstr "Partnership"
+
+msgid "Select<br/>the program"
+msgstr "Select<br/>the program"
+
+msgid "Types of account"
+msgstr "Account Types"
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Classic Forex"
+msgstr "Classic Forex"
+
+msgid ""
+"The widest range of trading instruments: currency, metals, CFD-contracts on "
+"indices and stocks"
+msgstr ""
+"The widest range of trading instruments: currency pairs, metals, indices, "
+"CFD-contracts and stocks"
+
+msgid "Options"
+msgstr "Options"
+
+msgid "Binary options"
+msgstr "Binary Options"
+
+msgid ""
+"Account to trade binary options. Only need to determine market direction"
+msgstr ""
+"Binary Options trading account. Predict price movement of the chosen asset "
+"to receive up to 86% profit."
+
+msgid "SwapFree"
+msgstr "Swap Free"
+
+msgid "Designed specifically for Muslim traders"
+msgstr "Designed specifically for traders of Islamic faith."
+
+msgid ""
+"Account without commissions which are charged when transferring positions "
+"through midnight"
+msgstr ""
+"No commission is charged when transferring positions through midnight."
+
+msgid "ECN"
+msgstr "ECN"
+
+msgid "Forex for professionals"
+msgstr "Forex for professionals"
+
+msgid "Ideal for scalping, trading on news, well suited for using robots"
+msgstr ""
+"ECN account is perfect for scalping, trading on news and using robots."
+
+msgid "Trading conditions"
+msgstr "Trading Conditions"
+
+msgid "Minimum<br>deposit"
+msgstr "Minimum<br>deposit"
+
+msgid "1 pt"
+msgstr "1 pt"
+
+msgid "Spread"
+msgstr "Spread"
+
+msgid "Instruments"
+msgstr "Trading instruments"
+
+msgid "Pay-in<br>commission"
+msgstr "Deposit<br>commission"
+
+msgid "Bonuses and promotions"
+msgstr "Bonuses and Promotions"
+
+msgid "+100&#37; <br>on&nbsp;each Options deposit"
+msgstr "+100&#37; <br>on&nbsp;each Options deposit"
+
+#, fuzzy
+msgid "Contests"
+msgstr "354577138"
+
+msgid "Take part in traders' contest"
+msgstr "Take part in traders' contests"
+
+msgid "Forum"
+msgstr "Forum"
+
+msgid "Chat with other Grand Capital traders"
+msgstr "Chat with other Grand Capital traders"
+
+msgid "Our advantages"
+msgstr "Our Advantages"
+
+msgid "Awards and achievements"
+msgstr "Awards and Achievements"
+
+msgid "Since 2006"
+msgstr "Since 2006"
+
+msgid "Licenses and certificates"
+msgstr "Licenses and Certificates"
+
+msgid "VIP"
+msgstr "VIP"
+
+msgid "Forex Education"
+msgstr "Forex Education"
+
+msgid "Partnership"
+msgstr "Partnership"
+
+msgid "Partnership programs"
+msgstr "Affiliate Programs"
+
+msgid ""
+"\n"
+"                Become a partner of Grand Capital and earn more! Select the program:\n"
+"                "
+msgstr ""
+"\n"
+"                Become a partner of Grand Capital and earn more! Select the program:\n"
+"                "
+
+msgid "Introducing Agent"
+msgstr "Introducing Agent"
+
+msgid "Regional Representative"
+msgstr "Regional Representative"
+
+msgid "Franchising"
+msgstr "Franchising"
+
+msgid "White Label"
+msgstr "White Label"
+
+msgid "Start partnership"
+msgstr "Start partnership"
+
+msgid "Binary Options from Grand Capital<br>+ trading bonus"
+msgstr "Binary Options from Grand Capital<br>+ trading bonus"
+
+msgid "Try it in action!<br>Free 10$ to each account"
+msgstr "Try it in action!<br>Free 10$ to each account"
+
+msgid "Company news"
+msgstr "Company News"
+
+msgid "More"
+msgstr "More"
+
+msgid "Quotes online"
+msgstr "Quotes Online"
+
+msgid "Managers rating"
+msgstr "Managers' Rating"
+
+msgid "Up to 100&#37; bonus<br> for PAMM Managers"
+msgstr "Up to 100&#37; bonus<br> for PAMM managers"
+
+msgid "Become a manager"
+msgstr "Become a manager"
+
+msgid ""
+"<p class=\"banner-title\">With $50 bonus<br> for Binary<br> "
+"Options</p><p>you can try everything</p>"
+msgstr ""
+"<p class=\"banner-title\">With $50 bonus<br> for Binary<br> "
+"Options</p><p>you can try everything</p>"
+
+#, fuzzy
+#| msgid "40&#37; bonus on deposit"
+msgid "+40&#37; bonus on each<br>deposit"
+msgstr "40&#37; deposit bonus"
+
+msgid "+40&#37; for each deposit<br>without quantity limit"
+msgstr "+40&#37; for each deposit<br>without quantity limit"
+
+msgid "+60&#37; bonus<br> for our loyal<br> customers"
+msgstr "+60&#37; bonus<br> for our loyal<br> clients"
+
+msgid ""
+"Registered with us before the 1st of June?<br> Deposit money and get "
+"+60&#37;"
+msgstr "Registered with us before June, 1?<br> Deposit money and get +60&#37;"
+
+msgid "Earn more!"
+msgstr "Earn more!"
+
+msgid "Become a partner of the Grand Capital"
+msgstr "Become a partner of Grand Capital"
+
+msgid "Become a partner"
+msgstr "Become a partner"
+
+#, python-format
+msgid "86%% of profit —<br>it is simple!"
+msgstr "86%% of profit —<br>it is simple!"
+
+msgid "Wide possibilities<br>with Standard account"
+msgstr "Wide possibilities<br>with a Standard account"
+
+msgid "Trading futures and CFD contracts<br>on global brands stocks"
+msgstr "Trading futures and CFD contracts<br>on global brands stocks"
+
+msgid "Investments"
+msgstr "Investments"
+
+msgid "Who needs investment services?"
+msgstr "Benefits from our Investment Services"
+
+msgid ""
+"Whether you are a beginner or an experienced trader, you can earn more with "
+"investment services Grand Capital PAMM and LAMM accounts. These services are"
+" fundamentally different. Learn more about each one and choose the service "
+"that is right for you exactly. Start to earn more with investments Grand "
+"Capital."
+msgstr ""
+"Here at Grand Capital, we always try to create outstanding trading "
+"conditions for both beginners and experienced traders. That is why we have "
+"launched PAMM and LAMM services so that both novices and professionals could"
+" benefit from trading with us. Learn more about each one of them and choose "
+"the one that fits you better."
+
+msgid "About LAMM accounts"
+msgstr "About LAMM Accounts"
+
+msgid ""
+"LAMM account is a trading account what managed professional trader is (the "
+"Manager).  The Manager trades with his own funds on his own account. History"
+" of his transactions is available in the managers’ rating. Investor who is "
+"interested in profit can connect his account to the Manager’s account. The "
+"Manager’s transactions will be copying on his account. The Investor will "
+"getting profit commensurate with the Manager’s profit and the Manager will "
+"getting remuneration for successful management. The Investor can check the "
+"Manager’s actions in real-time."
+msgstr ""
+"Any trader can become a manager of a LAMM account. It is simple and does not"
+" require any additional investments. History of the manager’s LAMM account "
+"is displayed in the managers' rating. Individual investors, who usually are "
+"beginner traders, can study the rating and then choose the manager whose "
+"trades they would like to “copy”. The manager profits from the fee he/she "
+"sets for his/her services."
+
+msgid "Become a LAMM investor"
+msgstr "Become a LAMM investor"
+
+msgid "Become a LAMM manager"
+msgstr "Become a LAMM manager"
+
+msgid "About PAMM accounts"
+msgstr "About PAMM Accounts"
+
+msgid ""
+"PAMM account is a managed account too. But the Manager’s transactions don’t "
+"copy on the Investor’s account. Each Investor who connected his account to "
+"the Manager’s account should invest in it any amount. These funds, together "
+"with the Manager’s own funds are on his account and participate in trade. "
+"According to the results of Manager’s trade the profit divided automatically"
+" between him and his investors proportional to the investments of each one."
+msgstr ""
+"PAMM is another type of a managed account. In this case, managers also form "
+"the rating, where investors can see the account’s weekly profit and decide "
+"whether to connect to it or not. Unlike LAMM account system, PAMM account "
+"requires that both the manager and investors allocate a certain amount of "
+"funds. The manager and investors form a pool of funds, which the manager "
+"uses to place trades. The profit is then distributed proportionally, "
+"according to the amount of funds each participant put in the pool."
+
+msgid "Become a PAMM investor"
+msgstr "Become a PAMM investor"
+
+msgid "Become a PAMM manager"
+msgstr "Become a PAMM manager"
+
+msgid "About the Signals from MetaQuotes"
+msgstr "MetaQuotes trading signals"
+
+msgid ""
+"Signals from MetaQuotes service is a unique product what lets to check the "
+"signals from successful traders and to copy it right in the terminal "
+"MetaTrader. Social trading by MetaQuotes is a great alternative to any "
+"investment services and also it’s a great opportunity to learn to trade by "
+"the professionals."
+msgstr ""
+"With MetaQuotes signals service follow the deals successful traders, make "
+"and copy them right in your MT4. Trading signals is a great alternative to "
+"investment services that lets you learn from professional traders. Follow "
+"successful traders from all over the world for a bigger profit!"
+
+msgid "LAMM investments"
+msgstr "LAMM Investments"
+
+msgid "For Investors"
+msgstr "For Investors"
+
+msgid ""
+"The easiest way to start earning on Forex is the copying transaction of "
+"successful traders. Choose the Manager in the rating and get the trade "
+"signals to enter the market."
+msgstr ""
+"The easiest way to start earning on Forex is by copying transactions of "
+"successful traders. Choose the manager in the rating and get the trading "
+"signals to ensure successful trading."
+
+msgid "For Manager"
+msgstr "For the Manager"
+
+msgid ""
+"Do you trade on Forex successfully? Earn more by opening your transactions "
+"for the copying and get reward for the successful management."
+msgstr ""
+"Are you a successful Forex trader? Earn more by allowing other traders to "
+"\"copy\" your deals and receive commissions for the successful management."
+
+msgid "New! LAMM accounts on binary options!"
+msgstr "New: the LAMM service for Binary Options accounts! "
+
+msgid ""
+"We’ve introduced a new service. So you can learn a new market of binary "
+"options with the help of professionals. Expand your portfolio of Option "
+"account and earn more!"
+msgstr ""
+"<p>Learn how to trade Binary Options with the help of professional traders with our innovative service for Binary Options trading!</p>\n"
+"<p>The LAMM service for Binary Options works the same way as it does on Forex. Connect your account to an experienced trader’s account and learn how to trade Binary Options successfully from advanced traders! Don't forget that you still have control over every deal the manager makes, so you can disconnect or cancel the trade at any time!</p>"
+
+msgid ""
+"LAMM service on binary options is similar to familiar LAMM service. "
+"Attention! Options European account can be attached to Options European "
+"account only! This rule is valid for Options American too. LAMMs on options "
+"only work on Real accounts. The new filter is available in the Managers’ "
+"rating which allows sorting LAMMs by the account types: Classic Standard, "
+"Classic Micro, Options European, and Options American."
+msgstr ""
+"Please mind that European Options accounts can only be connected to European"
+" Options accounts. Same way goes for American Options accounts. For your "
+"convenience, we have implemented a new filter in the managers’ rating, so "
+"you can sort LAMMs by account types: Classic Standard, Classic Micro, "
+"European Options and American Options accounts."
+
+msgid ""
+"Join the LAMM service on binary options! Increase your profit by copying the"
+" best Managers’ deals automatically."
+msgstr ""
+"Join the LAMM service and learn from the best traders how to make profit at "
+"the same time!"
+
+msgid "Join now"
+msgstr "Join now"
+
+msgid "What are LAMM accounts?"
+msgstr "What are LAMM Accounts?"
+
+msgid ""
+"\n"
+"        <p>LAMM account is a trading account what managed professional trader is (the Manager). The Manager trades with his own funds on his own account. History of his transactions is available in the manager’s rating. Each investor who’s interested in profit can connect the account to the manager’s account. After it the Manager’s transactions will be copying on the Investor’s account and the Investor will getting profit commensurate with the Manager’s profit.</p>\n"
+"        <p>Wherein, the Investor can check the Manager’s actions in real-time.</p>\n"
+"        <p>This scheme is convenient for the Manager and the Investor. The Manager shouldn’t check an amount of deposit or withdrawal and correct the transactions. The Investor doesn’t transfer the funds the Manager; his funds always are on his own account.</p>\n"
+"        <p>The Investor can independently specify the amount of transactions copying for the decreasing his risks. Moreover the Investor can add his account to several Managers at the same time and create investing portfolio to the risks diversification and to the reaching more.</p>\n"
+"    "
+msgstr ""
+"\n"
+"<p>Any trader who feels confident trading on Forex can become a manager of a LAMM account. It is simple and does not require any additional investments. History of the manager’s LAMM account is displayed in the managers' rating. Individual investors, who usually are beginner traders, can study the rating and then choose the manager whose trades they would like to “copy”. The manager profits from the fee he/she sets for his/her services.</p>\n"
+"<p>An investor can always check the manager’s actions in real-time.</p>\n"
+"<p>This service benefits both managers and investors. The manager doesn't have to worry about the number of investors connected to the account as he/she only trades using own funds. The investor doesn’t transfer the funds to the manager's account, which ensures additional security.</p>\n"
+"<p>Investors can independently specify the amount of funds and monitor every trade being copied. Moreover, the investor can connect the account to several managers to diversify the portfolio and minimize risks.</p>"
+
+msgid "Terms"
+msgstr "Terms"
+
+msgid ""
+"\n"
+"                <p><strong>LAMM account</strong> is a new improved version of PAMM account. The principal difference between LAMM and PAMM is a way of allocation of profit and risk management capabilities.</p>\n"
+"<p><strong>PAMM</strong> is a percentage allocation management module; <strong>LAMM</strong> is a lot allocation management module.</p>\n"
+"            "
+msgstr ""
+"\n"
+"<p><strong>LAMM account</strong> is basically a new improved version of PAMM accounts. The main difference between LAMM and PAMM is a way of profit allocation and risk management capabilities.</p>\n"
+"<p><strong>PAMM</strong>  -  a percentage allocation management module; <strong>LAMM</strong>  -  a lot allocation management module.</p>"
+
+msgid "Advantages of LAMM accounts Grand Capital"
+msgstr "Advantages of LAMM Accounts in Grand Capital"
+
+msgid ""
+"The funds aren’t transferred on the Manager’s account and remains on the "
+"Investor’s account."
+msgstr ""
+"Investor's funds are not being transferred to the manager's account and stay"
+" on the investor's account all the time."
+
+msgid ""
+"The Investor manages the risks by putting index of the transactions copying."
+msgstr ""
+"An investor can manage the risks by setting the amount of funds reserved for"
+" LAMM trading."
+
+msgid "The Investor can disconnect from the Manager’s account anytime."
+msgstr ""
+"An investor can disconnect from the manager's account or cancel the deal at "
+"any time."
+
+msgid ""
+"The Manager independently assigns remuneration (subscription fee or "
+"percentage of the profit). "
+msgstr ""
+"The manager can choose the desirable type of compensation: fixed commission "
+"or a certain percentage from the investor's profit"
+
+msgid "The Manager trades on his only account and his only funds. "
+msgstr "The manager uses personal funds for trading"
+
+msgid "The transactions’ copying is automatic."
+msgstr "All transactions are copied automatically."
+
+msgid "Managers' rating"
+msgstr "Managers' Rating"
+
+msgid "Best manager"
+msgstr "Best Manager"
+
+msgid "For last 3 months"
+msgstr "For the last 3 months"
+
+msgid "For all time"
+msgstr "For all time"
+
+msgid "For LAMM Investors"
+msgstr "For LAMM Investors"
+
+msgid ""
+"Are you beginner and want to earn on a par with successful traders? We "
+"suggest you invest in LAMM account. LAMM account is a unique investment "
+"service based on the copying of professional traders’ transactions. You "
+"shouldn’t trade on your own, experienced traders will do all the work. "
+"Managed account is the technology for investing funds in Forex, stocks, "
+"indexes and CFD."
+msgstr ""
+"You are a beginner, but want to earn on par with successful traders? Then a "
+"LAMM account is your best choice! the LAMM account is a unique investment "
+"service which lets you \"copy\" trades of experienced traders. Once you have"
+" connected your account to the preferred trader's account and set the amount"
+" of funds you are willing to reserve for LAMM trading, you can relax and sit"
+" back. Deals are placed automatically, so you do not even have to open the "
+"platform. Let experienced traders do all the work for you! With the LAMM "
+"service you can invest in Forex, stocks, indices and CFD. "
+
+msgid "Become an investor"
+msgstr "Become an investor"
+
+msgid "How does it work?"
+msgstr "How it Works"
+
+msgid "Creating a managed account"
+msgstr "Creating a managed account"
+
+msgid "Manager"
+msgstr "Manager"
+
+msgid "Balance"
+msgstr "Balance"
+
+msgid "Expected profit"
+msgstr "Expected profit"
+
+msgid "Required reward"
+msgstr "Commission"
+
+msgid "Transactions with copy index"
+msgstr "Replication ratio"
+
+msgid "Investor"
+msgstr "Investor"
+
+msgid ""
+"\n"
+"                <li><strong>The Investor</strong> copies a <strong>Manager’s 1</strong> transactions with copy index 5 and <strong>Manager's 2</strong> transactions with copy index 1</li>\n"
+"                <li><strong>Manager’s 1</strong> balance is $1&nbsp;000, expected profitable 30&#37; and required reward 10&#37;</li>\n"
+"                <li><strong>Manager’s 2</strong> balance is $50 which is equivalent to $5&nbsp;000 (Micro account allows the calculation in cents), expected profitable 100&#37; and required reward 30&#37;</li>\n"
+"            "
+msgstr ""
+"\n"
+"<li><strong>The investor</strong> copies <strong>transactions of manager 1</strong> with replication ratio 1:5 and <strong>transactions of manager 2</strong> with replication ratio 1:1.</li>\n"
+"<li><strong>Manager’s 1</strong> balance is $1&nbsp;000, expected profit is 30&#37; and required commission 10&#37;</li>\n"
+"<li><strong>Manager’s 2</strong> balance is $50 which is equivalent to $5&nbsp;000 (The Micro account allows calculation in cents), expected profit is 100&#37; and required commission is 30&#37;</li>"
+
+msgid "At the end of the investment period"
+msgstr "At the end of the investment period"
+
+msgid "Profit"
+msgstr "Profit"
+
+msgid "Reward"
+msgstr "Commission"
+
+msgid ""
+"\n"
+"                <li><strong>The Manager 1</strong> brought an income $1&nbsp;500 to <strong>the Investor</strong>. <strong>The Investor</strong> paid required reward 10&#37; so his profit from <strong>The Manager</strong> was $1&nbsp;350.</li>\n"
+"                <li><strong>The Manager 2</strong> brought an income $5&nbsp;000 to <strong>the Investor</strong>. <strong>The Investor</strong> paid required reward 30&#37; so his profit from <strong>the Manager</strong> was $3&nbsp;500.</li>\n"
+"                <li><strong>The Investor’s</strong> final profit from <strong>the Manager 1</strong> and <strong>the Manager 2</strong> was $4&nbsp;850</li>\n"
+"            "
+msgstr ""
+"\n"
+"<li><strong>The Manager 1</strong> brought a profit of $1&nbsp;500 to <strong>the investor</strong>. <strong>The Investor</strong> paid the commission of 10&#37; therefore, his/her profit from <strong>the manager's trading</strong> is $1&nbsp;350.</li>\n"
+"<li><strong>The manager 2</strong> brought a profit of $5&nbsp;000 to <strong>the investor</strong>. <strong>The investor</strong> paid the commission of 30&#37; so his/her profit from <strong>the manager's trading</strong> is $3&nbsp;500.</li>\n"
+"<li><strong>The investor’s</strong> final profit brought by <strong>the manager 1</strong> and <strong>the manager 2</strong> combined is $4&nbsp;850</li>"
+
+msgid "How to become an Investor"
+msgstr "How to Become an Investor"
+
+msgid "Register in Private Office Grand Capital"
+msgstr ""
+"Register an account with Grand Capital and receive your access to the "
+"Private Office"
+
+#, python-format
+msgid ""
+"Choose the Manager in the <a href=\"%(rating_url)s\" "
+"class=\"bordered\">rating</a>"
+msgstr ""
+"Choose a manager in the <a href=\"%(rating_url)s\" "
+"class=\"bordered\">rating</a>"
+
+#, python-format
+msgid ""
+"On chosen Manager’s page click INVEST IN THIS ACCOUNT. You will be offered "
+"to connect one of your accounts or <a href=\"%(create_acc_url)s\" "
+"class=\"bordered\">create new one</a>."
+msgstr ""
+"Click \"invest in this account\" on the manager's page. You will then be "
+"offered to connect one of your accounts to the manager's account or <a "
+"href=\"%(create_acc_url)s\" class=\"bordered\">create a new one</a>."
+
+msgid "Read the Manager’s offer."
+msgstr "Study the manager’s offer (below the chart)"
+
+msgid ""
+"Refill your account for an amount equal to the Manager’s balance. Please, "
+"attend, the Investor’s balance must match the Manager’s balance. For "
+"example, the Manager’s balance is $1&nbsp;000 so the Investor’s balance "
+"should be at least $1&nbsp;000 or $10 on Micro account."
+msgstr ""
+"Deposit your account with the amount equal to the manager’s balance. Please "
+"mind that investor’s balance must match the manager’s balance. For example, "
+"the manager’s balance is $1 000. In this case, the investor’s balance should"
+" be at least $1 000 or $10 for Micro accounts."
+
+msgid "Send a request for the connection to chosen account in Private Office."
+msgstr ""
+"Request to connect to the chosen manager’s account in your Private Office."
+
+msgid ""
+"To connect to a LAMM account you should have a Standard or Micro account."
+msgstr "Both Standard and Micro accounts are eligible for LAMM. "
+
+msgid "For LAMM Manager"
+msgstr "For the LAMM Manager"
+
+msgid ""
+"\n"
+"                If you are successful trader and you want to earn more, become a Manager of LAMM account in Grand Capital. LAMM accounts are a new generation of PAMMs. LAMM accounts are created to increase in profit and risks reduction. The essence of the service is simple. You become a Manager and appoint a remuneration for the copying your transactions by other traders. The story of your account is displayed in the Manager’s rating. Any client of Grand Capital can choose your account in the rating and join to it. Then the system automatically copies your transactions on the Investor’s account and the Investor pays you reward.\n"
+"                "
+msgstr ""
+"\n"
+"Are you a successful trader and want to increase your income? – Become a manager of a GC LAMM account and get commission from your investors! LAMM accounts are basically a new generation of PAMMs. Just let independent investors “copy” your trades and receive the commission amount you set by yourself! Your account history is displayed in the manager’s rating on the GC website so any investor can find and join it. The more successful your account is the higher commission you can set! The system automatically “copies” your deals so there is absolutely no extra work required from you! Just trade as usual and receive extra profit!"
+
+msgid "Become a Manager"
+msgstr "Become a manager"
+
+msgid ""
+"We’ve introduced a new service for you. Now you can earn more by providing  "
+"binary options trading signals. Diversificate your trading protfolio by new "
+"instruments on Option accounts"
+msgstr ""
+"We’ve introduced a new service for you. Now you can earn more by providing "
+"Binary Options trading signals! Diversify your trading portfolio with new "
+"instruments for Binary Options accounts."
+
+msgid ""
+"Profitability up to 86&#37;, popular instruments and unique bonuses for "
+"binary options trading now are available for Grand Capital Managers"
+msgstr ""
+"Profitability up to 86&#37;, popular instruments and unique bonuses for "
+"Binary Options trading are now available for Grand Capital managers"
+
+msgid "Copy index"
+msgstr "Replication ratio"
+
+msgid ""
+"\n"
+"            <li><strong>Manager</strong> deposited $1&nbsp;000 and asked in his offer the reward of 20&#37; of profit for the period</li>\n"
+"            <li><strong>Investor 1</strong> with deposit $1&nbsp;000 joined his account</li>\n"
+"            <li><strong>Investor 2</strong> with deposit $1&nbsp;000 joined his account</li>\n"
+"            <li><strong>The Manager’s</strong> transactions copies to the <strong>Investor’s 1</strong> account with copy index 2. <strong>The Manager’s</strong> transactions copies to the <strong>Investor’s 2</strong> account with copy index 1.</li>\n"
+"            "
+msgstr ""
+"\n"
+"            <li><strong>The manager</strong> deposited $1&nbsp;000 and asked in his offer the reward of 20&#37; from profit for the period</li>\n"
+"            <li><strong>The investor 1</strong> with deposit $1&nbsp;000 joined his/her account</li>\n"
+"            <li><strong>The investor 2</strong> with deposit $1&nbsp;000 joined his/her account</li>\n"
+"            <li><strong>The manager’s</strong> transactions are copied to the <strong>investor’s 1</strong> account with copy index 2. <strong>The manager’s</strong> transactions are copied to the <strong>investor’s 2</strong> account with copy index 1.</li>\n"
+"            "
+
+msgid "Manager's reward"
+msgstr "Manager's commission"
+
+msgid ""
+"\n"
+"            <li><strong>Investor 1</strong> took profit 200&#37; of first deposit ($1&nbsp;000) because transactions were copying with index 2 and paid <strong>the Manager</strong> 20&#37; of profit ($400). His final balance is $2&nbsp;600.</li>\n"
+"            <li><strong>Investor 2</strong> took profit 100&#37; of first deposit ($1&nbsp;000) and paid <strong>the Manager</strong> 20&#37; of profit ($200). His final balance is $1 800</li>\n"
+"            <li><strong>The Manager</strong> took profit 100&#37; of first deposit ($1&nbsp;000) and reward 20&#37; of <strong>Investor’s</strong> 1 profit and <strong>Investor’s 2</strong> profit ($600). His final balance is $2&nbsp;600</li>\n"
+"            "
+msgstr ""
+"\n"
+"            <li><strong>The investor 1</strong> took profit 200&#37; of the first deposit ($1&nbsp;000) because transactions had been copied with index 2 and paid <strong>the manager</strong> 20&#37; from profit ($400). His/her final balance is $2&nbsp;600.</li>\n"
+"            <li><strong>The investor 2</strong> took profit 100&#37; of the first deposit ($1&nbsp;000) and paid <strong>the manager</strong> 20&#37; from profit ($200). His/her final balance is $1 800</li>\n"
+"            <li><strong>The manager</strong> took profit 100&#37; of the first deposit ($1&nbsp;000) and got reward 20&#37; from <strong> the investor’s</strong> 1 profit and <strong>the investor’s 2</strong> profit ($600). His/her final balance is $2&nbsp;600</li>\n"
+"            "
+
+msgid "How to become a Manager"
+msgstr "How to Become a Manager"
+
+msgid "Login in your Private Office"
+msgstr "Log into your Private Office"
+
+#, python-format
+msgid ""
+"If you don’t have open accounts then open and <a href=\"%(money_op_url)s\" "
+"class=\"bordered\">deposit</a> Standard or Micro account. Start the trading "
+"on this account, it will show your trading level and give to Investors "
+"statement."
+msgstr ""
+"If you do not have open accounts then open and <a href=\"%(money_op_url)s\" "
+"class=\"bordered\">deposit</a> a Standard or a Micro account. Start trading "
+"to show your level of proficiency and the results of your trading activity "
+"will be shown in the managers rating."
+
+#, python-format
+msgid ""
+"If you have open account, login in Private Office, choose your Standard or "
+"Micro account and click “Become a Manager”. After it the history of your "
+"transactions will added in statement and you will get in <a "
+"href=\"%(pamm_rating)s\" class=\"bordered\">Managers’ rating</a>"
+msgstr ""
+"If you already have an account, log into your Private Office, choose your "
+"Standard or Micro account and press “Become a manager” button. After that "
+"your account statistics will be added to the <a href=\"%(pamm_rating)s\" "
+"class=\"bordered\">managers’ rating</a>"
+
+#, python-format
+msgid ""
+"In <a href=\"%(pamm_master)s\" class=\"bordered\">Master cabinet</a> you can"
+" check the requests for investment and also check your topic at <a "
+"href=\"%(forum)s\" class=\"bordered\">the Forum</a>."
+msgstr ""
+"In your <a href=\"%(pamm_master)s\" class=\"bordered\">Private Office</a> "
+"you can see requests from investors and follow your account's <a "
+"href=\"%(forum)s\" class=\"bordered\">Forum updates</a>."
+
+msgid "Differences between LAMM and PAMM"
+msgstr "Difference between LAMM and PAMM"
+
+msgid "LAMM"
+msgstr "LAMM"
+
+msgid "PAMM"
+msgstr "PAMM"
+
+msgid "The Investor’s funds"
+msgstr "The investor’s funds"
+
+msgid ""
+"Investors only copy the Manager’s transactions. Their funds remain on their "
+"accounts."
+msgstr "Investor’s funds always stay on the investor’s account. "
+
+msgid "All the Investors’ funds are accumulated on the Manager’s account."
+msgstr "Investor's funds are allocated to the manager's trading account."
+
+msgid "Trading"
+msgstr "Trading"
+
+msgid "The Manager’s transactions are copying on the Investors’ accounts."
+msgstr ""
+"An investor \"copies\" trades placed by the manager and can cancel the deal "
+"or disconnect his/her account at any time. (No rollover policy)"
+
+msgid ""
+"The Manager trades on his own account with his own funds and the Investor’s "
+"funds."
+msgstr ""
+"The manager places trades using the pooled funds. The investor has no "
+"control over the trades and can only disconnect from the manager's account "
+"at the time of rollover."
+
+msgid "Distribution of profit"
+msgstr "Investor's profit"
+
+msgid "The Investor get profit commensurate with the Manager’s profit."
+msgstr "The investor's profit is commensurate with the manager's profit."
+
+msgid ""
+"The profit divided automatically between him and his investors proportional "
+"to the investments of each one."
+msgstr ""
+"The profit is distributed proportionally, depending on the amount of funds "
+"allocated by each investor and the manager."
+
+msgid "The Manager’s profit"
+msgstr "Manager's profit"
+
+msgid "The Manager gets a fixed remuneration from each Investor."
+msgstr ""
+"Apart from the profit made from trading, the manager gets fixed commission "
+"from each investor."
+
+msgid ""
+"The Manager get profit from the amount of funds commensurate his investment."
+msgstr ""
+"The manager's profit depends on the amount of money put in the base capital "
+"and the commission received from each investor."
+
+msgid "Minimum amount"
+msgstr "Minimum investment amount"
+
+msgid "The minimum amount depends on funds on the Manager’s account."
+msgstr ""
+"Minimum investment amount depends on the amount of funds in a manager's "
+"account."
+
+msgid "The minimum amount is set in the Manager’s offer."
+msgstr "Minimum investment amount is set by the manager."
+
+msgid "PAMM investments"
+msgstr "PAMM investments"
+
+msgid ""
+"Do you have no enough time to trade on Forex? Now you can earn with the help"
+" of professional Managers. Choose the Manager in the rating, invest in his "
+"account and take profit! PAMM account for investor is the best investment."
+msgstr ""
+"Not enough time or experience to trade on Forex? Now you get an opportunity "
+"to let professional traders manage your investments for you! Just choose "
+"preferred manager in the rating list, invest in his/her account and make "
+"profit without even opening the platform! The PAMM account is the best tool "
+"for busy brokers!"
+
+msgid "For Managers"
+msgstr "For Managers"
+
+msgid ""
+"Do you trade on Forex successfully? Open PAMM account and get reward for the"
+" successful management. All calculations are transparent and automated. PAMM"
+" account for Manager is a way to success."
+msgstr ""
+"Are you a successful Forex trader? Open a PAMM account and earn extra profit"
+" with successful management! Our financial policy is absolutely transparent "
+"and all the calculations are performed automatically. Make managing a PAMM "
+"account your way to success!"
+
+msgid ""
+"\n"
+"        <p>PAMM account is an investment account that allows beginner to earn not trading independently and allows experienced trader to increase profit through the investments.</p>\n"
+"        <p>The Manager trades on his account as usual. Any trader can connect to Manager’s account. After this he becomes an investor. He invest his own funds in Manager’s trading. It increases the money turnover on managed account.</p>\n"
+"        <p>According to the results of Manager’s trade the profit divided automatically between him and his investors proportional to the investments of each one. Manager gets reward for the successful management from investors.</p>\n"
+"        <p>PAMM system is fully automated and it guarantees the transparency of calculation between the parties. Manager doesn’t have access to the investor’s funds and he invest also his own funds necessarily what provides additional security to all participants.</p>\n"
+"    "
+msgstr ""
+"\n"
+"<p>A PAMM account, or Percentage Allocation Management Module, is an investment account that allows investors to make profit relying on financial expertise of experienced traders (aka managers) who in their turn, charge commission for their services.</p>\n"
+"<p>A manager opens a PAMM account and invests his/her own funds creating the so-called base capital. Traders (aka investors), invest their funds into the manager’s account, creating a pool of funds. The manager places trades using the funds from the pool. If the trading is successful, the profit will be distributed between investors’ accounts proportionally, depending on the amount allocated by each investor.</p>\n"
+"<p>PAMM system guarantees transparency of all financial transactions performed. Managers cannot withdraw investors’ funds and invest their own funds, which guarantees additional security for investors.</p>"
+
+msgid "Differences from other services"
+msgstr "How is it Different?"
+
+msgid ""
+"PAMM accounts are simple and transparent. Unlike open-end funds and other "
+"similar services, there is not threshold of investment, so investor can "
+"enter the market with any amount."
+msgstr ""
+"PAMM accounts are simple and transparent. Unlike open-end funds and other "
+"services there is no threshold of investment. Minimum investment amounts are"
+" set by managers and stated in the agreement."
+
+msgid ""
+"For investors, PAMM is more convenient than copying services (LAMM, sale "
+"signals etc.) because investor can invest any amount and also because it "
+"increases Manager’s capital."
+msgstr ""
+"<p>For investors, PAMM is more convenient than “copying” services because the minimum investment amount varies from manager to manager, allowing a certain level of flexibility.</p> \n"
+"<p>For managers it is a great way to increase their profit with the commission they charge for their services.</p> "
+
+msgid "Advantages of PAMM accounts Grand Capital"
+msgstr "Create your PAMM Account with Grand Capital!"
+
+msgctxt "Acc_advantage"
+msgid "Security"
+msgstr "Security"
+
+msgid ""
+"The Manager doesn’t have access to the investor’s funds and he invest also "
+"his own funds necessarily what provides additional security to all "
+"participants."
+msgstr ""
+"The manager allocates his/her own funds to the pool and at no time is able "
+"to withdraw the investors' funds, which guarantees additional security for "
+"investors."
+
+msgid "Flexibility"
+msgstr "Flexibility"
+
+msgid ""
+"Investor choosing the amount of the investment analyzing opportunities and "
+"risks. Manager sets his account’s parameters independently."
+msgstr ""
+"Investors can choose from a wide range of managed accounts with different "
+"rules and different investment amounts, which are set by the managers."
+
+msgid "Automation"
+msgstr "Accuracy"
+
+msgid ""
+"The human factor is excluded, all calculations are produced automatically."
+msgstr ""
+"All calculations are performed automatically, which guarantees high level of"
+" accuracy when it comes to financial transactions. "
+
+msgid "Information content"
+msgstr "Diversity"
+
+msgid ""
+"Managers’ rating is filtered by different criteria for choosing the most "
+"suitable way."
+msgstr ""
+"The managers' rating has various filters, so any investor can find the deal "
+"suitable for him/her."
+
+msgid ""
+"Manager and his investors invest any amount on managed PAMM account. If the "
+"trading result is positive, funds on the account increase and the profits "
+"are distributed proportional to the investments of each one."
+msgstr ""
+"The manager and investors form a pool of funds, which the manager uses to "
+"place trades. If the trading is successful, the profit is distributed "
+"proportionally among all the participants."
+
+msgid ""
+"In our case, the profit amounted to 200&#37; and amount of funds rose to $1 "
+"500."
+msgstr ""
+"In the example displayed, the manager made 200&#37; profit and the amount of"
+" pooled funds is increased to $1 500."
+
+msgid "Total investment and profit"
+msgstr "Total investment and profit"
+
+msgid "How do investors and managers earn on PAMM"
+msgstr "How Can I Earn Money with PAMM?"
+
+msgid ""
+"PAMM service is a great instrument to increase profitable for the beginners "
+"and experienced traders."
+msgstr ""
+"A PAMM account is a great tool for beginners and experienced traders alike."
+
+msgid ""
+"Become an investor to earn on Forex and not trade independently. Form "
+"portfolios of PAMM accounts of different Managers to diversify your "
+"investments."
+msgstr ""
+"Become an investor and let professional traders share their experience with "
+"you and bring you even more profit! The PAMM account is also an excellent "
+"way to diversify your portfolio."
+
+msgid ""
+"Become a Manager to get additional reward for the successful management. "
+"Trade actively to show your trading level and give to Investors statement."
+msgstr ""
+"Become a manager and increase your profit with successful management. Trade "
+"actively to show consistently good results to get the best rating! "
+
+msgid "For PAMM Investors"
+msgstr "For PAMM Investors"
+
+msgid "Advantages of PAMM accounts for investors"
+msgstr "Advantages of PAMM Accounts for Investors"
+
+msgid ""
+"Are you beginner and want to earn on a par with successful traders? Just "
+"start with PAMM account. PAMM is a popular investment service based on the "
+"increase trading volume of Manager by the investors’ funds and on the "
+"distribution profits between them. Invest in stocks, metals, oil, currency "
+"and take profit right now!"
+msgstr ""
+"Are you a beginner, but want to earn like a pro? Join a PAMM account managed"
+" by an experienced trader and let him/her bring you more profit! PAMM is a "
+"popular investment service which lets an investor make profit relying on "
+"financial expertise of experienced traders. You can trade different kinds of"
+" assets, allocate desired amount of funds and choose the manager that suits "
+"you!"
+
+msgid "Transparency of calculations"
+msgstr "Transparent"
+
+msgid ""
+"In your Private Office you can always see what is going on with your "
+"finances. Profit you get is proportional to your investments."
+msgstr ""
+"All financial transactions are absolutely transparent. All the data is "
+"easily accessible on your personal account. Your profit is always "
+"proportional to your investment."
+
+msgid "Comfort of investing"
+msgstr "Easy"
+
+msgid ""
+"Only a couple of clicks is needed to become efficient Investor in your "
+"preferred account"
+msgstr "Become an investor in just a few clicks!"
+
+msgid "Security"
+msgstr "Security"
+
+msgid ""
+"The Manager trades using PAMM account, but he has no abilty to withdraw "
+"Investor's funds from it."
+msgstr "The manager cannot withdraw investor's funds"
+
+msgid "Diversification"
+msgstr "Diversification"
+
+msgid ""
+"You can expand your portfolio by making investments in different managers"
+msgstr "Diversify your portfolio by investing in different accounts! "
+
+msgid "Publicity"
+msgstr "Independence"
+
+msgid "You can disconnect or exchange the Manager anytime"
+msgstr "You can leave your manager at anytime!"
+
+msgid "How to choose the Manager"
+msgstr "How to Choose a Manager"
+
+msgid ""
+"Choosing the Manager is a key option of successful investment in PAMM. In "
+"order to get high profit invest only in account managed by professional "
+"trader."
+msgstr ""
+"A good manager is a key factor in successful investing. In order to get "
+"consistent returns, only invest in accounts managed by professional traders."
+
+msgid ""
+"You can get more information about each account with the help of Managers' "
+"rating on web site. A set of key indicators in rating makes the process of "
+"finding competent trader a lot easier."
+msgstr ""
+"To make the process of finding a good manager easier for you, we have "
+"created the managers' rating you can easily access on our website. The "
+"rating is based on main factors you need to estimate trader’s proficiency. "
+"Keep an eye on the account’s monthly profit and account balance – the higher"
+" they are, the more probable successful outcome is."
+
+msgid ""
+"Turn your attention to monthly profit, if you are interested in most "
+"profitable transactions. Also the Manager’s balance is significant. Future "
+"profit of the Manager and his Investors depends on this value."
+msgstr ""
+"Once you allocate funds to the manager's account, he/she can start placing "
+"trades using the pooled funds. The profit is distributed among the manager "
+"and all the investors depending on the amount deposited by each of them. "
+
+msgid "Register and open PAMM account"
+msgstr "Register and open a PAMM account"
+
+msgid ""
+"\n"
+"                    Your account will be protected by two-factor authentication,\n"
+"                    which ensures that your funds are safe\n"
+"                "
+msgstr ""
+"\n"
+"Security of your funds is ensured by two-factor authentication"
+
+msgid "Refill your account"
+msgstr "Deposit funds to your account"
+
+#, python-format
+msgid ""
+" \n"
+"                We provide many ways for deposit and withdrawal. Learn more on <a href=\"%(money_op_url)s\" class=\"bordered\">this page</a>.\n"
+"                "
+msgstr ""
+"We provide many ways to deposit and withdraw funds. Learn more <a "
+"href=\"%(money_op_url)s\" class=\"bordered\">here</a>."
+
+msgid "Choose the Manager in PAMM rating"
+msgstr "Choose the manager in the PAMM rating"
+
+msgid "Your profit depends on effectiveness of your Manager"
+msgstr "You profit depends on how good your manager is"
+
+msgid "Send a request for investment"
+msgstr "Send a connection request"
+
+msgid ""
+"How much are you willing to invest? The greater the investment, the greater "
+"the profit and risks."
+msgstr ""
+"How much are you willing to invest? The greater the investment, the greater "
+"the profit and risks."
+
+msgid "Get profit"
+msgstr "Start making profit"
+
+msgid ""
+"Your investment goes to the Manager’s account. The profit from his trade "
+"distributes between the parties in proportion to the investments of each "
+"one."
+msgstr ""
+"Your investment is allocated to the manager’s account. The profit/loss is "
+"distributed proportionally depending on the amount invested by each "
+"participant."
+
+msgid "High profit"
+msgstr "High profit"
+
+msgid "Full control"
+msgstr "Full control"
+
+msgid "Transparency"
+msgstr "Transparency"
+
+msgid ""
+"\n"
+"            Do you trade on Forex successfully? Become a Manager and earn more!\n"
+"        "
+msgstr ""
+"\n"
+"            Do you trade on Forex successfully? Become a manager and earn more!\n"
+"        "
+
+msgid "For PAMM Manager"
+msgstr "For the PAMM manager"
+
+msgid "For PAMM Managers"
+msgstr "For the PAMM managers"
+
+msgid "Advantages of PAMM accounts for Managers"
+msgstr "Advantages of PAMM Accounts for Managers"
+
+msgid ""
+"If you are successful trader and you want to earn more then become a Manager"
+" of PAMM account. PAMM account is an easy investment service for mutually "
+"beneficial cooperation of the Investor and the Manager. The main objective "
+"of the Manager is to effectively manage his capital and capitals of the "
+"Investors. Become a Manager, show your trading level, attract an Investors "
+"and get reward for successful trading."
+msgstr ""
+"If you consider yourself a successful trader and want to increase your "
+"monthly profit, become a manager of a PAMM account. The PAMM account is an "
+"investment service which benefits both managers and investors. The main "
+"objective of a manager is to effectively manage account's capital which is "
+"formed by investors' and the manager’s funds combined. "
+
+msgid "Comfortable management"
+msgstr "Easily managed"
+
+msgid "Automation of all settlements ensures avoiding possible errors"
+msgstr "User-friendly interface"
+
+msgid ""
+"Profits and losses are automatically distributed among the participants of "
+"account in proportion of their investments"
+msgstr ""
+"Profits and losses are automatically distributed among participants "
+"depending on the invested amount."
+
+msgid "More than 10 parameters for the Manager's account setup"
+msgstr ""
+"More than 10 parameters are available for your account set up, including "
+"commission, minimum investment amount for investors, rollover dates, etc."
+
+msgid "Vast possibilities"
+msgstr "Vast possibilities"
+
+msgid "No limits to the amount of investments or investors of PAMM account"
+msgstr ""
+"There is no limit to the amount of invested funds or a number of investors "
+"for the account!"
+
+msgid ""
+"In Private Office the Manager can see all investments in his account. "
+"Results of his trading are available in open PAMM rating"
+msgstr ""
+"All financial transactions are absolutely transparent. All the information "
+"about investments and trades is easily accessible on your personal account."
+
+msgid ""
+"Now the investors invest their funds on your account. The profit from your "
+"trade distributes between the parties in proportion to the investments of "
+"each one."
+msgstr ""
+"Once investors join your account, you can start charging commission for "
+"successful trades you perform. The profit from the trades is distributed "
+"proportionally among all the participants, depending on the amount invested "
+"by each of them."
+
+msgid ""
+"Do you want to earn on Forex but you don’t want to trade independently? "
+"Leave this to the professionals? Invest in PAMM account of the successful "
+"trader and earn on a par with a pro."
+msgstr ""
+"Do you want to earn on Forex but you don’t have enough experience? Why not "
+"let the professionals do all the work? Invest in a PAMM account of a "
+"successful trader and earn on a par with a pro."
+
+msgid "Documents and agreements"
+msgstr "Documents and Agreements"
+
+msgid "Here you can find our company's documents and agreements."
+msgstr "Here you can find our company's documents and agreements."
+
+msgid "Download"
+msgstr "Download"
+
+msgid "Contact information and requisites"
+msgstr "Contact information and bank details"
+
+msgid "Contact information"
+msgstr "Contact information"
+
+msgid "Выберите город"
+msgstr "Choose the city"
+
+msgid "Сlient services department"
+msgstr "Client service department"
+
+msgid "Issues"
+msgstr "Enquiries"
+
+msgid ""
+"the company's products, promotions and contests, the overall organizational "
+"issues"
+msgstr "Company’s products, promotions and contests, organizational enquiries"
+
+msgid "Monday - Friday, from 9 a.m. till 9 p.m. (UTC+4)"
+msgstr "Monday - Friday, from 9 a.m. till 9 p.m. (UTC+4)"
+
+msgid "Technical department"
+msgstr "Technical department"
+
+msgid "operation of the terminal, the process of trading"
+msgstr "operation of the terminal, trading process"
+
+msgid "Finance department"
+msgstr "Financial department"
+
+msgid "funds deposit/withdrawal, internal transfers"
+msgstr "Financial transactions (deposits, withdrawals, internal transfers)"
+
+msgid "Monday - Friday, from 11 a.m. till 6 p.m. (UTC+4)"
+msgstr "Monday - Friday, from 11 a.m. till 6 p.m. (UTC+4)"
+
+msgid "partnership programs, regional development"
+msgstr "partnership programs, regional development"
+
+msgid "Monday - Friday, from 10 a.m. till 8 p.m. (UTC+4)"
+msgstr "Monday - Friday, from 10 a.m. till 8 p.m. (UTC+4)"
+
+msgid "Analytical department"
+msgstr "Analytical department"
+
+msgid "to analysts of our company"
+msgstr "Analytics"
+
+msgid "Marketing and PR department"
+msgstr "Marketing and PR department"
+
+msgid "consideration of commercial proposals"
+msgstr "Commercial proposals"
+
+msgid "Monday - Friday, from 10 a.m. till 7 p.m. (UTC+4)"
+msgstr "Monday - Friday, from 10 a.m. till 7 p.m. (UTC+4)"
+
+msgid "Liquidity providers"
+msgstr "Liquidity Providers"
+
+msgid ""
+"We provide our clients with the best quotes offered by the most trusted "
+"liquidity providers."
+msgstr ""
+"We provide our clients with the best quotes offered by the most trusted "
+"liquidity providers."
+
+msgid ""
+"LMAX streams FX limit-order liquidity from top tier banks and proprietary "
+"trading firms. It is a progressive provider, modern and dynamic, providing "
+"limit-order liquidity. Forex and CFD quotes, pre and post-trade "
+"transparency, high speed and direct access through the terminal."
+msgstr ""
+"LMAX streams FX limit-order liquidity from top tier banks and proprietary "
+"trading firms. It is a progressive provider, modern and dynamic, providing "
+"limit-order liquidity. Forex and CFD quotes, pre and post-trade "
+"transparency, high speed and direct access through the terminal."
+
+#, fuzzy
+#| msgid "Account types comparison"
+msgid "Account screenshot"
+msgstr "Account screenshot"
+
+msgid ""
+"Liquidity provider recognized worldwide. Currenex is the first foreign "
+"exchange aggregator, working with the largest market makers. Currenex offers"
+" high service quality and the best prices."
+msgstr ""
+"A liquidity provider that is recognized worldwide. Currenex is the first "
+"foreign exchange aggregator, working with the largest market makers. "
+"Currenex offers high service quality and the best prices."
+
+msgid ""
+"Swissquote is one of the leading liquidity providers, also known as MIG "
+"bank. It is a major Swiss bank which offers the best Forex solutions."
+msgstr ""
+"Swissquote is one of the leading liquidity providers, also known as MIG "
+"bank. It is a major Swiss bank which offers the best Forex solutions."
+
+#, python-format
+msgid "%(company)s account screenshot"
+msgstr "%(company)s account screenshot"
+
+msgid "Trade and make investments with Forex-broker Grand Capital!"
+msgstr "Invest and Succeed with Grand Capital!"
+
+msgid "History of Grand Capital"
+msgstr "Our History"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "<br/>Graduate School of<br>Financial Trading<br>is opened"
+msgstr "<br/>Financial Trading and Investment management school<br>is opened"
+
+msgid ""
+"<br/>Award for outstanding contribution in Russian microfinancial market "
+"development"
+msgstr ""
+"<br/>Award for outstanding contribution to Russian microfinancial market "
+"development is received"
+
+msgid "Grand Capital becomes a KROUFR member"
+msgstr "Grand Capital becomes a KROUFR member"
+
+msgid "<br/>Best Standard<br>Forex-broker<br>Award"
+msgstr "<br/>Best Standard<br>Forex-broker<br>Award"
+
+msgid ""
+"<br>There are more<br>than 30 regional<br>offices worldwide<br>at the moment"
+msgstr ""
+"<br>There are more<br>than 30 regional<br>offices worldwide<br>at the moment"
+
+msgid "Release of<br>Windows Vista"
+msgstr "Release of<br>Windows Vista"
+
+msgid "Apple releases<br>iPhone 1"
+msgstr "Apple releases<br>iPhone 1"
+
+msgid "Global Economic Crisis"
+msgstr "Global Economic Crisis"
+
+msgid "Opening of<br>Burj Khalifa"
+msgstr "Opening of<br>Burj Khalifa"
+
+msgid "Space Shuttle<br>retirement"
+msgstr "Space Shuttle<br>retirement"
+
+msgid "World survises another Judgment Day"
+msgstr "World survives another Judgment Day"
+
+msgid "Sochi Olympic Games"
+msgstr "Sochi Olympic Games"
+
+msgid ""
+"\n"
+"                            Grand Capital works in sphere of complex services in the financial markets of 2006.\n"
+"                            During this time the company has opened more than 30 regional offices in Russia and\n"
+"                            in the world. We actively participate in industry exhibitions, which allows us to\n"
+"                            keep up with the latest trends in the market of financial, educational and brokerages\n"
+"                            services\n"
+"                        "
+msgstr ""
+"\n"
+"Grand Capital has been providing financial, educational and brokerage services since 2006. We actively participate in major financial exhibitions to keep up with latest market trends."
+
+msgid ""
+"\n"
+"                            Since 2010, the Grand Capital is part of the participants of REGULATORY COMMISION OF\n"
+"                            FINANCIAL MARKET RELATIONSHIPS. This is the result of great work of our employees and\n"
+"                            is a guarantee of high quality customer service. The company has all the necessary\n"
+"                            licenses and certificates to conduct its activities\n"
+"                        "
+msgstr ""
+"\n"
+"Grand Capital Ltd. is registered in 106 Premier Building Victoria, Mahe, Seychelles with reg. no. 036046. To see our licenses and certificates please visit <a href=\"/about/regulation/\">this</a> page.\n"
+"\n"
+"At the moment Grand Capital has offices in Europe and Asia."
+
+msgid "The company's mission"
+msgstr "Our Mission"
+
+msgid ""
+"\n"
+"                            This desire to create the most comfortable conditions <br/>\n"
+"                            to trade in the Forex market and stable growth of the <br/>\n"
+"                            financial well-being of our customers\n"
+"                        "
+msgstr ""
+"\n"
+"Our success is based on a strong desire to provide\n"
+"<br/>\n"
+"our clients with the best trading conditions\n"
+"<br/>\n"
+"and help them grow their financial well-being."
+
+msgid "About Grand Capital"
+msgstr "Reliable Broker"
+
+msgid ""
+"\n"
+"                            Forex-broker Grand Capital provides trade accounts maintenance of the private\n"
+"                            and corporate clients to submit the respective access via trade platforms to\n"
+"                            the margin trading on Forex and other world financial markets\n"
+"                        "
+msgstr ""
+"\n"
+"Grand Capital provides individual and corporate clients with brokerage services from all over the world. We have been ensuring quality of margin trading on Forex and other financial markets for our clients for over than 10 years. We are constantly working on the ways to make trading with us the most convenient and enjoyable."
+
+msgid ""
+"\n"
+"                            Broker provides the vast variety of trading modes, unique investment instrument and quality analytics for own clients\n"
+"                        "
+msgstr ""
+"\n"
+"We provide our clients with a variety of trading modes, unique investing services and professional analytics."
+
+msgid "Affiliated structures"
+msgstr "Affiliated Companies"
+
+msgid ""
+"\n"
+"                            To provide the constant improvement of proposed products and service quality and\n"
+"                            to meet the legal and social requirements, broker is dealing with several\n"
+"                            organizations on permanent basis: <br/>\n"
+"                            a) consulting agency Grand School – in terms of money laundering, going from illegal activities <br/>\n"
+"                            b) binary options broker Grand Options – in terms of corresponding to high standards of binary options trading\n"
+"                            <br/>\n"
+"                        "
+msgstr ""
+"\n"
+"To ensure the quality of services that we offer and to comply with international regulations, we collaborate with Grand Study to provide the best educational services in financial field and Grand School, which is consulting service aimed to prevent money-laundering."
+
+msgid "Grand Capital awards"
+msgstr "Grand Capital Awards"
+
+msgid "FOREX Expo<br/>Awards 2012 Best<br/>Micro-Forex<br/>Broker"
+msgstr "FOREX Expo<br/>Awards 2012 Best<br/>Micro-Forex<br/>Broker"
+
+msgid "FOREX Expo<br/>Awards 2012 Best<br/>Standard-Forex<br/>Broker"
+msgstr "FOREX Expo<br/>Awards 2012 Best<br/>Standard-Forex<br/>Broker"
+
+msgid ""
+"3rd International Exhibition \"Saint-Petersburg Forex Expo 2012\" "
+"participant"
+msgstr ""
+"3rd International Exhibition \"Saint-Petersburg Forex Expo 2012\" "
+"participant"
+
+msgid "6th International Exhibition \"Kiev Forex Expo 2012\" participant"
+msgstr "6th International Exhibition \"Kiev Forex Expo 2012\" participant"
+
+msgid "10th International Exhibition \"Moscow Forex Expo 2012\" participant"
+msgstr "10th International Exhibition \"Moscow Forex Expo 2012\" participant"
+
+msgid "Saint-Petersburg Exchange - project FX+ \"Stability-2011\""
+msgstr "Saint-Petersburg Exchange - project FX+ \"Stability-2011\""
+
+msgid "All awards"
+msgstr "All awards"
+
+msgid "Grand Capital office in"
+msgstr "Grand Capital office in"
+
+msgid "Official partner in"
+msgstr "Official partner in"
+
+msgid "Address"
+msgstr "Address"
+
+msgid "Phone"
+msgstr "Phone"
+
+msgid "News of our office"
+msgstr "News of our office"
+
+msgid "Workshops in our office"
+msgstr "Workshops in our office"
+
+msgid ""
+"\n"
+"                You will be taught Forex trading by experienced traders in a specially equipped classroom.\n"
+"                You will learn what Forex is and will get a chance to learn the basics of trading.\n"
+"            "
+msgstr ""
+"\n"
+"You will be taught Forex trading by experienced traders in a fully equipped classroom.\n"
+"You will learn what Forex is and will get a chance to learn the basics of trading."
+
+msgid ""
+"\n"
+"                To start trading on Forex market, we recommend you to take the following courses:\n"
+"            "
+msgstr ""
+"\n"
+"                To start trading on the Forex market, we recommend you to take the following courses:\n"
+"            "
+
+msgid "Workshop"
+msgstr "Workshop"
+
+msgid "Category"
+msgstr "Category"
+
+msgid "Schedule"
+msgstr "Schedule"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Price"
+msgstr "Price"
+
+msgid "Enroll for education"
+msgstr "Forex education enrollment"
+
+msgid "Your application has been accepted!"
+msgstr "Your application has been accepted!"
+
+msgid "Awards and diplomas"
+msgstr "Awards and achievements"
+
+#, python-format
+msgid "Forex Expo Awards %(year)s"
+msgstr "Forex Expo Awards %(year)s"
+
+msgid "Cup"
+msgstr "Cup"
+
+msgid ""
+"Grand Capital became the winner in Best ECN broker nomination. The ceremony "
+"took place during annual international exhibition Forex Expo on September, "
+"26th 2015 in Moscow"
+msgstr ""
+"Grand Capital became the winner in the Best ECN broker nomination. The "
+"ceremony took place during annual international exhibition Forex Expo on 26 "
+"September, 2015 in Moscow"
+
+msgid "Diploma"
+msgstr "Diploma"
+
+msgid "Grand Capital Diplomas"
+msgstr "Grand Capital Diplomas"
+
+msgid "MasterForex-V Academy Awards"
+msgstr "MasterForex-V Academy Awards"
+
+msgid "&#34;Stability on the Forex market&#34; cup"
+msgstr "&#34;Stability on the Forex market&#34; cup"
+
+msgid ""
+"Grand Capital became a winner in the &#34;Stability on the Forex market "
+"2014&#34; nomination. The best broker cup Grand&nbsp;Capital had received "
+"from MasterForex-V Academy after the voting by traders and Academy "
+"administration."
+msgstr ""
+"Grand Capital became a winner in the &#34;Stability on the Forex market "
+"2014&#34; nomination. The best broker cup Grand&nbsp;Capital was received "
+"from MasterForex-V Academy after the voting by traders and Academy "
+"administration."
+
+msgid "Grand Capital Cups"
+msgstr "Grand Capital Cups"
+
+msgid "China Forex Expo Awards 2014"
+msgstr "China Forex Expo Awards 2014"
+
+msgid ""
+"\n"
+"                         As a participant of\n"
+"                        "
+msgstr ""
+"\n"
+"                         As a participant of\n"
+"                        "
+
+msgid "Best Forex Broker in China"
+msgstr "Best Forex Broker in China"
+
+msgid ""
+"\n"
+"                         As a participant of\n"
+"                        17th International Exhibition\n"
+"                        \"Moscow Forex Expo 2014\", Russia, Moscow, 2014, \n"
+"                        in nomination \"Best Binary Option Broker\"\n"
+"                        "
+msgstr ""
+"\n"
+"                         As a participant of\n"
+"                        17th International Exhibition\n"
+"                        \"Moscow Forex Expo 2014\", Russia, Moscow, 2014, \n"
+"                        in the nomination \"Best Binary Option Broker\"\n"
+"                        "
+
+msgid "Forex Expo Awards Best Binary Option Broker"
+msgstr "Forex Expo Awards Best Binary Option Broker"
+
+msgid "Forex Expo Awards Best Micro-Forex Broker"
+msgstr "Forex Expo Awards Best Micro-Forex Broker"
+
+msgid "Forex Expo Awards Best Standard-Forex Broker"
+msgstr "Forex Expo Awards Best Standard-Forex Broker"
+
+msgid ""
+"\n"
+"                            As a participant of 3rd International Exhibition\n"
+"                            \"Saint-Petersburg Forex Expo 2012\", Russia, Saint-Petersburg, April 27-28, 2012\n"
+"                        "
+msgstr ""
+"\n"
+"As a participant of the 3rd International Exhibition\n"
+"\"Saint-Petersburg Forex Expo 2012\", Russia, Saint-Petersburg, April 27-28, 2012"
+
+msgid ""
+"\n"
+"                            As a participant of 6th International Exhibition\n"
+"                            \"Kiev Forex Expo 2012\", Ukraine, Kiev, October 18-19, 2012\n"
+"                        "
+msgstr ""
+"\n"
+"                            As a participant of 6th International Exhibition\n"
+"                            \"Kiev Forex Expo 2012\", Ukraine, Kiev, October 18-19, 2012\n"
+"                        "
+
+msgid ""
+"\n"
+"                            As a participant of 10th International Exhibition\n"
+"                            \"Moscow Forex Expo 2012\", Russia, Moscow, November 2-3, 2012\n"
+"                        "
+msgstr ""
+"\n"
+"                            As a participant of 10th International Exhibition\n"
+"                            \"Moscow Forex Expo 2012\", Russia, Moscow, November 2-3, 2012\n"
+"                        "
+
+msgid "Diplomas for exhibition participations"
+msgstr "Diplomas for exhibition participations"
+
+msgid ""
+"\n"
+"                            As a participant of 6th International Exhibition\n"
+"                            \"Moscow Forex Expo 2008\", Russia, Moscow, November 28-29, 2008\n"
+"                        "
+msgstr ""
+"\n"
+"                            As a participant of 6th International Exhibition\n"
+"                            \"Moscow Forex Expo 2008\", Russia, Moscow, November 28-29, 2008\n"
+"                        "
+
+msgid ""
+"\n"
+"                            As a participant of 5th International Exhibition\n"
+"                            \"Moscow Forex Expo 2008\", Russia, Moscow, April 18-19, 2008\n"
+"                        "
+msgstr ""
+"\n"
+"                            As a participant of 5th International Exhibition\n"
+"                            \"Moscow Forex Expo 2008\", Russia, Moscow, April 18-19, 2008\n"
+"                        "
+
+msgid ""
+"\n"
+"                            As a participant of 4th International Exhibition\n"
+"                            \"Moscow Forex Expo 2007\", Russia, Moscow, November 23-24, 2007\n"
+"                        "
+msgstr ""
+"\n"
+"                            As a participant of 4th International Exhibition\n"
+"                            \"Moscow Forex Expo 2007\", Russia, Moscow, November 23-24, 2007\n"
+"                        "
+
+msgid "Download center"
+msgstr "Download Center"
+
+msgid "Metatrader 4 platforms"
+msgstr "MetaTrader 4"
+
+msgid "More about"
+msgstr "Learn more"
+
+msgid "Web-platform"
+msgstr "Web-platform"
+
+msgid "Go to site"
+msgstr "Go to the website"
+
+msgid "For iPad"
+msgstr "For iPad"
+
+msgid "For iPhone"
+msgstr "For iPhone"
+
+msgid "For Android"
+msgstr "For Android"
+
+msgid "CQG platform"
+msgstr "CQG platform"
+
+msgid "For PC"
+msgstr "For PC"
+
+msgid "Software"
+msgstr "Software"
+
+msgid "Funds transfer"
+msgstr "Funds Transfer"
+
+msgid "Funds deposit"
+msgstr "Deposit funds"
+
+msgid "Funds withdrawal"
+msgstr "Withdraw funds"
+
+msgid "Payment system"
+msgstr "Payment system"
+
+msgid "Transfer currency"
+msgstr "Accepted currencies"
+
+msgid "Transfer durability"
+msgstr "Processing time"
+
+msgid "Comission on deposits<br>up to"
+msgstr "Commission on deposits<br>under"
+
+msgid "Comission on deposits<br>over"
+msgstr "Commission on deposits<br>over"
+
+msgid "15 minutes"
+msgstr "15 minutes"
+
+#, python-format
+msgid "0%% (compensated by Grand Capital)"
+msgstr "0%% (compensated by Grand Capital)"
+
+msgctxt "operations"
+msgid "Deposit"
+msgstr "Deposit"
+
+msgid "Commission"
+msgstr "Commission"
+
+msgid ""
+"The Company reserves the right to change the amount of commission "
+"compensated in some cases."
+msgstr ""
+"The company reserves the right to change the amount of commission "
+"compensated in some cases."
+
+msgid ""
+"\n"
+"                            CQG – It is optimal terminals for professional traders, both for investors and for scalpers\n"
+"                        "
+msgstr ""
+"\n"
+"CQG is a trading terminal for professional traders. "
+
+msgid "Benefits of CQG Trader"
+msgstr "Benefits of CQG Trader"
+
+msgid ""
+"\n"
+"                                Accurate, timely quotations, depth of historical data, professional\n"
+"                                analysis tools and innovative trading opportunities\n"
+"                            "
+msgstr ""
+"\n"
+"Accuracy, timely quotations, professional analysis tools and innovative trading opportunities"
+
+msgid ""
+"\n"
+"                                Ability to use your own mechanical systems to determine the time of\n"
+"                                entry into trades, for example, written in Excel\n"
+"                            "
+msgstr ""
+"\n"
+"Ability to use your own systems to determine the time of\n"
+"entry into trades, written in Excel"
+
+msgid "Lightning fast execution of orders"
+msgstr "Blindingly fast order execution"
+
+msgid ""
+"\n"
+"                                Technical support: all users are provided with\n"
+"                                free education and nonstop support via phone or live chat\n"
+"                            "
+msgstr ""
+"\n"
+"                                Technical support: all users are provided with\n"
+"                                free education and nonstop support via phone or live chat\n"
+"                            "
+
+msgid "The cost of platform"
+msgstr "Pricing"
+
+msgid "The cost of platform: 25,00$ per month + 3$ for every filled contract"
+msgstr "$25 per month + $3 for every contract traded"
+
+msgid "Minimal deposit: 10.000$"
+msgstr "Minimum deposit: $10.000"
+
+msgid "Buy"
+msgstr "Buy"
+
+msgid "MetaTrader 4"
+msgstr "MetaTrader 4"
+
+msgid ""
+"Trading platform MetaTrader 4 is rightfully considered worldwide as the most"
+" popular solution for professional trading"
+msgstr ""
+"MT4 is the most popular software for professional trading that is used by "
+"traders worldwide."
+
+msgid "Metatrader 4 advantages"
+msgstr "Advantages of MetaTrader 4"
+
+msgid ""
+"More than 330 instruments for efficient trading: 54 currency pairs, spot-"
+"metals, gold and silver, CFD stocks, indexes and futures (raw materials and "
+"energy resources)"
+msgstr ""
+"More than 330 instruments for efficient trading: 54 currency pairs, spot-"
+"metals, gold and silver, CFDs, stocks, indices and futures (raw materials "
+"and energy resources)"
+
+msgid "Compatible with iOS- and Android-based mobile devices"
+msgstr "Compatible with iOS- and Android-based mobile devices"
+
+msgid ""
+"The platform is compatible with the vast online library of user indicators "
+"and expert counsellors"
+msgstr ""
+"The platform is compatible with the vast online library of user indicators "
+"and expert counselors"
+
+msgid ""
+"Trailing Stop - the possibility to lock positions and independently manage "
+"several accounts simultaneously"
+msgstr ""
+"Trailing Stop, the possibility to lock positions and independently manage "
+"several accounts at the same time"
+
+msgid "MT4 platform videoguide"
+msgstr "MT4 platform videoguide"
+
+msgid "MetaTrader4 for your device"
+msgstr "MetaTrader4 for your device"
+
+msgid "Windows Vista or higher"
+msgstr "Windows Vista or higher"
+
+msgid "See QR-code"
+msgstr "See QR-code"
+
+msgid "Download from Apple Store"
+msgstr "Download from Apple Store"
+
+msgid "Download from Google Play"
+msgstr "Download from Google Play"
+
+msgid "WebTrader is an online trading platform in your browser."
+msgstr "WebTrader is an online trading platform in your browser."
+
+msgid "It is compatible with MetaTrader 4 and doesn’t require installation."
+msgstr "It is compatible with MetaTrader 4 and doesn’t require installation."
+
+msgid "Why WebTrader?"
+msgstr "Why WebTrader?"
+
+msgid "All features of a desktop terminal"
+msgstr "All features of a desktop terminal"
+
+msgid "You can use the same indicators you are used to in MetaTrader 4."
+msgstr "Use the same indicators you use in MetaTrader 4! "
+
+msgid "It doesn’t require installation"
+msgstr "No installation needed!"
+
+msgid ""
+"Finally trading is available anytime and anywhere. And don’t worry about "
+"compatibility."
+msgstr ""
+"Finally trading is available anytime and anywhere. And do not worry about "
+"compatibility as it is perfectly compatible with MetaTrader 4!"
+
+msgid "Technical analysis, up-to-date quotes and account information online."
+msgstr "Technical analysis, up-to-date quotes and account information online."
+
+msgid "All you need for the trading is always at hand."
+msgstr "All you need for trading is always at hand!"
+
+msgid "Compatibility with"
+msgstr "Compatible with"
+
+msgid ""
+"You can trade in MetaTrader and WebTrader, all data will be saved and "
+"synchronized."
+msgstr ""
+"You can trade in MetaTrader and WebTrader, all data will be saved and "
+"synchronized."
+
+msgid "Cross-browser compatibility"
+msgstr "Cross-browser compatibility"
+
+msgid ""
+"Do you use Google Chrome at home, Internet Explorer at work and Safari on "
+"the way? It’s no longer a problem with our WebTrader. It works fine in any "
+"modern browser."
+msgstr ""
+"Do you use Google Chrome at home, Internet Explorer at work and Safari on "
+"the way? It’s no longer a problem with our WebTrader terminal. It works just"
+" fine in any modern browser."
+
+msgid "Forex and Binary Options"
+msgstr "Forex and Binary Options"
+
+msgid ""
+"The terminal can work in Forex or Options mode. This makes each mode’s "
+"features more complete and not overloaded."
+msgstr ""
+"The terminal can work in Forex and Options modes separately which keeps the "
+"interface clean and simple. "
+
+msgid "WebTrader and Binary Options"
+msgstr "WebTrader and Binary Options"
+
+msgid ""
+"Web-terminal for the binary trading provides great features, technical "
+"analysis, one click trading, breakout options, double touch options, account"
+" information and more."
+msgstr ""
+"Web-terminal for binary trading provides great features, technical analysis,"
+" one click trading, breakout options, double touch options, all account "
+"information and more."
+
+msgid "Simple and friendly interface design makes trading more effective."
+msgstr "Simple and friendly interface design makes trading more convenient."
+
+msgid "How to start?"
+msgstr "How to Start?"
+
+msgid "Open WebTrader"
+msgstr "Open WebTrader"
+
+msgid "For demo access please use"
+msgstr "For demo access please use"
+
+msgid "guest login"
+msgstr "guest login"
+
+msgid "Use your account number and password to login to Web-terminal."
+msgstr "Use your account number and password to login to Web-terminal."
+
+msgid "You can start trading!"
+msgstr "You can start trading!"
+
+msgid "Rebate service"
+msgstr "Rebate Service"
+
+msgid "Rebate for pleased clients"
+msgstr "Forex Rebate"
+
+msgid ""
+"Rebate is a popular mechanism for the attracting of clients. It based on the"
+" returning spread. If you use rebate, your clients have a reward for each "
+"order regardless of the results. It is your benefit!"
+msgstr ""
+"Here at Grand Capital we care about our partner’s success. Apart from "
+"various promotions and bonuses, Grand Capital provides its partners with "
+"another great tool for attracting new clients. Offer a reduced spread to "
+"interest more traders to sign up with GC and profit with increased trading "
+"volume!"
+
+msgid ""
+"So the partner attracts more loyal clients, they increase the trading volume"
+" by rewards, and partner gets more profit."
+msgstr ""
+"So the partner attracts more loyal clients, they increase the trading volume"
+" by rewards and partner gets more profit."
+
+msgid "Set rebate"
+msgstr "Set rebate"
+
+msgid "What is rebate?"
+msgstr "What is a Rebate?"
+
+msgid ""
+"Rebate is the returning spread. The partner who set rebate gives his client "
+"reward for each lot. Income from the spread decreases, but count of "
+"referrals and trading volume increase."
+msgstr ""
+"Rebate is an extra bonus you can offer to your clients. It is basically a "
+"cash back for each lot traded, regardless of the trade’s outcome. If a "
+"partner chooses to offer the rebate, his/her income from the spread "
+"decreases, but count of referrals and trading volume increase."
+
+msgid "Why do you need rebate?"
+msgstr "Why Do You Need Rebate?"
+
+msgid ""
+"Rebate helps to attract clients, it do them more loyal and motivate to "
+"active trade. Partner guaranteed to receive a greater number of lots and to "
+"take more profit."
+msgstr ""
+"Rebate can help you attract more loyal clients and motivate them to increase"
+" the trading volume. Make more profit from increased number of lots traded "
+"by your clients."
+
+msgid "Partner attracts clients on his website"
+msgstr "You attract clients to trade with GC"
+
+msgid ""
+"Clients trade in Grand&nbsp;Capital and get the partial returning of the "
+"spread for each lot"
+msgstr "Clients get partial compensation from the spread for each lot traded."
+
+msgid "Clients use this money to increase trading volume"
+msgstr "Clients use the funds to increase trading volume"
+
+msgid "Partner remuneration grows with every client and every lot"
+msgstr ""
+"Your profit is increased with the number of lots traded by your clients"
+
+msgid ""
+"Partner set rebate in USD from $0.01 to $10 from lot. Rebate is tied to the "
+"account, and all clients get same reward. Connect your clients to the "
+"different IB-accounts for the grouping by the rebate size. You can change "
+"rebate anytime."
+msgstr ""
+"A partner chooses the rebate from $0.01 to $10 from a lot. All clients "
+"connected to the same IB get the same rebate amount. Create different IB "
+"accounts to group your client by rebate size. You can change rebate volume "
+"anytime."
+
+msgid "Your clients will receive rebate daily."
+msgstr "Your clients will receive rebate daily."
+
+msgid "Example calculation"
+msgstr "Example"
+
+msgid "With no rebate"
+msgstr "No rebate"
+
+msgid ""
+"You are partner and you attracted 10 clients on your website. Their "
+"collective trading volume was 20 lots (2 lots by each client). Your clients "
+"don’t like the spread, so they do little trading volume and use the most "
+"inexpensive instruments, for example EURUSD."
+msgstr ""
+"A partner attracts 10 clients. Their collective trading volume is 20 lots (2"
+" lots by each client). The clients do not like the spread very much, so they"
+" are hesitant to increase the trading volume and choose inexpensive trading "
+"instruments, such as EURUSD."
+
+msgid ""
+"According to the calculating table let’s calculate partnership remuneration"
+msgstr "In this case the partner’s commission would be as follows:"
+
+msgid "lots"
+msgstr "lots"
+
+msgid "With rebate"
+msgstr "With rebate"
+
+msgid ""
+"Let’s say you set rebate $5 from lot. It can be interesting for your clients"
+" because it gives additional funds, and they can trade with this money.  "
+"Those same 10 clients will do 50 lots. Let’s calculate your partnership "
+"remuneration"
+msgstr ""
+"<p>A partner chooses to offer rebate to his/her client and sets the rebate volume at $5 from each lot. The clients’ motivation increases as they get additional funds they can use for trading. Clients use the funds to trade and trade 50 lots.</p>\n"
+"<p>In this case partner’s commission would be as follows:</p>"
+
+msgid ""
+"Advertise this service to increase the number of clients. Rebate decrease "
+"their risks. Attract more clients to get more profit"
+msgstr "Attract more clients to get more profit."
+
+msgid "And don’t forget about additional bonus for the number of lots!"
+msgstr "And do not forget about additional bonus for the number of lots!"
+
+#, python-format
+msgid ""
+"<a href=\"%(partnership_url)s#web\" class=\"bordered\">Become a partner</a> "
+"of Grand&nbsp;Capital to attract clients by your website or blog"
+msgstr ""
+"<a href=\"%(partnership_url)s#web\" class=\"bordered\">Become a partner</a> "
+"of Grand&nbsp;Capital and start attracting clients"
+
+#, python-format
+msgid ""
+"Learn our <a href=\"%(account_url)sreferral\">marketing materials</a> in "
+"Private Office and choose the most interesting or even all of them"
+msgstr ""
+"Study our <a href=\"%(account_url)sreferral\">marketing materials</a> "
+"located in your Private Office and choose the most appealing one."
+
+#, python-format
+msgid ""
+"In your Private Office, par. Partnership, change rebate and set the sum of "
+"reward for your clients. Do you have some troubles? <a "
+"href=\"%(get_help_url)s\">Enter FAQ</a> on our website "
+msgstr ""
+"You can set up a rebate in your Private Office. If you have any questions "
+"visit <a href=\"%(get_help_url)s\">this page</a> or contact our customer "
+"support."
+
+msgid "Grand Capital Company is regulated by KROUFR and CRFIN"
+msgstr "The Grand Capital company is regulated by KROUFR and CRFIN"
+
+msgid "Grand Capital Company is a member of KROUFR and CRFIN"
+msgstr "The Grand Capital company is a member of KROUFR and CRFIN"
+
+msgid ""
+"\n"
+"                    Grand Capital is a member of the main regulating organisations. It\n"
+"                    guarantees professionalism, reliability and safety of the Company.\n"
+"                "
+msgstr ""
+"\n"
+"                    Grand Capital is a member of the main regulating organization. It\n"
+"                    guarantees professionalism, reliability and safety of the company.\n"
+"                "
+
+msgid ""
+"\n"
+"                Presence of Certificate posted below guarantees that at the time of issuance the\n"
+"                participant met all requirements of KROUFR Standards. Compliance with KROUFR\n"
+"                standards primarily proves the professionalism, reliability and safety of the Company.\n"
+"                This is additional guarantee for our Clients that all our activity is regulated\n"
+"            "
+msgstr ""
+"\n"
+"                If you have any concerns about quotations or service provided you can submit your claim to KROUFR.  As Grand Capital is an active KROUFR member, we ought to comply with any decision made by the commission regarding any case submitted. \n"
+"            "
+
+msgid ""
+"\n"
+"                And in the case of conflict situation about quotation, company service you can write an\n"
+"                issue in the name of the company in KROUFR. In the case of a positive decision from the\n"
+"                Commission side in a favor of trader our company is obliged to follow the accepted decision\n"
+"            "
+msgstr ""
+"\n"
+"                Any Grand Capital client has the right to submit a claim to be settled by KROUFR. If the commission rules are in a trader’s favor, Grand Capital should take necessary actions as per the commission’s demands."
+
+msgid "KROUFR website:"
+msgstr "KROUFR website:"
+
+msgid ""
+"\n"
+"               Since 2012 our Company is a member of the \"Center of regulation of off-exchange financial instruments and technologies\"\n"
+"               (CRFIN). It is a self-regulating organisation which aims to make retail off-exchange Forex a\n"
+"               full member of the Russian financial industry.\n"
+"           "
+msgstr ""
+"\n"
+"               Since 2012 Grand Capital has been a member of the \"Center for Regulation in OTC Financial Instruments and Technologies\" (CRFIN).                                              CRFIN was created by the initiative of major Forex brokers in 2010 and aims to control and regulate the Forex market in Russian Federation. \n"
+"           "
+
+msgid ""
+"\n"
+"                CRFIN membership means that the Company meets all the Standards and rules of professional activity\n"
+"                adopted by the organisation and is an active member of the process of Forex legalization in Russia.\n"
+"            "
+msgstr ""
+"\n"
+"               All these years CRFIN has performed its tasks flawlessly and became a highly trusted organization.    CRFIN membership means that the company complies with the industry standards and follows the rules set by the regulator and guarantees high quality of the provided services.\n"
+"            "
+
+msgid "CRFIN website:"
+msgstr "CRFIN website:"
+
+msgid ""
+"\n"
+"                Since 2012 Grand&nbsp;Capital has been a member of the \"Center for Regulation in OTC Financial\n"
+"                Instruments and Technologies\" (CRFIN).\n"
+"            "
+msgstr ""
+"\n"
+"                Since 2012 Grand&nbsp;Capital has been a member of the \"Center for Regulation in OTC Financial\n"
+"                Instruments and Technologies\" (CRFIN).\n"
+"            "
+
+msgid ""
+"\n"
+"                CRFIN was created by the initiative of major Forex brokers in\n"
+"                2006 and aims to control and regulate Forex market in Russian Federation.\n"
+"                All these years CRFIN has performed its tasks flawlessly and became a highly\n"
+"                trusted organization. CRFIN membership means that the company complies with\n"
+"                the industry standards and follows the rules set by the regulator and guarantees\n"
+"                high quality of the provided services.\n"
+"            "
+msgstr ""
+"\n"
+"                CRFIN was created by the initiative of major Forex brokers in\n"
+"                2010 and aims to control and regulate the Forex market in Russian Federation.\n"
+"                All these years CRFIN has performed its tasks flawlessly and became a highly\n"
+"                trusted organization. CRFIN membership means that the company complies with\n"
+"                the industry standards and follows the rules set by the regulator and guarantees\n"
+"                high quality of the provided services.\n"
+"            "
+
+msgid "Search results"
+msgstr "Search results"
+
+msgid "CFD"
+msgstr "CFD"
+
+msgid "CFD is the competent approach to the stock market"
+msgstr "CFD is a Competent Approach to the Stock Market"
+
+msgid "The most liquid instruments and minimum investment"
+msgstr ""
+"The most liquid instruments with minimal investment amount are required!"
+
+msgid "CFDs are the most liquid instruments with minimum investment!"
+msgstr "Highly liquid instruments with minimal investment amounts!"
+
+msgid ""
+"global brands's stocks, gold, crude oil, lumber and currencies are in your "
+"trading terminal"
+msgstr ""
+"Stocks of major international companies, Gold, Crude Oil, Lumber and "
+"currency pairs"
+
+msgid "you don't buy an asset, so your investment is minimal"
+msgstr "No actual asset is bought which guarantees minimal investment amounts"
+
+msgid "high profit with any direction of the market"
+msgstr "Profit much higher than your initial investment"
+
+msgid "or"
+msgstr "or"
+
+msgid "open demo account"
+msgstr "open a demo account"
+
+msgid "What is CFD?"
+msgstr "What is CFD?"
+
+msgid ""
+"CFD is a contract for difference between the current value of an asset and "
+"its value at contract time. This is an agreement between the seller and the "
+"buyer to exchange this difference."
+msgstr ""
+"CFD (Contract for Difference) is an agreement between the investor and a "
+"contract provider to exchange differences in value of an underlying asset "
+"between the time the contract opens and closes. In this case, the investor "
+"does not actually own the asset, but receives profit or takes a loss based "
+"on the price changes of the asset."
+
+msgid ""
+"You operate only small amounts of money when you trade CFDs on stocks, "
+"commodities, currencies because you don’t buy an actual asset. So CFD "
+"trading is available even for newbies."
+msgstr ""
+"You operate only small amounts of money when you trade CFDs on stocks, "
+"commodities and currency pairs. That makes CFD trading available even for "
+"newbies."
+
+msgid "Wide opportunities"
+msgstr "Ample Opportunities"
+
+msgid "Wide range of trading instruments"
+msgstr "Wide range of trading instruments"
+
+msgid ""
+"Currencies, stocks, indices, metals, energies and more. You have an "
+"opportunity to trade on different areas of Forex market around the clock."
+msgstr ""
+"Stocks, indices, commodities, currency pairs and more! Get access to a "
+"variety of global markets and trade around the clock!"
+
+msgid "Profitability"
+msgstr "High profitability"
+
+msgid ""
+"Stock market depends on a variety of economic and political reasons so you "
+"can always earn. That's why the profit from CFD trading is high"
+msgstr ""
+"The stock market is extremely dependent on various economic and political "
+"reasons. Profit not just when the price goes up, but when it falls down too!"
+
+msgid ""
+"You make the maximum profitable portfolio using the wide range of trading "
+"instruments. Work with different CFD groups to reduce the risks."
+msgstr ""
+"Diversify your portfolio with multiple assets. Work with different CFD "
+"groups to reduce the risks."
+
+msgid ""
+"CFD trading is very transparent. You can always check the quotes directly on"
+" the stock exchange where it is traded"
+msgstr ""
+"CFD trading is transparent. All quotes are always displayed on the stock "
+"exchange website where it is traded."
+
+msgid "Advantages of CFDs in Grand Capital"
+msgstr "Advantages of CFDs in Grand Capital"
+
+msgid "The most convenient trading portfolio"
+msgstr "Convenience"
+
+msgid ""
+"All CFD instruments are available in MetaTrader. You don’t have to open new "
+"account; you can just choose new instruments on your Standard account."
+msgstr "You don’t need to open a new account to start trading CFDs."
+
+msgid "Commission 0&#37;"
+msgstr "Commission 0&#37;"
+
+msgid "Save on trading!<br>We don’t charge a fee on CFD orders"
+msgstr "We do not charge commission on CFD-contracts"
+
+msgid "Wide range of instruments"
+msgstr "Wide range of trading<br>instruments"
+
+msgid ""
+"More than a hundred CFD-contracts on currency, metals, energies, stocks, "
+"indexes and options."
+msgstr "100+ trading instruments"
+
+msgid "Broken lots"
+msgstr "Trade with Micro-lots"
+
+msgid ""
+"Minimum contract on CFD in Grand Capital is only 0.01 lot! So you can start "
+"trading with the minimum funds on your accounts."
+msgstr ""
+"Grand Capital offers 0,01 lot as a minimum trade! Start trading with smaller"
+" amount and build your way up!"
+
+msgid "What are the CFDs?"
+msgstr "CFD Types:"
+
+msgid "CFD on stocks"
+msgstr "Stocks CFD trading"
+
+msgid ""
+"Do you follow favorite brand? Make money on it! There are CFD on stocks of "
+"Apple, Google, Gazprom, Nike, Ford, Facebook and more than 50 ones in your "
+"terminal."
+msgstr ""
+"Why not invest in your favorite brand? Invest in Apple, Google, Nike, Ford, "
+"Facebook and much more!"
+
+msgid "CFD on indices"
+msgstr "Indices CFD trading"
+
+msgid ""
+"Get access to stock indices around the world! Dow Jones (USA), FTSE (Great "
+"Britain), DAX (Germany) and more for your high profit."
+msgstr "Gain access to global indices trading with Grand Capital!"
+
+msgid "CFD on currency"
+msgstr "Currency pairs CFD trading"
+
+msgid ""
+"Do you prefer Forex market? Trade currency pairs with fixed spreads. "
+"Transparent deals, unified quotes, high profit."
+msgstr ""
+"Do you feel confident trading on the Forex market? Trade currency pairs with"
+" fixed spreads!"
+
+msgid "CFD on commodities"
+msgstr "Commodities CFD trading"
+
+msgid ""
+"Trade world’s important resources: grain, corn, coffee, sugar, orange "
+"juice.It’s a best way to take profit!"
+msgstr ""
+"Trade world’s important resources: grain, corn, coffee, sugar, orange juice."
+" It’s the best way to profit!"
+
+msgid "CFD on metals and energies"
+msgstr "Metals and energies CFD trading"
+
+msgid ""
+"Metals and energies are the basic global resources. Silver and gold, oil and"
+" gas, copper and palladium. Vital assets are available now to you even with "
+"a small investment."
+msgstr "Trade precious metals, oil and more with Grand Capital CFD contracts!"
+
+msgid "How to earn on CFD"
+msgstr "How to Earn Trading CFD"
+
+msgid "One of the most popular instruments is crude oil"
+msgstr ""
+"Oil has always been one of the most popular commodities, hence oil prices "
+"are always under a lot of attention."
+
+msgid ""
+"The price of oil is very actual theme such a dollar, ruble, euro. How can "
+"trader earn on this asset? Oil market is simple and profitable. It can be "
+"your golden ticket!"
+msgstr ""
+"It is a highly volatile market and very popular among traders around the "
+"world, because if you trade it right, it can quickly become your golden "
+"ticket."
+
+msgid ""
+"The oil market is under the pressure for few quarters. At the end of January"
+" 2015 Brent crude traded below $ 48 a barrel. January 30, 2015 trader bought"
+" CFD on February oil futures Brent (BRNH5) volume of one lot at the cost of "
+"only $ 2800 (leverage 1:20). The price went up and trader started earning. "
+"Price movement stopped at $56.50 because a number of factors put pressure on"
+" oil including the largest in the last 35 years strike of in the oil "
+"industry of the United States. It could has a negative impact on demand "
+"which means oil prices could go down again. February 3, 2015 trader closed a"
+" deal with $6300 profit in just 4 days."
+msgstr ""
+"Let’s look at a real example of one of Grand Capital client's trading "
+"experience. At the end of January, 2015, Brent crude was traded below $48 "
+"for a barrel. On January 30, 2015, the trader bought CFD on February oil "
+"Futures Brent (BRNH5) (he purchased 1 lot at the cost of only $2 800 with "
+"1:20 leverage). The price went up and the trader started receiving "
+"profit.The price stopped at $56.50 due to a number of factors, including the"
+" largest in the last 35 years strike in the US oil industry. On February 3, "
+"2015, the trader closed the deal with $6 300 profit in just 4 days."
+
+msgid ""
+"A feature of financial markets is you can make not only deals for the "
+"purchase expecting price will go up, but also for sale expecting price will "
+"fall. Let’s see how to make money on copper."
+msgstr ""
+"One of the winning features of trading on financial markets is that you can "
+"purchase not only a contract expecting the price goes up, but speculate on "
+"the decrease of the price as well. Let’s look at a real example, which "
+"happened to one of Grand Capital clients who traded CFD Copper Futures "
+"contract: "
+
+msgid ""
+"Industrial metals market is under pressure by a decline in demand and the "
+"overall bearish sentiment in the market of raw materials. Trader analyzes "
+"the schedule of the March futures <strong>HGH5</strong>, and he expects "
+"continuation of falling prices. . At the time of resumption of steady price "
+"movement down January 23 trader sells 1 lot futures (1 lot = 25,000 pounds) "
+"at a price of $ 2.5630 per pound, using its own funds $ 2350. January 26 he "
+"see the price approaches the level of growth and he closes the deal at a "
+"price of $ 2.4651. Financial result for 4 days was $ 2432.5."
+msgstr ""
+"The trader analyzed the March futures chart for HGH5 and expected the price "
+"would continue falling. When the price decreased dramatically on January 23,"
+" the trader sold 1 lot (1 lot = 25,000 GBP) at a price of $ 2.5630 per "
+"pound, using his own funds ($ 2,350). On January, 26 he saw the price had "
+"approached a level of growth and closed the deal at a price of $ 2.4651. His"
+" revenue for 4 days was $ 2,432.5."
+
+msgid "Register and open Standard account"
+msgstr "Register and open a Standard account"
+
+#, python-format
+msgid ""
+"\n"
+"                During <a href=\"%(standard_account_url)s\" class=\"bordered\">account creation</a>, we suggest you to go through two-factor authentication. It will provide maximum protection for your money.\n"
+"            "
+msgstr ""
+"\n"
+"When <a href=\"%(standard_account_url)s\" class=\"bordered\">creating an account</a>, we suggest you to go through two-factor authentication. It will ensure that your funds are securely protected."
+
+msgid "Deposit money into your account in a hassle-free way"
+msgstr "Deposit money into your account in a hassle-free way"
+
+#, python-format
+msgid ""
+"\n"
+"                We support a wide variety of <a href=\"%(money_op_url)s\" class=\"bordered\">deposit and withdrawal methods</a>, from bank transfers to mobile payments. Get <a href=\"%(bonus_url)s\" class=\"bordered\">free %(bonus_amount)s&#37; bonus</a> on each and every deposit.\n"
+"            "
+msgstr ""
+"\n"
+"We support a wide variety of <a href=\"%(money_op_url)s\" class=\"bordered\">deposit and withdrawal options</a>, from bank transfers to mobile payments. Get <a href=\"%(bonus_url)s\" class=\"bordered\">free %(bonus_amount)s&#37; bonus</a> on each and every deposit."
+
+msgid "Set up the terminal or use Webtrader in browser"
+msgstr "Set up the terminal or use WebTrader to trade in you browser"
+
+#, python-format
+msgid ""
+"\n"
+"                <a href=\"%(downloads_url)s\" class=\"bordered\">Download MetaTrader 4</a> for PC or any mobile device or <a href=\"%(webtrader_url)s\" class=\"bordered\">use Webtrader</a> for online trading.\n"
+"            "
+msgstr ""
+"\n"
+"                <a href=\"%(downloads_url)s\" class=\"bordered\">Download MetaTrader 4</a> for PC or any mobile device or <a href=\"%(webtrader_url)s\" class=\"bordered\">use WebTrader</a> for online trading.\n"
+"            "
+
+msgid "Choose strategy and instruments"
+msgstr "Choose your strategy and trading instruments"
+
+#, python-format
+msgid ""
+"\n"
+"                Learn more about trading instruments in <a href=\"%(specs_url)s\" class=\"bordered\">Specifications</a>.\n"
+"            "
+msgstr ""
+"\n"
+"                Learn more about trading instruments in <a href=\"%(specs_url)s\" class=\"bordered\"> Contract Specifications</a>.\n"
+"            "
+
+msgid "Make your first deal"
+msgstr "Start making profit"
+
+msgid "Learn more about CFD trading"
+msgstr "Learn more about CFD trading"
+
+#, python-format
+msgid ""
+"\n"
+"                Open <a href=\"%(demo_account_url)s\" class=\"bordered\">demo account</a> to learn market and test yourself.\n"
+"            "
+msgstr ""
+"\n"
+"If you are not ready to open a real account, you can open <a href=\"%(demo_account_url)s\" class=\"bordered\">a demo account</a> first to learn trading on financial markets."
+
+msgid "CFD instruments can bring high profit."
+msgstr "CFD instruments can bring you extremely high returns."
+
+msgid "Attention!"
+msgstr "Attention!"
+
+msgid ""
+"Please consider the specific of margin. The margin requirements are "
+"increased by 3 times when the market closed. So you must be confident in "
+"capital adequacy to carry the position overnight."
+msgstr ""
+"Please mind that when markets are closed, margin requirements are increased "
+"in three times (x3). Please ensure that there is a sufficient amount of "
+"funds on your account when leaving position open overnight."
+
+msgid ""
+"\n"
+"            The easiest way to earn on Forex trading is to copy trades of successful managers.\n"
+"            Choose a manager from our rating and enjoy the result\n"
+"        "
+msgstr ""
+"\n"
+"            The easiest way to earn on Forex trading is to copy trades of successful managers.\n"
+"            Choose a manager from our rating and enjoy the result\n"
+"        "
+
+msgid "Demo accounts"
+msgstr "Demo Accounts"
+
+msgid "Demo account types"
+msgstr "Types of Demo Accounts"
+
+msgid ""
+"\n"
+"                    Having opened a demo account you get access to all the services\n"
+"                    and features of real account, however, funds are virtual.\n"
+"                "
+msgstr ""
+"\n"
+"By opening a demo account you gain access to all the features of a real account. The demo account is a great learning aid, which lets you learn the trading process, try out our new indicators and master various trading strategies without risking real funds."
+
+msgid ""
+"\n"
+"                    Demo account will help you to understand the principles of market,\n"
+"                    learn the terminal and try out new indicators and expert advisors.\n"
+"                "
+msgstr ""
+"\n"
+"The demo account will help you understand the basics of Forex trading,\n"
+"learn the terminal features and try our new indicators and expert advisors."
+
+#, python-format
+msgid "Profit up to 86%% per transaction"
+msgstr "Profit up to 86%% per transaction"
+
+msgid "Open demo account"
+msgstr "Open a demo account"
+
+msgid ""
+"\n"
+"                            The widest range of trading instruments: currency, metals,\n"
+"                            CFD-contracts on indices and stocks, raw energy futures\n"
+"                        "
+msgstr ""
+"\n"
+"The widest range of trading instruments: currency pairs, metals, indices, \n"
+"CFD-contracts and stocks, raw energy futures"
+
+msgid "An optimal set for traders"
+msgstr "Best choice for Forex trading."
+
+msgid "Account that is oriented to profi"
+msgstr "Start trading ECN with our free demo account. "
+
+msgid "Minimum deposit - 1000$"
+msgstr "Minimum deposit - $ 1000"
+
+msgid "Actions and bonuses on real accounts"
+msgstr "Promotions and Bonuses"
+
+msgid "No-deposit $10 bonus"
+msgstr "No-deposit $10 bonus"
+
+msgid ""
+"Trade on the real market without investing a cent! Get no-deposit $10 bonus!"
+msgstr ""
+"Trade on the real market without investing a single dime! Get no-deposit $10"
+" bonus!"
+
+msgid "Get bonus"
+msgstr "Get a bonus"
+
+msgid "40&#37; bonus on deposit"
+msgstr "40&#37; deposit bonus"
+
+msgid "We will give you 40&#37; on each and every deposit"
+msgstr "Receive additional 40&#37; every time you deposit"
+
+msgid "How to open an account"
+msgstr "How to open an account"
+
+msgid "Real accounts"
+msgstr "Real accounts"
+
+msgid "Bonuses"
+msgstr "Bonuses"
+
+msgid "ECN account"
+msgstr "ECN account"
+
+msgid "ECN - market for the professionals"
+msgstr "ECN - Professional trading"
+
+msgid ""
+"ECN account is the best choice for professional trader. Its main feature is "
+"the execution through Electronic Communication Network. It directly connects"
+" trader with the bank and liquidity providers. It allows instant execution "
+"without requotes and decrease of spread."
+msgstr ""
+"ECN account is the best choice for a professional trader. Trades are "
+"executed through Electronic Communication Network which connects traders "
+"directly with the bank and liquidity providers. It also provides fast "
+"execution without requotes and spread decrease."
+
+msgctxt "ECN_acc_advantage"
+msgid "Instant execution"
+msgstr "Fast execution"
+
+msgid "Requests directly come to provider and execute immediately"
+msgstr "Requests come to the provider directly and are executed immediately"
+
+msgid "Tight spreads"
+msgstr "Low spreads"
+
+msgid "Spreads on ECN are much lower due to absence of intermediaries"
+msgstr "Spreads are much lower due to the absence of intermediaries"
+
+msgid "No requotes"
+msgstr "No requotes"
+
+msgid "The most comfortable and safe trading with no requotes"
+msgstr "The most comfortable and safe trading with no requotes"
+
+msgid "High liquidity"
+msgstr "High liquidity"
+
+msgid "Quotes from the largest market-makers around the world"
+msgstr "Quotes from the largest market-makers around the world"
+
+msgid "What is ECN?"
+msgstr "What is ECN?"
+
+msgid ""
+"Electronic Communication Network (ECN) is a electronic trading system for "
+"dealing without intermediaries. Quotes from the largest market-makers "
+"instantly come to the terminal, market changes appear immediately. The "
+"steady syeam of the quotes allows trader to respond quickly and to trade "
+"flexibly."
+msgstr ""
+"Electronic Communication Network (ECN) is an electronic trading system which"
+" allows traders to avoid intermediaries and connect directly to the major "
+"brokerages when placing a trade. Quotes from the largest market-makers "
+"instantly come to the terminal and market changes appear immediately. The "
+"system provides trades with fast order execution, low spreads and high "
+"liquidity. With a ECN account you can trade in 24/5 mode."
+
+msgid ""
+"Advantage of ECN over conventional systems lies in the absence of "
+"intermediaries. It provides ECN-trader perfect execution of the orders, "
+"significant difference in spreads and high liquidity. Moreover, trade 24/7 "
+"is available with ECN."
+msgstr ""
+"Advantage of ECN over conventional systems lies in the absence of "
+"intermediaries. It provides ECN-traders with perfect order execution, "
+"significant difference in spreads and high liquidity. Moreover, trade 24/5 "
+"is available with ECN."
+
+msgid "Who are interested in ECN-accounts?"
+msgstr "Who is Interested in ECN Accounts?"
+
+msgid ""
+"This account is the best suited for traders who are interested in trading on"
+" the news, scalping and automatic trading systems.It is possible due to the "
+"features of ECN: low spreads, high volatility, no requotes, access to the "
+"real quotes."
+msgstr ""
+"ECN accounts are perfect for traders who trade on news, scalpers and "
+"automatic trading system users. Trade with low spreads, high volatility and "
+"no requotes."
+
+msgid ""
+"Professionals appreciate these advantages for active and flexible trading."
+msgstr ""
+"Professionals appreciate these advantages for active and flexible trading."
+
+msgid "Principle of operation of ECN-account"
+msgstr "ECN Account Trading Conditions"
+
+msgid "Bank"
+msgstr "Bank"
+
+msgid "ECN-aggregator"
+msgstr "ECN-aggregator"
+
+msgid "Benefits of ECN accounts"
+msgstr "Benefits of ECN accounts"
+
+msgid "From 0.4 pips"
+msgstr "From 0.4 pips"
+
+msgid "The most actual instruments"
+msgstr "Wide range of trading instruments"
+
+msgid "More than 40 instruments of ECN"
+msgstr "More than 40 trading instruments"
+
+msgid "Execution with no requotes through the Market Execution system"
+msgstr "No requotes, Market execution"
+
+msgid "Quotes from leading market-makers"
+msgstr "Quotes from the leading market-makers"
+
+msgid "Bank of America, Deutcshe Bank, BNP Paribas, Societe Generale etc."
+msgstr "Bank of America, Deutcshe Bank, BNP Paribas, Societe Generale etc."
+
+msgid "Minimal contract"
+msgstr "Small contract size"
+
+msgid "Starting possibility is only 0,01 lot"
+msgstr "Starting from 0.01 lot!"
+
+msgid "Become the professional with ECN"
+msgstr "Become a professional with ECN"
+
+msgid "Register and open an account"
+msgstr "Register your account with Grand Capital"
+
+msgid "Install the program or open the Webtrader in browser"
+msgstr "Install trading software or trade in your browser with WebTrader"
+
+msgid ""
+"\n"
+"                    Download and install MetaTrader 4 on your PC, Mac or mobile device or\n"
+"                    use web-trader to trade anytime, anywhere\n"
+"                "
+msgstr ""
+"\n"
+"Download MetaTrader 4 for your device or use WebTrader to trade in your browser"
+
+msgid "We offer many ways to deposit and withdraw, choose your way"
+msgstr "We offer the most convenient deposit options"
+
+msgid ""
+"With ECN-account you enter the most liquid market. ECN-trading is "
+"comfortable and flexible"
+msgstr ""
+"With a ECN account you get access to the most liquid market. ECN trading is "
+"comfortable and flexible."
+
+msgid "Earn more on Standard account"
+msgstr "Earn more on a Standard account"
+
+msgid "$100 Minimum deposit"
+msgstr "$100 minimum deposit"
+
+msgid "6 currencies<br>and 4 metals"
+msgstr "6 currencies<br>and 4 metals"
+
+msgid "CFD contracts<br>and futures trading"
+msgstr "CFD-contracts<br>and futures trading"
+
+msgid ""
+"\n"
+"            The widest range of trading instruments such as currencies, metals, CFD contracts, futures.\n"
+"            Standard Account is the best choice for traders\n"
+"            "
+msgstr ""
+"\n"
+"The widest range of trading instruments such as currency pairs, metals, CFD-contracts, futures.\n"
+"A Standard Account is the best choice for traders"
+
+msgid "Open Standard account"
+msgstr "Open a Standard account"
+
+msgid "Informers"
+msgstr "Informers"
+
+msgid "Forex Social Trading"
+msgstr "Forex Social Trading"
+
+msgid ""
+"<p class=\"fs-18\">MetaQuotes social trading is a build-in service developed"
+" by creators of MetaTrader 4. It allows you to mirror signals from "
+"successful traders right from your MT4 account. Just subscribe to a selected"
+" trader’s signals and the deal will be automatically added to your "
+"terminal.</p> <p class=\"offset-top-10 fs-18\">If you are an experienced "
+"trader and want to make extra profit, you can become a signals provider and "
+"not just benefit from your trades, but receive commission from every "
+"investor who subscribes to your signals.</p> <p class=\"offset-top-10 "
+"fs-18\">It is a mutually beneficial service which connects successful "
+"traders and those who’s just started trading on Forex.</p>"
+msgstr ""
+"<p class=\"fs-18\">MetaQuotes social trading is a build-in service developed"
+" by creators of MetaTrader 4. It allows you to mirror signals from "
+"successful traders right from your MT4 account. Just subscribe to the "
+"selected trader’s signals and the deal will be automatically added to your "
+"terminal.</p> <p class=\"offset-top-10 fs-18\">If you are an experienced "
+"trader and want to make extra profit, you can become a signal provider and "
+"not just benefit from your trades, but receive commission from every "
+"investor who subscribes to your signals.</p> <p class=\"offset-top-10 "
+"fs-18\">It is a mutually beneficial service which connects successful "
+"traders and those who just starts trading on Forex.</p>"
+
+msgid "Signals Provider"
+msgstr "Signal Provider"
+
+msgid ""
+"For a signals provider social trading means extra profit from each "
+"subscriber. Make successful trades, get higher position in the rating and "
+"you will be noticed! More subscribers - more profit!"
+msgstr ""
+"For a signals provider social trading means extra profit from each "
+"subscriber. Make successful trades, get higher position in the rating and "
+"you will be noticed! More subscribers - more profit!"
+
+msgid ""
+"<span class='font-med'>If you are a professional trader</span> - share your "
+"signals and help less advanced traders to profit from trading mirroring your"
+" deals."
+msgstr ""
+"<span class='font-med'>If you are a professional trader</span> - share your "
+"signals and help less advanced traders to profit from trading by mirroring "
+"your deals."
+
+msgid ""
+"<span class='font-med'>If you are trying out a new strategy,</span> get more"
+" investors to mirror your trades and learn how your strategy works in "
+"different conditions and accounts."
+msgstr ""
+"<span class='font-med'>If you are trying out a new strategy,</span> get more"
+" investors to mirror your trades and learn how your strategy works in "
+"different conditions and accounts."
+
+msgid "Subscriber"
+msgstr "Subscriber"
+
+msgid ""
+"For a subscriber social trading means new possibilities and higher profit."
+msgstr ""
+"For a subscriber social trading means new possibilities and higher profit."
+
+msgid ""
+"<span class='font-med'>If you are a novice in Forex trading,</span> "
+"MetaQuotes may be your best opportunity to actually start trading on Forex."
+msgstr ""
+"<span class='font-med'>If you are a novice in Forex trading,</span> "
+"MetaQuotes signals may be your best opportunity to actually start trading on"
+" Forex."
+
+msgid ""
+"<span class='font-med'>If you are not new to financial markets,</span> you "
+"can also benefit from this service by studying new strategies and new "
+"trading instruments and make profit at the same time. You don’t need to "
+"spend tremendous amount of time on reading news and forums where "
+"professional traders discuss their trading activities. Just subscribe for "
+"the signals and become a professional yourself!"
+msgstr ""
+"<span class='font-med'>If you are not new to financial markets,</span> you "
+"can also benefit from this service by studying new strategies and new "
+"trading instruments and make profit at the same time. You do not need to "
+"spend tremendous amount of time on reading news and forums where "
+"professional traders discuss their trading activities. Just subscribe for "
+"the signals and become a professional by yourself!"
+
+msgid "Social trading with MetaQuotes is unique"
+msgstr "Social Trading with MetaQuotes is Unique"
+
+msgid ""
+"Easier than PAMM (Signal provider only uses own funds to trade and easily "
+"plans his/her trading activities)."
+msgstr ""
+"Easier than PAMM (A signal provider only uses own funds to trade and easily "
+"plans his/her trading activities)."
+
+msgid ""
+"More convenient than training courses as the subscriber can analyze the "
+"signals at any time."
+msgstr ""
+"More convenient than training courses as the subscriber can analyze the "
+"signals at any time."
+
+msgid ""
+"More reliable than speculative news articles. Every signals provider has a "
+"rating which is easily accessible at any time."
+msgstr ""
+"More reliable than speculative news articles. Every signals provider has a "
+"rating which is easily accessible at anytime."
+
+msgid ""
+"Metaquotes Social trading has strong advantages compared to other “copying” "
+"services. With signals you can access traders from all over the world. It "
+"doesn’t matter which broker the signal provider/subscriber uses - as long as"
+" they utilize MT4, they can connect wherever they are."
+msgstr ""
+"MetaQuotes social trading has strong advantages compared to other “copying” "
+"services. With signals you can access traders from all over the world. It "
+"does not matter which broker the signal provider/subscriber uses - as long "
+"as they utilize MT4, they can connect wherever they are."
+
+msgid ""
+"Social trading is rapidly gaining popularity and now traders of Grand "
+"Capital can gain access to the best technology on signals market."
+msgstr ""
+"Social trading is rapidly gaining popularity and now traders of Grand "
+"Capital can gain access to the best technology on the signal market."
+
+msgid "Advantages of Social Trading"
+msgstr "Advantages of Social Trading"
+
+msgid "Simplicity"
+msgstr "Simple"
+
+msgid ""
+"Choose a signals provider and subscribe to his/her signals. The deals will "
+"then be automatically mirrored by the terminal"
+msgstr ""
+"Choose a signal provider and subscribe to his/her signals. The deals will be"
+" automatically mirrored by the terminal"
+
+msgid ""
+"All the necessary information, including trader’s deals history is displayed"
+" in the rating"
+msgstr ""
+"All the necessary information, including trader’s deals history is displayed"
+" in the rating"
+
+msgid "Convenience"
+msgstr "Convenience"
+
+msgid "You can trade 24/5"
+msgstr "You can trade 24/5"
+
+msgid ""
+"Various security measures are implemented to protect traders from malicious "
+"activities"
+msgstr ""
+"Various security measures are implemented to protect traders from malicious "
+"activities"
+
+#, fuzzy
+#| msgid "Get profit"
+msgid "Extra profit"
+msgstr "Start making profit"
+
+msgid ""
+"By becoming a signals provider, you receive extra income from every "
+"subscriber"
+msgstr ""
+"By becoming a signal provider, you receive extra income from every "
+"subscriber"
+
+msgid "Effective trading"
+msgstr "Effective trading"
+
+msgid "Learn from experienced traders for the best result!"
+msgstr "Learn from experienced traders for the best result!"
+
+msgid "How to become a subscriber?"
+msgstr "How to become a subscriber?"
+
+msgid "Register at www.ml5.com"
+msgstr "Register at www.ml5.com"
+
+msgid "It is a major trader’s portal from the creators of MT4"
+msgstr "It is a major trader’s portal from the creators of MT4"
+
+msgid "Choose successful signals provider"
+msgstr "Choose a successful signal provider"
+
+msgid ""
+"After the registration in MT4 “signals” tub will appear. Open it to see the "
+"list of signals providers. Please mind that the rating is formed based on "
+"many factors. You can filter providers by: number of trades, monthly profit,"
+" number of subscribers, balance chart, etc."
+msgstr ""
+"After the registration in MT4 the “signals” tab will appear. Open it to see "
+"the list of signal providers. Please mind that the rating is formed on many "
+"factors. You can filter providers by: number of trades, monthly profit, "
+"number of subscribers, balance chart, etc."
+
+msgid "Learn more about the signals provider"
+msgstr "Learn more about the signals provider"
+
+msgid ""
+"Double click the provider’s name to go to his/her personal page. You will be"
+" able to find all the relevant information about this particular provider."
+msgstr ""
+"Double click the provider’s name to go to his/her personal page. You will be"
+" able to find all the relevant information about this particular provider."
+
+msgctxt "metaquotes service"
+msgid "Subscribe"
+msgstr "Subscribe"
+
+msgid ""
+"After choosing the provider that suits you the best, hit “Subscribe” button."
+" In the pop-up window set the restrictions to secure your funds: percentage "
+"of funds that can be used for trading, the minimum account balance upon "
+"reaching which the trade should close and slippage restrictions."
+msgstr ""
+"After choosing the provider that suits you the best, press “Subscribe” "
+"button. In the pop-up window set the restrictions to secure your funds: "
+"percentage of funds that can be used for trading, the minimum account "
+"balance upon reaching which the trade should be closed and slippage "
+"restrictions."
+
+msgid "You are all set up!"
+msgstr "You are all set up!"
+
+msgid "To receive the signals in real time your terminal should be active."
+msgstr "To receive the signals in real time your terminal should be active."
+
+msgid "How to become a signal provider?"
+msgstr "How to Become a Signal Provider?"
+
+msgid "Connect to MQL services right from the terminal."
+msgstr "Connect to MQL services right from the terminal."
+
+msgid ""
+"<a href='#' data-reveal-id='mql-settings' class='dashed'>Choose “Settings” "
+"option in “Tools” tab.</a> In the pop-up window fill in your mql account "
+"credentials in “Community” section."
+msgstr ""
+"<a href='#' data-reveal-id='mql-settings' class='dashed'>Choose “Settings” "
+"option in the “Tools” tab.</a> In the pop-up window fill in your MQL account"
+" credentials in the “Community” section."
+
+#, fuzzy
+#| msgid "Register and open an account"
+msgid "Register your trading account as a signal"
+msgstr "Register your account with Grand Capital"
+
+msgid ""
+"<a href='#' data-reveal-id='mql-register' class='dashed'>To do that, right-"
+"click your account in Navigator menu and choose “register as signal” "
+"option.</a> You will then be transferred to the page where you will need to "
+"register your account as a signal by giving it a unique name and creating a "
+"password for your future investors."
+msgstr ""
+"<a href='#' data-reveal-id='mql-register' class='dashed'>To do that, right-"
+"click your account in Navigator menu and choose the “register as signal” "
+"option.</a> You will be transferred to the page where you will need to "
+"register your account as a signal by giving it a unique name and creating a "
+"password for your future investors."
+
+#, fuzzy
+#| msgid "The company's mission"
+msgid "Set the commission"
+msgstr "Set the commission "
+
+msgid ""
+"Set the commission amount you would like to receive from each investor. You "
+"can give out your signals for free or receive a fixed commission."
+msgstr ""
+"Set the commission amount you would like to receive from each investor. You "
+"can give out your signals for free or receive a fixed commission."
+
+msgid "Become signal provider for thousands of traders!"
+msgstr "Become a signal provider for thousands of traders!"
+
+msgid ""
+"After you’ve clicked “register as a provider” button, you officially become "
+"a signal provider. Manage your signals, publish news and send messages to "
+"your subscribers. Expand the number of your subscribers to receive more "
+"profit!"
+msgstr ""
+"After you have clicked the “register as a provider” button, you will "
+"officially become a signal provider. Manage your signals, publish news and "
+"send messages to your subscribers. Expand the number of your subscribers to "
+"receive more profit!"
+
+msgid "Accessible signal providers"
+msgstr "Accessible Signal Providers"
+
+msgid ""
+"All registered signal providers are estimated by a vide range of factors, "
+"such as when the account was opened, number of subscribers and trades, "
+"percentage of successful and unsuccessful trades."
+msgstr ""
+"All registered signal providers are estimated by a wide range of factors, "
+"such as when the account was opened, number of subscribers and trades, "
+"percentage of successful and unsuccessful trades."
+
+msgid ""
+"Don’t forget that you can filter providers by different factors and choose "
+"the one that suits you the best."
+msgstr ""
+"Do not forget that you can filter providers by different factors and choose "
+"the one that suits you the best."
+
+msgid ""
+"Register in Metaquotes and become a part of the global trading community!"
+msgstr ""
+"Register in MetaQuotes and become a part of the global trading community!"
+
+msgid "Register"
+msgstr "Register"
+
+msgid "Micro Account"
+msgstr "Micro"
+
+msgid "Micro Account &#8211; Forex for the beginners"
+msgstr "Micro Cent Account &#8211; Forex for beginners"
+
+msgid "Trading without risk"
+msgstr "Minimize your Risks"
+
+msgid ""
+"\n"
+"            Account Micro is a perfect choice for beginners, because it allows you to understand\n"
+"            the principles of the market without risking large amounts of money\n"
+"            "
+msgstr ""
+"\n"
+"A Micro account is a perfect choice for beginners as it allows you to learn the basics of Forex trading without risking large amounts of money."
+
+msgid "Easy"
+msgstr "Easy"
+
+msgid ""
+"You can start working on Forex without any investments and special education"
+msgstr "You do not need special training to start trading"
+
+msgid "Comfortable"
+msgstr "Comfortable"
+
+msgid ""
+"Trade anytime and anywhere thanks to the vast possibilities of our platform"
+msgstr ""
+"Your account balance is displayed in cents that allows you to implement best"
+" trading strategies even with low balance. You profit displayed in cents is "
+"also a great motivation for achieving more!"
+
+msgid "Reliable"
+msgstr "Reliable"
+
+msgid ""
+"Our accounts are protected by a double verification system like Internet "
+"banking systems"
+msgstr ""
+"You GC account is protected with two-factor authentication, the same like "
+"your online banking account."
+
+msgid "Profitable"
+msgstr "Profitable"
+
+msgid ""
+"If you carefully monitor changes in the currency rates, you can always "
+"expect to have profit"
+msgstr ""
+"If you carefully monitor factors that affect currency rates, you can always "
+"expect to make profit"
+
+msgid "Advantages of Micro account"
+msgstr "Advantages of a Micro Account"
+
+msgid "Only $10 minimum<br>deposit"
+msgstr "Minimum deposit<br>is just $10!"
+
+msgid "Profitable<br>trading terms"
+msgstr "Profitable<br>trading conditions"
+
+msgid "Multi-Currency account:<br>6 currencies and 4 metals"
+msgstr "Multi-Currency account:<br>6 currency pairs and 4 metals"
+
+msgid "MetaTrader 4 platform<br>or web-trader"
+msgstr "MetaTrader 4 platform<br>or WebTrader"
+
+msgid "Start earning without investments"
+msgstr "Start Earning with Minimal Risks"
+
+msgid ""
+"\n"
+"        You can also open a demo account to understand the principles of Forex market\n"
+"        "
+msgstr ""
+"\n"
+"Free demo accounts are also available"
+
+msgid ""
+"\n"
+"        You need a trading platform to work on Forex. You can download MetaTrader 4 from our website or use Webtrader and work in browser\n"
+"        "
+msgstr ""
+"\n"
+"You need a trading platform to trade on Forex. You can download MT4 for free from our website or use WebTrader to trade in your browser."
+
+msgid "Choose strategy"
+msgstr "Place a trade"
+
+msgid ""
+"\n"
+"        Predict if the price for the chosen asset goes up or down and and open a buy or sell trade\n"
+"        "
+msgstr ""
+"\n"
+"Predict the price movement of the chosen asset and open buy or sell order"
+
+msgid ""
+"\n"
+"        All earned money is available for cash-out. We guarantee fast processing of any amounts\n"
+"        "
+msgstr ""
+"\n"
+"All the profit made is available for withdrawal. We guarantee fast processing of any amount."
+
+msgid "Open Micro account"
+msgstr "Open a Micro account"
+
+msgid "Option Account with minimal deposit from $10"
+msgstr "Binary Options account with $10 minimum deposit"
+
+msgid "Option Account"
+msgstr "Options Account"
+
+msgid "Best binary options broker"
+msgstr "Best Binary Options Broker"
+
+msgid "ForexExpo 2014"
+msgstr "ForexExpo 2014"
+
+#, python-format
+msgid ""
+"\n"
+"                    Earn up to 86%% in just one minute\n"
+"                "
+msgstr ""
+"\n"
+"                    Earn up to 86%% in just one minute\n"
+"                "
+
+#, python-format
+msgid ""
+"\n"
+"                    Binary options is a unique product that allows taking 86%% profit.\n"
+"                    It appeals to experienced traders and beginners alike thanks to its simplicity,\n"
+"                    minimal risks and low deposit needed\n"
+"                "
+msgstr ""
+"\n"
+"After its appearance in 2008, Binary Options trading quickly gained popularity due to simplicity of the process, minimized risks and extremely high returns."
+
+msgid "Determine the direction<br>of price movement"
+msgstr "Determine the direction<br>of price movement"
+
+msgid "Select the investment<br>amount from $1"
+msgstr "Select your investment<br>amount starting from $1"
+
+msgid "Get profit if your forecast<br>are correct"
+msgstr "Get up to 86% if your prediction<br>was correct"
+
+msgid "Advantages of trading binary options at Grand Capital"
+msgstr "Advantages of Trading Binary Options at Grand Capital"
+
+msgid "Minimal risks"
+msgstr "Minimized risks"
+
+msgid "You know the exact sum you may gain or lose before committing the deal"
+msgstr ""
+"You know the amount of money you will gain/lose before placing the trade"
+
+msgid ""
+"\n"
+"                    You buy a contract, not an asset, but your profit may greatly\n"
+"                    exceed that from investments in the asset itself\n"
+"                "
+msgstr ""
+"\n"
+"Extremely high returns on your investments - up to 86%"
+
+msgid "Early closure"
+msgstr "Early closure"
+
+msgid ""
+"\n"
+"                    Unique service that allows to close the unprofitable deal before expiration\n"
+"                "
+msgstr ""
+"\n"
+"Close the deal before the expiration time if you don’t like where the trade is going"
+
+msgid ""
+"\n"
+"                    You only need to predict if the price will rise or fall.\n"
+"                    Successful trading doesn't require expert knowledge of the market\n"
+"                "
+msgstr ""
+"\n"
+"You don’t need extensive financial knowledge to trade Binary Options"
+
+msgid "Register and open account"
+msgstr "Register and open an account"
+
+msgid "Install the program or use web-trader"
+msgstr "Install trading software or use WebTrader"
+
+msgid "Choose strategy, instrument and expiration time"
+msgstr ""
+"Choose the asset and expiration time and determine the asset's price "
+"movement"
+
+msgid ""
+"\n"
+"                    Predict the price direction, decide whether to sell or buy the contract,\n"
+"                    then specify the amount and duration for the contract\n"
+"                "
+msgstr ""
+"\n"
+"Make a prediction regarding the asset’s price movement, choose the amount of funds you would like to invest and duration of the contract"
+
+msgid "Invest and take profit!"
+msgstr "Invest and take profit!"
+
+#, python-format
+msgid ""
+"\n"
+"                    You can trade with just $1. And you will earn as much as 86%%\n"
+"                "
+msgstr ""
+"\n"
+"Our minimum investment amount is just $1! Receive up to 86%% profit if your prediction is correct!"
+
+msgctxt "options"
+msgid "How does it work?"
+msgstr "How Does it Work?"
+
+msgid "American options"
+msgstr "American Options"
+
+msgid "European options"
+msgstr "European Options"
+
+msgid "PUT options from the current price"
+msgstr "PUT Option"
+
+msgid "CALL options from current price"
+msgstr "Call Option"
+
+msgid "Double touch options"
+msgstr "Double Touch Options"
+
+msgid "Breakout options"
+msgstr "Breakout Options"
+
+msgid ""
+"\n"
+"                            American options allows you to close a trade early (before its expiration time).\n"
+"                            Your profit will then be calculated as follows:\n"
+"                        "
+msgstr ""
+"\n"
+"                            American Options allow you to close a trade early (before its expiration time).\n"
+"                            Your profit will be calculated as follows:\n"
+"                        "
+
+msgid "Stake"
+msgstr "Your investment"
+
+#, python-format
+msgid "%% of reward (according to contract specification)"
+msgstr "payout rate for the chosen asset (%%)"
+
+msgctxt "options"
+msgid "Close time"
+msgstr "Trade close time"
+
+msgid "Expiration time"
+msgstr "Expiration time"
+
+#, python-format
+msgid "%% of commission for early closure"
+msgstr "%% of commission for early closure"
+
+#, python-format
+msgid ""
+"\n"
+"                                %% of reward corresponds to one (depending on forecast accuracy)\n"
+"                                of the columns Win / Loss / Nil  / Early Closure (Win)\n"
+"                            "
+msgstr ""
+"\n"
+"%% payout rates correspond to (depending on the forecast accuracy)\n"
+"the columns Win / Loss / Nil / Early Closure (Win) in <a href=\"/trading/contract_specs/\">Contract Specifications</a>"
+
+#, python-format
+msgid ""
+"\n"
+"                                %% of commission for early closure corresponds to\n"
+"                                \"Early closure\" column (%% of the stake)\n"
+"                            "
+msgstr ""
+"\n"
+"%% commission for early closure can be found in <a href=\"/trading/contract_specs/\">Contract Specifications</a>"
+
+msgid ""
+"\n"
+"                            When buying a <span class=\"font-med\">PUT</span> option you make a bet that the price of\n"
+"                            your order after full expiration will be <span class=\"font-med\">lower</span> than the initial price\n"
+"                        "
+msgstr ""
+"\n"
+"<p>Put Option indicates that the price at the expiration time will be lower than the current price.\n"
+"If you think that the price of the chosen asset will decrease, your should buy <span class=\"font-med\">PUT</span>  Option.</p>\n"
+"<p>There are three possible outcomes for choosing a Put Option:</p>"
+
+msgid ""
+"\n"
+"                                    If the price of the contract after full expiration is\n"
+"                                    <span class=\"font-med\">lower</span> than the initial price you will get a reward\n"
+"                                "
+msgstr ""
+"\n"
+"In-the-money. If the price of the chosen asset is lower than than the price at the moment Put Option was bought."
+
+msgid ""
+"\n"
+"                                    If the price of the contract remains <span class=\"font-med\">the same</span> after\n"
+"                                    full expiration you will either get a reward or lose your stake depending on\n"
+"                                    contract specification\n"
+"                                "
+msgstr ""
+"\n"
+"If the price of the contract remains <span class=\"font-med\">the same</span> after\n"
+"the Option's expiration you will either get a payout or lose the invested amount depending on\n"
+"Contract Specifications for the chosen asset"
+
+msgid ""
+"\n"
+"                                    If the price of the contract after full expiration is <span class=\"font-med\">higher</span>\n"
+"                                    than the initial price you will lose your stake\n"
+"                                "
+msgstr ""
+"\n"
+"Out-of-the-money. If the price of the chosen asset is higher than the price at the moment Put Option was bought."
+
+#, python-format
+msgid ""
+"\n"
+"                            Profit and loss equal to particular %% and depend on contract specification\n"
+"                        "
+msgstr ""
+"\n"
+"Profit and loss rates for different assets can be found in <a href=\"/trading/contract_specs/\">Contract Specifications</a>"
+
+msgid ""
+"\n"
+"                                Double touch options are also known as the \"Parallel channels\" options.\n"
+"                                This kind of options is set using the \"buy limit\" and \"sell limit\" orders.\n"
+"                                When you set this option, it's necessary to set the \"take profit\" level (TP)\n"
+"                                to define the \"price channel\"\n"
+"                            "
+msgstr ""
+"\n"
+"When trading Double Touch Options you need to set two levels the asset’s price will reach. In other words, you set the channel where the price will fluctuate."
+
+msgid "The option has positive outcome if:"
+msgstr "The option has positive outcome if:"
+
+msgid ""
+"\n"
+"                                The price at the expiration time of the option is higher than TP\n"
+"                                (or lower, depending on the order type)\n"
+"                            "
+msgstr ""
+"\n"
+"                                The price at the expiration time of the Option is higher than TP\n"
+"                                (or lower, depending on the order type)\n"
+"                            "
+
+msgid ""
+"\n"
+"                                while the order was in the market, the price of the option became lower\n"
+"                                (or higher, depending of the order) than the order level\n"
+"                            "
+msgstr ""
+"\n"
+"                                while the order was in the market, the price of the Option became lower\n"
+"                                (or higher, depending of the order) than the order level\n"
+"                            "
+
+msgid ""
+"\n"
+"                            In this case the option has positive outcome and the trader gets a reward.\n"
+"                            The trader also gets a bonus, which is calculated using the breakout options bonus formula\n"
+"                            with a slight difference: instead of the price difference you should use the width of the\n"
+"                            \"channel\" (number of points between ТР level and the order's price)\n"
+"                        "
+msgstr ""
+"\n"
+"For example, Mark thinks that in the next 5 minutes the price of EURUSD pair will fall to 1.1134 and then rise to 1.1213. Mark sets Breakout price at 1.1134 and Target Price at 1.1213 (if the Target Price is not set, it will be automatically set at the current price level). If the prediction is correct, Mark will receive an extra bonus. The bonus amount in this case is calculated as follows:\n"
+"(number of pips between breakout price and target price) x invested amount x bonus coefficient\n"
+"100x duration of the contract\n"
+"as per Contract Specifications"
+
+msgid ""
+"\n"
+"                            The bonus will be paid out only in case of a positive outcome. Since this type of trading\n"
+"                            is available only for the European options, early closure is not allowed\n"
+"                        "
+msgstr ""
+"\n"
+"Please mind that Double Touch Options are only available for European Options. "
+
+msgid ""
+"\n"
+"                            European option does not allow a trader to close it early, but it has higher reward rates,\n"
+"                            thus it is still quite attractive. Reward can be calculated as follows:\n"
+"                        "
+msgstr ""
+"\n"
+"European Options do not support Early Closure feature, but offer higher return rates. In this case your payout is calculated as follows:"
+
+#, python-format
+msgid "%% of reward (according to the contract specification)"
+msgstr "payout rate for the chosen asset (%%)"
+
+#, python-format
+msgid ""
+"\n"
+"                                %% of reward corresponds to one (depending on forecast accuracy)\n"
+"                                of the columns \"Won for different timings / Loss / Nill\"\n"
+"                            "
+msgstr ""
+"\n"
+"Payout rates for different assets can be found in <a href=\"/trading/contract_specs/\">Contract Specifications</a>"
+
+msgid ""
+"\n"
+"                            When buying a <span class=\"font-med\">CALL</span> option you make a bet that\n"
+"                            the price of your order will be <span class=\"font-med\">higher</span> than\n"
+"                            the initial price after the full expiration\n"
+"                        "
+msgstr ""
+"\n"
+"<p>Call Option indicates that the price at the expiration time will be higher than the current price.\n"
+"If you think that the price of the chosen asset will rise, you should buy <span class=\"font-med\">Call</span> Option.</p>\n"
+"<p>There are three possible outcomes for choosing a Call Option:</p>"
+
+msgid ""
+"\n"
+"                                    If the price of the contract after full expiration is <span class=\"font-med\">higher</span>\n"
+"                                    than the initial price you will get a reward\n"
+"                                "
+msgstr ""
+"\n"
+"In-the-money. If the price of the chosen asset is higher than than the price at the moment Call Option was bought."
+
+msgid ""
+"\n"
+"                                    If the price of the contract remains <span class=\"font-med\">the same</span> after\n"
+"                                    full expiration you will either get a reward or lose your stake depending on the contract specification\n"
+"                                "
+msgstr ""
+"\n"
+"If the price of the contract remains <span class=\"font-med\">the same</span> after\n"
+"the Option's expiration you will either get a payout or lose the invested amount depending on the Contract Specification for the chosen asset"
+
+msgid ""
+"\n"
+"                                    If the price of the contract after full expiration is <span class=\"font-med\">lower</span>\n"
+"                                    than the initial price you will lose your stake\n"
+"                                "
+msgstr ""
+"\n"
+"Out-of-the-money. If the price of the chosen asset is lower than the price at the moment Call Option was bought."
+
+msgid ""
+"\n"
+"                                Everyone is used to trade options when you can only set the price higher or\n"
+"                                lower than the current market price. But from now on you can set your own\n"
+"                                levels instead of using the market price\n"
+"                            "
+msgstr ""
+"\n"
+"Breakout Options give you an opportunity to get increased payout for trading the same assets. \n"
+"Set the price you think the asset will reach in the future and the timeframe for its fall/increase and get increased payout if your prediction is correct. "
+
+msgid ""
+"\n"
+"                            This kind of options is set using \"buy stop\" and \"sell stop\" orders.\n"
+"                            For these options profit will be calculated the same way as for regular European options and\n"
+"                            additional percentage of the stake (depending on contract specification) will be paid out.\n"
+"                            Besides the basic reward you will get additional bonuses which are calculated as follows:\n"
+"                        "
+msgstr ""
+"\n"
+"For example, John thinks that in the next 5 minutes the price of EUR/USD will increase till 1.321 and will not fall back. John sets the breakout price at 1.321 and time field at 5 min. If his prediction is correct, he will receive an extra bonus calculated as follows:"
+
+msgid "Market price<br>of an option"
+msgstr "the asset’s price at the<br>moment the Option was bought"
+
+msgid "Stop-loss<br>price"
+msgstr "Breakout<br>price"
+
+msgid "Investment<br>volume"
+msgstr "Investment<br>volume"
+
+msgid "Bonus<br>coefficient"
+msgstr "Bonus<br>coefficient"
+
+msgid "Duration of<br>option contract"
+msgstr "Duration of<br>the contract"
+
+msgid ""
+"\n"
+"                            In other words bonus is the percentage of your stake which you\n"
+"                            receive for every traded point divided by option duration\n"
+"                        "
+msgstr ""
+"\n"
+"as per <a href=\"/trading/contract_specs/\">Contract Specifications</a>"
+
+msgid ""
+"\n"
+"                            Bonus will be paid out only in case of a positive outcome. Since this type of trading is\n"
+"                            only available for European type of options early closure is unavailable\n"
+"                        "
+msgstr ""
+"\n"
+"Bonus will be paid out only in case of a positive outcome. Since this type of trading is\n"
+"only available for European Options early closure is unavailable"
+
+msgid "Payback"
+msgstr "Payback"
+
+msgid ""
+"<h2 class=\"text-center\">“Payback” program terms and conditions</h2> <p>1. "
+"General terms </p> <p>1.1 The promotion is valid indefinitely. It will be "
+"publically announced when the promotion is completed. </p> <p>1.2 The sole "
+"organizer of the promotion is Grand Capital, Ltd. </p> <p>1.3 The organizer "
+"holds the right to change the conditions and payback amounts at any time. "
+"</p> <p>1.4 The organizer holds the right to cancel the promotion at any "
+"time. </p> <p>2. Program participation procedure </p> <p>2.1 All clients who"
+" place trades using a Real Standard account can participate in the "
+"promotion. </p> <p>2.2 If a client has more than one Standard account then "
+"the payback will be calculated separately for each of the accounts. </p> "
+"<p>2.3 Participation in other Grand Capital promotions does not restrict "
+"participation in Payback program in any way. </p> <p>2.4 Only verified "
+"accounts can participate in the promotion. In order to verify an account, "
+"the account holder must provide his/her passport scan by uploading it in the"
+" &ldquo;Documents&rdquo; section of the Private Office. Personal mobile "
+"phone number must also be verified. The organizer can request additional "
+"documents to identify client&rsquo;s identity and residential address. </p> "
+"<p>2.5 Grand Capital employees and their relatives cannot participate in the"
+" promotion. </p> <p>2.6 Only individuals can participate in the promotion "
+"</p> <p>2.6 All participants must read the rules thoughtfully. The fact that"
+" a client wasn&rsquo;t aware of the rules cannot serve as an argument when "
+"submitting a claim. </p> <p>3. Payback procedure </p> <p>3.1 All active Real"
+" Standard accounts become automatically eligible for Payback loyalty "
+"program. No additional registration required. </p> <p>3.2 Payback starts "
+"being calculated only starting from the next day following 5 consecutive "
+"days of active trading. Active trading day is a day when a trade was opened "
+"or closed. The trade should be at least 5 minutes long. </p> <p>3.3 "
+"Depending on the number of consecutive trading days, a client will be given "
+"one of the following statuses: </p> <p>Newbie &ndash; 5 or less consecutive "
+"days <br>Bronze &ndash; 6 to 15 consecutive days <br>Silver &ndash; 16 to 30"
+" consecutive days  Golden &ndash; over 31 consecutive days </p> <p>4. The "
+"following methodology is used to calculate the amount of consecutive trading"
+" days: </p> <p>If trading activities are carried out 2 or more working days "
+"in a row, the day meter adds 1 credit for every consecutive trading days "
+"</p> <p>When no trading activities are carried out during a working day, the"
+" day meter value is reduced by 1 </p> <p>Day meter value cannot be less than"
+" 0 </p> <p>5. Payback is deposited on a daily basis and is calculated as "
+"follows: </p> <p>Newbie &ndash; 0 <br>Bronze &ndash;$3,5 for 1Lot <br>Silver"
+" &ndash;$4,5 for 1Lot. <br>Golden &ndash;$5,5 for 1Lot. </p> <p>6. CFD STOCK"
+" USA and Russian Stocks Instrument groups do not participate in the "
+"promotion</p> <p>7. Payback is deposited to the account which was used for "
+"trading. </p> <p>7.1 Payback is deposited on a daily basis &ndash; all "
+"statistics is available in the client&rsquo;s Private Office. </p> <p>8. "
+"Payback funds are available for withdrawal and internal transfers right "
+"after they have been deposited to the client&rsquo;s account </p> <p>9. If "
+"it is determined that a client is abusing the terms and conditions, the "
+"company holds the right to discontinue payback deposition, as well as "
+"withdraw the payback funds that had been previously deposited to the "
+"account. If the amount of funds to be withdrawn exceeds the account&rsquo;s "
+"balance, the company can withdraw the needed amount from other "
+"client&rsquo;s accounts. </p> <p>10. The company holds the right to change "
+"the payback amounts according to the changing market conditions and make "
+"changes for the Payback program terms and conditions. </p> <p>11. Claims "
+"</p> <p>11.1 All claims can be submitted to info@grandcapital.net. </p> "
+"<p>11.2 All claims must include: Name and Last name, client&rsquo;s "
+"residential address, account number and full description of the issue.</p>"
+msgstr ""
+"<h2 class=\"text-center\">The “Payback” program terms and conditions</h2> "
+"<p>1. General terms </p> <p>1.1 The promotion is valid indefinitely. It will"
+" be publically announced when the promotion is completed. </p> <p>1.2 The "
+"sole organizer of the promotion is Grand Capital, Ltd. </p> <p>1.3 The "
+"organizer holds the right to change the conditions and payback amounts at "
+"any time. </p> <p>1.4 The organizer holds the right to cancel the promotion "
+"at anytime. </p> <p>2. Program participation procedure </p> <p>2.1 All "
+"clients who place trades using a real Standard account can participate in "
+"the promotion. </p> <p>2.2 If a client has more than one Standard account "
+"then the payback will be calculated separately for each of the accounts. "
+"</p> <p>2.3 Participation in other Grand Capital promotions does not "
+"restrict participation in Payback program anyway. </p> <p>2.4 Only verified "
+"accounts can participate in the promotion. In order to verify an account, "
+"the account holder must provide his/her national identity document scan by "
+"uploading it in the &ldquo;Documents&rdquo; section in the Private Office. "
+"Personal mobile phone number must also be verified. The organizer can "
+"request additional documents to identify client&rsquo;s identity and "
+"residential address. </p> <p>2.5 Grand Capital employees and their relatives"
+" cannot participate in the promotion. </p> <p>2.6 Only individuals can "
+"participate in the promotion </p> <p>2.6 All participants must read the "
+"rules thoughtfully. The fact that a client was&rsquo; not aware of the rules"
+" cannot serve as an argument when submitting a claim. </p> <p>3. Payback "
+"procedure </p> <p>3.1 All active real Standard accounts become automatically"
+" eligible for Payback loyalty program. No additional registration is "
+"required. </p> <p>3.2 Payback is calculated only starting from the next day "
+"following 5 consecutive days of active trading. Active trading day is a day "
+"when a trade was open or closed. The trade should be at least 5 minutes "
+"long. </p> <p>3.3 Depending on the number of consecutive trading days, a "
+"client will be given one of the following statuses: </p> <p>Newbie &ndash; 5"
+" or less consecutive days <br>Bronze &ndash; from 6 to 15 consecutive days "
+"<br>Silver &ndash; from 16 to 30 consecutive days  Golden &ndash; over 31 "
+"consecutive days </p> <p>4. The following methodology is used to calculate "
+"the amount of consecutive trading days: </p> <p>If trading activities are "
+"carried out 2 or more working days in a row, the day meter adds 1 credit for"
+" every consecutive trading days </p> <p>When no trading activities are "
+"carried out during a working day, the day meter value is reduced by 1 </p> "
+"<p>Day meter value cannot be less than 0 </p> <p>5. Payback is deposited on "
+"a daily basis and is calculated as follows: </p> <p>Newbie &ndash; 0 "
+"<br>Bronze &ndash;$3, 5 for 1 lot <br>Silver &ndash;$4, 5 for 1 lot. "
+"<br>Golden &ndash;$5, 5 for 1 lot. </p> <p>6. CFD STOCK USA and Russian "
+"Stocks Instrument groups do not participate in the promotion</p> <p>7. "
+"Payback is deposited to the account which was used for trading. </p> <p>7.1 "
+"Payback is deposited on a daily basis &ndash; all statistics is available in"
+" the client&rsquo;s Private Office. </p> <p>8. Payback funds are available "
+"for withdrawal and internal transfers right after they have been deposited "
+"to the client&rsquo;s account </p> <p>9. If it is determined that a client "
+"is abusing the terms and conditions, the company holds the right to "
+"discontinue payback deposition, as well as withdraw the payback funds that "
+"had been previously deposited to the account. If the amount of funds to be "
+"withdrawn exceeds the account&rsquo;s balance, the company can withdraw the "
+"needed amount from other client&rsquo;s accounts. </p> <p>10. The company "
+"holds the right to change the payback amounts according to the changing "
+"market conditions and make changes for the Payback program terms and "
+"conditions. </p> <p>11. Claims </p> <p>11.1 All claims can be submitted to "
+"info@grandcapital.net. </p> <p>11.2 All claims must include: name and last "
+"name, client&rsquo;s residential address, an account number and full "
+"description of the issue.</p>"
+
+#, fuzzy
+#| msgid "What is rebate?"
+msgid "What is a Payback"
+msgstr "What is a Payback?"
+
+msgid ""
+"Payback is a new Grand Capital loyalty program where every client can "
+"receive a monetary compensation for active trading."
+msgstr ""
+"Payback is a new Grand Capital loyalty program where every client can "
+"receive a monetary compensation for active trading."
+
+msgid ""
+"Payback program doesn’t have any hidden conditions or requirements based on "
+"the number of Lots traded. We just pay you back for your trading activities!"
+msgstr ""
+"Payback program does not have any hidden conditions or requirements based on"
+" the number of lots traded. We just pay you back for your trading "
+"activities!"
+
+msgid "Who can participate?"
+msgstr "Who Can Participate?"
+
+msgid ""
+"All Grand Capital clients with a Standard account trading any assets "
+"available except CFD STOCK USA and Russian Stocks."
+msgstr ""
+"It is available for all Grand Capital clients with a Standard account "
+"trading any assets except CFD STOCK USA and Russian Stocks."
+
+msgid "Start trading"
+msgstr "Start trading"
+
+#, fuzzy
+#| msgid "Metatrader 4 advantages"
+msgid "Payback advantages"
+msgstr "Payback Advantages"
+
+msgid ""
+"Payback is real money which you can withdraw as soon as it is deposited to "
+"your account."
+msgstr ""
+"Payback is real money which you can withdraw as soon as it is deposited to "
+"your account."
+
+msgid ""
+"The payback does not depend on the number of Lots; however it does depend on"
+" the number of trading days."
+msgstr ""
+"The payback does not depend on the number of lots; however it depends on the"
+" number of trading days."
+
+msgid ""
+"A client becomes eligible for a payback after five days of trading "
+"continuously. The more days you trade, the more money you get in return."
+msgstr ""
+"A client becomes eligible for a payback after 5 days of trading "
+"continuously. The more days you trade, the more money you get in return."
+
+msgid ""
+"After 5 days of trading, the Payback starts being deposited on a daily "
+"basis. The full statistics is available in your Private Office."
+msgstr ""
+"After 5 days of trading, the Payback is deposited on a daily basis. The full"
+" statistics is available in your Private Office."
+
+msgid ""
+"Payback amount is calculated based on the number of days of active trading. "
+"Depending on the number of days you trade, you will be given one of the "
+"following statuses."
+msgstr ""
+"Payback amount is calculated based on the number of days of active trading. "
+"Depending on the number of days you trade, you will be given one of the "
+"following statuses."
+
+msgid "Statuses and rewards"
+msgstr "Statuses and Rewards"
+
+msgid "Newbie"
+msgstr "Newbie"
+
+msgid "5 or less days"
+msgstr "5 or less days"
+
+msgctxt "payback status"
+msgid "Bronze"
+msgstr "Bronze"
+
+#, python-format
+msgid "%(from)s to %(to)s days"
+msgstr "%(from)s to %(to)s days"
+
+msgid "per lot"
+msgstr "per lot"
+
+msgctxt "payback status"
+msgid "Silver"
+msgstr "Silver"
+
+msgctxt "payback status"
+msgid "Golden"
+msgstr "Golden"
+
+msgid "over 31 days"
+msgstr "over 31 days"
+
+msgid "How is payback calculated and deposited?"
+msgstr "How is Payback Calculated and Deposited?"
+
+msgid ""
+"Payback is calculated starting from the 6th day of active trading. Active "
+"trading day is a day when a trade was opened or closed. The trade should be "
+"at least 5 minutes long."
+msgstr ""
+"Payback is calculated starting from the 6th day of active trading. Active "
+"trading day is a day when a trade was open or closed. The trade should be at"
+" least 5 minutes long."
+
+msgid ""
+"For example, you trade 7 days in a row. (Weekends are not considered). There"
+" is no payback for the first 5 days of trading. On the 6th day you place two"
+" trades (0,1 Lot) and 10 trades (0,4 Lot) on the 7th day. In this case your "
+"payback will be as follows: <br>0.5 * 3.5 = $1.75"
+msgstr ""
+"For example, you trade 7 days in a row. (Weekends are not considered). There"
+" is no payback for the first 5 days of trading. On the 6th day you place two"
+" trades (0,1 lot) and 10 trades (0,4 lot) on the 7th day. In this case your "
+"payback will be as follows: <br>0.5 * 3.5 = $1.75"
+
+msgid "Terms and conditions"
+msgstr "Terms and conditions"
+
+msgid "Standard account"
+msgstr "Standard account"
+
+msgid "Standard Account &#8211; classic Forex"
+msgstr "Standard Account &#8211; Classic Forex"
+
+msgid ""
+"\n"
+"                The widest range of trading instruments such as currencies, metals, CFD contracts, futures.\n"
+"                Standard Account is the best choice for traders\n"
+"                "
+msgstr ""
+"\n"
+"                The widest range of trading instruments such as currencies, metals, CFD-contracts, futures.\n"
+"                A standard account is the best choice for traders\n"
+"                "
+
+msgid "Bonuses for deposit, volume of trade and more"
+msgstr "deposit bonuses, trading volume promotions and more"
+
+msgid "Narrow spreads"
+msgstr "Low spreads"
+
+msgid "Only 1 point"
+msgstr "Starting from 1 pip!"
+
+msgid "330 instruments"
+msgstr "330 instruments"
+
+msgid "The widest range of trading instruments"
+msgstr "The widest range of trading instruments"
+
+msgid "Reliability"
+msgstr "Reliability"
+
+msgid "Advantages of Standard account"
+msgstr "Advantages of a Standard Account"
+
+msgid "Only $100 minimum deposit"
+msgstr "$100 minimum deposit"
+
+msgid "Profitable trading terms"
+msgstr "Profitable trading terms"
+
+msgid "Multi-Currency account: 6 currencies and 4 metals"
+msgstr "A multicurrency account: 6 currencies and 4 metals"
+
+msgid "CFD contracts and futures trading"
+msgstr "CFD-contracts and futures trading"
+
+msgid "MetaTrader 4 platform or web-trader"
+msgstr "MetaTrader 4 platform or WebTrader"
+
+msgid "Start earning with Standard account"
+msgstr "Start earning with a Standard account"
+
+msgid "Trade global brands' shares"
+msgstr "Trade stocks of global brands"
+
+msgid "CFD for USA shares"
+msgstr "CFD for stocks of US companies"
+
+msgid ""
+"\n"
+"            Earn on global brands' price changes. Earn not only when the price rises but when it falls too. Always take profit!\n"
+"            "
+msgstr ""
+"\n"
+"Earn on global brands price fluctuations. With Forex you can earn not only when the price of a stock goes up but when it falls too! "
+
+msgid "Futures"
+msgstr "Futures"
+
+msgid ""
+"\n"
+"            It’s a great trading instrument that guarantees transparency due to uniform quotes and high profit due to market volatility\n"
+"            "
+msgstr ""
+"\n"
+"Futures is a great trading instrument that guarantees transparency (the quotes are in public access on a stock exchange website) and high profit due to the market volatility. "
+
+msgid "Managers are experienced and successful traders"
+msgstr "Managers are experienced and successful traders"
+
+msgid "Only you have access to your funds"
+msgstr "Only you have access to your funds"
+
+msgid "You can see manager’s transactions and history of his profit"
+msgstr ""
+"You can see the manager’s transactions and the account’s monthly profit"
+
+msgid "You choose the manager and the amount of investment yourself"
+msgstr "Choose the manager and the investment amount by yourself!"
+
+msgid "Swap Free account"
+msgstr "Swap Free account"
+
+msgid "Swap Free account - Forex with no swaps"
+msgstr "Swap Free account - Trade Forex with no Swap!"
+
+msgid ""
+"Swap Free is a special account for special strategies. First this was "
+"created for muslim traders who can't use swaps because of religious belief. "
+"However this account type is also used traders who use the long-time trend "
+"systems. So there are no swaps to avoid losses when transferring position "
+"through the midnight."
+msgstr ""
+"A Swap Free account is specifically tailored for traders of Islamic faith "
+"and is fully compliant with Sharia laws. Swap Free accounts are also suited "
+"for long-term trading strategies as they let traders avoid losses when "
+"transferring positions through midnight."
+
+msgid ""
+"Let's trade effectively with no swaps on Swap Free account in Grand Capital."
+msgstr ""
+"Trade effectively with no swaps on a Swap Free account in Grand Capital."
+
+msgctxt "Acc_advantage"
+msgid "Available"
+msgstr "Available"
+
+msgid "Long-time trading with no swap now is available for everyone"
+msgstr "Long-time trading without swap is now available for everyone"
+
+msgid "You don't pay for transferring position through the night"
+msgstr "No fee is charged when transferring positions through midnight"
+
+msgid "Simple"
+msgstr "Simple"
+
+msgid "Open Swap Free account with one click in Private Office"
+msgstr "Open a Swap Free account in one click in the Private Office"
+
+msgid "Convenient"
+msgstr "Convenient"
+
+msgid "You may have different account types together, with or without swap"
+msgstr "You may have different account types together, with or without swap"
+
+msgid "What is Swap Free account?"
+msgstr "What is a Swap Free Account?"
+
+msgid ""
+"Exchange rate changes everyday. So some difference appears when transferring"
+" position through the night. This difference is expressed in swap. It's "
+"something about payment for the transferring."
+msgstr ""
+"Exchange rate fluctuation is the reason swap is taking place when "
+"transferring positions through midnight. Swap Free accounts are also called "
+"Islamic accounts as no swap on overnight positions is implied as it is "
+"against Islamic faith. "
+
+msgid ""
+"When you use long-time trend strategy swaps can adversely affect the trading"
+" results. But it is not reason to pass up the long-time systems."
+msgstr ""
+"If you employ long-term strategy swaps can affect your trading results. Swap"
+" Free account gives you an opportunity to trade without swap."
+
+msgid "Who are interested in Swap Free accounts?"
+msgstr "Who is Interested in Swap Free Accounts?"
+
+msgid ""
+"First Swap Free account was created for muslims who can not use swaps "
+"because of religous belief."
+msgstr ""
+"When Swap Free accounts first appeared, they were mainly used by Muslim "
+"traders."
+
+msgid ""
+"However today this account type is available for everyone. It is perfect "
+"suite for long-time trading. So the trader loses nothing when transferring "
+"position."
+msgstr ""
+"But traders who use long-term trading strategies can also benefit from them "
+"as there is no loss when multiple overnight positions are opened."
+
+msgid "Advantages of Swap Free account in Grand Capital"
+msgstr "Advantages of a Swap Free Account in Grand Capital"
+
+msgid "Swap 0"
+msgstr "Swap 0"
+
+msgid "No more losses when transferring position through the midnight"
+msgstr "No more losses when transferring position through midnight"
+
+msgid "More than 350 instruments in your terminal"
+msgstr "More than 350 trading instruments"
+
+#, fuzzy
+#| msgid "Multicurrency account with the comfortable leverage to 1:500"
+msgid "Multicurrency account with the comfortable leverage to 1:2000"
+msgstr "A multicurrency account with 1:500 leverage"
+
+msgid "Become the professional with Swap-Free"
+msgstr "Become a Professional with Swap Free"
+
+#, python-format
+msgid "Register and <a href=\"%(account_app_url)screate\">open account</a>"
+msgstr "Register and <a href=\"%(account_app_url)screate\">open an account</a>"
+
+#, python-format
+msgid "<a href=\"%(money_op_url)s\">Refill your account</a> in any way"
+msgstr "<a href=\"%(money_op_url)s\">Deposit funds</a> into your account"
+
+msgid "Open a Swap Free account"
+msgstr "Open a Swap Free account"
+
+msgid ""
+"\n"
+"                        We appreciate your trust and offer you superior customer service,\n"
+"                        which makes trading more comfortable\n"
+"                    "
+msgstr ""
+"\n"
+"We offer superior service for the selected clients actively trading with large volumes."
+
+msgid ""
+"\n"
+"                        Once the total balance of your accounts reaches 50,000 USD / 50 000 EUR / 1 500 000 RUR,\n"
+"                        you will automatically receive the status of a\n"
+"                        <a href=\"#footnotes\">VIP-client*</a> with the best trading conditions and priority service\n"
+"                    "
+msgstr ""
+"\n"
+"Once total balance of your account reaches 50,000 EUR/USD, you receive <a href=\"#footnotes\">VIP status*</a> and get access to  exclusive benefits Grand Capital has to offer."
+
+msgid "Become a VIP client"
+msgstr "Become a VIP client"
+
+msgid "Be the first"
+msgstr "VIP Benefits"
+
+msgid "Personal<br>manager"
+msgstr "Personal<br>manager"
+
+msgid "Works for you round the clock and will answer all your questions"
+msgstr ""
+"You personal manager is ready to answer any enquiry you may have at anytime"
+
+msgid "Separate<br>VIP line"
+msgstr "Exclusive<br>VIP line"
+
+msgid "Your questions are solved operatively via exclusive VIP line"
+msgstr ""
+"Your enquiries are answered in the first instance through your exclusive VIP"
+" line"
+
+msgid "Deposit and withdrawal of<br>funds without commissions"
+msgstr "No commissions"
+
+msgid ""
+"You get compensation for all fees that are charged when transferring funds"
+msgstr "We will cover your deposit and withdrawal fees"
+
+msgid "Free<br>training"
+msgstr "Free<br>training"
+
+msgid ""
+"All paid training courses and consultations of analysts are carried free of "
+"charge"
+msgstr ""
+"Training courses and consultations with financial analysts are free of "
+"charge"
+
+#, python-format
+msgid ""
+"\n"
+"                        24%% per annum<br>on the free\n"
+"                    "
+msgstr ""
+"\n"
+"24%% annual interest"
+
+msgid ""
+"\n"
+"                        Percentage accrues in the last day of each month. Percentage accrues on the funds\n"
+"                        available for all months during which the funds were not removed from the trading account\n"
+"                    "
+msgstr ""
+"\n"
+"Get your interest at the end of each month for all the months during which you did not withdraw funds from your account"
+
+msgid "Prepayment"
+msgstr "Credit"
+
+#, python-format
+msgid ""
+"\n"
+"                        There is an opportunity to request a prepayment not exceeding $10 000 for 5 day.\n"
+"                        The finance department takes decision on the amount of the payment through your\n"
+"                        personal manager for 24 hours. the amount of the payment.\n"
+"                        Payout can't exceed 30%% of the funds deposit\n"
+"                    "
+msgstr ""
+"\n"
+"Request a credit for an amount not exceeding $10 000 for 5 days. Once the request is submitted, GC financial department will process your request during the next 24 hours. The credit amount cannot exceed 30%% of your account balance."
+
+msgid "Individual<br>Investment Portfolio"
+msgstr "Individual<br>Investment Portfolio"
+
+msgid ""
+"\n"
+"                        Our experienced specialists will help you to make a personal\n"
+"                        investment portfolio, taking into account all your wishes\n"
+"                    "
+msgstr ""
+"\n"
+"Our professional consultants will help you build up your personal portfolio according to your preferences."
+
+msgid "Improved<br>swaps"
+msgstr "Better trading conditions"
+
+#, python-format
+msgid ""
+"\n"
+"                        Trading conditions for you - even more profitable. Swaps are reduced\n"
+"                        to 20%% while transferring of the position through midnight\n"
+"                    "
+msgstr ""
+"\n"
+"Swaps are up to 20%% lower"
+
+msgid ""
+"An assignment/removing the status «VIP client» occurs during daily "
+"monitoring"
+msgstr ""
+"VIP statuses are assigned during daily monitoring. VIP status will be removed in case of insufficient value of cumulative balance for 60 days (2 months). A client can refuse VIP status.\n"
+"Grand Capital, Ltd. reserves the right to deprive the client of VIP status without giving any reason."
+
+msgid ""
+"\n"
+"                    VIP status of client will be removed in case of insufficient value of the cumulative\n"
+"                    balance for 60 days (2 months). Customer is entitled to reject the assignment of VIP status\n"
+"                "
+msgstr ""
+"\n"
+"VIP status of the client will be removed in case of insufficient amount of the cumulative\n"
+"balance for 60 days (2 months). The client is able to reject the assignment of VIP status"
+
+msgid ""
+"\n"
+"                    Company reserves the right to deprive the client's VIP status without assigning any reasons\n"
+"                "
+msgstr ""
+"\n"
+"                    The company reserves the right to deprive the client's VIP status without assigning any reason\n"
+"                "
+
+msgid ""
+"\n"
+"                    Condition for the accrual of interest is to maintain a minimum level of trading activity\n"
+"                    in the account at the end of the billing month. The number of closed lots for the last month\n"
+"                    shall not be less than the amount calculated as of the beginning of the month, divided by two.\n"
+"                    For example, 25 lots for $50 000, 50 lots for $100 000 etc. (It can be divided into 5 and it\n"
+"                    will be 10 lots for $50 000. This item is discussed individually). If a customer with VIP-status\n"
+"                    has several accounts, calculation and charging interest accumulation is conducted separately\n"
+"                    for each of the accounts\n"
+"                "
+msgstr ""
+"\n"
+"In order to receive the interest a client must maintain a certain level of monthly trading activity. Please contact our Customer Support for more information."
+
+msgid "We offer 5 account types for trading on financial markets"
+msgstr "We offer 5 account types for trading on financial markets"
+
+msgid ""
+"The widest range of trading instruments: currency, metals, CFD-contracts on "
+"indices and stocks, raw energy futures"
+msgstr ""
+"The widest range of trading instruments: currency pairs, metals, CFD-"
+"contracts, indices and stocks, raw energy futures"
+
+msgid "Minimal deposit"
+msgstr "Minimum deposit"
+
+msgid "6 currencies, 4 metals"
+msgstr "6 currencies, 4 metals"
+
+msgid "Free education"
+msgstr "Free education"
+
+msgid "CFD and futures"
+msgstr "CFD and futures"
+
+msgid "Micro"
+msgstr "Micro"
+
+msgid "Great opportunity to try trading with real money"
+msgstr "Great opportunity to start trading on cent Forex account"
+
+msgid "Minimum deposit is just $10"
+msgstr "with deposits starting from $10"
+
+msgid "Account that is oriented to experienced traders"
+msgstr "Account for experienced traders."
+
+msgid "Take advantage of our great deals"
+msgstr "Take advantage of our great deals"
+
+#, python-format
+msgid "No-deposit $%(amount)s bonus"
+msgstr "No-deposit $%(amount)s bonus"
+
+#, python-format
+msgid ""
+"Trade on the real market without investing a cent! Get no-deposit "
+"$%(amount)s bonus!"
+msgstr ""
+"Trade on the real market without investing a single dime! Get no-deposit "
+"$%(amount)s bonus!"
+
+msgid "Account types comparison"
+msgstr "Account types compared"
+
+msgid "Account types"
+msgstr "Account types"
+
+msgid "from 1 point"
+msgstr "from 1 point"
+
+msgid "from 0.4 point"
+msgstr "from 0.4 point"
+
+msgid "0 points"
+msgstr "0 points"
+
+msgid "Mean value of<br>the spread"
+msgstr "Mean value of<br>the spread"
+
+msgid "Margin call / Stop out"
+msgstr "Margin call / Stop out"
+
+msgid "Available instruments"
+msgstr "Available instruments"
+
+msgid "Leverage"
+msgstr "Leverage"
+
+msgid "From 1:1 to 1:500"
+msgstr "From 1:1 up to 1:500"
+
+msgid "From 1:1 to 1:2000"
+msgstr "From 1:1 up to 1:2000"
+
+msgid "From 1:1 to 1:100"
+msgstr "From 1:1 up to 1:100"
+
+msgctxt "trading"
+msgid "Currency"
+msgstr "Currency"
+
+msgid "6 currencies; 4 metals"
+msgstr "6 currencies; 4 metals"
+
+msgid "Standard lot size"
+msgstr "Standard lot size"
+
+msgid "100 000 units of base currency (cents)"
+msgstr "100 000 units of base currency (cents)"
+
+msgid "100 000 units of base currency"
+msgstr "100 000 units of base currency"
+
+msgid "Limits of the amount of 1 position"
+msgstr "Limit on the amount of 1 position"
+
+msgid "Minimum contract"
+msgstr "Minimum contract"
+
+msgid "0.01 lot with the step of 0.01 lot"
+msgstr "0.01 lot with the step of 0.01 lot"
+
+msgid "$1 with the step of $0.01"
+msgstr "$1 with the step of $0.01"
+
+msgid "Execution system"
+msgstr "Execution system"
+
+msgid "Terminals"
+msgstr "Terminals"
+
+msgid "Supplementary services"
+msgstr "Supplementary services"
+
+msgid "Segregated accounts"
+msgstr "Segregated accounts"
+
+msgid "Specifications"
+msgstr "Specifications"
+
+msgid "Demo account"
+msgstr "Demo account"
+
+msgid "return to"
+msgstr "return to"
+
+msgid "Messages and notifications"
+msgstr "Messages and notifications"
+
+msgid "Logout"
+msgstr "Logout"
+
+msgid "I have a problem"
+msgstr "I have a problem"
+
+msgid "Create account"
+msgstr "Create an account"
+
+msgid "Account settings"
+msgstr "Account settings"
+
+msgid "Please wait while account is being created"
+msgstr "Please wait while your account is being created"
+
+msgid "Create"
+msgstr "Create"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Trading accounts"
+msgstr "Trading accounts"
+
+msgid "Partner's account"
+msgstr "Partner account"
+
+msgid ""
+"The widest range of trading instruments: currency, metals, CFD-contracts"
+msgstr ""
+"The widest range of trading instruments: currency pairs, metals, CFD-"
+"contracts"
+
+msgid "You only need to determine market direction."
+msgstr "Just determine the direction the asset's price will go"
+
+msgid "Partnership agreement with Grand Capital"
+msgstr "Partnership Agreement with Grand Capital"
+
+msgid "FREE"
+msgstr "Free"
+
+msgid "In App Store"
+msgstr "In App Store"
+
+msgid "In Google Play"
+msgstr "In Google Play"
+
+msgid "GET"
+msgstr "Get"
+
+msgid "Learn, trade and invest with Forex broker Grand Capital Ltd."
+msgstr "Learn, trade and invest with Forex broker Grand Capital Ltd."
+
+msgid "Choose the type of <span class=\"green\">account</span>"
+msgstr "Choose the type of the <span class=\"green\">account</span>"
+
+msgid "View all types of accounts"
+msgstr "View all types of accounts"
+
+msgid "Set up <span class=\"green\">the trading</span> platform"
+msgstr "Set up <span class=\"green\">the trading</span> platform"
+
+msgid "View all the trading platforms"
+msgstr "View all the trading platforms"
+
+msgid "<span class=\"green\">Top five</span> of managed traders"
+msgstr "<span class=\"green\">Top 5</span> of managed traders"
+
+msgid "Account"
+msgstr "Account"
+
+msgid "Last 3 months profitability"
+msgstr "Profitability for the last 3 months"
+
+msgid "Age"
+msgstr "Age"
+
+msgid "day"
+msgid_plural "days"
+msgstr[0] "day"
+msgstr[1] "                        days"
+
+msgid "See the whole rating"
+msgstr "See the whole rating"
+
+msgid "The news of <span>Grand Capital</span>"
+msgstr "The news of <span>Grand Capital</span>"
+
+msgid "Read more"
+msgstr "Read more"
+
+msgid "All the news"
+msgstr "All news"
+
+msgid "Us on VK"
+msgstr "Us on VK"
+
+msgid "Us on Facebook"
+msgstr "Us on Facebook"
+
+msgid "Us on Youtube"
+msgstr "Us on Youtube"
+
+msgid "Main"
+msgstr "Main"
+
+msgid "Call us"
+msgstr "Call us"
+
+msgid "Questions concerning contests and actions rules"
+msgstr "Questions concerning contests and actions rules"
+
+msgid "Questions concerning terminal functionality"
+msgstr "Questions concerning terminal functionality"
+
+msgid "Questions concerning service work"
+msgstr "Questions concerning service work"
+
+msgid "Questions concerning creating account"
+msgstr "Questions concerning creating accounts"
+
+msgid "Questions concerning partnership"
+msgstr "Questions concerning partnership"
+
+msgid "Questions concerning pay-in and pay-out operations"
+msgstr "Enquiries regarding deposit/withdrawal of funds"
+
+msgid "On-site<br>edication"
+msgstr "On-site<br>education"
+
+msgid "Education<br>videos"
+msgstr "Education<br>videos"
+
+msgid "Registration"
+msgstr "Registration"
+
+msgid "No webinars is scheduled"
+msgstr "No webinars are scheduled"
+
+msgid "All webinars"
+msgstr "All webinars"
+
+msgid "No on-site training is scheduled"
+msgstr "No on-site training is scheduled"
+
+msgid "No workshops are scheduled"
+msgstr "No workshops are scheduled"
+
+msgid "PARTNERSHIP WITH"
+msgstr "Partnership with"
+
+msgid "GRAND CAPITAL"
+msgstr "Grand Capital"
+
+msgid "High partner<br/>rewards."
+msgstr "High partner<br/>rewards."
+
+msgid "up to $18 per lot"
+msgstr "up to $18 per lot"
+
+msgid "Our awards"
+msgstr "Our awards"
+
+msgid "Invest funds"
+msgstr "Invest funds"
+
+msgid "Full rating"
+msgstr "Full rating"
+
+msgid "0% (compensated by Grand Capital)"
+msgstr "0% (compensated by Grand Capital)"
+
+msgctxt "operations"
+msgid "Withdraw"
+msgstr "Withdraw"
+
+msgid "Pay-in and pay-out"
+msgstr "Deposit and Withdrawal"
+
+msgid "Make payment"
+msgstr "Make a deposit"
+
+msgid "Invite<br>a friend"
+msgstr "Invite<br>a friend"
+
+msgid "Торговать<br>онлайн"
+msgstr "Trade<br>online"
+
+msgid "Change language"
+msgstr "Change language"
+
+msgid "Go"
+msgstr "Go"
+
+msgid "Deposit money"
+msgstr "Deposit funds"
+
+msgid "Sign in"
+msgstr "Sign in"
+
+msgid "E-mail us"
+msgstr "E-mail us"
+
+msgid "password"
+msgstr "password"
+
+msgid "Remember me"
+msgstr "Remember me"
+
+msgid "Get a bonus<br>for deposit"
+msgstr "Get a deposit<br>bonus"
+
+msgid "Found an error on site?"
+msgstr "Found an error on the website?"
+
+msgid "Let us know"
+msgstr "Let us know"
+
+msgid "and get <strong>$0.3</strong> on your account"
+msgstr "and get <strong>$0.3</strong> on your account"
+
+msgid "Currencies"
+msgstr "Currencies"
+
+msgid "Metals"
+msgstr "Metals"
+
+msgid "Indices"
+msgstr "Indices"
+
+msgid "Instrument"
+msgstr "Instrument"
+
+msgid "Deposit funds"
+msgstr "Deposit funds"
+
+msgid "We have"
+msgstr "We have"
+
+msgid "customers"
+msgstr "clients"
+
+msgid "point"
+msgstr "point"
+
+msgid "Spreads from"
+msgstr "Spreads from"
+
+msgid "Maximal leverage"
+msgstr "Maximum leverage"
+
+msgid "Currencies, CFD, <br/>Futures,<br/>Options"
+msgstr "Currencies, CFD, <br/>futures,<br/>Options"
+
+msgid "Service charge<br/>on deposit"
+msgstr "Service charge<br/>on deposit"
+
+msgid "right.analytics.header"
+msgstr "right.analytics.header"
+
+msgid "right.analytics.readmore"
+msgstr "right.analytics.readmore"
+
+msgid "right.analytics.alllink"
+msgstr "All analytics"
+
+msgid "To bookmark the page and share"
+msgstr "To bookmark the page and share"
+
+msgid "Mark as valid"
+msgstr "Mark as valid"
+
+msgid "Mark as invalid"
+msgstr "Mark as invalid"
+
+msgid "Clear marks"
+msgstr "Clear marks"
+
+msgid "Grand Capital Vacancies"
+msgstr "Grand Capital vacancies"
+
+msgid "Your future boss"
+msgstr "Your future manager"
+
+msgid "Send resume"
+msgstr "Send resume"
+
+msgid "At the moment there are no vacancies"
+msgstr "There are no open vacancies at the moment"
+
+msgid "Upload resume"
+msgstr "Upload resume"
+
+msgid ""
+"A good resume should contain information about training, previous jobs, skills, knowledge of foreign languages​​.\n"
+"                            And another little story about yourself, photos, contact details and the desired level of wages."
+msgstr ""
+"A good resume should contain information about training, previous jobs, skills, knowledge of foreign languages​​.\n"
+"Please write a paragraph about yourself, include photos, contact details and the desired level of monthly payment."
+
+msgid "Accepted file formats Microsoft Word and pdf."
+msgstr "Accepted file formats are Microsoft Word and pdf."
+
+msgid "Upload"
+msgstr "Upload"
+
+msgid "Resume was successfully sent"
+msgstr "Resume was successfully sent"
+
+msgid ""
+"\n"
+"          before starting to trade on currency exchange markets, please make sure that you understand the risks\n"
+"          connected with trading using leverage and that you have sufficient level of training.\n"
+"      "
+msgstr ""
+"\n"
+"before starting trading on currency exchange markets, please make sure that you understand the risks\n"
+"connected with trading using leverage and that you have sufficient level of training."
+
+msgid "Web-development — xDesign"
+msgstr "Web-development — xDesign"
+
+msgid "Private office main page"
+msgstr "Private Office main page"
+
+msgid "Refer a friend"
+msgstr "Refer to a friend"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "You don't know how to trade?<br> Use trading signals."
+msgstr "Do not know how to trade?<br> Use trading signals."
+
+msgid "Get free access"
+msgstr "Get free access"
+
+msgid "Login to WebTrader"
+msgstr "Log into WebTrader"
+
+msgid "Deposit and withdraw requests"
+msgstr "Deposit and withdrawal requests"
+
+msgid "Accounts archive"
+msgstr "Archived accounts"
+
+msgid "Download MT4"
+msgstr "Download MT4"
+
+msgid "Webinars"
+msgstr "Webinars"
+
+msgid "Reports"
+msgstr "Reports"
+
+msgid "Referral accounts"
+msgstr "Referral accounts"
+
+msgid "Documents"
+msgstr "Documents"
+
+msgid "Loading..."
+msgstr "Loading..."
+
+msgid "Support"
+msgstr "Support"
+
+msgid "Back to website"
+msgstr "Back to website"
+
+msgid "My webinars"
+msgstr "My webinars"
+
+msgid "Webinars calendar"
+msgstr "Webinars calendar"
+
+msgid "Starts at"
+msgstr "Starts at"
+
+msgid "Theme"
+msgstr "Theme"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Starts soon"
+msgstr "Starting soon"
+
+msgid "Has been started"
+msgstr "Has started"
+
+msgid "See webinar record"
+msgstr "See webinar record"
+
+msgid "Ended"
+msgstr "Ended"
+
+msgid "Per page"
+msgstr "Per page"
+
+msgid "Previous"
+msgstr "Previous"
+
+msgid "Next"
+msgstr "Next"
+
+msgid "Profile settings"
+msgstr "Profile settings"
+
+msgid "Profile settings:"
+msgstr "Profile settings:"
+
+msgid "Security settings"
+msgstr "Security settings"
+
+msgid "Authentication using"
+msgstr "Authentication using"
+
+msgid "Please enter your mobile phone number"
+msgstr "Please enter your mobile phone number"
+
+msgid "Send an SMS"
+msgstr "Send an SMS"
+
+msgid "The message was sent succesfully"
+msgstr "The message was successfully sent"
+
+msgid ""
+"You will receive a unique code which you should enter in the following "
+"field:"
+msgstr ""
+"You will receive a unique code which you should enter in the following "
+"field:"
+
+msgid "Make binding"
+msgstr "Make binding"
+
+msgid "If you <b>can't receive the message</b>, you can order an"
+msgstr "If you <b>cannot receive the message</b>, you can order an"
+
+msgid "automated call"
+msgstr "automated call"
+
+msgid "mobile app"
+msgstr "mobile app"
+
+msgid "You can also use"
+msgstr "You can also use"
+
+msgid "for authentication"
+msgstr "for authentication"
+
+msgid "Please choose your mobile's system"
+msgstr "Please choose your mobile system"
+
+msgid "Install the application on your mobile phone"
+msgstr "Install the application on your mobile phone"
+
+msgid "Open the app and create a new account using the following secret key"
+msgstr "Open the app and create a new account using the following secret key"
+
+msgid ""
+"or use the 'Scan' option of the app and point your mobile phone's camera at "
+"the QRCode below"
+msgstr ""
+"or use the 'Scan' option of the app and point your mobile phone's camera at "
+"the QRCode below"
+
+msgid ""
+"\n"
+"                        Enter the code generated by the app in the following field\n"
+"                        (if the code doesn't match, please enable time correction in your app's settings):\n"
+"                    "
+msgstr ""
+"\n"
+"                        Enter the code generated by the app in the following field\n"
+"                        (if the code does not match, please enable time correction in your app's settings):\n"
+"                    "
+
+msgid "Why should I set these settings?"
+msgstr "Why should I set these settings?"
+
+msgid ""
+"\n"
+"                The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+"                <br/>\n"
+"                <ul>\n"
+"                    <li>Editing profile data</li>\n"
+"                    <li>Creating or editing withdraw details</li>\n"
+"                    <li>Funds withdrawal</li>\n"
+"                    <li>Internal transfer</li>\n"
+"                    <li>Real account leverage change</li>\n"
+"                    <li>Real account password change</li>\n"
+"                </ul>\n"
+"                <br/>\n"
+"                The authentication code will help verify that it is really you who request the operation\n"
+"                and your account was not stolen. This will help to protect you from money theft.\n"
+"                The authentication code is generated by a special mobile app or\n"
+"                is sent to your mobile phone via text message (SMS).\n"
+"            "
+msgstr ""
+"\n"
+"The following actions will require authentication code, which will be generated using a special mobile app or sent to you via SMS:\n"
+"<br/>\n"
+"<ul>\n"
+"<li>Editing profile data</li>\n"
+"<li>Creating or editing withdrawal details</li>\n"
+"<li>Funds withdrawal</li>\n"
+"<li>Internal transfer</li>\n"
+"<li>Real account leverage change</li>\n"
+"<li>Real account password change</li>\n"
+"</ul>\n"
+"<br/>\n"
+"The authentication code will help us verify that it is really you who requested the operation\n"
+"and your account was not stolen. This will help us protect you from money theft.\n"
+"The authentication code is generated by a special mobile app or\n"
+"is sent to your mobile phone via text message (SMS)."
+
+msgid "Login"
+msgstr "Login"
+
+msgid "If you are a new customer please"
+msgstr "If you are a new customer please"
+
+msgid "register"
+msgstr "register"
+
+msgid "Login using social network account"
+msgstr "Login using social network account"
+
+msgid "Forgot your password?"
+msgstr "Forgot your password?"
+
+msgid "If you have already registered please"
+msgstr "If you have already registered please"
+
+msgid "log in"
+msgstr "log in"
+
+msgid "I have an agent code"
+msgstr "I have an agent code"
+
+msgid "Register using social network account"
+msgstr "Register using social network account"
+
+msgid "Welcome to GrandCapital"
+msgstr "Welcome to Grand Capital"
+
+msgid "Congratulations! You have become a client of GrandCapital Ltd."
+msgstr "Congratulations! You have become a client of Grand Capital Ltd."
+
+#, python-format
+msgid ""
+"If you want to open a new account then click\n"
+"      <a href=\"%(create_url)s\" title=\"create account\">open account</a>"
+msgstr ""
+"If you want to open a new account then click\n"
+"      <a href=\"%(create_url)s\" title=\"create account\">open an account</a>"
+
+msgid "Grand Capital Team"
+msgstr "Grand Capital Team"
+
+msgid "and"
+msgstr "and"
+
+msgid "I agree with the following terms and conditions:"
+msgstr "I agree with the following terms and conditions:"
+
+msgid "File is too big."
+msgstr "File is too big."
+
+msgid "Unsupported file extension"
+msgstr "The file extension is not supported"
+
+#~ msgid "Take a part"
+#~ msgstr "Take part"
+
+#~ msgid ""
+#~ "The Investors connect their accounts to the Manager and LAMM system copies "
+#~ "the Manager’s transactions to the investors’ accounts automatically. The "
+#~ "system calculates the amount of the lot and possibility of the carrying out "
+#~ "of transaction depending on the Investor’s balance."
+#~ msgstr ""
+#~ "The Investors connect their accounts to the Manager's account and LAMM "
+#~ "system copies the Manager’s transactions to the investors’ accounts "
+#~ "automatically. The system calculates the amount of lots and estimates the "
+#~ "possibility of carrying out the transaction depending on the Investor’s "
+#~ "balance."
+
+#~ msgid ""
+#~ "The investors’ funds accumulated on one account and fraction distributed in "
+#~ "percentage."
+#~ msgstr ""
+#~ "The investors’ funds are hold on a segregated account and profit is "
+#~ "distributed proportionally."
+
+#~ msgid "The investors’ funds left on their own accounts."
+#~ msgstr "The funds stay on the investor's account."
+
+#~ msgid "The investors transfer funds on the Manager’s account."
+#~ msgstr "The investors transfer funds to the Manager’s account."
+
+#~ msgid ""
+#~ "The Manager should control the amount of his transactions because account "
+#~ "balance changes always "
+#~ msgstr ""
+#~ "The Manager should control the number of his transactions because account "
+#~ "balance is always changing."
+
+#~ msgid ""
+#~ "The system automatically copies transactions on investors’ accounts. The "
+#~ "transaction won’t copy if the Investor hasn’t enough funds."
+#~ msgstr ""
+#~ "The system copies transactions on investors’ accounts automatically  The "
+#~ "transaction won’t copy if the Investor doesn't have enough funds."
+
+#~ msgid ""
+#~ "All Manager’s transactions are allocated proportional balances of the "
+#~ "investors’ accounts."
+#~ msgstr ""
+#~ "All Manager’s transactions are performed in proportion to the balances of "
+#~ "the investors’ accounts."
+
+#~ msgid ""
+#~ "The minimum amount depends on the Manager’s balance. If the Investor’s "
+#~ "balance much less than the Manager’s balance, Investor can open Micro "
+#~ "account."
+#~ msgstr ""
+#~ "The minimum amount depends on the Manager’s balance. If the Investor’s "
+#~ "balance is much less than the Manager’s balance, Investor can open a Micro "
+#~ "account."
+
+#~ msgid "main.header.phone_number"
+#~ msgstr "&nbsp;"
+
+#~ msgid "Free across Russia"
+#~ msgstr "CALL ME BACK"
+
+#~ msgid "contacts.skypename"
+#~ msgstr "gc_clients_dpt"
+
+#~ msgid "contacts.icq"
+#~ msgstr "354577138"

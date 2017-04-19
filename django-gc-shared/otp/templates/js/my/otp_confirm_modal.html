@@ -1,0 +1,50 @@
+{% load staticfiles inbox i18n %}
+<h2 class="modal-title">{% trans "Security confirm" %}</h2>
+
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+
+<form class="row modal-white-bg" ng-if="OTPData.otp_type == 'sms'" ng-submit="ok(token)">
+    <p class="sms-success">{% trans "SMS was sent succesfully" %}</p>
+    <p class="offset-bottom-10">{% trans "Message contains security token which you should enter in the following field:" %}</p>
+    <div class="clearfix">
+        <div class="small-8 large-8 column">
+            <input type="text" ng-disabled="isLoading" ng-model="token">
+            <p class="form-error" ng-if="isTokenInvalid">{% trans "Invalid token, try again" %}</p>
+        </div>
+        <div class="small-4 large-4 left">
+            <button class="medium" ng-disabled="isLoading">{% trans "Confirm" %}</button>
+        </div>
+    </div>
+{% comment %}    <div class="third-color-bg icon-phone-before offset-top-20">
+        {% trans "If you can't receive the message, you can order an" %}
+        <a class="bordered" ng-click="useVoice()" ng-disabled="isLoading">{% trans "automated call" %}</a>
+    </div>{% endcomment %}
+</form>
+
+<form class="row modal-white-bg" ng-if="OTPData.otp_type == 'voice'" ng-submit="ok(token)">
+    <p class="sms-success">{% trans "Call is successfully planned" %}</p>
+    <p class="offset-bottom-10">{% trans "You will hear a unique code (4 digits) which you should enter in the following field:" %}</p>
+    <div class="clearfix">
+        <div class="small-8 large-8 column">
+            <input type="text" ng-disabled="isLoading" ng-model="token">
+            <p class="form-error" ng-if="isTokenInvalid">{% trans "Invalid token, try again" %}</p>
+        </div>
+        <div class="small-4 large-4 left">
+            <button class="medium" ng-disabled="isLoading">{% trans "Confirm" %}</button>
+        </div>
+    </div>
+</form>
+
+<form class="row modal-white-bg" ng-if="OTPData.otp_type == 'otp'" ng-submit="ok(token)">
+    <p class="offset-bottom-10">{% trans "Enter security token from device:" %}</p>
+    <div class="clearfix">
+        <div class="small-8 large-8 column">
+            <input type="text" ng-disabled="isLoading" ng-model="token">
+            <p class="form-error" ng-if="isTokenInvalid">{% trans "Invalid token, try again" %}</p>
+        </div>
+        <div class="small-4 large-4 left">
+            <button class="medium" ng-disabled="isLoading">{% trans "Confirm" %}</button>
+        </div>
+    </div>
+</form>
+ 

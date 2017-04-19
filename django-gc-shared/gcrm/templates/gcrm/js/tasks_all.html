@@ -1,0 +1,77 @@
+{% load i18n %}
+
+<div class="row">
+  <div class="input-group col-sm-8">
+    <form ng-submit="filter()">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="{% trans "Search" %}" ng-model="filters.search">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button" ng-click="filter()"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-16">
+    <table class="table table-bordered table-hover table-sm">
+      <thead class="thead-default">
+        <tr>
+          <th ng-if="::Users.me.moreThanOne" class="text-md-center column-fixed">{% trans 'Manager' %}</th>
+          <th class="text-md-center column-fixed" sorter="contact" objects="objects">{% trans 'Contact' %}</th>
+          <th class="text-md-center column-fixed" sorter="deadline" objects="objects">{% trans 'Deadline' %}</th>
+          <th colspan="2" class="text-md-center">{% trans 'Text' %}</th>
+        </tr>
+        <tr>
+          <th ng-if="::Users.me.moreThanOne">
+            <user-select-filter
+              model="filters.assignee"
+              on-change="filter()"
+              hide-null-manager="true">
+            </user-select-filter>
+          </th>
+          <th></th>
+          <th>
+            <daterangepicker
+              classes="'form-control-sm'"
+              start="filters.deadline_0"
+              end="filters.deadline_1"
+              on-change="filter()"></daterangepicker>
+          </th>
+          <th>
+            <select class="form-control form-control-sm fa"
+              ng-model="filters.task_type"
+              ng-change="filter()"
+              ng-options="type as TYPES_ICON[type]+' '+label for (type, label) in TASK_TYPES"
+            >
+              <option value="" selected>{% trans "All types" %}</option>
+            </select>
+          </th>
+          <th>
+            <select  class="form-control form-control-sm fa" ng-model="filters.status" ng-change="filter()">
+              <option value="" selected>{% trans "All status" %}</option>
+              <option value="open">{% trans "Opened" %}</option>
+              <option value="overdue">{% trans "Overdue" %}</option>
+              <option value="closed">{% trans "Closed" %}</option>
+            </select>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="task in objects.items">
+          <td ng-if="::Users.me.moreThanOne">[[::Users.mapping[task.data.assignee].data.name.short]]</td>
+          <td><a ui-sref="contact.feed({id: task.data.contact.id})" ng-bind="::task.data.contact.user ? task.data.contact.user.name : task.data.contact.name"></a></td>
+          <td ng-class="task.data.is_expired ?
+              (task.data.closed_at ? 'task-completed-overdue' : 'task-overdue') :
+              (task.data.closed_at ? 'task-completed' : 'task-uncompleted') "
+              title="[[::task.data.deadline|moment:'LLL']]">[[::task.data.deadline|moment:'calendar']]</td>
+          <td colspan="2">
+            <i class="text-info fa">[[::task.getIcon()]]</i>&nbsp;<span ng-bind-html="::task.data.text|linky"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <tablefooter objects="objects"></tablefooter>
+  </div>
+</div>

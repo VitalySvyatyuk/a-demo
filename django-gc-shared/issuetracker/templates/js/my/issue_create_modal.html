@@ -1,0 +1,107 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+
+<h2 class="modal-title offset-bottom-30">
+    {% trans "Create issue ticket" %}
+</h2>
+
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+
+<form name="UserIssue" ng-submit="save()">
+    <div class="reveal-form">
+        <div class="form-item row">
+            <div class="small-3 large-3 column">
+                <label ng-class="{required: formData.title.required}" ng-bind="formData.title.label|capitalize"></label>
+                <div class="description" ng-bind="formData.title.help_text|capitalize"></div>
+            </div>
+            <div class="small-9 large-9 column">
+                <input required ng-model="issue.title" ng-disabled="isLoading" type="text">
+                <div
+                    ng-if="errors.title"
+                    ng-repeat="err in errors.title"
+                    ng-bind="err"
+                    class="error">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-item row">
+            <div class="small-3 large-3 column">
+                <label ng-class="{required: formData.department.required}" ng-bind="formData.department.label|capitalize"></label>
+                <div class="description" ng-bind="formData.department.help_text|capitalize"></div>
+            </div>
+            <div class="small-9 large-9 column">
+                <div class="select-wrapper">
+                    <select
+                        ng-disabled="isLoading"
+                        ng-model="issue.department"
+                        ng-options="r.value as r.display_name for r in formData.department.choices">
+                    </select>
+                </div>
+                <div
+                    ng-if="errors.department"
+                    ng-repeat="err in errors.department"
+                    ng-bind="err"
+                    class="error">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-item big row">
+            <div class="small-3 large-3 column">
+                <label ng-init="labels['description'] = '{% trans "Description" %}'" ng-class="{required: formData.text.required}">{% trans 'Description' %}</label>
+            </div>
+            <div class="small-9 large-9 column">
+                <textarea required ng-model="additional_info.description" ng-disabled="isLoading" rows="3"></textarea>
+            </div>
+        </div>
+        
+        <div class="form-item row">
+            <div class="small-3 large-3 column">
+                <label>{% trans "Select files" %}</label>
+                <p class="description" ng-bind="formData.files.help_text"></p>
+            </div>
+            <div class="small-9 large-9 column">
+                <div class="button white offset-bottom-10" ng-file-select="selectCommentFiles($files)" data-multiple="true">{% trans "Select files" %}</div>
+                <p ng-repeat="file in files">
+                    [[file.name]] <span class="icon-cancel-inverted small" ng-click="unselectCommentFile(file)"></span>
+                </p>
+                <p
+                    ng-if="errors.files"
+                    ng-repeat="err in errors.files"
+                    ng-bind="err"
+                    class="form-error">
+                </p>
+            </div>
+        </div>
+
+    <div class="text-center">
+        <input type="submit" class="button medium third-black to-white" value="{% trans "Send" %}"/>
+    </div>
+
+    {% comment %}
+    <p class="h4">Похожие вопросы из <a href="">FAQ</a></p>
+    <div class="gc-accordion transparent">
+        <div class="gc-accordion-item" data-gc-accordion>
+            <a href="#" class="title" data-gc-accordion-toggle><span>Ничего не работает, что делать?</span></a>
+            <div class="content">
+                В соответствии с Регламентом обработки и исполнения неторговых операций заявки на средств
+                обрабатываются в течение 72 рабочих часов с момента их подачи. Как правило, это занимает не более суток.
+            </div>
+        </div>
+        <div class="gc-accordion-item" data-gc-accordion>
+            <a href="#" class="title" data-gc-accordion-toggle><span>Как мне сменить пароль к счету?</span></a>
+            <div class="content">
+                В соответствии с Регламентом обработки и исполнения неторговых операций заявки на средств
+                обрабатываются в течение 72 рабочих часов с момента их подачи. Как правило, это занимает не более суток.
+            </div>
+        </div>
+        <div class="gc-accordion-item" data-gc-accordion>
+            <a href="#" class="title" data-gc-accordion-toggle><span>Не могу вывести средства со счета Micro на Webmoney Не могу вывести средства со счета Micro на Webmoney</span></a>
+            <div class="content">
+                В соответствии с Регламентом обработки и исполнения неторговых операций заявки на средств
+                обрабатываются в течение 72 рабочих часов с момента их подачи. Как правило, это занимает не более суток.
+            </div>
+        </div>
+    </div>
+    {% endcomment %}
+</form>

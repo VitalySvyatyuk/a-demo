@@ -1,0 +1,67 @@
+{% extends "design_2014/private_office/base.html" %}
+{% load i18n app_tags pagination_tags staticfiles %}
+
+{% block scripts %} {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/django_ajax_send_csrf.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/select_all_checkboxes.js' %}"></script>
+    <script type="text/javascript">
+        function mark_as(mode) {
+            var message_ids = $('td.checkbox input:checked').map(function () {
+                return $(this).val();
+            }).get().join("+");
+            $.ajax({
+                type: 'POST',
+                url: '{% url "messages_mark_as" "" %}' + mode,
+                data: "message_ids=" + message_ids,
+                success: function (data) {window.location.reload()}
+            })
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Inbox" %}</h1>
+
+    <div class="container">
+        {% if message_list %}
+            {% morelink "javascript:mark_as('read');" "Отметить как прочитанное" "green" %}&nbsp;
+            {% morelink "javascript:mark_as('unread');" "Отметить как новое" "green" %}&nbsp;
+            {% morelink "javascript:mark_as('deleted');" "Удалить" "green" %}
+
+            {% for message in message_list %}
+                {% if message.campaign %}
+                        <iframe src="{{ message.campaign.get_absolute_url }}"
+                                data-reveal="" id="message_{{ message.id }}" class="hide reveal-modal"
+                                height="70%"></iframe>
+                {% endif %}
+            {% endfor %}
+
+
+            <table class="gctable">
+                <thead>
+                <tr>
+                    <th>
+                        <div class="checkbox-wrapper">
+                            <input id="select_it_all" type="checkbox" autocomplete="off"/>
+                            <label for="select_it_all"></label>
+                        </div>
+                    </th>
+                    <th>{% trans "Sender" %}</th>
+                    <th>{% trans "Subject" %}</th>
+                    <th>{% trans "Received" %}</th>
+                    <th>{% trans "Action" %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% autopaginate message_list 30 %}
+                {% for message in message_list %}
+                    <tr>{% include "messages/message_list_item.html" %}</tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% paginate %}
+        {% else %}
+            <p>{% trans "No messages." %}</p>
+        {% endif %}
+    </div>
+{% endblock %}

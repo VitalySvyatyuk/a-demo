@@ -1,0 +1,72 @@
+.sprite {
+    background-image: url('../img/sprites.png');
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+}
+
+.floatleft {
+    float:left;
+}
+
+.floatright {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.s_unchecked {
+    background-position: 0 -892px;
+}
+
+.s_error {
+    background-position: 0 -1790px;
+}
+
+.s_warning {
+    background-position: 0 -1737px;
+}
+
+.s_cancel, .s_reject, .s_remove {
+    background-position: 0 -808px;
+}
+
+.s_accept, .s_checked {
+    background-position: 0 -909px;
+}
+
+.s_ok {
+    background-position: 0 -4790px;
+}
+
+.s_wait {
+    background-position: 0 -4807px;
+}
+
+.s_add {
+    background-position: 0 -17px;
+}
+
+
+.s_help, .s_question {
+    background-position: 0 -2514px;
+}
+
+.s_clear {
+    background-position: 0 -2415px;
+}
+
+.s_edit,.s_pencil{
+    background-position: 0 -4255px;
+}
+
+.status .error {
+    color: red;
+}
+
+.status .text {
+    color: green;
+}

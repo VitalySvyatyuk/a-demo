@@ -1,0 +1,1181 @@
+{% load static i18n app_tags profiles_tags %}
+
+  <div class="row offset-bottom-5 profile-info" equalize="outerHeight">
+    <div class="clearfix">
+      <p class="h4 offset-top-20 profile-row-title">{% trans "Personal information" %}</p>
+
+      <div class="offset-bottom-5" ng-show=" user.profile.status_info.verified">
+
+                <p style="padding-left: 98px"><img src="{% static 'img/arum-capital/check-list-image.png' %}">
+                 {% trans 'Identity confirmed' %}</p>
+            </div>
+      <div class="small-6 medium-6 large-6 columns">
+        <div class="third-light-wrapper" equalize-me>
+
+
+
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.first_name.label"></label>
+              <p class="modal-annotation"><span class="third-tip">{% trans "Your first name in English as it appears on your international passport and/or on your banking cards" %}</span></p>
+            </div>
+            <div class="inputs">
+              <input ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.first_name" type="text">
+              <div
+                ng-if="errors.first_name"
+                ng-repeat="err in errors.first_name"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.last_name.label"></label>
+              <p class="modal-annotation"><span class="third-tip">{% trans "Your last name in English as it appears on your international passport and/or on your banking cards" %}</span></p>
+            </div>
+            <div class="inputs">
+              <input ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.last_name" type="text">
+              <div
+                ng-if="errors.last_name"
+                ng-repeat="err in errors.last_name"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="form-item">
+            <div class="labels">
+              <label ng-bind="::formData.profile.children.middle_name.label|titleize"></label>
+              <p class="modal-annotation"><span class="third-tip">{% trans "Your middle name in English if it is in your documents" %}</span></p>
+            </div>
+            <div class="inputs">
+              <input ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.middle_name" type="text">
+              <div
+                ng-if="errors.profile.middle_name"
+                ng-repeat="err in errors.profile.middle_name"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.username.label"></label>
+              <p class="modal-annotation"><span class="third-tip">{% trans "Your desired login to access the site" %}</span></p>
+            </div>
+            <div class="inputs">
+              <input ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.username" type="text">
+              <div
+                ng-if="errors.username"
+                ng-repeat="err in errors.username"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="small-6 medium-6 large-6 columns">
+        <div class="third-light-wrapper" equalize-me>
+
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.profile.children.birthday.label"></label>
+            </div>
+            <div class="inputs">
+              <input gc-datepicker ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.birthday" type="text" required>
+              <div
+                ng-if="errors.profile.birthday"
+                ng-repeat="err in errors.profile.birthday"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.profile.children.nationality.label"></label>
+            </div>
+            <div class="inputs">
+              <div class="select-wrapper">
+                <select
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.nationality"
+                  ng-options="c.id as c.name for c in countries">
+                </select>
+              </div>
+              <div
+                ng-if="errors.profile.nationality"
+                ng-repeat="err in errors.profile.nationality"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.profile.children.tax_residence.label"></label>
+              <p class="modal-annotation"><span class="third-tip">{% trans "The country where you are tax resident and pay your taxes" %}</span>
+            </div>
+            <div class="inputs">
+              <div class="select-wrapper">
+                <select required="required"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.tax_residence"
+                  ng-options="c.id as c.name for c in countries">
+                </select>
+              </div>
+              <div
+                ng-if="errors.profile.tax_residence"
+                ng-repeat="err in errors.profile.tax_residence"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.profile.children.tin.label"></label>
+              <p class="modal-annotation"><span class="third-tip">{% trans "Your tax identification number" %}</span></p>
+            </div>
+            <div class="inputs">
+              <input ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.tin" type="text" required>
+              <div
+                ng-if="errors.profile.tin"
+                ng-repeat="err in errors.profile.tin"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="labels">
+                <label>{% trans "Are you US citizen or US person for tax purposes?" %}</label>
+                <p class="modal-annotation"><span class="third-tip">{% trans "A US person for tax purposes is a natural person resident of the USA or a body corporate organized under the laws of the USA as per" %} <a style='color:#fff;text-decoration:underline;' target='_blank' href='https://www.irs.gov/individuals/international-taxpayers/classification-of-taxpayers-for-u-s-tax-purposes'>{% trans "the definition of the IRS of the USA" %}</a></span></p>
+              </div>
+              <div class="columns small-5">
+                <span>
+                  <input class="radio_box__input" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.us_citizen" ng-value="1" type="radio" id="us_yes"/>
+                  <label for="us_yes">
+                      <span class="radio_box__tick"></span>
+                      <span class="radio_box__label">{% trans "Yes" %}</span>
+                  </label>
+                </span>
+                <span>
+                  <input class="radio_box__input" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.us_citizen" ng-value="0" type="radio" id="us_no"/>
+                  <label for="us_no">
+                      <span class="radio_box__tick"></span>
+                      <span class="radio_box__label">
+                          {% trans "No" %}
+                      </span>
+                  </label>
+                </span>
+              </div>
+
+            </div>
+
+
+
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.email.label"></label>
+            </div>
+            <div class="inputs">
+              <input ng-model="user.email" type="text" ng-disabled="true">
+              <div
+                ng-if="errors.email"
+                ng-repeat="err in errors.email"
+                ng-bind="err"
+                class="error">
+              </div>
+              <div class="error ng-binding ng-scope">
+              <a ng-if="!user.profile.email_verified"
+              ng-href="{% url 'profiles_edit_email' %}"
+                 style="color:darkred"
+              >
+
+              {% trans "Confirm email to start trading" %}
+              </a>
+                </div>
+              <p ng-if="user.profile.email_verified"
+                class="form-item-out description">
+                {% trans "Email is verified" %}
+              </p>
+            </div>
+          </div>
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.profile.children.phone_mobile.label"></label>
+            </div>
+            <div class="inputs">
+              <div class="phone-wrapper">
+                <div class="select-wrapper phone-select">
+                  <select
+                    dir="auto"
+                    ng-model="user.profile.phone_mobile.country"
+                    ng-disabled="user.profile.otp_type === 'sms'">
+                    <option
+                      ng-repeat="o in formData.profile.children.phone_mobile.country_choices"
+                      ng-selected="user.profile.phone_mobile.country === o.id"
+                      value="[[::o.id]]"
+                      ng-bind-html="::formatPhoneCodeLabel(o)">
+                    </option>
+                  </select>
+                </div>
+                <input
+                  dir="auto"
+                  class="phone-input"
+                  ng-model="user.profile.phone_mobile.tail"
+                  ng-disabled="user.profile.otp_type === 'sms'"
+                  type="text">
+              </div>
+              <div
+                ng-if="errors.profile.phone_mobile"
+                ng-repeat="err in errors.profile.phone_mobile"
+                ng-bind="err"
+                class="error"
+                style="clear:both;">
+              </div>
+            </div>
+            <p
+              ng-if="user.profile.otp_type === 'sms'"
+              class="form-item-out description">
+              <a href="[[::BASE_URL]]profile/security">{% trans "Use Security section to change phone number" %}</a>
+            </p>
+            <p
+              ng-if="user.profile.otp_type !== 'sms' && !user.profile.is_phone_mobile_valid"
+              class="form-item-out description">
+              <a href="[[::BASE_URL]]profile/security">{% trans "To confirm phone number, you should create OTP device in Security section" %}</a>
+            </p>
+          </div>
+
+          {% comment %}
+          <div class="form-item" ng-if="::!user.profile.agent_code">
+            <div class="labels">
+              <label ng-bind="::formData.profile.children.agent_code.label|titleize"></label>
+            </div>
+            <div class="inputs">
+              <input ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.agent_code" type="text">
+              <div
+                ng-if="errors.profile.agent_code"
+                ng-repeat="err in errors.profile.agent_code"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+          {% endcomment %}
+        </div>
+      </div>
+    </div>
+    <div class="clearfix">
+      <p class="h4 offset-top-20 profile-row-title">{% trans "Address information" %}</p>
+      <div class="small-6 medium-6 large-6 columns">
+        <div class="third-light-wrapper">
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.profile.children.country.label"></label>
+            </div>
+            <div class="inputs">
+              <div class="select-wrapper">
+                <select
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.country"
+                  ng-options="c.id as c.name for c in countries"
+                  ng-change="selectFirstRegion()">
+                </select>
+              </div>
+              <div
+                ng-if="errors.profile.country"
+                ng-repeat="err in errors.profile.country"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.profile.children.state.label"></label>
+            </div>
+            <div class="inputs">
+              <div class="select-wrapper">
+                <select
+                  required
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.state"
+                ng-options="r.id as r.name for r in regions|filter:stateFilter">
+                </select>
+              </div>
+              <div
+                ng-if="errors.profile.state"
+                ng-repeat="err in errors.profile.state"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="small-6 medium-6 large-6 columns">
+        <div class="third-light-wrapper">
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.profile.children.city.label"></label>
+            </div>
+            <div class="inputs">
+              <input ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.city" type="text" required>
+              <div
+                ng-if="errors.profile.city"
+                ng-repeat="err in errors.profile.city"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.profile.children.address.label"></label>
+              <p class="modal-annotation"><span class="third-tip">{% trans "Full mailing address including the postal code" %}</span></p>
+            </div>
+            <div class="inputs">
+              <input ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.address" type="text" required>
+              <div
+                ng-if="errors.profile.address"
+                ng-repeat="err in errors.profile.address"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<div class="clearfix">
+        <p class="h4 offset-top-20 profile-row-title">{% trans "Financial details" %}</p>
+        <div class="small-6 medium-6 large-6 columns">
+          <div class="third-light-wrapper">
+
+            <div class="form-item">
+              <div class="labels">
+                <label class="required" ng-bind="::formData.profile.children.net_capital.label"></label>
+              </div>
+              <div class="inputs">
+                <div class="select-wrapper">
+                  <select
+                    required
+                    ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
+                    ng-model="user.profile.net_capital"
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.net_capital.choices">
+                  </select>
+                </div>
+                <div
+                  ng-if="errors.profile.net_capital"
+                  ng-repeat="err in errors.profile.net_capital"
+                  ng-bind="err"
+                  class="error">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-item">
+              <div class="labels">
+                <label class="required" ng-bind="::formData.profile.children.annual_income.label"></label>
+              </div>
+              <div class="inputs">
+                <div class="select-wrapper">
+                  <select
+                    required
+                    ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
+                    ng-model="user.profile.annual_income"
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.annual_income.choices">
+                  </select>
+                </div>
+                <div
+                  ng-if="errors.profile.annual_income"
+                  ng-repeat="err in errors.profile.annual_income"
+                  ng-bind="err"
+                  class="error">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-item">
+              <div class="labels">
+                <label class="required" ng-bind="::formData.profile.children.financial_commitments.label"></label>
+                <p class="modal-annotation"><span class="third-tip">{% trans "Financial commitments are the obligation of the account applicant to make certain mandatory payments (including but not limited to loan installments, payments to the family dependents, etc.) over a monthly period. The ratio against the total wealth of the account applicant is to be indicated" %}</span></p>
+
+              </div>
+              <div class="inputs">
+                <div class="select-wrapper">
+                  <select
+                    required
+                    ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
+                    ng-model="user.profile.financial_commitments"
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.financial_commitments.choices">
+                  </select>
+                </div>
+                <div
+                  ng-if="errors.profile.financial_commitments"
+                  ng-repeat="err in errors.profile.financial_commitments"
+                  ng-bind="err"
+                  class="error">
+                </div>
+              </div>
+            </div>
+
+
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.profile.children.account_turnover.label"></label>
+            </div>
+            <div class="inputs">
+              <input ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.account_turnover" type="text" required>
+              <div
+                ng-if="errors.profile.account_turnover"
+                ng-repeat="err in errors.profile.account_turnover"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-item">
+            <div class="labels">
+              <label class="required" ng-bind="::formData.profile.children.purpose.label"></label>
+            </div>
+            <div class="inputs">
+              <div class="select-wrapper">
+                  <select
+                    required
+                    ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
+                    ng-model="user.profile.purpose"
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.purpose.choices">
+                  </select>
+                </div>
+              <div
+                ng-if="errors.profile.purpose"
+                ng-repeat="err in errors.profile.purpose"
+                ng-bind="err"
+                class="error">
+              </div>
+            </div>
+          </div>
+
+
+
+          </div>
+        </div>
+        <div class="small-6 medium-6 large-6 columns">
+          <div class="third-light-wrapper">
+            <p class="h3 offset-top-15">{% trans "Why do we need these details" %}</p>
+            <p class="offset-top-15">{% trans "As a regulated broker we are required to be in strict compliance with the Know Your Client and Anti-Money Laundering procedures. These measures ensure that you are expressly informed of the trading risks and an account in your name can be set up by yourself only." %}</p>
+            <p class="offset-top-15">{% trans "The details you have provided are encrypted in 256-bit technology and shall not be disclosed to any third party under no circumstances." %}</p>
+          </div>
+        </div>
+      </div>
+      <!-- Вид деятельности навчало -->
+
+
+      <div class="clearfix">
+        <p class="h4 offset-top-20 profile-row-title">{% trans "Type of your activity" %}</p>
+        <div class="small-6 medium-6 large-6 columns">
+          <div class="third-light-wrapper">
+
+            <div class="form-item">
+              <div class="labels">
+                <label class="required" ng-bind="::formData.profile.children.employment_status.label"></label>
+              </div>
+              <div class="inputs">
+                <div class="select-wrapper">
+                  <select
+                    required
+                    ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
+                    ng-model="user.profile.employment_status"
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.employment_status.choices">
+                  </select>
+                </div>
+                <div
+                  ng-if="errors.profile.employment_status"
+                  ng-repeat="err in errors.profile.employment_status"
+                  ng-bind="err"
+                  class="error">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-item">
+              <div class="labels">
+                <label class="required" ng-bind="::formData.profile.children.source_of_funds.label"></label>
+              </div>
+              <div class="inputs">
+                <div class="select-wrapper">
+                  <select
+                    required
+                    ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
+                    ng-model="user.profile.source_of_funds">
+
+                    <option value="Income from professional activity">{% trans "Income from professional activity" %}</option>
+
+                    <option value="Savings">{% trans "Savings" %}</option>
+
+                    <option value="Partner/ parent/ family">{% trans "Partner/ parent/ family" %}</option>
+
+                    <option value="Investments/ Dividends">{% trans "Investments/ Dividends" %}</option>
+
+                    <option value="Borrowing">{% trans "Borrowing" %}</option>
+
+                    <option value="Pension">{% trans "Pension" %}</option>
+
+                    <option value="Other">{% trans "Other" %}</option>
+
+
+                  </select>
+                </div>
+                <div
+                  ng-if="errors.profile.source_of_funds"
+                  ng-repeat="err in errors.profile.source_of_funds"
+                  ng-bind="err"
+                  class="error">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-item" ng-if="user.profile.source_of_funds == 'Other'" >
+                <div class="labels">
+                    <label class="required" for="funds_spec">{% trans "Specify" %} </label>
+                </div>
+                <div class="inputs">
+                 <input id="funds_spec" ng-required="true" ng-model="user.profile.source_of_funds_spec">
+                </div>
+            </div>
+
+
+            <div class="form-item">
+              <div class="labels">
+                <label class="required" ng-bind="::formData.profile.children.nature_of_biz.label"></label>
+              </div>
+              <div class="inputs">
+                <div class="select-wrapper">
+                  <select
+                    required
+                    ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
+                    ng-model="user.profile.nature_of_biz">
+
+                    <option value="Accountancy">{% trans "Accountancy" %}</option>
+
+                    <option value="Admin/ secretarial">{% trans "Admin/ secretarial" %}</option>
+
+                    <option value="Agricultural">{% trans "Agricultural" %}</option>
+
+                    <option value="Art">{% trans "Art" %}</option>
+
+                    <option value="Financial/Banking">{% trans "Financial/Banking" %}</option>
+
+                    <option value="Catering/Hospitality">{% trans "Catering/Hospitality" %}</option>
+
+                    <option value="Creative/Media">{% trans "Creative/Media" %}</option>
+
+                    <option value="Educational">{% trans "Educational" %}</option>
+
+                    <option value="Emergency">{% trans "Emergency" %}</option>
+
+                    <option value="Engineering">{% trans "Engineering" %}</option>
+
+                    <option value="Health/Medicine">{% trans "Health/Medicine" %}</option>
+
+                    <option value="IT">{% trans "IT" %}</option>
+
+                    <option value="Legal">{% trans "Legal" %}</option>
+
+                    <option value="Leisure/ Entertainment/ Tourism">{% trans "Leisure/ Entertainment/ Tourism" %}</option>
+
+                    <option value="Manufacturing">{% trans "Manufacturing" %}</option>
+
+                    <option value="Marketing/ Advertising/ PR">{% trans "Marketing/ Advertising/ PR" %}</option>
+
+                    <option value="Property">{% trans "Property" %}</option>
+
+                    <option value="Sales">{% trans "Sales" %}</option>
+
+                    <option value="Social">{% trans "Social" %}</option>
+
+                    <option value="Telecom">{% trans "Telecom" %}</option>
+
+                    <option value="Transport/ Logistics">{% trans "Transport/ Logistics" %}</option>
+
+                    <option value="Other">{% trans "Other" %}</option>
+
+                  </select>
+                </div>
+                <div
+                  ng-if="errors.profile.nature_of_biz"
+                  ng-repeat="err in errors.profile.nature_of_biz"
+                  ng-bind="err"
+                  class="error">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-item" ng-if="user.profile.nature_of_biz == 'Other'" >
+                <div class="labels">
+                    <label class="required" for="biz_spec">{% trans "Specify" %} </label>
+                </div>
+                <div class="inputs">
+                 <input id="biz_spec" ng-required="true" ng-model="user.profile.nature_of_biz_spec">
+                </div>
+            </div>
+
+
+
+            <div class="form-item">
+              <div class="labels">
+                <label class="required" ng-bind="::formData.profile.children.education_level.label"></label>
+              </div>
+              <div class="inputs">
+                <div class="select-wrapper">
+                  <select
+                    required
+                    ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
+                    ng-model="user.profile.education_level">
+                    <option value="High school">{% trans "High school" %}</option>
+                    <option value="College">{% trans "College" %}</option>
+                    <option value="University">{% trans "University" %}</option>
+                    <option value="Other">{% trans "Other" %}</option>
+                  </select>
+                </div>
+                <div
+                  ng-if="errors.profile.education_level"
+                  ng-repeat="err in errors.profile.education_level"
+                  ng-bind="err"
+                  class="error">
+                </div>
+              </div>
+          </div>
+
+            <div class="form-item" ng-if="user.profile.education_level == 'Other'" >
+                <div class="labels">
+                    <label class="required" for="edu_spec">{% trans "Specify" %} </label>
+                </div>
+                <div class="inputs">
+                 <input id="edu_spec" ng-required="true" ng-model="user.profile.education_level_spec">
+                </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <!-- Вид деятельности конец -->
+      <div class="clearfix">
+        <p class="h4 offset-top-20 profile-row-title">{% trans "Trading experience" %}</p>
+        <p>{% trans "Indicate your knowledge and trading experience" %}</p>
+        <div class="small-8 columns">
+          <div class="third-light-wrapper">
+          <p>{% trans "FOREX/CFDs" %} <span style="color:red;">*</span></p>
+          <div class="columns offset-bottom-30">
+            <span>
+                <input class="radio_box__input" id="Nature-of-financial-instrument_ok" type="radio" name="Nature-of-financial-instrument" ng-model="user.profile.forex_instruments" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" required="required" value="Open" aria-required="true"  onclick="SelectedA(this)">
+                <label for="Nature-of-financial-instrument_ok">
+                    <span class="radio_box__tick"></span>
+                    <span class="radio_box__label">{% trans "Yes" %}</span>
+                </label>
+              </span>
+              <span>
+                <input class="radio_box__input" id="Nature-of-financial-instrument_no" type="radio" name="Nature-of-financial-instrument" ng-model="user.profile.forex_instruments" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" required="required" value="None" aria-required="true" onclick="SelectedA(this)">
+                <label for="Nature-of-financial-instrument_no">
+                    <span class="radio_box__tick"></span>
+                    <span class="radio_box__label">{% trans "No" %}</span>
+                </label>
+              </span>
+            <div id='Block1' style='display: none;'>
+              <div class="inputs">
+              <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.forex_instruments_exp" id="Block11" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="less-one-year">{% trans "Less than 1 year" %}</option>
+                    <option value="one--five-years">{% trans "1 to 5 years" %}</option>
+                    <option value="over-five-years">{% trans "Over 5 years" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Average volume of transaction per year (USD) select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.forex_instruments_aver" id="Block12" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="Less than $10 000">{% trans "Less than $10 000" %}</option>
+                    <option value="$10 000 - $50 000">$10 000 - $50 000</option>
+                    <option value="$50 001 - $100 000">$50 001 - $100 000</option>
+                    <option value="$100 001 - $200 000">$100 001 - $200 000</option>
+                    <option value="Over $250 000">{% trans "Over $250 000" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Frequency of transactions select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.forex_instruments_freq" id="Block13" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="daily">{% trans "Daily" %}</option>
+                    <option value="weekly">{% trans "Weekly" %}</option>
+                    <option value="monthly">{% trans "Monthly" %}</option>
+                    <option value="yearly">{% trans "Yearly" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Training received" context "for Trading experience select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.forex_instruments_train" id="Block14" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="seminar">{% trans "Seminar" %}</option>
+                    <option value="course">{% trans "Course" %}</option>
+                    <option value="self-trained">{% trans "Self-trained" %}</option>
+                    <option value="degree-holder-forex-cfd">{% trans "Degree holder" %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p>{% trans "Derivative instruments (incl. options, futures, swaps, FRAs, etc.)" %}  <span style="color:red;">*</span></p>
+          <div class="columns offset-bottom-30">
+            <span>
+                <input class="radio_box__input" id="derivative_instruments_ok" type="radio" name="derivative-instruments" ng-model="user.profile.derivative_instruments" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" required="required" value="Open" aria-required="true" onclick="SelectedB(this)">
+                <label for="derivative_instruments_ok">
+                    <span class="radio_box__tick"></span>
+                    <span class="radio_box__label">{% trans "Yes" %}</span>
+                </label>
+              </span>
+              <span>
+                <input class="radio_box__input" id="derivative_instruments_no" type="radio" name="derivative-instruments" ng-model="user.profile.derivative_instruments" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" required="required" value="None" aria-required="true" onclick="SelectedB(this)">
+                <label for="derivative_instruments_no">
+                    <span class="radio_box__tick"></span>
+                    <span class="radio_box__label">{% trans "No" %}</span>
+                </label>
+              </span>
+            <div id='Block2' style='display: none;'>
+              <div class="inputs">
+              <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.derivative_instruments_exp" id="Block21" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="less-one-year">{% trans "Less than 1 year" %}</option>
+                    <option value="one--five-years">{% trans "1 to 5 years" %}</option>
+                    <option value="over-five-years">{% trans "Over 5 years" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Average volume of transaction per year (USD) select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.derivative_instruments_aver" id="Block22" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="Less than $10 000">{% trans "Less than $10 000" %}</option>
+                    <option value="$10 000 - $50 000">$10 000 - $50 000</option>
+                    <option value="$50 001 - $100 000">$50 001 - $100 000</option>
+                    <option value="$100 001 - $200 000">$100 001 - $200 000</option>
+                    <option value="Over $250 000">{% trans "Over $250 000" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Frequency of transactions select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.derivative_instruments_freq" id="Block23" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="daily">{% trans "Daily" %}</option>
+                    <option value="weekly">{% trans "Weekly" %}</option>
+                    <option value="monthly">{% trans "Monthly" %}</option>
+                    <option value="yearly">{% trans "Yearly" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Training received" context "for Trading experience select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.derivative_instruments_train" id="Block24" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="seminar">{% trans "Seminar" %}</option>
+                    <option value="course">{% trans "Course" %}</option>
+                    <option value="self-trained">{% trans "Self-trained" %}</option>
+                    <option value="degree-holder">{% trans "Degree holder" %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p>{% trans "Transferable securities" %}  <span style="color:red;">*</span></p>
+          <div class="columns offset-bottom-30">
+            <span>
+                <input class="radio_box__input" id="transferable-securities_ok" type="radio" ng-model="user.profile.transferable_securities" name="transferable-securities" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" required="required" value="Open" aria-required="true" onclick="SelectedC(this)">
+                <label for="transferable-securities_ok">
+                    <span class="radio_box__tick"></span>
+                    <span class="radio_box__label">{% trans "Yes" %}</span>
+                </label>
+              </span>
+              <span>
+                <input class="radio_box__input" id="transferable-securities_no" type="radio" ng-model="user.profile.transferable_securities" name="transferable-securities" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" required="required" value="None" aria-required="true" onclick="SelectedC(this)">
+                <label for="transferable-securities_no">
+                    <span class="radio_box__tick"></span>
+                    <span class="radio_box__label">{% trans "No" %}</span>
+                </label>
+              </span>
+            <div id='Block3' style='display: none;'>
+              <div class="inputs">
+              <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.transferable_securities_exp" id="Block31" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="less-one-year">{% trans "Less than 1 year" %}</option>
+                    <option value="one--five-years">{% trans "1 to 5 years" %}</option>
+                    <option value="over-five-years">{% trans "Over 5 years" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Average volume of transaction per year (USD) select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.transferable_securities_aver" id="Block32" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="Less than $10 000">{% trans "Less than $10 000" %}</option>
+                    <option value="$10 000 - $50 000">$10 000 - $50 000</option>
+                    <option value="$50 001 - $100 000">$50 001 - $100 000</option>
+                    <option value="$100 001 - $200 000">$100 001 - $200 000</option>
+                    <option value="Over $250 000">{% trans "Over $250 000" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Frequency of transactions select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.transferable_securities_freq" id="Block33" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="daily">{% trans "Daily" %}</option>
+                    <option value="weekly">{% trans "Weekly" %}</option>
+                    <option value="monthly">{% trans "Monthly" %}</option>
+                    <option value="yearly">{% trans "Yearly" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Training received" context "for Trading experience select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.transferable_securities_train" id="Block34" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="seminar">{% trans "Seminar" %}</option>
+                    <option value="course">{% trans "Course" %}</option>
+                    <option value="self-trained">{% trans "Self-trained" %}</option>
+                    <option value="degree-holder">{% trans "Degree holder" %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p>{% trans "Units of collective investment undertaking" %}  <span style="color:red;">*</span></p>
+          <div class="columns offset-bottom-30">
+            <span>
+                <input class="radio_box__input" id="units-of-collective-investment-undertaking_ok" type="radio" ng-model="user.profile.investment_undertaking" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" required="required"name="units-of-collective-investment-undertaking" value="Open" aria-required="true" onclick="SelectedD(this)">
+                <label for="units-of-collective-investment-undertaking_ok">
+                    <span class="radio_box__tick"></span>
+                    <span class="radio_box__label">{% trans "Yes" %}</span>
+                </label>
+              </span>
+              <span>
+                <input class="radio_box__input" id="units-of-collective-investment-undertaking_no" type="radio" ng-model="user.profile.investment_undertaking" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" required="required" name="units-of-collective-investment-undertaking" value="None" aria-required="true" onclick="SelectedD(this)" >
+                <label for="units-of-collective-investment-undertaking_no">
+                    <span class="radio_box__tick"></span>
+                    <span class="radio_box__label">{% trans "No" %}</span>
+                </label>
+              </span>
+            <div id='Block4' style='display: none;'>
+              <div class="inputs">
+              <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.investment_undertaking_exp" id="Block41" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="less-one-year">{% trans "Less than 1 year" %}</option>
+                    <option value="one--five-years">{% trans "1 to 5 years" %}</option>
+                    <option value="over-five-years">{% trans "Over 5 years" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Average volume of transaction per year (USD) select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.investment_undertaking_aver" id="Block42" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="Less than $10 000">{% trans "Less than $10 000" %}</option>
+                    <option value="$10 000 - $50 000">$10 000 - $50 000</option>
+                    <option value="$50 001 - $100 000">$50 001 - $100 000</option>
+                    <option value="$100 001 - $200 000">$100 001 - $200 000</option>
+                    <option value="Over $250 000">{% trans "Over $250 000" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Frequency of transactions select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.investment_undertaking_freq" id="Block43" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="daily">{% trans "Daily" %}</option>
+                    <option value="weekly">{% trans "Weekly" %}</option>
+                    <option value="monthly">{% trans "Monthly" %}</option>
+                    <option value="yearly">{% trans "Yearly" %}</option>
+                  </select>
+                </div>
+                <p class="offset-bottom-5 offset-top-15">{% trans "Training received" context "for Trading experience select" %}</p>
+                <div class="select-wrapper">
+                  <select  ng-model="user.profile.investment_undertaking_train" id="Block44" ng-required="true">
+                    <option value="choose" selected disabled>{% trans "Choose" %}</option>
+                    <option value="seminar">{% trans "Seminar" %}</option>
+                    <option value="course">{% trans "Course" %}</option>
+                    <option value="self-trained">{% trans "Self-trained" %}</option>
+                    <option value="degree-holder">{% trans "Degree holder" %}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+              <script>
+                function SelectedA(a) {
+                var label = a.value;
+                if (label=="Open") {
+                   document.getElementById("Block1").style.display='block';
+                   document.getElementById('Block11').value = 'choose';
+                   document.getElementById('Block12').value = 'choose';
+                   document.getElementById('Block13').value = 'choose';
+                   document.getElementById('Block14').value = 'choose';
+                } else {
+                   document.getElementById("Block1").style.display='none';
+                   document.getElementById('Block11').value = 'less-one-year';
+                   document.getElementById('Block12').value = 'Less than $10 000';
+                   document.getElementById('Block13').value = 'daily';
+                   document.getElementById('Block14').value = 'seminar';
+                }
+                }
+              </script>
+              <script>
+                function SelectedB(a) {
+                var label = a.value;
+                if (label=="Open") {
+                   document.getElementById("Block2").style.display='block';
+                   document.getElementById('Block21').value = 'choose';
+                   document.getElementById('Block22').value = 'choose';
+                   document.getElementById('Block23').value = 'choose';
+                   document.getElementById('Block24').value = 'choose';
+                } else {
+                   document.getElementById("Block2").style.display='none';
+                   document.getElementById('Block21').value = 'less-one-year';
+                   document.getElementById('Block22').value = 'Less than $10 000';
+                   document.getElementById('Block23').value = 'daily';
+                   document.getElementById('Block24').value = 'seminar';
+                }
+                }
+              </script>
+              <script>
+                function SelectedC(a) {
+                var label = a.value;
+                if (label=="Open") {
+                   document.getElementById("Block3").style.display='block';
+                   document.getElementById('Block31').value = 'choose';
+                   document.getElementById('Block32').value = 'choose';
+                   document.getElementById('Block33').value = 'choose';
+                   document.getElementById('Block34').value = 'choose';
+                } else {
+                   document.getElementById("Block3").style.display='none';
+                   document.getElementById('Block31').value = 'less-one-year';
+                   document.getElementById('Block32').value = 'Less than $10 000';
+                   document.getElementById('Block33').value = 'daily';
+                   document.getElementById('Block34').value = 'seminar';
+                }
+                }
+              </script>
+              <script>
+                function SelectedD(a) {
+                var label = a.value;
+                if (label=="Open") {
+                   document.getElementById("Block4").style.display='block';
+                   document.getElementById('Block41').value = 'choose';
+                   document.getElementById('Block42').value = 'choose';
+                   document.getElementById('Block43').value = 'choose';
+                   document.getElementById('Block44').value = 'choose';
+                } else {
+                   document.getElementById("Block4").style.display='none';
+                   document.getElementById('Block41').value = 'less-one-year';
+                   document.getElementById('Block42').value = 'Less than $10 000';
+                   document.getElementById('Block43').value = 'daily';
+                   document.getElementById('Block44').value = 'seminar';
+                }
+                }
+              </script>
+
+
+              <!-- <div class="form-item">
+              <div class="labels">
+                <label class="required" ng-bind="::formData.profile.children.fr_transactions.label"></label>
+              </div>
+              <div class="inputs">
+                <div class="select-wrapper">
+                  <select
+                    required
+                    ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
+                    ng-model="user.profile.fr_transactions"
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.fr_transactions.choices">
+                  </select>
+                </div>
+                <div
+                  ng-if="errors.profile.fr_transactions"
+                  ng-repeat="err in errors.profile.fr_transactions"
+                  ng-bind="err"
+                  class="error">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-item">
+              <div class="labels">
+                <label class="required" ng-bind="::formData.profile.children.av_transactions.label"></label>
+              </div>
+              <div class="inputs">
+                <div class="select-wrapper">
+                  <select
+                    required
+                    ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
+                    ng-model="user.profile.av_transactions"
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.av_transactions.choices">
+                  </select>
+                </div>
+                <div
+                  ng-if="errors.profile.av_transactions"
+                  ng-repeat="err in errors.profile.av_transactions"
+                  ng-bind="err"
+                  class="error">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-item">
+              <div class="labels">
+                <label class="required" ng-bind="::formData.profile.children.trade_years.label"></label>
+              </div>
+              <div class="inputs">
+                <div class="select-wrapper">
+                  <select
+                    required
+                    ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
+                    ng-model="user.profile.trade_years"
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.trade_years.choices">
+                  </select>
+                </div>
+                <div
+                  ng-if="errors.profile.trade_years"
+                  ng-repeat="err in errors.profile.trade_years"
+                  ng-bind="err"
+                  class="error">
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="form-item">
+              <div class="columns small-5">
+                <span>
+                  <input class="radio_box__input" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.pass_seminar" ng-value="1" type="radio" id="seminar_yes"/>
+                  <label for="seminar_yes">
+                      <span class="radio_box__tick"></span>
+                      <span class="radio_box__label">{% trans "Yes" %}</span>
+                  </label>
+                </span>
+                <span>
+                  <input class="radio_box__input" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.pass_seminar" ng-value="0" type="radio" id="seminar_no"/>
+                  <label for="seminar_no">
+                      <span class="radio_box__tick"></span>
+                      <span class="radio_box__label">
+                          {% trans "No" %}
+                      </span>
+                  </label>
+                </span>
+              </div>
+              <div class="columns small-7">
+                <label>{% trans "I have attended a seminar or a course on Forex Trading" %}</label>
+              </div>
+            </div>
+
+
+            <div class="form-item">
+              <div class="columns small-5">
+                <span>
+                  <input class="radio_box__input" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.traded_forex" ng-value="1" type="radio" id="forex_yes"/>
+                  <label for="forex_yes">
+                      <span class="radio_box__tick"></span>
+                      <span class="radio_box__label">{% trans "Yes" %}</span>
+                  </label>
+                </span>
+                <span>
+                  <input class="radio_box__input" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.traded_forex" ng-value="0" type="radio" id="forex_no"/>
+                  <label for="forex_no">
+                      <span class="radio_box__tick"></span>
+                      <span class="radio_box__label">
+                          {% trans "No" %}
+                      </span>
+                  </label>
+                </span>
+              </div>
+              <div class="columns small-7">
+                <label>{% trans "Have you ever traded Forex or CFDs?" %}</label>
+              </div>
+            </div>
+
+
+
+
+            <div class="form-item">
+              <div class="columns small-5">
+                <span>
+                  <input class="radio_box__input" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.risk_appetite" ng-value="1" type="radio" id="risk_appetite_yes"/>
+                  <label for="risk_appetite_yes">
+                      <span class="radio_box__tick"></span>
+                      <span class="radio_box__label">{% trans "Yes" %}</span>
+                  </label>
+                </span>
+                <span>
+                  <input class="radio_box__input" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.risk_appetite" ng-value="0" type="radio" id="risk_appetite_no"/>
+                  <label for="risk_appetite_no">
+                      <span class="radio_box__tick"></span>
+                      <span class="radio_box__label">
+                          {% trans "No" %}
+                      </span>
+                  </label>
+                </span>
+              </div>
+              <div class="columns small-7">
+                <label>{% trans "I have previous work experience or relevant qualifications that help me understand the financial products and the risk involved. Forex and CFDs are acceptable for my risk appetite" %}</label>
+              </div>
+            </div> -->
+
+
+
+
+
+
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+

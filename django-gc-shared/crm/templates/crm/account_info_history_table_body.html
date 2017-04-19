@@ -1,0 +1,25 @@
+{% load i18n %}
+<tr>
+    <td>{{ operation.ticket }}</td>
+    <td class="nowrap" title="{{ operation.open_time|timesince }} {% trans "ago" %}">
+        {{ operation.open_time|date:"Y.m.d H:i" }}
+    </td>
+    <td>{{ operation.type }}</td>
+    <td>{{ operation.volume }}</td>
+    <td>{{ operation.symbol }}</td>
+    <td>{{ operation.open_price }}</td>
+    <td>{{ operation.sl }}</td>
+    <td>{{ operation.tp }}</td>
+    <td class="nowrap" title="{{ operation.close_time|timesince }} {% trans "ago" %}">
+        {% if operation.close_time == open_operations_date %}
+            {% trans "Open" %}
+        {% else %}
+            {{ operation.close_time|date:"Y.m.d H:i" }}
+        {% endif %}
+    </td>
+    <td>{{ operation.close_price }}</td>
+    <td>{{ operation.commission }}</td>
+    <td>{{ operation.swap }}</td>
+    <td class="nowrap">{{ operation.profit }}</td>
+    <td>{{ operation.comment }}</td>
+</tr>

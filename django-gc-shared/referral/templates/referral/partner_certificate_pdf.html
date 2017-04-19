@@ -1,0 +1,40 @@
+{% load pytils_dt shared_tags %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <style>
+
+        html {
+            background-image: url({% MEDIA_ROOT %}/partners/images/partner-sertificate-bg.png);
+            background-repeat: no-repeat;
+            width: 1231px;
+            height: 1648px;
+            margin: 0;
+            padding:0;
+        }
+
+        @font-face {
+            font-family: "Plumb";
+            src: url({% MEDIA_ROOT %}/partners/fonts/PLUMB___.ttf) format("truetype");
+        }
+
+        p {
+            font-family: "Plumb";
+        }
+
+        p.partner-name {
+            font-size: 34px;
+            color: #000000;
+            position: absolute;
+            top: 460px;
+            left: 295px;
+        }
+    </style>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+    <p class="partner-name">{{ partner_name }}</p>
+</body>
+</html>

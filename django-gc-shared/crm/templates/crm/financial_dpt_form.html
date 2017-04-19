@@ -1,0 +1,81 @@
+{% extends 'site_base.html' %}
+
+{% load i18n shared_tags coffeescript %}
+
+{% block doctype %}<!DOCTYPE html>{% endblock %}
+
+{% block title %}Reception Call Form{% endblock %}
+
+{% block css %}{{block.super}}
+    <link rel="stylesheet" href="/static/css/style.css?v7" />
+    <style>
+        #reception_call_form {
+            background-color: #ffffff;
+            padding: 2em;
+        }
+
+        #reception_call_form label{
+            width: 100px;
+            float: left;
+        }
+
+        #personal_manager {
+            margin-left: 2em;
+        }
+
+        div#operation-status {
+            border-radius: 5px 5px 0 0;
+            background-color: #aaec92;
+            padding: 3px;
+            text-align: left;
+        }
+
+        div.crm-main {
+            width: 1000px;
+        }
+    </style>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% MEDIA_URL "js/jquery-1.8.0.min.js" %}"></script>
+<script type="text/javascript" src="{% MEDIA_URL "js/knockout-2.1.0.js" %}"></script>
+<script type="text/javascript">
+{% inlinecoffeescript %}
+class FinDptCall
+    constructor: ()->
+        @name = ko.observable()
+        @description = ko.observable()
+        @can_submit = ko.computed(
+            () =>
+                if (@name()? and @name() isnt '') and (@description()? and @description() isnt '')
+                    return true
+                else
+                    return false
+        )
+$ ->
+    viewPort = new FinDptCall()
+    ko.applyBindings(viewPort)
+{% endinlinecoffeescript %}
+</script>
+{% endblock %}
+{% block main %}
+<div class="crm-main">
+    <div id="operation-status"></div>
+    <form method="post" id="reception_call_form">{% csrf_token %}
+        <p>
+            <label for="name">ФИО *: </label><input type="text" id="name" name="name" size="30" data-bind="value: name">
+        </p>
+        <p>
+            <label for="account">Номер счёта: </label><input type="text" id="account" name="account">
+        </p>
+        <p>
+            <label for="description">Описание *: </label><textarea id="description" name="description" cols="45" rows="5"  data-bind="value: description"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Сохранить" data-bind="enable: can_submit">
+        </p>
+        <p>Поля с * обязательны к заполнению.</p>
+    </form>
+</div>
+{% endblock %}
+{% block external_analytics %}{% endblock %}

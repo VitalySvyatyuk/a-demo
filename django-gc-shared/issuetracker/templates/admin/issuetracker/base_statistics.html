@@ -1,0 +1,21 @@
+{% extends "admin/base.html" %}
+{% load staticfiles i18n %}
+
+{% block extrastyle %}
+    <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/gcapital-ui/1.10.4/jquery-ui-1.10.4.custom.min.css' %}"/>
+{% endblock %}
+
+{% block extrahead %}
+    <!-- angular scripts -->
+    <script src="{% static 'angular/angular.min.js' %}"></script>
+    <script src="{% static 'angular-route/angular-route.min.js' %}"></script>
+
+    <script src="{% static 'js/dashboard_statistics.js' %}"></script>
+    <script src="{% static 'js/jquery-1.8.0.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui-1.10.4.custom.min.js' %}"></script>
+    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+{% endblock %}
+
+{% block title %} {% trans "Request processing stats" %} {% endblock %}
+{% block branding %} <h1>{% trans "Request processing stats" %}</h1> {% endblock %}

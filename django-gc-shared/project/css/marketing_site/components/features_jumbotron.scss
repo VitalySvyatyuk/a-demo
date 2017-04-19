@@ -1,0 +1,160 @@
+.features_jumbotron{
+	padding: 44px 0;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	.container{
+		@media (#{$max_ipad}){
+			text-align: center;
+		}
+	}
+	@media (#{$max_ipad}){
+		padding-top: 54px;
+	}
+}
+.features_jumbotron__item_box{
+	@media (#{$max_ipad}){
+		float: none;
+		display: inline-block;
+
+		width: auto;
+
+		text-align: left;
+
+		// margin-bottom: 45px;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
+.features_jumbotron__item{
+	@include clear_link;
+
+	display: block;
+	position: relative;
+	overflow: hidden;
+
+	height: 160px;
+
+	//border: 1px solid transparent;
+
+	color: white;
+
+	&:hover, &:focus, &:active, &:visited {
+		//border-color: white;
+		color: white;
+	}
+
+	position: relative;
+
+	&:before{
+		content: "";
+		position: absolute;
+		left: 33px;
+		bottom: 0;
+		top: 0;
+		margin: auto;
+
+		@media (#{$max_tablets--landscape}){
+			position: static;
+			display: block;
+			margin: 0 0 40px;
+		}
+		@media (#{$max_ipad}){
+			// float: left;
+			margin: 0 20px 0 0;
+			width: 52px !important;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&--grow-icon:before{
+		width: 56px;
+		height: 49px;
+
+		background: url(#{$icons_path}i--grow.svg) no-repeat center / 98% auto;
+	}
+	&--trend-icon:before{
+		width: 56px;
+		height: 34px;
+
+		background: url(#{$icons_path}i--trend.png) no-repeat center / auto 98%;
+	}
+	&--view-icon:before{
+		width: 41px;
+		height: 41px;
+
+		background: url(#{$icons_path}i--view.svg) no-repeat center / auto 98%;
+	}
+
+	&--desk-icon:before{
+		width: 60px;
+		height: 64px;
+
+		background: url(#{$icons_path}i--desk.svg) no-repeat center / auto 98%;
+
+		@media (#{$max_tablets--landscape}){
+			background: url(#{$icons_path}i--desk.svg) no-repeat left top/auto 80%;
+		}
+	}
+	&--io-icon:before{
+		width: 40px;
+		height: 69px;
+
+		background: url(#{$icons_path}i--io.svg) no-repeat center / auto 98%;
+
+		@media (#{$max_tablets--landscape}){
+			background: url(#{$icons_path}i--io.svg) no-repeat left top / auto 80%;
+		}
+	}
+	&--phone-icon:before{
+		width: 52px;
+		height: 52px;
+
+		background: url(#{$icons_path}i--phone.svg) no-repeat center / 98% auto;
+
+		@media (#{$max_tablets--landscape}){
+			background: url(#{$icons_path}i--phone.svg) no-repeat left top / 80% auto;
+		}
+	}
+
+	@media (#{$max_tablets--landscape}){
+		height: 125px;
+	}
+	@media (#{$max_ipad}){
+		width: 290px;
+		padding-top: 3px;
+		// height: 66px;
+	}
+}
+
+.features_jumbotron__item__text{
+	position: absolute;
+	left: 111px;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+
+	margin: auto;
+
+	font-size: (22em/16);
+	font-weight: 500;
+
+	@media (#{$max_tablets--landscape}){
+		left: 0;
+		top: auto;
+		transform: none;
+		bottom: 0;
+	}
+	@media (#{$max_ipad}){
+		position: static;
+		float: left;
+		transform: translateY(-4px);
+		padding-left: 70px;
+	}
+}

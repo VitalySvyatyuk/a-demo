@@ -1,0 +1,9 @@
+{% extends "admin/app_index.html" %}
+
+{% load i18n %}
+
+{% block sidebar %} {{ block.super }}
+    <form action="{% url 'dashboard_statistics' %}">
+        <input type="submit" value="{% trans "Vies statistics" %}">
+    </form>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'admin/change_form.html' %}
+
+{% block object-tools-items %}{{ block.super }}
+    {% if request.user.is_superuser and object_id %}
+        <li><a href="{% url "login_as_user_id" object_id %}">Login as user</a></li>
+    {% endif %}
+{% endblock %}

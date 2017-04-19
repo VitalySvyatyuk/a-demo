@@ -1,0 +1,79 @@
+{% extends "private_office/base.html" %}
+
+{% load i18n app_tags profiles_tags %}
+
+{% block css %}{{ block.super }}
+    <style>
+        .label {
+            float: left;
+        }
+
+        .status {
+            float: left;
+            margin-left: .5em;
+        }
+
+        .sprite {
+            margin-top: -3px;
+        }
+    </style>
+{% endblock %}
+
+{% block extrahead %}
+    {{ block.super }}
+    {{ form.media.css }}
+{% endblock %}
+
+{% block scripts %}{{ block.super }}
+    {{ form.media.js }}
+    <script type="text/javascript" src="{% url "django.views.i18n.javascript_catalog" %}"></script>
+    <script type="text/javascript">
+        $("input.datepicker").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "1900:2020"
+        });
+        $("a#phone_confirm").click(function (e) {
+            e.preventDefault();
+            var form = $("#profile-form");
+
+            form.attr("action", this.href);
+            form.submit();
+        });
+    </script>
+
+    {% if user.profile.auth_scheme == "sms" %}
+        <script type="text/javascript">
+            $(function(){
+                $("#id_phone_mobile_1, #id_phone_mobile_0").attr("disabled", "disabled");
+            });
+        </script>
+    {% endif %}
+
+    <script type="text/javascript">
+        var CITY_AUTOCOMPLETE_URL = "{% url "geobase_autocomplete_city" 10 %}";
+        var REGION_AUTOCOMPLETE_URL = "{% url "geobase_autocomplete_region" %}";
+    </script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/geobase-autocomplete.js"></script>
+{% endblock %}
+
+{% block title %}{{ block.super }} - {% trans "My profile" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Edit your profile" %}</h1>
+    <div class="container">
+        <form method="POST" id="profile-form" action="." enctype="multipart/form-data">
+            {% include "profiles/edit_profile_form.html" %}
+            {% gcbutton "submit" _("Save") "black" %}
+        </form>
+        {% if request.user == user %}
+            {% url "profiles_upload_document" as profiles_upload_document_url %}
+            {% blocktrans %}
+                <p>To verify your information, you can
+                    <a href="{{ profiles_upload_document_url }}">upload a copy of your document</a></p>
+            {% endblocktrans %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,1587 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-15 17:40+0300\n"
+"PO-Revision-Date: 2017-01-18 15:55+0230\n"
+"Last-Translator: Vasily Alexeev <va@uptrader.us>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+msgid "Personal"
+msgstr "Личные данные"
+
+msgid "Location"
+msgstr "Местоположение"
+
+msgid "Other"
+msgstr "Другое"
+
+msgid "Contacts"
+msgstr "Контакты"
+
+msgid "ARUM financial information"
+msgstr "Финансовая информаци для ARUM'a"
+
+msgid "Type of your activity"
+msgstr "Вид деятельности"
+
+msgid "Trading experience"
+msgstr "Опыт торговли"
+
+msgid "First name"
+msgstr "Имя"
+
+#, fuzzy
+#| msgid "username"
+msgid "Surname"
+msgstr "Ник на форуме"
+
+#, fuzzy
+#| msgid "E-mail"
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Unsupported file extension"
+msgstr "Неподдерживаемое расширение"
+
+msgid "File is too big."
+msgstr "Файл слишком большой"
+
+#, python-format
+msgid "Supported extensions: %(ext)s. Filesize limit: %(limit)s Mb"
+msgstr "Поддерживаемые расширения: %(ext)s. Макс. объем файла: %(limit)s МБ"
+
+msgid "Forum username"
+msgstr "Ник на форуме"
+
+msgid "Your username on the forum, only english letters, numbers or underscores allowed"
+msgstr "Ваш ник на форуме, можно вводить только английские буквы, цифры и некоторые символы"
+
+msgid "Last name"
+msgstr "Фамилия"
+
+msgid "Middle name"
+msgstr "Отчество"
+
+msgid "e-mail address"
+msgstr "E-mail"
+
+msgid "ICQ"
+msgstr "ICQ"
+
+msgid "Enter a valid ICQ number."
+msgstr "Введите корректный номер ICQ"
+
+msgid "Example: 629301132"
+msgstr "Например: 629301132"
+
+msgid "Skype"
+msgstr "Skype"
+
+msgid "Enter a valid Skype account."
+msgstr "Введите корректный номер Skype"
+
+msgid "Example: gc_clients"
+msgstr "Например: gc_clients"
+
+msgid "Birthday"
+msgstr "Дата рождения"
+
+msgid "Example: 28.12.1987"
+msgstr "Например: 28.12.1987"
+
+msgid "Country"
+msgstr "Страна"
+
+msgid "You will receive the subscriptions                you select to your e-mail and via text messages on your phone"
+msgstr "Выбранный тип рассылки будет приходить в виде e-mail и SMS."
+
+msgid "Illegal symbols"
+msgstr "Недопустимые символы"
+
+msgid "This username already exists"
+msgstr "Такой ник уже зарегистрирован"
+
+msgid "Email you provided is already registered in our system."
+msgstr "Адрес электронной почты, который вы указали, уже используется."
+
+msgid "E-mail address"
+msgstr "E-mail"
+
+msgid "Account activation link will         be sent to this e-mail address."
+msgstr "Ссылка на активацию учётной записи будет отправлена на этот адрес электронной почты."
+
+msgid "Wrong password"
+msgstr "Неверный пароль"
+
+msgid "over 100 000"
+msgstr "свыше 100 000"
+
+msgid "below 10 000"
+msgstr "менее 10 000"
+
+msgid "Less than 20%"
+msgstr "Менее 20%"
+
+msgid "Over 80%"
+msgstr "Более 80%"
+
+msgid "Daily"
+msgstr "Ежедневно"
+
+msgid "Weekly"
+msgstr "Еженедельно"
+
+msgid "Monthly"
+msgstr "Ежемесячно"
+
+msgid "Yearly"
+msgstr "Ежегодно"
+
+msgid "Less than 10 000"
+msgstr "Менее 10 000"
+
+msgid "Over 250 000"
+msgstr "Более 250 000"
+
+msgid "Employed"
+msgstr "Сотрудник"
+
+msgid "Unemployed"
+msgstr "Безработный"
+
+msgid "Self employed"
+msgstr "Предприниматель"
+
+msgid "Retired"
+msgstr "Пенсионер"
+
+msgid "Student"
+msgstr "Студент"
+
+msgid "Income from professional activity"
+msgstr "Доход от деятельности"
+
+msgid "Savings"
+msgstr "Накопления"
+
+msgid "Partner/ parent/ family"
+msgstr "Средства партнера/ родителей/ семьи"
+
+msgid "Investments/ Dividends"
+msgstr "Инвестиции/ Дивиденды"
+
+msgid "Borrowing"
+msgstr "Заемные средства"
+
+msgid "Pension"
+msgstr "Пенсия"
+
+msgid "Accountancy"
+msgstr "Финансы"
+
+msgid "Admin/ secretarial"
+msgstr "Административная"
+
+msgid "Specify"
+msgstr "Укажите"
+
+msgid "Agricultural"
+msgstr "Сельское хозяйство"
+
+msgid "Art"
+msgstr "Искусство"
+
+msgid "Financial/Banking"
+msgstr "Инвестиции/ Банки"
+
+msgid "Catering/Hospitality"
+msgstr "Питание / ресторация"
+
+msgid "Creative/Media"
+msgstr "Медиа"
+
+msgid "Educational"
+msgstr "Образование"
+
+msgid "Emergency"
+msgstr "Экстренные службы"
+
+msgid "Engineering"
+msgstr "Техника"
+
+msgid "Health/Medicine"
+msgstr "Медицина"
+
+msgid "IT"
+msgstr "Информационные технологии"
+
+msgid "Legal"
+msgstr "Право"
+
+msgid "Leisure/ Entertainment/ Tourism"
+msgstr "Туризм"
+
+msgid "Manufacturing"
+msgstr "Производство"
+
+msgid "Marketing/ Advertising/ PR"
+msgstr "Маркетинг/ реклама"
+
+msgid "Property"
+msgstr "Недвижимость"
+
+msgid "Sales"
+msgstr "Продажи"
+
+msgid "Social"
+msgstr "Социальные услуги"
+
+msgid "Telecom"
+msgstr "Телекоммуникации"
+
+msgid "Transport/ Logistics"
+msgstr "Транспорт/ Логистика"
+
+msgid "Investment"
+msgstr "Инвестирование"
+
+msgid "Hedging"
+msgstr "Хеджирование"
+
+msgid "Speculative trading"
+msgstr "Спекулятивная торговля"
+
+msgid "High school"
+msgstr "Среднее (полное) общее образование"
+
+msgid "College"
+msgstr "Среднее специальное образование"
+
+msgid "University"
+msgstr "Высшее образование"
+
+msgid "Example: Russia"
+msgstr "Например: Россия"
+
+msgid "City"
+msgstr "Город"
+
+msgid "The city where you live"
+msgstr "Город, в котором вы живете"
+
+msgid "State / Province"
+msgstr "Область"
+
+msgid "Residential address"
+msgstr "Адрес проживания"
+
+msgid "Example: pr. Stachek, 8A"
+msgstr "Например: пр. Стачек 8а"
+
+msgid "Home phone"
+msgstr "Домашний телефон"
+
+msgid "Example: 8-800-333-1003"
+msgstr "Например: +7 (812) 333-10-03"
+
+msgid "Work phone"
+msgstr "Рабочий телефон"
+
+msgid "Example: +7 (812) 300-81-96"
+msgstr "Например: +7 (812) 333-10-03"
+
+msgid "Mobile phone"
+msgstr "Мобильный телефон"
+
+msgid "Example: +7 (911) 200-19-55"
+msgstr "Например: +7 (812) 333-10-03"
+
+msgid "Avatar"
+msgstr "Фото"
+
+msgid "Your photo"
+msgstr "Ваше фото"
+
+msgid "Social security number"
+msgstr "Номер страхового полиса"
+
+msgid "TIN"
+msgstr "ИНН"
+
+msgid "Tax identification number"
+msgstr "Индивидуальный номер налогоплательщика"
+
+msgid "Assigned to manager at"
+msgstr ""
+
+msgid "Agent code"
+msgstr "Код агента"
+
+msgid "If you don't know what it is, leave empty"
+msgstr "Если вы не знаете, что это, оставьте поле пустым"
+
+msgid "Did user lose his OTP"
+msgstr "Клиент потерял OTP"
+
+msgid "Details"
+msgstr "Детали"
+
+msgid "Source"
+msgstr "Источник"
+
+msgid "Registered from"
+msgstr ""
+
+msgid "Last activity"
+msgstr ""
+
+msgid "Nationality"
+msgstr "Гражданство"
+
+msgid "Net capital (USD)"
+msgstr "Чистый капитал (USD)"
+
+msgid "Annual income (USD)"
+msgstr "Годовой доход (USD)"
+
+msgid "Tax residence"
+msgstr "Налоговое резиденство"
+
+msgid "US citizen"
+msgstr "Лицо под юрисдикцией США"
+
+msgid "Employment status"
+msgstr "Род занятости"
+
+msgid "Source of funds"
+msgstr "Источник средств"
+
+msgid "Nature of business"
+msgstr "Сфера деятельности"
+
+msgid "Monthly financial commitments"
+msgstr "Ежемесячные обязательства"
+
+msgid "Anticipated account turnover (USD)"
+msgstr "Предполагаемый оборот по счету (USD)"
+
+msgid "Purpose to open an Arum capital account"
+msgstr "Ваша цель открытия счета в Arum Capital"
+
+msgid "Level of education"
+msgstr "Образование"
+
+msgid "Can open ECN.Invest accounts"
+msgstr "Может открывать ECN.Invest аккаунты"
+
+msgid "Email is verified"
+msgstr ""
+
+msgid "User profile"
+msgstr "Профиль пользователя"
+
+msgid "User profiles"
+msgstr "Профили пользователей"
+
+msgid "Registration incomplete"
+msgstr "Регистрация не завершена"
+
+#, fuzzy
+#| msgid "Documents you uploaded"
+msgid "Documents have not been uploaded"
+msgstr "Документы не были отправлены"
+
+msgid "Pending approval"
+msgstr "На проверке"
+
+msgid "Approved"
+msgstr "Проверен"
+
+msgid "Parameter"
+msgstr "Параметр"
+
+msgid "Is the data valid?"
+msgstr "Данные верны?"
+
+msgid "Manager comment"
+msgstr "Коментарий менеджера"
+
+msgid "Proof of Identification"
+msgstr "Документ, удостоверяющий личность"
+
+msgid "Copy of your passport page with the registered residential address"
+msgstr "Копия страницы прописки"
+
+msgid "Proof of residential address"
+msgstr "Подтверждение адреса проживания"
+
+msgid "Driver license"
+msgstr "Водительское удостоверение"
+
+msgid "Certificate of birth"
+msgstr "Свидетельство о рождении"
+
+msgid "Credit card back side"
+msgstr "Обратная сторона кредитной карты"
+
+msgid "Credit card front side"
+msgstr "Лицевая сторона кредитной карты"
+
+msgid "Real IB agreement"
+msgstr "Партнерское соглашение"
+
+msgid "Other document"
+msgstr "Другой документ"
+
+msgid "Address"
+msgstr "Адрес"
+
+msgid "ID Number"
+msgstr "Серия, номер"
+
+msgid "Issue date"
+msgstr "Дата выдачи"
+
+msgid "Document name"
+msgstr "Название документа"
+
+msgid "Documents was rejected"
+msgstr "Документы были отклонены"
+
+msgid "Document description"
+msgstr "Описание документа"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Creation timestamp"
+msgstr "Время создания"
+
+msgid "Document fields"
+msgstr "Данные документа"
+
+msgid "Password successfully changed"
+msgstr "Пароль успешно изменён"
+
+msgid "Password successfully recovered"
+msgstr "Пароль успешно восстановлен"
+
+msgid "Cannot edit mobile phone number because it is binded for OTP"
+msgstr "Невозможно редактирование телефона, так как он привязан к OTP"
+
+msgid "Mobile phone you provided is already registered in our system."
+msgstr "Номер телефона, который вы указали, уже используется."
+
+msgid "Only persons of legal age can be the clients of ARUM CAPITAL"
+msgstr "Клиентами АРУМ КАПИТАЛ могут быть только лица, достигшие 18 лет"
+
+msgid "Cannot edit partner code"
+msgstr "Невозможно изменить код агента"
+
+msgid "Wrong partner code"
+msgstr "Неверный код агента"
+
+msgid "Only english letters, numbers or underscores allowed"
+msgstr "Используйте только английские буквы, цифры или подчеркивание"
+
+msgid "Please confirm Email"
+msgstr "Пожалуйста подтведите Email"
+
+msgid "History"
+msgstr "История"
+
+msgid "Reset OTP"
+msgstr "Сбросить OTP"
+
+msgid "View on site"
+msgstr "Посмотреть на сайте"
+
+msgid "Please correct the error below."
+msgid_plural ""
+"Please\n"
+"                            correct the errors below."
+msgstr[0] "Пожалуйста исправьте ошибки ниже."
+msgstr[1] "Пожалуйста исправьте ошибку ниже."
+msgstr[2] "Пожалуйста исправьте ошибки ниже."
+
+msgid "Upload a copy of the document confirming your personal information"
+msgstr "Загрузите копию документа, подтверждающую Ваши данные."
+
+msgid "Please upload documents which contain your name in Latin- or Cyrillic-based script."
+msgstr ""
+
+msgid "Choose file"
+msgstr "Выберите файл"
+
+msgid "Upload document"
+msgstr "Загрузить документ"
+
+msgid "Identity confirmed"
+msgstr "Личность подтверждена"
+
+msgid "You have uploaded"
+msgstr "Загруженные вами документы"
+
+msgid "Personal information"
+msgstr "Персональные данные"
+
+msgid "Your first name in English as it appears on your international passport and/or on your banking cards"
+msgstr "Ваше имя на английском языке как на заграничном паспорте (и/или) на пластиковых картах"
+
+msgid "Your last name in English as it appears on your international passport and/or on your banking cards"
+msgstr "Ваша фамилия на английском языке как на заграничном паспорте (и/или) на пластиковых картах"
+
+msgid "Your middle name in English if it is in your documents"
+msgstr "Ваше отчество на английском если оно указано в Ваших документах"
+
+msgid "Your desired login to access the site"
+msgstr "Ваш желаемый логин для входа на сайт"
+
+msgid "The country where you are tax resident and pay your taxes"
+msgstr "Страна, в которой Вы являетесь налоговым резидентом и платите налоги"
+
+msgid "Your tax identification number"
+msgstr "Ваш индивидуальный номер налогоплатильщика в стране, где Вы являетесь налоговым резидентом"
+
+msgid "Are you US citizen or US person for tax purposes?"
+msgstr "Являетесь ли Вы лицом под юрисдикцией США?"
+
+msgid "A US person for tax purposes is a natural person resident of the USA or a body corporate organized under the laws of the USA as per"
+msgstr "Лицо/субъект под юрисдикцией США, согласно определению налоговой службы США для"
+
+msgid "the definition of the IRS of the USA"
+msgstr "целей налогооблажения"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "Confirm email to start trading"
+msgstr "Подтвердите email для начала торгов"
+
+msgid "Use Security section to change phone number"
+msgstr "Используйте раздел Безопасность для изменения телефона"
+
+msgid "To confirm phone number, you should create OTP device in Security section"
+msgstr "Для подтверждения телефона, вы должны создать OTP-привязку в разделе Безопасность"
+
+msgid "Address information"
+msgstr "Адрес"
+
+msgid "Full mailing address including the postal code"
+msgstr "Полный почтовый адрес с указанием почтового индекса Вашего места жительства"
+
+msgid "Financial details"
+msgstr "Финансовая информация"
+
+msgid "Financial commitments are the obligation of the account applicant to make certain mandatory payments (including but not limited to loan installments, payments to the family dependents, etc.) over a monthly period. The ratio against the total wealth of the account applicant is to be indicated"
+msgstr "Финансовые обязательства – это обязательные платежи, которые потенциальный инвестор должен совершать ежемесячно (включая, но не ограничиваясь возвратом заемных средств, выплатами иждивенцам и прочие платежи)"
+
+msgid "Why do we need these details"
+msgstr "Почему нам нужна эта информация"
+
+msgid "As a regulated broker we are required to be in strict compliance with the Know Your Client and Anti-Money Laundering procedures. These measures ensure that you are expressly informed of the trading risks and an account in your name can be set up by yourself only."
+msgstr "От нас, как от регулируемого брокера, требуется строгое соблюдение протоколов \"Знай своего клиента\" и \"Противодействие отмыванию денег\". Эти меры предполагают, что вы полностью уведомлены о торговых рисках, и только вы можете открыть счёт на своё имя"
+
+msgid "The details you have provided are encrypted in 256-bit technology and shall not be disclosed to any third party under no circumstances."
+msgstr "Предоставленная вами информация шифруется по 256-битной технологии и не предоставляется третьим лицам ни при каких обстоятельствах."
+
+msgid "Indicate your knowledge and trading experience"
+msgstr "Укажите данные о Вашем опыте"
+
+msgid "FOREX/CFDs"
+msgstr "FOREX/CFDs"
+
+msgctxt "for Trading experience xp"
+msgid "Years of experience"
+msgstr "Опыт (период работы)"
+
+#, fuzzy
+#| msgctxt "choose option in select"
+#| msgid "Choose"
+msgid "Choose"
+msgstr "Пожалуйста, выберите"
+
+msgid "Less than 1 year"
+msgstr "Менее 1 года"
+
+msgid "1 to 5 years"
+msgstr "1 – 5 лет"
+
+msgid "Over 5 years"
+msgstr "Более 5 лет"
+
+msgid "Average volume of transaction per year (USD) select"
+msgstr "Средний размер одной сделки (USD)"
+
+msgid "Less than $10 000"
+msgstr "Менее 10 000"
+
+msgid "Over $250 000"
+msgstr "Более 250 000"
+
+msgid "Frequency of transactions select"
+msgstr "Как часто совершаете сделки?"
+
+msgctxt "for Trading experience select"
+msgid "Training received"
+msgstr "Знания"
+
+msgid "Seminar"
+msgstr "Семинар"
+
+msgid "Course"
+msgstr "Курсы"
+
+msgid "Self-trained"
+msgstr "Самостоятельное изучение"
+
+msgid "Degree holder"
+msgstr "Вуз"
+
+msgid "Derivative instruments (incl. options, futures, swaps, FRAs, etc.)"
+msgstr "Деривативы (вкл. опционы, фьючерсы, свопы и др.)"
+
+msgid "Transferable securities"
+msgstr "Ценные бумаги"
+
+msgid "Units of collective investment undertaking"
+msgstr "Доли инвестиционных фондов"
+
+msgid "I have attended a seminar or a course on Forex Trading"
+msgstr "Подтверждаю, что я прошел курс/ семинар по торговле"
+
+msgid "Have you ever traded Forex or CFDs?"
+msgstr "Занимались ли Вы когда-нибудь торговлей Forex или CFD? "
+
+msgid "I have previous work experience or relevant qualifications that help me understand the financial products and the risk involved. Forex and CFDs are acceptable for my risk appetite"
+msgstr "Подтверждаю, что у меня есть опыт работы и знания, необходимые для понимания финансовых инструментов и существующих рисков. Риски по продуктам Forex и CFD приемлемы для меня"
+
+msgid "Profile settings"
+msgstr "Настройки профиля"
+
+msgid "Documents"
+msgstr "Документы"
+
+msgid "Security"
+msgstr "Безопасность"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "You have completed your registration and now you can <a href='[[::BASE_URL]]create'>open a Demo Account</a>. In order to open Live Accounts you need to upload the documents for confirmation of the account."
+msgstr "Вы завершили регистрацию и можете <a href='[[::BASE_URL]]create'>открыть Демо счет</a>, но для работы на реальных счетов Вам необходимо загрузить документы для подтверждения аккаунта."
+
+msgid "Upload documents"
+msgstr "Загрузить документы"
+
+msgid "Proof of Identification (POI) – clear colour scanned copy of your <span style='font-weight:bold;'>International Passport</span>. If you do not hold an International Passport, you may provide one other form of valid government-issued identification document (ID card, Driving License). The POI should contain holder’s full name, photo and signature, date of birth, issue/expiry date and document number. In order to open a live trading account this document must be uploaded."
+msgstr "Документ, удостоверяющий личность – четкая цветная скан-копия Вашего <span style='font-weight:bold;'>загранпаспорта</span>. В случае его отсуствия просим предоставить другой удостоверяющий личность документ, выданный компетентными органами (удостоверение личности, водительское удостоверение). Документ должен содержать ФИО владельца, его фото, подпись, дату рождения, а также дату выдачи и срок действия документа, его номер. Данный документ необходим для открытия торгового счета."
+
+msgid "For citizens of the Russian Federation, Republic of Belarus, Ukraine, Armenia, Uzbekistan, Tajikistan, Turkmenistan the local passport page with the registered residential address can serve as a proof of residence, <span style='font-weight:bold;'>only in cases</span> where the presented POI document is a different than the local passport. In other words, one document cannot be accepted for multiple use."
+msgstr "Для граждан Российской Федерации, Республики Беларусь, Украины, Армении, Узбекистана, Таджикистана, Туркмении, внутренний паспорт с пропиской может служить подтверждением места жительства <span style='font-weight:bold;'>только в случае</span>, если он не служит для удостоверения личности. Иными словами, один документ подтверждает личность, другой – место жительства."
+
+msgid "Proof of Residential Address (POR) – clear coloured scanned copy of a recent utility bill, bank statement, local authority bill or any other official document stating your name and full address, as written in your online registration with ArumCapital. The POR issue date must be less than 6 months back."
+msgstr "Подтверждение места жительства – четкая цветная скан-копия счета за коммунальные услуги, выписки со счета в банке или другого документа, где будет указан Ваш адрес проживания и Ваше ФИО. Адрес должен совпадать с адресом, который Вы указали при регистрации в личном кабинете на нашем сайте. Дата такого документа не должна быть позднее 6 мес. "
+
+msgid "Send documents to verify"
+msgstr "Отправить документы на проверку"
+
+msgid "Go to account opening"
+msgstr "Перейти к открытию счета"
+
+msgid "You will be able to open a real accounts after your documents are verified. Now you can <a href='[[::BASE_URL]]create'>open Demo accounts only.</a>"
+msgstr "Вы сможете открыть и пополнить реальные счета после проверки Ваших документов, в данный момент Вы можете <a href='[[::BASE_URL]]create'>открывать только Демонстрационные счета</a>"
+
+msgid "You have completed fast registration and can <a href='[[::BASE_URL]]create'>open a Demo Account</a>. In order to open Live Accounts you are kindly requested to complete registration and upload the documents."
+msgstr "Вы прошли быструю регистрацию и можете <a href='[[::BASE_URL]]create'>открыть Демо счет</a>, но для открытия реальных счетов Вам необходимо завершить регистрацию и загрузить документы."
+
+msgid "Attention! Before you proceed, you need to confirm your e-mail. For you sent a message with a link to activate."
+msgstr "Внимание! Перед продолжением регистрации. Вам необходимо подтвердить Ваш e-mail. Вам отправлено сообщение со ссылкой активации."
+
+msgid "* Mandatory fields"
+msgstr "* Поля обязательные для заполнения"
+
+msgid "I have previous work experience or relevant qualifications that help me understand the financial products and the risk involved. Forex and CFDs are acceptable for my risk appetite."
+msgstr "Подтверждаю, что у меня есть опыт работы и знания, необходимые для понимания финансовых инструментов и существующих рисков. Риски по продуктам Forex и CFD приемлемы для меня"
+
+msgid "I hereby declare that I have carefully read and understood"
+msgstr "Я заявляю, что внимательно прочитал, полностью понимаю и принимаю"
+
+msgctxt "super-and"
+msgid "and"
+msgstr "и"
+
+msgid "Legal Documentation"
+msgstr "Юридическую информацию"
+
+msgid "with which I fully agree."
+msgstr ", с которыми полностью согласен."
+
+msgid "Complete registration"
+msgstr "Завершение регистрации"
+
+msgid "Please correct the errors above."
+msgstr "Пожалуйста исправьте ошибки выше."
+
+msgid "Security settings"
+msgstr "Настройки безопасности"
+
+msgid "You have no OTP device."
+msgstr "У вас нет OTP-привязки"
+
+msgid "Currently you use SMS with phone"
+msgstr "В данный момент вы используете SMS на телефон"
+
+msgid "Currently you use mobile application"
+msgstr "В данный момент вы используете мобильное приложение"
+
+msgid "Change device"
+msgstr "Изменить привязку"
+
+msgid "Password change"
+msgstr "Смена пароля"
+
+msgid "Old password"
+msgstr "Старый пароль"
+
+msgid "New password"
+msgstr "Новый пароль"
+
+msgid "Confirm password"
+msgstr "Подтверждение"
+
+msgid "Password confirmation doesn't match new password"
+msgstr "Подтверждение пароля не совпадает с новым паролем"
+
+msgid "Why should I set up security settings?"
+msgstr "Зачем нужно устанавливать настройки безопасности?"
+
+msgid ""
+"\n"
+"        <p class=\"offset-bottom-20\">\n"
+"            The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+"        </p>\n"
+"        <ul class=\"ul-dashed offset-bottom-20\">\n"
+"            <li>Editing profile data</li>\n"
+"            <li>Creating or editing withdraw details</li>\n"
+"            <li>Funds withdrawal</li>\n"
+"            <li>Internal transfer</li>\n"
+"            <li>Real account leverage change</li>\n"
+"            <li>Real account password change</li>\n"
+"        </ul>\n"
+"        <p>\n"
+"            The authentication code will help verify that it is really you who request the operation\n"
+"            and your account was not stolen. This will help to protect you from money theft.\n"
+"            The authentication code is generated by a special mobile app or\n"
+"            is sent to your mobile phone via text message (SMS).\n"
+"        </p>\n"
+"    "
+msgstr ""
+"\n"
+"<p class=\"offset-bottom-20\">Если Вы совершите одно из ниже перечисленных действий, будет запрошен код доступа, который позволит определить, что действие производится именно Вами:</p>\n"
+"        <ul class=\"ul-dashed offset-bottom-20\">\n"
+"            <li>Изменение данных в профиле</li>\n"
+"            <li>Создание / изменение / удаление реквизитов для вывода</li>\n"
+"            <li>Создание заявок на вывод средств</li>\n"
+"            <li>Внутренний перевод</li>\n"
+"            <li>Смена плеча реального счёта</li>\n"
+"            <li>Смена пароля реального счёта</li>\n"
+"        </ul>\n"
+"<p>\n"
+"Это сделано для того, чтобы обезопасить Вас от несанкционированных взломов личного кабинета с последующим выводом денег. \n"
+"Код доступа генерируется через специальное приложение для мобильных устройств, либо будет выслан посредством SMS.\n"
+"</p>"
+
+msgid "in 5 minutes"
+msgstr "5 минут"
+
+msgid "Account confirmation"
+msgstr "Подтверждение аккаунта"
+
+msgid "Up to 1 day"
+msgstr "до 1 дня"
+
+msgid "Start work"
+msgstr "Начало работы"
+
+msgid "on live accounts"
+msgstr "на реальных счетах"
+
+msgid "Select active subscriptions:"
+msgstr "Выберите активные подписки"
+
+msgid "Account statements"
+msgstr "Стейтменты по торговым счетам"
+
+msgid "Your password has been changed successfully"
+msgstr "Ваш пароль успешно изменен!"
+
+msgid ""
+"\n"
+"    <p>Your password has been changed.</p>\n"
+"    "
+msgstr ""
+"\n"
+"<p>Ваш пароль был изменен.</p>"
+
+msgid "Edit profile e-mail"
+msgstr "Редактировать e-mail"
+
+msgid "Edit your e-mail"
+msgstr "Редактировать e-mail"
+
+msgid "Send verification code"
+msgstr "Отправить код подтверждения"
+
+msgid "My profile"
+msgstr "Мой профиль"
+
+msgid "Edit your profile"
+msgstr "Редактировать свой профиль"
+
+#, python-format
+msgid ""
+"\n"
+"                <p>To verify your information, you can\n"
+"                    <a href=\"%(profiles_upload_document_url)s\">upload a copy of your document</a></p>\n"
+"            "
+msgstr ""
+"\n"
+"<p>Для уточнения предоставленной информации, Вы можете\n"
+" <a href=\"%(profiles_upload_document_url)s\">загрузить копию документа</a></p>"
+
+msgid "Confirm your mobile phone number"
+msgstr "Подтвердите номер своего мобильного телефона"
+
+msgid "Confirm"
+msgstr "Подтвердить"
+
+#, python-format
+msgid ""
+"\n"
+"            To change your phone number - follow this <a href=\"%(link)s\">link</a>\n"
+"        "
+msgstr ""
+"\n"
+"Для смены номера телефона пройдите по <a href=\"%(link)s\">ссылке</a>"
+
+msgid "Click <strong>Check</strong> to confirm your mobile phone number"
+msgstr "Нажмите <strong>Подтвердить</strong> чтобы подтвердить номер своего мобильного телефона"
+
+msgid "My manager"
+msgstr "Мой менеджер"
+
+msgid "My personal broker"
+msgstr "Мой персональный брокер"
+
+msgid "No photo available"
+msgstr "Нет фото"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Work Phone"
+msgstr "Рабочий телефон"
+
+msgid "You can get contacts of the manager after you deposit at least $100 to your account."
+msgstr "Возможность доступа к контактным данным менеджера будет открыта после пополнения счёта на сумму не менее 100 USD"
+
+msgid "Ask a question"
+msgstr "Задать вопрос"
+
+msgid "Our contact information:"
+msgstr "Наши контакты:"
+
+msgid "Phone: 8-800-333-1003 (free accross Russia)"
+msgstr "Телефон: 8-800-333-1003 (бесплатный по России)"
+
+msgid "E-mail: eng@grandcapital.net"
+msgstr "E-mail: info@grandcapital.net"
+
+msgid "Skype:  gc_clients"
+msgstr "Skype: gc_clients"
+
+msgid "ICQ:  629301132"
+msgstr "ICQ: 629301132"
+
+msgid "Edit profile"
+msgstr "Редактировать профиль"
+
+msgid "State"
+msgstr "Регион"
+
+msgid "Home Phone"
+msgstr "Домашний телефон"
+
+msgid "Mobile Phone"
+msgstr "Мобильный телефон"
+
+msgid "Documents you uploaded"
+msgstr "Загруженные вами документы"
+
+msgid "Account id"
+msgstr "Номер счета"
+
+msgid "Account type"
+msgstr "Тип счета"
+
+msgid "Complete your profile!"
+msgstr "Заполните свой профиль!"
+
+msgid "Verify your e-mail"
+msgstr "Подтвердите e-mail"
+
+msgid "Verify phone number"
+msgstr "Подтвердите телефон"
+
+msgid "Upload a scan of ID"
+msgstr "Загрузите документ"
+
+msgid "Specify your address"
+msgstr "Укажите ваш адрес"
+
+#, python-format
+msgid ""
+"To verify your email address, please follow the link you received when you registered. If you\n"
+"mistyped your email address or didn't receive an activation email, please check if your email is correct\n"
+"<a href=\"%(edit_email_url)s\">here</a> and click \"Save\" to receive another activation email."
+msgstr "Чтобы подтвердить ваш адрес электронной почты, пожалуйста, пройдите по ссылке, которую вы получили при регистрации. Если вы неправильно указали свой e-mail или вам не пришло письмо со ссылкой, пожалуйста, проверьте <a href=\"%(edit_email_url)s\">здесь</a>, что ваш адрес электронной почты указан верно и нажмите \"Сохранить\", чтобы получить новое письмо активации."
+
+msgid "Edit your subscription"
+msgstr "Управление подпиской"
+
+msgid "Upload avatar"
+msgstr "Загрузка аватара"
+
+msgid "Upload copy a document that confirms your date of birth"
+msgstr "Загрузите копию документа, подтверждающую Ваши данные."
+
+#, fuzzy
+#| msgid "This username already exists"
+msgid "This document is already verified"
+msgstr "Такой ник уже зарегистрирован"
+
+msgid "Close"
+msgstr ""
+
+#, fuzzy
+#| msgid "Document description"
+msgid "Field description"
+msgstr "Описание документа"
+
+msgid "Main data"
+msgstr ""
+
+msgid "Questionnaire data"
+msgstr ""
+
+#, fuzzy
+#| msgid "Net capital (USD)"
+msgid "Net Capital"
+msgstr "Чистый капитал (USD)"
+
+#, fuzzy
+#| msgid "Annual income (USD)"
+msgid "Annual Income"
+msgstr "Годовой доход (USD)"
+
+#, fuzzy
+#| msgid "Tax residence"
+msgid "Tax Residence"
+msgstr "Налоговое резиденство"
+
+#, fuzzy
+#| msgid "US citizen"
+msgid "US Citizen"
+msgstr "Лицо под юрисдикцией США"
+
+#, fuzzy
+#| msgid "Employment status"
+msgid "Employment Status"
+msgstr "Род занятости"
+
+#, fuzzy
+#| msgid "Source"
+msgid "Income Source"
+msgstr "Источник"
+
+#, fuzzy
+#| msgid "Monthly financial commitments"
+msgid "Finanacial Commitments"
+msgstr "Ежемесячные обязательства"
+
+msgid "Acc turnover"
+msgstr ""
+
+msgid "Purpose"
+msgstr ""
+
+msgid "Edu level"
+msgstr ""
+
+#, fuzzy
+#| msgid "Units of collective investment undertaking"
+msgid "investment_undertaking"
+msgstr "Доли инвестиционных фондов"
+
+#, fuzzy
+#| msgid "Transferable securities"
+msgid "transferable_securities"
+msgstr "Ценные бумаги"
+
+msgid "derivative_instruments"
+msgstr ""
+
+msgid "forex_instruments"
+msgstr ""
+
+#, fuzzy
+#| msgid "Documents"
+msgid "Document"
+msgstr "Документы"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Open in full resolution"
+msgstr ""
+
+#, fuzzy
+#| msgid "Approved"
+msgid "Approve"
+msgstr "Проверен"
+
+#, fuzzy
+#| msgid "Manager comment"
+msgid "Reject comment"
+msgstr "Коментарий менеджера"
+
+msgid "Reject"
+msgstr ""
+
+msgid "Please use latin-based characters only"
+msgstr "Только на английском, используйте латиницу"
+
+#, python-format
+msgid "Successfully uploaded document %s"
+msgstr "Успешно загружен документ %s"
+
+msgid "Avatar was uploaded successfully"
+msgstr "Аватар был успешно загружен"
+
+msgid "You can not change e-mail address more than once every fifteen minutes."
+msgstr "Вы не можете менять адрес электронной почты чаще, чем раз в 15 минут."
+
+msgid "E-mail you provided is already registered in our system."
+msgstr "Адрес электронной почты, который вы указали, уже используется."
+
+msgid "Your e-mail successfully updated"
+msgstr "Ваш адрес электронной почты был успешно изменён"
+
+#~ msgid "Trading experience FOREX/CFDs"
+#~ msgstr "Опыт торговли на FOREX/CFDs"
+
+#~ msgid "Frequency of transactions"
+#~ msgstr "Как часто совершаете сделки?"
+
+#~ msgid "Average volume of a transactions (USD)"
+#~ msgstr "Средний размер одной сделки (USD)"
+
+#~ msgid "For how many years did you trade Forex/CFDs?"
+#~ msgstr "Сколько лет Вы занимались торговлей Forex или CFD?"
+
+#~ msgid "Forex and CFDs are acceptable for my risk appetite"
+#~ msgstr "Риски по продуктам Forex и CFD приемлемы"
+
+#~ msgid "I hereby declare that I have read carefully and fully agree with the terms and conditions of the"
+#~ msgstr ""
+#~ "Я заявляю, что внимательно прочитал и полностью понимаю, принимаю и\n"
+#~ "соглашаюсь со следующими соглашениями:"
+
+#, fuzzy
+#~| msgid "Frequency of transactions"
+#~ msgid "Freq of transacs"
+#~ msgstr "Как часто совершаете сделки?"
+
+#, fuzzy
+#~| msgid "Educational"
+#~ msgid "FX education"
+#~ msgstr "Образование"
+
+#, fuzzy
+#~| msgid "Trading experience"
+#~ msgid "FX experience"
+#~ msgstr "Опыт торговли"
+
+#~ msgid "In order to open a live trading account you are kindly required to provide us with a scanned copy of your national or international passport with your photo and issue date, a driving license or your national ID"
+#~ msgstr "Для открытия торгового счёта от вас требуется предоставить нам изображение разворота национального или международного паспорта с фотографией и датой выдачи, водительских прав или национального удостоверения личности (ID)."
+
+#~ msgid "Kindly provide a copy of your recent utility bill, a bank statement with the bank common stamp and a signature of a bank officer."
+#~ msgstr "Пожалуйста, предоставьте копию недавнего счёта за коммунальные услуги, выписку из банковского счёта с печатью банка и подписью сотрудника."
+
+#, fuzzy
+#~| msgid "Degree holder"
+#~ msgid "Degree holder FOREX/CFDs"
+#~ msgstr "Вуз"
+
+#~ msgctxt "Trading experience select"
+#~ msgid "Years of experience"
+#~ msgstr "Опыт (период работы)"
+
+#~ msgctxt "Trading experience select"
+#~ msgid "Training received"
+#~ msgstr "Знания"
+
+#, fuzzy
+#~| msgid "Yes"
+#~ msgctxt "Trading experience select"
+#~ msgid "Yes"
+#~ msgstr "Да"
+
+#, fuzzy
+#~| msgid "Social security number"
+#~ msgid "Social Security"
+#~ msgstr "Номер страхового полиса"
+
+#~ msgid "First name in Russian"
+#~ msgstr "Имя на русском"
+
+#~ msgid "Last name in Russian"
+#~ msgstr "Фамилия на русском"
+
+#~ msgid "Middle name in Russian"
+#~ msgstr "Отчество на русском"
+
+#, fuzzy
+#~| msgid "Trading experience"
+#~ msgid "Derivatives experience"
+#~ msgstr "Опыт торговли"
+
+#, fuzzy
+#~| msgid "Trading experience"
+#~ msgid "Financial experience"
+#~ msgstr "Опыт торговли"
+
+#~ msgid "FOREX, CFD and other instruments"
+#~ msgstr "Форекс, CFD и Другие Инструменты"
+
+#~ msgid "Derivatives are used as a part of my investment purposes and are acceptable for my risk appetite. I accept all the risks involved in trading in these instruments including the risk of losing my entire capital"
+#~ msgstr "Деривативы используются как часть моих инвестиционных целей и приемлемы для меня в отношении рисков. Я понимаю все риски, связанные с торговлей ими, включая возможность потерять весь свой капитал"
+
+#~ msgid "I have the necessary professional background and/or experience in financial field."
+#~ msgstr "Я обладаю профессиональными знаниями и / или имею опыт работы в финансовой сфере"
+
+#~ msgid "Client Agreement"
+#~ msgstr "Клиентское соглашение"
+
+#~ msgid "Identity document"
+#~ msgstr "Скан паспорта"
+
+#~ msgid "General information"
+#~ msgstr "Персональные данные"
+
+#~ msgid "Account verification"
+#~ msgstr "Номер счета"
+
+#~ msgid "Send"
+#~ msgstr "Отправить"
+
+#~ msgid ""
+#~ "\n"
+#~ "                    <p class=\"offset-bottom-20\">\n"
+#~ "                        The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+#~ "                    </p>\n"
+#~ "                    <ul class=\"ul-dashed offset-bottom-20\">\n"
+#~ "                        <li>Editing profile data</li>\n"
+#~ "                        <li>Creating or editing withdraw details</li>\n"
+#~ "                        <li>Funds withdrawal</li>\n"
+#~ "                        <li>Internal transfer</li>\n"
+#~ "                        <li>Real account leverage change</li>\n"
+#~ "                        <li>Real account password change</li>\n"
+#~ "                    </ul>\n"
+#~ "                    <p>\n"
+#~ "                        The authentication code will help verify that it is really you who request the operation\n"
+#~ "                        and your account was not stolen. This will help to protect you from money theft.\n"
+#~ "                        The authentication code is generated by a special mobile app or\n"
+#~ "                        is sent to your mobile phone via text message (SMS).\n"
+#~ "                    </p>\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "<p class=\"offset-bottom-20\">Если Вы совершите одно из ниже перечисленных действий, будет запрошен код доступа, который позволит определить, что действие производится именно Вами:</p>\n"
+#~ "        <ul class=\"ul-dashed offset-bottom-20\">\n"
+#~ "            <li>Изменение данных в профиле</li>\n"
+#~ "            <li>Создание / изменение / удаление реквизитов для вывода</li>\n"
+#~ "            <li>Создание заявок на вывод средств</li>\n"
+#~ "            <li>Внутренний перевод</li>\n"
+#~ "            <li>Смена плеча реального счёта</li>\n"
+#~ "            <li>Смена пароля реального счёта</li>\n"
+#~ "        </ul>\n"
+#~ "<p>\n"
+#~ "Это сделано для того, чтобы обезопасить Вас от несанкционированных взломов личного кабинета с последующим выводом денег. \n"
+#~ "Код доступа генерируется через специальное приложение для мобильных устройств, либо будет выслан посредством SMS.\n"
+#~ "</p>"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                To change your phone number - follow this <a href=\"%(link)s\">link</a>\n"
+#~ "                            "
+#~ msgstr ""
+#~ "\n"
+#~ "Для смены номера телефона пройдите по <a href=\"%(link)s\">ссылке</a>"
+
+#~ msgid "Taken by manager at"
+#~ msgstr "Мой менеджер"
+
+#~ msgid "Ask authorization on login"
+#~ msgstr "Запрашивать OTP при входе в ЛК"
+
+#~ msgid "You will receive only those         newsletter types you choose here."
+#~ msgstr "Вы будете получать только выбранные типы рассылки"
+
+#~ msgid "Your subscription successfully updated"
+#~ msgstr "Ваша подписка была успешно обновлена"
+
+#~ msgid "Reviewer comment: \"{}\""
+#~ msgstr "Комментарий проверявшего: \"{}\""
+
+#~ msgid "Client's documents didn't go through, Welcome-accounts are blocked ({}) {}"
+#~ msgstr "Документы клиента не прошли проверку, Welcome-счета заблокированы ({}) {}"
+
+#~ msgid "Client's documents didn't go through ({}) {}"
+#~ msgstr "Документы клиента не прошли проверку ({}) {}"
+
+#~ msgid "FX+ agreement"
+#~ msgstr "Скан соглашения FX+"
+
+#~ msgid "Subscriptions"
+#~ msgstr "Подписки"
+
+#~ msgid ""
+#~ "\n"
+#~ "      The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "Если Вы совершите одно из ниже перечисленных действий, будет запрошен код доступа, который позволит определить, что действие производится именно Вами:"
+
+#~ msgid ""
+#~ "\n"
+#~ "      The authentication code will help verify that it is really you who request the operation\n"
+#~ "      and your account was not stolen. This will help to protect you from money theft.\n"
+#~ "      The authentication code is generated by a special mobile app or\n"
+#~ "      is sent to your mobile phone via text message (SMS).\n"
+#~ "       "
+#~ msgstr ""
+#~ "\n"
+#~ "Это сделано для того, чтобы обезопасить Вас от несанкционированных взломов личного кабинета с последующим выводом денег.\n"
+#~ "Код доступа генерируется через специальное приложение для мобильных устройств, либо будет выслан посредством SMS"
+
+#~ msgid ""
+#~ "\n"
+#~ "                        The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+#~ "                        "
+#~ msgstr ""
+#~ "\n"
+#~ "Если Вы совершите одно из ниже перечисленных действий, будет запрошен код доступа, который позволит определить, что действие производится именно Вами:"
+
+#~ msgid ""
+#~ "\n"
+#~ "                        The authentication code will help verify that it is really you who request the operation\n"
+#~ "                        and your account was not stolen. This will help to protect you from money theft.\n"
+#~ "                        The authentication code is generated by a special mobile app or\n"
+#~ "                        is sent to your mobile phone via text message (SMS).\n"
+#~ "                       "
+#~ msgstr ""
+#~ "\n"
+#~ "Это сделано для того, чтобы обезопасить Вас от несанкционированных взломов личного кабинета с последующим выводом денег.\n"
+#~ "Код доступа генерируется через специальное приложение для мобильных устройств, либо будет выслан посредством SMS."
+
+#~ msgid "Phone"
+#~ msgstr "Рабочий телефон"
+
+#~ msgid "Write a message"
+#~ msgstr "Новое сообщение"
+
+#~ msgid "Example: driver license"
+#~ msgstr "Например: водительское удостоверение"
+
+#~ msgid "Are you sure you want to delete this document?"
+#~ msgstr "Вы уверены, что хотите удалить этот документ?"
+
+#~ msgid "An error occured. Please try again later."
+#~ msgstr "Произошла ошибка. Пожалуйста, попробуйте позже."
+
+#~ msgid "Download link"
+#~ msgstr "Ссылка на скачивание"
+
+#~ msgid "Delete"
+#~ msgstr "Удалить"
+
+#~ msgid "Download"
+#~ msgstr "Скачать"
+
+#~ msgid "Phone number"
+#~ msgstr "Номер телефона"
+
+#~ msgid "Enter your phone number"
+#~ msgstr "Введите номер вашего мобильного телефона"
+
+#~ msgid "Confirmation code"
+#~ msgstr "Код подтверждения"
+
+#~ msgid "Enter code that you got on phone number you entered earlier"
+#~ msgstr "Введите код, отправленный на номер, указанный ранее"
+
+#~ msgid "Phone confirmation code is %(token)s"
+#~ msgstr "Код подтверждения телефона: %(token)s"
+
+#~ msgid "Error happened while sending SMS. Please try again later."
+#~ msgstr "Произошла ошибка. Пожалуйста, попробуйте позже."
+
+#~ msgid "Invalid confirmation code"
+#~ msgstr "Неверный код"
+
+#~ msgid "Token"
+#~ msgstr "Токен"
+
+#~ msgid "Token send by SMS"
+#~ msgstr "Токен из SMS"
+
+#~ msgid "Token from your auth app"
+#~ msgstr "Токен из приложения"
+
+#~ msgid "Session is expired. Refresh page and try again, please"
+#~ msgstr "Сессия завершилась. Обновите страницу и попробуйте еще раз"
+
+#~ msgid "Wrong token"
+#~ msgstr "Неверный код"
+
+#~ msgid "You were redirected to this page because you should use OTP"
+#~ msgstr "Вы были перенаправлены на эту страницу потому что вам нужно создать OTP-связку"
+
+#~ msgid ""
+#~ "Your code: %s \n"
+#~ "\n"
+#~ "Please enter it in the verification field.\n"
+#~ "\n"
+#~ "Grand Capital Ltd."
+#~ msgstr ""
+#~ "Ваш код: %s\n"
+#~ "\n"
+#~ "Введите его в поле на странице.\n"
+#~ "\n"
+#~ "Grand Capital Ltd."
+
+#~ msgid "Device %s has been saved"
+#~ msgstr "Устройство %s было сохранено"
+
+#~ msgid "You are asking for too many SMS codes. Wait 15 minutes and try again"
+#~ msgstr "Вы запросили слишком много СМС-подтверждений. Подождите 15 минут и обновите страницу"
+
+#~ msgid "Confirm your phone"
+#~ msgstr "Подтвердите номер вашего мобильного телефона"
+
+#~ msgid ""
+#~ "\n"
+#~ "                You already have text message authentication binded to your phone number.\n"
+#~ "                You can change your phone number <a href=\"%(link)s\">here</a>\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "У вас уже есть привязка к номеру телефона. Для  смены номера пройдите по <a href=\"%(link)s\">ссылке</a>"
+
+#~ msgid "Check"
+#~ msgstr "Проверить"
+
+#~ msgid "Ok"
+#~ msgstr "Далее"
+
+#~ msgid "Please enter your phone number"
+#~ msgstr "Введите номер вашего мобильного телефона"
+
+#~ msgid "Invalid phone number"
+#~ msgstr "Неверный номер"
+
+#~ msgid "You are asking for too many text messages. Please wait 5 minutes and try again later"
+#~ msgstr "Вы запросили слишком много СМС. Подождите 5 минут и попробуйте еще раз"
+
+#~ msgid "You are asking for too many calls. Please wait 5 minutes and try again later"
+#~ msgstr "Вы запросили слишком много звонков. Подождите 5 минут и попробуйте еще раз"
+
+#~ msgid "The automated call was queued"
+#~ msgstr "Звонок был поставлен в очередь"
+
+#~ msgid "You already have the following binding:"
+#~ msgstr "У вас уже есть следующая привязка:"
+
+#~ msgid "Date added"
+#~ msgstr "Дата добавления"
+
+#~ msgid "Using text message (SMS)"
+#~ msgstr "С помощью SMS"
+
+#~ msgid "Using mobile authenticator app"
+#~ msgstr "С помощью мобильного приложения"
+
+#~ msgid "Send an SMS"
+#~ msgstr "Отправить СМС"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                The message was sent succesfully\n"
+#~ "                                (if you can't receive the message, you can order\n"
+#~ "                                an <a id=\"make_call\" class=\"pointer\">automated call</a>)\n"
+#~ "                                <br/>\n"
+#~ "                                You will receive a unique code which you should enter in the following field:\n"
+#~ "                            "
+#~ msgstr ""
+#~ "\n"
+#~ "Сообщение было успешно отправлено (если сообщение не дошло, то вы можете <a id=\"make_call\" class=\"pointer\">заказать автоматический звонок</a>)<br/>В сообщении содержится токен, который следует ввести в расположенное ниже поле:"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                The call was queued succesfully. You will hear a unique\n"
+#~ "                                code (4 digits) which you should enter in the following field:\n"
+#~ "                            "
+#~ msgstr ""
+#~ "\n"
+#~ "Звонок был успешно запланирован. Вы услышите токен (4 цифры), которые следует ввести в расположенное ниже поле:"
+
+#~ msgid "Make binding"
+#~ msgstr "Создать привязку"
+
+#~ msgid "To generate the authentication code using mobile app, follow these 3 simple steps"
+#~ msgstr "Для того, чтобы сгенерировать код через мобильное приложение, выполните 3 простых шага"
+
+#~ msgid "Install the application on your mobile phone"
+#~ msgstr "Установите приложение для своего устройства"
+
+#~ msgid "For"
+#~ msgstr "Для"
+
+#~ msgid "QR-code"
+#~ msgstr "QR-код"
+
+#~ msgid "Open the app and create a new account using the following secret key"
+#~ msgstr "Откройте приложение и создайте учетную запись с секретным ключом"
+
+#~ msgid "or use the 'Scan' option of the app and point your mobile phone's camera at the QRCode below"
+#~ msgstr "или, воспользовавшись опцией установленного приложения «Сканирование», наведите камеру телефона на QR-код (квадратный штрих-код ниже)"
+
+#~ msgid "Refresh"
+#~ msgstr "Обновить"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                Enter the code generated by the app in the following field\n"
+#~ "                                (if the code doesn't match, please enable time correction in your app's settings):\n"
+#~ "                            "
+#~ msgstr ""
+#~ "\n"
+#~ "Введите сгенерированный программой код для проверки синхронизации (если код не подходит, включите коррекцию времени в настройках приложения):"
+
+#~ msgid "Request OTP authentication when I login to my Private Office"
+#~ msgstr "Запрашивать OTP-авторизацию при входе в Личный Кабинет"
+
+#~ msgid "You will receive a unique code which you should enter in the following field:"
+#~ msgstr "В сообщении содержится токен, который следует ввести в расположенное ниже поле:"
+
+#~ msgid "Requisit data"
+#~ msgstr "Данные реквизита"
+
+#~ msgid "The message was sent succesfully"
+#~ msgstr "Сообщение было успешно отправлено"
+
+#~ msgid "Enter the code generated by the app in the following field"
+#~ msgstr "Введите сгенерированный программой код для проверки синхронизации"
+
+#~ msgid "Open the mobile app for OTP generation and activate it with the following data:"
+#~ msgstr "Откройте программу для генерации OTP и создайте учетную запись с секретом:"
+
+#~ msgid "or scan the following QR-code with your camera:"
+#~ msgstr "или же сфотографируйте код:"
+
+#~ msgid "Fill out the form below, please"
+#~ msgstr "Заполните, пожалуйста, форму ниже"
+
+#~ msgid "You should fill out form below"
+#~ msgstr "Пожалуйста, заполните форму ниже"
+
+#~ msgid "Phone number which will be used for authentication:"
+#~ msgstr "Номер телефона, к которому будет создана привязка:"
+
+#~ msgid "you have the following method selected:"
+#~ msgstr "у вас выбран следующий способ аутентификации:"
+
+#~ msgid "Submit"
+#~ msgstr "Подтвердить"
+
+#~ msgid ""
+#~ "To verify your email, please follow the link you received when you registered. If you have problems\n"
+#~ "    with email verification, please contact your personal manager."
+#~ msgstr "Чтобы подтвердить свой e-mail, пожалуйста, перейдите по ссылке, которую вы должны были получить на него при регистрации. Если у вас возникли какие-либо проблемы с подтверждением вашего адреса электронной почты, пожалуйста, свяжитесь с вашим персональным менеджером."
+
+#~ msgid "Next"
+#~ msgstr "Далее"
+
+#~ msgid "UserProfile doesn't exist."
+#~ msgstr "Профиля пользователя не существует"
+
+#~ msgid "Bad request."
+#~ msgstr "Неверный запрос."
+
+#~ msgid "Requisit status"
+#~ msgstr "Статус"
+
+#~ msgid "Requisit validated"
+#~ msgstr "Подтвержден"
+
+#~ msgid "Requisit not validated"
+#~ msgstr "Не подтвержден"
+
+#~ msgid "Your manager Sergey Ilin is on vacation. For that time your manager is Natalia Terenteva"
+#~ msgstr "Ваш менеджер Сергей Ильин в отпуске. Его заменяет Наталья Терентьева"
+
+#~ msgid "Code"
+#~ msgstr "Код"
+
+#~ msgid "Confirmation code not generated."
+#~ msgstr "Нет кода подтверждения"
+
+#~ msgid "No code generated."
+#~ msgstr "Код не сгенерирован."
+
+#~ msgid "Passport"
+#~ msgstr "Паспортные данные"
+
+#~ msgid "Passport data"
+#~ msgstr "Паспортные данные"
+
+#~ msgid "Enter your passport data (TODO)"
+#~ msgstr "Введите свои паспортные данные"
+
+#~ msgid "Passport scan is needed for money withdrawal"
+#~ msgstr "Скан паспорта необходим для подтверждения ваших данных и вывода средств со счета"
+
+#~ msgid "Parameter is valid"
+#~ msgstr "Подтверждено"
+
+#~ msgid "No phone to confirm."
+#~ msgstr "Нет телефона"

@@ -1,0 +1,179 @@
+{% extends 'gcrm/base.html' %}
+
+{% block doctype %}<!DOCTYPE html>{% endblock %}
+
+{% load i18n app_tags shared_tags admin_list %}
+
+{% block external_analytics %}{% endblock %}
+
+{% block css %}{{ block.super }}
+<link rel="stylesheet" href="/static/css/style.css?v7" />
+<link rel="stylesheet" href="{% MEDIA_URL 'css/sprites.css' %}" />
+
+<link rel="stylesheet" href="{% MEDIA_URL 'js/facebox/facebox.css' %}" />
+<link rel="stylesheet" href="{% MEDIA_URL 'css/gcapital-ui/jquery-ui-1.8.9.custom.css' %}" />
+
+<link rel="stylesheet" href="{% MEDIA_URL 'css/dropdown.css' %}" />
+<link rel="stylesheet" href="{% MEDIA_URL 'css/flags.css' %}" />
+<link rel="stylesheet" href="{% MEDIA_URL 'css/quotes.css' %}" />
+<link rel="stylesheet" href="{% MEDIA_URL 'css/gcapital-ui/tooltip.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% MEDIA_URL 'css/jquery.lightbox-0.5.css' %}" media="screen" />
+
+<style type="text/css">
+#main {
+    max-width: none;
+    margin-top: 0;
+}
+</style>
+
+{% endblock %}
+
+{% block extrahead %}{{ block.super }}
+    <script type="text/javascript"
+            src="{% MEDIA_URL 'js/jquery-1.8.0.min.js' %}"></script>
+    <script type="text/javascript"
+            src="{% MEDIA_URL 'js/jquery-ui-1.8.23.custom.min.js' %}"></script>
+    <script type="text/javascript" src="{% MEDIA_URL 'js/jquery.tablesorter.min.js' %}"></script>
+    <script type="text/javascript">
+        // add parser through the tablesorter addParser method
+        $.tablesorter.addParser({
+            // set a unique id
+            id: 'operation_types',
+            is: function(s) {
+                // return false so this parser is not auto detected
+                return false;
+            },
+            format: function(s) {
+                // format your data for normalization
+                return s.toLowerCase().replace(/ввод\/вывод/,6).replace(/withdraw\/deposit/,6).replace(/кредит/,7).replace(/credit/,7).replace(/buy/,0).replace(/sell/,1);
+            },
+            // set type, either numeric or text
+            type: 'numeric'
+        });
+
+        $(document).ready(function()
+            {
+                $('#history_table_open, #history_table_closed').addClass('tablesorter').tablesorter(
+                        {
+                            headers: {
+                                2: {
+                                    sorter:'operation_types'
+                                },
+                                3: {
+                                    sorter: false
+                                },
+                                4: {
+                                    sorter: false
+                                },
+                                5: {
+                                    sorter: false
+                                },
+                                6: {
+                                    sorter: false
+                                },
+                                7: {
+                                    sorter: false
+                                },
+                                9: {
+                                    sorter: false
+                                },
+                                10: {
+                                    sorter: false
+                                },
+                                11: {
+                                    sorter: false
+                                },
+                                13: {
+                                    sorter: false
+                                }
+                            }
+                        }
+                );
+            }
+        );
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {$('#history_table_closed').trigger("sorton", [[[0,1]]])});
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {$('#history_table_open').trigger("sorton", [[[0,1]]])});
+    </script>
+    <script type="text/javascript">
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+{% endblock %}
+
+{% block title %}{{ account }} - {% trans 'Account history' %}{% endblock %}
+
+{% block content %}
+  <div class="container">
+      <h1 class="green">
+          {% blocktrans %}Account history for account {{ account }}{% endblocktrans %}
+      </h1>
+      <p>
+          {% trans 'Execution System' %}: {% if account.is_instant_execution %}Instant{% else %}Market{% endif %}<br/>
+          {% trans 'Leverage' %}: 1:{{ account.leverage }}<br/>
+          {% trans 'Account Currency' %}: {{ account.currency }}
+      </p>
+      <table class="gctable" id="online-table">
+          <thead>
+            <th>{% trans 'Balance' %}</th>
+            <th>{% trans 'Credit' %}</th>
+            <th>{% trans 'Assets' %}</th>
+            <th>{% trans 'Margin' %}</th>
+            <th>{% trans 'Margin Free' %}</th>
+            <th>{% trans 'Deposit' %}</th>
+            <th>{% trans 'Withdraw' %}</th>
+          </thead>
+          <tbody>
+            <td><span id="online-data-balance">{{ account.balance.amount }}</span></td>
+            <td><span id="online-data-credit">{{ info.credit }}</span></td>
+            <td><span id="online-data-equity">{{ info.equity }}</span></td>
+            <td><span id="online-data-margin">{{ info.margin }}</span></td>
+            <td><span id="online-data-margin_free">{{ info.margin_free }}</span> / <span id="online-data-margin_level">{{ info.margin_level|floatformat:2 }}</span>%</td>
+            <td>{{ account.totals.deposit }}</td>
+            <td>{{ account.totals.withdraw }}</td>
+          </tbody>
+      </table>
+    {% if history %}
+        <h4>{% trans 'Open positions at' %} {{ history.timestamp }}</h4>
+        <table class="gctable" id="history_table_open">
+            {% include "crm/account_info_history_table_header.html" with profit_total=open_operations_profit %}
+            <tbody>
+            {% for operation in history %}
+                {% if not operation.close_time or operation.close_time == open_operations_date %}
+                    {% include "crm/account_info_history_table_body.html" %}
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+      <h4>{% trans 'Closed positions at' %} {{ history.timestamp }}</h4>
+      <table class="gctable" id="history_table_closed">
+        {% include "crm/account_info_history_table_header.html" with profit_total=total_profit %}
+        <tbody>
+          {% for operation in history %}
+              {% if operation.close_time and operation.close_time != open_operations_date %}
+                  {% include "crm/account_info_history_table_body.html" %}
+              {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>{% trans "No account history available." %}</p>
+    {% endif %}
+  </div>
+{% endblock %}

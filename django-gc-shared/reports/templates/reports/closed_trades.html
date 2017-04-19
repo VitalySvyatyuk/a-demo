@@ -1,0 +1,69 @@
+{% extends "reports/base_report.html" %}
+
+{% load i18n %}
+
+{% block report_title %}{% trans "Closed trade report" %}{% endblock %}
+
+{% block report_table %}
+
+    {% for account in report.data %}
+        <h3 class="report">{{ account.account.login }} ({{ account.account.name }}, {{ account.account.group }},
+            {% trans "balance" %} {{ account.account.balance|floatformat:2 }}$)</h3>
+        <table class="gctable report tablesorter">
+            <thead>
+            <tr>
+                <th>{% trans "Ticket" %}</th>
+                <th>{% trans "Operation type" %}</th>
+                <th>{% trans "Symbol" %}</th>
+                <th>{% trans "Open time" %}</th>
+                <th>{% trans "Close time" %}</th>
+                <th>{% trans "Open price" %}</th>
+                <th>{% trans "Close price" %}</th>
+                <th>{% trans "Difference" %}</th>
+                <th>{% trans "Volume" %}</th>
+                <th>{% trans "Swap" %}</th>
+                <th>{% trans "Profit" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in account.data %}
+                <tr class="data {{ row.op_type }}">
+                    <td>{{ row.ticket }}</td>
+                    <td>{{ row.op_type }}</td>
+                    <td>{{ row.symbol }}</td>
+                    <td class="nowrap">{{ row.open_time|date:'Y-m-d' }}</td>
+                    <td class="nowrap">{{ row.close_time|date:'Y-m-d' }}</td>
+                    <td class="nowrap {sorter: 'russian_float'}">{{ row.open_price }}</td>
+                    <td class="nowrap {sorter: 'russian_float'}">{{ row.close_price }}</td>
+                    <td class="nowrap {sorter: 'russian_float'}">{{ row.difference|floatformat:3 }}</td>
+                    <td class="{sorter: 'russian_float'}">{{ row.volume }}</td>
+                    <td class="{sorter: 'russian_float'}">{{ row.swaps }}</td>
+                    <td class="nowrap {sorter: 'russian_float'}">{{ row.profit }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+            <tr class="personal-totals">
+                <td colspan="8">
+                    {% trans "Totals for" %} {{ account.account.login }}
+                    {% if show_deposits %}
+                        <span class="balance-totals">
+                            <span class="deposit-title">{% trans "Deposit" %}</span>
+                            <span class="deposit">{{ account.totals.deposit }}</span>
+                            <span class="withdraw-title">{% trans "Withdraw" %}</span>
+                            <span class="withdraw">{{ account.totals.withdraw }}</span>
+                        </span>
+                    {% endif %}
+                </td>
+                <td class="nowrap">{{ account.totals.volume }}</td>
+                <td class="nowrap">{{ account.totals.swaps }}</td>
+                <td class="nowrap">{{ account.totals.profit }}</td>
+            </tr>
+
+        </table>
+    {% endfor %}
+
+    <p><strong>Итого:</strong></p>
+    <p><strong>Profit:</strong> {{ report.totals.profit }} $</p>
+    <p><strong>Volume:</strong> {{ report.totals.volume }}</p>
+{% endblock %}

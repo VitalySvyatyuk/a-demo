@@ -1,0 +1,13 @@
+{% extends "js/my/profile_base.html" %}
+
+{% block tabs %}
+    {% with 'documents' as category %}
+        {{block.super}}
+    {% endwith %}
+{% endblock %}
+
+{% block tabscontent %}
+  <div class="active upload-documents">
+    {% include "js/my/_profile_documents.html" %}
+  </div>
+{% endblock %}

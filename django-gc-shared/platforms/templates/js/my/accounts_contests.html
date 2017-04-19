@@ -1,0 +1,48 @@
+{% load staticfiles inbox i18n %}
+<div class="gc-accordion-item" ng-show="checkAvailableModules('contest')" ng-controller="AccountsContestsController" name="contests" accordion-show="selectedCategory === 'contests'" accordion-click="selectCategory('contests')">
+  <div class="title-wrapper" title>
+    <span class="title">{% trans "Contests" %}</span>
+    <a href="{% url 'contests_frontpage' %}" class="button medium right">{% trans "Participate in a contest" %}</a>
+  </div>
+  <div content ng-if="!isDataHidden">
+    {% include "js/my/_accounts_local_nav.html" %}
+    <table class="table-big-green accounts">
+      <thead>
+        <tr>
+          <td>{% trans "ID" %}</td>
+          <td>{% trans "Account type" %}</td>
+          <td>{% trans "Place" %}</td>
+          <td>{% trans "Balance" %}</td>
+          <td>{% trans "Equity" %}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="notification" ng-if="!accounts.length">
+          <td colspan="5">{% trans "There is no accounts to display" %}</td>
+        </tr>
+        <tr ng-repeat-start="acc in accounts" ng-class="{'active': account === acc}" ng-click="selectAccount(acc)" account-display="account === acc && !isDataHidden">
+          <td><a ng-bind="acc.mt4_id"></a></td>
+          <td ng-bind="acc.group_display"></td>
+          <td>...</td>
+          <td>
+            <span ng-if="showMoney">
+              <span>&lrm;[[mt4Data[acc.mt4_id]? mt4Data[acc.mt4_id].balance_display : '...']]</span>
+            </span>
+            <span ng-if="!showMoney">*****</span>
+          </td>
+          <td>
+            <span ng-if="showMoney">
+              <span>&lrm;[[mt4Data[acc.mt4_id]? mt4Data[acc.mt4_id].equity_display : '...']]</span>
+            </span>
+            <span ng-if="!showMoney">*****</span>
+          </td>
+        </tr>
+        <tr ng-repeat-end ng-if="account === acc" class="with-active">
+          <td colspan="5">
+            {% include "js/my/_accounts_local_nav_adaptive.html" %}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

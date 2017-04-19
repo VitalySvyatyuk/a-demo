@@ -1,0 +1,55 @@
+{% load i18n %}
+<li class="nav-item dropdown" uib-dropdown on-toggle="showNextButton=open">
+  <a class="nav-link btn btn-warning-outline" uib-dropdown-toggle>
+    <strong>
+      NEXT
+    </strong>
+    <i class="fa fa-fighter-jet text-success"></i>
+  </a>
+  <div class="dropdown-menu" ng-if="showNextButton">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">{% trans "Overdue" %}</th>
+          <th class="text-center">{% trans "Next" %}</th>
+          <th class="text-center">{% trans "Actions" %}</th>
+        </tr>
+      </thead>
+      <tbody style="font-size: 12px; ">
+        <tr>
+          <td>
+            <table class="table">
+              <tr ng-repeat="task in nextButton.info.objects.tasks.overdue">
+                <td>
+                  <a ui-sref="contact.feed({id: task.data.contact.id})">
+                    <span class="fa">[[::task.getIcon()]]</span>
+                    <strong>[[::task.data.contact.name]]</strong>
+                    <span>[[::task.data.text]]</span>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table class="table">
+              <tr ng-repeat="task in nextButton.info.objects.tasks.next">
+                <td>
+                  <a ui-sref="contact.feed({id: task.data.contact.id})">
+                    <span class="fa">[[::task.getIcon()]]</span>
+                    <strong>[[::task.data.contact.name]]</strong>
+                    <span>[[::task.data.text]]</span>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" ng-click="nextButton.getNextClient()">{% blocktrans %}Get-a-client™{% endblocktrans %}
+              <span class="label label-success">[[nextButton.info.objects.clients.free]]</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</li>

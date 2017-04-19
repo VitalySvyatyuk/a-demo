@@ -1,0 +1,167 @@
+{% extends "private_office/base.html" %}
+
+{% load i18n shared_tags currency_tags app_tags coffeescript mt4_tags %}
+
+{% block title %}{{ block.super }} —  {% trans "My accounts" %}{% endblock %}
+
+{% block content %}
+    {% with request.user.accounts.active as accounts %}
+        <h1 class="green">{% trans "My accounts" %}</h1>
+        <div class="container">
+            <p>
+            {% if accounts %}
+                {% regroup accounts|dictsort:"is_demo" by is_demo as accounts_grouped %}
+                {% for account_list in accounts_grouped %}
+                    <h2>{% if account_list.grouper %}{% trans 'Demo and contest accounts' %}{% else %}
+                        {% trans 'Real accounts' %}{% endif %}</h2>
+                    <table class="gctable accounts">
+                        <thead>
+                        <th>{% trans "Account" %}</th>
+                        <th>{% trans "Registraton date" %}</th>
+                        <th>{% trans "Leverage" %}</th>
+                        <th>{% trans "Balance" %}</th>
+                        {# same as "if demo" #}
+                        {% if not account_list.grouper %}
+                            <th>{% trans 'Filled documents' %}</th>
+                        {% endif %}
+                        <th>{% trans "Action" %}</th>
+                        </thead>
+                        <tbody>
+                        {% for account in account_list.list|dictsort:"mt4_id" %}
+                            <tr class="account-info{% if account.mt4_id == highlight %} highlight{% endif %}" id="account-{{ account.mt4_id }}">
+                                <td>{{ account }}</td>
+                                <td class="regdate">{{ account.creation_ts|date:"SHORT_DATE_FORMAT" }}</td>
+                                <td class="leverage"></td>
+                                <td class="balance no_wrap"></td>
+                                {% if not account.is_demo %}
+                                    <td>
+                                        <a href="{{ 'client_agreement'|agreement_url }}">{{ 'client_agreement'|agreement_label }}</a>
+                                        {% if account.is_ib %}
+                                            <a href="{{ 'real_ib_partner'|agreement_url }}">{{ 'real_ib_partner'|agreement_label }}</a>
+                                        {% endif %}
+                                    </td>
+                                {% endif %}
+                                <td class="action">
+                                    <select id="action-account-{{ account.id }}" name="{{ account.id }}">
+                                        <option value="" selected="selected">-------</option>
+                                        <option value="{% url "mt4_account_history" account.mt4_id %}">
+                                            {% trans "Account history" %}
+                                        </option>
+
+                                        {% if not account.is_demo %}
+                                            <option value="{% url 'account_app' %}payments/deposit">
+                                                {% trans "Deposit money" %}
+                                            </option>
+                                            <option value="{% url 'account_app' %}payments/withdraw">
+                                                {% trans "Withdraw money" %}
+                                            </option>
+                                            <option value="{% url 'account_app' %}payments/transfer">
+                                                {% trans "Internal transfer" %}
+                                            </option>
+                                            {% if account.group.can_change_leverage %}
+                                                <option value="{% url "mt4_change_leverage" account_id=account.mt4_id %}">
+                                                    {% trans "Change leverage" %}
+                                                </option>
+                                            {% endif %}
+                                            {% if account.options_style %}
+                                                <option value="{% url "mt4_change_options_style" account_id=account.mt4_id %}">
+                                                    {% trans "Change options style" %}
+                                                </option>
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if account.can_be_used_as_pamm_master and not account.pamm_master %}
+                                            <option value="{% url "pamm_upgrade_account" account_id=account.mt4_id %}">
+                                                {% trans "Become PAMM master" %}
+                                            </option>
+                                        {% endif %}
+                                        <option value="{% url "mt4_password_recovery" account_id=account.mt4_id %}">
+                                            {% trans "Password recovery" %}
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% endfor %}
+            {% else %}
+                <p>{% trans "You have no accounts associated with your profile" %}</p>
+                <p>{% trans "If you want to open a new account, then click" %}</p>
+                {% url "mt4_create_account" as clink %}
+                <p>{% morelink clink _("Open account") "black" %}</p>
+            {% endif %}
+            {% with request.user.accounts.archived as archived_accounts %}
+                {% if archived_accounts %}
+                    <h2>{% trans 'Archived accounts' %}</h2>
+                    <table class="gctable accounts">
+                        <thead>
+                        <th>{% trans "Account" %}</th>
+                        <th>{% trans "Restore" %}</th>
+                        </thead>
+                        <tbody>
+                        {% for account in archived_accounts %}
+                            <tr class="account-info" id="account-{{ account.mt4_id }}">
+                                <td>{{ account }}</td>
+                                <td>
+                                    {% if account.has_restore_issue %}
+                                        {% trans "You have already requested to restore this account" %}
+                                    {% else %}
+                                        <a href="{% url "mt4_restore_from_archive" account.mt4_id %}">
+                                            {% trans "Request this account to be restored" %}
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+            {% endwith %}
+            <form id="csrf">{% csrf_token %}</form>
+        </div>
+    {% endwith %}
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <style>
+        table.accounts td.action select {
+            width: 100px;
+        }
+        .no_wrap {
+            white-space: nowrap;
+        }
+    </style>
+{% endblock %}
+
+{#{% if request.user.accounts.active.count %}#}
+{% if False %}
+    {% block js %}{{ block.super }}
+
+        <script type="text/javascript">
+            {% inlinecoffeescript %}
+                $(()->
+                    $("table.accounts td.action select").change(() ->
+                        window.location = $(this).val();
+                        return;
+                    )
+
+                    $.ajax(
+                        url: "{% url "mt4_account_info" %}"
+            (data) - >;
+                for mt4_id, info of data.accounts
+                                if info.balance
+                                    bonus = "{% trans 'bonus' %}";
+                                    res =; if info.bonuses then; "<br>(#{bonus} #{info.bonuses})" else "";
+
+                                    acc_tr = $("tr#account-#{mt4_id}");
+                                    acc_tr.find("td.leverage").html("1:#{info.leverage}");
+                                    acc_tr.find("td.balance").html("#{info.balance}#{res}");
+                            return;
+                    )
+                    return;
+                )
+            {% endinlinecoffeescript %}
+        </script>
+    {% endblock %}
+{% endif %}

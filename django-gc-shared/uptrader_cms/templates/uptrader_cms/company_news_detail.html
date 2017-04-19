@@ -1,0 +1,100 @@
+{% extends "design_2014/marketing_site/base.html" %}
+
+{% load node_filters pytils_dt cache pytils_numeral i18n app_tags %}
+
+{% block title %}{{ node.title|capfirst }} - {{ block.super }}{% endblock %}
+{% block adaptiveclass %} adaptive{% endblock %}
+{% block viewport %}width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1{% endblock %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs name=node.title|capfirst root=breadcrumb.root additional_items=breadcrumb.additional_items %}
+{% endblock %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <meta name="description" content="{{ node.body|striptags|safe|truncatewords:20 }}"/>
+    <meta name="keywords" content="{% for category in node.categories.all %}{{ category.title }},{% empty %}{{ node.get_page_type_display }}{% endfor %}"/>
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper newsfeed-page">
+    <div class="row" itemscope
+         itemtype="http://schema.org/{% if page_mode == "analytics" %}BlogPosting{% else %}NewsArticle{% endif %}">
+        <h1 class="offset-bottom-20">{{ header }}</h1>
+
+        {% if filter_template %}
+            {% include filters_template %}
+        {% endif %}
+
+        <h2 class="green-title">
+            {{ node.event_date|date:"F Y" }}
+        </h2>
+        <div class="{% include "uptrader_cms/includes/newsfeed_item_class.html" with news_item=node %}">
+            <div class="xsmall-12 small-2 large-2 columns">
+                <time itemprop="datePublished" class="date" datetime="{{ node.event_date|date:'c' }}">
+                    {{ node.event_date.day }}
+                    <span>{{ node.event_date|date:"E"|capfirst }}</span>
+                </time>
+            </div>
+            <div class="xsmall-12 small-10 large-10 columns content">
+                <h4 class="title" itemprop="headline">
+                    {{ node.title|capfirst }}
+                    {% if request.user.is_staff %}<a href="{{ node.edit_link }}">Edit</a>{% endif %}
+                </h4>
+                <div class="text" itemprop="text">
+                    {{ node.body|safe }}
+                    {% if LANGUAGE_CODE == 'ru' and node.forum_topic %}
+                        <a class="right" href="{{ node.forum_topic.get_absolute_url }}">Обсудить на форуме</a>
+                    {% endif %}
+                </div>
+                {% if page_mode == "analytics" and node.post_author %}
+                    <div>
+                        {% trans "Author" %}:
+                        <a href="{{ node.post_author.google_plus_link }}">
+                            <span itemprop="author">{{ node.post_author.name }}</span>
+                        </a>
+                    </div>
+                {% endif %}
+                <div class="clearfix offset-top-60">
+                {% if node.categories.all %}
+                    <div class="tags left" itemprop="keywords">
+                        <span>{% trans "Categories" %}:</span>&ensp;{% for category in node.categories.all %}<a href="{% url "company_news_list" %}?category={{ category.slug }}">{{ category.title }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+                    </div>
+                {% endif %}
+                    <div class="right">
+                        {% include "design_2014/marketing_site/includes/addthis.html" with title=node.title|truncatechars:"100" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% if other_category %}
+        <div class="green-title offset-top-40">{% trans "Other news in category" %} {{ other_category.title }}</div>
+        <div class="category-news-block clearfix offset-top-10">
+            <div class="left">
+                <ul class="category-news-list">
+                    {% for news_item in other_news %}
+                        <li itemscope
+                            itemtype="http://schema.org/{% if page_mode == "analytics" %}BlogPosting{% else %}NewsArticle{% endif %}">
+                            <span class="date">
+                                <time itemprop="datePublished" datetime="{{ news_item.event_date|date:"c" }}">
+                                    {{ news_item.event_date|date:"j E Y" }}
+                                </time>
+                            </span>
+                            <a itemprop="url" href="{{ news_item.get_absolute_url }}">
+                                <span itemprop="description" class="title">{{ news_item.title }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% if node.categories and node.categories.all|length > 1 %}
+                <div class="tags offset-top-40">
+                    <span>{% trans "News in category" %}:</span>&ensp;{% for category in node.categories.all %}{% if category != other_category %}<a href="{% url "company_news_list" %}?category={{ category.slug }}">{{ category.title }}</a> {% endif %}{% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}
+

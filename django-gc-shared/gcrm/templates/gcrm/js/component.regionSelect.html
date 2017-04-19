@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<div class="dropdown dropdown-inline open block" >
+  <span class="label label-default"
+        ng-repeat="item in regionSelect.selectedRegion"
+        ng-click="regionSelect.removeRegion(item)">
+    [[::item.data.name]]&nbsp;<i class="fa fa-times"></i>
+  </span>
+
+  <input class="form-control form-control-sm" type="text" placeholder="{% trans "Region" %}"
+         ng-model="regionSelect.regionName"
+         ng-change="regionSelect.searchRegion(regionSelect.regionName)">
+
+  <div class="dropdown-menu" ng-if="regionSelect.regions.length && regionSelect.regionName">
+    <a class="dropdown-item" ng-repeat="item in regionSelect.regions" ng-click="regionSelect.addRegion(item)">
+      [[::item.data.name]]
+    </a>
+  </div>
+</div>

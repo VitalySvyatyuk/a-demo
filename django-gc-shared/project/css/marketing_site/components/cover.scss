@@ -1,0 +1,46 @@
+.cover{
+	display: none;
+
+	padding: 70px 40px 57px;
+	margin-top: -30px;
+
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	&.state-visible{
+		display: block;
+	}
+
+	@media (#{$max_ipad}){
+		max-width: 100%;
+		padding-top: 40px;
+		padding-left: 0;
+		padding-right: 0;
+		margin-top: 0;
+		background-color: #f6f6f6;
+		background-image: url("../img/bg/bg--young-man--cropped.png") !important;
+		padding-bottom: 306px;
+		background-position: right bottom;
+		background-size: auto 300px;
+	}
+}
+.cover__col{
+	@media (#{$max_ipad}){
+		padding-left: $container_side_margin * 2;
+		padding-right: $container_side_margin * 2;
+
+		max-width: 100%;
+	}
+}
+.cover__title{
+	margin-top: 0;
+	margin-bottom: 40px;
+
+	@media (#{$max_ipad}){
+		margin-bottom: 35px;
+	}
+}
+.cover__button{
+	margin-top: 33px;
+}

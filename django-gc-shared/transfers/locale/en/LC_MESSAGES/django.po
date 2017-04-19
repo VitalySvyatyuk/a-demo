@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-16 17:51+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Transfer between your accounts"
+msgstr "Transfer between your accounts"
+
+msgid "Transfer to another customer"
+msgstr "Transfer to another client"
+
+msgid "Account"
+msgstr "Account"
+
+msgid "Select one of your accounts."
+msgstr "Select one of your accounts."
+
+msgid "Recipient"
+msgstr "Recipient"
+
+msgid "Type of transfer"
+msgstr "Type of transfer"
+
+msgid ""
+"Transfers between your own account happen automatically, transfers to other "
+"customers are carried out manually"
+msgstr ""
+"Transfers between your own accounts are made automatically, transfers to other clients are carried out manually"
+
+msgid "Enter a valid transfer amount."
+msgstr "Enter a valid transfer amount."
+
+msgid "You can't transfer funds from this account"
+msgstr "You cannot transfer funds from this account"
+
+msgid "You can't transfer money from demo account"
+msgstr "You cannot transfer money from a demo account"
+
+msgid "Cannot determine the group of sender account"
+msgstr "Cannot determine the group of sender account"
+
+#, python-format
+msgid "Internal transfers are not available for %s account group"
+msgstr "Internal transfers are not available for the %s account group"
+
+#, python-format
+msgid ""
+"You should <a href=\"%(link)s\" target=\"_blank\">complete the verification "
+"process</a> before withdrawing from account %(account)s"
+msgstr ""
+"You should <a href=\"%(link)s\" target=\"_blank\">complete the verification process</a> before withdrawing from the account %(account)s"
+
+msgid ""
+"Error while getting allowed transfer amount for the chosen account. Contact "
+"the administrator."
+msgstr ""
+"Error while getting allowed transfer amount for the chosen account. Contact the administrator."
+
+#, python-format
+msgid ""
+"The maximum amount of money you can transfer from the chosen account is "
+"%(limit_value)s "
+msgstr ""
+"The maximum amount of money you can transfer from the chosen account is %(limit_value)s "
+
+#, python-format
+msgid "(including %s commission due to Welcome Bonus)"
+msgstr "(including %s commission due to the Welcome Bonus)"
+
+msgid "You cannot transfer less than 0.01 in chosen currency"
+msgstr "You cannot transfer less than 0.01 in chosen currency"
+
+msgid "This field is required"
+msgstr "This field is required"
+
+msgid ""
+"This account seems not to be registered in the private office. Register it "
+"first."
+msgstr ""
+"This account seems not to be registered in the Private Office. Register it first."
+
+msgid "You can't transfer money to demo account"
+msgstr "You cannot transfer money to a demo account"
+
+msgid "Cannot determine the group of recipient account"
+msgstr "Cannot determine the group of recipient account"
+
+msgid "Internal transfers are not available for ECN accounts"
+msgstr "Internal transfers are not available for ECN accounts"
+
+msgid "Using the same account for both recipient and sender is not allowed."
+msgstr "Using the same account for both recipient and sender is not allowed."
+
+msgid "Internal transfers from Fx+ accounts are forbidden."
+msgstr "Internal transfers from Fx+ accounts are forbidden."
+
+msgid "Internal transfers to Fx+ accounts are forbidden."
+msgstr "Internal transfers to Fx+ accounts are forbidden."
+
+msgid "Sender equity level is insufficient for this operation."
+msgstr "Sender equity level is insufficient for this operation."
+
+msgid "Internal transfer request has been submitted"
+msgstr "Internal transfer request has been submitted"
+
+msgid "Sender account"
+msgstr "Sender account"
+
+msgid "Recipient account"
+msgstr "Recipient account"
+
+msgid "Amount"
+msgstr "Amount"
+
+msgid "The request will be processed within three business days"
+msgstr "The request will be processed within 3 business days"
+

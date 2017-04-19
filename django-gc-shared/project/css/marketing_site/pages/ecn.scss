@@ -1,0 +1,233 @@
+.ecn{
+  .ecn-advantages-skin{
+    background-color: #f4f4f4;
+    .ecn-advantages{
+      padding-top: 50px;
+      padding-bottom: 53px;
+      p{
+        color: #1f5060;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        position: absolute;
+        top: 81px;
+        left: 17px;
+      }
+      > div{
+        > div{
+          height: 125px;
+          position: relative;
+        }
+        > div:nth-child(1){
+          img{
+            width: 43px;
+          }
+        }
+        > div:nth-child(2){
+          img{
+            width: 38px;
+          }
+        }
+        > div:nth-child(3){
+          img{
+            width: 39px;
+          }
+        }
+        > div:nth-child(4){
+          img{
+            width: 41px;
+            margin-top: 13px;
+          }
+        }
+        > div:nth-child(5){
+          img{
+            width: 35px;
+          }
+        }
+        > div:nth-child(6){
+          img{
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
+  .ecn-info-skin{
+    background-color: #fff;
+    .ecn-info{
+      margin-bottom: 81px;
+      margin-top: 56px;
+      ul{
+        list-style: none;
+        padding-left: 0;
+        li{
+          position: relative;
+          margin-bottom: 10px;
+        }
+        li:after{
+          content: "";
+          display: block;
+          background-image: url(../img/marketing-site/icons/icon-vps-list.svg);
+          width: 19px;
+          height: 2px;
+          position: absolute;
+          top: 6px;
+          left: -26px;
+        }
+      }
+      blockquote, ul, p:nth-of-type(1){
+        margin-bottom: 55px;
+      }
+      p:last-child{
+        margin-bottom: 0;
+      }
+      blockquote{
+        margin-left: 0;
+        color: #8d8d8d;
+        font-size: 18px;
+        font-style: italic;
+        line-height: 30px;
+        position: relative;
+        span:first-child{
+          position: absolute;
+          top: -2px;
+          left: -29px;
+        }
+        span:last-child{
+          position: absolute;
+          margin-left: 16px;
+        }
+      }
+      h2{
+        margin-bottom: 30px;
+        margin-top: 0;
+      }
+      > div{
+        > div:last-child{
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.19);
+          padding-bottom: 68px;
+          h2{
+            padding-top: 60px;
+          }
+        }
+      }
+      img{
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+  .ecn-providers{
+    background-image: url(../img/marketing-site/bg/bg-ecn-providers.jpg);
+    background-position: right center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding-top: 72px;
+    padding-bottom: 94px;
+    p{
+      color: #fff;
+      margin-bottom: 54px;
+    }
+    .ecn-providers-list{
+      .ecn-providers-list-element{
+        width: 217px;
+        height: 91px;
+        background-color: #fff;
+        float: left;
+        margin-right: 11px;
+        margin-bottom: 9px;
+        position: relative;
+        img{
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .ecn{
+    .ecn-advantages-skin{
+      .ecn-advantages{
+        margin-bottom: 20px;
+        text-align: center;
+        > div{
+          > div{
+            margin-bottom: 40px;
+          }
+          >div:nth-child(2){
+            img{
+              margin-bottom: 4px;
+            }
+          }
+          >div:nth-child(4){
+            img{
+              margin-top: 10px;
+              margin-bottom: 8px;
+            }
+          }
+          >div:nth-child(6){
+            img{
+              margin-bottom: 3px;
+            }
+          }
+        }
+        p{
+          position: static;
+        }
+      }
+    }
+    .ecn-info-skin{
+      .ecn-info{
+        img{
+          margin-bottom: 30px;
+        }
+        blockquote{
+          margin-right: 0;
+          margin-left: 20px;
+          span:first-child{
+            top: 1px;
+          }
+        }
+        > div{
+          > div:last-child{
+            padding-top: 30px;
+          }
+        }
+        ul{
+          li{
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    .ecn-providers{
+      .ecn-providers-list{
+        .ecn-providers-list-element{
+          float: none;
+          margin: 0 auto;
+          margin-bottom: 9px;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 992px) and (max-width: 1199px){
+  .ecn{
+    .ecn-providers{
+      .ecn-providers-list{
+        .ecn-providers-list-element{
+          width: 216px;
+        }
+      }
+    }
+  }
+}

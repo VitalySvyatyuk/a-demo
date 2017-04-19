@@ -1,0 +1,72 @@
+.numbers{
+	padding: 91px 0 100px;
+	max-width: 1170px;
+	margin: auto;
+
+	@media (#{$max_laptop}){
+		padding: 60px 0 70px;
+	}
+
+	@media (#{$max_ipad}){
+		padding: 40px 0 50px;
+	}
+}
+.numbers__row{
+	text-align: center;
+
+	margin-bottom: -30px;
+}
+.numbers__item{
+	display: inline-block;
+
+	text-align: left;
+
+	margin-bottom: 30px;
+
+	@media (#{$max_phones}){
+		padding-right: 0;
+		padding-left: 0;
+	}
+	@media (min-width: 1111px){
+		padding-right: 20px;
+	}
+}
+.numbers__title{
+	margin: auto auto 68px;
+
+	text-align: center;
+
+	@media (#{$max_tablets}){
+		margin-bottom: 40px;
+	}
+	@media (#{$max_phones}){
+		margin-bottom: 30px;
+	}
+}
+.numbers__value{
+	display: inline-block;
+
+	margin-right: 15px;
+
+	color: $cherry;
+	font-size: 36px;
+	font-weight: 300;
+
+	text-align: right;
+
+	@media (max-width: 1110px){
+		width: 83px;
+	}
+}
+.numbers__info{
+	display: inline-block;
+
+	width: 165px;
+
+	font-size: 15px;
+	color: #262626;
+
+	@media (max-width: 1110px){
+		width: 165px;
+	}
+}

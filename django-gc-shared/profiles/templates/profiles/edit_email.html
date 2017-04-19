@@ -1,0 +1,17 @@
+{% extends "private_office/base.html" %}
+
+{% load i18n app_tags profiles_tags %}
+
+{% block title %}{{ block.super }} - {% trans "Edit profile e-mail" %}{% endblock %}
+
+{% block content %}
+
+  <h1>{% trans "Edit your e-mail" %}</h1>
+  <div class="container">
+    <form method="POST" action="." enctype="multipart/form-data">
+        {% include 'includes/form.html' %}
+        {% gcbutton "submit" _("Send verification code") "black" 'name="submit"'%}
+    </form>
+  </div>
+
+{% endblock %}

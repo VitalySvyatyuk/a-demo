@@ -1,0 +1,985 @@
+extends marketing_site/layout
+
+- load staticfiles i18n
+
+block title
+	| Main Page copy (UI Kit) | Arum Capital
+block content
+	br
+	br
+	br
+	br
+
+	section.container
+		.radio_box.popup__sign_form_box__radio_box
+			input.radio_box__input(type="radio", id="test_18", required)
+			label(for="test_18")
+				.radio_box__tick
+				span.radio_box__label.popup__sign_form_box__checkbox_label
+					| Test
+
+		include marketing_site/components/pagination
+
+		span.tooltip.js-tooltip(title="Tooltip content")
+			| Tooltip title
+
+		br
+		br
+		br
+		br
+
+
+	.slider_jumbotron
+		.container.slider_jumbotron__arrows_box
+			button.slider_arrow.slider_arrow--left.slider_jumbotron__arrow.slider_jumbotron__arrow--left.js-slider-prev-arrow(type="button")
+			button.slider_arrow.slider_arrow--right.slider_jumbotron__arrow.slider_jumbotron__arrow--right.js-slider-next-arrow(type="button")
+		.slider_jumbotron__content.js-slider(data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "fade": false, "arrows": true, "dots": true, "dotsClass": "slider_jumbotron__dots", "prevArrow": ".js-slider-prev-arrow", "nextArrow": ".js-slider-next-arrow", "autoplay": true, "autoplaySpeed": 10000}')
+			.slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--mac.jpg' %})")
+				.container
+					.slider_jumbotron__text_box
+						h2.slider_jumbotron__item__title
+							| FOREX-брокер нового поколения
+						p.slider_jumbotron__item__text
+							| Мы предлагаем нашим клиентам настоящий ECN, прямой вывод всех сделок на поставщиков ликвидности по FIX-протоколу и доступ к торговым инновациям.
+						a.slider_jumbotron__button.button(href="#")
+							span.button__text
+								| Начать работу
+
+			.slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--flag.jpg' %});")
+				.container
+					.slider_jumbotron__text_box
+						h2.slider_jumbotron__item__title
+							| Высокий уровень надежности
+						p.slider_jumbotron__item__text
+							| Благодаря европейскому регулированию (MiFID) и высоким стандартам качества, средства наших клиентов надежно защищены.
+						a.slider_jumbotron__button.button(href="#")
+							span.button__text
+								| Начать работу
+			.slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--hands.jpg' %});")
+				.container
+					.slider_jumbotron__text_box
+						h2.slider_jumbotron__item__title
+							| Торговые инновации
+						p.slider_jumbotron__item__text
+							| Доступ к стакану ликвидности, широкий набор торговых платформ и инструментов позволяет нашим клиентам показывать высокую результативность.
+						a.slider_jumbotron__button.button(href="#")
+							span.button__text
+								| Начать работу
+			.slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--ipad.jpg' %});")
+				.container
+					.slider_jumbotron__text_box
+						h2.slider_jumbotron__item__title.slider_jumbotron__item__title--white
+							| Инвестиции под контролем
+						p.slider_jumbotron__item__text.slider_jumbotron__item__text--white
+							| Копируйте профессиональных трейдеров с ограниченным риском и неограниченным доходом. Риск-менеджмент на стороне инвестора.
+						a.slider_jumbotron__button.button(href="#")
+							span.button__text
+								| Начать работу
+		a.slider_jumbotron__mobiles_button.button(href="#")
+			span.button__text
+				| Начать работу
+		.slider_jumbotron__features
+			.slider_jumbotron__container
+				.slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-desktop
+					span.slider_jumbotron__features__number
+						| 1:100
+					span.slider_jumbotron__features__item_text
+						| Кредитное
+						br
+						| плечо
+				.slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
+					span.slider_jumbotron__features__item_text
+						| Европейское
+						br
+						| регулирование
+				.slider_jumbotron__features__item
+					span.slider_jumbotron__features__number
+						| 0.1
+					span.slider_jumbotron__features__item_text
+						| Узкие&nbsp;
+						span.slider_jumbotron__features__item_text--hide-mobiles
+							| рыночные
+						br
+						| спреды
+				.slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
+					span.slider_jumbotron__features__item_text
+						| Стакан
+						br
+						| ликвидности
+				.slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
+					span.slider_jumbotron__features__number
+						| 1 к 100
+					span.slider_jumbotron__features__item_text
+						| Кредитное
+						br
+						| плечо
+				.slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
+					span.slider_jumbotron__features__item_text
+						| Настоящий
+						br
+						| ECN
+				.slider_jumbotron__features__item
+					span.slider_jumbotron__features__number
+						| 110+
+					span.slider_jumbotron__features__item_text
+						| Торговых
+						br
+						| инструментов
+		button.slider_jumbotron__down_button.js-scroll-intro(type="button")
+
+	.working_presentation_pageblock
+		.container
+			.row
+				.col-lg-6.col-xs-12.working_presentation_pageblock__steps
+					h2.page_title
+						| Как мы работаем
+					.working_process
+						.working_process__item.working_process__item--icon-magnifier
+							h3.working_process__title
+								| Прозрачность торгового процесса
+							span.working_process__text
+								| Все сделки наших клиентов выводятся напрямую на поставщиков ликвидности. Условия лицензий нашей и нашего провайдера обязывают выводит каждую сделку на внешнего контрагента.
+						.working_process__item.working_process__item--icon-arrows
+							h3.working_process__title
+								| Отсутствие манипуляций
+							span.working_process__text
+								| Мы не используем механизмы беттинга и технологии фильтраци котировок. Наши клиенты получают реальную биржевую ECN/STP ликвидность по FIX-протоколу в каждый отдельный момент времени.
+						.working_process__item.working_process__item--icon-bid-ask
+							h3.working_process__title
+								| Исполнение по лучшим ценам
+							span.working_process__text
+								| Благодаря сотрудничеству с одним из ведущих провадеров ликвидности, наши клиенты получают лучшие цены на рынке.
+					a.arrow_link.arrow_link--two-rows-on-mobiles(href="#")
+						| подробнее о нашей&nbsp;
+						br.arrow_link__break--visible-mobiles
+						| ликвидности
+				.col-lg-6.col-xs-12
+					h2.page_title
+						| Котировки онлайн
+					.quotes
+						.quotes__tabs_box
+							button.quotes__tab.js-tab.state-active-tab(type="button", data-tab-index="01_quotes", data-tab-category="quotes")
+								span.quotes__tab__title
+									| валюты
+							button.quotes__tab.js-tab(type="button", data-tab-index="02_quotes", data-tab-category="quotes")
+								span.quotes__tab__title
+									| металлы
+							button.quotes__tab.js-tab(type="button", data-tab-index="03_quotes", data-tab-category="quotes")
+								span.quotes__tab__title
+									| индексы
+						table.quotes__table.js-tab-content.state-visible(data-tab-index="01_quotes", data-tab-category="quotes")
+							tr.quotes__table__row.quotes__table__head_row
+								th.quotes__table__cell
+									span.quotes__table__head_text
+										| Инструмент
+								th.quotes__table__cell
+									span.quotes__table__head_text
+										| Bid
+								th.quotes__table__cell
+									span.quotes__table__head_text
+										| Ask
+								th.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__head_text
+										| Spread
+								th.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__head_text
+										| Percent
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 10.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+						table.quotes__table.js-tab-content(data-tab-index="02_quotes", data-tab-category="quotes")
+							tr.quotes__table__row.quotes__table__head_row
+								th.quotes__table__cell
+									span.quotes__table__head_text
+										| Инструмент
+								th.quotes__table__cell
+									span.quotes__table__head_text
+										| Bid
+								th.quotes__table__cell
+									span.quotes__table__head_text
+										| Ask
+								th.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__head_text
+										| Spread
+								th.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__head_text
+										| Percent
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 20.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+
+						table.quotes__table.js-tab-content(data-tab-index="03_quotes", data-tab-category="quotes")
+							tr.quotes__table__row.quotes__table__head_row
+								th.quotes__table__cell
+									span.quotes__table__head_text
+										| Инструмент
+								th.quotes__table__cell
+									span.quotes__table__head_text
+										| Bid
+								th.quotes__table__cell
+									span.quotes__table__head_text
+										| Ask
+								th.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__head_text
+										| Spread
+								th.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__head_text
+										| Percent
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 30.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+							tr.quotes__table__row.js-pseudolink(data-href="#")
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green.quotes__table__cell_text--arrow
+										| EURUSD
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.32321
+								td.quotes__table__cell
+									span.quotes__table__cell_text.quotes__table__cell_text--red
+										| 1.53434
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 12.12332
+								td.quotes__table__cell.quotes__table__cell--hidden-on-mobiles
+									span.quotes__table__cell_text.quotes__table__cell_text--green
+										| 1.42322
+					a.arrow_link(href="#")
+						| другие инструменты
+
+	.liquidity
+		.container.liquidity__container
+			.liquidity__item
+				img.liquidity__img(src="{% static 'img/marketing-site/etc/logo-arum--word.png' %}")
+				.liquidity__item__title
+					a.link(href="#")
+						| Наш стакан ликвидности
+			img.liquidity__arrow.liquidity__arrow--laptop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray.png' %}")
+			img.liquidity__arrow.liquidity__arrow--desktop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--small.png' %}")
+			img.liquidity__arrow.liquidity__arrow--tablet-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--vertical.png' %}")
+			.liquidity__item
+				img.liquidity__img(src="{% static 'img/marketing-site/etc/logo-fix.jpg' %}")
+				.liquidity__item__title
+					a.link(href="#")
+						| Fix-протокол
+			img.liquidity__arrow.liquidity__arrow--laptop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray.png' %}")
+			img.liquidity__arrow.liquidity__arrow--desktop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--small.png' %}")
+			img.liquidity__arrow.liquidity__arrow--tablet-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--vertical.png' %}")
+			.liquidity__item
+				img.liquidity__img.liquidity__img--laptop-hidden(src="{% static 'img/marketing-site/etc/logo-liquidity_suppliers.png' %}")
+				img.liquidity__img.liquidity__img--desktop-hidden(src="{% static 'img/marketing-site/etc/logo-liquidity_suppliers--small.png' %}")
+				img.liquidity__img.liquidity__img--tablet-hidden(src="{% static 'img/marketing-site/etc/logo-liquidity_suppliers.png' %}")
+				.liquidity__item__title
+					a.link(href="#")
+						| Поставщики
+						br.liquidity__break--tablet-hidden
+						| ликвидности
+	.platforms
+		.platforms__variants_box
+			.platforms__variant.platforms__variant--right(style="background-image: url({% static 'img/marketing-site/bg/bg--imac-01.png' %})")
+				.platforms__variant_content
+					.platforms__variant__logo_box
+						img.platforms__variant__logo(src="{% static 'img/marketing-site/etc/logo-mt4.png' %}", alt="M4 logo")
+					h3.page_title.platforms__variant__title
+						| Платформа MetaTrader4
+					span.platforms__variant__info
+						| Платформа MetaTrader 4 наиболее востребована за счет удобства и простоты в применении
+					a.platforms__variant__button.button.button--outline.button--outline-white(href="#")
+						span.button__text
+							| Открыть счет
+				.platforms__variant__description
+					.platforms__variant__description__content
+						a.platforms__variant__description__title(href="#")
+							| Платформа MetaTrader4
+						p.platforms__variant__description__text.platforms__variant__description__text--narrow
+							| Платформа MetaTrader 4 наиболее востребована за счет удобства и простоты в применении
+						ul.platforms__variant__description__logos
+							li.platforms__variant__description__logo_item
+								img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--android.png' %}")
+							li.platforms__variant__description__logo_item
+								img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--apple.png' %}")
+							li.platforms__variant__description__logo_item
+								img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--windows-8.png' %}")
+						p.platforms__variant__description__text
+							| Профессиональная торговая платформа, обладающая мощным аналитическим и торговым движком
+						p.platforms__variant__description__text
+							| Удобный интерфейс и широкий функционал, возможность пользоваться индикаторами, котировками, графическими
+						p.platforms__variant__description__text
+							| Поддеражка автоматизированной торговли и тестирования советников, встроенный язык программирования MQL
+						p.platforms__variant__description__text
+							| 4 типа отложенных ордеров, торговля в один клик, локирование позиций
+
+			.platforms__variant.platforms__variant--left(style="background-image: url({% static 'img/marketing-site/bg/bg--macbook-01.png' %})")
+				.platforms__variant_content
+					.platforms__variant__logo_box
+						img.platforms__variant__logo(src="{% static 'img/marketing-site/etc/logo-pro.png' %}", alt="Pro logo")
+					h3.page_title.platforms__variant__title
+						| Платформа ARUM.PRO
+					span.platforms__variant__info
+						| Профессиональная торговая платформа, обладающая мощным аналитическим движком
+					a.platforms__variant__button.button.button--outline.button--outline-white(href="#")
+						span.button__text
+							| Открыть счет
+				.platforms__variant__description
+					.platforms__variant__description__content
+						a.platforms__variant__description__title(href="#")
+							| Платформа ARUM.PRO
+						p.platforms__variant__description__text.platforms__variant__description__text--narrow
+							| Профессиональная торговая платформа, обладающая мощным аналитическим движком
+						ul.platforms__variant__description__logos
+							li.platforms__variant__description__logo_item
+								img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--windows-8.png' %}")
+							li.platforms__variant__description__logo_item
+								img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--dashboard.png' %}")
+						p.platforms__variant__description__text
+							| Настраиваемые рабочие столы плафтормы, модульный интерфейс, широкий аналтитический пакет
+						p.platforms__variant__description__text
+							| Стакан ликвидности первого уровня, реальные исторические ECN объемы
+						p.platforms__variant__description__text
+							| Поддеражка автоматизированной торговли и тестирования советников, встроенный язык программирования MQL
+						p.platforms__variant__description__text
+							| Тиковый график, торговля в один клик, интерфейс API FIX-протокола
+
+		a.platforms__jumbotron(href="#")
+			.platforms__jumbotron__text
+				| Не знаете, какую платформу выбрать?
+
+	.invest_data_pageblock
+		.container
+			.row
+				.col-lg-6.col-xs-12.invest_data_pageblock__table
+					h2.page_title
+						img.page_title_img(src="{% static 'img/marketing-site/etc/logo-invest-word.png' %}")
+						//| Invest
+					table.invest
+						tr
+							th.invest__cell.invest__cell--center(colspan="4")
+								span.invest__title
+									| EURUSD
+						tr.invest__row
+							td.invest__big_cell.invest__big_cell--green.invest__bordered_right_cell(colspan="2")
+								.invest__big_cell__left_box
+									span.invest__big_cell__left_box__title.invest__big_cell__left_box__title--green
+										| Продажа
+									br
+									span.invest__big_cell__left_box__value.invest__big_cell__left_box__value--green
+										| 1,23
+								.invest__big_cell__right_box
+									span.invest__big_cell__right_box__value.invest__big_cell__right_box__value--green
+										| 98
+										sup
+											| 1
+							td.invest__big_cell.invest__big_cell--red(colspan="2")
+								.invest__big_cell__left_box
+									span.invest__big_cell__left_box__title.invest__big_cell__left_box__title--red
+										| Покупка
+									br
+									span.invest__big_cell__left_box__value.invest__big_cell__left_box__value--red
+										| 1,23
+								.invest__big_cell__right_box
+									span.invest__big_cell__right_box__value.invest__big_cell__right_box__value--red
+										| 237
+										sup
+											| 3
+						tr.invest__row
+							td.invest__cell.invest__cell--center.invest__bordered_right_cell.invest__bordered_bottom_cell(colspan="2")
+								span.invest__header
+									| Bid
+							td.invest__cell.invest__cell--center.invest__bordered_bottom_cell(colspan="2")
+								span.invest__header
+									| Ask
+						tr.invest__row
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+							td.invest__cell.invest__cell--gray.invest__cell--center.invest__bordered_right_cell
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell.invest__cell--gray.invest__cell--center
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+						tr.invest__row
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+							td.invest__cell.invest__cell--gray.invest__cell--center.invest__bordered_right_cell
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell.invest__cell--gray.invest__cell--center
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+						tr.invest__row
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+							td.invest__cell.invest__cell--gray.invest__cell--center.invest__bordered_right_cell
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell.invest__cell--gray.invest__cell--center
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+						tr.invest__row
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+							td.invest__cell.invest__cell--gray.invest__cell--center.invest__bordered_right_cell
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell.invest__cell--gray.invest__cell--center
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+						tr.invest__row
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+							td.invest__cell.invest__cell--gray.invest__cell--center.invest__bordered_right_cell
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell.invest__cell--gray.invest__cell--center
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+						tr.invest__row
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+							td.invest__cell.invest__cell--gray.invest__cell--center.invest__bordered_right_cell
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell.invest__cell--gray.invest__cell--center
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+						tr.invest__row
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+							td.invest__cell.invest__cell--gray.invest__cell--center.invest__bordered_right_cell
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell.invest__cell--gray.invest__cell--center
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+						tr.invest__row
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+							td.invest__cell.invest__cell--gray.invest__cell--center.invest__bordered_right_cell
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell.invest__cell--gray.invest__cell--center
+								span.invest__cell_value
+									| 34
+									sup
+										| 0
+							td.invest__cell
+								span.invest__cell_value
+									| 1M
+				.col-lg-5.col-lg-offset-1.col-xs-12
+					h2.page_title
+						| Данные реального ECN-объема
+					img.chart__index_pageblock(src="{% static 'img/marketing-site/etc/graphic.png' %}")
+					ul.features_list
+						li.features_list__item
+							span.features_list__item__text
+							| Возможность анализа объема инструмента
+						li.features_list__item
+							span.features_list__item__text
+								| Отображение исторических данных объема
+						li.features_list__item
+							span.features_list__item__text
+								| Вывод объема в различных таймфреймах
+
+					a.chart_link__index_pageblock.arrow_link(href="#")
+						| подробнее о технологии
+
+	.features_jumbotron(style="background-image: url({% static 'img/marketing-site/bg/bg--red-grid.jpg' %})")
+		.container
+			.row
+				.col-xs-12.col-sm-4.features_jumbotron__item_box
+					a.borders_box.features_jumbotron__item.features_jumbotron__item--grow-icon(href="#")
+						.borders.borders--top-bottom
+						.borders.borders--sides
+						span.features_jumbotron__item__text
+							| Работа через
+							br
+							| FIX-протокол
+				.col-xs-12.col-sm-4.features_jumbotron__item_box
+					a.borders_box.features_jumbotron__item.features_jumbotron__item--trend-icon(href="#")
+						.borders.borders--top-bottom
+						.borders.borders--sides
+						span.features_jumbotron__item__text
+							| Тиковые графики
+							br
+							| всех инструментов
+				.col-xs-12.col-sm-4.features_jumbotron__item_box
+					a.borders_box.features_jumbotron__item.features_jumbotron__item--view-icon(href="#")
+						.borders.borders--top-bottom
+						.borders.borders--sides
+						span.features_jumbotron__item__text
+							| Открытия API FIX-
+							br
+							| протокола для MTC
+
+	.strategies_pageblock(style="background-image: url({% static 'img/marketing-site/bg/bg--charts.jpg' %})")
+		.container
+			.row
+				.col-lg-6.col-xs-12.strategies_pageblock__info
+					h2.page_title
+						| Инвестирование
+					.benefits
+						.tabs__box.benefits__tabs_box
+							button.benefits__tabs_box__button.tabs__button.js-tab.state-active-tab(type="button", data-tab-index="01_benefits", data-tab-category="benefits")
+								.tabs__button__text_box
+									span.tabs__button__text
+										| Инвестору
+							button.benefits__tabs_box__button.tabs__button.js-tab(type="button", data-tab-index="02_benefits", data-tab-category="benefits")
+								.tabs__button__text_box
+									span.tabs__button__text
+										| Трейдеру
+
+						span.benefits__info.js-tab-content.state-visible(data-tab-index="01_benefits", data-tab-category="benefits")
+							| Копируйте профессиональных трейдеров и зарабатывайте.
+						ul.benefits__featurs_list.features_list.js-tab-content.state-visible(data-tab-index="01_benefits", data-tab-category="benefits")
+							li.features_list__item.features_list__item--large-margin
+								h3.features_list__item__title
+									| Полный контроль
+								span.features_list__item__text
+									| Средства остаются на вашем счете полностью под вашим контролем. Вы можете закрыть инвестицию и вывести средства из стратегии моментально.
+							li.features_list__item.features_list__item--large-margin
+								h3.features_list__item__title
+									| Лимит потерь
+								span.features_list__item__text
+									| Вы сами выбираете риск, с которым инвестируете в стратегии. Трейдер не сможет потерять больше заданного вами недельного лимита потерь.
+							li.features_list__item.features_list__item--large-margin
+								h3.features_list__item__title
+									| Идентичность цен
+								span.features_list__item__text
+									| Благодаря агрегации торговых объемов, цены исполнения ордеров полностью совпадают с ценами ордеров трейдера.
+						span.benefits__info.js-tab-content(data-tab-index="02_benefits", data-tab-category="benefits")
+							| Lanistas volare, tanquam dexter lamia.
+						ul.benefits__featurs_list.features_list.js-tab-content(data-tab-index="02_benefits", data-tab-category="benefits")
+							li.features_list__item.features_list__item--large-margin
+								h3.features_list__item__title
+									| Monss credere
+								span.features_list__item__text
+									| Eras velum in fortis hamburgum! Sunt tataes examinare mirabilis, bi-color torquises. Cum clabulare experimentum, omnes exemplares visum teres, bi-color sagaes.
+							li.features_list__item.features_list__item--large-margin
+								h3.features_list__item__title
+									| Abactuss potus
+								span.features_list__item__text
+									| Sunt calceuses anhelare camerarius, fatalis dominaes. Toruss resistere! Cum orexis accelerare, omnes cottaes resuscitabo teres, secundus quadraes.
+							li.features_list__item.features_list__item--large-margin
+								h3.features_list__item__title
+									| Hippotoxotas cadunt
+								span.features_list__item__text
+									| Ubi est talis extum? Bassus, fatalis hydras cito demitto de azureus, barbatus racana.
+				.col-lg-6.col-xs-12
+					h2.page_title
+						| Лучшие стратегии
+					table.strategies
+						tr.strategies__row
+							th.strategies__cell.strategies__cell_header
+								span.strategies__cell__title
+									| Название
+							th.strategies__cell.strategies__cell_header
+								span.strategies__cell__title
+									| Недельная доходность
+							th.strategies__cell.strategies__cell_header
+								span.strategies__cell__title
+									| Доходность
+						tr.strategies__row.strategies__content_row.js-pseudolink(data-href="#")
+							td.strategies__cell
+								span.strategies__cell__name
+									| Federalvmk
+								br
+								span.strategies__cell__currency
+									| EURUSD,AUDUSD,AUDJPY
+							td.strategies__cell
+								span.strategies__cell__value
+									| 321,55%
+							td.strategies__cell
+								img.strategies__cell__graph(src="{% static 'img/marketing-site/etc/currency-graph.jpg' %}")
+						tr.strategies__row.strategies__content_row.js-pseudolink(data-href="#")
+							td.strategies__cell
+								span.strategies__cell__name
+									| Federalvmk
+								br
+								span.strategies__cell__currency
+									| EURUSD,AUDUSD,AUDJPY
+							td.strategies__cell
+								span.strategies__cell__value
+									| 123,55%
+							td.strategies__cell
+								img.strategies__cell__graph(src="{% static 'img/marketing-site/etc/currency-graph.jpg' %}")
+						tr.strategies__row.strategies__content_row.js-pseudolink(data-href="#")
+							td.strategies__cell
+								span.strategies__cell__name
+									| Federalvmk
+								br
+								span.strategies__cell__currency
+									| EURUSD,AUDUSD,AUDJPY
+							td.strategies__cell
+								span.strategies__cell__value
+									| 0,55%
+							td.strategies__cell
+								img.strategies__cell__graph(src="{% static 'img/marketing-site/etc/currency-graph.jpg' %}")
+						tr.strategies__row.strategies__content_row.js-pseudolink(data-href="#")
+							td.strategies__cell
+								span.strategies__cell__name
+									| Federalvmk
+								br
+								span.strategies__cell__currency
+									| EURUSD,AUDUSD,AUDJPY
+							td.strategies__cell
+								span.strategies__cell__value
+									| 53,55%
+							td.strategies__cell
+								img.strategies__cell__graph(src="{% static 'img/marketing-site/etc/currency-graph.jpg' %}")
+					span.strategies__ps
+						| Past performance does not guarantee future results
+					a.strategies_pageblock__link.arrow_link(href="#")
+						| полный рейтинг
+			.strategies__buttons_box
+				a.button.button--big-on-mobiles.strategies__buttons_box__button.strategies__buttons_box__left_button(href="#")
+					span.button__text
+						| Инвестировать&nbsp;
+						br
+						| реальные средства
+				a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href="#")
+					span.button__text
+						| Инвестировать&nbsp;
+						br
+						| виртуальные средства
+	.call_to_action(style="background-image: url({% static 'img/marketing-site/bg/bg--tocuher.jpg' %})")
+		.container.call_to_action__container
+			span.call_to_action__text
+				| Посетите бесплатный вебинар разработчика платформы
+			a.call_to_action__button.call_to_action__button--blue.button.button--outline-night(href="#")
+				span.button__text
+					| записаться
+	.trust_pageblock
+		.container
+			.row
+				.col-lg-8.col-xs-12
+					h2.page_title
+						| 10 причин начать зарабатывать с нами
+					.strong_points
+						ul.strong_points__list
+							li.strong_points__list__item
+								span.strong_points__list__item__number
+									| 01
+								a.link.strong_points__list__item__text(href="#")
+									| Европейское регулирование
+							li.strong_points__list__item
+								span.strong_points__list__item__number
+									| 02
+								a.link.strong_points__list__item__text(href="#")
+									| Защита средств клиента
+							li.strong_points__list__item
+								span.strong_points__list__item__number
+									| 03
+								a.link.strong_points__list__item__text(href="#")
+									| Надежный провайдер ликвидности
+							li.strong_points__list__item
+								span.strong_points__list__item__number
+									| 04
+								a.link.strong_points__list__item__text(href="#")
+									| Прямой вывод всех сделок через FIX-протокол
+							li.strong_points__list__item
+								span.strong_points__list__item__number
+									| 05
+								a.link.strong_points__list__item__text(href="#")
+									| 3 профессиональные торговые платформы
+
+						ul.strong_points__list
+							li.strong_points__list__item
+								span.strong_points__list__item__number
+									| 06
+								a.link.strong_points__list__item__text(href="#")
+									| Отличные торговые условия
+							li.strong_points__list__item
+								span.strong_points__list__item__number
+									| 07
+								a.link.strong_points__list__item__text(href="#")
+									| Идеальные условия для всех типов торговых роботов
+							li.strong_points__list__item
+								span.strong_points__list__item__number
+									| 08
+								a.link.strong_points__list__item__text(href="#")
+									| Более 110 торговых инструментов
+							li.strong_points__list__item
+								span.strong_points__list__item__number
+									| 09
+								a.link.strong_points__list__item__text(href="#")
+									| Уникальный инвестиционный сервис
+							li.strong_points__list__item
+								span.strong_points__list__item__number
+									| 10
+								a.link.strong_points__list__item__text(href="#")
+									| Квалифицированная рускоязычная поддержка
+					a.arrow_link(href="#")
+						| Все преимущества
+				.col-lg-4.col-xs-12
+					.card.trust_pageblock__card
+						h2.page_title.card__title
+							| Новости
+						a.card__link(href="#")
+							span.card__text
+								| Проактивная информационная политика со стороны компании&hellip;
+							span.card__date
+								| 11 апреля 2015
+						a.card__link(href="#")
+							span.card__text
+								| Вебинар "Итоги торговой недели" в еженедельном расписании принятия и управления решений&hellip;
+							span.card__date
+								| 13 апреля 2015
+						a.arrow_link(href="#")
+							| Все новости
+		.trust_pageblock__button_box
+			a.button(href="#")
+				span.button__text
+					| зарегистрироваться
+	.features_jumbotron(style="background-image: url({% static 'img/marketing-site/bg/bg--gray.png' %})")
+		.container
+			.row
+				.col-xs-12.col-sm-4.features_jumbotron__item_box
+					a.borders_box.features_jumbotron__item.features_jumbotron__item--desk-icon(href="#")
+						.borders.borders--top-bottom
+						.borders.borders--sides
+						span.features_jumbotron__item__text
+							| Узнать больше
+							br
+							| о FOREX
+				.col-xs-12.col-sm-4.features_jumbotron__item_box
+					a.borders_box.features_jumbotron__item.features_jumbotron__item--io-icon(href="#")
+						.borders.borders--top-bottom
+						.borders.borders--sides
+						span.features_jumbotron__item__text
+							| Способы ввода-
+							br
+							| вывода средств
+				.col-xs-12.col-sm-4.features_jumbotron__item_box
+					a.borders_box.features_jumbotron__item.features_jumbotron__item--phone-icon(href="#")
+						.borders.borders--top-bottom
+						.borders.borders--sides
+						span.features_jumbotron__item__text
+							| Заказать
+							br
+							| обратный звонок

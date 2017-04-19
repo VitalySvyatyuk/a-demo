@@ -1,0 +1,31 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+<h2 class="modal-title offset-bottom-30">
+    {% trans "Change leverage" %}
+    <span>{% trans "Account" %} [[account.mt4_id]]</span>
+</h2>
+
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+
+<form ng-submit="changeLeverage()">
+    <div class="reveal-form row offset-bottom-30">
+        <div class="small-6 large-6 column">
+            <label ng-class="{required: formData.leverage.required}" ng-bind="formData.leverage.label|capitalize"></label>
+            <div class="description" ng-bind="formData.leverage.help_text|capitalize"></div>
+        </div>
+        <div class="small-6 large-6 column">
+            <div class="select-wrapper">
+                <select
+                    ng-disabled="isLoading"
+                    ng-model="form.leverage"
+                    ng-options="r.value as r.display_name for r in formData.leverage.choices">
+                </select>
+            </div>
+            <p class="form-error" ng-repeat="err in errors.leverage" ng-bind="err"></p>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <p class="despcription" ng-bind="formData.type.choices_help_texts[type]"></p>
+        <button class="medium third-black to-white offset-top-20" ng-disabled="isLoading">{% trans "Change leverage" %}</button>
+    </div>
+</form>

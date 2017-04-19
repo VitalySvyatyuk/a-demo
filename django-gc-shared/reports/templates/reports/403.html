@@ -1,0 +1,16 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+  <h1 class="green">{% trans "Sorry" %}</h1>
+    <br>
+  <p>
+      {% trans "Reports are available only for customers with IB accounts." %}
+      <br>
+      <br>
+    {% morelink "/my/office/accounts/create/real_ib/?acc_type=f" _("Open an IB account") "black" %}
+    </p>
+{% endblock %}

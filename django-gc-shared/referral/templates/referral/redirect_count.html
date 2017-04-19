@@ -1,0 +1,54 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n %}
+
+{% block title %}{{ block.super }} — {% trans "Partner tools" %}{% endblock %}
+
+{% block content %}
+    <h1 class="green" id="banner-types">{% trans "Redirects from referral link" %}</h1>
+    <div class="container">
+        {% if request.user.accounts.real_ib %}
+            <table class="clicks gctable">
+                {% for object in clicks_list %}
+                    <tr>
+                        <td>
+                            {{ object.account }}
+                        </td>
+                        <td>
+                            <a href="#clicks_{{ object.account }}" rel="facebox">
+                                {% trans "Traffic rate" %}
+                            </a>: {{ object.total.clicks }}
+                        </td>
+                        <td>
+                            <div id="clicks_{{ object.account }}" style="display: none">
+                                {% if object.clicks %}
+                                    <table class="clicks gctable">
+                                        <tbody>
+                                        {% for click in object.clicks %}
+                                            <tr>
+                                                <td>{{ click.date }} </td>
+                                                <td>{{ click.clicks }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% else %}
+                                    {% trans "No clicks" %}
+                                {% endif %}
+                            </div>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td>{{ object.account }}</td>
+                        <td>{% trans "No clicks" %}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>
+                {% trans "You have no accounts" %}
+            </p>
+        {% endif %}
+    </div>
+{% endblock %}

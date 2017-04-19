@@ -1,0 +1,30 @@
+$base-line-height: normal;
+
+$xsmall-breakpoint: em-calc(480);
+
+$font-reg: "LatoRegular", "Helvetica Neue", "Arial";
+$font-med: "LatoSemibold", "Helvetica Neue", "Arial";
+$font-light: "LatoLight", "Helvetica Neue", "Arial";
+$font-reg-italic: "LatoRegularItalic", "Helvetica Neue", "Arial";
+$font-med-italic: "LatoSemiboldItalic", "Helvetica Neue", "Arial";
+//$font-light-italic: "pfDinTextLightItalic", "Helvetica Neue", "Arial";
+$font-phone: "pfAgoraSansLight", "pfDinTextLight", "Helvetica Neue", "Arial";
+
+
+$bg-color: #f5f5f5;
+$basic-color: #292929;
+$basic-color-hover: #332622;
+$topbar-hover: #292929;
+$gc-inverted-color: #ffffff;
+$gc-first-color: #c7102d;
+$gc-first-color-hover: darken(#c7102d, 10%);
+$gc-first-color-light: lighten(desaturate($gc-first-color, 30%), 50%);
+$gc-first-color-dark: #c7102d;
+$gc-first-color-dark-hover: #c7102d;
+$gc-second-color: #1f5060;
+$gc-second-color-hover: darken($gc-second-color, 5%);
+$gc-second-color-dark: #1f5060;
+$gc-third-color: #365160;
+$gc-third-color-hover: darken($gc-third-color, 5%);
+$gc-third-color-dark: #365160;
+$gc-fourth-color: #c7102d;

@@ -1,0 +1,22 @@
+{% load i18n %}
+
+{% for acc in accounts %}
+    <table class="user_data">
+        <tr>
+            <td>{% trans "Account" %}</td>
+            <td>{{ acc }}</td>
+        </tr>
+        <tr>
+            <td>{% trans "Deposit" %}</td>
+            <td>{{ acc.get_totals.deposit|default:0 }}</td>
+        </tr>
+        <tr>
+            <td>{% trans "Withdrawal" %}</td>
+            <td>{{ acc.get_totals.withdraw|default:0 }}</td>
+        </tr>
+        <tr>
+            <td>{% trans "Relative profit" %}</td>
+            <td>{{ acc.get_totals.profitability_deposit|default:0 }}</td>
+        </tr>
+    </table>
+{% endfor %}

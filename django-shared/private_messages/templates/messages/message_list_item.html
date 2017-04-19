@@ -1,0 +1,19 @@
+{% load i18n %}
+<td class="checkbox">
+    <div class="checkbox-wrapper">
+        <input id="{{ message.id }}" type="checkbox" value="{{ message.id }}" autocomplete="off"/>
+        <label for="{{ message.id }}"></label>
+    </div>
+</td>
+<td>{% if message.sender %}{{ message.sender }}{% else %}Arum Capital{% endif %}</td>
+<td>
+    {% if message.new %}<strong>{% endif %}
+    {% if message.replied %}<em>{% endif %}
+    <a href="{{ message.get_absolute_url }}"
+       {% if message.campaign %}data-reveal-id="message_{{ message.id }}"{% endif %}>
+        {{ message.subject }}
+    </a>
+    {% if message.replied %}</em>{% endif %}
+    {% if message.new %}</strong>{% endif %}</td>
+<td>{{ message.sent_at|date:"SHORT_DATETIME_FORMAT" }}</td>
+<td><a href="{% url "private_messages.views.delete" message.id %}">{% trans "delete" %}</a></td>

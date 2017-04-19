@@ -1,0 +1,50 @@
+.education-term-item{
+  margin-bottom: 107px;
+  .education-term-item-info{
+   .text{
+    margin-bottom: 61px;
+    p:last-child{
+      margin-bottom: 0;
+    }
+   }
+    img{
+      width: 90%;
+    }
+  }
+  .education-term-item-aside{
+    h2.page_title{
+      margin-bottom: 30px;
+      margin-top: 9px;
+    }
+    ul{
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 41px;
+      li{
+        margin-bottom: 25px;
+        p.subtitle{
+          margin-bottom: 17px;
+        }
+        a.link{
+          color: #1f5060;
+          border-bottom: 1px solid #1f5060;
+          text-decoration: none;
+        }
+      }
+      li:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .education-term-item{
+    margin-bottom: 50px;
+    .education-term-item-info{
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

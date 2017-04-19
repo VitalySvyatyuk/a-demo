@@ -1,0 +1,166 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {% trans "Compare trading platforms" %} {{ block.super }}
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title
+            - trans "Compare trading platforms"
+
+  .comparison
+    .container
+      .table-responsive.adaptive-table-wrapper
+        table.table.adaptive-table
+          thead
+            tr
+              th
+                - trans "Features"
+              th
+                img(src="{% static 'img/marketing-site/icons/icon-comparison-mt4.png' %}", alt="arum capital mt4")
+              th
+                img(src="{% static 'img/marketing-site/icons/icon-comparison-pro.png' %}", alt="arum capital pro")
+          tbody
+            tr
+              td
+                - trans "OS-supported"
+              td
+                | Windows
+              td
+                | Windows
+            tr
+              td
+                - trans "Smartphone and Tablet applications (Android and iOS)"
+              td
+                img.comparison-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+              td
+                img.comparison-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+            tr
+              td
+                - trans "Browser version"
+              td
+                img.comparison-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+              td
+                img.comparison-web(src="{% static 'img/marketing-site/icons/icon-arunpro-web.png' %}", alt="arum capital web")
+            tr
+              td
+                - trans "Market Depth "
+              td
+                img.comparison-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+              td
+                img.comparison-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+            tr
+              td
+                - trans "Tick chart"
+              td
+                img.comparison-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+              td
+                img.comparison-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+            tr
+              td
+                - trans "Technical analysis tools"
+              td
+                img.comparison-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+              td
+                img.comparison-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+            tr
+              td
+                - trans "Timeframes"
+              td
+                | M1,M5,M15, M30, H1, H4, D1, W, Month
+              td
+                | Tick M1,M5, M10, M15, M30, H1, H2, H4, H8 D1, W, Month
+            tr
+              td
+                - trans "Indicator base"
+              td
+                img.comparison-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+              td
+                img.comparison-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+            tr
+              td
+                - trans "News feed"
+              td
+                img.comparison-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+              td
+                img.comparison-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+            tr
+              td
+                - trans "EA Automated trading support"
+              td
+                img.comparison-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+              td
+                img.comparison-fix(src="{% static 'img/marketing-site/etc/logo--fix-protocol.png' %}", alt="arum capital fix protocol")
+            tr
+              td
+                - trans "Rollover of positions to the next business day"
+              td
+                - trans "Swapping"
+              td
+                - trans "ReOpen position"
+            tr
+              td
+                - trans "Pending orders" context "comparison-words"
+              td
+                - blocktrans trimmed count types=4
+                  type
+                  - plural
+                  {{ types }} types
+              td
+                - blocktrans trimmed count types=8
+                  type
+                  - plural
+                  {{ types }} types
+            tr
+              td
+              td
+                {% if LANGUAGE_CODE == 'ru' %}
+                div.not-ready-platform-ru
+                  a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                    - trans "Open an account"
+                {% else %}
+                div.not-ready-platform-en
+                  a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                    - trans "Open an account"
+                {% endif %}
+              td
+                {% if LANGUAGE_CODE == 'ru' %}
+                div.not-ready-platform-ru
+                  a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                    - trans "Open an account"
+                {% else %}
+                div.not-ready-platform-en
+                  a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                      - trans "Open an account"
+                {% endif %}
+      .comparison-demo-account
+        .row
+          .col-md-8
+            p
+              - trans "You may try any account type on a Demo Account under terms and conditions identical to the real trading account. "
+          .col-md-4
+            {% if LANGUAGE_CODE == 'ru' %}
+            div.not-ready-platform-ru
+              a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                span.button__text
+                  - trans "Open a demo account"
+            {% else %}
+            div.not-ready-platform-en
+              a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                span.button__text
+                  - trans "Open a demo account"
+            {% endif %}
+
+
+
+
+
+
+
+

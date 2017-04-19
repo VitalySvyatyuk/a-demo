@@ -1,0 +1,270 @@
+{% load staticfiles i18n %}
+
+<script type="text/javascript">
+    var choose_system_trans = '{% trans "Please choose payment system" %}';
+    var account_app_url = '{% url "account_app" %}';
+</script>
+<script type="text/javascript">
+    $(document).on('input', '#ps_form :input', function(){
+        $(this).siblings('.error').hide()
+    });
+    $(document).foundation()
+</script>
+<!-- Content -->
+<div id="sammy">
+    <div class="clearfix stocks-container payment-form">
+        <h1 class="offset-top-35 offset-bottom-35">{% trans "Financial operations" %}</h1>
+        <dl class="tabs offset-top-25">
+            <dd ng-class="{active: operationType === 'deposit'}">
+                <a id="tab_deposit" href="[[::BASE_URL]]payments/deposit" data-value="deposit"
+                        ><span>{% trans "Deposit funds" %}</span></a>
+            </dd>
+            <dd ng-class="{active: operationType === 'withdraw'}">
+                <a id="tab_withdraw" href="[[::BASE_URL]]payments/withdraw" data-value="withdraw"
+                        ><span>{% trans "Withdraw funds" %}</span></a></dd>
+            <dd ng-class="{active: operationType === 'transfer'}">
+                <a id="tab_transfer" href="[[::BASE_URL]]payments/transfer" data-value="transfer"
+                        ><span>{% trans "Internal transfer" %}</span></a></dd>
+        </dl>
+
+        <div class="tabs-content">
+            <!-- deposit -->
+            <div class="content" id="deposit" ng-if="operationType==='deposit'" ng-class="operationType==='deposit' ? 'active' : ''">
+                <ul class="form-head offset-bottom-30">
+                    <li ng-class="step==='fill' ? 'step' : ''">{% trans "Step 1. Transaction details" %}</li>
+                    <li class="arrow">&rarr;</li>
+                    <li ng-class="step==='preview' ? 'step' : ''">{% trans "Step 2. Verification" %}</li>
+                    <li class="arrow">&rarr;</li>
+                    <li ng-class="step==='html' ? 'step' : ''">{% trans "Step 3. Payment" %}</li>
+                </ul>
+                <div id="fill" ng-show="step==='fill'" class="third-light-wrapper first-step forms-wrapper deposit">
+                    <div class="row">
+
+                        <div class="small-4 medium-4 large-4 columns">
+                            <label>{% trans "Payment system" context "deposit" %}</label>
+                            <div class="dropdown-payments" data-dropdown="hover-payments-deposit">
+                                <span id="icon" class="icon small-payment-icon [[selectedPS.slug||'']]"></span>
+                                <span id="slug">[[ selectedPS.name|| chooseSystemTrans ]]</span>
+                            </div>
+                        </div>
+
+                        <div id="hover-payments-deposit" class="hover-payments-deposit" data-dropdown-content>
+                            <div ng-repeat="item in depositSystems" ng-class="{'one-ps':item.system=='terminal'||item.system=='mobile' || system.value.systems.unionpay}">
+                                <p>[[::item.value.title]]</p>
+                                <ul>
+                                    <li ng-repeat="(slug, system) in item.value.systems">
+                                        <a href="#"
+                                           ng-click="selectPS(system)"
+                                           class="icon small-payment-icon [[::slug]]"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!--id="hover-payments-deposit"-->
+
+                        <form id="ps_form"
+                              name="depositForm"
+                              class="in-out-form"
+                              method="POST"
+                              ng-submit="processPaymentPreview($event)"
+                              ng-show="selectedPSForm"
+                              ng-bind-html="selectedPSForm"></form>
+
+
+                    </div><!--class="row"-->
+                    <div ng-bind-html="errors" ng-show="errors" class="offset-top-20 text-center">
+                    </div><!--errors-->
+                </div><!--id="fill"-->
+
+                <div id="preview" ng-show="step==='preview'" class="third-light-wrapper second-step">
+                    <p class="offset-bottom-25" ng-if="selectedPSIsBank">
+                       {% blocktrans %}
+                        Print out or download the payment order and bring it to a local branch of your bank to conduct
+                        the transaction.
+                        {% endblocktrans %}
+                    </p>
+
+                    <h5 class="row text-center offset-bottom-20">{% trans "Please verify the details:" %}</h5>
+
+                    <table class="offset-bottom-30" ng-show="previewItems">
+                        <tr ng-repeat="item in previewItems">
+                            <td>[[ item[0] ]]</td><td>[[ item[1] ]]</td>
+                        </tr>
+                        <tr ng-if="restrictedCountry">
+                            <td class="text-center" colspan="2">
+                                {% trans "Payments from your country may be restricted, in case your payment fails, see the instructions <a href='/faq/#/SKRILL'>here</a>" %}
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="row">
+                        <div class="small-6 medium-6 large-6 column text-right">
+                            <button class="button second medium with-prev" ng-click="showFill()">{% trans "Back" %}</button>
+                        </div>
+                        <div class="small-6 medium-6 large-6 column text-left">
+                            <button class="button medium" ng-click="processPaymentConfirmed()">{% trans "Transfer funds" %}</button>
+                        </div>
+                    </div>
+
+                    <div class="row offset-top-25" ng-if="selectedPSIsBank">
+                        <div class="small-6 medium-6 large-6 column text-right">
+                            <a href="/api/payments/download_bank_requisits[[previewBankDownloadPDFParams]]"
+                               class="fright pdf"
+                               title="{% trans "Download requisits" %}">{% trans "Download requisits" %}</a>
+                        </div>
+                        <div class="small-6 medium-6 large-6 column text-left">
+                            <a href="/api/payments/download_bank_requisits[[previewBankDownloadPDFParams]]" class="fright print"
+                       title="{% trans "print requisits" %}">{% trans "Print requisits" %}</a>
+                        </div>
+                    </div>
+
+                    <div ng-bind-html="errors" ng-show="errors" class="offset-top-20 text-center">
+                    </div><!--errors-->
+                </div><!--id="preview"-->
+
+                <div id="html" ng-show="step==='html'"
+                     ng-bind-html="responseHtml"
+                     class="third-light-wrapper third-step">
+                </div><!--id="html"-->
+
+                {# blocktrans #}
+                    <!-- <p class="info offset-top-20">
+                        We do not accept transfers from 3rd parties. All expenditures for returning a transfer to the sender are paid for
+                        by the customer.<br>
+                        Deposit of funds to customer's account, currency conversion between accounts and while withdrawing funds
+                        is carried out according to company's internal rates effective at the time of funds arrival or at the
+                        time of the withdrawal.<br>
+                        "Amount" field is only for information, we do not guarantee deposit of the exact amount of funds stated.<br>
+                        One customer may create not more than 10 withdrawal requests in a day.<br>
+                        Funds withdrawal is conducted by our Financial department from Monday to Friday from 9:00 to 18:00 (MSK).
+                        Withdrawal requests, created after 16:00 (MSK) are processed the next working day.
+                    </p> -->
+                {# endblocktrans #}
+
+            </div><!--id="deposit"-->
+
+            <!-- withdraw -->
+            <div class="content" id="withdraw" ng-if="operationType==='withdraw'" ng-class="operationType==='withdraw' ? 'active' : ''">
+                <ul class="form-head offset-bottom-30">
+                    <li ng-class="step==='fill' ? 'step' : ''">{% trans "Step 1. Transaction details" %}</li>
+                    <li class="arrow">&rarr;</li>
+                    <li ng-class="step==='preview' ? 'step' : ''">{% trans "Step 2. Verification" %}</li>
+                    <li class="arrow">&rarr;</li>
+                    <li ng-class="step==='html' ? 'step' : ''">{% trans "Step 3. Payment" %}</li>
+                </ul>
+                <div id="fill" ng-show="step==='fill'" class="third-light-wrapper first-step forms-wrapper withdraw" >
+                    <div class="row offset-bottom-30">
+                        <div class="small-5 medium-5 large-5 columns">
+                            <label>{% trans "Payment system" context "withdraw" %}</label>
+                            <div class="dropdown-payments" data-dropdown="hover-payments-withdraw">
+                                <span id="icon" class="icon small-payment-icon [[selectedPS.slug||'']]"></span>
+                                <span id="slug">[[ selectedPS.name|| chooseSystemTrans ]]</span>
+                            </div>
+                        </div>
+                        <div id="hover-payments-withdraw" class="hover-payments-withdraw" data-dropdown-content>
+                            <div ng-repeat="item in withdrawSystems">
+                                <p>[[::item.value.title]]</p>
+                                <ul>
+                                    <li ng-repeat="(slug, system) in item.value.systems">
+                                        <a href="#"
+                                           ng-click="selectPS(system)"
+                                               class="icon small-payment-icon [[::slug]]"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <form id="ps_form"
+                              name="depositForm"
+                              class="in-out-form"
+                              method="POST"
+                              ng-submit="processPaymentPreview($event)"
+                              ng-show="selectedPSForm"
+                              ng-bind-html="selectedPSForm"></form>
+                    </div><!--class="row"-->
+
+                    <div id="errors" ng-bind-html="errors" ng-show="errors" class="offset-top-20 text-center">
+                    </div>
+                </div>
+
+                <div id="preview" ng-show="step==='preview'" class="third-light-wrapper second-step">
+                    <div class="row">
+                        <h5 class="text-center offset-bottom-20">{% trans "Please verify the details:" %}</h5>
+                        <table class="offset-bottom-30" ng-show="previewItems">
+                            <tr ng-repeat="item in previewItems">
+                                <td>[[ item[0] ]]</td><td>[[ item[1] ]]</td>
+                            </tr>
+                        </table>
+                        <div class="row">
+                            <div class="small-6 medium-6 large-6 column text-right">
+                                <button class="button second medium with-prev" ng-click="showFill()">{% trans "Back" %}</button>
+                            </div>
+                            <div class="small-6 medium-6 large-6 column text-left">
+                                <button class="button medium" ng-click="processPaymentConfirmed()">{% trans "Transfer funds" %}</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-bind-html="errors" ng-show="errors" class="offset-top-20 text-center">
+                    </div><!--errors-->
+                </div><!--id="preview"-->
+
+                <div id="html" ng-show="step==='html'"
+                     ng-bind-html="responseHtml"
+                     class="third-light-wrapper third-step">
+                </div><!--id="html"-->
+
+            </div><!--id="withdraw"-->
+
+            <!-- transfer -->
+            <div class="content" id="transfer" ng-if="operationType==='transfer'" ng-class="operationType==='transfer' ? 'active' : ''">
+                <ul class="form-head offset-bottom-30">
+                    <li ng-class="step==='fill' ? 'step' : ''">{% trans "Step 1. Transaction details" %}</li>
+                    <li class="arrow">&rarr;</li>
+                    <li ng-class="step==='preview' ? 'step' : ''">{% trans "Step 2. Verification" %}</li>
+                    <li class="arrow">&rarr;</li>
+                    <li ng-class="step==='html' ? 'step' : ''">{% trans "Step 3. Payment" %}</li>
+                </ul>
+
+                <div id="fill" ng-show="step==='fill'" class="third-light-wrapper first-step forms-wrapper">
+                    <form id="ps_form"
+                          name="depositForm"
+                          class="in-out-form"
+                          method="POST"
+                          ng-submit="processPaymentPreview($event)"
+                          ng-show="selectedPSForm"
+                          ng-bind-html="selectedPSForm"></form>
+
+                    <div ng-bind-html="errors" ng-show="errors" class="offset-top-20 text-center">
+                    </div><!--errors-->
+                </div>
+
+                <div id="preview" ng-show="step==='preview'" class="third-light-wrapper second-step">
+                    <div class="row">
+                        <h5 class="text-center offset-bottom-20">{% trans "Please verify the details:" %}</h5>
+                        <table class="offset-bottom-30" ng-show="previewItems">
+                            <tr ng-repeat="item in previewItems">
+                                <td>[[ item[0] ]]</td><td>[[ item[1] ]]</td>
+                            </tr>
+                        </table>
+                        <div class="row">
+                            <div class="small-6 medium-6 large-6 column text-right">
+                                <button class="button second medium with-prev" ng-click="showFill()">{% trans "Back" %}</button>
+                            </div>
+                            <div class="small-6 medium-6 large-6 column text-left">
+                                <button class="button medium" ng-click="processPaymentConfirmed()">{% trans "Transfer funds" %}</button>
+                            </div>
+                        </div>
+                        {% csrf_token %}
+                    </div>
+                    <div ng-bind-html="errors" ng-show="errors" class="offset-top-20 text-center">
+                    </div><!--errors-->
+                </div><!--id="preview"-->
+
+                <div id="html" ng-show="step==='html'"
+                     ng-bind-html="responseHtml"
+                     class="third-light-wrapper third-step">
+                </div><!--id="html"-->
+
+
+            </div><!--id="transfer"-->
+        </div><!--class="tabs-content"-->
+    </div><!--class="clearfix stocks-container payment-form"-->
+</div><!--id="sammy"-->

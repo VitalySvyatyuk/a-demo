@@ -1,0 +1,64 @@
+{% load staticfiles inbox i18n %}
+<div class="gc-accordion-item" ng-show="checkAvailableModules('investment')" accordion-show="selectedCategory === 'pammInvestments'" name="investments" accordion-click="selectCategory('pammInvestments')" ng-controller="AccountsLammInvestmentsController">
+  <div class="title-wrapper" title>
+    <span class="title">{% trans "PAMM Investments" %}</span>
+        <a ng-if="account" target="_blank" href="{% url "lamm_rating" %}" class="button medium right">{% trans "Invest" %}</a>
+        <a ng-if="!account" href="{% url "account_app" %}create/pamm" class="button medium right">{% trans "Create account" %}</a>
+  </div>
+  <div content ng-if="!isDataHidden">
+    {% include "js/my/_accounts_local_nav.html" %}
+    <table class="table-big-green invest">
+      <tbody>
+        <tr class="notification" ng-if="!account">
+          <td colspan="2">{% trans "There is no account to display" %}</td>
+        </tr>
+        <tr class="active" ng-if="account" account-display="account === acc && !isDataHidden">
+          <td>
+            <p class="account-header">{% trans "Account" %} № [[::account.mt4_id]]</p>
+          </td>
+          <td>
+            {% trans "Total account balance" %}&nbsp;
+            <span class="font-med">
+              &lrm;[[!showMoney? '*****' : (!mt4Data[account.mt4_id]? '...' : mt4Data[account.mt4_id].balance_display)]]
+            </span>
+          </td>
+        </tr>
+        <tr ng-if="account">
+          <td colspan="2" class="nested-wrapper">
+            {% include "js/my/_accounts_local_nav_adaptive.html" %}
+            <table class="nested">
+              <thead>
+                <tr>
+                  <td>{% trans "Master" %}</td>
+                  <td>{% trans "Invetsments amount" %}</td>
+{#                  <td>{% trans "Profit" %}</td>#}
+{#                  <td>{% trans "Daily Profitability" %}</td>#}
+{#                  <td>{% trans "Total Profitability" %}</td>#}
+                  <td>{% trans "Rollover time" %}</td>
+                  <td>{% trans "Status" %}</td>
+                  <td>{% trans "Actions" %}</td>
+                </tr>
+            </thead>
+             <tbody>
+                 <tr ng-repeat="managed in account.lamm_investments">
+                  <td>[[::managed.Manager]]</td>
+                  <td>[[::managed.Amount]]</td>
+{#                  <td>$567-XXX</td>#}
+{#                  <td>23% - XXX</td>#}
+{#                  <td>XXX</td>#}
+                  <td>[[(managed.rollover_start_date) ? managed.rollover_start_date : "-" ]]</td>
+
+                  <td>[[managed.Status]]</td>
+                  <td>
+                    <a ng-if="managed.InvestStatus === STATUS_ACCEPTED || managed.InvestStatus === STATUS_INVEST_FULL || managed.InvestStatus === INVEST_ADOPTED" ng-click="quitManaged(account, managed)" class="icon-break"></a>
+                    <a ng-if="managed.InvestStatus === STATUS_PENDING" ng-click="cancelManaged(account, managed)" class="icon-cancel"></a>
+                  </td>
+                </tr>
+             </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

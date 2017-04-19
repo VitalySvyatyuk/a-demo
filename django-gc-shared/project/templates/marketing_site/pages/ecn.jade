@@ -1,0 +1,121 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {% trans "ECN" %} {{ block.super }}
+
+block content
+  .page_head(style="background-image: url({% static 'img/marketing-site/bg/bg-ecn-header.jpg' %})")
+    .container
+      .row
+        .col-xs-12.white-bc
+          - breadcrumbs
+          h1.page_head__title.page_head__title--white
+            - trans "Our ECN-liquidity"
+
+
+  .ecn
+    .ecn-advantages-skin
+      .container
+        .ecn-advantages
+          .row
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-ecn-speed-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Short delay"
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-arumpro-building-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Close proximity <br> to service providers"
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-ecn-globus-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Globally <br> available"
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-ecn-fix-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Withdrawal via<br>FIX-protocol"
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-ecn-graphic-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Deep <br> liquidity"
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-ecn-price-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Best price"
+    .ecn-info-skin
+      .container
+        .ecn-info
+          .row
+            .col-md-5
+              h2.page_title.page_title--red
+                | Arum Capital
+              blockquote
+                span
+                  img(src="{% static 'img/marketing-site/icons/icon-qoutes-left-enc.png' %}", alt="capital advantages")
+                - trans "Our mission: to secure convenient environment for traders with maximum transparency of linking positions to independent service providers on ECN/STP model"
+                span
+                  img(src="{% static 'img/marketing-site/icons/icon-qoutes-right-enc.png' %}", alt="capital advantages")
+              h2.page_title.page_title--red
+                - trans "Why our liquidity?"
+              ul
+                li
+                  - trans "One of the best liquidity providers "
+                li
+                  - trans "We always take the side of the client"
+                li
+                  - trans "Technological cutting edge innovations "
+              h2.page_title.page_title--red
+                - trans "Fast execution"
+              p
+                - trans "Direct link of all transactions to the liquidity providers by means of FIX-protocol."
+              h2.page_title.page_title--red
+                - trans "Globally available"
+              p
+                - trans "The fastest possible execution from any point in the world thanks to automated selection of the best connection point based on the client's location."
+            .col-md-5.col-md-offset-1
+              h2.page_title
+                - trans "Safe liquidity providers"
+              p
+                - trans "Our partner is one of the best liquidity providers in the industry with 1.5 billion USD of direct interbank lending lines. CFH Clearing is connectedto the interbanking liquidity via its partners in Jefferies and BNP Paribas as the prime brokers."
+              img(src="{% static 'img/marketing-site/pictures/img-ecn-partner-a.jpg' %}", alt="capital advantages")
+              img(src="{% static 'img/marketing-site/pictures/img-ecn-partner-b.jpg' %}", alt="capital advantages")
+    .ecn-providers
+      .container
+        h2.page_title.page_title--white
+          - trans "Close proximity to the service providers"
+        p
+          - trans "CFH Clearing has established relationships with Tier 1 Banks and carefully selected Institutional Market Makers that make up a comprehensive, yet flexible, liquidity solution."
+        .ecn-providers-list
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-paribas.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-jefferies.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-ubs.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-goldman.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-paribas.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-barclays.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-suisse.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-anz.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-morgan.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-hotspot.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-currenex.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-fastmatch.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-spotstream.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-prime.jpg' %}", alt="capital advantages")
+          .ecn-providers-list-element
+            img(src="{% static 'img/marketing-site/pictures/img-ecn-olfa.jpg' %}", alt="capital advantages")
+

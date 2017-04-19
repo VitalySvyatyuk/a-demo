@@ -1,0 +1,48 @@
+- load i18n currency_tags app_tags
+
+.modal-dialog
+    .modal-content
+        .modal-header
+            %button.close{type:"button", data-dismiss:"modal", aria-hidden:"true"}&times;
+            %h4.modal-title
+                {% trans "Purse" %}
+                = r.payment_system
+                (
+                = r.params.purse
+                )
+
+        .modal-body
+            %table
+                %tbody
+
+                    %tr
+                        %td
+                            %b {% trans "Client" %}:
+                        %td
+                            = r.account.user.get_full_name|default:r.account.user
+                            %a{onclick:'winopen("{{r.account.user.get_full_name|default:r.account.user}}", "{{r.account.user.amo.get_url}}"); return false;', href:"{{r.account.user.amo.get_url}}", target:"_blank"}
+                                %b CRM
+                    %tr
+                        %td
+                            %b {% trans "Account" %}:
+                        %td= r.account
+                    %tr
+                        %td
+                            %b {% trans "Payment system" %}:
+                        %td= r.payment_system
+                    %tr
+                        %td
+                            %b {% trans "Purse" %}:
+                        %td= r.params.purse
+                     %tr
+                        %td
+                            %b {% trans "Parameters" %}:
+                        %td
+                            %table.table.table-condensed
+                                %tbody
+                                    - for k, v in r.params.items
+                                        %tr
+                                            %td= k
+                                            %td= v
+        .modal-footer
+            %button.btn.btn-default{type:"button", data-dismiss:"modal"} {% trans "Close" %}

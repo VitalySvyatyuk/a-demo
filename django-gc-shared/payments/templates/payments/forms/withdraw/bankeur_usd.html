@@ -1,0 +1,45 @@
+{% extends "payments/forms/withdraw/base.html" %}
+{% block ps %}
+    <div class="small-4 medium-4 large-4 columns">
+        {% with field=details_form.name %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+    <div class="small-4 medium-4 large-4 columns">
+        {% with field=details_form.country %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+    <div class="small-8 medium-8 large-8 columns">
+        {% with field=details_form.address %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+    <div class="small-4 medium-4 large-4 columns">
+        {% with field=details_form.bank %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+    <div class="small-4 medium-4 large-4 columns">
+        {% with field=details_form.bank_swift %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+    <div class="small-4 medium-4 large-4 columns">
+        {% with field=details_form.bank_account %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+    <div class="small-4 medium-4 large-4 columns">
+        {% with field=details_form.bank_correspondent %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+    <div class="small-4 medium-4 large-4 columns">
+        {% with field=details_form.bank_correspondent_swift %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+    <div class="small-4 medium-4 large-4 columns">
+    </div>
+{% endblock %}

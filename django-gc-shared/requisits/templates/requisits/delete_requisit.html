@@ -1,0 +1,26 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags %}
+
+{% block content %}
+  <h1 class="green">{% trans "Delete requisit" %}</h1>
+  <div class="container">
+    <form action="." method="POST">
+      {% csrf_token %}
+
+      <p>
+        {% blocktrans with object.payment_system as payment_system %}
+        Are you sure you want to delete this <strong>{{ payment_system }}</strong> requisit?
+        {% endblocktrans %}
+      </p>
+
+      <p class="requisit">
+        {{ object }}
+      </p>
+        {% gcbutton "submit" _("Yes") "black" 'name="submit"'%}
+      <a href="{% url "requisits_requisit_list" %}" title="{% trans "Go back" %}">
+        {% trans "No, get me back!" %}
+      </a>
+    </form>
+  </div>
+{% endblock %}

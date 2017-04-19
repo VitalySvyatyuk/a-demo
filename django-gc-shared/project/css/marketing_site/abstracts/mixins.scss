@@ -1,0 +1,59 @@
+@mixin clearfix {
+	&:after {
+		content: " "; /* Older browser do not support empty content */
+		visibility: hidden;
+		display: block;
+		height: 0;
+		clear: both;
+	}
+}
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&:-moz-placeholder           {@content}
+	&::-moz-placeholder          {@content}
+	&:-ms-input-placeholder      {@content}
+}
+@mixin clear_list{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+@mixin no_webkit_flickering{
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+}
+@mixin GPU_acceleration{
+	transform: translateZ(0);
+}
+@mixin font_loader($font_family, $font_weight, $font_style){
+	font-weight: #{$font_weight + '00'};
+	$font_map: (
+			$lato: 'lato'
+	);
+
+	.wf-#{map-get($font_map, $font_family)}-#{$font_style + $font_weight}-active &{
+		font-family: #{$font_family}, Helvetica, Arial, sans-serif;
+	}
+}
+@mixin clear_link{
+	&{
+		text-decoration: none;
+	}
+	&:hover{
+		color: inherit;
+	}
+}
+@mixin centrify($horizontal: false, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}

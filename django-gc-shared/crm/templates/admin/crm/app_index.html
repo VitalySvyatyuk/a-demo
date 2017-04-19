@@ -1,0 +1,21 @@
+{% extends "admin/app_index.html" %}
+{% load app_tags %}
+
+{% block content %}
+
+<table><tbody>
+    <tr>
+        <td>AmoContact unsynced</td>
+        <td>{% amo_unsynced_count 'contacts' %}</td>
+    </tr>
+    <tr>
+        <td>AmoTask unsynced</td>
+        <td>{% amo_unsynced_count 'tasks' %}</td>
+    </tr>
+    <tr>
+        <td>AmoNote unsynced</td>
+        <td>{% amo_unsynced_count 'notes' %}</td>
+    </tr>
+</tbody></table>
+{{ block.super }}
+{% endblock %}

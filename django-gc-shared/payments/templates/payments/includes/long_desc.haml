@@ -1,0 +1,18 @@
+- load i18n currency_tags
+- if details.max_sum_in_day or details.max_sum_in_month or details.max_sum_one_time or details.max_transactions_in_day
+    .description_fee
+        - if details.max_sum_in_day
+            {% trans "Max deposit per day" %}:
+            %br {% signed_amount details.max_sum_in_day details.currency precision=0 %}
+        - if details.max_sum_in_month
+            {% trans "Max deposit per month" %}:
+            %br {% signed_amount details.max_sum_in_month details.currency precision=0 %}
+        - if details.max_sum_one_time
+            {% trans "Max one-time deposit" %}:
+            %br {% signed_amount details.max_sum_one_time details.currency precision=0 %}
+        - if details.max_transactions_in_day
+            {% trans "Max transactions per day" %}: {{ details.max_transactions_in_day }}
+            %br
+        %br
+- else
+    %br

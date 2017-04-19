@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-20 20:29+0400\n"
+"PO-Revision-Date: 2012-08-08 15:47\n"
+"Last-Translator:   <andrey@dresvyannikov.ru>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.6.6\n"
+
+msgid "Failed to send message"
+msgstr ""
+
+msgid "Message is in the queue"
+msgstr ""
+
+msgid "Message is on the way to the operator"
+msgstr ""
+
+msgid "Message is on the way to the recipient"
+msgstr ""
+
+msgid "Message delivered"
+msgstr ""
+
+msgid "Message failed: out of time"
+msgstr ""
+
+msgid "Message failed: cancelled by the operator"
+msgstr ""
+
+msgid "Message failed: phone malfunction"
+msgstr ""
+
+msgid "Message failed, reason unknown"
+msgstr ""
+
+msgid "Message declined"
+msgstr ""
+
+msgid "Wrong API key."
+msgstr ""
+
+msgid "Not enough funds."
+msgstr ""
+
+msgid "Invalid receiver number."
+msgstr ""
+
+msgid "Empty message."
+msgstr ""
+
+msgid "Sender name not allowed."
+msgstr ""
+
+msgid "Message too long."
+msgstr ""
+
+msgid "Message limit exceeded"
+msgstr ""
+
+msgid "Receiver number not allowed."
+msgstr ""
+
+msgid "No errors."
+msgstr ""
+
+msgid "Error login or password."
+msgstr ""
+
+msgid "Blocked user."
+msgstr ""
+
+msgid "Insufficient funds."
+msgstr ""
+
+msgid "Blocked ip."
+msgstr ""
+
+msgid "Http not enabled."
+msgstr ""
+
+msgid "This server ip not enabled"
+msgstr ""
+
+msgid "Email sending not enabled"
+msgstr ""
+
+msgid "This email not enabled"
+msgstr ""
+
+msgid "Blocked moderator id"
+msgstr ""
+
+msgid "Error manual phone list"
+msgstr ""
+
+msgid "Empty message text"
+msgstr ""
+
+msgid "Empty phone list"
+msgstr ""
+
+msgid "Stop service"
+msgstr ""
+
+msgid "Error format date"
+msgstr ""
+
+msgid "Double sent from web interface"
+msgstr ""
+
+msgid "Incorrect Group"
+msgstr ""
+
+msgid "empty password"
+msgstr ""
+
+msgid "empty login"
+msgstr ""
+
+msgid "invalid from phone"
+msgstr ""
+
+msgid "Confirmation code not generated."
+msgstr ""
+
+msgid "Invalid confirmation code."
+msgstr ""
+
+msgid "No code generated."
+msgstr ""
+
+msgid "SMS-token"
+msgstr ""
+
+msgid "Enter sms-token that you got on phone number you entered earlier"
+msgstr ""
+
+#, python-format
+msgid "Phone confirmation code is %(phone)s"
+msgstr ""
+
+msgid "Invalid confirmation code"
+msgstr ""
+
+msgid "Receiver number"
+msgstr ""
+
+msgid "A number in format +70000000000"
+msgstr ""
+
+msgid "Sender number"
+msgstr ""
+
+msgid "Leave empty if you don't know what it is"
+msgstr ""
+
+msgid "Message text"
+msgstr ""
+
+msgid "Maximum 160 characters"
+msgstr ""
+
+msgid "SMS message"
+msgstr ""
+
+msgid "SMS messages"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Enter the confirmation code you have received."
+msgstr ""
+
+msgid "Send sms"
+msgstr ""

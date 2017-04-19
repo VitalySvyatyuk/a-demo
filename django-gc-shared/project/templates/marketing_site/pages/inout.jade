@@ -1,0 +1,263 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+	| {% trans "Deposits / withdrawals" %} {{ block.super }}
+
+block content
+	.page_head.inout_page_head
+		.container
+			.row
+				.col-xs-12
+					- breadcrumbs
+					h1.page_head__title
+						- trans "Deposits / withdrawals"
+	.inout__tabs_box
+		.container
+			.tabs__box
+				button.tabs__button.js-tab.state-active-tab(type="button", data-tab-index="01_inout", data-tab-category="inout")
+					.tabs__button__text_box
+						span.tabs__button__text
+							- trans "Deposit funds"
+				button.tabs__button.js-tab(type="button", data-tab-index="02_inout", data-tab-category="inout")
+					.tabs__button__text_box
+						span.tabs__button__text
+							- trans "Withdraw from account"
+	.inout_table_pageblock
+		div.strategies.js-tab-content.state-visible(data-tab-index="01_inout", data-tab-category="inout")
+			.container
+				table.strategies.js-tab-content.state-visible(data-tab-index="", data-tab-category="")
+					tr.strategies__row
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Deposit method"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Currency"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Execution time"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Minimum deposit"
+						//-
+							th.strategies__cell.strategies__cell_header
+								span.strategies__cell__title
+									- trans "Commission on deposit over $300"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								| &nbsp;
+
+					- regroup deposit_systems|dictsortreversed:"category.priority" by category as deposit_groups
+					for group in deposit_groups
+						tr.strategies__row.strategies__title_row
+							td.strategies__cell.strategies__big_cell(colspan="5")
+								span.strategies__big_cell_title= group.grouper
+						for system in group.list
+							tr.strategies__row.strategies__content_row.js-pseudolink(data-href="/account/trading")
+								td.strategies__cell
+									.strategies__cell__inout_method_box.payment-image-cell
+										if system.image
+											img.strategies__cell__inout_method(src=system.image.url, alt=system.name)
+									span.strategies__cell__text.payment-text-cell= system.name
+								td.strategies__cell
+									span.strategies__cell__text= system.currency
+								td.strategies__cell
+									span.strategies__cell__text= system.processing_times|default:""
+								td.strategies__cell
+									span.strategies__cell__text= system.min_amount|default:"0"
+								//-
+									td.strategies__cell
+										span.strategies__cell__text= system.commission|default:"0"
+								td.strategies__cell
+									span.strategies__cell__call_to_action.desktop
+										- trans "Deposit to account"
+									span.strategies__cell__call_to_action.mobile
+										- trans "Deposit"
+
+
+				.inout__info_box
+					.container
+						.row
+							.col-xs-12
+								ul.numbered_list(style="margin-top:50px;")
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 01
+										span.numbered_list__item_text
+											- trans "Our clients will always be notified via email when a new deposit attempt has been successful or failed."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 02
+										span.numbered_list__item_text
+												- trans "We will accept deposits only where the name of the sender's account matches the name of the trading account with ArumCapital Ltd."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 03
+										span.numbered_list__item_text
+											- trans "Credit Card deposits will not be processed without a copy (front and back) of the credit card being used."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 04
+										span.numbered_list__item_text
+											- trans "We do not accept any payments from 3rd parties."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 05
+										span.numbered_list__item_text
+											- trans "Payments which are not in line with the above conditions will be returned to the sender for his expense."
+						.row
+							.col-xs-12
+								h2.page_title.page_title--red
+									- trans "Funding your account via bank transfer:"
+								ul.numbered_list
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 01
+										span.numbered_list__item_text
+											- trans "In order to make a transfer you are kindly required to make a full registration with us and confirm your account on our website (the requirement of the regulator, CySEC)."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 02
+										span.numbered_list__item_text
+											- trans "Upon varification kindly open a trading account on your prefered platform."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 03
+										span.numbered_list__item_text
+											- trans "Login to your Personal Cabinet and go to Deposit/Withdrawal tab in order to fund your account."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 04
+										span.numbered_list__item_text
+											- trans "After the application to top up your trading account you will receive company bank details by email. Then you can make a transfer in a currency you choose from any bank you are banking with."
+						.row
+							.col-xs-12.col-lg-6
+								h2.page_title.page_title--red
+									- trans "Transfer fees:"
+								p
+									- trans "ARUM Capital does not charge any fees for incoming payment but clients are highly recommended to check the banking charges their bank receives for such transaction"
+							.col-xs-12.col-lg-6
+								h2.page_title.page_title--red
+									- trans "Deadlines:"
+								p
+									- trans "The funds are credited to the trading account the same day they hit the company account. An average time of a transfer is 3-5 business days and it depends on the sender bank and its correspondent banks."
+
+
+		div.strategies.js-tab-content(data-tab-index="02_inout", data-tab-category="inout")
+			.container
+				table.strategies.js-tab-content.state-visible(data-tab-index="", data-tab-category="")
+					tr.strategies__row
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Withdraw method"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Currency"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Execution time"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Minimum withdraw amount"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Commission on withdraw"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								| &nbsp;
+												
+					- regroup withdraw_systems|dictsortreversed:"category.priority" by category as deposit_groups
+					for group in deposit_groups
+						tr.strategies__row.strategies__title_row
+							td.strategies__cell.strategies__big_cell(colspan="6")
+								span.strategies__big_cell_title= group.grouper
+						for system in group.list
+							tr.strategies__row.strategies__content_row.js-pseudolink(data-href="/account/trading")
+								td.strategies__cell
+									.strategies__cell__inout_method_box.payment-image-cell
+										if system.image
+											img.strategies__cell__inout_method(src=system.image.url, alt=system.name)
+									span.strategies__cell__text.payment-text-cell= system.name
+								td.strategies__cell
+									span.strategies__cell__text= system.currency
+								td.strategies__cell
+									span.strategies__cell__text= system.processing_times|default:""
+								td.strategies__cell
+									span.strategies__cell__text= system.min_amount|default:"0"
+								td.strategies__cell
+										span.strategies__cell__text= system.commission|default:"0"
+								td.strategies__cell
+									span.strategies__cell__call_to_action.desktop
+										- trans "Withdraw from account"
+									span.strategies__cell__call_to_action.mobile
+										- trans "Deposit"
+
+				.col-xs-12(style="padding-top: 8px; font-size: 12px")
+					- trans "You can withdraw less than amount specified in the graph 'Minimum withdraw amount' if your balance is less than the specified amount"
+
+
+				.inout__info_box
+					.container
+						.row
+							.col-xs-12
+								ul.numbered_list(style="margin-top:50px;")
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 01
+										span.numbered_list__item_text
+											- trans "Our clients will always be notified via email when a withdrawal request is received and when the withdrawal of funds is processed."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 02
+										span.numbered_list__item_text
+												- trans "We do not charge any withdrawal fees and cannot be held responsible for any charges applied by the payment method chosen by the client."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 03
+										span.numbered_list__item_text
+											- trans "Withdrawals methods, including the withdrawals of profit, shall follow the original method of deposited funds."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 04
+										span.numbered_list__item_text
+											- trans "We will not process any withdrawal to a 3rd party."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 05
+										span.numbered_list__item_text
+											- trans "Where the banking or personal information provided is incomplete or incorrect, the error or omission could result in delay or non-execution of the withdrawal."
+						.row
+							.col-xs-12
+								h2.page_title.page_title--red
+									- trans "Withdrawing funds from your account via bank transfer:"
+								ul.numbered_list
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 01
+										span.numbered_list__item_text
+											- trans "In order withdraw all or part of your funds, please login to your Personal Cabinet."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 02
+										span.numbered_list__item_text
+											- trans "Select the Trading account from which you wish to withdraw/deposit."
+									li.numbered_list__item
+										span.numbered_list__item_number
+											| 03
+										span.numbered_list__item_text
+											- trans "Click on the Invoice and fill it in with your banking details*. Upon receiving we will check your account balance and will proceed with execution of the transaction."
+								p
+									- trans "*where the banking or personal information is incomplete or incorrect, the error or omission could result in delay or non-execution of the withdrawal."
+						.row
+							.col-xs-12.col-lg-6
+								h2.page_title.page_title--red
+									- trans "Transfer fees:"
+								p
+									- trans "ARUM Capital does not charge any fees for incoming and outgouing payments but clients are highly recommended to check the banking charges their bank applies for such transaction."
+							.col-xs-12.col-lg-6
+								h2.page_title.page_title--red
+									- trans "Deadlines:"
+								p
+									- trans "The funds are deducted from the trading account same day when the withdrawal request is approved. The average time to receive your funds is 3-5 business days and it depends on the bank of destination."

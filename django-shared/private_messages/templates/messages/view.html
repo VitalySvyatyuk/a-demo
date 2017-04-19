@@ -1,0 +1,32 @@
+{% extends "design_2014/private_office/base.html" %}
+{% load i18n app_tags %}
+{% block content %}
+<h1>{% trans "View Message" %}</h1>
+<div class="container">
+<dl class="message-headers">
+    <dt>{% trans "Subject" %}</dt>
+    <dd><strong>{{ message.subject }}</strong></dd>
+    <dt>{% trans "Sender" %}</dt>
+    <dd>{% if message.sender %}{{ message.sender }}{% else %}Arum Capital{% endif %}</dd>
+    <dt>{% trans "Date" %} </dt>
+    <dd>{{ message.sent_at|date:_("DATETIME_FORMAT")}}</dd>
+    <dt>{% trans "Recipient" %}</dt>
+    <dd>{{ message.recipient }}</dd>
+</dl>
+
+{% if message.is_html %}
+    {{ message.body|safe }}
+{% else %}
+    {{ message.body|urlize|linebreaksbr }}
+{% endif %}
+
+    <br /><br />
+
+{% if message.recipient.pk == user.pk and message.sender %}
+{% url "messages_reply" message.id as reply_url %}
+{% morelink reply_url _("Reply") "black" %}
+{% endif %}
+{% url "messages_delete" message.id as delete_url %}
+{% morelink delete_url _("Delete") "black" %}
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {{ term.question }} {{ block.super }}
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title= term.question
+
+  .education-term-item
+    .container
+      .row
+        .col-md-8
+          .education-term-item-info:.text!= term.answer|safe
+        .col-md-3.col-md-offset-1
+          .education-term-item-aside
+            h2.page_title
+              - trans "Other terms"
+            ul
+              for question in other_terms
+                li: a(href="{% url 'term_details' question.pk %}").link= question.question
+            a.arrow_link(href="{% url 'education_glossary' %}")
+              - trans "All terms"

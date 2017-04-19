@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load staticfiles app_tags %}
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CRM Survey page</title>
+
+        {% block css %}
+        <!-- Bootstrap -->
+        <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+        <style type="text/css">
+            /*body, html {
+                margin: 0; padding: 0; height: 100%; overflow: hidden;
+            }*/
+            label { font-weight: 600;}
+        </style>
+
+        {% endblock css %}
+
+    </head>
+    <body>
+        <div class="container-fluid">
+            <br>
+            <div class="row">
+                <form action="{{ request.path }}" method="POST">
+                {% csrf_token %}
+                {% with 'markets analysis broker_advantages' as inline_list %}
+                {% with 'other_analysis private_marks strategy_details' as texts_list %}
+                {% for field in form %}
+                    {% if field.name in inline_list.split %}
+                        <div class="col-sm-12">
+                            <div class="form-group clearfix form-group-sm">
+                                <div class="col-sm-4">{{ field.label_tag|add_class:"control-label" }}</div>
+                                <div class="col-sm-8 form-group">
+                                    {% for field in field %}
+                                        {{ field|add_class:"checkbox-inline" }}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    {% elif field.name in texts_list.split %}
+                       <div class="col-sm-12">
+                            <div class="form-group clearfix form-group-sm">
+                                <div class="col-sm-4">{{ field.label_tag|add_class:"control-label" }}</div>
+                                <div class="col-sm-8">
+                                    {{ field|add_class:"form-control" }}  
+                                </div>
+                            </div>  
+                       </div>
+                    {% else %}
+                        <div class="col-sm-6">
+                            <div class="form-group clearfix form-group-sm">
+                                <div class="col-sm-4">{{ field.label_tag|add_class:"control-label" }}</div>
+                                <div class="col-sm-8">
+                                    {{ field|add_class:"form-control" }}                           
+                                </div>
+                            </div>                        
+                        </div>      
+                    {% endif %}
+                {% endfor %}
+                {% endwith %}
+                {% endwith %}
+
+                <div class="col-sm-12 text-center">
+                    <br>
+                  <input type="submit" value="Сохранить" class="btn btn-success">  
+                </div>
+                
+                </form>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="{% url 'jsi18n' %}"></script>
+        <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        {{ form.media }}
+    </body>
+</html>

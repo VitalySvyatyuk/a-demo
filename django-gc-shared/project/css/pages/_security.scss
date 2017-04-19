@@ -1,0 +1,182 @@
+/* ??? */
+.modal_white_label{
+  color:#000;
+  margin-bottom: 10px;
+}
+/* ??? */
+.notes{
+  text-align:center;
+  p{
+    margin: .625rem;
+  }
+}
+
+/*----------------------------------------global styles for sequrity modals-----------------------------------------*/
+.modal-white-bg{
+  background: $gc-inverted-color;
+  // border-radius: .3125rem;
+  color: $basic-color;
+  border: 1px solid $gc-first-color;
+  margin: .5rem 0;
+  padding: 1.25rem !important;
+  .title:before {
+    background-image: url(../img/arrow-up.png);
+    background-position: center center !important;
+    @include transform-rotate(180deg);
+    background-size: 80% !important;
+  }
+  a {
+    color: $basic-color;
+    border-bottom-color: $basic-color;
+    border-bottom: 1px solid;
+    &:hover, &:active, &:focus{
+      color: $basic-color-hover;
+      border: none;
+    }
+  }
+  .select-wrapper, input[type="text"]{
+    border: 1px solid darken($bg-color, 15%);
+    width: 100%;
+    &:hover, &:active, &:focus{
+      border-color: $basic-color !important;
+    }
+  }
+  p{
+    color: $basic-color;
+  }
+}
+
+body .totp-modal,
+body .otp-sms-modal{
+  height: auto;
+  min-height: inherit;
+  .modal-title{
+    font-size: 2rem;
+  }
+}
+
+/*-------------------------------------------------totp modal-------------------------------------------------------*/
+.reveal-modal.totp-modal{
+  left: 50%;
+  margin-left: -410px;
+  padding: 1.5rem;
+  width: 820px;
+  .title{
+    border-bottom: none;
+    color: $basic-color;
+    display: block;
+    font: 1.125rem $font-med;
+    padding: .7rem .625rem;
+    @include icon-set-before(23px, 20px);
+    span{
+      vertical-align: middle;
+    }
+    &:hover, &:active, &:focus{
+      color: $basic-color-hover;
+    }
+  }
+  .ios .title:before{
+    background-position: -280px -400px;
+  }
+  .windows .title:before{
+    background-position: -320px -400px;
+  }
+  .android .title:before{
+    background-position: -360px -400px;
+  }
+  .modal-white-bg{
+    padding: 0 !important;
+  }
+  .form-item:first-of-type{
+    padding-left: 0 !important;
+  }
+}
+
+.drop{
+  ol{
+    @include clear-ul;
+    counter-reset: li;
+    padding: 0;
+    li{
+      border-bottom: 1px solid $gc-first-color;
+      padding: 1rem 1.25rem;
+      padding-left: 3.5rem;
+      position: relative;
+      &:first-child{
+        border-top: 1px solid $gc-first-color;
+      }
+      &:last-child{
+        border-bottom: none;
+      }
+      &:before{
+        content: counter(li)'.';
+        counter-increment: li;
+        font: 1.125rem $font-med;
+        left: 2rem;
+        margin-top: .05rem;
+        position: absolute;
+      }
+    }
+  }
+  .code{
+    font: 1.125rem $font-med;
+    text-transform: uppercase;
+  }
+  .icon-refresh-before a{
+    border-bottom-color: transparentize(lighten($basic-color, 35%), .5);
+    color: lighten($basic-color, 25%);
+    font: .875rem $font-reg;
+    &:hover, &:active, &:focus{
+      border-bottom-color: transparent;
+      color: lighten($basic-color, 25%);
+    }
+  }
+}
+
+/* icon refresh before */
+.icon-refresh-before{
+  @include icon-before(-440px, -400px, 14px, 14px);
+  &:before{
+    margin-right: .625rem;
+    opacity: .4;
+  }
+}
+
+/*--------------------------------------------otp sms modal, confirm modal----------------------------------------*/
+.reveal-modal.otp-sms-modal,
+.reveal-modal.otp-confirm-modal{
+  left: 50%;
+  margin-left: -340px;
+  width: 680px;
+}
+
+.third-color-bg{
+  background: $gc-third-color;
+  // border-radius: .3125rem;
+  color: $basic-color;
+  line-height: 1.4;
+  &.icon-phone-before{
+    padding: .625rem .625rem .625rem 3.5rem;
+    position: relative;
+    &:before{
+      left: 1rem;
+      margin-top: .3rem;
+      position: absolute;
+    }
+  }
+  a.bordered{
+    color: $basic-color;
+    border-bottom-color: $basic-color;
+  }
+}
+
+.sms-success{
+  color: $gc-first-color !important;
+  font: 1.5rem $font-reg;
+  margin-bottom: .625rem;
+}
+
+/* icon phone before */
+.icon-phone-before{
+  @include icon-before(-400px, -400px, 29px, 29px);
+}

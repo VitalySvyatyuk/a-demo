@@ -1,0 +1,4 @@
+{% load i18n %}
+  <span ng-if="tasksInfo.info.objects.counts.reassign" class="label label-pill label-info nav-label" title="{% trans "Reassign tasks" %}" ui-sref="reassigns()">[[tasksInfo.info.objects.counts.reassign]]</span>
+  <span ng-if="tasksInfo.info.objects.counts.overdue" class="label label-pill label-danger nav-label" title="{% trans "Overdue tasks" %}" ui-sref="tasks()">[[tasksInfo.info.objects.counts.overdue]]</span>
+  <span ng-if="tasksInfo.info.objects.counts.next" class="label label-pill label-default nav-label" title="{% trans "Today tasks" %}" ui-sref="tasks()">[[tasksInfo.info.objects.counts.next]]</span>

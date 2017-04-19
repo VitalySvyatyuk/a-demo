@@ -1,0 +1,32 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | Новости {{ block.super }}
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title
+            - trans "Company News"
+
+  - var news_list = [{'title':'Поздравляем всех с наступающим праздником', 'date': '13.09.2015', 'image_url': 'img/marketing-site/bg/bg--happy-people.png' }, {'title':'Открытие компании Arum Capital', 'date': '14.09.2015', 'image_url': 'img/marketing-site/bg/bg--blur.png' }, {'title':'Первый в россии центр бакинга', 'date': '15.09.2015', 'image_url': 'img/marketing-site/bg/bg--buildings.jpg' }, {'title': 'Открытие компании Arum Capital', 'date': '16.09.2015', 'image_url': 'img/marketing-site/bg/bg--happy-people.png' },{'title':'Поздравляем всех с наступающим праздником', 'date': '13.09.2015', 'image_url': 'img/marketing-site/bg/bg--happy-people.png' }, {'title':'Открытие компании Arum Capital', 'date': '14.09.2015', 'image_url': 'img/marketing-site/bg/bg--blur.png' }, {'title':'Первый в россии центр бакинга', 'date': '15.09.2015', 'image_url': 'img/marketing-site/bg/bg--buildings.jpg' }, {'title': 'Открытие компании Arum Capital', 'date': '16.09.2015', 'image_url': 'img/marketing-site/bg/bg--happy-people.png' },]
+  .news-list: .container
+    for news in news_list
+        .row.news-item-wrapper
+          .news-item
+            div(class=('col-md-5' if forloop['first'] else 'col-md-4')).news-part
+                a.image-wrapper(href="#")
+                    img(src="{% static news.image_url %}", alt="").news-image
+                    span.more-link
+                      - trans "Read more"
+            div(class=('col-md-7' if forloop['first'] else 'col-md-8')).news-part
+                a.news-item-header(href="#")= news.title
+                p.news-item-date= news.date
+                p.news-item-content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure eveniet reiciendis eos hic veniam dignissimos, officiis in ab nostrum ducimus vero magnam explicabo quaerat quod quia itaque, voluptatum praesentium, totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut voluptate eaque eum, autem, aperiam praesentium molestiae libero suscipit labore, nihil eos ipsam maiores voluptatum voluptatibus fuga. Odio eligendi, corporis laboriosam.
+                p.news-item-date.mobile= news.date
+    include marketing_site/components/pagination

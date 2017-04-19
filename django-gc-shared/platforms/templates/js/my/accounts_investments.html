@@ -1,0 +1,75 @@
+{% load staticfiles inbox i18n %}
+<div class="gc-accordion-item" ng-show="checkAvailableModules('investment')" accordion-show="selectedCategory === 'investments'" name="investments" accordion-click="selectCategory('investments')" ng-controller="AccountsInvestmentsController">
+  <div class="title-wrapper" title>
+    <span class="title">{% trans "LAMM Investments" %}</span>
+    <a target="_blank" href="{% url "pamm_rating" %}" class="button medium right">{% trans "Create portfolio" %}</a>
+  </div>
+  <div content ng-if="!isDataHidden">
+    {% include "js/my/_accounts_local_nav.html" %}
+    <table class="table-big-green invest">
+      <thead>
+        <tr>
+          <td>{% trans "ID" %}</td>
+          <td>{% trans "Balance" %}</td>
+          <td>{% trans "Profit" %}</td>
+          <td>{% trans "Profitability" %}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="notification" ng-if="!accounts.length">
+          <td colspan="4">{% trans "There is no accounts to display" %}</td>
+        </tr>
+        <tr ng-repeat-start="acc in accounts" ng-class="{'active': account === acc}" ng-click="selectAccount(acc)" account-display="account === acc && !isDataHidden">
+          <td>
+            <span>{% trans "Portfolio" %} [[::acc.mt4_id]]</span>
+          </td>
+          <td>&lrm; [[!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].balance_display)]]</td>
+          <td>&lrm; [[!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].profit)]]</td>
+          <td>&lrm; [[!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].profitability + ' %')]]</td>
+        </tr>
+        <tr ng-repeat-end ng-if="account === acc" class="with-active">
+          <td colspan="4">
+            {% include "js/my/_accounts_local_nav_adaptive.html" %}
+            <table class="table-light-green">
+              <thead>
+                <tr>
+                  <td>{% trans "Master" %}</td>
+                  <td>{% trans "Replication ratio" %}</td>
+                  <td>{% trans "Balance" %}</td>
+                  <td>{% trans "Profit" %}</td>
+                  <td>{% trans "Profitability" %}</td>
+                  <td>{% trans "Comission" %}</td>
+                  <td>{% trans "Max Loss" %}</td>
+                  <td>{% trans "Actions" %}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="notification" ng-if="!acc.pamm_investor.length">
+                  <td colspan="8">{% trans "There is no accounts to display" %}</td>
+                </tr>
+                <tr ng-repeat="managed in acc.pamm_investor">
+                  <td> <a href="[[::managed.master.topic_url]]" target="_blank">[[::managed.master.alias]] [[::managed.master.mt4_id]]</a> </td>
+                  <td><a class="dotted" ng-click="changeReplicationRatio(managed)">[[managed.replication_ratio]]</a></td>
+                  <td>&lrm; [[!showMoney? '*****' : (!mt4Data[managed.master.mt4_id]? '...' : mt4Data[managed.master.mt4_id].balance_display)]]</td>
+                  <td>&lrm; [[!showMoney? '*****' : (!mt4Data[managed.master.mt4_id]? '...' : mt4Data[managed.master.mt4_id].profit)]]</td>
+                  <td>&lrm; [[!showMoney? '*****' : (!mt4Data[managed.master.mt4_id]? '...' : mt4Data[managed.master.mt4_id].profitability + ' %')]]</td>
+                  <td>&lrm; [[::formatComission(managed.master)]]</td>
+                  <td>
+                    <inline-edit ng-model="managed.minimal_equity" save="applyMaxLoss(managed)" title="{% trans "Edit" %}">
+                      <span ng-if="managed.minimal_equity">[[managed.minimal_equity|currency:acc.currency.symbol]]</span>
+                    </inline-edit>
+                  </td>
+                  <td>
+                    <a ng-if="managed.status === STATUS_ACCEPTED" ng-click="quitManaged(managed)" class="icon-break" title="{% trans "Disconnect from the manager" %}"></a>
+                    <a ng-if="managed.status === STATUS_PENDING" ng-click="cancelManaged(managed)" class="icon-cancel" title="{% trans "Cancel investment request" %}"></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

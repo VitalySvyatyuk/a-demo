@@ -1,0 +1,116 @@
+{% extends "private_office/base.html" %}
+
+{% load i18n shared_tags %}
+
+{% block js %}{{ block.super }}
+    <script type="text/javascript" src="{% MEDIA_URL 'js/jquery.tablesorter.min.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+                    $('#history_table').addClass('tablesorter').tablesorter(
+                            {
+                                sortList: [
+                                    [1, 0]
+                                ],
+                                headers: {
+                                    3: {sorter: false},
+                                    4: {sorter: false},
+                                    5: {sorter: false},
+                                    6: {sorter: false},
+                                    7: {sorter: false},
+                                    9: {sorter: false},
+                                    10: {sorter: false},
+                                    11: {sorter: false},
+                                    13: {sorter: false},
+                                }
+                            }
+                    );
+                }
+        );
+    </script>
+{% endblock %}
+
+{% block title %}
+    {{ block.super }} —
+    {% blocktrans %}Account history for account {{ account }}{% endblocktrans %}
+{% endblock %}
+
+{% block content %}
+    <h1 class="green">
+        {% blocktrans %}Account history for account {{ account }}{% endblocktrans %}
+    </h1>
+    {% if crm_staff %}
+        <p>
+            Телефонный пароль: ---<br/>
+            Код агента: ---<br/>
+        </p>
+    {% endif %}
+    <div class="container">
+        {% if history %}
+            <h4>{% trans "Status on" %} {{ history.timestamp }}</h4>
+            <table class="gctable" id="history_table">
+                <thead>
+                <th class="nowrap">{% trans "Order ID" %}</th>
+                <th class="nowrap">{% trans "Open time" %}</th>
+                <th>{% trans "Type" %}</th>
+                <th>{% trans "Lots" %}</th>
+                <th>{% trans "Symbol" %}</th>
+                <th>{% trans "Price" %}</th>
+                <th>{% trans "S/L" %}</th>
+                <th>{% trans "T/P" %}</th>
+                <th class="nowrap">{% trans "Close time" %}</th>
+                <th>{% trans "Close price" %}</th>
+                <th>{% trans "Commission" %}</th>
+                <th>{% trans "Swap" %}</th>
+                <th>{% trans "Profit" %}</th>
+                {% if crm_staff %}
+                    <th>Комментарий</th>{% endif %}
+                </thead>
+                <tfoot>
+                <tr>
+                    <th colspan="3">
+                        <strong>{% trans "Totals" %}</strong>
+                    </th>
+                    <th>{{ history.stats.total_volume }}</th>
+                    <th colspan="6"></th>
+                    <th>{{ history.stats.total_commission }}</th>
+                    <th>{{ history.stats.total_swap }}</th>
+                    <th>{{ total_profit }}</th>
+                    {% if crm_staff %}
+                        <th></th>{% endif %}
+                </tr>
+                </tfoot>
+                <tbody>
+                {% for operation in history %}
+                    <tr>
+                        <td>{{ operation.ticket }}</td>
+                        <td class="nowrap" title="{{ operation.open_time|timesince }} {% trans "ago" %}">
+                            {{ operation.open_time|date:"Y.m.d H:i" }}
+                        </td>
+                        <td>{{ operation.type }}</td>
+                        <td>{{ operation.volume }}</td>
+                        <td>{% if operation.type_raw != 6 %}{{ operation.symbol }}{% endif %}</td>
+                        <td>{{ operation.open_price }}</td>
+                        <td>{{ operation.sl }}</td>
+                        <td>{{ operation.tp }}</td>
+                        <td class="nowrap" title="{{ operation.close_time|timesince }} {% trans "ago" %}">
+                            {% if operation.close_time == open_operations_date %}
+                                {% trans "Open" %}
+                            {% else %}
+                                {{ operation.close_time|date:"Y.m.d H:i" }}
+                            {% endif %}
+                        </td>
+                        <td>{{ operation.close_price }}</td>
+                        <td>{{ operation.commission }}</td>
+                        <td>{{ operation.swap }}</td>
+                        <td class="nowrap">{{ operation.profit }}</td>
+                        {% if crm_staff %}
+                            <td>{{ operation.comment }}</td>{% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>{% trans "No account history available." %}</p>
+        {% endif %}
+    </div>
+{% endblock %}

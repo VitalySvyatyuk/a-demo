@@ -1,0 +1,8 @@
+pytest
+pylint
+pytest-django
+factory_boy
+
+fudge
+freezegun
+fake-factory

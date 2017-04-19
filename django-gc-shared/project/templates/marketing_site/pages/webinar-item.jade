@@ -1,0 +1,55 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | Ввод/вывод средств | Arum Capital
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title
+            | Вебинар Автоматическое копирование сделок
+
+  .webinar-item
+    .container
+      .row
+        .col-md-8
+          .webinar-item-info
+            .row
+              .col-md-2
+                p.calendar-date
+                  | 20
+                p.calendar-month
+                  | июня
+              .col-md-10
+                p
+                  | Вебинар посвящен популярному сервису инвестирования, основанному на принципе копирования сделок успешных трейдеров, и будет полезен начинающим трейдерам. Участники познакомятся с принципами работы сервиса копирования сделок ЛАММ, узнают как выбирать управляющего и рассчитывать доходность. А также узнают как правильно диверсифициовать риски.
+            img.img-responsive(src="{% static 'img/marketing-site/pictures/img-web-item-example.jpg' %}", alt="capital trader")
+            a.button(href="#")
+              span.button__text
+                | ЗАРЕГИСТРИРОВАТЬСЯ НА ВЕБИНАР
+        .col-md-3.col-md-offset-1
+          .webinar-item-aside
+            h2.page_title
+              | Ближайшие<br> вебинары
+            ul
+              li
+                p.subtitle.subtitle--red
+                  | 16 мая
+                a(href="#").link
+                  | Практическое применение средних скользящих
+              li
+                p.subtitle.subtitle--red
+                  | 4 июня
+                a(href="#").link
+                  | Инструменты технического анализа для построения успешной торговой стратегии
+              li
+                p.subtitle.subtitle--red
+                  | 16 июня
+                a(href="#").link
+                  | Практическое применение средних скользящих
+            a.arrow_link(href="#")
+              | все вебинары

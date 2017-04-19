@@ -1,0 +1,16 @@
+
+.form-control-transparent {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding: 0;
+}
+
+.form-control-lg.form-control-transparent {
+  padding-top: $input-padding-y;
+  padding-bottom: $input-padding-y;
+}
+
+select.form-control {
+  height: $line-height + $input-padding-y *1.2;
+}

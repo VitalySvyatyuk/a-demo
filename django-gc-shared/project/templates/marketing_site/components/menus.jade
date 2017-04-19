@@ -1,0 +1,11 @@
+- load tree_menu_tags i18n cache
+
+if mobile
+  - cache 500 'mobile_public_menu' request.path request.get_host LANGUAGE_CODE
+    - show_menu "public_menu" "main_mobile"
+if main
+  - cache 500 'public_menu' request.path request.get_host LANGUAGE_CODE
+    - show_menu "public_menu" "main_basic"
+if bottom
+  - cache 500 'bottom_menus' LANGUAGE_CODE
+    - show_menu "public_menu" "bottom_menu"

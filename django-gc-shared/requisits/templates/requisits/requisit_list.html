@@ -1,0 +1,213 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n %}
+{% load shared_tags app_tags %}
+
+{% block title %}{{ block.super }} — {% trans "My requisits" %}{% endblock %}
+
+{% block css %}{{ block.super }}
+    <style>
+        table.requisits td.data {
+            width: 70%;
+        }
+
+        table.requisits td.status {
+            width: 10%;
+        }
+
+        table.requisits td.actions {
+            width: 20%;
+        }
+
+        div.s_reject {
+            cursor: help;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 class="green">{% trans "My requisits" %}</h1>
+    <div class="container">
+        <p>
+            {% blocktrans %}
+                In this section you will find information on your payment details.
+                You can add new payment details to use them to deposit and withdraw funds.
+            {% endblocktrans %}
+        </p>
+
+        <p><a id="add-requisites-btn" href="">{% trans "Add requisits" %}</a></p>
+
+        <div id="add-requisites" class="wrapper" style="display: none;">
+            <div class="form-item">
+                <fieldset>
+                    <legend>{% trans "Choose a payment system" %}</legend>
+                    <select id="payment-system-switch">
+                        {% for form in forms %}
+                            <option value="{{ form.payment_system.slug }}"
+                                    {% if form.is_bound %}selected="selected"{% endif %}>{{ form.payment_system.name }}</option>
+                        {% endfor %}
+                    </select>
+                </fieldset>
+            </div>
+
+            <div id="payment-systems">
+                {% for form in forms %}
+                    <form action="." method="POST" id="ps-{{ form.payment_system.slug }}"
+                          {% if not form.is_bound %}style="display: none"{% endif %}>
+                        {% csrf_token %}
+
+                        <fieldset>
+                            <legend>{{ form.payment_system.name }}</legend>
+                            {% include "includes/form.html" %}
+
+                            <input type="hidden" name="payment_system" value="{{ form.payment_system.slug }}"/>
+                        </fieldset>
+
+                        {% gcbutton "submit" _("Add requsit") "black" %}
+                    </form>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <h1 class="green">{% trans "Available user requisits" %}</h1>
+    <div id="requisits" class="container">
+        {% regroup request.user.requisits.visible by payment_system as requisits %}
+
+        {% for payment_system in requisits %}
+            {% if payment_system.grouper.visible %}
+                <div>
+                    <h2 class="green">{{ payment_system.grouper }}</h2>
+
+                    <table class="gctable requisits">
+                        <tr>
+                            <th>{% trans 'Requisit data' %}</th>
+                            <th>{% trans 'Actions' %}</th>
+                        </tr>
+                        <tbody>
+                        {% for requisit in payment_system.list %}
+                            <tr id="{{ requisit.id }}" name="{{ requisit.alias }}" ps="{{ requisit.payment_system.slug }}">
+                                <td class="data">
+                                    <p><b>{% trans "Name" %}</b>:
+                                        {% if requisit.alias %}{{ requisit.alias }}{% else %}&mdash;{% endif %}
+                                        {% if payment_system.grouper.slug not in payment_systems_with_no_purse %}
+                                            <p><b>{% trans "Purse" %}</b>: {{ requisit.purse }}
+                                        {% endif %}
+                                        {% for k, v in requisit.get_params.iteritems %}
+                                            <p><b>{{ k }}</b>: {{ v.value }}</p>
+                                        {% endfor %}
+                                </td>
+                                <td class="actions">
+                                    <a href="javascript:void();" class="change">{% trans "Change" %}</a>
+                                    <br/>
+                                    <a href="{% url "requisits_delete_requisit" requisit.id %}"
+                                       class="delete">{% trans "Delete" %}</a>
+                                    <br/>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+        {% empty %}
+            <p>{% trans "You don't have any requisits" %}</p>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block js %}{{ block.super }}
+    <script type="text/javascript">
+        $(function () {
+            $("form .errors").length && $("#add-requisites").show();
+
+            $("#add-requisites-btn").click(function () {
+                $("#add-requisites").toggle();
+
+                return false;
+            });
+
+            $("#payment-system-switch").change(function () {
+                $("#payment-systems form").hide().filter(
+                        "#ps-" + $("#payment-system-switch").val()
+                ).show();
+            }).change();
+        })
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('a.delete').click(function () {
+                return confirm('{% trans 'Are you sure you want to delete this requisit?' %}');
+            })
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("a.change").click(function () {
+                var form;
+                var slug = $(this).parent().parent().attr('ps');
+                var requisit_id = $(this).parent().parent().attr('id');
+
+                $.ajax({
+                    type: "GET",
+                    dataType: "html",
+                    url: "{% url "requisits_get_form" %}" + "?requisit=" + requisit_id + "&payment_system=" + slug,
+                    success: function (data) {
+                        var form = $("<div id='change_requisit'><form method=POST>{% csrf_token %}" +
+                                data + "</form></div>");
+                        var dialog_element = form;
+                        $("input[name='requisit']", dialog_element).val(requisit_id);
+                        $("input[name='ps']", dialog_element).val(slug);
+                        dialog_element.dialog({
+                            modal: true,
+                            resizable: false,
+                            title: "{%  trans "Change requisit" %}",
+                            closeOnEscape: true,
+                            width: $("select[name='correspondent']", form).length ? 400 : form.offsetWidth,
+                            buttons: {
+                                "{% trans "Save" %}": function () {
+                                    var button = $('.ui-dialog-buttonset button:first');
+                                    $("#error").text("");
+                                    button.attr('disabled', 'disabled');
+                                    var form = dialog_element.find('form');
+                                    $.ajax({
+                                        type: "POST",
+                                        data: form.serialize(),
+                                        dataType: "json",
+                                        url: "{% url "requisits_change_requisit" %}",
+                                        success: function (data) {
+                                            if ('errors' in data) {
+                                                form.replaceWith("<div id='change_requisit'>" +
+                                                        "<form method='POST' id='otp_form'>{% csrf_token %}" +
+                                                        data["errors"] + "</form>" + "</div>");
+                                                $("#otp_form").submit(function (event) {
+                                                    event.preventDefault();
+                                                    $('.ui-button:contains("{% trans "Save" %}")').click();
+                                                });
+                                                button.removeAttr('disabled');
+                                            }
+                                            else {
+                                                window.location.reload();
+                                            }
+                                        }
+
+                                    });
+                                },
+                                '{% trans "Cancel" %}': function () {
+                                    $("#error").text("");
+                                    $("#change_requisit").val("");
+                                    $("#submit_btn").removeAttr("disabled");
+                                    $(this).dialog("close");
+                                }
+                            }
+                        })
+                    }});
+            });
+            {# включаем сабмит формы по нажатию Enter #}
+            $('#change_requisit').submit(function (e) {
+                $("div.ui-dialog-buttonset").children()[0].click();
+                e.preventDefault();
+            });
+        })
+    </script>
+{% endblock %}

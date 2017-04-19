@@ -1,0 +1,45 @@
+.features_list{
+	@include clear_list;
+
+	&.state-visible {
+		display: block;
+	}
+}
+.features_list__item{
+	position: relative;
+
+	padding-left: 1.9em;
+	margin-bottom: (12em/16);
+
+	&:before{
+		content: "";
+		position: absolute;
+		left: -0.18em;
+		top: 0;
+
+		width: (21em/16);
+		height: (21em/16);
+
+		background: url(#{$icons_path}i--tick--black.png) no-repeat center / 100% auto;
+	}
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+
+	&--large-margin{
+		margin-bottom: 35px;
+	}
+}
+.features_list__item__text{
+	color: black;
+	font-size: (15em/16);
+}
+.features_list__item__title{
+	margin: 0 0 10px;
+
+	color: $groom;
+	font-size: (15em/16);
+	font-weight: 500;
+	text-transform: uppercase;
+}

@@ -1,0 +1,235 @@
+{% load staticfiles inbox i18n %}
+<div class="gc-accordion-item" ng-show="checkAvailableModules('trading')" ng-controller="AccountsTradingController" name="trading" accordion-show="selectedCategoryList.indexOf('trading') >= 0" accordion-click="selectCategory('trading')">
+  <div class="title-wrapper" title>
+    <span class="title">{% trans "ECN.MT" %}</span>
+    {% if LANGUAGE_CODE == 'ru' %}
+    <a href="{% url 'account_app' %}create" class="button second right not-ready-platform-ru">{% trans "Create account" %}</a>
+    {% else %}
+    <a href="{% url 'account_app' %}create" class="button second right not-ready-platform-en">{% trans "Create account" %}</a>
+    {% endif %}
+  </div>
+  <div content ng-if="!isDataHidden">
+    <div ng-show="selectedCategory === 'trading'">
+      {% include "js/my/_accounts_local_nav.html" %}
+    </div>
+    <table class="table-big-green accounts">
+      <thead>
+        <tr>
+          <td>{% trans "ID" %}</td>
+          <td>{% trans "Account type" %}</td>
+          <td>{% trans "Leverage" %}</td>
+          <td>{% trans "Balance" %}</td>
+          <td>{% trans "Equity" %}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="notification" ng-if="!mt4Accounts.length">
+          <td colspan="5">{% trans "There is no accounts to display" %}</td>
+        </tr>
+        <tr ng-repeat-start="acc in accounts|filter:{platform_type:'mt4'} as mt4Accounts" ng-class="{'active': account === acc && !acc.last_block_reason, 'disabled': acc.last_block_reason }" ng-click="selectAccount(acc); markCategory('trading')" account-display="account === acc && !isDataHidden">
+          <td>
+            <span>[[acc.mt4_id]]</span>
+            {% comment %}
+            <span ng-if="::!acc.last_block_reason"><a target="_blank" ng-show="account === acc"  href="{% url 'webtrader:app' %}login?account=[[::acc.mt4_id]]">{% trans "Trade online" %}</a></span>
+            {% endcomment %}
+          </td>
+          <td>
+            [[acc.group_display]] [[acc.options_style]]
+            <br><p class="description" ng-bind="::acc.is_demo?'{% trans "Demo" %}':'{% trans "Real" %}'"></p>
+          </td>
+          <td>[[acc.is_options ? 'N/A': (mt4Data[acc.mt4_id] ? '1:'+mt4Data[acc.mt4_id].leverage : '...')]]</td>
+          <td>
+            <strong>
+              [[!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].balance_display)]]
+            </strong>
+          </td>
+          <td>
+            <strong>
+              [[!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].equity_display)]]
+            </strong>
+          </td>
+        </tr>
+
+        <tr ng-if="acc.last_block_reason" class="with-disabled">
+          <td ng-switch="acc.last_block_reason" colspan="5">
+            <div ng-switch-default class="disabled-block">
+              {% trans "Account was disabled because of" %} [[ acc.last_block_reason ]].
+              <a class="right" ng-click="accountBlockInfo(acc)">{% trans "More" %}</a>
+            </div>
+            <div ng-switch-when="welcome bonus 500 deposit required" class="disabled-block">
+              {% blocktrans with link="[[::BASE_URL]]bonus" %}
+                According to <a href="{{ link }}">the conditions of Welcome Bonus 500</a>, deposit of the amount of profit made or larger is required in order to unblock funds and continue trading.
+              {% endblocktrans %}
+              <a class="right" href="[[::BASE_URL]]payments/deposit?account=[[account.mt4_id]]">{% trans "Deposit" %}</a>
+            </div>
+          </td>
+        </tr>
+
+        <tr ng-repeat-end ng-if="account === acc && !acc.last_block_reason" class="with-active">
+          <td colspan="5">
+            <div ng-show="selectedCategory === 'trading'">
+            {% include "js/my/_accounts_local_nav_adaptive.html" %}
+            </div>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="gc-accordion-item" ng-controller="AccountsTradingController" name="pro" accordion-show="selectedCategoryList.indexOf('pro') >= 0" accordion-click="selectCategory('pro')">
+  <div class="title-wrapper" title>
+    <span class="title">{% trans "ECN.PRO" %}</span>
+    {% if LANGUAGE_CODE == 'ru' %}
+    <a href="{% url 'account_app' %}create" class="button second right not-ready-platform-ru">{% trans "Create account" %}</a>
+    {% else %}
+    <a href="{% url 'account_app' %}create" class="button second right not-ready-platform-en">{% trans "Create account" %}</a>
+    {% endif %}
+  </div>
+  <div content ng-if="!isDataHidden">
+    <div ng-show="selectedCategory === 'pro'">
+      {% include "js/my/_accounts_local_nav.html" %}
+    </div>
+    <table class="table-big-green accounts">
+      <thead>
+        <tr>
+          <td>{% trans "ID" %}</td>
+          <td>{% trans "Account type" %}</td>
+          <td>{% trans "Leverage" %}</td>
+          <td>{% trans "Balance" %}</td>
+          <td>{% trans "Equity" %}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="notification" ng-if="!cfhAccounts.length">
+          <td colspan="5">{% trans "There is no accounts to display" %}</td>
+        </tr>
+        <tr ng-repeat-start="acc in accounts|filter:{platform_type:'cfh'} as cfhAccounts" ng-class="{'active': account === acc && !acc.last_block_reason, 'disabled': acc.last_block_reason }" ng-click="selectAccount(acc); markCategory('pro')" account-display="account === acc && !isDataHidden">
+          <td>
+            <span>[[::acc.mt4_id]]</span>
+            {% comment %}
+            <span ng-if="::!acc.last_block_reason"><a target="_blank" ng-show="account === acc"  href="{% url 'webtrader:app' %}login?account=[[::acc.mt4_id]]">{% trans "Trade online" %}</a></span>
+            {% endcomment %}
+          </td>
+          <td>
+            [[::acc.group_display]] [[acc.options_style]]
+            <br><p class="description" ng-bind="::acc.is_demo?'{% trans "Demo" %}':'{% trans "Real" %}'"></p>
+          </td>
+          <td>[[acc.is_options ? 'N/A': (mt4Data[acc.mt4_id] ? '1:'+mt4Data[acc.mt4_id].leverage : '...')]]</td>
+          <td>
+            <strong>
+              &lrm;[[!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].balance_display)]]
+            </strong>
+          </td>
+          <td>
+            <strong>
+              &lrm;[[!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].equity_display)]]
+            </strong>
+          </td>
+        </tr>
+
+        <tr ng-if="acc.last_block_reason" class="with-disabled">
+          <td ng-switch="acc.last_block_reason" colspan="5">
+            <div ng-switch-default class="disabled-block">
+              {% trans "Account was disabled because of" %} [[ acc.last_block_reason ]].
+              <a class="right" ng-click="accountBlockInfo(acc)">{% trans "More" %}</a>
+            </div>
+            <div ng-switch-when="welcome bonus 500 deposit required" class="disabled-block">
+              {% blocktrans with link="[[::BASE_URL]]bonus" %}
+                According to <a href="{{ link }}">the conditions of Welcome Bonus 500</a>, deposit of the amount of profit made or larger is required in order to unblock funds and continue trading.
+              {% endblocktrans %}
+              <a class="right" href="[[::BASE_URL]]payments/deposit?account=[[account.mt4_id]]">{% trans "Deposit" %}</a>
+            </div>
+          </td>
+        </tr>
+
+        <tr ng-repeat-end ng-if="account === acc && !acc.last_block_reason" class="with-active">
+          <td colspan="5">
+            <div ng-show="selectedCategory === 'pro'">
+            {% include "js/my/_accounts_local_nav_adaptive.html" %}
+            </div>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="gc-accordion-item" ng-controller="AccountsTradingController" name="invest" accordion-show="selectedCategoryList.indexOf('invest') >= 0" accordion-click="selectCategory('invest')">
+  <div class="title-wrapper" title>
+    <span class="title">{% trans "ECN Invest" %}</span>
+    <a href="{% url 'account_app' %}create" class="button second right">{% trans "Create account" %}</a>
+  </div>
+  <div content ng-if="!isDataHidden">
+    <div ng-show="selectedCategory === 'invest'">
+      {% include "js/my/_accounts_local_nav.html" %}
+    </div>
+    <table class="table-big-green accounts">
+      <thead>
+        <tr>
+          <td>{% trans "ID" %}</td>
+          <td>{% trans "Account type" %}</td>
+          <td>{% trans "Leverage" %}</td>
+          <td>{% trans "Balance" %}</td>
+          <td>{% trans "Equity" %}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="notification" ng-if="!strategyStoreAccounts.length">
+          <td colspan="5">{% trans "There is no accounts to display" %}</td>
+        </tr>
+        <tr ng-repeat-start="acc in accounts|filter:{platform_type:'strategy_store'} as strategyStoreAccounts" ng-class="{'active': account === acc && !acc.last_block_reason, 'disabled': acc.last_block_reason }" ng-click="selectAccount(acc); markCategory('invest')" account-display="account === acc && !isDataHidden">
+          <td>
+            <span>[[::acc.mt4_id]]</span>
+            {% comment %}
+            <span ng-if="::!acc.last_block_reason"><a target="_blank" ng-show="account === acc"  href="{% url 'webtrader:app' %}login?account=[[::acc.mt4_id]]">{% trans "Trade online" %}</a></span>
+            {% endcomment %}
+          </td>
+          <td>
+            [[::acc.group_display]] [[acc.options_style]]
+            <br><p class="description" ng-bind="::acc.is_demo?'{% trans "Demo" %}':'{% trans "Real" %}'"></p>
+          </td>
+          <td>{% trans "default" %}</td>
+          <td>
+            <strong>
+              &lrm;[[!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].balance_display)]]
+            </strong>
+          </td>
+          <td>
+            <strong>
+              &lrm;[[!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].equity_display)]]
+            </strong>
+          </td>
+        </tr>
+
+        <tr ng-if="acc.last_block_reason" class="with-disabled">
+          <td ng-switch="acc.last_block_reason" colspan="5">
+            <div ng-switch-default class="disabled-block">
+              {% trans "Account was disabled because of" %} [[ acc.last_block_reason ]].
+              <a class="right" ng-click="accountBlockInfo(acc)">{% trans "More" %}</a>
+            </div>
+            <div ng-switch-when="welcome bonus 500 deposit required" class="disabled-block">
+              {% blocktrans with link="[[::BASE_URL]]bonus" %}
+                According to <a href="{{ link }}">the conditions of Welcome Bonus 500</a>, deposit of the amount of profit made or larger is required in order to unblock funds and continue trading.
+              {% endblocktrans %}
+              <a class="right" href="[[::BASE_URL]]payments/deposit?account=[[account.mt4_id]]">{% trans "Deposit" %}</a>
+            </div>
+          </td>
+        </tr>
+
+        <tr ng-repeat-end ng-if="account === acc && !acc.last_block_reason" class="with-active">
+          <td colspan="5">
+            <div ng-show="selectedCategory === 'invest'">
+            {% include "js/my/_accounts_local_nav_adaptive.html" %}
+            </div>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+</div>

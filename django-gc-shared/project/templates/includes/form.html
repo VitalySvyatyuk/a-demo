@@ -1,0 +1,44 @@
+{% load app_tags %}
+
+{% for error in form.non_field_errors %}
+    <div class="errors">{{ error }}</div>
+{% endfor %}
+
+
+{% for field in form %}
+    <div class="form-item">
+        {% if not field.is_hidden %}
+            {% if not field.field.widget|is_checkbox %}
+                <div>
+                    {{ field.label_tag }} {% if field.field.required %}<span class="required">*</span>{% endif %}
+                </div>
+
+            {% endif %}
+
+            {% if field.field.widget|is_checkbox %}
+                <div class="checkbox-wrapper">
+                    {{ field }}<label for="{{ field.auto_id }}"></label>
+                    <label for="{{ field.auto_id }}" {% if field.field.required %}class="required"{% endif %}>{{ field.label }}</label>
+                    {% block validation_marks %}{% endblock %}
+                </div>
+            {% else %}
+                {% if field.errors %}
+                    <div class="error">
+                        {% for error in field.errors %}{{ error|safe }}{% endfor %}
+                    </div>
+                {% endif %}
+                {{ field }}
+                {% block validation_edit_links %}{% endblock %}
+            {% endif %}
+
+            <div class="description">
+                {% block description %}
+                    {{ field.help_text|safe }}
+                {% endblock %}
+            </div>
+        {% else %}
+            {{ field }}
+        {% endif %}
+    </div>
+{% endfor %}
+{% csrf_token %}

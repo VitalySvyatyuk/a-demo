@@ -1,0 +1,47 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n staticfiles %}
+
+{% block js %}{{ block.super }}
+    <script type="text/javascript" src="{% static 'js/tablesorter/jquery.metadata.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tablesorter/jquery.tablesorter.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/reports-tablesorter.js' %}"></script>
+{% endblock %}
+
+{% block title %}{{ block.super }} — {% blocktrans %}Agent list for account {{ account }}{% endblocktrans %}{% endblock %}
+
+{% block content %}
+    <h1 class="green">
+        {% blocktrans %}Agent list for account {{ account }}{% endblocktrans %}
+    </h1>
+    <div class="container">
+        {% if agents %}
+            {% include "mt4/agent_list_table.html" with agents=agents %}
+        {% else %}
+            <p>{% blocktrans %}Account {{ account }} has no Real clients.{% endblocktrans %}</p>
+        {% endif %}
+    </div>
+
+    <h1 class="title">
+        {% blocktrans %}List of demo agents for account {{ account }}{% endblocktrans %}
+    </h1>
+    <div class="container">
+        {% if demo_agents %}
+            {% include "mt4/agent_list_table.html" with agents=demo_agents %}
+        {% else %}
+            <p>{% blocktrans %}Account {{ account }} has no Demo clients.{% endblocktrans %}</p>
+        {% endif %}
+    </div>
+{% comment %}
+    <h1 class="title">
+        {% blocktrans %}List of archived agents for account {{ account }}{% endblocktrans %}
+    </h1>
+    <div class="container">
+        {% if archived_agents %}
+            {% include "mt4/agent_list_table.html" with agents=archived_agents %}
+        {% else %}
+            <p>{% blocktrans %}Account {{ account }} has no archived clients.{% endblocktrans %}</p>
+        {% endif %}
+    </div>
+{% endcomment %}
+{% endblock %}

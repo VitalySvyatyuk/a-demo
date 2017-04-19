@@ -1,0 +1,107 @@
+{% load crm_tags %}
+
+<table cellpadding="2" cellspacing="0" border="1">
+    <thead>
+        <tr>
+            <th>С</th>
+            <th>По</th>
+            <th>Регистраций</th>
+            <th>По старанам</th>
+            <th>Нераспределённых клиентов</th>
+            <th>Клиентов со старыми менеждерами</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{date_from}}</td>
+            <td>{{date_to}}</td>
+            <td>
+              <b>Total:{{new_users_count}}</b>
+              {% for lang, count in new_users_by_lang_count %}
+                <br>{{lang}}:{{count}}
+              {% endfor %}
+
+            </td>
+            <td>
+              <b>Total:{{new_users_count}}</b>
+              {% for country, count in new_users_by_country_count %}
+                <br>{{country}}:{{count}}
+              {% endfor %}
+
+            </td>
+            <td>
+              <b>Total:{{current_free_count}}</b>
+              {% for lang, count in current_free_by_lang_count %}
+                <br>{{lang}}:{{count}}
+              {% endfor %}
+            </td>
+            <td>{{current_rotten.count}} ({{current_rotten.managers|join:", "}})</td>
+        </tr>
+    </tbody>
+</table>
+
+{% regroup managers by manager.crm_manager.office as managers_list %}
+{% for mans in managers_list %}
+    <p>{{ mans.grouper|default:"СПб" }}</p>
+
+    <table cellpadding="2" cellspacing="0" border="1" style="text-align: center;">
+        <thead>
+            <tr>
+                <th>Показатели</th>
+                {% for man in mans.list %}
+                    <th>{{man.manager.profile.get_short_name}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Всего клиентов</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.contacts.totals}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Клиенты по кнопке</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.contacts.by_button}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Все звонки/Время</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.calls.totals.count}} <br/> {{man.calls.totals.duration|pretty_seconds}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Отвеченные/Время</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.calls.answered.count}} <br/> {{man.calls.answered.duration|pretty_seconds}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Неотвеченные/Время</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.calls.not_answered.count}} <br/> {{man.calls.not_answered.duration|pretty_seconds}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Суммарно Ввод/Вывод</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.payments.totals|floatformat:2}} USD</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Ввод</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.payments.deposit|floatformat:2}} USD</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Вывод</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.payments.withdraw|floatformat:2}} USD</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+{% endfor %}

@@ -1,0 +1,65 @@
+{% extends "design_2014/marketing_site/base.html" %}
+
+{% block title %}{{ model.html_title }}{% endblock %}
+{% block extrahead %}{{ block.super }}
+    {% if feed_url %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ feed_url }}">
+    {% endif %}
+    {{ form.media }}
+{% endblock %}
+
+{% block css %}{{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/calendar.css"/>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/date.css"/>
+    <style>
+        form#filter {
+            margin-top: 15px;
+        }
+
+        form#filter .form-item {
+            float: left;
+        }
+
+    </style>
+{% endblock css %}
+
+{% load pagination_tags banners shared_tags pytils_dt node_filters  i18n app_tags %}
+
+{% block content %}
+    <h1 class="green">{{ title }}</h1>
+    <div class="container">
+        {% if LANGUAGE_CODE == 'ru' %}
+            {% banner 540 90 'analytics' %}
+        {% endif %}
+        {% include "includes/social_network.html" %}
+        <form id="filter" action=".">
+            {% include 'includes/form.html' %}
+            {% gcbutton "submit" _('Filter') "green small" %}
+        </form>
+        {% autopaginate events items_per_page %}
+        {% if grouper == 'day' %}
+            {% regroup events by event_date|date as object_list %}
+        {% else %}
+            {% regroup events by event_date|date:"F, Y" as object_list %}
+        {% endif %}
+        {% for group in object_list %}
+            <h2>{{ group.grouper }}</h2>
+            <table class="listing">
+                {% for node in group.list %}
+                    <tr class="{% cycle 'odd' 'even' %}">
+                        <td>
+                            {% if grouper == 'day' %}
+                                {% with '%H:%M' as dateformat %}
+                                    {% include node.teaser_template_name %}
+                                {% endwith %}
+                            {% else %}
+                                {% include node.teaser_template_name %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endfor %}
+        {% paginate %}
+    </div>
+{% endblock %}

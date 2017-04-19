@@ -1,0 +1,15 @@
+{% load i18n %}
+<td>
+    <input id="{{ message.id }}" type="checkbox" class="third-checkbox" value="{{ message.id }}" autocomplete="off"/>
+    <label for="{{ message.id }}"></label>
+    <a href="" class="star-icon star right tip-right" title="{% trans "Добавить в избранные сообщения. Такие сообщения отображаются наверху списка" %}"></a>
+</td>
+<td><div class="overflow-td">{% if message.sender %}{{ message.sender }}{% else %}Arum Capital{% endif %}</div></td>
+<td>
+    <div class="overflow-td">
+        <a href="#{#{{ message.get_absolute_url }}#}" {% if message.campaign %}data-reveal-id="message_{{ message.id }}"{% else %}data-reveal-id="message-modal"{% endif %}>
+            {{ message.subject }}
+        </a>
+    </div>
+<td>{{ message.sent_at|date:"SHORT_DATETIME_FORMAT" }}</td>
+{#<td><a href="{% url "messages.views.delete" message.id %}">{% trans "delete" %}</a></td>#}

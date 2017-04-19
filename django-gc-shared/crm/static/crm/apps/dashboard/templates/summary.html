@@ -1,0 +1,256 @@
+<div class="row">
+    <div class="col-md-3">
+        <h2>Сегодня</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Регистраций</th>
+                <td ng-bind="data.today.registered"></td>
+            </tr>
+            <tr>
+                <th>Ещё на кнопке</th>
+                <td ng-bind="data.today.buttonNow"></td>
+            </tr>
+            <tr>
+                <th>Закреплены</th>
+                <td ng-bind="data.today.assigned"></td>
+            </tr>
+            <tr>
+                <th>Взяты<br>по кнопке</th>
+                <td ng-bind="data.today.taken"></td>
+            </tr>
+            <tr>
+                <th>Звонки</th>
+                <td>
+                   <span ng-bind="data.today.calls"></span><br>
+                   <span ng-bind="data.today.calls_duration_str" title="{{data.today.calls_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Отвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.today.calls_answered"></span><br>
+                   <span ng-bind="data.today.calls_answered_duration_str" title="{{data.today.calls_answered_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Неотвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.today.calls_not_answered"></span><br>
+                   <span ng-bind="data.today.calls_not_answered_duration_str" title="{{data.today.calls_not_answered_duration}} сек"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <h2>Вчера</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Регистраций</th>
+                <td ng-bind="data.yesterday.registered"></td>
+            </tr>
+            <tr>
+                <th>Ещё на кнопке</th>
+                <td ng-bind="data.yesterday.buttonNow"></td>
+            </tr>
+            <tr>
+                <th>Закреплены</th>
+                <td ng-bind="data.yesterday.assigned"></td>
+            </tr>
+            <tr>
+                <th>Взяты<br>по кнопке</th>
+                <td ng-bind="data.yesterday.taken"></td>
+            </tr>
+            <tr>
+                <th>Звонки</th>
+                <td>
+                   <span ng-bind="data.yesterday.calls"></span><br>
+                   <span ng-bind="data.yesterday.calls_duration_str" title="{{data.yesterday.calls_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Отвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.yesterday.calls_answered"></span><br>
+                   <span ng-bind="data.yesterday.calls_answered_duration_str" title="{{data.yesterday.calls_answered_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Неотвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.yesterday.calls_not_answered"></span><br>
+                   <span ng-bind="data.yesterday.calls_not_answered_duration_str" title="{{data.yesterday.calls_not_answered_duration}} сек"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <h2>7 дней</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Регистраций</th>
+                <td ng-bind="data.days7.registered"></td>
+            </tr>
+            <tr>
+                <th>Ещё на кнопке</th>
+                <td ng-bind="data.days7.buttonNow"></td>
+            </tr>
+            <tr>
+                <th>Закреплены</th>
+                <td ng-bind="data.days7.assigned"></td>
+            </tr>
+            <tr>
+                <th>Взяты<br>по кнопке</th>
+                <td ng-bind="data.days7.taken"></td>
+            </tr>
+            <tr>
+                <th>Звонки</th>
+                <td>
+                   <span ng-bind="data.days7.calls"></span><br>
+                   <span ng-bind="data.days7.calls_duration_str" title="{{data.days7.calls_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Отвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.days7.calls_answered"></span><br>
+                   <span ng-bind="data.days7.calls_answered_duration_str" title="{{data.days7.calls_answered_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Неотвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.days7.calls_not_answered"></span><br>
+                   <span ng-bind="data.days7.calls_not_answered_duration_str" title="{{data.days7.calls_not_answered_duration}} сек"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <h2>Месяц</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Регистраций</th>
+                <td ng-bind="data.month.registered"></td>
+            </tr>
+            <tr>
+                <th>Ещё на кнопке</th>
+                <td ng-bind="data.month.buttonNow"></td>
+            </tr>
+            <tr>
+                <th>Закреплены</th>
+                <td ng-bind="data.month.assigned"></td>
+            </tr>
+            <tr>
+                <th>Взяты<br>по кнопке</th>
+                <td ng-bind="data.month.taken"></td>
+            </tr>
+            <tr>
+                <th>Звонки</th>
+                <td>
+                   <span ng-bind="data.month.calls"></span><br>
+                   <span ng-bind="data.month.calls_duration_str" title="{{data.month.calls_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Отвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.month.calls_answered"></span><br>
+                   <span ng-bind="data.month.calls_answered_duration_str" title="{{data.month.calls_answered_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Неотвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.month.calls_not_answered"></span><br>
+                   <span ng-bind="data.month.calls_not_answered_duration_str" title="{{data.month.calls_not_answered_duration}} сек"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-offset-3 col-md-3">
+        <h2>Год</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Регистраций</th>
+                <td ng-bind="data.year.registered"></td>
+            </tr>
+            <tr>
+                <th>Ещё на кнопке</th>
+                <td ng-bind="data.year.buttonNow"></td>
+            </tr>
+            <tr>
+                <th>Закреплены</th>
+                <td ng-bind="data.year.assigned"></td>
+            </tr>
+            <tr>
+                <th>Взяты<br>по кнопке</th>
+                <td ng-bind="data.year.taken"></td>
+            </tr>
+            <tr>
+                <th>Звонки</th>
+                <td>
+                   <span ng-bind="data.year.calls"></span><br>
+                   <span ng-bind="data.year.calls_duration_str" title="{{data.year.calls_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Отвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.year.calls_answered"></span><br>
+                   <span ng-bind="data.year.calls_answered_duration_str" title="{{data.year.calls_answered_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Неотвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.year.calls_not_answered"></span><br>
+                   <span ng-bind="data.year.calls_not_answered_duration_str" title="{{data.year.calls_not_answered_duration}} сек"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <h2>Всего</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Регистраций</th>
+                <td ng-bind="data.total.registered"></td>
+            </tr>
+            <tr>
+                <th>На кнопке</th>
+                <td ng-bind="data.total.buttonNow"></td>
+            </tr>
+            <tr>
+                <th>Закреплены</th>
+                <td ng-bind="data.total.assigned"></td>
+            </tr>
+            <tr>
+                <th>Взяты<br>по кнопке</th>
+                <td ng-bind="data.total.taken"></td>
+            </tr>
+            <tr>
+                <th>Звонки</th>
+                <td>
+                   <span ng-bind="data.total.calls"></span><br>
+                   <span ng-bind="data.total.calls_duration_str" title="{{data.total.calls_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Отвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.total.calls_answered"></span><br>
+                   <span ng-bind="data.total.calls_answered_duration_str" title="{{data.total.calls_answered_duration}} сек"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Неотвеченные<br>звонки</th>
+                <td>
+                   <span ng-bind="data.total.calls_not_answered"></span><br>
+                   <span ng-bind="data.total.calls_not_answered_duration_str" title="{{data.total.calls_not_answered_duration}} сек"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

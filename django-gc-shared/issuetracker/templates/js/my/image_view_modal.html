@@ -1,0 +1,8 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+
+<h2 class="modal-title offset-bottom-30">
+    {% trans "View image" %}
+</h2>
+
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+<img ng-src="[[url]]" alt=""/>

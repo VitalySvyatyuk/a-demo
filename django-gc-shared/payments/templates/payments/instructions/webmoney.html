@@ -1,0 +1,22 @@
+{% load i18n app_tags staticfiles %}
+
+{% trans "Payment system" as msg context "redirect_button" %}
+
+<br/>
+<p style="text-align: center; font-weight: bold;">
+    {% blocktrans trimmed %}
+        Please transfer the money to one of the following purses
+        and send the details of the transfer to our support department
+    {% endblocktrans %}
+</p>
+<ul style="list-style: disc inside; text-align: center;">
+    <li>Z469443201694 (USD)</li>
+    <li>E504594670400 (EUR)</li>
+    <li>R375162439228 (RUB)</li>
+    <li>U117455318947 (UAH)</li>
+</ul>
+<br/><br/>
+
+<div class="text-center">
+    <a class="button medium" href="{% url 'account_app' %}">{% trans "Return to your account" %}</a>
+</div>

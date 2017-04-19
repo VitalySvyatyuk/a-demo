@@ -1,0 +1,438 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-06 12:50+0300\n"
+"PO-Revision-Date: 2014-04-10 13:38+0400\n"
+"Last-Translator:   <valexeev@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Translated-Using: django-rosetta 0.7.3\n"
+
+msgid ""
+"You may try any account type on a Demo Account under terms and conditions identical to the real trading account."
+msgstr ""
+"Вы можете попробовать любой из типов счетов с условиями идентичными реальным"
+" на Демонстрационном счете."
+
+msgid "Instrument"
+msgstr "Инструмент"
+
+msgid "Symbol"
+msgstr "Символ"
+
+msgid "Currency"
+msgstr "Валюта"
+
+msgid "Lot"
+msgstr "Лот"
+
+msgid "Leverage"
+msgstr "Кредитное плечо"
+
+msgid "Calculation is unavailable"
+msgstr "Расчет невозможен"
+
+msgid "Period"
+msgstr "Период"
+
+msgid "Start"
+msgstr "Начало"
+
+msgid "Min time"
+msgstr "Мин. время"
+
+msgid "Max time"
+msgstr "Макс. время"
+
+msgid "Win <5"
+msgstr ""
+
+msgid "Win 5-15"
+msgstr ""
+
+msgid "Win 15-30"
+msgstr ""
+
+msgid "Win >30"
+msgstr ""
+
+msgid "Loss"
+msgstr ""
+
+msgid "Nil"
+msgstr ""
+
+msgid "Bonus"
+msgstr ""
+
+msgid "Win"
+msgstr ""
+
+#, fuzzy
+msgid "Close win"
+msgstr "Цена закрытия"
+
+#, fuzzy
+msgid "Close percent"
+msgstr "Цена закрытия"
+
+msgid "Contract specifications"
+msgstr "Спецификации контрактов"
+
+msgid "Open account"
+msgstr "Открыть счёт"
+
+msgid "Find..."
+msgstr "Найти..."
+
+msgid "Trader's calculator"
+msgstr "Калькулятор трейдера"
+
+msgid "Failed to get the dollar exchange rate against the ruble"
+msgstr "Не удалось получить курс доллара"
+
+msgid "Account type:"
+msgstr "Тип торгового счёта:"
+
+msgid "Micro"
+msgstr ""
+
+msgid "Standard"
+msgstr ""
+
+msgid "ECN"
+msgstr ""
+
+msgid "SwapFree"
+msgstr ""
+
+msgid "Select an item..."
+msgstr "Выберите..."
+
+msgid "Account's currency"
+msgstr "Валюта депозита"
+
+msgid "Balance"
+msgstr "Баланс"
+
+msgid "Operation type"
+msgstr "Тип сделки"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Open price"
+msgstr "Цена открытия"
+
+msgid "Close price"
+msgstr "Цена закрытия"
+
+msgid "Volume"
+msgstr "Объём"
+
+msgid "Profit rate"
+msgstr "Курс прибыли"
+
+msgid "Margin rate"
+msgstr "Курс маржи"
+
+msgid "Calculate"
+msgstr "Рассчитать"
+
+msgid "You don't have enough funds for this operation"
+msgstr "У Вас недостаточно средств для проведения этой сделки"
+
+msgid "Trade results"
+msgstr "Результаты торговли"
+
+msgid "Profit"
+msgstr "Прибыль"
+
+msgid "Profit in points"
+msgstr "Прибыль в пунктах"
+
+msgid "Price of a point"
+msgstr "Стоимость пункта"
+
+msgid "Equity"
+msgstr "Средства"
+
+msgid "Maximal loss possible"
+msgstr "Максимально возможный убыток"
+
+msgid "Margin needed"
+msgstr "Необходимый залог"
+
+msgid "Deposit funds"
+msgstr "Пополнить баланс"
+
+#~ msgid "Currency 1 rate"
+#~ msgstr "Курс валюты 1"
+
+#~ msgid "Currency 2 rate"
+#~ msgstr "Курс валюты 2"
+
+#~ msgid "TRADER'S CALCULATOR"
+#~ msgstr "КАЛЬКУЛЯТОР ТРЕЙДЕРА"
+
+#~ msgid ""
+#~ "The calculator allows you to quickly compute all the parameters that you "
+#~ "need when you trade the selected assets."
+#~ msgstr ""
+#~ "Калькулятор Трейдера позволяет быстро рассчитать необходимые параметры "
+#~ "при совершении сделок с выбранными активами."
+
+#~ msgid ""
+#~ "\n"
+#~ "        PLACEHOLDER FOR LINK TO VIDEO INSTRUCTION FOR THE TRADER'S "
+#~ "CALCULATOR\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "<div><a href=\"http://grandcapital.ru/video_lessons_working_with_site."
+#~ "html?video=1\" class=\"more left\">ВИДЕО - ИНСТРУКЦИЯ КАЛЬКУЛЯТОР "
+#~ "ТРЕЙДЕРА</a></div>"
+
+#~ msgid "Input data"
+#~ msgstr "Исходные данные"
+
+#~ msgid "Calculated data for"
+#~ msgstr "Расчетные данные для"
+
+#~ msgid "Calculated price"
+#~ msgstr "Расчетная цена"
+
+#~ msgid "Calculate all necessary data"
+#~ msgstr "Рассчитайте необходимые параметры"
+
+#~ msgid "for transactions with chosen assets."
+#~ msgstr "при совершении сделок с выбранными активами."
+
+#~ msgid "Enter initial data"
+#~ msgstr "Введите исходные данные"
+
+#~ msgid "Contract Type"
+#~ msgstr "Тип торгового счета"
+
+#~ msgid "Lots"
+#~ msgstr "Объём"
+
+#~ msgid "quoting to deopsit currency ratio"
+#~ msgstr "отношение валюты котирования<br/> к валюте депозита"
+
+#~ msgid "Currency Rate 2"
+#~ msgstr "Курс валюты 2"
+
+#~ msgid "base to deopsit currency ratio"
+#~ msgstr "отношение базовой валюты<br/> к валюте депозита"
+
+#~ msgid "Results"
+#~ msgstr "Результат расчета"
+
+#~ msgid "Point Price"
+#~ msgstr "Цена пункта"
+
+#~ msgid "Maximum Loss"
+#~ msgstr "Макс. возможный  убыток"
+
+#~ msgid "Required Deposit"
+#~ msgstr "Необходимый залог"
+
+#~ msgid "Get detailed information"
+#~ msgstr "Получите подробную информацию"
+
+#~ msgid "about all trading instruments!"
+#~ msgstr "обо всех инструментах торговли!"
+
+#~ msgid ""
+#~ "Standard exchange contract is a derived financial instrument, its "
+#~ "specification is set by exchange."
+#~ msgstr ""
+#~ "Стандартный биржевой контракт - производный финансовый инструмент, "
+#~ "спецификация которого установлена биржей."
+
+#~ msgid "Contract specification"
+#~ msgstr "Спецификации контрактов"
+
+#~ msgid "is a document which defines most of the trading conditions:"
+#~ msgstr ""
+#~ "- документ, в котором оговаривается большинство параметров контракта:"
+
+#~ msgid "characteristic of basic asset;"
+#~ msgstr "характеристика базового актива;"
+
+#~ msgid "payment arrangements according to margin and warranty insurance;"
+#~ msgstr "механизм расчетов по вариационной марже и гарантийному обеспечению;"
+
+#~ msgid "the procedure of price determination;"
+#~ msgstr "механизм ценообразования контракта;"
+
+#~ msgid "executing procedure and payments under the contracts"
+#~ msgstr "процедура исполнения и расчетов по контракту;"
+
+#~ msgid ""
+#~ "Only one parameter is specified during the deal (price or over spot). The "
+#~ "rest of the conditions are standard and are determined in specifications."
+#~ msgstr ""
+#~ "При заключении сделки оговаривается только один параметр (<em>цена</em> "
+#~ "или <em>премия</em>). Все остальные параметры стандартны, то есть "
+#~ "определены в спецификации."
+
+#~ msgid "The following contract specifications are available for you:"
+#~ msgstr "Для торговли Вам доступны следующие спецификации контрактов:"
+
+#~ msgid "Specification of"
+#~ msgstr "Спецификация"
+
+#~ msgid "CFD Currencies"
+#~ msgstr "CFD Currencies"
+
+#~ msgid "OPTIONS"
+#~ msgstr "Опционы"
+
+#~ msgid "Contract specifications for"
+#~ msgstr "Спецификации контрактов"
+
+#~ msgid "Contract sepcifications"
+#~ msgstr "Спецификации контрактов"
+
+#~ msgid "Stock purchase margin is 10%%"
+#~ msgstr "Маржа при покупке акций составляет 10%"
+
+#~ msgid ""
+#~ "Attention! At the dividend payment day for CFD STOCK USA contracts "
+#~ "dividend amount can be withdrawn from open sell positions. Divident "
+#~ "amounts can be seen in "
+#~ msgstr ""
+#~ "Внимание! В день выплаты дивидендов по контрактам CFD STOCK USA, с "
+#~ "открытых позиций sell может быть списана величина дивидендов, указанная в"
+
+#~ msgid "dividend table"
+#~ msgstr "таблице дивидендов"
+
+#~ msgid ""
+#~ "1:500 leverage is available only for accounts with total balance less "
+#~ "than $10000. 1:100 leverage is available only for accounts with total "
+#~ "balance less than $150000 (with balance over $150000 maximal leverage is "
+#~ "1:10). An account may be denied to have 1:500 leverage without giving a "
+#~ "reason."
+#~ msgstr ""
+#~ "Плечо 1:500 доступно для счетов с общим балансом до 10 000$. Плечо 1:100 "
+#~ "доступно с максимальным балансом до 150 000$ (при балансе более 150 000$ "
+#~ "максимальное плечо 1:10). В предоставлении плеча 1:500 Вам может быть "
+#~ "отказано без объяснения причин."
+
+#~ msgid "Select execution system"
+#~ msgstr "Выберите систему исполнения"
+
+#~ msgid ""
+#~ "Night margin for contracts for difference,except CFD STOCK USA, exists "
+#~ "and is 10 times of day margin"
+#~ msgstr ""
+#~ "По контрактам на разницу, CFD, кроме контрактов CFD STOCK USA существует "
+#~ "ночная маржа в размере 10 кратной дневной маржи"
+
+#~ msgid "Balance in $"
+#~ msgstr "Баланс в $"
+
+#~ msgid ""
+#~ "An account may be denied to have 1:500 leverage without giving a reason."
+#~ msgstr ""
+#~ "В предоставлении плеча 1:500 Вам может быть отказано без объяснения "
+#~ "причин."
+
+#~ msgid "Funds"
+#~ msgstr "Средства на счете"
+
+#~ msgid "RESULTS"
+#~ msgstr "РЕЗУЛЬТАТЫ"
+
+#~ msgid ""
+#~ "\n"
+#~ "    <p style=\"text-align: center; \">\n"
+#~ "        <span style=\"font-size:24px;\"><span style=\"font-family:georgia,"
+#~ "serif;\">Get detailed information <span style=\"color:#ff8c00;\">about "
+#~ "all trading instruments!</span></span></span></p>\n"
+#~ "    <p>\n"
+#~ "        Standard exchange contract is a derived financial instrument, its "
+#~ "specification is set by exchange.</p>\n"
+#~ "    <p>\n"
+#~ "        <strong>Contract specification</strong> is a document which "
+#~ "defines most of the trading conditions:</p>\n"
+#~ "    <ul>\n"
+#~ "        <li>\n"
+#~ "            characteristic of basic asset;</li>\n"
+#~ "    </ul>\n"
+#~ "    <ul>\n"
+#~ "        <li>\n"
+#~ "            payment arrangements according to margin and warranty "
+#~ "insurance;</li>\n"
+#~ "    </ul>\n"
+#~ "    <ul>\n"
+#~ "        <li>\n"
+#~ "            the procedure of price determination;</li>\n"
+#~ "    </ul>\n"
+#~ "    <ul>\n"
+#~ "        <li>\n"
+#~ "            executing procedure and payments under the contracts</li>\n"
+#~ "    </ul>\n"
+#~ "    <p>\n"
+#~ "        Only one parameter is specified during the deal (price or over "
+#~ "spot). The rest of the conditions are standard and are determined in "
+#~ "specifications.</p>\n"
+#~ "    <p>\n"
+#~ "        <strong>The following contract specifications are available for "
+#~ "you:</strong></p>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<div style=\"text-align: center; \">\n"
+#~ "\t<span style=\"font-size:22px;\"><span style=\"font-family:georgia,serif;"
+#~ "\">Получите подробную информацию <span style=\"color: rgb(255, 153, 51); "
+#~ "\">обо всех инструментах торговли!</span></span></span></div>\n"
+#~ "<div>\n"
+#~ "\t&nbsp;</div>\n"
+#~ "<div>\n"
+#~ "\tСтандартный биржевой контракт - производный финансовый инструмент, "
+#~ "спецификация которого установлена биржей.</div>\n"
+#~ "<div>\n"
+#~ "\t&nbsp;</div>\n"
+#~ "<div>\n"
+#~ "\t<strong>Спецификация контракта</strong> - документ, в котором "
+#~ "оговаривается большинство параметров контракта:</div>\n"
+#~ "<ul>\n"
+#~ "\t<li>\n"
+#~ "\t\tхарактеристика базового актива,&nbsp;</li>\n"
+#~ "</ul>\n"
+#~ "<ul>\n"
+#~ "\t<li>\n"
+#~ "\t\tмеханизм расчетов по вариационной марже и гарантийному обеспечению,</"
+#~ "li>\n"
+#~ "</ul>\n"
+#~ "<ul>\n"
+#~ "\t<li>\n"
+#~ "\t\tмеханизм ценообразования контракта,</li>\n"
+#~ "</ul>\n"
+#~ "<ul>\n"
+#~ "\t<li>\n"
+#~ "\t\tпроцедура исполнения и расчетов по контракту.</li>\n"
+#~ "</ul>\n"
+#~ "<p>\n"
+#~ "    При заключении сделки оговаривается только один параметр (<em>цена</"
+#~ "em> или <em>премия</em>).&nbsp;Все остальные параметры стандартны, то "
+#~ "есть определены в спецификации.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "\t<strong>Для торговли Вам доступны следующие спецификации контрактов:</"
+#~ "strong></p>\n"

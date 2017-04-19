@@ -1,0 +1,11 @@
+{% load i18n %}
+
+    <h1>{% trans "Account activation failed" %}</h1>
+      <div class="container">
+        {% if not request.user.is_authenticated %}
+        <p>Ошибка активации. Либо вы уже активировали счет, либо прошли по неверной ссылке.</p>
+        <p>Попробуйте <a href="/my/accounts/login/">зайти в личный кабинет</a> под email'ом и паролем, который вы вводили при регистрации.</p>
+        {% else %}
+            <p>Вы уже активировали этот аккаунт.</p>
+        {% endif %}
+      </div>

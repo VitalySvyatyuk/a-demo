@@ -1,0 +1,22 @@
+{% extends "admin/change_form.html" %}
+
+{% load i18n %}
+
+{% block extrahead %}{{ block.super }}
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    // A quick hack to make users unable to edit the issue comments, which
+    // do not belong to them.
+    $(function() {
+      $('#issuecomment_set-group tr.has_original textarea').attr('disabled', 'disabled');
+      $('#issuecomment_set-group tr.has_original input').attr('disabled', 'disabled')
+    });
+  </script>
+{% endblock %}
+
+{% block object-tools-items %}
+    <li>
+        <a href="{%  url 'watch_document' object_id %}" target="_blank" class="historylink">{% trans "Client information" %}</a>
+    </li>
+    {{ block.super }}
+{% endblock %}

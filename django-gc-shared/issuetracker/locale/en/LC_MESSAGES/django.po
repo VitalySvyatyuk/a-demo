@@ -1,0 +1,520 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-16 17:50+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Mark select issues as closed"
+msgstr "Mark the selected issues as closed"
+
+msgid "Mark select issues as rejected"
+msgstr "Mark the selected issues as rejected"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Requisit params"
+msgstr "Requisites params"
+
+msgid "user requisit"
+msgstr "user requisites"
+
+msgid "Attachment"
+msgstr "Attachment"
+
+msgid "Department"
+msgstr "Department"
+
+#, python-format
+msgid "Supported extensions: %(ext)s. Filesize limit: %(limit)s Mb"
+msgstr "Supported extensions: %(ext)s. Filesize limit: %(limit)s Mb"
+
+msgid "Unsupported file extension"
+msgstr "Unsupported file extension"
+
+msgid "File is too big."
+msgstr "File is too big."
+
+msgid "Status"
+msgstr "Status"
+
+msgid "From date"
+msgstr "From date"
+
+msgid "To date"
+msgstr "To date"
+
+msgid "All"
+msgstr "All"
+
+msgid "slug"
+msgstr "slug"
+
+msgid "weight"
+msgstr "weight"
+
+msgid "Weight determines sorting order"
+msgstr "Weight determines sorting order"
+
+msgid "default deadline"
+msgstr "default deadline"
+
+msgid "issue priority"
+msgstr "issue priority"
+
+msgid "issue priorities"
+msgstr "issue priorities"
+
+msgid "New issue"
+msgstr "New issue"
+
+msgid "Issue status rejected"
+msgstr "Issue status is rejected"
+
+msgid "Answer received"
+msgstr "An answer is received"
+
+msgid "In process"
+msgstr "In process"
+
+msgid "Issue closed"
+msgstr "Issue is closed"
+
+msgid "In SENDER'S currency"
+msgstr "In sender's currency"
+
+msgid "In RECEIVER'S currency"
+msgstr "In receiver's currency"
+
+msgid "priority"
+msgstr "priority"
+
+msgid "status"
+msgstr "status"
+
+msgid "author"
+msgstr "author"
+
+msgid "assignee"
+msgstr "assignee"
+
+msgid "department"
+msgstr "department"
+
+msgid "creation timestamp"
+msgstr "creation timestamp"
+
+msgid "update timestamp"
+msgstr "update timestamp"
+
+msgid "deadline"
+msgstr "deadline"
+
+msgid "title"
+msgstr "title"
+
+msgid "text"
+msgstr "text"
+
+msgid "issue"
+msgstr "issue"
+
+msgid "issues"
+msgstr "issues"
+
+msgid "user"
+msgstr "user"
+
+msgid "comment text"
+msgstr "comment on a text"
+
+msgid "issue comment"
+msgstr "issue comment"
+
+msgid "issue comments"
+msgstr "issue comments"
+
+msgid "change initiator"
+msgstr "change an initiator"
+
+msgid "change description"
+msgstr "change description"
+
+msgid "issue attachment"
+msgstr "issue attachment"
+
+msgid "<unknown file>"
+msgstr "<unknown file>"
+
+msgid "check profile issue"
+msgstr "check the profile issue"
+
+msgid "check profile issues"
+msgstr "check the profile issues"
+
+msgid "check requisit issue"
+msgstr "check the requisites issue"
+
+msgid "check requisit issues"
+msgstr "check the requisites issues"
+
+msgid "document"
+msgstr "document"
+
+msgid "check document issue"
+msgstr "check the document issue"
+
+msgid "check document issues"
+msgstr "check the document issues"
+
+msgid "leverage"
+msgstr "leverage"
+
+msgid "account"
+msgstr "account"
+
+msgid "check leverage issue"
+msgstr "check the leverage issue"
+
+msgid "check leverage issues"
+msgstr "check the leverage issues"
+
+#, python-format
+msgid ""
+"Change leverage for account %(account)s of user %(user)s from %(old)s to "
+"%(new)s"
+msgstr ""
+"Change leverage for the account %(account)s of the user %(user)s from %(old)s to %(new)s"
+
+msgid "restore account from archive issue"
+msgstr "restore the account from archive issue"
+
+#, python-format
+msgid "Restore account %(account)s of user %(user)s from archive"
+msgstr "Restore the account %(account)s of the user %(user)s from archive"
+
+msgid "comment"
+msgstr "comment on"
+
+msgid "delete account issue"
+msgstr "delete the account issue"
+
+msgid "delete account issues"
+msgstr "delete the account issues"
+
+#, python-format
+msgid "Delete account %(account)s of user %(user)s"
+msgstr "Delete the account %(account)s of the user %(user)s"
+
+msgid "Change account password issue"
+msgstr "Change the account password issue"
+
+msgid "Change account password issues"
+msgstr "Change the account password issues"
+
+msgid "eliminate profile data variance issue"
+msgstr "eliminate the profile data variance issue"
+
+msgid "eliminate profile data variance issues"
+msgstr "eliminate the profile data variance issues"
+
+msgid "user issue"
+msgstr "user issue"
+
+msgid "user issues"
+msgstr "user issues"
+
+msgid "deposit request"
+msgstr "deposit request"
+
+msgid "deposit request issue"
+msgstr "the deposit request issue"
+
+msgid "deposit request issues"
+msgstr "the deposit request issues"
+
+msgid "withdraw request"
+msgstr "withdraw request"
+
+msgid "withdraw request issue"
+msgstr "the withdraw request issue"
+
+msgid "withdraw request issues"
+msgstr "the withdraw request issues"
+
+msgid "sender"
+msgstr "sender"
+
+msgid "recipient"
+msgstr "recipient"
+
+msgid "Recipient's account number."
+msgstr "Recipient's account number."
+
+msgid "amount"
+msgstr "amount"
+
+msgid "Amount of money to transfer"
+msgstr "Amount of money to transfer"
+
+msgid "Currency"
+msgstr "Currency"
+
+msgid "internal transfer issue"
+msgstr "the internal transfer issue"
+
+msgid "internal transfer issues"
+msgstr "the internal transfer issues"
+
+msgid "Attachments"
+msgstr "Attachments"
+
+msgid "Invalid value"
+msgstr "Invalid value"
+
+msgid "Ticket id"
+msgstr "Ticket ID"
+
+msgid "Created"
+msgstr "Created"
+
+msgid "Subject"
+msgstr "Subject"
+
+msgid "No tickets"
+msgstr "No tickets"
+
+msgid "Support"
+msgstr "Support"
+
+msgid "Create issue"
+msgstr "Create an issue"
+
+msgid "Probably there is an answer in"
+msgstr "Probably there is an answer in"
+
+msgid "FAQ"
+msgstr "FAQ"
+
+msgid "Create"
+msgstr "Create"
+
+msgid "Issue #"
+msgstr "Issue #"
+
+msgid "Created on"
+msgstr "Created on"
+
+msgid "uploaded file"
+msgstr "uploaded file"
+
+msgid "No attachments"
+msgstr "No attachments"
+
+msgid "Add attachment"
+msgstr "Add attachment"
+
+msgid "Upload"
+msgstr "Upload"
+
+msgid "Comments"
+msgstr "Comments"
+
+msgid "No comments for the issue yet"
+msgstr "No comments for the issue yet"
+
+msgid "Add comment"
+msgstr "Add a comment"
+
+msgid "Leave a comment"
+msgstr "Leave a comment"
+
+msgid "Back to issue list"
+msgstr "Back to the issue list"
+
+msgid "Support tickets"
+msgstr "Support tickets"
+
+msgid "You can create a support request here"
+msgstr "You can ask a question here or create a request to the support team of our company"
+
+msgid "Tickets filter"
+msgstr "Tickets' filter"
+
+msgid "By creation date"
+msgstr "By creation date"
+
+msgid "from"
+msgstr "from"
+
+msgid "to"
+msgstr "to"
+
+msgid "By status"
+msgstr "By status"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "or"
+msgstr "or"
+
+msgid "reset filter"
+msgstr "reset filter"
+
+msgid "Create new issue"
+msgstr "Create a new issue"
+
+msgid "Create issue ticket"
+msgstr "Create an issue ticket"
+
+msgid ""
+"Thanks for uploading your documents! Your account is now being verified, but "
+"you can start using it right now. If the verification fails, we will contact "
+"you."
+msgstr ""
+"Thanks for uploading your documents! Your account is now being verified and you can start using it right now. If the verification fails, we will contact you."
+
+msgid "View image"
+msgstr "View an image"
+
+msgid "Select files"
+msgstr "Select files"
+
+msgid "Create ticket"
+msgstr "Create a ticket"
+
+msgid "Answer text"
+msgstr "Answer a text"
+
+msgid "Send"
+msgstr "Send"
+
+msgid ""
+"Dear client!\n"
+"\n"
+"We have verified your deposit and now you can continue to trade on your "
+"account!\n"
+"\n"
+"We wish you successful trading!"
+msgstr ""
+"Dear client!\n"
+"\n"
+"We have verified your deposit and now you can continue to trade on your account!\n"
+"\n"
+"We wish you successful trading!"
+
+msgid "Your deposit was verified"
+msgstr "Your deposit was verified"
+
+#, python-format
+msgid ""
+"Dear client!\n"
+"\n"
+"Unfortunately, our financial department was unable to verify your deposit "
+"with the following reason:\n"
+"\n"
+"%(finance_dep_comment)s\n"
+"\n"
+"\n"
+"\n"
+"We care about your security!"
+msgstr ""
+"Dear client!\n"
+"\n"
+"Unfortunately, our financial department was unable to verify your deposit by the following reason:\n"
+"\n"
+"%(finance_dep_comment)s\n"
+"\n"
+"\n"
+"\n"
+"We care about your security!"
+
+msgid "We couldn't verify your deposit"
+msgstr "We could not verify your deposit"
+
+msgid "Your request was rejected with the following comment"
+msgstr "Your request was rejected with the following comment"
+
+#, python-format
+msgid ""
+"\n"
+"  User %(author)s attached a new file to this issue: http://%(site_domain)s/"
+"static/%(file)s\n"
+msgstr ""
+"\n"
+"  The user %(author)s attached a new file to this issue: http://%(site_domain)s/static/%(file)s\n"
+
+msgid "The following fields changed"
+msgstr "The following fields are changed"
+
+#, python-format
+msgid ""
+"\n"
+"  User %(author)s left a new comment for this issue: %(text)s\n"
+msgstr ""
+"\n"
+"  The user %(author)s left a new comment for this issue: %(text)s\n"
+
+msgid "New comment"
+msgstr "New comment"
+
+msgid "New attachment"
+msgstr "New attachment"
+
+msgid "Issue changed"
+msgstr "Issue is changed"
+
+#, python-format
+msgid ""
+"In your private office you created a request #%(id)s to restore account "
+"%(acc)s from archive"
+msgstr ""
+"You created a request #%(id)s to restore the account %(acc)s from archive in your Private Office. "
+
+#, python-format
+msgid "Your GrandCapital account %(issue.account)s was restored from archive."
+msgstr "Your Grand Capital account %(issue.account)s was restored from archive."
+
+#, python-format
+msgid ""
+"We failed to restore your GrandCapital account %(issue.account)s from "
+"archive."
+msgstr ""
+"We failed to restore your Grand Capital account %(issue.account)s from archive."
+
+msgid ""
+"Thank you for submitting a ticket to our issue tracker. It will be reviewed "
+"as soon\n"
+"  as possible, and you will receive an answer by e-mail and in your Private "
+"Office at our website."
+msgstr ""
+"Thank you for submitting a ticket to our issue tracker. It will be reviewed as soon\n"
+"  as possible and you will receive an answer by e-mail and in your Private Office on our website."
+
+msgid "You can view the issue at"
+msgstr "You can view the issue at"
+
+msgid "Author"
+msgstr "Author"
+
+msgid "Body"
+msgstr "Body"
+
+#, python-format
+msgid "Issue #%s created"
+msgstr "Issue #%s is created"
+

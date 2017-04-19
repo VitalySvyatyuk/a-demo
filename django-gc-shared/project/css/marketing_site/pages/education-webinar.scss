@@ -1,0 +1,196 @@
+.header-tabs-row{
+  margin-top: 128px;
+  a.header-tabs{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    padding: 20px 35px;
+    text-decoration: none;
+  }
+  a.active-header-tabs{
+    background-color: #fff;
+    color: #262626;
+    position: relative;
+  }
+  a.active-header-tabs:after{
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 14px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -72px;
+    right: 0;
+    margin: auto;
+  }
+}
+
+.education-webinar{
+  margin-bottom: 50px;
+  .pagination{
+    margin-top: 63px;
+    margin-bottom: 45px;
+    .pagination__arrow_button--left{
+      float: left;
+      margin-top: 16px;
+      border-bottom: none;
+    }
+    .pagination__arrow_button--right{
+      float: right;
+      margin-top: 16px;
+      border-bottom: none;
+    }
+    span.pagination__button{
+      color: #262626;
+      font-size: 24px;
+      font-weight: 400;
+    }
+    .pagination__arrow_button:before{
+      top: -3px;
+    }
+    a.pagination__number_button{
+      width: 140px;
+    }
+  }
+  .education-webinar-schedule{
+    table{
+      width: 100%;
+      border-collapse: separate;
+      thead{
+        tr{
+          display: table-row;
+          th{
+            text-align: left;
+            color: #636262;
+            font-size: 15px;
+            font-weight: 400;
+            padding-left: 25px;
+            padding-bottom: 53px;
+            display: table-cell;
+          }
+        }
+      }
+      tbody{
+        tr{
+          display: table-row;
+          td{
+            text-align: left;
+            vertical-align: top;
+            width: 20%;
+            padding: 26px 0;
+            padding-left: 25px;
+            padding-right: 10px;
+            display: table-cell;
+            border: 1px solid transparent;
+            a.link{
+              color: #1f5060;
+              border-bottom: 1px solid #1f5060;
+              text-decoration: none;
+            }
+            p.time{
+              color: #929292;
+              font-size: 16px;
+              font-weight: 400;
+              position: relative;
+              padding-left: 18px;
+            }
+            p.time:after{
+              content: "";
+              display: block;
+              background-image: url(../img/marketing-site/icons/icon-education-webinar-clock.svg);
+              width: 14px;
+              height: 14px;
+              position: absolute;
+              top: 1px;
+              left: 0;
+            }
+            a.button{
+              width: 120px;
+              min-width: 120px;
+              padding: 5px 10px;
+              display: block;
+              height: 25px;
+              line-height: 0;
+              display: none;
+              margin: 13px 0;
+            }
+          }
+          td:hover{
+            border-color: #e8072a;
+            p.time{
+              display: none;
+            }
+            a.button{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .header-tabs-row{
+    a.header-tabs{
+      display: block;
+    }
+  }
+  .education-webinar{
+    margin-bottom: 50px;
+    .education-webinar-schedule{
+      table{
+        thead{
+          tr{
+            th{
+              display: none;
+            }
+          }
+        }
+        tbody{
+          tr{
+            td{
+              display: block;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px){
+  .header-tabs-row{
+    a.header-tabs{
+      padding: 20px 10px;
+    }
+  }
+  .education-webinar{
+    .education-webinar-schedule{
+      table{
+        tbody{
+          tr{
+            td{
+              padding-left: 5px;
+              padding-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+

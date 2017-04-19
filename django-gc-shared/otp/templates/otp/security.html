@@ -1,0 +1,283 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags profiles_tags staticfiles %}
+
+{% block css %}{{ block.super }}
+    <style type="text/css">
+        .pointer {
+            cursor: pointer;
+        }
+        .select_otp_type {
+            margin: 0 15px 0 15px;
+            width: 210px;
+            height: 50px;
+        }
+        .select_otp_type_table td {
+            vertical-align: middle;
+        }
+        .active_device_info {
+            text-align: center;
+        }
+        .add_device {
+            margin: 10px 25px;
+        }
+    </style>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    {# jquery ui tabs #}
+    <script type="text/javascript" src="{% static 'js/jquery-ui-1.10.3.custom.min.js' %}"></script>
+    {{ phone_form.media.js }}
+    <script type="text/javascript" src="{% static 'js/django_ajax_send_csrf.js' %}"></script>
+    <script type="text/javascript" src="{% absolute_url "jsi18n" %}"></script>
+    <script type="text/javascript">
+        SEND_SMS_ADDRESS = '{% url "send_sms" %}';
+        MAKE_CALL_ADDRESS = '{% url "make_call" %}';
+        TARGET = 'preview';
+        STEP_2 = {% if phone_form.step2 %}true{% else %}false{% endif %};
+    </script>
+    <script type="text/javascript" src="{% static 'js/otp/sms_send.js' %}"></script>
+
+    <script type="text/javascript">
+
+        function check(elem){
+            elem.attr("checked", "checked");
+        }
+
+        function uncheck(elem){
+            elem.removeAttr("checked");
+        }
+
+        $(function () {
+            $("#refresh_qrcode").click(function (event) {
+                event.preventDefault();
+                $.ajax({
+                    url: "{% url 'refresh_qr_code' %}",
+                    success: function (data) {
+                        $("#qr_code").attr("src", "data:image/png;base64," + data.qr_code);
+                        $("span#device_secret").text(data.secret);
+                        $("input#device_secret").val(data.secret);
+                        $("#check").css("outline", "inherit").val("");
+                    }
+                });
+            });
+
+            var check_sms = $("#check_sms_device");
+            check_sms.keyup(function () {
+                var that = this;
+
+                if (check_sms.val().length > 3) {
+                    $.ajax({
+                        url: "{% url 'check_sms' %}" + "?" + $("#add_sms_device").serialize(),
+                        success: function (data) {
+                            that.style.backgroundColor = data.ok ? "lightgreen" : "lightpink";
+                        }
+                    });
+                }
+                else {
+                    check_sms.css("background-color", "white");
+                }
+            });
+
+            var check_otp = $("#check_otp_device");
+            check_otp.keyup(function () {
+                var that = this;
+                if (check_otp.val().length > 5) {
+                    check_otp.attr("disabled", "disabled");
+                    var secret = $("#device_secret").text();
+                    var value = check_otp.val();
+                    $.post(
+                        "{% url 'check_sync' %}",
+                        "secret=" + secret + "&value=" + value,
+                        function (data) {
+                            check_otp.removeAttr("disabled", "disabled");
+                            if (data.result) {
+                                that.style.backgroundColor = "lightgreen";
+                            }
+                            else {
+                                that.style.backgroundColor = "lightpink";
+                            }
+                        }
+                    );
+                }
+                else {
+                    check_otp.css("outline", "inherit");
+                }
+            });
+
+            if (check_otp.val().length > 3) $("#check_otp").keyup();
+
+            $('#change_device').click(function(){
+                $('#change_device').parent().hide();
+                $('#change_device_container').slideDown('fast');
+            });
+
+            $('.select_otp_type').click(function(){
+                if(!$($(this).data('id')).is(":visible")) {
+                    $('.add_device').hide();
+                    $($(this).data('id')).slideDown('fast');
+                } else {
+                    $('.add_device').hide();
+                }
+            });
+
+        });
+    </script>
+{% endblock %}
+
+{% block extrahead %}{{ block.super }}
+    {{ phone_form.media.css }}
+{% endblock %}
+
+{% block title %}{{ block.super }} - {% trans "My profile" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Security settings" %}</h1>
+
+    <div class="container">
+        <p>{% trans "In this section you can set your security settings." %}</p>
+
+        <p>
+            {% blocktrans %}
+                The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:
+                <br/>
+                <ul>
+                    <li>Editing profile data</li>
+                    <li>Creating or editing withdraw details</li>
+                    <li>Funds withdrawal</li>
+                    <li>Internal transfer</li>
+                    <li>Real account leverage change</li>
+                    <li>Real account password change</li>
+                </ul>
+                <br/>
+                The authentication code will help verify that it is really you who request the operation
+                and your account was not stolen. This will help to protect you from money theft.
+                The authentication code is generated by a special mobile app or
+                is sent to your mobile phone via text message (SMS).
+            {% endblocktrans %}
+        </p>
+
+        {% if devices %}
+            <p class="active_device_info">
+                <strong>
+                {% with devices.0 as device %}
+                    {% if device.type == 'OTP' %}
+                        <span class="sprite s_ok" title=""></span>
+                        {% trans "Currently you use mobile application" %}
+                    {% elif device.type == 'SMS' %}
+                        <span class="sprite s_ok" title=""></span>
+                        {% trans "Currently you use SMS with phone" %} {{ device.phone_number}}
+                    {% endif %}
+                {% endwith %}
+                </strong>
+            </p>
+            <p style="text-align: center;">{% gcbutton "button" _("Change device") "black" 'id="change_device"' %}</p>
+        {% endif %}
+
+        <div id="change_device_container" {% if devices and not preview_hash %}style="display:none;"{% endif %}>
+            <h2></h2>
+            <p><b>{% trans "Please choose your preferred authentication method:" %}</b></p>
+
+            <table class="select_otp_type_table">
+                <tr>
+                    <td>
+                        <button class="select_otp_type" data-id="#add_sms_device">{% trans "SMS" %}</button>
+                    </td>
+                    <td>
+                        <strong>{% trans "OR" %}</strong>
+                    </td>
+                    <td>
+                        <button class="select_otp_type" data-id="#add_otp_device">{% trans "Mobile application" %}</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <form method="POST" id="add_sms_device" class="add_device" {% if not preview_hash or not request.POST.auth_type == 'sms' %} style="display:none;" {% endif %}>
+            {% csrf_token %}
+            <input type="hidden" id="sms_type" name="auth_type" value="sms" checked/>
+            <input type="hidden" name="device_secret" value="{{ secret }}"/>
+            <p>
+                <div id="sms_step1">
+                    {% with phone_form as form %}
+                        {% include "includes/_form.html" %}
+                    {% endwith %}
+                    <input type="hidden" name="preview_hash" value="{{ preview_hash }}"/>
+                    <button id="sms_send">{% trans "Send an SMS" %}</button>
+                </div>
+                <div id="sms_step2">
+                    <p style="color: green;">{% trans "SMS was sent succesfully" %}</p>
+                    <span id="automated_call">
+                        {% trans "If you <b>can't receive the message</b>, you can order an" %}
+                        <button type="button" id="make_call">{% trans "automated call" %}</button>
+                        <br/>
+                        {% trans "You will receive a unique code which you should enter in the following field:" %}
+                    </span>
+                    <span id="no_automated_call" style="display: none;">
+                    {% trans "The call was queued succesfully. You will hear a unique code (4 digits) which you should enter in the following field:" %}
+                    </span>
+
+                    <p>
+                        <input id="check_sms_device" name="sms_check" type="text" value="{{ request.POST.sms_check }}"/>
+                        <br/>
+                        <button type="submit">{% trans "Make binding" %}</button>
+                    </p>
+                </div>
+            </p>
+        </form>
+
+        <form method="POST" id="add_otp_device" class="add_device" {% if not preview_hash or not request.POST.auth_type == 'otp' %} style="display:none;" {% endif %}>
+            {% csrf_token %}
+            <input type="hidden" name="auth_type" value="otp" checked/>
+            {% trans "To generate the authentication code using mobile app, follow these 3 simple steps" %}:
+            <ol id="app-links">
+                <li>
+                    {% trans "Install the application on your mobile phone" %}:
+                    <br/><br/>
+                    {% trans "For" %} iOS:
+                    <a href="https://itunes.apple.com/us/app/hde-otp-generator/id571240327">
+                        HDE OTP Generator</a>
+                    <a style="float: right;" rel="facebox" href="{% static 'img/profiles/hde_otp_generator_qrcode.png' %}">
+                    {% trans "QR-code" %}</a>
+                    <br/>
+                    {% trans "For" %} Windows Phone 7/8:
+                    <a href="http://www.windowsphone.com/en-us/store/app/authenticator/e7994dbc-2336-4950-91ba-ca22d653759b">
+                        Microsoft Authenticator</a>
+                    <a style="float: right;" rel="facebox" href="{% static 'img/profiles/ms_authenticator_qrcode.png' %}">
+                    {% trans "QR-code" %}</a>
+                    <br/>
+                    {% trans "For" %} Android:
+                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">
+                        Google Authenticator</a>
+                    <a style="float: right;" rel="facebox" href="{% static 'img/profiles/google_authenticator_qrcode.png' %}">
+                    {% trans "QR-code" %}</a>
+                    <br/><br/>
+                </li>
+                <li>
+                    {% trans "Open the app and create a new account using the following secret key" %}:
+                    <span id="device_secret" style="font-weight: bold;">{{ secret }}</span>
+                    <br/>
+                    {% trans "or use the 'Scan' option of the app and point your mobile phone's camera at the QRCode below" %}:
+                    <br/><br/>
+                    <img width="170px" id="qr_code" src="data:image/png;base64,{{ qr_code }}" alt="qr code"/>
+                    <a href="#" id="refresh_qrcode">{% trans "Refresh" %}</a>
+                    <br/><br/>
+                </li>
+                <li>
+                    {% blocktrans %}
+                        Enter the code generated by the app in the following field
+                        (if the code doesn't match, please enable time correction in your app's settings):
+                    {% endblocktrans %}
+                    <br/><br/>
+                    <input id="check_otp_device" name="otp_check" type="text" value="{{ request.POST.otp_check }}" />
+                </li>
+            </ol>
+            <input type="hidden" name="device_secret" value="{{ secret }}"/>
+            <br/><br/>
+            <input type="submit" value="{% trans "Make binding" %}"/>
+        </form>
+
+    </div>
+{% endblock %}
+

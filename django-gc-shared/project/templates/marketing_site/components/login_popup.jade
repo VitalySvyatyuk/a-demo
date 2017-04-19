@@ -1,0 +1,275 @@
+- load cache i18n
+
+.popup.popup--sign.js-popup.ie-popup(data-popup-name="login_01")
+	.popup__close_btn.js-close-all-popups
+	.popup__tabs_box
+		.popup__tabs_item.js-tab(data-tab-category="login", data-tab-index="login_02")
+			- trans "Log in"
+		.popup__tabs_item.js-tab.state-active-tab(data-tab-category="login", data-tab-index="login_01")
+			- trans "Registration"
+	.popup__content_box.js-tab-content.state-visible(data-tab-category="login", data-tab-index="login_01")
+		h2.popup__title
+			- trans "Registration"
+		.popup__sign_form_box
+			form(action="{% url 'registration_register' %}?next=/account/profile/info", method="POST")
+				- csrf_token
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label(for="signup_first_name", required)
+						- trans "First name"
+					input.input_box__input(id="signup_first_name", name="first_name", required)
+					div.help-text= registration_form.first_name.help_text|safe
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label(for="signup_last_name")
+						- trans "Last name"
+					input.input_box__input(id="signup_last_name", name="last_name", required)
+					div.help-text= registration_form.last_name.help_text|safe
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label(for="id_phone_mobile_0")
+						- trans "Phone"
+					.input_box__wrapper!= registration_form.phone_mobile
+						//- select.input_box__start_info(name='phone_prefix')
+						//- 	option(value='russia', selected)
+						//- 		| +7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Россия)
+						//- 	option(value='australia')
+						//- 		| +61 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Австралия)
+						//- 	option(value='angola')
+						//- 		| +244 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Ангола)
+						//- input.input_box__input.input_box__input--has-start(id="signup_phone", required, type="tel", data-inputmask="'mask': '9999999[9][9][9][9][9][9][9]', 'placeholder':''")
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label(for="signup_email")
+						| E-mail
+					input.input_box__input(id="signup_email", name="email", required, type="email")
+				.popup__sign_form_box__input_row.popup__sign_form_box__input_row--checkbox
+					.checkbox_box.popup__sign_form_box__checkbox_box
+						input.checkbox_box__input(type="checkbox", id="signup_18", name="is_adult", required)
+						label(for="signup_18")
+							.checkbox_box__tick
+							span.checkbox_box__label.popup__sign_form_box__checkbox_label
+								- trans "I confrim my legal age."
+				.popup__sign_form_box__input_row.popup__sign_form_box__input_row--checkbox
+					.checkbox_box.popup__sign_form_box__checkbox_box
+						input.checkbox_box__input(type="checkbox", id="signup_19", name="real_risk", required)
+						label(for="signup_19")
+							.checkbox_box__tick
+							span.checkbox_box__label.popup__sign_form_box__checkbox_label
+								- trans "I agree, that trading leveraged products such as Forex and CFDs carries a high risk and can lead to complete loss of my deposit."
+				.popup__sign_form_box__input_row.popup__sign_form_box__input_row--checkbox
+						.checkbox_box.popup__sign_form_box__checkbox_box
+							input.checkbox_box__input(type="checkbox", id="signup_30", name="privacy_checkbox", required)
+							label(for="signup_30")
+									.checkbox_box__tick
+									span.checkbox_box__label.popup__sign_form_box__checkbox_label
+										- trans "I agree with the"
+									a.form_link(href="/static/agreements/ARUM_privacy_policy_13.01_en.pdf", target="_blank")
+										- trans "Privacy Policy" context "login popup"
+				.popup__sign_form_box__submit_form_box
+					button.popup__sign_form__button.popup__sign_form__button--desktop.button(type="submit")
+						span.button__text
+							- trans "Register"
+					button.popup__sign_form__button.popup__sign_form__button--mobile.button(type="submit")
+						span.button__text
+							- trans "Register"
+					button.popup__sign_form__button.popup__sign_form__button--mobile.button.button--outline.js-tab(data-tab-category="login", data-tab-index="login_02")
+						span.button__text
+							- trans "Log in"
+
+
+	.popup__content_box.js-tab-content.ie-popup(data-tab-category="login", data-tab-index="login_02")
+		h2.popup__title
+			- trans "Log in"
+		.popup__sign_form_box
+			form(action="{% url 'auth_login' %}?next=/account/trading", method="POST")
+				- csrf_token
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label.normal(for="signup_email")
+
+						- trans "Your login"
+						|  /
+						br
+						| E-mail /
+						br
+						- trans "or phone"
+
+
+					input.input_box__input(id="signup_email", required, type="text", name="auth-email_phone")
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label(for="signup_email")
+						- trans "Password"
+
+					input.input_box__input(id="signup_email", required, type="password", name="auth-password")
+				.popup__sign_form_box__input_row.popup__sign_form_box__input_row--checkbox
+					.checkbox_box.popup__sign_form_box__checkbox_box
+						input.checkbox_box__input(type="checkbox", id="signup_32", name="remember")
+						label(for="signup_32")
+							.checkbox_box__tick
+							span.checkbox_box__label.popup__sign_form_box__checkbox_label
+								- trans "Remember me"
+				.popup__sign_form_box__submit_form_box
+					button.popup__sign_form__button.popup__sign_form__button--desktop.button(type="submit")
+						span.button__text
+							- trans "Log in"
+					button.popup__sign_form__button.popup__sign_form__button--mobile.button.button--outline(type="submit")
+						span.button__text
+							- trans "Log in"
+
+					button.popup__sign_form__button.popup__sign_form__button--mobile.button.js-tab(data-tab-category="login", data-tab-index="login_01")
+						span.button__text
+							- trans "Register"
+				.popup__sign_form_box__submit_form_box
+					a.link(href="{% url 'password_reset_by_phone' %}")
+						- trans "Forgot your password?"
+
+
+
+.popup.popup--sign.js-popup.ie-popup(data-popup-name="login_03")
+	.popup__close_btn.js-close-all-popups
+	.popup__tabs_box
+		.popup__tabs_item.js-tab-b.state-active-tab(data-tab-category="login", data-tab-index="login_02")
+			- trans "Log in"
+		.popup__tabs_item.js-tab-b(data-tab-category="login", data-tab-index="login_01")
+			- trans "Registration"
+	.popup__content_box.js-tab-content-b(data-tab-category="login", data-tab-index="login_01")
+		h2.popup__title
+			- trans "Registration"
+		.popup__sign_form_box
+			form(action="{% url 'registration_register' %}?next=/account/profile/info", method="POST")
+				- csrf_token
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label(for="signup_first_name", required)
+						- trans "First name"
+					input.input_box__input(id="signup_first_name_b", name="first_name", required)
+					div.help-text= registration_form.first_name.help_text|safe
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label(for="signup_last_name")
+						- trans "Last name"
+					input.input_box__input(id="signup_last_name_b", name="last_name", required)
+					div.help-text= registration_form.last_name.help_text|safe
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label(for="id_phone_mobile_0_b")
+						- trans "Phone"
+					.input_box__wrapper!= registration_form.phone_mobile
+						//- select.input_box__start_info(name='phone_prefix')
+						//- 	option(value='russia', selected)
+						//- 		| +7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Россия)
+						//- 	option(value='australia')
+						//- 		| +61 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Австралия)
+						//- 	option(value='angola')
+						//- 		| +244 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Ангола)
+						//- input.input_box__input.input_box__input--has-start(id="signup_phone", required, type="tel", data-inputmask="'mask': '9999999[9][9][9][9][9][9][9]', 'placeholder':''")
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label(for="signup_email")
+						| E-mail
+					input.input_box__input(id="signup_email_b", name="email", required, type="email")
+				.popup__sign_form_box__input_row.popup__sign_form_box__input_row--checkbox
+					.checkbox_box.popup__sign_form_box__checkbox_box
+						input.checkbox_box__input(type="checkbox", id="signup_18_b", name="is_adult", required)
+						label(for="signup_18_b")
+							.checkbox_box__tick
+							span.checkbox_box__label.popup__sign_form_box__checkbox_label
+								- trans "I confrim my legal age."
+				.popup__sign_form_box__input_row.popup__sign_form_box__input_row--checkbox
+					.checkbox_box.popup__sign_form_box__checkbox_box
+						input.checkbox_box__input(type="checkbox", id="signup_19_b", name="real_risk", required)
+						label(for="signup_19_b")
+							.checkbox_box__tick
+							span.checkbox_box__label.popup__sign_form_box__checkbox_label
+								- trans "I agree, that trading leveraged products such as Forex and CFDs carries a high risk and can lead to complete loss of my deposit."
+				.popup__sign_form_box__input_row.popup__sign_form_box__input_row--checkbox
+						.checkbox_box.popup__sign_form_box__checkbox_box
+							input.checkbox_box__input(type="checkbox", id="signup_30_b", name="privacy_checkbox", required)
+							label(for="signup_30_b")
+									.checkbox_box__tick
+									span.checkbox_box__label.popup__sign_form_box__checkbox_label
+										- trans "I agree with the"
+									a.form_link(href="/static/agreements/ARUM_privacy_policy_13.01_en.pdf", target="_blank")
+										- trans "Privacy Policy" context "login popup"
+				.popup__sign_form_box__submit_form_box
+					button.popup__sign_form__button.popup__sign_form__button--desktop.button(type="submit")
+						span.button__text
+							- trans "Register"
+					button.popup__sign_form__button.popup__sign_form__button--mobile.button(type="submit")
+						span.button__text
+							- trans "Register"
+					button.popup__sign_form__button.popup__sign_form__button--mobile.button.button--outline.js-tab-b(data-tab-category="login", data-tab-index="login_02")
+						span.button__text
+							- trans "Log in"
+
+
+	.popup__content_box.js-tab-content-b.state-visible(data-tab-category="login", data-tab-index="login_02")
+		h2.popup__title
+			- trans "Log in"
+		.popup__sign_form_box
+			form(action="{% url 'auth_login' %}?next=/account/trading", method="POST")
+				- csrf_token
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label.normal(for="signup_email")
+
+						- trans "Your login"
+						|  /
+						br
+						| E-mail /
+						br
+						- trans "or phone"
+
+
+					input.input_box__input(id="signup_email_b", required, type="text", name="auth-email_phone")
+				.input_box.popup__sign_form_box__input_row
+					label.input_box__label(for="signup_email")
+						- trans "Password"
+
+					input.input_box__input(id="signup_email_b", required, type="password", name="auth-password")
+				.popup__sign_form_box__input_row.popup__sign_form_box__input_row--checkbox
+					.checkbox_box.popup__sign_form_box__checkbox_box
+						input.checkbox_box__input(type="checkbox", id="signup_32_b", name="remember")
+						label(for="signup_32_b")
+							.checkbox_box__tick
+							span.checkbox_box__label.popup__sign_form_box__checkbox_label
+								- trans "Remember me"
+				.popup__sign_form_box__submit_form_box
+					button.popup__sign_form__button.popup__sign_form__button--desktop.button(type="submit")
+						span.button__text
+							- trans "Log in"
+					button.popup__sign_form__button.popup__sign_form__button--mobile.button.button--outline(type="submit")
+						span.button__text
+							- trans "Log in"
+
+					button.popup__sign_form__button.popup__sign_form__button--mobile.button.js-tab-b(data-tab-category="login", data-tab-index="login_01")
+						span.button__text
+							- trans "Register"
+				.popup__sign_form_box__submit_form_box
+					a.link(href="{% url 'password_reset_by_phone' %}")
+						- trans "Forgot your password?"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+{% extends "design_2014/private_office/base.html" %}
+{% load i18n app_tags %}
+
+{% block title %}{{ block.super }} - {% trans "Support" %}{% endblock %}
+
+{% block css %}{{ block.super }}
+  <style>
+    .attachments, .comments {
+      background:none repeat scroll 0 0 #EEEEEE;
+      border:1px solid #DDDDDD;
+      margin:10px;
+      padding:10px;
+    }
+    .attachments h5, .comments h5 { margin-bottom: 2px; }
+    .comments textarea { border:1px solid #DDDDDD; width:471px; }
+  </style>
+{% endblock %}
+
+{% block content %}
+<h1 class="green">{% trans 'Issue #' %}{{issue.id}}: {{issue.title}}</h1>
+<div class="container issue">
+    <div class="details">
+        <table>
+            <tr><td class="key">{% trans 'Created on' %}</td><td class="value">{{issue.creation_ts}}</td></tr>
+            <tr><td class="key">{% trans 'Status' %}</td><td class="value">{{ issue.get_status_display }}</td></tr>
+            <tr><td class="key">{% trans 'Text' %}</td><td class="value">{{ issue.text }}</td></tr>
+        </table>
+    </div>
+
+    {% with issue.attachments.all as attachments %}
+    <div class="attachments">
+      <h4>{% trans 'Attachments' %}</h4>
+      {% if attachments %}
+        <ul>
+        {% for attachment in attachments %}
+          <li>{{attachment.user}} {% trans 'uploaded file' %} <a href="{{attachment.file.url}}">{{ attachment }}</a> [{{attachment.file.size|filesizeformat}}]</li>
+        {% endfor %}
+        </ul>
+      {% else %}
+        <p>{% trans 'No attachments' %}</p>
+      {% endif %}
+      <form action="{% url "issuetracker_add_attachment" issue_id=issue.id %}" method="post" enctype="multipart/form-data">
+        <h5>{% trans 'Add attachment' %}:</h5>
+        {% csrf_token %}
+        {{ attachment_form.file }}
+          {% gcbutton "submit" _("Upload") "black" %}
+      </form>
+    </div>
+    {% endwith %}
+
+    {% with issue.comments.all as comments %}
+    <div class="comments">
+        <h4>{% trans 'Comments' %}</h4>
+        {% if comments %}
+            <ul>
+            {% for comment in issue.comments.all %}
+            <li class="comment">
+                <div class="author">
+                  {{comment.user.first_name}} {{comment.user.last_name}} <a href="mailto:{{comment.user.email}}">{{comment.user.email}}</a>
+                </div>
+                <small class="creation-ts">{{comment.creation_ts}}</small>
+                <div class="text">{{comment.text}}</div>
+            </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+        <p>{% trans 'No comments for the issue yet' %}</p>
+        {% endif %}
+        <form action="{% url "issuetracker_add_comment" issue_id=issue.id %}" method="post">
+          <h5>{% trans 'Add comment' %}</h5>
+          {% csrf_token %}
+          {{comment_form.text}}
+            <br/><br/>
+            {% gcbutton "submit" _("Leave a comment") "black" %}
+        </form>
+    </div>
+    {% endwith %}
+
+    {% with issue_form as form %}
+    {% include 'includes/form.html' %}
+    {% endwith %}
+    <p><a href="{% url "issuetracker_issue_list" %}">{% trans 'Back to issue list' %}</a></p>
+</div>
+{% endblock %}

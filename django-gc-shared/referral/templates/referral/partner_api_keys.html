@@ -1,0 +1,110 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load app_tags i18n %}
+
+{% block title %}{{ block.super }} — Инструменты партнера{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <p>
+        {% blocktrans %}On this page you can get an API key and HTML code of a registration form that
+                will allow you to include it in your site. Using this form,
+                users of your site will be able to register Real Standard account directly at GrandCapital.
+                All accounts, registered using the form, will be automatically bound to your
+                partner code.{% endblocktrans %}
+        </p>
+        <a id='add_domain_form' href="#">Добавить домены</a>
+        <div id='domain_form' style="display: none">
+            <table border='1' cellspacing="0" cellpadding='5'>
+                <thead>
+                    <tr>
+                        <th>{% trans "Domain" %}</th>
+                        <th>{% trans "Agent code" %}</th>
+                        <th>{% trans "Action" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for api_key in api_keys %}
+                        <tr>
+                            <td>{{ api_key.domain }}</td>
+                            <td>{{ api_key.ib_account.mt4_id }}</td>
+                            <td> <a class='delete_btn' href="#" data-id="{{api_key.pk}}">{% trans "Delete" %}</a></td>
+                        </tr>
+                        <tr id="scriptcode-{{ api_key.id }}" style="display:none;">
+                            <td colspan="4">
+                                <input type="text" style="width: 100%;" value='&lt;script type="text/javascript" src="https://my.grandcapital.ru/accounts/partner/reg_html/?api_key={{ api_key.api_key }}"&gt;&lt;/script&gt;'>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <form action="{% url "api_keys" %}" method="POST">
+                {% csrf_token %}
+                {% include 'includes/form.html' %}
+                {% gcbutton "submit" _("Get new key") "black" 'name="submit" ' %}
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}{{ block.super }}
+<script type="text/javascript">
+        $(document).ajaxSend(function(event, xhr, settings) {
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie != '') {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = jQuery.trim(cookies[i]);
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+            function sameOrigin(url) {
+                // url could be relative or scheme relative or absolute
+                var host = document.location.host; // host + port
+                var protocol = document.location.protocol;
+                var sr_origin = '//' + host;
+                var origin = protocol + sr_origin;
+                // Allow absolute or scheme relative URLs to same origin
+                return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+                    (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+                    // or any other URL that isn't scheme relative or absolute i.e relative.
+                    !(/^(\/\/|http:|https:).*/.test(url));
+            }
+            function safeMethod(method) {
+                return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+            }
+
+            if (!safeMethod(settings.type) && sameOrigin(settings.url)) {
+                xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+            }
+        });
+</script>
+    <script type="text/javascript">
+        $(function () {
+            $("#add_domain_form").click(function () {
+                $("#domain_form").toggle();
+
+                return false;
+            });
+
+            $(".delete_btn").click( function () {
+                domain = $(this).data('id');
+                $.ajax({
+                    type: "POST",
+                    data: {'domain':domain},
+                    url: "{% url 'delete_domain' %}",
+                    complete: function() {
+                       window.location.reload();
+                   },
+                });
+            })
+        })
+    </script>
+{% endblock %}

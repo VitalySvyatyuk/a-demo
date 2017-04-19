@@ -1,0 +1,89 @@
+{% load staticfiles inbox i18n static %}
+<div class="main offset-bottom-40">
+
+    <div class="request">
+
+        <div class="clearfix offset-bottom-35 offset-top-35">
+           <h1 class="left">{% trans "Support tickets" %}</h1>
+            <a class="button medium right with-plus second" ng-click="createIssue()">{% trans "Create ticket" %}</a>
+        </div>
+
+        <div class="gc-accordion with-data clearfix">
+
+            <div class="gc-accordion-item active" ng-repeat="issue in issues" slide-block="selected === issue" ng-class="issue.status">
+                <div class="title-wrapper" ng-click="select(issue)">
+                    <span class="title" ng-bind="::issue.title"></span>
+                    <p class="request-message" ng-bind-html="::issue.text | nl2br"></p>
+                    <time ng-bind="::issue.creation_ts|momentFromNow"></time>
+                    <p class="request-status" ng-bind="issue.status_display"></p>
+                </div>
+
+                <div class="content" ng-if="selected === issue">
+
+                    <div class="row text-left">
+                        <!--<img ng-src="[[getUserImage()]]"/>-->
+                        <span style="padding-right: 20px">{{ user.first_name }} </span>
+                        <div class="message">
+                            <span ng-bind-html="::issue.text | nl2br"></span>
+                            <div class="img-wrapper" ng-if="issue.attachments.length > 0">
+                                <p class="description offset-bottom-10">{% trans "Attachments" %}:</p>
+
+                                <div ng-repeat="file in issue.attachments|filter:{is_image:true}" ng-click="viewImage(file.url)">
+                                    <img ng-src="[[::file.url]]"/>
+                                </div>
+                                <a ng-repeat="file in issue.attachments|filter:{is_image:false}" href="[[::file.url]]">
+                                    <span class="icon-file-green"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-repeat="comment in comments" ng-class="::{'text-left': comment.user === user.id, 'text-right': comment.user !== user.id}">
+                        <!--<img ng-src="[[getUserImage()]]" ng-if="::comment.user === user.id"/>-->
+                        <span ng-if="::comment.user === user.id" style="padding-right: 20px">{{ user.first_name }} </span>
+                        <div class="message" ng-bind-html="::comment.text | linky"></div>
+                        <div class="manager-avatar" ng-if="::comment.user !== user.id"></div>
+                    </div>
+
+                    <div class="row text-left" style="padding-left: 25px; padding-top: 25px">
+                        <form ng-submit="postComment()">
+                            <!--<img ng-src="[[getUserImage()]]"/>-->
+                            <div class="answer-wrapper" >
+                                <textarea  ng-disabled="globalLoading" ng-model="::comment.text" class="small-textarea" rows="3" placeholder="{% trans "Answer text" %}"></textarea>
+                                <p
+                                    ng-if="errors.text"
+                                    ng-repeat="err in errors.text"
+                                    ng-bind="err"
+                                    class="form-error">
+                                </p>
+                                <button type="submit" class="button medium offset-top-15" ng-disabled="globalLoading">{% trans "Send" %}</button>
+                            </div>
+                            <div class="upload-wrapper">
+                                <label class="button with-plus" for="comment-file-input">{% trans "Select files" %}</label>
+                                <input id="comment-file-input" type="file" ng-file-select="selectCommentFiles($files)" multiple>
+                                <p
+                                    ng-if="errors.files"
+                                    ng-repeat="err in errors.files"
+                                    ng-bind="err"
+                                    class="form-error">
+                                </p>
+                                <p class="description offset-bottom-15" ng-bind="commentFormData.files.help_text"></p>
+                                <p ng-repeat="file in files">
+                                    [[::file.name]] <span class="icon-cancel-basic small" ng-click="unselectCommentFile(file)"></span>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+

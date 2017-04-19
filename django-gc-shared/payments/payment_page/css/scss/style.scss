@@ -1,0 +1,445 @@
+/*fonts*/
+@font-face {
+	font-family: "pfDinTextMed";
+	src: url(../fonts/medium/pfdintextpro-medium.ttf) format("truetype"),
+    url(../fonts/medium/pfdintextpro-medium.woff) format("woff"),
+    url(../fonts/medium/pfdintextpro-medium.svg) format("svg");
+}
+@font-face {
+	font-family: "pfDinTextReg";
+	src: url(../fonts/regular/pfdintextpro-regular.ttf) format("truetype"),
+    url(../fonts/regular/pfdintextpro-regular.woff) format("woff"),
+    url(../fonts/regular/pfdintextpro-regular.svg) format("svg");
+}
+$font-reg: "pfDinTextReg", "Arial";
+$font-med: "pfDinTextMed", "Arial";
+
+/*global*/
+*{
+  margin: 0;
+  padding: 0;
+  font-family: $font-reg;
+}
+
+/*colors*/
+$bg-color: #f0eff0;
+$basic-color: #424243;
+$inverted-color: #ffffff;
+$first-color: #51b097;
+$first-color-hover: #16a085;
+$second-color: #d4524b;
+$second-color-hover: #c0392b;
+$third-color: #f1c40f;
+
+/*media*/
+@mixin respond-to($media) {
+    @if $media == gc-medium-only {
+		@media only screen and (min-width: 640px) and (max-width: 1023px) {
+			@content;
+		}
+		//640 - 1023
+	}
+    @else if $media == gc-xlarge-down {
+		@media only screen and (max-width: 1280px) {
+			@content;
+		}
+		//1280 and down
+	}
+}
+/*for custom media for resizing window on desktop*/
+@mixin respond-to-custom($min, $max) {
+	@media only screen and (min-width: $min) and (max-width: $max), only screen and (min-device-width : $min) and (max-device-width : $max) {
+		@content;
+	}
+}
+
+body{
+  background: $bg-color;
+  color: $basic-color;
+  font: 1rem/1 $font-reg;
+  padding: 0 10px;
+  @include respond-to-custom(0, 446px){min-width: 446px;}
+}
+.row{
+  margin: 0 auto;
+  max-width: 1280px;
+  @include respond-to(gc-xlarge-down){width: 100%;}
+  &:after{
+    content:'';
+    clear:both;
+    display: block;
+  }
+  .row{
+    width: 100%;
+    &:after{
+      content:'';
+      clear:both;
+      display: block;
+    }
+  }
+}
+/*header*/
+.header{
+  border-bottom: 5px solid $second-color;
+  margin-bottom: 40px;
+  padding: 30px 0;
+  img{
+    float: left;
+  }
+  p{
+    color: lighten($basic-color, 45%);
+    float: right;
+    font: 2.25rem/4.4375rem $font-reg;
+    @include respond-to(gc-medium-only){font-size: 1.5rem;}
+    @include respond-to-custom(720px, 850px){font-size: 1.25rem;}
+    @include respond-to-custom(0, 719px){display: none;}
+  }
+}
+h1{
+  font: 3rem $font-reg;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/*payments*/
+@mixin payments($payments-x){
+  background-position: $payments-x 0;
+  &.active {
+    background-position: $payments-x -45px;
+  }
+}
+.payments{
+  text-align: right;
+  .icon{
+    background: url(../img/payments.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 39px;
+    width: 68px;
+  }
+  .mastercard{@include payments(0);}
+  .maestro{@include payments(-90px);}
+  .visa{@include payments(-180px);}
+}
+
+/*form global*/
+.wrapper{
+  margin: 40px auto 0 auto;
+  width: 758px;
+  @include respond-to-custom(0, 795px){width: 446px;}
+}
+.form-wrapper{
+  @extend .wrapper;
+  color: $inverted-color;
+  height: 300px;
+  position: relative;
+  label{
+    font-size: .875rem;
+    text-transform: uppercase;
+  }
+  input, select{
+    color: #636363;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  input{
+    line-height: 32px;
+    padding: 0 15px;
+    &:-ms-input-placeholder{color: #bbb;}
+    &::-webkit-input-placeholder {color: #bbb;}
+    &:-moz-placeholder {color: #bbb;}
+  }
+  input, .select-wrapper{
+    background: $inverted-color;
+    border-radius: 5px;
+    border: 2px solid $inverted-color;
+    height: 32px;
+    &:hover, &:active, &:focus{
+      border-color: $third-color;
+    }
+  }
+  select{
+    appearance: none;
+    -moz-appearance: none;
+	-webkit-appearance: none;
+    background: url(../img/select-arrow.png) no-repeat right $inverted-color;
+    border: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: inline-block;
+    height: 100%;
+    overflow: hidden;
+    padding: 3px;
+    position: relative;
+    text-align: left !important;
+    width: 100%;
+    &::-ms-expand {display: none;}
+  }
+  .select-wrapper{
+    display: inline-block;
+    position: relative;
+    width: 15%;
+    vertical-align: middle;
+    z-index: 1;
+    &:before{
+      background: url(../img/select-arrow.png) no-repeat right $inverted-color;
+      content:'';
+      box-sizing: border-box;
+      display: inline-block;
+      height: 32px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      text-align: center;
+      width: 25px;
+      z-index: -1;
+    }
+  }
+  :-moz-any(.select-wrapper):before {
+	background-color: #fff;
+    pointer-events: none;
+	z-index: 1;
+  }
+}
+
+/*cards*/
+.card{
+  border-radius: 12px;
+  position: absolute;
+  &.top{
+    background: url(../img/light.png) no-repeat top right $first-color;
+    bottom: 0;
+    display: table;
+    height: 212px;
+    left: 0;
+    min-width: 376px;
+    padding: 25px 35px;
+    width: 376px;
+    z-index: 1;
+    @include respond-to-custom(0, 795px){
+      height: auto;
+      margin: 0 auto;
+      position: static;
+    }
+  }
+  &.bottom{
+    background: $first-color;
+    height: 262px;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    width: 446px;
+    z-index: 0;
+    @include respond-to-custom(0, 795px){display: none;}
+    &:before{
+      background: #000;
+      border-radius: 12px;
+      content: '';
+      height: 262px;
+      left: -228px;
+      opacity: .05;
+      position: absolute;
+      top: 25px;
+      width: 376px;
+      z-index: 2;
+    }
+    &:after{
+      background: url(../img/light.png) no-repeat right;
+      content: '';
+      height: 212px;
+      opacity: .5;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 376px;
+      z-index: 2;
+    }
+    div{
+      background: #313131;
+      height: 62px;
+      margin-top: 40px;
+      z-index: 1;
+    }
+  }
+}
+/*parts of form*/
+.number, .limit, .name{position: relative; z-index: 10;}
+.number{
+  margin: 10px 0 16px 0;
+  text-align: right;
+  input{
+    margin-right: 1%;
+    width: 12.3%;
+    &:last-of-type{width: 20%; margin-right: 0;}
+  }
+}
+
+/* hides the spin-button for firefox */
+input[type=number] {
+    -moz-appearance:textfield;
+}
+/* hides the spin-button for chrome*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.limit{
+  margin-bottom: 16px;
+  text-align: right;
+  label{
+    display: inline-block;
+    margin-right: 1%;
+    vertical-align: middle;
+  }
+}
+
+.name{
+  label{float: left; line-height: 38px;}
+  input{float: right; text-align: left; width: 60%;}
+  @include respond-to-custom(0, 795px){
+    margin-bottom: 16px;
+  }
+}
+
+.code{
+  left: 280px;
+  position: absolute;
+  text-align: right;
+  top: 104px;
+  z-index: 1;
+  @include respond-to-custom(0, 795px){
+    position: static;
+  }
+  & > div {
+    display: inline-block;
+    position: relative;
+  }
+  p{
+    background: $third-color;
+    border-radius: 12px;
+    border: 0 solid $third-color;
+    color: $basic-color;
+    cursor: default;
+    display: none;
+    font-size: .875rem;
+    height: auto;
+    line-height: 16px;
+    left: -80px;
+    margin-top: 25px;
+    padding: 16px 20px;
+    position: absolute;
+    text-align: left;
+    text-transform: none;
+    width: 222px;
+    &:after{
+      content:"";
+      border: 13px solid transparent;
+      border-bottom: 18px solid $third-color;
+      position: absolute;
+      top: -28px;
+      left: 45%;
+    }
+  }
+  input{width: 60px;}
+  label{
+    border-bottom: 1px dashed $inverted-color;
+    cursor: pointer;
+    position: relative;
+    &:hover, &:active, &:focus {
+      border-color: transparent;
+      p{display: inline-block;}
+    }
+  }
+  span{
+    color: darken($first-color-hover, 5%);
+    font: 1.125rem $font-med;
+    margin-left: 1%;
+    text-transform: uppercase;
+  }
+  label, span, input{display: inline-block; vertical-align: middle;}
+}
+
+/*footer*/
+.footer-wrapper{
+  @extend .wrapper;
+  @include respond-to-custom(0, 795px){
+    background: $inverted-color;
+    width: 100%;
+  }
+}
+.footer{
+  background: $inverted-color;
+  padding: 35px;
+  @include respond-to-custom(525px, 795px){
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 446px;
+  }
+  @include respond-to-custom(0, 524px){
+    padding: 20px;
+    width: 406px;
+  }
+  &:after{
+    clear:both;
+    content:'';
+    display: block;
+  }
+  div{
+    display: inline-block;
+    vertical-align: middle;
+    &.left{text-align: left; width: 70%;}
+    &.right{text-align: right; width: 29%;}
+    @include respond-to-custom(0, 795px){
+      text-align: left !important;
+      width: 100% !important;
+    }
+  }
+  p{
+    display: inline-block;
+    vertical-align: middle;
+    @include respond-to-custom(0, 795px){
+      display: block;
+    }
+  }
+  p:first-of-type{
+    font: 2.125rem $font-med;
+    margin-right: 35px;
+    span{font: 2.125rem $font-med;}
+    @include respond-to-custom(0, 795px){
+      font-size: 2rem;
+      margin: 0 0 8px 0;
+    }
+  }
+  p:last-of-type{
+    color: #828282;
+    font-size: 1.125rem;
+    width: 29%;
+    word-wrap: break-word;
+    @include respond-to-custom(0, 795px){
+      margin-bottom: 25px;
+      width: 100%;
+    }
+  }
+}
+.button{
+  background: $second-color;
+  border: none;
+  border-radius: 7px;
+  color: $inverted-color;
+  cursor: pointer;
+  font: 1.5rem/2.5rem $font-med;
+  height: 40px;
+  padding: 0 22px;
+  transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -webkit-transition: all 300ms ease-out;
+  &:hover, &:active, &:focus{
+    background: $second-color-hover;
+  }
+}
+@-moz-document url-prefix(){
+  [type="submit"]{line-height: 0;}
+}

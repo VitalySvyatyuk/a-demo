@@ -1,0 +1,12 @@
+{% extends "private_office/base.html" %}
+
+{% load i18n %}
+
+{% block title %}{{ block.super }} — {% trans "Logged out" %}{% endblock %}
+
+{% block js %}{{ block.super }}
+  <script type="text/javascript">
+    {# FIXME: remove? #}
+    window.location.href = "/";
+  </script>
+{% endblock %}

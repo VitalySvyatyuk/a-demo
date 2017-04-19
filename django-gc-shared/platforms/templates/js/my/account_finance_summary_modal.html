@@ -1,0 +1,105 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+<h2 class="modal-title offset-bottom-25">{% trans "Deposit and Withdrawal history" %}</h2>
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+
+{% comment %}
+<ul class="offset-bottom-20 archive-filters">
+    <li class="active"><a href="#">{% trans "Сегодня" %}</a></li>
+    <li><a href="#">{% trans "Вчера" %}</a></li>
+    <li><a href="#">{% trans "Текущая неделя" %}</a></li>
+    <li><a href="#">{% trans "Текущий месяц" %}</a></li>
+    <li><a href="#">{% trans "Прошлый месяц" %}</a></li>
+    <li>{% trans "Указать интервал" %}</li>
+</ul>
+<div class="offset-bottom-20 archive-interval">
+    с
+    <div class="select-wrapper interval-day">
+        <select name="" id="">
+            <option value="">13</option>
+            <option value="">14</option>
+            <option value="">15</option>
+        </select>
+    </div>
+    <div class="select-wrapper interval-month">
+        <select name="" id="">
+            <option value="">июнь</option>
+            <option value="">июль</option>
+            <option value="">август</option>
+        </select>
+    </div>
+    <div class="select-wrapper interval-year">
+        <select name="" id="">
+            <option value="">2012</option>
+            <option value="">2013</option>
+            <option value="">2014</option>
+        </select>
+    </div>
+    по
+    <div class="select-wrapper interval-day">
+        <select name="" id="">
+            <option value="">13</option>
+            <option value="">14</option>
+            <option value="">15</option>
+        </select>
+    </div>
+    <div class="select-wrapper interval-month">
+        <select name="" id="">
+            <option value="">июнь</option>
+            <option value="">июль</option>
+            <option value="">август</option>
+        </select>
+    </div>
+    <div class="select-wrapper interval-year">
+        <select name="" id="">
+            <option value="">2012</option>
+            <option value="">2013</option>
+            <option value="">2014</option>
+        </select>
+    </div>
+    <button class="button third-black medium">{% trans "Показать" %}</button>
+</div>
+{% endcomment %}
+
+<div class="scroller-wrapper" baron>
+  <table class="table-vscroll-body">
+    <thead>
+      <tr>
+        <td>{% trans "Account" %}</td>
+        <td>{% trans "Amount" %}</td>
+        <td>{% trans "Action" %}</td>
+        <td>{% trans "Created at" %}</td>
+        <td>{% trans "Status" %}</td>
+        <td>{% trans "Comment" %}</td>
+      </tr>
+    </thead>
+    <tbody id="finance-scroll" class="vscroller">
+      <tr class="third-vscroller-track right-track">
+        <td class="third-vscroller-bar"></td>
+      </tr>
+      <tr ng-repeat="req in requests|orderBy:'creation_ts':true">
+        <td ng-bind="::req.account__mt4_id"></td>
+        <td ng-bind="::req.amount_money.display"></td>
+        <td>
+          [[::req.type === 'deposit'? '{% trans "Deposit" %}' : '{% trans "Withdraw" %}']] [[::req.payment_system]]
+        </td>
+        <td ng-bind="::req.creation_ts|momentFromNow" title="[[::req.creation_ts|momentHumanize]]"></td>
+        <td>
+          <span ng-bind="::req.status_display"></span>
+          <a ng-if="req.is_cancelable" ng-click="req.cancel()" class="button second">{% trans "Cancel" %}</a>
+        </td>
+        <td ng-bind="::req.public_comment"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+    $(function() {
+    if( document["documentMode"] ) { // If Internet Explorer 10, 11
+        var cssClass = "ie" + document["documentMode"];
+        $('table').removeClass('table-vscroll-body');
+        $('.third-vscroller-track.right-track').css('display','none');
+    }
+});
+</script>
+

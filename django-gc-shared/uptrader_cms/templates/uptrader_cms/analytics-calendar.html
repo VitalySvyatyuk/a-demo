@@ -1,0 +1,264 @@
+{% extends "marketing_site/layout.jade" %}
+
+{% load staticfiles analytics_tags app_tags i18n %}
+{% block title %}{% trans 'Calendar of events' %} - {{ block.super }}{% endblock %}
+
+{% block new_css %} {{ block.super }}
+<link rel="stylesheet" href="{% static 'css/gcapital-ui/1.10.4/jquery-ui-1.10.4.custom.min.css' %}" /> {% endblock %}
+
+{% block scripts %} {{ block.super }}
+<script type="text/javascript" src="{% url 'jsi18n' %}"></script>
+<script src="{% static 'moment/min/moment-with-locales.min.js' %}"></script>
+<script src="{% static 'moment-timezone/builds/moment-timezone-with-data.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui-1.10.4.custom.min.js' %}"></script>
+<script src="{% static 'js/datepicker.js' %}"></script>
+{% if LANGUAGE_CODE == "ru" %}
+<script type="text/javascript" src="{% static 'js/jquery.ui.datepicker-ru.js' %}"></script>
+{% endif %}
+<script type="text/javascript">
+moment.tz.add({
+    "zones": {
+        "Europe/Moscow": [
+            "2:30:17 -  LMT 1880",
+            "2:30:17 -  MMT 1916 Jul  3 # Moscow Mean Time",
+            "2:31:19 Russia %s  1919 Jul  1  2:00",
+            "3:00 Russia  %s  1921 Oct",
+            "3:00 Russia  MSK/MSD 1922 Oct",
+            "2:00 - EET 1930 Jun 21",
+            "3:00 Russia  MSK/MSD 1991 Mar 31  2:00s",
+            "2:00 Russia  EE%sT 1992 Jan 19  2:00s",
+            "3:00 Russia  MSK/MSD 2011 Mar 27  2:00s",
+            "4:00 - MSK 2014 Oct 26  2:00s",
+            "3:00 - MSK"
+        ]
+    },
+    "rules": {
+        "Russia": [
+            "1917 1917 6 1 7 23 0 1 MST",
+            "1917 1917 11 28 7 0 0 0 MMT",
+            "1918 1918 4 31 7 22 0 2 MDST",
+            "1918 1918 8 16 7 1 0 1 MST",
+            "1919 1919 4 31 7 23 0 2 MDST",
+            "1919 1919 6 1 7 2 0 1 S",
+            "1919 1919 7 16 7 0 0 0",
+            "1921 1921 1 14 7 23 0 1 S",
+            "1921 1921 2 20 7 23 0 2 M",
+            "1921 1921 8 1 7 0 0 1 S",
+            "1921 1921 9 1 7 0 0 0",
+            "1981 1984 3 1 7 0 0 1 S",
+            "1981 1983 9 1 7 0 0 0",
+            "1984 1991 8 0 8 2 2 0",
+            "1985 1991 2 0 8 2 2 1 S",
+            "1992 1992 2 6 8 23 0 1 S",
+            "1992 1992 8 6 8 23 0 0",
+            "1993 2010 2 0 8 2 2 1 S",
+            "1993 1995 8 0 8 2 2 0",
+            "1996 2010 9 0 8 2 2 0"
+        ]
+    },
+    "links": {}
+});
+
+function pad_zeroes(val) {
+    return val < 10 ? "0" + val : val
+}
+
+$(function() {
+    $("[name='country'], [name='importance']").change(function(e) {
+        $("form#calendar_form").submit();
+    });
+
+    var timer = $("span#countdown");
+    var time_to = moment.unix(timer.data("time"));
+    setInterval(function() {
+        var m = moment();
+        var d = moment.duration(time_to.diff(m));
+
+        timer.text(
+            pad_zeroes(parseInt(d.asHours())) + ":" +
+            pad_zeroes(d.minutes()) + ":" +
+            pad_zeroes(d.seconds())
+        );
+    }, 1000);
+
+    var current_time = $("#current_time");
+    setInterval(function() {
+        current_time.text(moment().tz("Europe/Moscow").format("H:mm"));
+    }, 1000 * 10);
+
+    var startDate;
+    var endDate;
+
+    var selectCurrentWeek = function() {
+        window.setTimeout(function() {
+            $('.week-picker').find('.ui-datepicker-current-day a').addClass('ui-state-active')
+        }, 1);
+    };
+
+    var week_picker = $(".week-picker");
+
+    week_picker.datepicker({
+        showOtherMonths: true,
+        selectOtherMonths: true,
+        onSelect: function(dateText, inst) {
+            var date = $(this).datepicker('getDate');
+            startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 1);
+            endDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 7);
+            var dateFormat = inst.settings.dateFormat || $.datepicker._defaults.dateFormat;
+            $("[name='start_date']").val($.datepicker.formatDate(dateFormat, startDate, inst.settings));
+            $("[name='end_date']").val($.datepicker.formatDate(dateFormat, endDate, inst.settings));
+
+            selectCurrentWeek();
+            $("form#calendar_form").submit();
+        },
+        beforeShowDay: function(date) {
+            var cssClass = '';
+            if (date >= startDate && date <= endDate)
+                cssClass = 'ui-datepicker-current-day';
+            return [true, cssClass];
+        },
+        onChangeMonthYear: function(year, month, inst) {
+            selectCurrentWeek();
+        }
+    });
+    $(document).on('mousemove', '.week-picker .ui-datepicker-calendar tr', {},
+        function() {
+            $(this).find('td a').addClass('ui-state-hover');
+        }
+    ).on('mouseleave', '.week-picker .ui-datepicker-calendar tr', {},
+        function() {
+            $(this).find('td a').removeClass('ui-state-hover');
+        }
+    );
+})
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="page_head inout_page_head">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        {% breadcrumbs%}
+        <h1 class="page_head__title">{% trans 'Calendar of events' %}</h1>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Content -->
+<div class="container economic-calendar-page">
+    <p>
+        {% blocktrans %} The economic calendar is one of the most important tools in Forex trading. It is formed by specialists on the basis of past and current performance and demonstrates future projections. {% endblocktrans %}
+    </p>
+    <p>
+        {% blocktrans %} Reading the economic calendar is easy. It contains the following parameters: the time of the news, the country index, period, previous value, forecast, the actual value, the degree of importance. {% endblocktrans %}
+    </p>
+    <p>
+        {% blocktrans %} Which forex news are the most important? The first one is the discount rate, gross domestic product, unemployment data, sales data for new building, inflation. {% endblocktrans %}
+    </p>
+    <div class="calendar-filters">
+        <div class="row">
+            <div class="col-sm-12 col-lg-4 current-time column text-center">
+                <div class="column-content">
+                    <div class="title">{% trans 'Current time' %}</div>
+                    <span class="timer">
+                        <span class="clock-icon"></span>
+                    <span id="current_time" class="time-hours">{% now "H:i" %}</span>
+                    </span>
+                    <span class="text">(GMT +3:00 MSK)</span>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-4 column calendar">
+                <span class="week-picker" style="font-size: 1rem;"></span>
+            </div>
+            <div class="col-sm-12 col-lg-4 nearest-event column text-center">
+                {% if nearest_event %} {% with event=nearest_event %}
+                <div class="analytics-timer-widget column-content">
+                    <span class="title">{% trans 'Prior to the news left' %}</span>
+                    <span class="timer time-hours" id="countdown" data-time="{{ event.event_date|as_timestamp }}">{{ to_nearest_event }}</span>
+                    <span class="event">{{ event.indicator.name }}</span>
+                    <div class="event-country">
+                        <span class="flag-icon flag-country-icon-{{ event.indicator.country.code }}"></span>
+                        <span class="country-code">{{ event.indicator.country.code|upper }}</span>
+                    </div>
+                </div>
+                {% endwith %} {% endif %}
+            </div>
+        </div>
+    </div>
+    <form id="calendar_form" action="." method="GET">
+        {{ form.start_date }} {{ form.end_date }}
+        <div class="table-responsive adaptive-table-wrapper">
+            <table class="table adaptive-table">
+                <colgroup>
+                    <col style="width: 6%">
+                    <col style="width: 14%">
+                    <col style="width: 14%">
+                    <col>
+                    <col style="width: 6%">
+                    <col style="width: 6%">
+                    <col style="width: 6%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th><span class="red-value">{% trans 'Time' %}</span></th>
+                        <th>
+                            <span class="red-value">{% trans 'Country' %}</span>
+                            <div class="table-input-wrap">
+                                {{ form.country }}
+                            </div>
+                        </th>
+                        <th>
+                            <span class="red-value">{% trans 'Importance' %}</span>
+                            <div class="table-input-wrap">
+                                {{ form.importance }}
+                            </div>
+                        </th>
+                        <th><span class="red-value">{% trans 'Event' %}</span></th>
+                        <th><span class="red-value">{% trans 'Past' %}</span></th>
+                        <th><span class="red-value">{% trans 'Forecast' %}</span></th>
+                        <th><span class="red-value">{% trans 'Fact' %}</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in events %}
+                    <tr {% ifchanged event.event_date.day %}class="delimiter" {% endifchanged %}>
+                        <td>
+                            {{ event.event_date|date:"H:i" }}
+                            <br/> {{ event.event_date|date:"d.m.y" }}
+                        </td>
+                        <td class="with-flag">
+                            {% if event.indicator.country %}
+                            <span class="flag-icon flag-country-icon-{{ event.indicator.country.code }}"></span> {% endif %} {{ event.indicator.country|default_if_none:"-" }}
+                        </td>
+                        <td>
+                            {% draw_stars event.importance %}
+                        </td>
+                        <td class="event-cell">
+                            {% if LANGUAGE_CODE == "en" and event.indicator.name_en %}
+                            <span class="font-med">
+                                                        {{ event.indicator.name_en|safe }}
+                                                </span> {% elif event.indicator.name_en %}
+                            <span class="font-med">{{ event.indicator.name|safe }}</span>
+                            <br/> {{ event.indicator.name_en|safe }} {% else %}
+                            <span class="font-med">{{ event.indicator.name|safe }}</span> {% endif %} {% if user.is_staff %} {{ event.indicator|edit }} {% endif %}
+                        </td>
+                        <td>{{ event.get_previous_display|default_if_none:"-"|safe }}</td>
+                        <td>{{ event.get_forecast_display|default_if_none:"-"|safe }}</td>
+                        <td>{{ event.get_facts_display|default_if_none:"-"|safe }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="0">
+                            <span class="center">{% trans 'There are no events' %}</span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

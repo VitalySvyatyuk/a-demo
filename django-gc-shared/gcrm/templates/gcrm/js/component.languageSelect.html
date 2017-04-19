@@ -1,0 +1,18 @@
+{% load i18n %}
+
+  <span class="label label-default"
+        ng-repeat="item in languageSelect.selectedLanguage"
+        ng-click="languageSelect.removeLanguage(item)">
+    [[::item[1] ]]&nbsp;<i class="fa fa-times"></i>
+  </span>
+<div class="dropdown dropdown-inline open form-control form-control-sm">
+
+  <span ng-click="languageSelect.open = !languageSelect.open">---{% trans "Languages" %}---</span>
+  <i ng-click="languageSelect.open = !languageSelect.open" class="fa fa-fw fa-caret-down pull-right"></i>
+
+  <div class="dropdown-menu" ng-if="languageSelect.open">
+    <a class="dropdown-item" ng-repeat="item in languageSelect.languages" ng-if="!languageSelect.isSelectedLang(item)" ng-click="languageSelect.addLanguage(item)">
+      [[::item[1] ]]
+    </a>
+  </div>
+</div>

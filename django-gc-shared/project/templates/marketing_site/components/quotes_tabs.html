@@ -1,0 +1,40 @@
+{% load i18n %}
+<div class="quotes">
+  <div class="quotes__tabs_box">
+    {% for key in quotes.keys %}
+     <button class="quotes__tab js-tab {% if forloop.first %}state-active-tab{% endif %}" type="button" data-tab-index="{{ forloop.counter }}_quotes" data-tab-category="quotes"><span class="quotes__tab__title"> {{ key }} </span></button>
+{% endfor %}
+{% for value in quotes.values %}
+    <table class="quotes__table js-tab-content {% if forloop.first %}state-visible{% endif %}" data-tab-category="quotes" data-tab-index="{{ forloop.counter }}_quotes">
+      <tr class="quotes__table__row quotes__table__head_row">
+        <th class="quotes__table__cell"><span class="quotes__table__head_text">{% trans "Instruments" %}</span></th>
+        <th class="quotes__table__cell"><span class="quotes__table__head_text">Bid</span></th>
+        <th class="quotes__table__cell"><span class="quotes__table__head_text">Ask</span></th>
+        <th class="quotes__table__cell quotes__table__cell--hidden-on-mobiles"><span class="quotes__table__head_text">Spread</span></th>
+        <th class="quotes__table__cell quotes__table__cell--hidden-on-mobiles"><span class="quotes__table__head_text">Percent</span></th>
+      </tr>
+    {% for quote in value %}
+        <tr class="quotes__table__row js-pseudolink" data-href="#">
+            <td class="quotes__table__cell"><span class="quotes__table__cell_text quotes__table__cell_text--{% if quote.direction %}red{% else %}green{% endif %} quotes__table__cell_text--arrow"> {{ quote.symbol }} </span></td>
+            <td class="quotes__table__cell"><span class="quotes__table__cell_text quotes__table__cell_text--{% if quote.direction %}red{% else %}green{% endif %}"> {{ quote.bid|floatformat:quote.digits }} </span></td>
+            <td class="quotes__table__cell"><span class="quotes__table__cell_text quotes__table__cell_text--{% if quote.direction %}red{% else %}green{% endif %}"> {{ quote.ask|floatformat:quote.digits }} </span></td>
+            <td class="quotes__table__cell quotes__table__cell--hidden-on-mobiles"><span class="quotes__table__cell_text quotes__table__cell_text--{% if quote.direction %}red{% else %}green{% endif %}"> {{ quote.spread }} </span></td>
+            <td class="quotes__table__cell quotes__table__cell--hidden-on-mobiles"><span class="quotes__table__cell_text quotes__table__cell_text--{% if quote.direction %}red{% else %}green{% endif %}"> {{ quote.percents }} </span></td>
+        {% endfor %}
+
+        </tr>
+    </table>
+
+{% endfor %}
+
+    <a class="arrow_link" href="{% url 'specifications' %}"> {% trans "See other instruments" %}</a>
+
+    </div>
+</div>
+
+
+
+
+
+
+

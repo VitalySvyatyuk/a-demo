@@ -1,0 +1,53 @@
+{% load staticfiles inbox i18n %}
+<!--Top bar-->
+<div class="my-topbar">
+    <div class="top-bar-loading" ng-show="globalLoading">
+        <div class="loading-circle"></div>
+    </div>
+    <nav class="top-bar" data-topbar>
+        <ul class="top-bar-panel row text-center">
+            <li class="lang left">
+
+              {% include "includes/languages_menu.html" %}
+
+            </li>
+
+
+            <li class="chat message-tip-parent hide-for-medium-down" ng-class="{active: inboxCount}">
+                <a class="with-icon" href="[[::BASE_URL]]messages">
+                    <span></span>
+                    <span>
+                        {% trans "Messages and notifications" %}
+                        <span class="inbox-count font-med" ng-if="inboxCount">([[inboxCount]])</span>
+                    </span>
+                </a>
+                <div class="message-tip" ng-show="displayLastMessage">
+                    <a class="close-reveal-modal icon cross" ng-click="displayLastMessage = false"></a>
+                    <span class="message-body">[[ lastUnreadMessage.body | limitTo:80 ]]...</span>
+                    <a href="[[::BASE_URL]]messages/?openMessage=[[ lastUnreadMessage.id ]]" ng-click="displayLastMessage = false" class="read-all">{% trans "More" %}</a>
+                </div>
+            </li>
+
+            <li class="problem">
+                <a class="with-icon" href="[[::BASE_URL]]issues">
+                    <span></span>
+                    <span>{% trans "Support" %}</span>
+                </a>
+            </li>
+
+            <li class="consult">
+                <a class="with-icon" href="#" data-livechat>
+                    <span></span>
+                    <span>{% trans "Live chat" %}</span>
+                </a>
+            </li>
+
+            <li class="right logo text-right">
+                <a href="{% url "frontpage" %}" class="with-icon" title="{% trans "return to" %} GrandCapital.ru">
+                    <span></span>
+                    <span>{% blocktrans %}Back to website{% endblocktrans %}</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

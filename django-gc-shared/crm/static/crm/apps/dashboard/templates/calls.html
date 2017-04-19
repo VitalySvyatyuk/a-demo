@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="col-lg-7">
+        <div class="input-group">
+            <input class="form-control" ng-model="params.search" placeholder="Введите строку для поиска, например I.IVANOV" ng-enter="params.page = 1; reload()">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="params.page = 1; reload()">Найти</button>
+            </span>
+        </div><!-- /input-group -->
+        <p>
+            <span ng-if="params.datestate == 'year'">Год: {{params.year}} </span>
+            <span ng-if="params.datestate == 'month'">Год: {{params.year}} Месяц: {{params.month}} </span>
+            <span ng-if="params.datestate == 'day'">Год: {{params.year}} Месяц: {{params.month}} День: {{params.day}} </span>
+            <a ng-if="params.datestate != 'none'" ng-click="clearDate()">(сбросить) .</a>
+            <span ng-if="params.datestate != 'day' && !is_loading">
+                Выбор даты: <span ng-repeat="num in datenumbers"><a ng-click="chooseDate(num)"><strong>{{num}}</strong></a>
+            </span>
+        </p>
+    </div>
+    <div class="col-lg-5">
+        <div class="player well well-sm">
+            <audio src="{{current_audio}}" controls="controls">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3" style="font-size: 12.7px">
+        <div class="well well-sm">
+            <strong>Фильтр по статусу звонка</strong>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="params.status" ng-change="params.page = 1; reload()" value="all"> Все
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="params.status" ng-change="params.page = 1; reload()" value="answered"> Отвеченные
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="params.status" ng-change="params.page = 1; reload()" value="failed"> Неотвеченные
+                </label>
+            </div>
+        </div>
+        <div class="well well-sm">
+            <strong>Суммарная статистика</strong>
+            <table class="table table-condensed">
+                <tbody>
+                    <tr ng-repeat="stat in stats">
+                        <td>{{stat.name}}</td>
+                        <td>{{stat.duration|momentDurationHumanize}}({{stat.duration}}c)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <table class="table table-condensed" ng-class="{'text-muted': is_loading}" style="font-size: 12.7px">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Кто</th>
+                    <th>Кому</th>
+                    <th>Результат</th>
+                    <th>Длительность</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="object in objects">
+                    <td><a href="{{object.url}}" target="_blank">{{ object.call_date |momentHumanize }}</a></td>
+                    <td>
+                        <a ng-if="object.src_crm_link" target="_blank" ng-href="{{object.src_crm_link}}">{{ object.src }}</a>
+                        <span ng-if="!object.src_crm_link">{{ object.src }}</span>
+                    </td>
+                    <td>
+                        <a ng-if="object.dst_crm_link" target="_blank" ng-href="{{object.dst_crm_link}}">{{ object.dst }}</a>
+                        <span ng-if="!object.dst_crm_link">{{ object.dst }}</span>
+                    </td>
+                    <td>{{ object.disposition }}</td>
+                    <td>{{ object.duration }}с</td>
+                    <td><button ng-if="object.duration" ng-click="play(object.record)">PLAY</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <ul class="pagination pull-left">
+                <li ng-class="{disabled: params.page == 1}"><a href="javascript:void(0)" ng-click="goto(1)">&larr;</a></li>
+                <li ng-class="{disabled: params.page == 1}"><a href="javascript:void(0)" ng-click="gotoPrev()">&laquo;</a></li>
+                <li ng-repeat="i in pagesRange()" ng-class="{active: params.page == i}"><a href="javascript:void(0)" ng-click="goto(i)">{{i}}</a></li>
+                <li ng-class="{disabled: params.page == num_pages}"><a href="javascript:void(0)" ng-click="gotoNext()">&raquo;</a></li>
+                <li ng-class="{disabled: params.page == num_pages}"><a href="javascript:void(0)" ng-click="goto(num_pages)">&rarr;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<highchart id="chart1" config="countChartConfig"></highchart>
+<highchart id="chart2" config="durationChartConfig"></highchart>

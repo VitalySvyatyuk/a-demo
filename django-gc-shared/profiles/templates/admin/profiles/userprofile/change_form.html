@@ -1,0 +1,145 @@
+{% extends "admin/change_form.html" %}
+
+{% load i18n admin_modify profiles_tags shared_tags staticfiles %}
+
+{% block extrahead %}{{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/sprites.css' %}"/>
+    <link rel="stylesheet"
+          href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7/themes/smoothness/jquery-ui.css"/>
+
+    <style type="text/css">
+        .status {
+            float: right;
+        }
+
+        .user_with_link div p {
+            float: left;
+            margin-left: 0;
+            padding-left: 0;
+        }
+    </style>
+
+    <script type="text/javascript"
+            src="{% static 'js/jquery-1.8.0.min.js' %}"></script>
+    <script type="text/javascript"
+            src="{% static 'js/jquery-ui-1.8.23.custom.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/status.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="content-main">
+        {% block object-tools %}
+            {% if change and not is_popup %}
+                <ul class="object-tools">
+                    <li><a href="history/" class="historylink">{% trans "History" %}</a></li>
+                    {% if request.user.is_superuser %}
+                        <li><a href="javascript:$('#otp-reset-form').submit()">{% trans "Reset OTP" %}</a></li>
+                    {% endif %}
+                    {% if request.user.is_staff %}
+                    <!--if user object has verified status which code is 3-->
+                    {% if original.status == 3 %}
+                        <li><a href="javascript:$('#document-status-switch-form').submit()">Mark user documents as <u>un</u>verified</a></li>
+                    {% else %}
+                         <li><a href="javascript:$('#document-status-switch-form').submit()">Mark user documents as <u>verified</u> </a></li>
+
+                    {% endif %}
+                    {% endif %}
+
+                    {% if has_absolute_url %}
+                        <li>
+                            <a href="../../../r/{{ content_type_id }}/{{ object_id }}/"
+                               class="viewsitelink">{% trans "View on site" %}</a>
+                        </li>
+                    {% endif %}
+                </ul>
+                {% if request.user.is_superuser %}
+                    <form id="otp-reset-form" action="{% url "profiles_reset_otp" object_id %}" method="POST">
+                    {% csrf_token %}
+                    </form>
+                {% endif %}
+                {% if request.user.is_staff %}
+                <div align="right">
+                <form id="document-status-switch-form" action="{% url "switch_documents_status" object_id %}" method="POST">
+                        {% if original.status == 3 %}
+                        <label for="rej_comm" style="padding-left: 16px">Reject commentary:</label>
+                        <input id="rej_comm" name="commentary"  size="55" align="center" type="text" value="System automaticly denied your documents, please contact support">
+                        {% endif %}
+                        {% csrf_token %}
+                        </form>
+                </div>
+                {% endif %}
+            {% endif %}
+        {% endblock %}
+
+        <form {% if has_file_field %}enctype="multipart/form-data" {% endif %}
+              action="{{ form_url }}" method="post"
+              id="{{ opts.module_name }}_form">
+
+            {% csrf_token %}
+            {% block form_top %}{% endblock %}
+
+            <div>
+                {% if is_popup %}<input type="hidden" name="_popup" value="1"/>{% endif %}
+                {% if save_on_top %}{% submit_row %}{% endif %}
+                {% if errors %}
+                    <p class="errornote">
+                        {% blocktrans count errors|length as counter %}Please correct the error below.{% plural %}Please
+                            correct the errors below.{% endblocktrans %}
+                    </p>
+
+                    {{ adminform.form.non_field_errors }}
+                {% endif %}
+
+                {% for fieldset in adminform %}
+                    <fieldset class="module aligned {{ fieldset.classes }}">
+                        {% if fieldset.name %}<h2>{{ fieldset.name }}</h2>{% endif %}
+                        {% if fieldset.description %}
+                            <div class="description">{{ fieldset.description|safe }}</div>
+                        {% endif %}
+                        {% for line in fieldset %}
+                            <div class="form-row{% if line.errors %} errors{% endif %}{% for field in line %} {{ field.field.name }}{% endfor %}">
+                                {{ line.errors }}
+                                {% for field in line %}
+                                    <div{% if not line.fields|length_is:"1" %} class="field-box"{% endif %}>
+                                        {% if field.is_checkbox %}
+                                            {{ field.field }}{{ field.label_tag }}
+                                        {% else %}
+                                            {{ field.label_tag }}
+                                            {% if field.is_readonly %}
+                                                <p>{{ field.contents }}</p>
+                                            {% else %}
+                                                {{ field.field }}
+                                            {% endif %}
+
+
+                                        {% endif %}
+                                        {% if field.field.field.help_text %}
+                                            <p class="help">{{ field.field.field.help_text|safe }}</p>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                {% endfor %}
+
+                {% block after_field_sets %}{% endblock %}
+
+                {% for inline_admin_formset in inline_admin_formsets %}
+                    {% include inline_admin_formset.opts.template %}
+                {% endfor %}
+
+                {% block after_related_objects %}{% endblock %}
+
+                {% submit_row %}
+
+                {% if adminform and add %}
+                    <script type="text/javascript">document.getElementById("{{ adminform.first_field.auto_id }}").focus();</script>
+                {% endif %}
+
+                {# JavaScript for prepopulated fields #}
+                {% prepopulated_fields_js %}
+            </div>
+        </form>
+    </div>
+{% endblock %}

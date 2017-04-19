@@ -1,0 +1,9 @@
+Автор: {{obj.author.crm_manager}}
+Клиент: {{obj.user.get_full_name}} (id{{obj.user.id}})
+Клиент в CRM: {{obj.user_crm_url}}
+Желаемый менеджер: {{obj.assign_to.crm_manager}}
+
+ОДОБРЕНО
+{{obj.completed_by.get_full_name}}
+
+Заявка: {{ current_site.domain }}{% url 'admin:crm_managerreassignrequest_change' obj.id %}

@@ -1,0 +1,63 @@
+[
+   {
+      "pk" : 1,
+      "model" : "contract_specs.symboldescription",
+      "fields" : {
+         "description_en" : "Instrument test",
+         "description" : "Инструмент тестовый",
+         "description_ru" : "Инструмент тестовый",
+         "type" : "instrument",
+         "symbol" : "EURTEST"
+      }
+   },
+   {
+      "fields" : {
+         "slug" : "Currency",
+         "name" : "Валютные пары",
+         "name_ru" : "Валютные пары",
+         "name_en" : "Currency"
+      },
+      "model" : "contract_specs.instrumentspecificationcategory",
+      "pk" : 1
+   },
+   {
+      "fields" : {
+         "category" : 1,
+         "swap_long" : "0.0001",
+         "min_price_change" : "0.00001",
+         "min_order_size" : "0.01 ($1000)",
+         "min_order_pip_value" : "$0.01",
+         "min_order_size_change" : "0.01",
+         "description_ru" : "<p><span style=\"font-weight: 700; color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\">EUR USD (Евро / Доллар США)</span><span style=\"color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\"> </span><br style=\"color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\" />\r\n<br style=\"color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\" />\r\n<span style=\"color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\">EURUSD является лидером среди наиболее торгуемых валютных пар. </span><span style=\"font-weight: 700; color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\">EURUSD</span><span style=\"color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\"> отражает две крупнейшие экономики в мире и рассматривается как наиболее ликвидная из всех пар, поскольку евро – это вторая по значимости резервная валюта в мире (доллар США – первая), а также вторая по объему торгов валюта на рынке Форекс.</span></p>\r\n",
+         "weekday_margin" : "1%",
+         "description" : "<p><span style=\"font-weight: 700; color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\">EUR USD (Евро / Доллар США)</span><span style=\"color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\"> </span><br style=\"color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\" />\r\n<br style=\"color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\" />\r\n<span style=\"color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\">EURUSD является лидером среди наиболее торгуемых валютных пар. </span><span style=\"font-weight: 700; color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\">EURUSD</span><span style=\"color: rgb(74, 74, 74); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);\"> отражает две крупнейшие экономики в мире и рассматривается как наиболее ликвидная из всех пар, поскольку евро – это вторая по значимости резервная валюта в мире (доллар США – первая), а также вторая по объему торгов валюта на рынке Форекс.</span></p>\r\n",
+         "currency" : "USD",
+         "instrument" : "EURUSD",
+         "weekend_margin" : "1%",
+         "swap_short" : "0.0001",
+         "description_en" : "<p>EUR USD (Euro / US Dollar)</p>\r\n\r\n<p>EURUSD is the leader among the most traded currency pairs. EURUSD reflects the two largest economies in the world and is regarded as the most liquid of all pairs, as the euro - the second most important reserve currency in the world (the US dollar - the first), and second in terms of trading currency in the Forex market.</p>\r\n"
+      },
+      "model" : "contract_specs.instrumentspecification",
+      "pk" : 1
+   },
+   {
+      "pk" : 2,
+      "model" : "contract_specs.instrumentspecification",
+      "fields" : {
+         "description_en" : "<p>test instrument - U.S. Dollar vs. Russian Ruble</p>\r\n",
+         "instrument" : "USDRUB",
+         "swap_short" : "0.0001",
+         "weekend_margin" : "1%",
+         "min_order_size" : "0.01 ($1000)",
+         "min_order_pip_value" : "$0.01",
+         "min_order_size_change" : "0.01",
+         "weekday_margin" : "1%",
+         "description_ru" : "<p>тестовый инструмент - Доллар США-Российский Рубль</p>\r\n",
+         "currency" : "USD ",
+         "description" : "<p>тестовый инструмент - Доллар США-Российский Рубль</p>\r\n",
+         "category" : 1,
+         "swap_long" : "0.0001",
+         "min_price_change" : "0.00001"
+      }
+   }
+]

@@ -1,0 +1,409 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-20 20:44+0400\n"
+"PO-Revision-Date: 2011-07-05 13:47\n"
+"Last-Translator:   <valexeev@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.6.0\n"
+
+msgid "Personal"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "Contacts"
+msgstr ""
+
+msgid "Unsupported file extension"
+msgstr ""
+
+msgid "File is too big."
+msgstr ""
+
+#, python-format
+msgid "Supported extensions: %(ext)s. Filesize limit: %(limit)s Mb"
+msgstr ""
+
+msgid "Forum username"
+msgstr ""
+
+msgid ""
+"Your username on the forum, only english letters, numbers or underscores "
+"allowed"
+msgstr ""
+
+msgid "First name"
+msgstr ""
+
+msgid "Last name"
+msgstr ""
+
+msgid "Middle name"
+msgstr ""
+
+msgid "e-mail address"
+msgstr ""
+
+msgid "ICQ"
+msgstr ""
+
+msgid "Enter a valid ICQ number."
+msgstr ""
+
+msgid "Example: 629301132"
+msgstr ""
+
+msgid "Skype"
+msgstr ""
+
+msgid "Enter a valid Skype account."
+msgstr ""
+
+msgid "Example: gc_clients"
+msgstr ""
+
+msgid "Birthday"
+msgstr ""
+
+msgid "Example: 28.12.1987"
+msgstr "Example: 1987-12-28"
+
+msgid ""
+"You will receive only those             newsletter types you choose here."
+msgstr ""
+
+msgid "Illegal symbols"
+msgstr ""
+
+msgid "This username already exists"
+msgstr ""
+
+msgid "You will receive only those         newsletter types you choose here."
+msgstr ""
+
+msgid "Phone number"
+msgstr ""
+
+msgid "Enter your phone number"
+msgstr ""
+
+msgid "Confirmation code"
+msgstr ""
+
+msgid "Enter code that you got on phone number you entered earlier"
+msgstr ""
+
+#, python-format
+msgid "Phone confirmation code is %(token)s"
+msgstr ""
+
+msgid "Invalid confirmation code"
+msgstr ""
+
+msgid "Country"
+msgstr ""
+
+msgid "Example: Russia"
+msgstr ""
+
+msgid "City"
+msgstr ""
+
+msgid "The city where you live"
+msgstr ""
+
+msgid "State / Province"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Example: pr. Stachek, 8A"
+msgstr ""
+
+msgid "Home phone"
+msgstr ""
+
+msgid "Example: 8-800-333-1003"
+msgstr ""
+
+msgid "Work phone"
+msgstr ""
+
+msgid "Example: +7 (812) 300-81-96"
+msgstr ""
+
+msgid "Mobile phone"
+msgstr ""
+
+msgid "Example: +7 (911) 200-19-55"
+msgstr ""
+
+msgid "Avatar"
+msgstr ""
+
+msgid "Your photo"
+msgstr ""
+
+msgid "Social security number"
+msgstr ""
+
+msgid "TIN"
+msgstr ""
+
+msgid "Tax identification number"
+msgstr ""
+
+msgid "Agent code"
+msgstr ""
+
+msgid "If you don't know what it is, leave empty"
+msgstr ""
+
+msgid "Details"
+msgstr ""
+
+msgid "Source"
+msgstr ""
+
+msgid "User profile"
+msgstr ""
+
+msgid "User profiles"
+msgstr ""
+
+msgid "Parameter"
+msgstr ""
+
+msgid "Is the data valid?"
+msgstr ""
+
+msgid "Manager comment"
+msgstr ""
+
+msgid "Certificate of birth"
+msgstr ""
+
+msgid "Driver license"
+msgstr ""
+
+msgid "Identity document"
+msgstr ""
+
+msgid "Real IB agreement"
+msgstr ""
+
+msgid "FX+ agreement"
+msgstr ""
+
+msgid "Client's receipt"
+msgstr ""
+
+msgid "Other document"
+msgstr ""
+
+msgid "Document name"
+msgstr ""
+
+msgid "Example: driver license"
+msgstr ""
+
+msgid "Document description"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Creation timestamp"
+msgstr ""
+
+#, python-format
+msgid "Successfully uploaded document %s"
+msgstr ""
+
+msgid "Your subscription successfully updated"
+msgstr ""
+
+msgid "History"
+msgstr ""
+
+msgid "View on site"
+msgstr ""
+
+msgid "Please correct the error below."
+msgid_plural ""
+"Please\n"
+"                            correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Your password has been changed successfully"
+msgstr ""
+
+msgid ""
+"\n"
+"    <p>Your password has been changed.</p>\n"
+"    "
+msgstr ""
+
+msgid "Password change"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Phone confirmation"
+msgstr ""
+
+msgid "Confirm your phone"
+msgstr ""
+
+msgid "Check"
+msgstr ""
+
+msgid "Ok"
+msgstr ""
+
+msgid "My profile"
+msgstr ""
+
+msgid "Edit your profile"
+msgstr ""
+
+msgid "Confirm your mobile phone number"
+msgstr ""
+
+msgid "Click <strong>Check</strong> to confirm your mobile phone number"
+msgstr ""
+
+#, python-format
+msgid ""
+"\n"
+"                <p>To verify your information, you can\n"
+"                    <a href=\"%(profiles_upload_document_url)s\">upload a "
+"copy of your document</a></p>\n"
+"            "
+msgstr ""
+
+msgid "My manager"
+msgstr ""
+
+msgid "My personal broker"
+msgstr ""
+
+msgid "No photo available"
+msgstr ""
+
+msgid "E-mail"
+msgstr ""
+
+msgid "Work Phone"
+msgstr ""
+
+msgid ""
+"You can get contacts of the manager after you deposit at least $100 to your "
+"account."
+msgstr ""
+
+msgid "Ask a question"
+msgstr ""
+
+msgid "Our contact information:"
+msgstr ""
+
+msgid "Phone: 8-800-333-1003 (free accross Russia)"
+msgstr ""
+
+msgid "E-mail: eng@grandcapital.net"
+msgstr ""
+
+msgid "Skype:  gc_clients"
+msgstr ""
+
+msgid "ICQ:  629301132"
+msgstr ""
+
+msgid "Are you sure you want to delete this document?"
+msgstr ""
+
+msgid "An error occured. Please try again later."
+msgstr ""
+
+msgid "Write a message"
+msgstr ""
+
+msgid "Edit profile"
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid "Home Phone"
+msgstr ""
+
+msgid "Mobile Phone"
+msgstr ""
+
+msgid "Download link"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Account id"
+msgstr ""
+
+msgid "Account type"
+msgstr ""
+
+msgid "Requisit data"
+msgstr ""
+
+msgid "Complete your profile!"
+msgstr ""
+
+msgid "Verify your e-mail"
+msgstr ""
+
+msgid "Verify phone number"
+msgstr ""
+
+msgid "Upload a scan of ID"
+msgstr ""
+
+msgid "Specify your address"
+msgstr ""
+
+msgid ""
+"To verify your email, please follow the link you received when you "
+"registered. If you have problems\n"
+"    with email verification, please contact your personal manager."
+msgstr ""
+
+msgid "Edit your subscription"
+msgstr ""
+
+msgid "Upload document"
+msgstr ""
+
+msgid "Upload copy a document that confirms your date of birth"
+msgstr "Upload copy of a document that confirms your data"

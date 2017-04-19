@@ -1,0 +1,134 @@
+{% load i18n %}
+
+<div class="row">
+  <div class="input-group input-group-sm col-sm-10">
+    <form ng-submit="filter()">
+      <div class="input-group input-group-sm ">
+        <input type="text" class="form-control form-control-sm" placeholder="{% trans "Search" %}" ng-model="filters.search">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button" ng-click="filter()"><i class="fa fa-search"></i></button>
+      </span>
+      </div>
+    </form>
+    &nbsp;
+    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary" disabled="disabled">{% trans "Selected" %}: [[objects.countSelected()||'{% trans "All" %} '+objects.count]]</button>
+      <span class="dropdown" uib-dropdown>
+        <a class="btn btn-secondary btn-sm dropdown-toggle" uib-dropdown-toggle>
+          {% trans "Actions" %}
+        </a>
+        <div uib-dropdown-menu class="dropdown-menu">
+          <a class="dropdown-item" ng-click="contactsReassign()">{% trans "Reassign" %}</a>
+          <a class="dropdown-item" ng-click="contactsAgentCode()">{% trans "Set agent code" %}</a>
+        </div>
+      </span>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div ui-view="create"></div>
+    <div class="field">
+      <a ui-sref="contacts.create()" class="btn btn-sm btn-primary-outline pull-right"><span class="icon fa fa-plus"></span> {% trans "Create" %}</a>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-16">
+    <table class="table table-bordered table-hover table-sm contacts-table">
+      <thead class="thead-default">
+        <tr>
+          <th class="text-sm-center" rowspan="2">
+            <input type="checkbox" id="checkboxSuccess" ng-model="isAllSelected" ng-change="objects.setAllSelected(isAllSelected)">
+          </th>
+          <th class="text-sm-center" sorter="name" objects="objects">{% trans "Name" %}</th>
+          <th ng-if="::Users.me.moreThanOne" class="text-sm-center" sorter="manager" objects="objects">{% trans "Manager" %}</th>
+          <th class="text-sm-center column-fixed" sorter="user__date_joined" objects="objects">{% trans "Registration" %}</th>
+          <th class="text-sm-center column-fixed" sorter="user__profile__last_activity_ts" objects="objects">{% trans "Activity" %}</th>
+          <th class="text-sm-center">{% trans "Activity types" %}</th>
+        </tr>
+        <tr>
+          <th>
+            <tag-select-filter
+              model="filters.tags"
+              on-change="filter()"
+              tags-info="objects.summary.tags">
+            </tag-select-filter>
+          </th>
+          <th ng-if="::Users.me.moreThanOne">
+            <user-select-filter
+              model="filters.manager"
+              on-change="filter()"
+              users-info="objects.summary.managers">
+            </user-select-filter>
+          </th>
+          <th>
+            <daterangepicker
+              classes="'form-control-sm'"
+              start="filters.user__date_joined_0"
+              end="filters.user__date_joined_1"
+              on-change="filter()">
+            </daterangepicker>
+          </th>
+          <th>
+            <daterangepicker
+              classes="'form-control-sm'"
+              start="filters.user__profile__last_activity_ts_0"
+              end="filters.user__profile__last_activity_ts_1"
+              on-change="filter()">
+            </daterangepicker>
+          </th>
+          <th>
+            <a ng-click="hideAdditionalFilters=!hideAdditionalFilters">
+              <span ng-if="hideAdditionalFilters">{% trans "Additional filters" %}</span>
+              <span ng-if="!hideAdditionalFilters">{% trans "Hide filters" %}</span>
+            </a>
+          </th>
+        </tr>
+        <tr ng-if="!hideAdditionalFilters">
+          <th></th>
+          <th>
+            <country-select model="filters.countries" on-change="filter()"></country-select>
+          </th>
+          <th>
+            <region-select model="filters.regions" on-change="filter()"></region-select>
+          </th>
+          <th>
+            <language-select model="filters.languages" on-change="filter()" languages="languages"></language-select>
+          </th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="objects.count==0" ng-switch="::Users.me.moreThanOne">
+          <td ng-switch-when="true" colspan="6"><div class="text-sm-center">{% trans "No items to display" %}</div></td>
+          <td ng-switch-default colspan="5"><div class="text-sm-center">{% trans "No items to display" %}</div></td>
+        </tr>
+        <tr ng-repeat="item in objects.items">
+          <td class="text-sm-center"><input type="checkbox" ng-model="item.selected"></td>
+          <td>
+            <span>
+              <a ui-sref="contact.feed({id: item.data.id})" ng-bind="::item.data.name"></a>
+              <span ng-repeat="tag in item.data.tags" class="small">
+                <span ng-click="toggleTag(tag)" class="label label-default clickable" style="background-color: [[::tag|toColor]]">[[::tag]]</span>
+              </span>
+              <span ng-repeat="tag in item.data.system_tags" class="small">
+                <span ng-click="toggleTag(tag)" class="label label-default clickable" style="background-color: [[::tag|toColor]]">[[::tag]]</span>
+              </span>
+            </span>
+          </td>
+          <td ng-if="::Users.me.moreThanOne" class="text-sm-center small">
+            [[::Users.mapping[item.data.manager].data.name.short]]
+            <span ng-if="::Users.mapping[item.data.manager].data.office">
+              ([[::Users.mapping[item.data.manager].data.office.name]])
+            </span>
+          </td>
+          <td class="text-sm-center small" title="[[::item.data.user.registration_ts|moment:'LLL']]">[[::item.data.user.registration_ts|moment:'calendar']]</td>
+          <td class="text-sm-center small" title="[[::item.data.user.last_activity_ts|moment:'LLL']]">[[::item.data.user.last_activity_ts|moment:'calendar']]</td>
+          <td class="text-sm-center small" title="[[::item.data.user.last_activities.join(',')]]">[[::item.data.user.last_activities.join(',')]]</td>
+        </tr>
+      </tbody>
+    </table>
+    <tablefooter objects="objects" class="buttons"></tablefooter>
+  </div>
+</div>

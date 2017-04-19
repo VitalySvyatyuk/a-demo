@@ -1,0 +1,11 @@
+{% spaceless %}
+{% if news_item.content_type_id == 128 %}{# Fundamental review #}
+fin-review-item
+{% elif news_item.content_type_id == 129 %}{# Technical review #}
+fin-review-item second
+{% elif news_item.content_type_id == 130 %}{# Premarket #}
+fin-review-item third
+{% else %}
+newsfeed-item
+{% endif %}
+{% endspaceless %}

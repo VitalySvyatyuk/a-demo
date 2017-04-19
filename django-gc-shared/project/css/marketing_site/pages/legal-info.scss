@@ -1,0 +1,54 @@
+.legal-info {
+    .tabs__button {
+        @media (#{$max_ipad}) {
+            &:before {
+                display: none;
+            }
+        }
+    }
+    .tabs__box{
+        .tabs__button:nth-child(2){
+            padding: 0;
+        }
+    }
+    .tab-content{
+        @include clearfix;
+        padding-top: 74px;
+        padding-bottom: 90px;
+        display: none;
+        &.state-visible{
+            display: block;
+        }
+    }
+    .info-list {
+        @include clear_list;
+        li {
+            padding-bottom: 24px;
+            &::last-of-type {
+                padding-bottom: 0;
+            }
+            span.bordered{
+                border-bottom: 1px solid rgba(30,60,95,0.4)
+            }
+        }
+    }
+    .document-link {
+        text-decoration: none;
+        display: inline-block;
+        span {
+            font-size: 24px;
+            font-weight: 300;
+            &.bordered {
+                border-bottom: 1px solid $groom;
+                color: $groom;
+                transition: border-bottom-color .2s ease;
+            }
+            &.grayed {
+                color: #afafaf;
+            }
+        }
+        &:hover span.bordered {
+            border-color: transparent;
+        }
+    }
+}

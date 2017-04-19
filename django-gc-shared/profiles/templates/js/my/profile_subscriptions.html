@@ -1,0 +1,45 @@
+{% extends "js/my/profile_base.html" %}
+{% load i18n app_tags profiles_tags %}
+
+{% block tabs %}
+    {% with 'subscriptions' as category %}
+        {{block.super}}
+    {% endwith %}
+{% endblock %}
+
+{% block tabscontent %}
+<div class="active subscriptions">
+  <form ng-submit="save()">
+
+    <div class="row offset-bottom-30">
+      <div class="small-12 medium-12 large-12 columns">
+        <div class="third-light-wrapper">
+
+          <label class="small-4 medium-4 large-3 column">{% trans "Select active subscriptions:" %}</label>
+          <br>
+          <ul class="checkboxes-ul">
+            <li ng-repeat="ctype in campaignTypes">
+              <input type="checkbox" id="ctype_[[::ctype.id]]"
+                ng-click="toggleCampaignType(ctype.id)"
+                ng-checked="isCampaignTypeSelected(ctype.id)"/>
+              <label for="ctype_[[::ctype.id]]"></label>
+              <label for="ctype_[[::ctype.id]]">[[::ctype.title]]</label>
+            </li>
+            <li>
+              <input type="checkbox" id="send_account_statements"
+                ng-click="toggleAccountStatements()"
+                ng-checked="isAccountStatementsEnabled()"/>
+              <label for="send_account_statements"></label>
+              <label for="send_account_statements">{% trans 'Account statements' %}</label>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="third-light-wrapper bottom">
+      <button type="submit" class="button medium" ng-disabled="globalLoading">{% trans "Save" %}</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

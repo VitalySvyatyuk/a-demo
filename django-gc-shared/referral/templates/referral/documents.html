@@ -1,0 +1,35 @@
+{% extends "private_office/base.html" %}
+{% load app_tags i18n mt4_tags %}
+{% block content %}
+    <h1 class="green" id="partner-docs">{% trans "Partner documents" %}</h1>
+    <div class="container">
+        {% blocktrans %}
+            <p>Upload in Private Office following documents to take full advantage of our partnership program:</p>
+            <p>1. Scan/photo of your Identity card or driver license</p>
+            <p>2. Scan/photo of filled and signed "Appendix to the Partnership Agreement"</p>
+        {% endblocktrans %}
+
+        <h2>{% trans "Partnership Agreement" %}</h2>
+        <p>
+            {% blocktrans %}
+                Partnership Agreement determines the Company and Partner rights and obligations, principles of
+                their cooperation, amount and payment order of partner commission.
+            {% endblocktrans %}
+        </p>
+        {% trans "Download Agreement" as agreement_msg %}
+        {% morelink 'real_ib_partner'|agreement_url agreement_msg "black" %}
+
+        <!-- Clients ask to delete -->
+        <!-- <h2>{% trans "Partner Certificate" %}</h2>
+
+        <p>{% trans "The Certificate will be created on Your name and sent on Your email" %}</p> -->
+
+        {# trans "Order a sertificate" as order_msg #}
+
+        {# if not already_requested #}
+            {# url 'referral_partner_certificate' as link #}
+            {# morelink link order_msg "black" #}
+        {# endif #}
+        <!-- Clients ask to delete -->
+    </div>
+{% endblock %}

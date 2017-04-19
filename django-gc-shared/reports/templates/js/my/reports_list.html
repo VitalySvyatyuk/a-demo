@@ -1,0 +1,32 @@
+{% load i18n %}
+<div class="reports small-wrapper">
+  <div class="clearfix offset-bottom-35 offset-top-35">
+    <h1 class="left">{% trans "Available reports" %}</h1>
+    <a ng-click="orderReport()" class="button second medium right"><span>+</span> {% trans "New report" %}</a>
+  </div>
+  <table class="table-big-green offset-bottom-30">
+    <thead>
+      <tr>
+        <td>{% trans "Name" %}</td>
+        <td>{% trans "Status" %}</td>
+        <td>{% trans "Date" %}</td>
+      </tr>
+    </thead>
+    <tbody infinite-scroll="loadItems()" infinite-scroll-disabled="loading">
+      <tr ng-repeat="report in reports | orderBy:'creation_ts':true">
+        <td>[[::report.name]]</td>
+        <td ng-switch on="report.is_ready">
+          <a ng-switch-when="true" href="[[::report.view_link]]">{% trans "View" %}</a>
+          <span ng-switch-default>{% trans "In progress" %}</span>
+        </td>
+        <td title="[[::report.creation_ts|date:'medium']]">
+          [[::report.creation_ts|momentHumanize]]
+        </td>
+      </tr>
+      <tr ng-show="loading || noMore">
+        <td colspan="3" ng-show="loading && !noMore">{% trans "Loading..." %}</td>
+        <td colspan="3" ng-show="noMore">{% trans "No more reports found" %}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

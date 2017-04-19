@@ -1,0 +1,28 @@
+{% load i18n %}
+
+<div class="dropdown open" ng-class="::accountTypeSelectFilter.classes">
+  <div class="form-control form-control-sm text-center">
+    <span ng-click="accountTypeSelectFilter.open = !accountTypeSelectFilter.open">---{% trans "Types" %}---</span>
+    <i ng-click="accountTypeSelectFilter.open = !accountTypeSelectFilter.open" class="fa fa-fw fa-caret-down pull-right"></i>
+    <br>
+
+    <span class="label label-default"
+       ng-repeat="item in accountTypeSelectFilter.model"
+       ng-click="accountTypeSelectFilter.removeType(item)">
+      [[::accountTypeSelectFilter.typesInfo[item] ]]
+      <i class="fa fa-times"></i>
+    </span>
+  </div>
+
+
+  <div class="dropdown-menu" ng-if="accountTypeSelectFilter.open" style="text-align: center;max-height: none !important;z-index: 777;font-size: 110%">
+      <span ng-repeat="(key, label) in accountTypeSelectFilter.typesInfo"
+            ng-if="accountTypeSelectFilter.model.indexOf(key)<0"
+            ng-click="accountTypeSelectFilter.addType(key)"
+            class="label"
+            style="color: [[::label|toColor]]; display: inline-block;padding: 7px 7px">
+        [[::label]]
+      </span>
+    </div>
+  </div>
+</div>

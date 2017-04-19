@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment details - Grand Capital</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/payform_gc.js"></script>
+    <meta name="viewport" content="width=320, user-scalable=false" id="viewport" />
+    <script>
+        (function(doc) {
+            var viewport = document.getElementById('viewport');
+            if ( navigator.userAgent.match(/iPad/i) ) {
+                viewport.setAttribute("content", "width=800");
+            }
+        }(document));
+    </script>
+</head>
+<body>
+    <div class="row header">
+        <img src="img/logo.png" alt=""/>
+        <p>[PAYMENT DESCRIPTION]</p>
+    </div>
+    <h1 class="row"><script>defer_i18n('enter_card_details')</script></h1>
+<form action="#">
+    <div class="row">
+        <div class="form-wrapper">
+            <div class="card top">
+                <div class="payments">
+                    <span class="icon mastercard active"></span>
+<!--                    <span class="icon maestro active"></span>-->
+                    <span class="icon visa active"></span>
+                </div>
+                <label class="row"><script>defer_i18n('card_number')</script></label>
+                <div class="row number">
+                    <input type="tel" maxlength="4" placeholder="1234" id="cc1" name="cc1" data-next-input="cc2"/>
+                    <input type="tel" maxlength="4" placeholder="5678" id="cc2" name="cc3" data-next-input="cc3"/>
+                    <input type="tel" maxlength="4" placeholder="9123" id="cc3" name="cc2" data-next-input="cc4"/>
+                    <input type="tel" maxlength="7" placeholder="4567" id="cc4" name="cc4"/>
+                </div>
+                <div class="row limit">
+                    <label><script>defer_i18n('expiry')</script></label>
+                    <div class="select-wrapper">
+                        <select name="month" id="month">
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                     /
+                    <div class="select-wrapper">
+                        <select name="year" id="year">
+                            <option value="2014">14</option>
+                            <option value="2015">15</option>
+                            <option value="2016">16</option>
+                            <option value="2017">17</option>
+                            <option value="2018">18</option>
+                            <option value="2019">19</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row name">
+                    <label><script>defer_i18n('name')</script></label>
+                    <input type="text" maxlength="31" placeholder="Vladimir Mayakovskiy" name="name" id="name"/>
+                </div>
+                <div class="row code" onclick="">
+                    <label><script>defer_i18n('cvc')</script>
+                        <p><script>defer_i18n('cvc_description')</script></p>
+                    </label>
+                    <span>xxxx</span>
+                    <input type="tel" maxlength="3" placeholder="123" name="cvc" id="cvc"/>
+                </div>
+            </div>
+            <div class="card bottom">
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="row footer-wrapper">
+        <div class="footer">
+            <div class="left">
+                <p><script>defer_i18n('sum')</script> [TOTAL AMOUNT]</p>
+                <p>[PAYMENT DESCRIPTION]</p>
+            </div>
+            <div class="right">
+                <script>defer_i18n('submit')</script>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    $(function() {
+        $("input[type='tel']").focus(function () {
+            this.select();
+        });
+        $("input[data-next-input]").on('input', function () {
+           if ($(this).val().length == 4) {
+               var next_input_id = $(this).attr('data-next-input');
+               $("#"+next_input_id).focus();
+           }
+        });
+        $("#cc1, #cc2, #cc3, #cc4").on('input', function() {
+            var v = $("#cc1").val() + $("#cc2").val() + $("#cc3").val() + $("#cc4").val();
+            if(v.length == 16 && parseInt(v.substr(0,2))>=51 && parseInt(v.substr(0,2))<=55 /*(v.substr(0,2)=='51' || v.substr(0,2)=='55')*/ ) {
+                payForm.cardType('mastercard');
+            }
+
+            if((v.length == 13 || v.length == 16) && v.substr(0,1)=='4') {
+                payForm.cardType('visa');
+            }
+
+/*
+            if(v.length == 15 && (v.substr(0,2)=='34' || v.substr(0,2)=='37')) {
+                payForm.cardType('American Express');
+                return checknum(v);
+            }
+
+            if(v.length == 16 && v.substr(0,4)=='6011') {
+                payForm.cardType('Discover');
+                return checknum(v);
+            }
+
+            if(v.length == 14 && (
+                (v.substr(0,3)>='300' && v.substr(0,3)<='305') ||
+                v.substr(0,2)=='36' || v.substr(0,2)=='38'
+            )) {
+                payForm.cardType('Diners Club / Carte Blanche');
+                return checknum(v);
+            }
+*/
+        });
+    });
+</script>
+</body>
+</html>

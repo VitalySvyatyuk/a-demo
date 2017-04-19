@@ -1,0 +1,27 @@
+.benefits{
+
+}
+.benefits__tabs_box{
+	margin-bottom: 34px;
+	@media (#{$max_tablets}){
+		width: 100%;
+	}
+}
+.benefits__tabs_box__button{
+	text-decoration: none;
+	@media (#{$max_tablets}){
+		width: 50%;
+	}
+}
+.benefits__info{
+	display: none;
+
+	margin-bottom: 34px;
+
+	&.state-visible{
+		display: block;
+	}
+}
+.benefits__featurs_list{
+	display: none;
+}

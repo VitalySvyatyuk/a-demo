@@ -1,0 +1,439 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-21 17:44+0400\n"
+"PO-Revision-Date: 2014-11-21 17:45+0230\n"
+"Last-Translator: Denis Tom <d.tomilin@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.7.4\n"
+
+msgid "Closed trade report"
+msgstr "Отчёт по закрытым позициям"
+
+msgid "FULL profit report by account"
+msgstr "Полный отчёт по прибыли по счёту"
+
+msgid "Deposits by payment system report"
+msgstr "Отчёт по вводам с разных платежных систем"
+
+msgid "Deposits by account group"
+msgstr "Ввод средств по группам счетов"
+
+msgid "Investors report"
+msgstr "Отчёт по инвесторам"
+
+msgid "FULL profit report"
+msgstr "Полный отчёт по прибыли"
+
+msgid "PAMM managers report"
+msgstr "Отчёт по управляющим"
+
+msgid "Withdraws by system"
+msgstr "Отчёт по выводам с разных платежных систем"
+
+msgid "All managers report"
+msgstr "Отчёт по всем менеджерам"
+
+msgid "Manager's summary report"
+msgstr "Менеджерский суммарный отчет"
+
+msgid "Regional managers summary report"
+msgstr "Региональный отчёт"
+
+msgid "My partner accounts report"
+msgstr "Отчёт по моим партнёрским счетам"
+
+msgid "Deposit and withdrawal report"
+msgstr "Отчёт по вводу выводу"
+
+msgid "Summary report"
+msgstr "Суммарный отчёт"
+
+msgid "Account regdate report"
+msgstr "Отчёт по открытию новых счетов"
+
+msgid "All partners report, new edition"
+msgstr "Суммарный отчёт по всем партнёрам, новая редакция"
+
+msgid "Full deposit withdrawal"
+msgstr "Полный отчёт по вводу выводу"
+
+msgid "orur"
+msgstr "ввод RUR через офис"
+
+msgid "ousd"
+msgstr "ввод USD через офис"
+
+msgid "Start date"
+msgstr "Дата начала"
+
+msgid "End date"
+msgstr "Дата окончания (включительно)"
+
+msgid "Account"
+msgstr "Счет"
+
+msgid "ID of the account you want to generate report for."
+msgstr "Номер счета"
+
+msgid "Select one of your accounts."
+msgstr "Выберите один из счетов"
+
+msgid "Include"
+msgstr "Включить"
+
+msgid "Include accounts from these groups. Empty means ALL accounts"
+msgstr ""
+"Включить в отчет счета из этих групп. Оставьте пустым для включения ВСЕХ "
+"счетов"
+
+#, python-format
+msgid ". Click <a href=\"%s\">here</a> to view group contents."
+msgstr ". Нажмите <a href=\"%s\">здесь</a>, чтобы посмотреть группы счетов"
+
+msgid "Exclude"
+msgstr "Исключить"
+
+msgid "Exclude accounts from these groups"
+msgstr "Исключить из отчета счета из этих групп"
+
+msgid "Report type"
+msgstr "Отчет"
+
+msgid "Choose one of the report types"
+msgstr "Выберите тип отчета"
+
+msgid "The end date of the period must be later than the start date"
+msgstr "Конец интервала должен быть после его начала"
+
+msgid "You can't order a report for a period longer than 65 days"
+msgstr "Вы не можете заказать отчёт за период более 65 дней"
+
+msgid "for account"
+msgstr "для счета"
+
+#, python-format
+msgid "for account groups %(include)s without groups %(exclude)s"
+msgstr "для групп счетов %(include)s, за исключением групп %(exclude)s"
+
+#, python-format
+msgid "for account group %s"
+msgstr "для групп счетов %s"
+
+msgid "Slug"
+msgstr ""
+
+msgid "Account group"
+msgstr "Группа счетов"
+
+msgid "Account groups"
+msgstr "Группы счетов"
+
+msgid "Saved report"
+msgstr "Сохраненный отчет"
+
+msgid "Saved reports"
+msgstr "Сохраненные отчёты"
+
+msgid "Available reports"
+msgstr "Доступные отчеты"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Status"
+msgstr "Состояние"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "View"
+msgstr "Просмотреть"
+
+msgid "In progress"
+msgstr "В обработке"
+
+msgid "Loading..."
+msgstr "Загрузка..."
+
+msgid "No more reports found"
+msgstr "Не найдено более отчётов"
+
+msgid "These account groups will always be excluded:"
+msgstr "Эти группы счетов будут исключены из отчёта:"
+
+msgid "Order report"
+msgstr "Заказать отчёт"
+
+#, python-format
+msgid ""
+"Unfortunately, generation of your report \"%(name)s\" failed due to an internal server error. Our IT personnel has been notified of this issue.\n"
+"\n"
+"Please wait 5-10 minutes and try again. Do not hesitate to contact our support team should it fail again.\n"
+msgstr ""
+"К сожалению, при генерации Вашего отчёта \"%(name)s\" произошла ошибка. Наши специалисты уже были оповещены об этом.\n"
+"\n"
+"Пожалуйста, подождите 5-10 минут и попробуйте снова. При повторении ошибки свяжитесь с нашей службой поддержки.\n"
+
+#, python-format
+msgid "Generation of your report %(name)s failed"
+msgstr "Генерация вашего отчёта \"%(name)s\" не удалась."
+
+#, python-format
+#| msgid ""
+#| "ld like to inform you, that the generation of your report \"%(name)sas been finished.\n"
+#| "n view it here: %(link)s\n"
+msgid ""
+"We would like to inform you, that the generation of your report \"%(name)s\" has been finished.\n"
+"\n"
+"You can view it here: https://grandcapital.net%(link)s\n"
+msgstr ""
+"Сообщаем Вам, что генерация отчёта \"%(name)s\" закончена.\n"
+"\n"
+"Вы можете посмотреть его здесь: %(link)s\n"
+
+#, python-format
+msgid "Your report %(name)s has been generated"
+msgstr "Ваш отчёт \"%(name)s\" был сгенерирован"
+
+msgid "Sorry"
+msgstr "Извините"
+
+msgid "Reports are available only for customers with IB accounts."
+msgstr "Отчеты доступны только клиентам, открывшим партнерский счет"
+
+msgid "Open an IB account"
+msgstr "Открыть партнерский счет"
+
+msgid "All partners summary report"
+msgstr "Суммарный отчет по всем партнёрам"
+
+msgid "All partners summary report 2013 edition"
+msgstr "Суммарный отчёт по всем партнёрам, редакция 2013"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Calculate report"
+msgstr "Рассчитать отчет"
+
+msgid "No data found"
+msgstr "Нет данных"
+
+msgid "balance"
+msgstr "баланс"
+
+msgid "Ticket"
+msgstr "Тикет"
+
+msgid "Operation type"
+msgstr "Тип операции"
+
+msgid "Symbol"
+msgstr "Символ"
+
+msgid "Open time"
+msgstr "Время открытия"
+
+msgid "Close time"
+msgstr "Время закрытия"
+
+msgid "Open price"
+msgstr "Цена открытия"
+
+msgid "Close price"
+msgstr "Цена закрытия"
+
+msgid "Difference"
+msgstr "Разница"
+
+msgid "Volume"
+msgstr "Объем"
+
+msgid "Swap"
+msgstr ""
+
+msgid "Profit"
+msgstr "Прибыль"
+
+msgid "Totals for"
+msgstr "Итого для"
+
+msgid "Deposit"
+msgstr "Ввод"
+
+msgid "Withdraw"
+msgstr "Вывод"
+
+msgid "Deposit withdrawl report"
+msgstr "Отчет по вводу-выводу"
+
+msgid "Deal"
+msgstr "Сделка"
+
+msgid "Account type"
+msgstr "Тип счёта"
+
+msgid "Comment"
+msgstr "Комментарий"
+
+msgid "Amount"
+msgstr "Сумма"
+
+msgid "Agent name"
+msgstr "Имя агента"
+
+msgid "Agent"
+msgstr "Агент"
+
+msgid "Reports"
+msgstr "Отчеты"
+
+msgid "New report"
+msgstr "Новый отчет"
+
+msgid "Ready"
+msgstr "Готово"
+
+msgid "You haven't ordered any reports yet"
+msgstr "У вас ещё нет заказанных отчётов"
+
+msgid "Per page"
+msgstr "На страницу"
+
+msgid "Ordered reports"
+msgstr "Заказанные отчёты"
+
+msgid "Refresh"
+msgstr "Обновить"
+
+msgid "Link"
+msgstr "Ссылка"
+
+msgid "Agent code"
+msgstr "Код агента"
+
+msgid "Withdrawl"
+msgstr "Вывод"
+
+msgid "In/Out"
+msgstr "ввод/вывод"
+
+msgid "Credit"
+msgstr "Кредит"
+
+msgid "Last Balance"
+msgstr "Последний баланс"
+
+msgid "Unrealized P/L"
+msgstr ""
+
+msgid "Equity"
+msgstr "Средства"
+
+msgid "You aren't allowed to view reports of that type for account"
+msgstr "У вас недостаточно прав для просмотра этого отчета для счета"
+
+msgid ""
+"Your report order has been received and is now being processed."
+"                       You will receive an email when the processing "
+"finishes."
+msgstr ""
+"Ваша заявка на отчёт получена и находится в процессе обработки. Когда отчёт "
+"будет сгенерирован, Вы получите сообщение по электронной почте."
+
+#~ msgid "All accounts"
+#~ msgstr "Все счета"
+
+#~ msgid "You aren't allowed to view reports of that type"
+#~ msgstr "У вас недостаточно прав для просмотра этого отчета"
+
+#~ msgid "Deposit and withdrawl report"
+#~ msgstr "Отчет по вводы выводу"
+
+#~ msgid "Auto and manual withdraws by payment system report"
+#~ msgstr "Отчет по авто и ручным выводам с разных платежных систем"
+
+#~ msgid "Registered accounts and summary deposit report"
+#~ msgstr "Отчет по зарегистрированным счетам и их суммарному депонированию"
+
+#~ msgid " for the account "
+#~ msgstr "для счета"
+
+#~ msgid "closed trade report"
+#~ msgstr "Отчет по закрытым позициям"
+
+#~ msgid "summary report"
+#~ msgstr "Итоговый отчет"
+
+#~ msgid "deposits by payment system report"
+#~ msgstr "Отчет по вводам с разных платежных систем"
+
+#~ msgid "Report on all partners"
+#~ msgstr "Отчет по всем партнерам"
+
+#~ msgid "Deposits for payment systems"
+#~ msgstr "Отчет по вводам с разных платежных систем"
+
+#~ msgid "Choose report to generate"
+#~ msgstr "Выберите тип отчета"
+
+#~ msgid "Internal deposit summ"
+#~ msgstr "Сумма внутренних переводов на этот счет"
+
+#~ msgid "Internal withdraw summ"
+#~ msgstr "Сумма внутренних переводов с этого счета"
+
+#~ msgid "Education summ"
+#~ msgstr "Сумма за стажировки"
+
+#~ msgid "Compensations"
+#~ msgstr "Сумма компенсаций"
+
+#~ msgid "Competitions"
+#~ msgstr "Конкурсные начисления"
+
+#~ msgid "For help"
+#~ msgstr "Начисления за помощь"
+
+#~ msgid "Partner BabyForex"
+#~ msgstr "По акции партнера babyforex.ru"
+
+#~ msgid "Presents for clients"
+#~ msgstr "Подарки клиентам"
+
+#~ msgid "without groups"
+#~ msgstr "исключая группы счетов"
+
+#~ msgid "Account groups to include"
+#~ msgstr "Группы счетов для включения в отчет"
+
+#~ msgid "Micro"
+#~ msgstr "Микро-счета"
+
+#~ msgid "Real"
+#~ msgstr "Реал-счета"
+
+#~ msgid "Generate report for this account type"
+#~ msgstr "Генерировать отчет по этому типу счетов"
+
+#~ msgid "The report may take longer to generate, when enabled."
+#~ msgstr "При включении этой опции создание отчета может занять больше времени."
+
+#~ msgid "Overall totals"
+#~ msgstr "Суммарный итог"
+
+#~ msgid "Total"
+#~ msgstr "Итог"

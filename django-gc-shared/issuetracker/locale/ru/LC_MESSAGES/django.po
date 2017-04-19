@@ -1,0 +1,752 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-20 19:55+0300\n"
+"PO-Revision-Date: 2016-06-20 19:59+0230\n"
+"Last-Translator:   <valexeev@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.7.11\n"
+
+msgid "Author"
+msgstr "Автор"
+
+msgid "Client information"
+msgstr "Информация о клиенте"
+
+msgid "Mark select issues as closed"
+msgstr "Пометить выбранные задачи как закрытые"
+
+msgid "Mark select issues as rejected"
+msgstr "Пометить выбранные задачи как отклонённые"
+
+msgid "Text"
+msgstr "Текст"
+
+#| msgid "change description"
+msgid "Internal description"
+msgstr "Внутреннее описание"
+
+msgid "Make transaction"
+msgstr "Провести платёж"
+
+msgid "Attachment"
+msgstr "Присоединенный файл"
+
+msgid "Department"
+msgstr "Отдел"
+
+#, python-format
+msgid "Supported extensions: %(ext)s. Filesize limit: %(limit)s Mb"
+msgstr "Поддерживаемые расширения: %(ext)s. Макс. объем файла: %(limit)s МБ"
+
+msgid "Unsupported file extension"
+msgstr "Неподдерживаемое расширение "
+
+msgid "File is too big."
+msgstr "Файл слишком большой "
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "From date"
+msgstr "С"
+
+msgid "To date"
+msgstr "По"
+
+msgid "All"
+msgstr "Все"
+
+msgid "New issue"
+msgstr "Новый запрос"
+
+msgid "Issue status rejected"
+msgstr "Отклонена"
+
+msgid "Answer received"
+msgstr "Ответ получен"
+
+msgid "In process"
+msgstr "В работе"
+
+msgid "Issue closed"
+msgstr "Запрос закрыт"
+
+msgid "In SENDER'S currency"
+msgstr "В валюте ОТПРАВИТЕЛЯ"
+
+msgid "In RECEIVER'S currency"
+msgstr "В валюте ПОЛУЧАТЕЛЯ"
+
+msgid "status"
+msgstr "статус"
+
+msgid "author"
+msgstr "автор"
+
+msgid "assignee"
+msgstr "ответственный"
+
+msgid "department"
+msgstr "отдел"
+
+msgid "creation timestamp"
+msgstr "время создания"
+
+msgid "update timestamp"
+msgstr "время обновления"
+
+msgid "deadline"
+msgstr "срок исполнения"
+
+msgid "title"
+msgstr "заголовок"
+
+msgid "text"
+msgstr "текст"
+
+#| msgid "New comment"
+msgid "Internal comment"
+msgstr "Внутренний комментарий"
+
+msgid "Not shown to client"
+msgstr "Не видно клиенту"
+
+msgid "issue"
+msgstr "задача"
+
+msgid "issues"
+msgstr "задачи"
+
+msgid "user"
+msgstr "пользователь"
+
+msgid "comment text"
+msgstr "текст коментария"
+
+msgid "issue comment"
+msgstr "коментарий к задаче"
+
+msgid "issue comments"
+msgstr "коментарии к задаче"
+
+msgid "change initiator"
+msgstr "кто"
+
+msgid "change description"
+msgstr "описание изменений"
+
+msgid "issue attachment"
+msgstr "присоедененный файл"
+
+msgid "<unknown file>"
+msgstr "<неизвестный файл>"
+
+msgid "document"
+msgstr "документ"
+
+msgid "check document issue"
+msgstr "задача на проверку документа"
+
+msgid "check document issues"
+msgstr "задачи на проверку документов"
+
+msgid "Set profile fields as \"approved\""
+msgstr "Отметить поля профиля как \"проверенные\""
+
+#, python-format
+msgid "Check validity of %s of user %s"
+msgstr "Проверить валидность %s пользователя %s"
+
+msgid "account"
+msgstr "счет"
+
+msgid "restore account from archive issue"
+msgstr "задача на восстановление счёта из архива"
+
+#, python-format
+msgid "Restore account %(account)s of user %(user)s from archive"
+msgstr "Восстановить счёт %(account)s пользователя %(user)s из архива"
+
+msgid "user issue"
+msgstr "вопрос пользователя"
+
+msgid "user issues"
+msgstr "вопросы пользователей"
+
+msgid "sender"
+msgstr "отправитель"
+
+msgid "recipient"
+msgstr "получатель"
+
+msgid "Recipient's account number."
+msgstr "Номер счета получателя."
+
+msgid "amount"
+msgstr "сумма"
+
+msgid "Amount of money to transfer"
+msgstr "Сумма для перевода"
+
+msgid "Currency"
+msgstr "Валюта"
+
+msgid "internal transfer issue"
+msgstr "задача на внутренний перевод"
+
+msgid "internal transfer issues"
+msgstr "задачи на внутренний перевод"
+
+msgid "Attachments"
+msgstr "Вложения"
+
+msgid "Invalid value"
+msgstr "Неправильное значение"
+
+msgid "Vies statistics"
+msgstr "Статистика"
+
+msgid "Request processing stats"
+msgstr "Статистика обработки заявок"
+
+#| msgid "document"
+msgid "Verify documents"
+msgstr "Проверить документы"
+
+#| msgid "Requisit params"
+msgid "Request status"
+msgstr "Статус запроса"
+
+msgid "Profile data"
+msgstr "Данные профиля"
+
+msgid "First name"
+msgstr "Имя"
+
+#| msgid "name"
+msgid "Last name"
+msgstr "Фамилия"
+
+msgid "Middle name"
+msgstr "Отчество"
+
+#| msgid "document"
+msgid "Documents"
+msgstr "Документы"
+
+msgid "Open in full size"
+msgstr "Открыть в полном размере"
+
+#| msgid "deposit request"
+msgid "Deposit request ID"
+msgstr "ID заявки на ввод средств"
+
+#| msgid "account"
+msgid "Account"
+msgstr "Счёт"
+
+#| msgid "amount"
+msgid "Amount"
+msgstr "сумма"
+
+msgid "Payment system"
+msgstr "Платёжная система"
+
+#| msgid "By creation date"
+msgid "Creation date"
+msgstr "Дата создания"
+
+msgid "Unblock"
+msgstr "Разблокировать"
+
+#| msgid "New comment"
+msgid "Rejection comment"
+msgstr "Комментарий к отказу"
+
+#| msgid "deadline"
+msgid "Decline"
+msgstr "Отклонить"
+
+msgid "Statistics of"
+msgstr "Статистика"
+
+msgid "clients requests' processing"
+msgstr "обработки запросов клиентов"
+
+msgid "document verification"
+msgstr "верификации документов"
+
+#| msgid "Select files"
+msgid "Select period"
+msgstr "Выберите период"
+
+msgid "from"
+msgstr "от"
+
+msgid "to"
+msgstr "до"
+
+#| msgid "update timestamp"
+msgid "Update stats"
+msgstr "Обновить статистику"
+
+msgid "Number of processed requests"
+msgstr "Кол-во обработанных заявок"
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Ticket id"
+msgstr "№ вопроса"
+
+msgid "Created"
+msgstr "Создан"
+
+msgid "Subject"
+msgstr "Тема"
+
+msgid "No tickets"
+msgstr "Нет вопросов"
+
+msgid "Support"
+msgstr "Поддержка"
+
+msgid "Create issue"
+msgstr "Создать вопрос"
+
+msgid "Probably there is an answer in"
+msgstr "Возможно, интересующий Вас вопрос есть в разделе"
+
+msgid "FAQ"
+msgstr "Часто задаваемые вопросы"
+
+msgid "Create"
+msgstr "Создать"
+
+msgid "Issue #"
+msgstr "Вопрос №"
+
+msgid "Created on"
+msgstr "Создан"
+
+msgid "uploaded file"
+msgstr "загруженный файл"
+
+msgid "No attachments"
+msgstr "Вложений нет"
+
+msgid "Add attachment"
+msgstr "Добавить вложение"
+
+msgid "Upload"
+msgstr "Загрузить файл"
+
+msgid "Comments"
+msgstr "Комментарии"
+
+msgid "No comments for the issue yet"
+msgstr "На этот вопрос ещё нет ответов"
+
+msgid "Add comment"
+msgstr "Добавить комментарий"
+
+msgid "Leave a comment"
+msgstr "Оставить комментарий"
+
+msgid "Back to issue list"
+msgstr "Вернуться в список вопросов"
+
+msgid "Support tickets"
+msgstr "Вопросы к техподдержке"
+
+msgid "You can create a support request here"
+msgstr ""
+"В этом разделе Вы можете создать интересующий Вас вопрос, а так же запрос к "
+"технической поддержке нашей компании."
+
+msgid "Tickets filter"
+msgstr "Фильтр вопросов"
+
+msgid "By creation date"
+msgstr "По дате создания"
+
+msgid "By status"
+msgstr "По статусу"
+
+msgid "Filter"
+msgstr "Фильтр"
+
+msgid "or"
+msgstr "или"
+
+msgid "reset filter"
+msgstr "сбросить фильтр"
+
+msgid "Create new issue"
+msgstr "Создать новый вопрос"
+
+msgid "Create issue ticket"
+msgstr "Создать вопрос"
+
+msgid "The document is successfully loaded"
+msgstr "Документ успешно загружен"
+
+msgid "View image"
+msgstr "Открыть изображение"
+
+#| msgid "change description"
+msgid "Description"
+msgstr "Подробности"
+
+msgid "Date when the disputed situation happened"
+msgstr "Дата возникновения спорной ситуации"
+
+msgid "Ticket numbers of trades and orders being disputed"
+msgstr "Номера оспариваемых позиций или отложенных ордеров"
+
+msgid ""
+"Articles of acting agreements and regulations which you think were violated"
+msgstr ""
+"Пункты настоящих регламентов, которые, по Вашему мнению, были нарушены"
+
+msgid "How do you propose to settle the dispute"
+msgstr "Ваши предложения по урегулированию спорной ситуации"
+
+msgid "Select files"
+msgstr "Выбрать файлы"
+
+msgid "Send"
+msgstr "Отправить"
+
+msgid "Create ticket"
+msgstr "Создать вопрос"
+
+msgid "Answer text"
+msgstr "Ответ"
+
+#, python-format
+msgid "Issue #%s created"
+msgstr "Задача №%s создана"
+
+msgid "Approve open ECN.Invest account"
+msgstr "Подтверждение открытия ECN.Invest аккаунта"
+
+msgid "Approves open ECN.Invest account"
+msgstr "Подтверждения открытий ECN.Invest аккаунта"
+
+msgid "Enable ability to open ECN.Invest accounts"
+msgstr "Дать способность открывать ECN.Invest аккаунт"
+
+msgid "Check validity user %s"
+msgstr "Проверить пользователя %s"
+
+
+
+#~ msgid "user requisit"
+#~ msgstr "реквизит"
+
+#~ msgid "slug"
+#~ msgstr "слаг"
+
+#~ msgid "weight"
+#~ msgstr "вес"
+
+#~ msgid "Weight determines sorting order"
+#~ msgstr "Определяет порядок сортировки"
+
+#~ msgid "default deadline"
+#~ msgstr "стандартный срок исполнения"
+
+#~ msgid "issue priority"
+#~ msgstr "приоритет задачи"
+
+#~ msgid "issue priorities"
+#~ msgstr "приоритеты задач"
+
+#~ msgid "priority"
+#~ msgstr "приоритет"
+
+#~ msgid "check profile issue"
+#~ msgstr "задача на проверку профиля"
+
+#~ msgid "check profile issues"
+#~ msgstr "задачи на проверку профиля"
+
+#~ msgid "check requisit issue"
+#~ msgstr "задача на проверку реквизита"
+
+#~ msgid "check requisit issues"
+#~ msgstr "задачи на проверку реквизитов"
+
+#~ msgid "leverage"
+#~ msgstr "кредитное плечо"
+
+#~ msgid "check leverage issue"
+#~ msgstr "задача на смену плеча"
+
+#~ msgid "check leverage issues"
+#~ msgstr "задачи на смену плеча"
+
+#~ msgid ""
+#~ "Change leverage for account %(account)s of user %(user)s from %(old)s to "
+#~ "%(new)s"
+#~ msgstr ""
+#~ "Изменить плечо для счета %(account)s пользователя %(user)s с %(old)s на "
+#~ "%(new)s"
+
+#~ msgid "comment"
+#~ msgstr "текст комментария"
+
+#~ msgid "delete account issue"
+#~ msgstr "задача на удаление счета"
+
+#~ msgid "delete account issues"
+#~ msgstr "задача на удаление счета"
+
+#~ msgid "Delete account %(account)s of user %(user)s"
+#~ msgstr "Удалить счет %(account)s пользователя %(user)s"
+
+#~ msgid "Change account password issue"
+#~ msgstr "Задача на смену пароля к счету"
+
+#~ msgid "Change account password issues"
+#~ msgstr "Задачи на смену пароля к счету"
+
+#~ msgid "eliminate profile data variance issue"
+#~ msgstr "Задача на устранение несоответствия данных профиля и счета"
+
+#~ msgid "eliminate profile data variance issues"
+#~ msgstr "Задачи на устранение несоответствия данных профиля и счета"
+
+#~ msgid "deposit request issue"
+#~ msgstr "задача на ввод средств"
+
+#~ msgid "deposit request issues"
+#~ msgstr "задачи на ввод средств"
+
+#~ msgid "withdraw request"
+#~ msgstr "заявка на вывод средств"
+
+#~ msgid "withdraw request issue"
+#~ msgstr "задача на вывод средств"
+
+#~ msgid "withdraw request issues"
+#~ msgstr "задачи на вывод средств"
+
+#~ msgid "Trading account number"
+#~ msgstr "Номер счета получателя."
+
+#~ msgid ""
+#~ "Dear client!\n"
+#~ "\n"
+#~ "We have verified your deposit and now you can continue to trade on your account!\n"
+#~ "\n"
+#~ "We wish you successful trading!"
+#~ msgstr ""
+#~ "Уважаемый клиент!\n"
+#~ "\n"
+#~ "Мы верифицировали Ваш платёж и теперь Вы можете продолжать торговлю на Вашем  счёте %(account)s!\n"
+#~ "\n"
+#~ "Желаем Вам успешной торговли!"
+
+#~ msgid "Your deposit was verified"
+#~ msgstr "Ваш платёж был верицифирован"
+
+#~ msgid ""
+#~ "Dear client!\n"
+#~ "\n"
+#~ "Unfortunately, our financial department was unable to verify your deposit with the following reason:\n"
+#~ "\n"
+#~ "%(finance_dep_comment)s\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "We care about your security!"
+#~ msgstr ""
+#~ "Уважаемый клиент,\n"
+#~ "\n"
+#~ "к сожалению, наш финансовый департамент не смог верифицировать ваш платёж по следующей причине:\n"
+#~ "\n"
+#~ "%(finance_dep_comment)s\n"
+#~ "\n"
+#~ "\n"
+#~ "\n"
+#~ "Мы заботимся о вашей безопасности!"
+
+#~ msgid "We couldn't verify your deposit"
+#~ msgstr "Нам не удалось верифицировать Ваш платёж"
+
+#~ msgid "Your request was rejected with the following comment"
+#~ msgstr "Ваш запрос был отклонён со следующим комментарием"
+
+#~ msgid ""
+#~ "\n"
+#~ "  User %(author)s attached a new file to this issue: http://%(site_domain)s/static/%(file)s\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Пользователь %(author)s прикрепил новый файл к этому вопросу: http://%(site_domain)s/static/%(file)s\n"
+
+#~ msgid "The following fields changed"
+#~ msgstr "Слудеющий файл был изменён"
+
+#~ msgid ""
+#~ "\n"
+#~ "  User %(author)s left a new comment for this issue: %(text)s\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Пользователь %(author)s прокомментировал этот вопрос: %(text)s\n"
+
+#~ msgid "New attachment"
+#~ msgstr "Новое вложение"
+
+#~ msgid "Issue changed"
+#~ msgstr "Запрос изменен"
+
+#~ msgid ""
+#~ "In your private office you created a request #%(id)s to restore account "
+#~ "%(acc)s from archive"
+#~ msgstr ""
+#~ "В Вашем личном кабинете Вы создали заявку №%(id)s на восстановление счёта "
+#~ "%(acc)s из архива"
+
+#~ msgid "Your GrandCapital account %(issue.account)s was restored from archive."
+#~ msgstr ""
+#~ "Ваш счёт %(issue.account)s в компании GrandCapital был восстановлен из "
+#~ "архива."
+
+#~ msgid ""
+#~ "We failed to restore your GrandCapital account %(issue.account)s from "
+#~ "archive."
+#~ msgstr "Нам не удалось восстановить Ваш счёт %(issue.account)s из архива."
+
+#~ msgid ""
+#~ "Thank you for submitting a ticket to our issue tracker. It will be reviewed as soon\n"
+#~ "  as possible, and you will receive an answer by e-mail and in your Private Office at our website."
+#~ msgstr ""
+#~ "Спасибо за то, что отправили своё сообщение в нашу систему поддержки. Оно будет рассмотрено в ближайшее время\n"
+#~ "и Вы получите ответ по электронной почте и в Вашем Личном Кабинете на нашем сайте."
+
+#~ msgid "You can view the issue at"
+#~ msgstr "Вы можете посмотреть вопрос здесь: "
+
+#~ msgid "Body"
+#~ msgstr "Содержание"
+
+#~ msgid "This field is required"
+#~ msgstr "Обязательное поле."
+
+#~ msgid ""
+#~ "Dear client!\n"
+#~ "\n"
+#~ "Your account UNBLOCK.\n"
+#~ "GOOD LUCK!\n"
+#~ "\n"
+#~ "We care about your security!"
+#~ msgstr ""
+#~ "Уважаемый клиент,\n"
+#~ "Ваш счет РАЗБЛОКИРОВАН.\n"
+#~ "Удачи!\n"
+#~ "\n"
+#~ "Мы заботимся о вашей безопасности!"
+
+#~ msgid "Your account unblock"
+#~ msgstr "Ваш счет разблокирован."
+
+#~ msgid "Your account unblock rejected"
+#~ msgstr "В разблокировке счета отказано."
+
+#~ msgid "file"
+#~ msgstr "файл"
+
+#~ msgid "Changed"
+#~ msgstr "Изменён"
+
+#~ msgid ""
+#~ "Attention: if you choose SENDER'S currency, the amount transferred"
+#~ "                    may slightly differ from what you requested"
+#~ msgstr ""
+#~ "Внимание: если Вы выберете валюту ОТПРАВИТЕЛЯ, переведённая сумма может "
+#~ "незначительно отличаться от запрошенной Вами"
+
+#~ msgid "Issue status open"
+#~ msgstr "Открыта"
+
+#~ msgid "Issue status complete"
+#~ msgstr "Завершена"
+
+#~ msgid "activate PAMM account issue"
+#~ msgstr "задача на активацию счета управляющего"
+
+#~ msgid "activate PAMM accounts issues"
+#~ msgstr "задачи на активацию счета управляющего"
+
+#~ msgid "Delete Account issues"
+#~ msgstr "Задачи на удаление счета"
+
+#~ msgid "Slug"
+#~ msgstr "Slug"
+
+#~ msgid "User"
+#~ msgstr "Пользователь"
+
+#~ msgid "Why do you want to remove the account?"
+#~ msgstr "Почему вы хотите удалить счет?"
+
+#~ msgid "Request #%(id)s created successfully."
+#~ msgstr "Запрос №%(id)s сформирован."
+
+#~ msgid "Removal request #%(id)s created successfully."
+#~ msgstr "Запрос на удаление счета №%(id)s сформирован."
+
+#~ msgid "Open"
+#~ msgstr "Открыт"
+
+#~ msgid "Rejected"
+#~ msgstr "Отклонен"
+
+#~ msgid "PAMM account %(mt4_id)s was created"
+#~ msgstr "был создан PAMM-счет %(mt4_id)s"
+
+#~ msgid "create PAMM account"
+#~ msgstr "задача на создание PAMM-счета"
+
+#~ msgid "user %(username)s wants to invest to PAMM %(mt4_id)s"
+#~ msgstr ""
+#~ "пользователь %(username)s хочет инвестировать средства в PAMM-счет "
+#~ "%(mt4_id)s"
+
+#~ msgid "create managed account"
+#~ msgstr "Задача на открытие управляемого счета"
+
+#~ msgid "create managed accounts"
+#~ msgstr "Задачи на открытие управляемых счетов"
+
+#~ msgid "%(username)s wants to delete PAMM %(mt4_id)s"
+#~ msgstr "%(username)s хочет удалить PAMM-счето %(mt4_id)s"
+
+#~ msgid "close PAMM account"
+#~ msgstr "Задача на закрытие PAMM-счета"
+
+#~ msgid "close PAMM accounts"
+#~ msgstr "Задачи на закрытие PAMM-счетов"
+
+#~ msgid "%(username)s wants to close managed account %(mt4_id)s"
+#~ msgstr "%(username)s хочет закрыть управляемый счет %(mt4_id)s"
+
+#~ msgid "close managed account"
+#~ msgstr "Задача на закрытие управляемого счета"
+
+#~ msgid "close managed accounts"
+#~ msgstr "Задачи на закрытие управляемых счетов"

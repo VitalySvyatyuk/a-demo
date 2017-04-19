@@ -1,0 +1,362 @@
+{% extends 'site_base.html' %}
+
+{% block doctype %}<!DOCTYPE html>{% endblock %}
+
+{% load i18n app_tags shared_tags admin_list coffeescript %}
+
+{% block external_analytics %}{% endblock %}
+
+{% block css %}{{ block.super }}
+    <link rel="stylesheet" href="/static/css/style.css?v7" />
+    <link rel="stylesheet" href="{% MEDIA_URL 'css/sprites.css' %}" />
+
+    <link rel="stylesheet" href="{% MEDIA_URL 'js/facebox/facebox.css' %}" />
+    <link rel="stylesheet" href="{% MEDIA_URL 'css/gcapital-ui/jquery-ui-1.8.9.custom.css' %}" />
+
+    <link rel="stylesheet" href="{% MEDIA_URL 'css/dropdown.css' %}" />
+    <link rel="stylesheet" href="{% MEDIA_URL 'css/flags.css' %}" />
+    <link rel="stylesheet" href="{% MEDIA_URL 'css/quotes.css' %}" />
+    <link rel="stylesheet" href="{% MEDIA_URL 'css/gcapital-ui/tooltip.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% MEDIA_URL 'css/jquery.lightbox-0.5.css' %}" media="screen" />
+
+    <style type="text/css">
+     td.call-column { width: 100px;}
+     td.call-column > div {position: relative; padding: 0; margin: 0; width: 100%; height: 100%;}
+     img.add-call {
+         position: absolute;
+         top: 1px;
+         right: 1px;
+     }
+
+    table.call-history-table {
+        width: 100%;
+    }
+
+    div#operation-status {
+        border-radius: 5px 5px 0 0;
+        background-color: #aaec92;
+        padding: 3px;
+        text-align: left;
+    }
+
+    div.operation-status-inprogress {
+        background-color: #afafaf!important;
+    }
+
+    div#account-filters, div.crm-main {
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        white-space: normal;
+    }
+
+    div.crm-main {
+        width: 1000px;
+    }
+
+    div#account-filters {
+        padding:  10px;
+        background-color: lightgray;
+    }
+
+    div#account-filters h2 {
+        background-color: transparent;
+        font-size: inherit;
+    }
+
+    div#main {
+        max-width: none;
+        min-width: 1100px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    div.pagination {
+        text-align: left;
+        color: white;
+    }
+
+    a.ajax-link {
+        text-decoration: none;
+        border-bottom: dashed 1px #268686;
+    }
+
+    </style>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="/jsi18n/"></script>
+    <script type="text/javascript" src="{% MEDIA_URL 'js/flowplayer-3.2.6.min.js' %}"></script>
+  <script type="text/javascript"
+          src="{% MEDIA_URL 'js/jquery-1.8.0.min.js' %}"></script>
+  <script type="text/javascript"
+          src="{% MEDIA_URL 'js/jquery-ui-1.8.23.custom.min.js' %}"></script>
+    <script type="text/javascript"
+            src="{% MEDIA_URL 'js/jquery.tooltip.min.js' %}"></script>
+  <script type="text/javascript"
+          src="{% MEDIA_URL 'js/jquery.dd.js' %}"></script>
+  <script type="text/javascript"
+          src="{% MEDIA_URL 'js/facebox/facebox.js' %}"></script>
+  <script type="text/javascript"
+          src="{% MEDIA_URL 'js/datepicker.js?v6' %}"></script>
+  <script type="text/javascript"
+          src="{% MEDIA_URL 'js/jquery.ui.datepicker-ru.js' %}"></script>
+  <script type="text/javascript"
+          src="{% MEDIA_URL 'js/jquery.lightbox-0.5.min.js' %}"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}{% coffeescript 'coffee/sources/crm.coffee' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="crm-main">
+        <div id="operation-status">
+            <span id="no-operations-left">Все операции завершены</span>
+            <span id="operations-pending" style="display:none;">
+                <img src="{% MEDIA_URL 'img/ajax-loader-2.gif' %}" alt="..."/>
+                Выполняется операций: <span id="operations-count"></span>
+            </span>
+        </div>
+        <div style="background-color:white;">
+            <span style="float: right;">
+                {% search_form cl %}
+            </span>
+            <span style="float: right;">
+                На странице эл-тов:
+                {% for per_page_link in per_page_links %}
+                    <a href="{{ per_page_link.0 }}">{{ per_page_link.1 }}</a>
+                {% endfor %}
+            </span>
+            {% pagination cl %}
+        </div>
+        {% if request.user.crm_manager and not is_broco %}
+        <div style="background-color:white; text-align: right;">
+            {% if request.user.crm_manager.works_with_ib %}
+                IB без партнёрского менеджера (на {{ free_for_date|date:"H:i" }}):
+                <span id="profiles_without_manager_count">
+                    {{ ib_profiles_without_manager }}
+                </span>
+                <input type="button" value="Получить IB" style="font-size: smaller;" id="get-new-ib-customer-button"/>
+            {% else %}
+                Клиентов без персонального менеджера (на {{ free_for_date|date:"H:i" }}):
+                <span id="profiles_without_manager_count">
+                    {{ profiles_without_manager }} (+{{ demo_profiles_without_manager }} демо,
+                    {{ empty_profiles_without_manager }} пустых)
+                </span>
+                <input type="button" value="Получить клиента" style="font-size: smaller;" id="get-new-customer-button"/>
+                <input type="button" value="Получить demo" style="font-size: smaller;" id="get-new-demo-customer-button"/>
+                <input type="button" value="Получить пустого" style="font-size: smaller;" id="get-new-empty-customer-button"/>
+            {% endif %}
+            <input type="button" value="Неуспешные звонки" style="font-size: smaller;" id="get-failed-call-customer-button"/>
+        </div>
+        {% endif %}
+        <table class="gctable">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    {% if not is_reception %}<th>Счета</th>{% endif %}
+                    {% if view_agent_code %}<th>Код агента</th>{% endif %}
+                    {% if view_manager or is_reception %}
+                        <th>Менеджер</th>
+                        <th>Партн. менеджер</th>
+                    {% endif %}
+                    {% if crm_access.view_partner_domains %}<th>Сайты партнёра</th>{% endif %}
+                    {% if not is_reception %}<th>Звонки</th><th>След. звонок</th><th>Комментарий</th>{% endif %}
+                </tr>
+            </thead>
+            <tbody>
+    {% for crm in user_crms %}
+                <tr id="crm-{{ crm.id }}">
+                    <td>
+                        {% if is_staff %}
+                            <a href="{{ ADMIN_PREFIX }}admin/profiles/userprofile/{{ crm.user.profile.id }}/">{{ crm.get_name }}</a>
+                        {% else %}
+                            {{ crm.get_name }}
+                        {% endif %}
+                        <br/>
+                        <div class="account-data">
+                            <a href="#" class="ajax-link">Показать контактные данные</a>
+                        </div>
+                    </td>
+                {% if not is_reception %}
+                    <td>
+                        {% if no_demo %}
+                            {% for account in crm.user.accounts.non_demo_active|order_by:"-creation_ts" %}
+                                {% if not accounts_list or account.mt4_id in accounts_list %}
+                                    {% include "crm/account_info_snippet.html" %}
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            {% for account in crm.user.accounts.active|order_by:"-creation_ts" %}
+                                {% if not accounts_list or account.mt4_id in accounts_list %}
+                                    {% include "crm/account_info_snippet.html" %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </td>
+                {% endif %}
+                {% with profile=crm.user.profile %}
+                    {% if view_agent_code %}<td>{{ profile.agent_code }}</td>{% endif %}
+                    {% if view_manager or is_reception %}
+                        <td>
+                            <a href="{{ ADMIN_PREFIX }}admin/auth/user/{{ profile.manager.id }}/">
+                                {{ profile.manager.get_full_name }}
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ ADMIN_PREFIX }}admin/auth/user/{{ profile.manager.id }}/">
+                                {{ profile.ib_manager.get_full_name }}
+                            </a>
+                        </td>
+                    {% endif %}
+                {% endwith %}
+                {% if crm_access.view_partner_domains %}
+                    <td>
+                        {% for partner_domain in crm.user.partnerdomain_set.all %}
+                            <a href="http://{{ partner_domain.domain }}">{{ partner_domain.domain }}</a>: {{ partner_domain.mt4account_set.count }}
+                            {% if not forloop.last %}<br/>{% endif %}
+                        {% endfor %}
+                    <br/>Клики по ссылке:<br/>
+                        {% for item in crm.get_referral_clicks.clicks_list %}
+                            {{ item.account.mt4_id }}: {{ item.total.clicks }}
+                            {% if not forloop.last %}<br/>{% endif %}
+                        {% endfor %}
+                    </td>
+                {% endif %}
+                {% if not is_reception %}
+                    <td class="call-column">
+                        <div>
+                        <img class="add-call" src="{% MEDIA_URL 'img/plus-icon.png' %}" style="float: right;"/>
+                        {% with call=crm.calls.latest %}
+                            Последний: <a class="latest-call ajax-link" href="#">
+                                <span title="{{ call.comment }}">{{ call.get_date_string }}</span>
+                            </a>
+                        {% endwith %}
+                        <br/>Всего: <span class="call-count">{{ crm.calls.count }}</span>
+                        </div>
+                    </td>
+                    <td class="planned-call">
+                        <div>
+                        {% with call=crm.planned_calls.latest %}
+                            <span>
+                                {% if call %}
+                                    {{ call.get_date_string }}{% if call.manager %} ({{ call.manager.username }}){% endif %}
+                                {% else %}
+                                    Нет даты
+                                {% endif %}
+                            </span><img src="/static/admin/img/icon_changelink.gif" alt="Изменить"/>
+                        {% endwith %}
+                        </div>
+                    </td>
+                    <td class="comment-column">
+                            <span class="comment-text">{{ crm.comments.latest.text }}</span>
+                    </td>
+                {% endif %}
+                </tr>
+    {% endfor %}
+            </tbody>
+        </table>
+        <div class="pagination">
+            {% pagination cl %}
+        </div>
+    </div>
+    <div id="account-filters">
+          <div id="changelist-filter">
+            <h2>{% trans 'Filter' %}</h2>
+            <h3>Реальные/демо</h3>
+              <ul>
+              {% for demo_filter_link in demo_filter_links %}
+                  <li><a href="{{ demo_filter_link.0 }}">{{ demo_filter_link.1 }}</a></li>
+              {% endfor %}
+              </ul>
+            {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
+              <h3>Менеджер</h3>
+              <ul>
+                  {% if is_broco %}
+                      <li><a href="{% url "broco_crm_frontpage" %}">Любой</a></li>
+                      {% for manager in managers%}
+                          <li><a href="{% url "broco_crm_frontpage_by_manager" manager.username %}">{{ manager.get_full_name }}</a></li>
+                      {% endfor %}
+                  {% else %}
+                      <li><a href="{% url "crm_frontpage" %}">Любой</a></li>
+                      {% for manager in managers%}
+                          <li><a href="{% url "crm_frontpage_by_manager" manager.username %}">{{ manager.get_full_name }}</a></li>
+                      {% endfor %}
+                  {% endif %}
+              </ul>
+          </div>
+          <div>
+              <h3>Дата след. звонка</h3>
+              {% date_hierarchy cl_for_next_call_date_hierarchy %}
+          </div>
+          <div>
+             <h3>Дата рег. счёта</h3>
+             {% date_hierarchy cl_for_account_creation_ts_date_hierarchy %}
+          </div>
+          <div>
+             <h3>Дата звонка</h3>
+             {% date_hierarchy cl_for_call_date_hierarchy %}
+          </div>
+          <div>
+            <h3>Код агента</h3>
+            <form id="agent_code_filter">
+            <input placeholder="Код агента" name="agent_code" id="agent_code_input"/><input type="submit" value="OK">
+            </form>
+          </div>
+    </div>
+
+
+    <div id="add-call-dialog" title="Добавить звонок">
+	<form>
+	<fieldset>
+        {% csrf_token %}
+		<label for="call-comment">Комментарий</label>
+		<textarea name="comment" cols="40" id="call-comment" rows="9" class="text ui-widget-content ui-corner-all"></textarea>
+        <input type="hidden" id="crm-id" value=""/>
+	</fieldset>
+	</form>
+</div>
+
+    <div id="get-new-customer-dialog" title="Получить клиента">
+        <div id="new-customer-data">
+
+        </div>
+        <form>
+            <fieldset>
+                {% csrf_token %}
+                <div>
+                    <label for="new-customer-call-comment">Комментарий к звонку</label>
+                    <textarea name="comment" cols="40" id="new-customer-call-comment" rows="9" class="text ui-widget-content ui-corner-all"></textarea>
+                </div>
+                <div>
+                    <label for="plannedcall-date-new-customer">Дата следующего звонка</label>
+                    <input type="text" class="datepicker" id="plannedcall-date-new-customer"/>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="add-link-request-dialog" title="Добавить заявку на закрепление">
+    <p>Заявка на закрепление счёта <span id="link-req-tip-mt4-id"></span></p>
+	<form>
+	<fieldset>
+        {% csrf_token %}
+		<label for="link-req-comment">Комментарий</label>
+		<textarea name="comment" cols="40" id="link-req-comment" rows="4" class="text ui-widget-content ui-corner-all"></textarea>
+        <input type="hidden" id="link-req-crm-id" value=""/>
+        <input type="hidden" id="link-req-mt4acc-django-id" value=""/>
+	</fieldset>
+	</form>
+    </div>
+
+    <div id="callinfo-dialog" title="История звонков">
+        
+    </div>
+
+    <div id="plannedcall-change-dialog" title="Дата следующего звонка">
+        <form>
+            {% csrf_token %}
+            <label for="plannedcall-date">Дата</label>
+            <input type="text" class="datepicker" id="plannedcall-date"/>
+            <input type="hidden" id="plannedcall-crm-id" value=""/>
+        </form>
+    </div>
+{% endblock %}

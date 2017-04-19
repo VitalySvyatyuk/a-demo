@@ -1,0 +1,61 @@
+{% load i18n %}
+
+<div class="row">
+  <div class="input-group col-sm-8">
+    <form ng-submit="filter()">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="{% trans "Search" %}" ng-model="filters.search">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button" ng-click="filter()"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-16">
+    <table class="table table-bordered table-hover table-sm">
+      <thead class="thead-default">
+        <tr>
+          <th class="text-md-center" sorter="user__gcrm_contact__name" objects="objects">{% trans "Contact" %}</th>
+          <th class="text-md-center" sorter="mt4_id" objects="objects">{% trans "Account" %}</th>
+          <th class="text-md-center">{% trans "Balance" %}</th>
+          <th class="text-md-center column-fixed" sorter="_group_as_char" objects="objects">{% trans "Account type" %}</th>
+          <th class="text-md-center column-fixed" sorter="creation_ts" objects="objects">{% trans "Creation time" %}</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>
+            <account-type-select-filter
+              model="filters.type"
+              on-change="filter()"
+              types-info="types">
+            </account-type-select-filter>
+          </th>
+          <th>
+            <daterangepicker
+              classes="'form-control-sm'"
+              start="filters.creation_ts_0"
+              end="filters.creation_ts_1"
+              on-change="filter()">
+            </daterangepicker>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="objects.count==0"><td colspan="5"><div class="text-md-center">{% trans "No items to display" %}</div></td></tr>
+        <tr ng-repeat="item in objects.items">
+          <td><a ui-sref="contact.feed({id: item.data.contact.id})" ng-bind="::item.data.contact.name"></a></td>
+          <td><a target="_blank" href="/my/office/accounts/[[::item.data.mt4_id]]/history/">[[::item.data.mt4_id]]</a></td>
+          <td class="text-md-center">[[::item.data.balance.display ]]</td>
+          <td class="text-md-center" title="[[::item.data.group_slug ]]">[[::item.data.group_name ]]</td>
+          <td class="text-md-center" title="[[::item.data.creation_ts|moment:'LLL']]">[[::item.data.creation_ts|moment:'calendar']]</td>
+        </tr>
+      </tbody>
+    </table>
+    <tablefooter objects="objects" class="buttons"></tablefooter>
+  </div>
+</div>

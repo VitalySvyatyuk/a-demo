@@ -1,0 +1,228 @@
+{% load staticfiles i18n symbol %}
+
+{#{% block title %}{% trans "Contract specifications" %} - {{ block.super }}{% endblock %}#}
+
+{% block scripts %}
+{#  {{ block.super }}#}
+  <script type="text/javascript">
+    jQuery.expr[":"].Contains = jQuery.expr.createPseudo(function(arg) {
+      return function( elem ) {
+        return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+      };
+    });
+
+    $(function () {
+      $(".tabs-content input.search").on("input", function(){
+        var that = $(this);
+        var p = that.closest("table");
+        p.find("tr.data:not(:Contains(" + that.val() + "))").hide();
+        p.find("tr.data:Contains(" + that.val() + ")").show();
+      });
+
+      var tabHeaders = $("[data-account]");
+      var accountTabs = $("[data-account-tab]");
+      var buttons = $("[data-spec]");
+      var tables = $("[data-spec-table]");
+      var pseudoOptions = $("[data-pseudo-select]");
+
+      function changeAccountTab(slug) {
+        tabHeaders.removeClass("active");
+        $("[data-account="+ slug +"]").addClass("active");
+        accountTabs.addClass("hide");
+        $("[data-account-tab="+ slug +"]").removeClass("hide")
+          .find(buttons).first().trigger("click"); //show first table in tab 
+      }
+
+      function changeTable(slug) {
+        buttons.removeClass("active");
+        $("[data-spec="+ slug +"]").addClass("active");
+        tables.addClass("hide");
+        $("[data-spec-table="+ slug +"]").removeClass("hide");
+      }
+
+      tabHeaders.on('click', function(event){
+        event.preventDefault();
+        changeAccountTab(this.dataset.account);
+      });
+
+      buttons.on("click", function(){
+        changeTable(this.dataset.spec);
+      });
+      
+      pseudoOptions.on("click", function(e) {
+        e.stopImmediatePropagation();
+        
+        $this = $(this);
+        pseudoOptions.removeClass('active');
+        $this.addClass('active');
+
+        //change selected-option
+        var copyContent = $this.html();
+        $this.parent().siblings(".selected-option").html(copyContent);
+
+        //close options after selection is done  
+        $this.parent().addClass('hide');
+        setTimeout(function(){
+          $this.parent().removeClass('hide')
+        }, 300);
+
+        //change target of parent button
+        $this.closest(buttons).get(0)
+          .dataset.spec = this.dataset.pseudoSelect;
+        
+        changeTable(this.dataset.pseudoSelect);
+      });
+
+      changeAccountTab("{{ acc_type.slug }}");
+    })
+
+  </script>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <p class="h1 offset-bottom-40">{% trans "Contract specifications" %}
+    <a href="{% url 'account_app' %}create" class="button medium right">{% trans "Open account" %}</a>
+  </p>
+</div>
+
+<div class="row trading-acc-specs">
+  <dl class="tabs">
+    <dd data-account="realmicro">
+      <a href="#">
+        <span class="icon icon-account-type small micro"></span>
+        <span class="desc"><span class="title">Micro</span></span>
+      </a>
+    </dd>
+    <dd data-account="realstandard">
+      <a href="#">
+        <span class="icon icon-account-type small standard"></span>
+        <span class="desc"><span class="title">Standard</span></span>
+      </a>
+    </dd>
+    <dd data-account="ecn">
+      <a href="#">
+        <span class="icon icon-account-type small ecn"></span>
+        <span class="desc"><span class="title">ECN</span></span>
+      </a>
+    </dd>
+    <dd data-account="swapfree">
+      <a href="#">
+        <span class="icon icon-account-type small sf"></span>
+        <span class="desc"><span class="title">SwapFree</span></span>
+      </a>
+    </dd>
+    <dd data-account="real_options_us">
+      <a href="#">
+        <span class="icon icon-account-type small options"></span>
+        <span class="desc"><span class="title">Options</span></span>
+      </a>
+    </dd>
+  </dl>
+
+  <div class="tabs-content">
+    {% for acc_type, acc_data in data.items %}
+      <div class="hide tab" data-account-tab="{{ acc_type }}">
+      
+      {% if acc_type == "real_options_us" %}
+        {% for tab in acc_data %}
+          <div class="specs-button" data-spec="{{ tab|slugify }}">
+            <span class="spec-type-name">{{ tab }}</span>
+          </div>
+        {% endfor %}
+        
+        {% for tab, rows in acc_data.items %}
+          <table class="spec-table offset-top-40 hide" data-spec-table="{{ tab|slugify }}">
+            <thead>
+              <tr>
+                {% for cell in rows.columns %}
+                  {% if forloop.first %}
+                    <td>
+                      <input type="search" class="search" placeholder="{% trans 'Find...' %}">
+                    </td>
+                  {% else %}
+                    <td>{{ cell }}</td>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in rows.data %}
+                <tr class="data">
+                  {% for cell in row %}
+                    {% if forloop.first %}
+                      <td>{{ cell|symbol_link }}</td>
+                    {% else %}
+                      <td>{{ cell }}</td>
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endfor %}
+
+      {% else %}
+
+        {% for tab, tab_data in acc_data.items %}
+          <div class="specs-button" data-spec="{{ tab_data.items.0.0|slugify }}">
+            <span class="spec-type-name">{{ tab }}</span>
+            {% if tab_data|length > 1 %}
+              <div class="pseudo-select">
+                <span class="selected-option">{{ tab_data.items.0.0 }}</span>
+                <span class="arrows arrow-down gray"></span>
+                <div class="options-container">
+                  {% for group in tab_data %}
+                    <span class="pseudo-option" data-pseudo-select="{{ group|slugify }}">
+                    {{ group }}
+                    {% group_description group as group_description %}
+                    {% if group_description %}
+                      <span class="select-annotation"><span class="third-tip">{{ group_description }}</span></span>
+                    {% endif %}
+                    </span>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+        
+        {% for tab, tab_data in acc_data.items %}
+            {% for group, rows in tab_data.items %}
+              <table class="spec-table offset-top-40 hide" data-spec-table="{{ group|slugify }}">
+                <thead>
+                  <tr>
+                    {% for cell in rows.columns %}
+                      {% if forloop.first %}
+                        <td>
+                          <input type="search" class="search" placeholder="{% trans 'Find...' %}">
+                        </td>
+                      {% else %}
+                        <td>{{ cell }}</td>
+                      {% endif %}
+                    {% endfor %}
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for row in rows.data %}
+                    <tr class="data">
+                      {% for cell in row %}
+                        {% if forloop.first %}
+                          <td>{{ cell|symbol_link }}</td>
+                        {% else %}
+                          <td>{{ cell }}</td>
+                        {% endif %}
+                      {% endfor %}
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            {% endfor%}
+        {% endfor %}
+
+      {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

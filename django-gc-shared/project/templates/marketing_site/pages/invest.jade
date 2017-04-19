@@ -1,0 +1,185 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | ARUM.Invest {{ block.super }}
+
+block scripts
+  script(src='https://ramm.arumcapital.eu/scripts/lib/highstock-improved.js')
+  script(src='https://ramm.arumcapital.eu/scripts/promo/arum/widget.js')
+
+block content
+  .page_head(style="background-image: url({% static 'img/marketing-site/bg/bg-invest-header.jpg' %})")
+    .container
+      .row
+        .col-xs-12.white-bc
+          - breadcrumbs
+          h1.page_head__title.page_head__title--white
+            img.page_head__title__img.invest-logo(src="{% static 'img/marketing-site/etc/techs_logos/logo--invest.png' %}")
+            | ARUM.Invest
+
+  .invest-page
+    .container
+      h2.page_title
+        - trans "Top 5 strategies:"
+      div.strategies#ramm-top_five_strategies-widget
+      .invest-page-under-table
+        .row
+          .col-md-3
+            a.arrow_link(href="https://ramm.arumcapital.eu/rating", style="border-bottom:1px solid #1f5060;", target="_blank")
+              - trans "All Strategies"
+          .col-md-9
+            span.strategies__ps
+              - trans 'Risk warning: the results of previous trading operations do not guarantee the same results in the future.'
+      .invest-page-ramm
+        .row
+          .col-md-10
+            h2.page_title
+              - trans "ARUM.Invest - everything from the investment world in one unique service"
+            p
+              - trans "ARUM.Invest Platform operates on RAMM technology (Risk Allocation & Money Management) and is the only system, where both traders and investors can operate and have complete control over the acceptable level of risk, and at the same time, make their investments as efficient as possible. Just specify your level of acceptable losses and you can be sure that the funds you invested will be under full control and make the most of the market opportunities."
+          .col-md-2
+            img(src="{% static 'img/marketing-site/pictures/img-invest-page-ramm.jpg' %}", alt="ramm")
+  .invest-page-ramm-advantages
+    .container
+      h2.page_title
+        - trans "ARUM.Invest accounts are a unique solution for those, who want to have all available opportunities for efficient investments in a single service:"
+      .row
+        .col-md-4
+          .invest-page-ramm-advantages-element
+            p.title
+              - trans "Complete control over your account"
+            p
+              - trans "The funds are kept on your account and remain under your full control. You can stop your trading operations at any moment and withdraw your investments from trading."
+        .col-md-4
+          .invest-page-ramm-advantages-element
+            p.title
+              - trans "Risk level limitations"
+            p
+              - trans "Specify the amount of acceptable losses for a week and you can be sure that the trader will not exceed the level you specified."
+        .col-md-4
+          .invest-page-ramm-advantages-element
+            p.title
+              - trans "The system is easy to work with"
+            p
+              - trans "The functionality integrated in the system will allow you to focus on trading without paying attention to complicated calculations. The system will determine the required volume for each trading operation by itself according to your preferences."
+      .row
+        .col-md-4
+          .invest-page-ramm-advantages-element
+            p.title
+              - trans "Long-term efficiency"
+            p
+              - trans "Maintain the efficiency of each strategy for a long period of time by managing your risks properly."
+        .col-md-4
+          .invest-page-ramm-advantages-element
+            p.title
+              - trans "Invest into strategies"
+            p
+              - trans "Invest your funds into an effective strategy, keeping complete control over them and defining the level of acceptable risks on your own."
+        .col-md-4
+          .invest-page-ramm-advantages-element
+            p.title
+              - trans "Attract investors"
+            p
+              - trans "Seek a higher amount of weekly payments from your investors by showing efficient trading on the market and attracting new investors."
+  .invest-page-pamm
+    .container
+      h2.page_title
+              - trans "RAMM combines the best features of signal services and PAMM:"
+      .table-responsive.adaptive-table-wrapper
+        table.table.adaptive-table
+          tr
+            th
+            th
+              - trans "RAMM"
+            th
+              - trans "Signal services"
+            th
+              img(src="{% static 'img/marketing-site/etc/logo-invest.png' %}", alt="arum capital invest").comparison-invest-img
+          tr
+            td
+              - trans "A strategy is copied in full, execution prices are the same for the trader and all their investors "
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+            td
+              img.invest-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+          tr
+            td
+              - trans "An investor’s exit from a strategy is done instantaneously and does not influence other investors"
+            td
+              img.invest-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+          tr
+            td
+              - trans "The accuracy of copying does not depend on the amount of investment"
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+            td
+              img.invest-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+          tr
+            td
+              - trans "Risk control is embedded in the trading and does not allow the trader to exceed the weekly loss limits"
+            td
+              img.invest-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+            td
+              img.invest-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+          tr
+            td
+              - trans "Fair commission structure — investors pay only when they get profit"
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+            td
+              img.invest-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+          tr
+            td
+              - trans "Individual settings of investment parameters"
+            td
+              img.invest-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+          tr
+            td
+              - trans "The service is legal in regulated jurisdictions"
+            td
+              img.invest-cross(src="{% static 'img/marketing-site/icons/icon-comparison-cross-retina.png' %}", alt="no")
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+            td
+              img.invest-checkmark(src="{% static 'img/marketing-site/icons/icon-comparison-checkmark-retina.png' %}", alt="yes")
+      .strategies__buttons_box
+        {% if LANGUAGE_CODE == 'ru' %}
+        div.risk-hidden-ru.mobile-view_inside-link-bottom-indent
+          a.button.button--big-on-mobiles.strategies__buttons_box__button.strategies__buttons_box__left_button(href="https://ramm.arumcapital.eu/help/article/investing-into-strategies", target="_blank")
+            span.button__text
+              - trans 'Invest funds'
+        {% else %}
+        div.risk-hidden-en.mobile-view_inside-link-bottom-indent
+          a.button.button--big-on-mobiles.strategies__buttons_box__button.strategies__buttons_box__left_button(href="https://ramm.arumcapital.eu/help/article/investing-into-strategies", target="_blank")
+            span.button__text
+              - trans 'Invest funds'
+        {% endif %}
+        {% if LANGUAGE_CODE == 'ru' %}
+        div.risk-hidden-ru.mobile-view_inside-link-bottom-indent
+          a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href="https://ramm.arumcapital.eu/help/article/creating-strategies", target="_blank")
+            span.button__text
+              - trans 'Create strategy'
+        {% else %}
+        div.risk-hidden-en.mobile-view_inside-link-bottom-indent
+          a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href="https://ramm.arumcapital.eu/help/article/creating-strategies", target="_blank")
+            span.button__text
+              - trans 'Create strategy'
+        {% endif %}

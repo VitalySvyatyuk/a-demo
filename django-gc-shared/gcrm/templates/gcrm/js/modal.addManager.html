@@ -1,0 +1,77 @@
+{% load i18n %}
+
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h3 class="modal-title">
+    <span >{% trans "Add new manager" %}</span>
+  </h3>
+</div>
+
+<div class="modal-body" >
+
+  <div class="row">
+    <div class="col-sm-2 text-md-center"><h3>1</h3></div>
+    <div class="col-sm-14">
+      <p>{% trans "Register manager on site" %}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2 text-md-center"><h3>2</h3></div>
+    <div class="col-sm-14">
+      <p>{% trans "Enter email or phone number and press Search" %}</p>
+      <p>
+        <form ng-submit="searchByEmail(searchString)">
+          <div class="input-group">
+            <input type="text" class="form-control" ng-model="searchString" placeholder="{% trans "Email or phone number" %}">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
+            </span>
+          </div>
+        </form>
+      </p>
+    </div>
+  </div>
+  <div class="row" ng-if="managers.length">
+    <div class="col-sm-2 text-md-center"><h3>3</h3></div>
+    <div class="col-sm-14">
+      <p>{% trans "Select manager" %}</p>
+      <p>
+        <ul>
+          <li ng-repeat="item in managers">
+            <span ng-switch="item == selectedManager">
+            <a ng-switch-when="true" ng-click="select(item)"><b>[[item.name]]</b></a>
+            <a ng-switch-default ng-click="select(item)">[[item.name]]</a>
+            </span>
+            <br>
+          </li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  <div class="row" ng-if="managers.length && selectedManager">
+    <div class="col-sm-2 text-md-center"><h3>4</h3></div>
+    <div class="col-sm-14">
+      <p>{% trans "Select office" %}</p>
+      <p>
+        <form ng-submit="setAsManager(selectedOffice)">
+          <div class="row">
+            <div class="col-sm-16">
+              <select id="selectOffices"
+                    class="form-control form-control-sm"
+                    ng-options="item as item.name for item in offices"
+                    ng-model="$parent.selectedOffice">
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-16">
+              <button type="submit" class="btn btn-success btn-block">{% trans "Save"%}</button>
+            </div>
+          </div>
+        </form>
+      </p>
+    </div>
+  </div>
+</div>

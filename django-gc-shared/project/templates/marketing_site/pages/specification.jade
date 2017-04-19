@@ -1,0 +1,57 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {% trans "Contract specification" %} {{ block.super }}
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title
+            - trans "Contract specification"
+
+
+  .specification
+    .container
+        .benefits
+            .tabs__box.benefits__tabs_box
+              for cat in categories
+                a.benefits__tabs_box__button.tabs__button(href="{% url 'specifications' cat.slug %}", class=('state-active-tab' if cat == category else ''))
+                  .tabs__button__text_box
+                    span.tabs__button__text= cat.name
+
+              .specification-search
+                form(action=".", method="GET")
+                  input(type="text", name="search", value=request.GET.get('search'), placeholder="{% trans 'Search by instrument' %}")
+                  input(type="submit")
+            span.benefits__info.js-tab-content.state-visible
+              .table-responsive.adaptive-table-wrapper
+                table.table.adaptive-table
+                  tbody
+                    tr
+                      td.strategies__cell__title
+                        - trans "Instruments"
+                      td
+                        span.strategies__cell__title.title-border.js-tooltip(title="{% trans 'Currency is a trading tool currency that is used for recording the transactions.' %}")
+                          - trans "Currency"
+                      td
+                        span.strategies__cell__title.title-border.js-tooltip(title="{% trans 'Minimum size contract is a minimum size contract of a trading tool' %}")
+                          - trans "Minimum contract"
+                      td
+                        span.strategies__cell__title.title-border.js-tooltip(title="{% trans 'SWAP Short is the cost for rolling over a position to the next day against the minimum size contract in case where a long Buy position on an instrument is kept' %}")
+                          | SWAP Short
+                      td
+                        span.strategies__cell__title.title-border.js-tooltip(title="{% trans 'SWAP Long is the cost for rolling over a position to the next day against the minimum size contract in case where a short Sell position on an instrument is kept' %}")
+                          | SWAP Long
+                    for instrument in instruments
+                      tr
+                        td
+                          a(href="{% url 'specification_details' instrument.pk %}")= instrument.instrument
+                        td= instrument.currency
+                        td= instrument.min_order_size
+                        td= instrument.swap_short
+                        td= instrument.swap_long

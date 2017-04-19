@@ -1,0 +1,29 @@
+{% load staticfiles inbox i18n %}
+<!--Footer-->
+<footer>
+  <div class="row offset-top-35 offset-bottom-35 footer">
+      <!-- <ul class="menu">
+        <li><a href="inout_conditions">Ввод / вывод</a></li>
+        <li><a href="trading_conditions">Торговые условия</a></li>
+        <li><a href="risks">Предупреждение о рисках</a></li>
+      </ul> -->
+      <div class="columns small-6">
+        Justbroker UK Ltd., 10154495, 21 Sage Close Biggleswade, Beds, United Kingdom
+        <br>
+        <br>
+        Just Broker LTD. 23310 IBC, Suite 305, Griffith Corporate Centre, Beachmont Kingstown St. Vincent and Grenadines
+      </div>
+      <div class="columns small-5">
+        {% if LANGUAGE_CODE == 'ru' %}
+          <a href="tel:88001002915">8-800-100-29-15</a><br>
+          <a href="mailto:support@justbroker.pro">support@justbroker.pro</a>
+        {% else %}
+          <a href="mailto:support@justbroker.co">support@justbroker.co</a>
+        {% endif %}
+        <br>
+        <br>
+        {% trans "Collaboration and partnership" %} <br><a href="mailto:info@justbroker.pro">info@justbroker.pro</a>
+        <br>
+      </div>
+  </div>
+</footer>

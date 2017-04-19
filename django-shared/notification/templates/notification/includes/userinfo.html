@@ -1,0 +1,7 @@
+{% load i18n %}{% with user.profile as profile %}
+{% trans 'User name' %}: {{profile}}
+Email: {{user.email}}
+{% trans 'Mobile phone' %}: {{profile.phone_mobile}}
+{% trans 'Country' %}: {{profile.country}}
+{% trans 'City' %}: {{profile.city}}
+{% endwith %}

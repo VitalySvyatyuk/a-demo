@@ -1,0 +1,72 @@
+{% extends "js/my/profile_steps.html" %}
+{% load i18n app_tags %}
+
+{% block steps %}
+  {% with category='info' %}
+      {{ block.super }}
+  {% endwith %}
+{% endblock %}
+
+{% block tabscontent %}
+<div class="active private-data steps">
+  <div class="third-light-wrapper">
+    <div class="small-8" ng-if="user.profile.email_verified">
+      {% trans "You have completed fast registration and can <a href='[[::BASE_URL]]create'>open a Demo Account</a>. In order to open Live Accounts you are kindly requested to complete registration and upload the documents." %}
+    </div>
+    <div class="attention-confirm">
+      <p ng-if="!user.profile.email_verified" style="font-size: 20px; color: #9a161a">
+        {% trans "Attention! Before you proceed, you need to confirm your e-mail. For you sent a message with a link to activate." %}
+      </p>
+    </div>
+  </div>
+  <form ng-submit="registrationSave()">
+    {% include "js/my/_profile_info.html" %}
+    <div class="profile-info">
+
+<div class="error ng-binding ng-scope" style="padding-left: 35px; padding-top: 10px; padding-bottom: 20px;">      {% trans "* Mandatory fields" %}     </div>
+
+
+
+        <div class="small-8 columns">
+          <div class="third-light-wrapper">
+            <div class="inverted-checkbox">
+                <div class="errors hide"><span></span></div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="accept_risk" name="agreements" required>
+                    <label for="accept_risk"></label>
+                    <label for="accept_risk">
+                        {% trans "I have previous work experience or relevant qualifications that help me understand the financial products and the risk involved. Forex and CFDs are acceptable for my risk appetite." %}
+                        </label>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="clearfix">
+        <div class="small-8 columns">
+          <div class="third-light-wrapper">
+            <div class="inverted-checkbox">
+                <div class="errors hide" id="agreements"><span></span></div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" name="agreements" id="reg_agreements" required>
+                    <label for="reg_agreements"></label>
+                    <label for="reg_agreements">
+                        {% trans "I hereby declare that I have carefully read and understood" %} <a href="{{ 'client_agreement'|agreement_url }}" target="_blank">{{ 'client_agreement'|agreement_label }}</a> {% trans "and" context "super-and" %} <a href="{% url 'legal_documentation' %}" target="_blank">{% trans "Legal Documentation" %}</a> {% trans "with which I fully agree." %}
+                        </label>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="third-light-wrapper bottom">
+      <div class="columns small-12" ng-if="!user.profile.status_info.sended_docs && user.profile.email_verified">
+        <button type="submit" class="button medium" ng-disabled="globalLoading || user.profile.status_info.sended_docs || !user.profile.email_verified">{% trans "Complete registration" %}</button>
+        <span ng-if="!user.profile.email_verified" class="form-error reg-error">{% trans "Please confirm Email" %}</span>
+        <span ng-if="errors" class="form-error reg-error">{% trans "Please correct the errors above." %}</span>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

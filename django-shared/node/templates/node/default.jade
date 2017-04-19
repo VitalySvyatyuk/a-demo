@@ -1,0 +1,7 @@
+extends marketing_site/layout
+
+block title
+  | {{node.title|lower|capfirst}} {{ block.super }}
+
+block content
+  .container {{node.body|safe}}

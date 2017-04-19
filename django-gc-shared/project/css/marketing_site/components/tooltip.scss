@@ -1,0 +1,46 @@
+//to create a tooltip make an element with .tooltip.js-tooltip(title="Tooltip content")
+
+.tooltip{
+	color: $groom;
+	border-bottom: 1px dashed #a5b9bf;
+}
+
+.tooltipster-sidetip .tooltipster-box {
+	border: none;
+	max-width: 200px;
+	background-color: rgba($groom, .95);
+}
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border {
+	border-bottom-color: transparent;
+}
+
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border {
+	border-left-color: transparent;
+}
+
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border {
+	border-right-color: transparent;
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border {
+	border-top-color: transparent;
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
+	border-bottom-color: rgba($groom, 1);
+}
+
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background {
+	border-left-color: rgba($groom, 1);
+}
+
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background {
+	border-right-color: rgba($groom, 1);
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background {
+	border-top-color: rgba($groom, 1);
+}
+.tooltipster-sidetip .tooltipster-content{
+	font-size: 13px;
+}

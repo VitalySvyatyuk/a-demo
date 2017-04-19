@@ -1,0 +1,28 @@
+{% load app_tags i18n %}
+
+<div id="recommend_form">
+    <h1>{% trans "Recommend us to a friend" %}</h1>
+    <div class="container">
+        <p>{% trans "We justify your expectations" %}</p>
+        <p>{% trans "Tell friends about us!" %}</p>
+
+        <form action="{% url "friend_recommend" %}" method="POST">
+            {% include 'includes/form.html' %}
+            {% gcbutton "submit" _("Recommend") "green" %}
+        </form>
+        {% if not has_ib_account %}
+        	<p></p>
+        	<p>{% trans "We pay for your reference. To get your payments become our Partner" %}</p>
+        	{% morelink "/office/accounts/create/real_ib/" _("Become a partner")  "green" %}
+        {% endif %}
+    </div>
+</div>
+
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.form.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#recommend_form form').ajaxForm(function (data) {
+            $('#recommend_form').html(data);
+        })
+    });
+</script>

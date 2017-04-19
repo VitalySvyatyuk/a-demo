@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-01 17:25+0400\n"
+"PO-Revision-Date: 2013-12-10 21:20+0400\n"
+"Last-Translator:   <i.tsuvarev@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.7.2\n"
+
+msgid "alias"
+msgstr "название реквизита"
+
+msgid ""
+"Give these payment details a name, for example \"Forex wallet\". It will "
+"help you find them in forms more easily"
+msgstr "Назовите реквизит для простоты поиска, например \"Кошелек для Forex\""
+
+msgid "purse"
+msgstr "Кошелек"
+
+msgid "user"
+msgstr "пользователь"
+
+msgid "payment system"
+msgstr "платежная система"
+
+msgid "is the data valid?"
+msgstr "данные верны?"
+
+msgid "Is deleted"
+msgstr "удален"
+
+msgid "Users do not see deleted requisits"
+msgstr "Пользователи не видят удаленные реквизиты"
+
+msgid "manager comment"
+msgstr "комментарий менеджера"
+
+msgid "If you reject a requisit, leave a comment here"
+msgstr "Если вы отклоните реквизит, опишите, почему"
+
+msgid "details"
+msgstr "детали"
+
+msgid "created at"
+msgstr "дата создания"
+
+msgid "previous version of requisit"
+msgstr "заменяет реквизит"
+
+msgid "user requisit"
+msgstr "пользовательский реквизит"
+
+msgid "user requisits"
+msgstr "пользовательские реквизиты"
+
+msgid "Bank account"
+msgstr "Номер расчетного счета"
+
+msgid "Name"
+msgstr "Название реквизита"
+
+msgid "TIN"
+msgstr "ИНН"
+
+msgid "Bank"
+msgstr "Банк"
+
+msgid "Credit card number"
+msgstr "Номер карты"
+
+msgid "Correspondent"
+msgstr "Банк-корреспондент"
+
+msgid "BIC"
+msgstr "БИК"
+
+msgid "Payment details"
+msgstr "Назначение платежа"
+
+msgid "Sender"
+msgstr "Отправитель"
+
+msgid "Country"
+msgstr "Страна"
+
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Bank's SWIFT code"
+msgstr "SWIFT-код банка"
+
+msgid "Delete requisit"
+msgstr "Удалить реквизит"
+
+#, python-format
+msgid ""
+"\n"
+"        Are you sure you want to delete this <strong>%(payment_system)s</"
+"strong> requisit?\n"
+"        "
+msgstr ""
+"\n"
+"Вы уверены что хотите удалить реквизит <strong>%(payment_system)s</strong>?"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "Go back"
+msgstr "Вернуться"
+
+msgid "No, get me back!"
+msgstr "Нет, вернуться назад"
+
+msgid "My requisits"
+msgstr "Мои реквизиты"
+
+msgid ""
+"\n"
+"                In this section you will find information on your payment "
+"details.\n"
+"                You can add new payment details to use them to deposit and "
+"withdraw funds.\n"
+"            "
+msgstr ""
+"\n"
+"В этом разделе находится информация о Ваших реквизитах. Вы можете добавить "
+"реквизиты, которые необходимы для ввода вывода средств."
+
+msgid "Add requisits"
+msgstr "Добавить реквизиты"
+
+msgid "Choose a payment system"
+msgstr "Выберите платежную систему"
+
+msgid "Add requsit"
+msgstr "Добавить реквизит"
+
+msgid "Available user requisits"
+msgstr "Ваши реквизиты"
+
+msgid "Requisit data"
+msgstr "Данные реквизиты"
+
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Purse"
+msgstr "кошелек"
+
+msgid "Change"
+msgstr "Изменить"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "You don't have any requisits"
+msgstr "У вас нет реквизитов"
+
+msgid "Are you sure you want to delete this requisit?"
+msgstr "Вы уверены что хотите удалить этот реквизит?"
+
+msgid "Change requisit"
+msgstr "Изменить"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Cancel"
+msgstr "Отменить"
+
+#~ msgid "Invalid payment system"
+#~ msgstr "Неверная платежная система"
+
+#~ msgid "Added requisit %(requisit)s."
+#~ msgstr "Добавлен реквизит %(requisit)s."
+
+#~ msgid "Requisit %s has been changed"
+#~ msgstr "Реквизит %s был успешно изменен"
+
+#~ msgid "Requisit %s deleted"
+#~ msgstr "Реквизит %s удален"
+
+#~ msgid "Click to see the details"
+#~ msgstr "Нажмите для просмотра деталей"
+
+#~ msgid "Requisit not validated"
+#~ msgstr "Реквизит еще не проверен"
+
+#~ msgid ""
+#~ "The account details you selected do not conform to the following "
+#~ "requirement:<ul><li>The account number should consist of 20 digits</li></"
+#~ "ul>"
+#~ msgstr ""
+#~ "Выбранный вами реквизит не соответствует требованию: \n"
+#~ "<ul><li>Номер счета должен состоять из 20 цифр</li></ul>"
+
+#~ msgid ""
+#~ "The account details you selected do not conform to the following "
+#~ "requirement:<ul><li>Name and surname should consist only of Cyrillic "
+#~ "letters</li></ul>"
+#~ msgstr ""
+#~ "Выбранный вами реквизит не соответствует требованию: \n"
+#~ "<ul><li>ФИО должно состоять только из букв на кириллице</li></ul>"
+
+#~ msgid ""
+#~ "The account details you selected do not conform to the following "
+#~ "requirements:<ul><li>The account number should consist of 20 digits</"
+#~ "li><li>Name and surname should consist only of Cyrillic letters</li></ul>"
+#~ msgstr ""
+#~ "Выбранный вами реквизит не соответствует требованиям: \n"
+#~ "<ul><li>Номер счета должен состоять из 20 цифр</li>\n"
+#~ "<li>ФИО должно состоять только из букв на кириллице</li></ul>"
+
+#~ msgid ""
+#~ "Please enter new account details in the <a href='%s'>Account details</a> "
+#~ "section.</div>"
+#~ msgstr ""
+#~ "Создайте новый реквизит в разделе <a href='%s'>Мои реквизиты</a></div>"
+
+#~ msgid "Phone"
+#~ msgstr "Телефон"
+
+#~ msgid "Requisit confirmation"
+#~ msgstr "Проверка реквизита"
+
+#~ msgid "Confirm"
+#~ msgstr "Проверить"
+
+#~ msgid ""
+#~ "\n"
+#~ "        After filling the payment requisits, you will be able to withdraw "
+#~ "money\n"
+#~ "        from your accounts. For that to be possible, the requsits should "
+#~ "be validated\n"
+#~ "        by our managers.\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "После заполнения платежных реквизитов, вы сможете выводить деньги с ваших "
+#~ "счетов."
+
+#~ msgid "Requisit status"
+#~ msgstr "Статус реквизита"
+
+#~ msgid "Requisit validated"
+#~ msgstr "Реквизит проверен"
+
+#~ msgid "Requisit %s renamed"
+#~ msgstr "Реквизит %s успешно переименован"
+
+#~ msgid "Name details"
+#~ msgstr "Назвать"
+
+#~ msgid "Rename"
+#~ msgstr "Переименовать"
+
+#~ msgid "Empty"
+#~ msgstr "&mdash;"
+
+#~ msgid ""
+#~ "\n"
+#~ "Congratulations! Your payment requisit %(requisit)s has been validated "
+#~ "in\n"
+#~ "Grandcapital LTD.\n"
+#~ "You can withdraw money from your trading accounts from now on through "
+#~ "it.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Поздравляем! Ваш платежный реквизит %(requisit)s был проверен.\n"
+#~ "Теперь вы можете выводить через него средства.\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Sorry, but your payment requisit %(requisit)s has not been validated.\n"
+#~ "\n"
+#~ "Manager comment: %(comment)s\n"
+#~ msgstr ""
+#~ "\n"
+#~ "К сожалению, ваш платежный реквизит %(requisit)s был отклонен.\n"
+#~ "Коментарий менеджера: %(comment)s\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Requisit %(requisit)s validated.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Реквизит %(requisit)s проверен.\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Requisit %(requisit)s not validated.\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Реквизит %(requisit)s еще не проверен.\n"

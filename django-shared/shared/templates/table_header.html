@@ -1,0 +1,6 @@
+
+{% for header in headers %}<th{% autoescape off %} {{ header.class_attr }}{% endautoescape %}>
+  {% if header.sortable %}<a href="{{ header.url|escape }}" id='{{forloop.counter0}}' class="tooltip glossarylink">{% endif %}
+  {{ header.text }}
+  {% if header.sortable %}</a>{% endif %}
+</th>{% endfor %}

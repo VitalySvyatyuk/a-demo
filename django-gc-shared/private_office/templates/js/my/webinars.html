@@ -1,0 +1,52 @@
+{% load staticfiles inbox i18n %}
+<div class="my-webinars small-wrapper">
+  <div class="clearfix offset-bottom-30">
+    <h1 class="left">{% trans "My webinars" %}</h1>
+    {# <a href="{% url "webinar_descriptions" %}" class="button second medium right">{% trans "Webinars calendar" %}</a> #}
+  </div>
+
+  <table class="table-big-green offset-bottom-30">
+    <thead>
+        <tr>
+            <td>{% trans "Starts at" %}</td>
+            <td>{% trans "Theme" %}</td>
+            <td>{% trans "Category" %}</td>
+            <td>{% trans "Status" %}</td>
+        </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="reg in registrations.items">
+        <td title="[[::reg.starts_at|momentHumanize]]">[[::reg.starts_at|momentFromNow]]</td>
+        <td>[[::reg.name]]</td>
+        <td>[[::reg.category_display]]</td>
+        <td ng-switch on="reg.status">
+          <a ng-switch-when="early" href="[[::reg.link_to_room]]">
+            {% trans "Starts soon" %}
+          </a>
+          <a ng-switch-when="in_time" href="[[::reg.link_to_room]]">
+            {% trans "Has been started" %}
+          </a>
+          <a ng-switch-when="recorded" href="[[::reg.record]]">
+            {% trans "See webinar record" %}
+          </a>
+          <div ng-switch-when="late">
+            {% trans "Ended" %}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="newsfeed-pagination gray-pagination">
+    <div class="small-4 medium-4 large-4 column">
+      <paginator object="registrations" class="left" />
+    </div>
+    <div class="small-4 medium-4 large-4 column text-center">
+      {# <a href="{% url "webinar_descriptions" %}" class="button medium">{% trans "Webinars calendar" %}</a> #}
+    </div>
+    <div class="small-4 medium-4 large-4 column">
+      <per-page object="registrations" class="right">{% trans "Per page" %}</per-page>
+    </div>
+  </div>
+
+</div>

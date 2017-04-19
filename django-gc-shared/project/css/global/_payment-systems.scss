@@ -1,0 +1,133 @@
+.small-payment-icon {
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+  height: 40px;
+  overflow: hidden;
+  vertical-align: top;
+  width: 70px;
+  background-size: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &:hover, &:focus, &:active{
+    border-color: $gc-third-color;
+  }
+
+  @each $sprite in $inout-names {
+    &.#{ $sprite } {
+      background-image: url("../img/for-sprites/in-out/#{ $sprite }#{ $inout-extname }");
+    }
+  }
+  &.paymentasia {
+    @extend .unionpay;
+  }
+  &.cards_withdrawal_unionpay {
+    @extend .unionpay;
+  }
+  &.orangepay {
+    @extend .webmoney;
+  }
+  &.onlinedengi_mobile, &.mixplat {
+    @extend .accentpay;
+  }
+  & {
+    @extend .visa;
+  }
+  &.monetaru_moneymailru {
+    background-color: #168de2;
+  }
+  &.payco {
+    background-color: #1985C8;
+  }
+}
+
+@mixin big-payments-sprite($payments-width, $payments-y, $payments-y-hover){
+  background-position: center $payments-y;
+  width: $payments-width;
+  &:hover, &:active, &:focus{
+    background-position: center $payments-y-hover;
+  }
+}
+
+.big-payment-icon{
+  background: url(../img/payments.png) no-repeat;
+  height: 45px;
+
+  &.visa{
+    @include big-payments-sprite(53px, 0, -45px);
+  }
+  &.mastercard{
+    @include big-payments-sprite(55px, -90px, -135px);
+  }
+  &.yandex{
+    @include big-payments-sprite(74px, -180px, -225px);
+  }
+  &.webmoney{
+    @include big-payments-sprite(44px, -270px, -315px);
+  }
+  &.qiwi{
+    @include big-payments-sprite(27px, -360px, -405px);
+  }
+  &.wupay{
+    @include big-payments-sprite(68px, -450px, -495px);
+  }
+  &.elexnet{
+    @include big-payments-sprite(47px, -540px, -585px);
+  }
+  &.handybank{
+    @include big-payments-sprite(129px, -630px, -675px);
+  }
+  &.rbk{
+    @include big-payments-sprite(57px, -720px, -765px);
+  }
+  &.geotrust{
+    @include big-payments-sprite(101px, -810px, -855px);
+  }
+  &.skrill{
+    @include big-payments-sprite(56px, -900px, -945px);
+  }
+  &.perfect-money{
+    @include big-payments-sprite(61px, -990px, -1035px);
+  }
+  &.liqpay{
+    @include big-payments-sprite(77px, -1080px, -1125px);
+  }
+  &.okpay{
+    @include big-payments-sprite(68px, -1170px, -1215px);
+  }
+  &.unionpay{
+    @include big-payments-sprite(52px, -1260px, -1305px);
+  }
+  &.fastpost{
+    @include big-payments-sprite(117px, -1350px, -1395px);
+  }
+  /*mobile*/
+  &.monetaru_mobile{
+    @include big-payments-sprite(70px, -1440px, -1485px);
+  }
+  /*online banks*/
+  &.monetaru_alfaclick{
+  @include big-payments-sprite(103px, -1620px, -1665px);
+  }
+  &.monetaru_sberbank{
+    @include big-payments-sprite(92px, -1710px, -1755px);
+  }
+  &.monetaru_qbank{
+    @include big-payments-sprite(79px, -1890px, -1935px);
+  }
+  &.monetaru_monetaru{
+    @include big-payments-sprite(93px, -1800px, -1845px);
+  }
+  &.monetaru_moneymailru{
+    @include big-payments-sprite(112px, -1530px, -1575px);
+  }
+  &.neteller{
+    @include big-payments-sprite(86px, -1980px, -2025px);
+  }
+  &.fasapay{
+    @include big-payments-sprite(110px, -2070px, -2115px);
+  }
+  &.bankidr{
+    @include big-payments-sprite(110px, -2529px, -2575px);
+  }
+}

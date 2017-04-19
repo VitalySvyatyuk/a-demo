@@ -1,0 +1,21 @@
+{% block doctype %}<!DOCTYPE html>{% endblock %}
+
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    {% block css %}{% endblock css %}
+    {% block js %}
+          <script type="text/javascript" src="/my/jsi18n/"></script> {# Hack: using /my/ here to not trigger language middleware #}
+    {% endblock js %}
+    {% block extrahead %}
+    {% endblock %}
+    <title>{% block title %}Arum Capital{% endblock %}</title>
+  </head>
+
+  <body>
+    {% block external_analytics %}
+    {% endblock %}
+    <div id="main">{% block main %}{% endblock %}</div>
+
+  </body>
+</html>

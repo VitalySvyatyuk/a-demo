@@ -1,0 +1,171 @@
+{% load staticfiles inbox i18n app_tags %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+<head>
+    <title>{% block title %}{% trans "Private office" %}{% endblock %}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    {% block css %}
+        <link rel="stylesheet" href="{% versioned 'css/private_office.min.css' %}"/>
+    {% endblock %}
+    <link rel="shortcut icon" href="{% static "img/arum-capital/favicon.ico" %}" type="image/x-icon"/>
+    <link rel="icon" href="{% static "img/arum-capital/favicon.ico" %}" type="image/x-icon"/>
+    {% for code, settings in LANGUAGE_SETTINGS.iteritems %}
+        {% if LANGUAGE_CODE not in code %}<link rel="alternate" hreflang="{{ code }}" href="{{ settings.redirect_to }}{{ request.path }}" />{% endif %}
+    {% endfor %}
+    {% block extrahead %}{% endblock %}
+
+    {% block pingdom_rum %}{# Placing it here, because it should go in the head, unlike other counters #}
+    {% endblock %}
+    <script>{# for Google Tag Manager #}
+      dataLayer = [];
+    </script>
+</head>
+<body class="my my-old" {% block extrabodyattrs %}{% endblock %}>
+{% block external_analytics %}{% endblock %}
+
+<!--Scroll to top-->
+<div id="scroll-to-top-button"></div>
+
+
+<!--Top bar-->
+<div class="my-topbar">
+    <nav class="top-bar" data-topbar>
+
+        <ul class="top-bar-panel">
+{% comment %}
+            <li class="lang">
+                {% include "includes/languages_menu.html" %}
+            </li>
+{% endcomment %}
+            <li class="">
+                <a href="{% url "frontpage" %}" class="with-icon" title="{% trans "return to" %} GrandCapital.ru">
+                    <span></span>
+                    <span>{% blocktrans %}Back to website{% endblocktrans %}</span>
+                </a>
+            </li>
+            <li class="chat hide-for-medium-down">
+                {% if user.is_authenticated %}
+                <a class="with-icon" href="{% url "account_app" %}messages">
+                    <span></span>
+                    <span>
+                        {% trans "Messages and notifications" %}
+                        <span class="inbox-count font-med">({% inbox_count %})</span>
+                    </span>
+                </a>
+                {% endif %}
+            </li>
+            {% if user.is_authenticated %}
+            <li class="office right">
+                <a class="with-icon" href="{% url "auth_logout" %}"><span></span><span>{% trans "Logout" %}</span></a>
+            </li>
+            {% endif %}
+            {% comment %}
+            <li class="advisor right hide-for-small-down" style="display: none;">
+                <a class="with-icon" href="#" onclick="SnapEngage.startLink();">
+                    <span class="adv-offline"></span><span id="consult-status-text">{% trans "We are offline" %}</span>
+                </a>
+            </li>
+            {% endcomment %}
+            {% if user.is_authenticated %}
+            <li class="problem right hide-for-medium-down">
+                <a class="with-icon" href="{% url "account_app" %}issues">
+                    <span></span>
+                    <span>{% trans "I have a problem" %}</span>
+                </a>
+            </li>
+            {% else %}
+                {% url 'auth_login' as login_url %}
+                {% if login_url != request.path_info %}
+                    <li class="logo right hide-for-medium-down">
+                        <a class="with-icon" href="{{ login_url }}">
+                            <span></span>
+                            <span>{% trans "Log in" %}</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="logo right hide-for-medium-down">
+                        <a class="with-icon" href="{% url 'registration_register' %}">
+                            <span></span>
+                            <span>{% trans "Register" %}</span>
+                        </a>
+                    </li>
+                {% endif %}
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+
+{% if request.user.is_authenticated %}
+<div class="my my-new">
+    {% url "account_app" as lk_link %}
+    {% include "js/my/my_header.html" with no_js=True lk_link=lk_link %}
+</div>
+{% endif %}
+
+<div class="row">
+    <div class="columns small-12 medium-8 large-8 offset-top-80 small-centered">
+        {% block messages %}
+            {% for message in messages %}
+            <div id="messages" class="row info-messages-block {{ message.tags|cut:'safe ' }}">
+                <div class="small-12 columns"><p>{% if 'safe' in message.tags %}{{ message|safe }}{% else %}{{ message }}{% endif %}</p></div>
+            </div>
+            {% endfor %}
+        {% endblock %}
+        <div class="clearfix block-white">
+            {% block content %}
+            {% endblock %}
+         </div>
+        {# {% include "js/my/my_footer.html" %} #}
+    </div>
+</div>
+
+
+
+
+    <script type="text/javascript" src="{% url 'jsi18n' %}"></script>
+    <script src="{% static 'js/compiled/bundle.base.js' %}"></script>
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 109) {
+                $("#scroll-to-top-button").addClass('visible');
+            } else {
+                $("#scroll-to-top-button").removeClass('visible');
+            }
+        });
+
+        $("#scroll-to-top-button").click(function() {
+          $("html, body").animate({ scrollTop: 0 }, 400, "swing");
+          return false;
+        });
+    </script>
+    <script>
+        $(function () {
+            var p = $("ul#hover-lang");
+            p.find("li").click(function () {
+                p.find("input#lang").val($(this).data("value"));
+                p.find("form").submit();
+            });
+        });
+    </script>
+
+
+{% block scripts %}{# Put here all new scripts #}{% endblock %}
+{% block js %}{# Old js (migrated from the 2010-style design) goes here #}{% endblock %}
+
+    <script>
+        $(function(){
+            Foundation.global.namespace = ''; /* Disable possible namespaces bugs */
+            $(document).foundation();
+
+            setInterval(function(){
+                $.get('{% url 'profiles_new_messages' %}', function(data){
+                    $('.inbox-count').text('('+data.count+')');
+                });
+            }, 30000);
+        });
+    </script>
+
+{% if debug %}<script src="//localhost:35729/livereload.js"></script>{% endif %}
+</body>
+</html>

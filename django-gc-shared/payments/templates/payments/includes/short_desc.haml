@@ -1,0 +1,5 @@
+- load i18n
+- if details.time and details.fee
+    .description_fee
+        {{ details.time }},
+        {% trans "commission" %} {{ details.fee }}

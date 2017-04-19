@@ -1,0 +1,77 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | About | Arum Capital
+block content
+  .page_head(style="background-image: url({% static 'img/marketing-site/bg/bg-education-webinar.jpg' %})")
+    .container
+      .row
+        .col-xs-12.white-bc
+          - breadcrumbs
+          h1.page_head__title.page_head__title--white
+            | Учебный центр
+      .row
+        .col-md-12
+          div.header-tabs-row
+            a.header-tabs.active-header-tabs.link(href="#")
+              | что такое forex
+            a.header-tabs.link(href="#")
+              | Словарь терминов
+            a.header-tabs.link(href="#")
+              | Обучающие вебинары
+
+  .education-terms
+    .container
+      .education-terms-questions.question-a
+        ul
+          li
+            a.link(href="#")
+              | Изменение риска инвестиций?
+          li
+            a.link(href="#")
+              | Что такое позиция?
+          li
+            a.link(href="#")
+              | Что такое позиция?
+          li
+            a.link(href="#")
+              | Изменение риска инвестиций?
+          li
+            a.link(href="#")
+              | Кака работает платформа с точки зрения инвесторов?
+      .education-terms-questions.question-b
+        ul
+          li
+            a.link(href="#")
+              | Изменение риска инвестиций?
+          li
+            a.link(href="#")
+              | Что такое позиция?
+          li
+            a.link(href="#")
+              | Что такое позиция?
+          li
+            a.link(href="#")
+              | Изменение риска инвестиций?
+          li
+            a.link(href="#")
+              | Кака работает платформа с точки зрения инвесторов?
+      .education-terms-questions.question-c
+        ul
+          li
+            a.link(href="#")
+              | Изменение риска инвестиций?
+          li
+            a.link(href="#")
+              | Что такое позиция?
+          li
+            a.link(href="#")
+              | Что такое позиция?
+          li
+            a.link(href="#")
+              | Изменение риска инвестиций?
+          li
+            a.link(href="#")
+              | Кака работает платформа с точки зрения инвесторов?

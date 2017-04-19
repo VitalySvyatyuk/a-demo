@@ -1,0 +1,259 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags pagination_tags staticfiles %}
+
+{% block title %}{% trans "Reports" %}{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <style type="text/css">
+        div.right_side {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/gcapital-ui/1.10.4/jquery-ui-1.10.4.custom.min.css' %}">
+    {{ form.media.css }}
+{% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% url "django.views.i18n.javascript_catalog" %}"></script>
+    {{ form.media.js }}
+    <script type="text/javascript">
+
+    var group_reports = {{ form.group_reports }};
+    var no_account_reports = {{ form.no_account_reports }};
+    var initial = true;
+
+    function refresh_fields(val){
+        if (initial){
+            $(".right_side").css("display", "block");
+            initial = false
+        }
+        if ($.inArray(val, group_reports)>-1){
+            $("#div_account").hide();
+            $("#div_account_group_include, #div_account_group_exclude").show()
+        }
+        else if ($.inArray(val, no_account_reports)>-1){
+            $("#div_account").hide();
+            $("#div_account_group_include, #div_account_group_exclude").hide()
+        }
+        else {
+            $("#div_account").show();
+            $("#div_account_group_include, #div_account_group_exclude").hide()
+        }
+    }
+
+    $(function(){
+        $("#div_report_type input").click(function(){
+            refresh_fields(this.value)
+        });
+        var prev_checked = $("#div_report_type input:checked");
+        if (prev_checked.val() != undefined){
+            refresh_fields(prev_checked.val())
+        }
+    })
+
+    </script>
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="green">{% trans "Available reports" %}</h1>
+  <div class="container">
+  <form method="POST" action="{% url "reports_report_list" %}">
+      {% csrf_token %}
+
+      {% for error in form.non_field_errors %}
+          <div class="errors">{{ error }}</div>
+      {% endfor %}
+
+      <div class="form-item">
+          <div id="div_report_type">
+              <div class="label">
+              <label for="id_report_type">{{ form.report_type.label_tag }}
+                  <span class="required">*</span>
+              </label>
+              </div>
+              <div class="clear">
+                  {% if form.report_type.errors %}
+                      <div class="errors">
+                          {% for error in form.report_type.errors %}
+                              {{ error|safe }}
+                          {% endfor %}
+                      </div>
+                  {% endif %}
+              </div>
+              {{ form.report_type }}
+              <div class="description">{{ form.report_type.help_text|safe }}</div>
+          </div>
+      </div>
+      <div class="right_side">
+          <div class="form-item">
+              <div id="div_account">
+                  <div class="label">
+                      <label for="id_account">{{ form.account.label_tag }}
+                          <span class="required">*</span>
+                      </label>
+                  </div>
+                  <div class="clear">
+                      {% if form.account.errors %}
+                          <div class="errors">
+                              {% for error in form.account.errors %}
+                                  {{ error|safe }}
+                              {% endfor %}
+                          </div>
+                      {% endif %}
+                  </div>
+                  {{ form.account }}
+                  <div class="description">{{ form.account.help_text|safe }}</div>
+              </div>
+          </div>
+
+          <div class="form-item">
+              <div id="div_start">
+                  <div class="label">
+                      <label for="id_start">{{ form.start.label_tag }}
+                          <span class="required">*</span>
+                      </label>
+                  </div>
+                  <div class="clear">
+                      {% if form.start.errors %}
+                          <div class="errors">
+                              {% for error in form.start.errors %}
+                                  {{ error|safe }}
+                              {% endfor %}
+                          </div>
+                      {% endif %}
+                  </div>
+                  {{ form.start }}
+                  <div class="description">{{ form.start.help_text|safe }}</div>
+              </div>
+          </div>
+
+          <div class="form-item">
+              <div id="div_end">
+                  <div class="label">
+                      <label for="id_end">{{ form.end.label_tag }}
+                          <span class="required">*</span>
+                      </label>
+                  </div>
+                  <div class="clear">
+                      {% if form.end.errors %}
+                          <div class="errors">
+                              {% for error in form.end.errors %}
+                                  {{ error|safe }}
+                              {% endfor %}
+                          </div>
+                      {% endif %}
+                  </div>
+                  {{ form.end }}
+                  <div class="description">{{ form.end.help_text|safe }}</div>
+              </div>
+          </div>
+           {% if form.account_group_include %}
+          <div class="form-item">
+              <div id="div_account_group_include">
+                  <div class="label">
+                      <label for="id_account_group_include">{{ form.account_group_include.label_tag }}
+                          <span class="required">*</span>
+                      </label>
+                  </div>
+                  <div class="clear">
+                      {% if form.account_group_include.errors %}
+                          <div class="errors">
+                              {% for error in form.account_group_include.errors %}
+                                  {{ error|safe }}
+                              {% endfor %}
+                          </div>
+                      {% endif %}
+                  </div>
+                  {{ form.account_group_include }}
+                  <div class="description">{{ form.account_group_include.help_text|safe }}</div>
+              </div>
+          </div>
+            {% endif %}
+            {% if form.account_group_exclude %}
+          <div class="form-item">
+              <div id="div_account_group_exclude">
+                  <div class="label">
+                      <label for="id_account_group_exclude">{{ form.account_group_exclude.label_tag }}
+                          <span class="required">*</span>
+                      </label>
+                  </div>
+                  <div class="clear">
+                      {% if form.account_group_exclude.errors %}
+                          <div class="errors">
+                              {% for error in form.account_group_exclude.errors %}
+                                  {{ error|safe }}
+                              {% endfor %}
+                          </div>
+                      {% endif %}
+                  </div>
+                  {{ form.account_group_exclude }}
+                  <div class="description">{{ form.account_group_exclude.help_text|safe }}</div>
+              </div>
+          </div>
+            {% endif %}
+            {% if excluded_for_user %}
+                <div class="form-item">
+                    <div class="description">
+                        {% trans "These account groups will always be excluded:" %}
+                        <ul>
+                            {% for excluded in excluded_for_user %}
+                                <li>{{ excluded.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+      </div>
+      <div class="clear"></div><br>
+      {% gcbutton "submit" _("Order report") "black" %}
+  </form>
+  </div>
+  <h1 class="green">{% trans "Ordered reports" %}</h1>
+  <div class="container">
+    <a href="{% url "reports_report_list" %}">{% trans "Refresh" %}</a>
+    <table class="gctable">
+    <thead>
+        <tr>
+            <th>{% trans "Name" %}</th>
+            <th>{% trans "Status" %}</th>
+            <th>{% trans "Link" %}</th>
+            <th>{% trans "Date" %}</th>
+        </tr>
+    </thead>
+    {% autopaginate reports 20 %}
+    <tbody>
+        {% for report in reports %}
+            <tr>
+                <td>
+                    {{ report.name }}
+                </td>
+                <td>
+                    {% if report.filename %}
+                        {% trans "Ready" %}
+                    {% else %}
+                        {% trans "In progress" %}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if report.filename %}
+                        <a href="{% url "reports_view_report" report.pk %}">{% trans "View" %}</a>
+                    {% endif %}
+                </td>
+                <td>
+                    {{ report.creation_ts }}
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="4">{% trans "You haven't ordered any reports yet" %}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+  {% paginate %}
+  </div>
+{% endblock %}

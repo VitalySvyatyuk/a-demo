@@ -1,0 +1,109 @@
+.call_to_action{
+	padding: 34px 0;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	@media (#{$max_tablets}){
+		background-position: 40% center;
+	}
+	@media (#{$max_ipad}){
+		padding-bottom: 70px;
+	}
+	@media (#{$max_phones}){
+		background-position: 20% center;
+	}
+}
+.call_to_action__container{
+	position: relative;
+}
+.call_to_action__text{
+	display: inline-block;
+
+	max-width: 350px;
+
+	color: $groom;
+	font-size: (24em/16);
+	font-weight: 300;
+
+	&--big{
+		font-size: 30px;
+		line-height: $button_height;
+
+		@media (#{$max_tablets}){
+			display: block;
+			max-width: 100%;
+
+			margin-bottom: 30px;
+			margin-left: auto;
+			margin-right: auto;
+
+			line-height: 1.2;
+			text-align: center;
+		}
+	}
+	&--white{
+		color: white;
+	}
+
+	@media (#{$max_ipad}){
+		line-height: 1.4;
+		font-weight: 400;
+	}
+}
+.call_to_action__buttons_box{
+	float: right;
+
+	@media (#{$max_tablets}){
+		float: none;
+
+		text-align: center;
+	}
+	@media (#{$max_ipad}){
+
+	}
+}
+.call_to_action__button__item{
+	margin-right: 19px;
+
+	&:last-child{
+		margin-right: 0;
+	}
+
+	@media (#{$max_ipad}){
+		display: block;
+
+		margin-right: 0;
+		margin-bottom: 11px;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
+.call_to_action__button{
+	position: absolute;
+
+	right: $container_side_margin;
+	top: 50%;
+	transform: translateY(-50%);
+
+	&--blue{
+		@media (#{$max_tablets--landscape}) and (#{$min_ipad}){
+			border-color: $sky;
+			background-color: $sky;
+			color: white;
+		}
+	}
+	@media (#{$max_ipad}){
+		display: inline-block;
+		position: relative;
+		top: 0;
+		right: 0;
+		transform: none;
+
+		margin-top: 30px;
+	}
+}
+

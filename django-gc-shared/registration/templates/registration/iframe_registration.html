@@ -1,0 +1,202 @@
+{% load i18n app_tags %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Grand Capital — {% trans "Register" %}</title>
+    <style>
+        html, body {
+            width: 448px;
+            height: 700px;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            color: #fff;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+
+        }
+        .content {
+            padding: 30px;
+            width: 388px;
+            height: 640px;
+            background-color: #3d9c81;
+        }
+        h1 { 
+            padding-bottom: 10px;
+
+            text-align: center
+        }
+        .logo-wrap { text-align: center; }
+        .logo {
+            display: inline-block;
+            width: 70%;
+        }
+        .form-item {
+            display: block;
+            overflow: hidden;
+            margin-top: 10px;
+            padding-bottom: 5px;
+        }
+        .form-item > div {
+            width: 120px;
+            float: left;
+        }
+        label, .label {
+          font-size: 15px;
+          background: none;
+          cursor: default;
+          display: inline-block;
+          margin-top: 10px;
+          padding: 0;
+          text-align: left;
+        }
+
+        input {
+          height: 24px;
+          padding: 5px;
+          width: 250px;
+          float: left;
+        }
+
+        .form-item > div.description {
+            float: left;
+            padding-left: 5px;
+            color: #ccc;
+            font-size: 14px;
+        }
+        .form-item > div.checkbox-wrapper {
+            width: 100%;
+            position: relative;
+        }
+        .form-item > div.checkbox-wrapper label {
+            width: 260px;
+            float: left;
+            padding-top: 0;
+            margin: 0;
+            padding-left: 120px;
+        }
+        .form-item > div.checkbox-wrapper .required {
+            display: none;
+        }
+        .form-item > div.checkbox-wrapper input {
+            width: 10px;
+            height: 10px; 
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #id_phone_mobile_0 {
+            width: 80px;
+            height: 40px;
+            float: left;
+        }
+        #id_phone_mobile_1 {
+            width: 170px;
+            float: left;
+        }
+        #id_agent_code {
+            width: 90px;
+        }
+        label[for="id_subscribe"] {
+            font-size: 14px;
+        }
+        div.submit-wrap {
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+        input[type="submit"] {
+            display: inline-block;
+            float: none;
+            padding: 10px;
+            line-height: 20px;
+            height: auto;
+            background-color: #f1c40f;
+            font-weight: bold;
+            border: 0;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #f39c12;
+        }
+        .error input, .error div.checkbox-wrapper {
+            background-color: #E06778;
+        }
+    </style>
+</head>
+
+<body>
+<div class="content">
+{% block content %}
+    <div class="logo-wrap">
+        <img class="logo" src="{{ STATIC_URL }}img/logo-white-hor.png" alt="Logo">
+    </div>
+    {% if "welcome" in request.GET %}
+    <h1>{% trans "Thanks!" %}</h1>
+    <div class="container">
+    <p>You will receive further instructions by email.</p>
+    </div>
+    {% else %}
+    <h1>{% trans "Register" %}</h1>
+    <div class="container">
+    
+        <form method="POST" id="registration-form" class="register-form" action=".">
+            <input type="hidden" name="next" value="{{ next }}"/>
+            {% load app_tags %}
+
+            {% for error in form.non_field_errors %}
+                <div class="errors">{{ error }}</div>
+            {% endfor %}
+
+
+            {% for field in form %}
+
+                <div class="form-item{% if field.errors %} error{% endif %}"
+                     {% if field.errors %}title="{% for error in field.errors %}{{ error|safe }}{% endfor %}"{% endif %}>
+                    {% if not field.is_hidden %}
+                        {% if not field.field.widget|is_checkbox %}
+                            <div>
+                                {{ field.label_tag }} {% if field.field.required %}<span class="required">*</span>{% endif %}
+                            </div>
+
+                        {% endif %}
+
+                        {% if field.field.widget|is_checkbox %}
+                            <div class="checkbox-wrapper">
+                                {{ field }}<label for="{{ field.auto_id }}"></label>
+                                {{ field.label_tag }} {% if field.field.required %}<span class="required">*</span>{% endif %}
+                            </div>
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+
+                        <div class="description">
+                            {% block description %}
+                                {{ field.help_text|safe }}
+                            {% endblock %}
+                        </div>
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                </div>
+            {% endfor %}
+            {% csrf_token %}
+            <div class="submit-wrap">
+                <input type="submit" value="{% trans "Register" %}">
+            </div>
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}
+</div>
+
+{% block js %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.23.custom.min.js"></script>
+    <script type="text/javascript" src="{% url "django.views.i18n.javascript_catalog" %}"></script>
+    {{ form.media }}
+{% endblock %}
+</body>
+</html>

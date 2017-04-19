@@ -1,0 +1,25 @@
+{% load i18n %}
+
+<div class="row">
+  <div class="col-sm-5" ng-if="overdue.count!==0">
+    <h3 class="text-md-center">{% trans "Overdue" %}</h3>
+    <contact-task ng-repeat="task in overdue.items" object="task" is-link="true"></contact-task>
+    <div class="text-md-center" ng-if="overdue.page < overdue.totalPages">
+      <button type="button" class="btn btn-default" ng-click="overdue.loadMore()">{% trans "Show more" %} ([[overdue.count - overdue.items.length]])</button>
+    </div>
+  </div>
+  <div ng-class="overdue.count ? 'col-sm-6' : 'col-sm-8'">
+    <h3 class="text-md-center">{% trans "Today" %}</h3>
+    <contact-task ng-repeat="task in today.items" object="task" is-link="true"></contact-task>
+    <div class="text-md-center" ng-if="today.page < today.totalPages">
+      <button type="button" class="btn btn-default" ng-click="today.loadMore()">{% trans "Show more" %} ([[today.count - today.items.length]])</button>
+    </div>
+  </div>
+  <div ng-class="overdue.count ? 'col-sm-5' : 'col-sm-8'">
+    <h3 class="text-md-center">{% trans "Tomorrow" %}</h3>
+    <contact-task ng-repeat="task in tomorrow.items" object="task" is-link="true"></contact-task>
+    <div class="text-md-center" ng-if="tomorrow.page < tomorrow.totalPages">
+      <button type="button" class="btn btn-default" ng-click="tomorrow.loadMore()">{% trans "Show more" %} ([[tomorrow.count - tomorrow.items.length]])</button>
+    </div>
+  </div>
+</div>

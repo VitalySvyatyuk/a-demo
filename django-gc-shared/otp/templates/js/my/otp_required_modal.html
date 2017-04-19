@@ -1,0 +1,11 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+<h2 class="modal-title offset-bottom-30">
+    {% trans "OTP binding required" %}
+</h2>
+
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+
+<div class="modal-white-bg text-center">
+  <p>{% trans "To perform this action, you need to create OTP binding." %}</p>
+  <button class="medium offset-top-20" ng-click="go()">{% trans "Go to security settings" %}</button>
+</div>

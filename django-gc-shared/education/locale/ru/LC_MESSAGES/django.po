@@ -1,0 +1,332 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-03 19:15+0300\n"
+"PO-Revision-Date: 2016-09-23 17:52+0230\n"
+"Last-Translator:   <v.rizhenkov@grandcapital.ru>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.7.8\n"
+
+msgid "Seminar"
+msgstr "Семинар"
+
+msgid "Slug"
+msgstr "Слаг"
+
+msgid "Machine name (for URL's)"
+msgstr "Машинное имя (для ссылок)"
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "For beginners"
+msgstr "Вводные"
+
+msgid "For advanced traders"
+msgstr "Для опытных трейдеров"
+
+msgid "Market reviews"
+msgstr "Аналитические обзоры рынков"
+
+msgid "For partners"
+msgstr "Для партнеров"
+
+msgid "Webinar category"
+msgstr "Категория вебинара"
+
+msgid "Webinar description"
+msgstr "Описание вебинара"
+
+msgid "Favorite webinar"
+msgstr "Избранный вебинар"
+
+msgid "If selected it is shown next to the webinars calendar"
+msgstr "Если выбрана, то показывается рядом с календарем вебинаров"
+
+msgid "Room password"
+msgstr "Пароль от комнаты"
+
+msgid "Webinar leader"
+msgstr "Ведущий вебинара"
+
+msgid "Webinar"
+msgstr "Вебинар"
+
+msgid "Webinars"
+msgstr "Вебинары"
+
+msgid "Webinar date"
+msgstr "Дата проведения"
+
+msgid "Link to webinar room"
+msgstr "Ссылка на вебинарную комнату"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "Registration time"
+msgstr "Время регистрации"
+
+msgid "Paid"
+msgstr "Оплачен"
+
+msgid "Paid time"
+msgstr "Время оплаты"
+
+msgid "Registration for the webinar"
+msgstr "Регистрация на вебинар"
+
+msgctxt "educational page"
+msgid "Educational Center"
+msgstr "Учебный центр"
+
+msgid "About FOREX"
+msgstr "Что такое forex"
+
+msgid "Glossary"
+msgstr "Словарь терминов"
+
+#, fuzzy
+#| msgid "Registration"
+msgid "Register"
+msgstr "Регистрация"
+
+msgid "Other terms"
+msgstr "Другие термины"
+
+msgid "All terms"
+msgstr "Все термины"
+
+msgid "Register for the webinar"
+msgstr "Записаться на вебинар"
+
+msgid "Upcoming webinars"
+msgstr "Предстоящие вебинары"
+
+msgid "All webinars"
+msgstr "Все вебинары"
+
+#~ msgid "Study centre"
+#~ msgstr "Учебный центр"
+
+#~ msgid "Middle name"
+#~ msgstr "Отчество"
+
+#~ msgid "e-mail address"
+#~ msgstr "e-mail"
+
+#~ msgid "Account"
+#~ msgstr "Счёт"
+
+#~ msgid "Select one of your accounts."
+#~ msgstr "Выберите один из ваших счетов."
+
+#~ msgid "Account password"
+#~ msgstr "Пароль счета"
+
+#~ msgid "Account password. Password can be recovered in the section <a href=\"%s\">My accounts</a>."
+#~ msgstr "Пароль доступа к счёту. Восстановить пароль можно в разделе <a href=\"%s\">Мои счета</a>."
+
+#~ msgid "You should <a href=\"%(link)s\" target=\"_blank\">complete the verification process</a> before withdrawing from account %(account)s"
+#~ msgstr "Вы должны завершить <a href=\"%(link)s\" target=\"_blank\">процес верификации</a> прежде чем выводить средства со счёта %(account)s"
+
+#~ msgid "Not enough money to withdraw"
+#~ msgstr "Недостаточно свободных средств, доступных для вывода"
+
+#~ msgid "Error accessing account."
+#~ msgstr "При доступе к счёту возникла ошибка."
+
+#~ msgid "The password you entered is incorrect."
+#~ msgstr "Введен неверный пароль"
+
+#~ msgid "Internal error while checking password"
+#~ msgstr "Во время проверки пароля возникла ошибка. Попробуйте еще раз позже"
+
+#~ msgid "Category"
+#~ msgstr "Категория"
+
+#~ msgid "Client signed up for a webinar {date} {instance}"
+#~ msgstr "Клиент был записан на вебинар {date} {instance}"
+
+#~ msgid "City"
+#~ msgstr "Город"
+
+#~ msgid "Email"
+#~ msgstr "Электронный адрес"
+
+#~ msgid "Phone"
+#~ msgstr "Телефон"
+
+#~ msgid "Lecture"
+#~ msgstr "Лекция"
+
+#~ msgid "Delete?"
+#~ msgstr "Удалить?"
+
+#~ msgid "Add another %(verbose_name)s"
+#~ msgstr "Добавить другой %(verbose_name)s"
+
+#~ msgid "Remove"
+#~ msgstr "Удалить"
+
+#~ msgid "All"
+#~ msgstr "Все"
+
+#~ msgid "Sign up for basic education"
+#~ msgstr "Записаться на базовое обучение"
+
+#~ msgid "Address"
+#~ msgstr "Адрес"
+
+#~ msgid "My webinars"
+#~ msgstr "Мои вебинары"
+
+#~ msgid "Past webinars"
+#~ msgstr "Прошедшие вебинары"
+
+#~ msgid "Information about webinars you have registered for"
+#~ msgstr "В этом разделе находится информация о Ваших регистрациях на вебинары"
+
+#~ msgid "Starts at"
+#~ msgstr "Дата начала"
+
+#~ msgid "Theme"
+#~ msgstr "Тема"
+
+#~ msgid "Status"
+#~ msgstr "Статус"
+
+#~ msgid "Starts"
+#~ msgstr "Начинается"
+
+#~ msgid "Has been started"
+#~ msgstr "Идет"
+
+#~ msgid "Ended"
+#~ msgstr "Завершен"
+
+#~ msgid "Webinar record will be available soon"
+#~ msgstr "Скоро будет доступна запись вебинара"
+
+#~ msgid "See webinar record"
+#~ msgstr "Просмотреть запись вебинара"
+
+#~ msgid "You don't have any webinar registrations yet"
+#~ msgstr "У вас нет регистраций на вебинары"
+
+#~ msgid "You can register for a webinar or access recordings of the finished webinars"
+#~ msgstr "Вы можете зарегистрироваться для участия в вебинаре, а так же получить доступ к записям прошедших вебинаров"
+
+#~ msgid "Your application has been accepted!"
+#~ msgstr "Ваша заявка была принята в обработку!"
+
+#~ msgid "login"
+#~ msgstr "войти"
+
+#~ msgid "mt4.sucurity.obligation"
+#~ msgstr "MT4.安全保障.义务"
+
+#~ msgid "My accounts"
+#~ msgstr "Мои счета"
+
+#~ msgid "Webinars calendar"
+#~ msgstr "Расписание вебинаров"
+
+#~ msgid ""
+#~ "\n"
+#~ "                        When you choose to learn Forex at Grand Capital, you choose polished methodologies and\n"
+#~ "                        rich toolset to use the newly-acquired skills. Having a solid foundation, you will not only\n"
+#~ "                        profitably trade on the Forex market, but will be able to become a successfull member of our\n"
+#~ "                        partnership program and competently invest your funds in our\n"
+#~ "                        <a href=\"%(link)s\">Managed Accounts service</a>\n"
+#~ "                    "
+#~ msgstr ""
+#~ "\n"
+#~ "Выбирая обучение Forex в Grand Capital, вы делаете ставку на отработанные методики и богатый инструментарий для реализации полученных навыков. Обладая прочной образовательной базой, вы будете не только прибыльно торговать на Forex, но также сможете стать успешным участником нашей партнерской программы и грамотно инвестировать средства в сервисе <a href=\"%(link)s\">Управляемые счета</a>"
+
+#~ msgid "%s paid"
+#~ msgstr "%s оплачено"
+
+#~ msgid "%s unpaid"
+#~ msgstr "%s неоплачено"
+
+#~ msgid "Thematic"
+#~ msgstr "Тематические"
+
+#~ msgid "terms of the offer"
+#~ msgstr "условия предложения"
+
+#~ msgid "remote.agreement.offer.label"
+#~ msgstr "Оферту на оказание услуги"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                            webinar"
+#~ msgid_plural ""
+#~ "webinars\n"
+#~ "                                        "
+#~ msgstr[0] "вебинар"
+#~ msgstr[1] "вебинара"
+#~ msgstr[2] "вебинаров"
+
+#~ msgid ""
+#~ "\n"
+#~ "                            We offer free webinars for traders of any level of skill - beginners and experts alike.\n"
+#~ "                        "
+#~ msgstr ""
+#~ "\n"
+#~ "Мы предлагаем бесплатные вебинары для трейдеров любого уровня — и новичков, и тех, кто уверенно чувствует себя на финансовых рынках."
+
+#~ msgid ""
+#~ "\n"
+#~ "                            To take part in a webinar you need to\n"
+#~ "                            <a href=\"%(link_reg)s\">register a Private Office</a> at our website\n"
+#~ "                        "
+#~ msgstr ""
+#~ "\n"
+#~ "Чтобы принять участие в вебинаре необходимо <a href=\"%(link_reg)s\">зарегистрировать Личный Кабинет Трейдера</a>"
+
+#~ msgid "Register an account"
+#~ msgstr "Стать клиентом"
+
+#~ msgid "Apply"
+#~ msgstr "Применить"
+
+#~ msgid "Error happened while doing payment. Please try again later"
+#~ msgstr "Во время проведения платежа произошла ошибка. Попробуйте еще раз позже"
+
+#~ msgid "Name"
+#~ msgstr "ФИО"
+
+#~ msgid "For clients"
+#~ msgstr "Для клиентов"
+
+#~ msgid "Your webinar registrations"
+#~ msgstr "Регистрации на вебинары"
+
+#~ msgid "ID"
+#~ msgstr "Номер"
+
+#~ msgid "Password"
+#~ msgstr "Пароль счета"
+
+#~ msgid "remote.agreement.offer.filename"
+#~ msgstr "offer_remote_education_ru.pdf"
+
+#~ msgid "Youtube video url"
+#~ msgstr "Ссылка на вебинар"
+
+#~ msgid "A full url to youtube video, e.g. http://www.youtube.com/watch?v=IqaAZi2ppCE"
+#~ msgstr "Ссылка на YouTube-видео, например,  http://www.youtube.com/watch?v=IqaAZi2ppCE"

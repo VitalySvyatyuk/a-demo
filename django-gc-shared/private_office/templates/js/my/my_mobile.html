@@ -1,0 +1,86 @@
+{% load staticfiles inbox i18n app_tags %}
+<!DOCTYPE html>
+<html ng-app="MyMobile" lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" ng-controller="MobilePageController" ng-strict-di>
+  <head>
+    <title>{% trans "Private office" %}</title>
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+    <link rel="apple-touch-icon-precomposed" href="{% static "img/favicons/png/Grand152.png" %}"/>
+    <link rel="shortcut icon" href="{% static "img/favicons/ico/favicon.ico" %}" type="image/x-icon"/>
+    <link rel="icon" href="{% static "img/favicons/ico/favicon.ico" %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'css/gcapital-ui/1.10.4/jquery-ui-1.10.4.custom.min.css' %}"/>
+    {% for code, settings in LANGUAGE_SETTINGS.iteritems %}
+      {% if LANGUAGE_CODE not in code %}<link rel="alternate" hreflang="{{ code }}" href="{{ settings.redirect_to }}{{ request.path }}" />{% endif %}
+    {% endfor %}
+
+    {# Placing it here, because it should go in the head, unlike other counters #}
+    {% block pingdom_rum %}
+      <script>
+        var _prum = [
+          ['id', '52b2c8bbabe53dea14000000'],
+          ['mark', 'firstbyte', (new Date()).getTime()]
+        ];
+        (function () {
+          var s = document.getElementsByTagName('script')[0]
+                  , p = document.createElement('script');
+          p.async = 'async';
+          p.src = '//rum-static.pingdom.net/prum.min.js';
+          s.parentNode.insertBefore(p, s);
+        })();
+      </script>
+    {% endblock %}
+    {# for Google Tag Manager #}
+    <script>
+      dataLayer = [];
+    </script>
+
+    <!--STYLES-->
+    {% if LANGUAGE_BIDI %}
+      <link rel="stylesheet" href="{% versioned 'css/mobile_office_rtl.min.css' %}">
+    {% else %}
+      <link rel="stylesheet" href="{% versioned 'css/mobile_office.min.css' %}">
+    {% endif %}
+    <!--STYLES END-->
+  </head>
+
+  <body class="ng-cloak">
+    {% if not debug %}
+      {% block external_analytics %}{% include "design_2014/includes/google_tag_manager.html" %}{% endblock %}
+    {% endif %}
+    {% if debug %}
+    <div class="row" ng-hide="true">
+      <h2>Total WATCHERS: [[getTotalWatchers()]] <button ng-click="hideDebug">HIDE</button></h2>
+    </div>
+    {% endif %}
+
+    <base href="/mobile_account/" />
+    <div ng-view></div>
+
+    <script type="text/javascript" src="{% url 'jsi18n' %}"></script>
+    <script>
+      var CSRFTOKEN = '{{ csrf_token|escapejs }}';
+    </script>
+    <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'jquery-ui/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'underscore/underscore-min.js' %}"></script>
+    <script src="{% static 'underscore.string/dist/underscore.string.min.js' %}"></script>
+    <script>
+      _.mixin(_.string.exports());
+    </script>
+    <script src="{% static 'js/compiled/bundle.angular.js' %}"></script>
+    <script src="{% static 'moment/min/moment-with-locales.min.js' %}"></script>
+    {% with LANGUAGE_CODE|lower as lang %}
+    <script src="{% static 'angular-i18n/angular-locale_'|add:lang|add:'.js' %}"></script>
+    {% endwith %}
+    <script>
+      moment.locale('{{LANGUAGE_CODE|lower}}');
+    </script>
+    <script src="{% static 'js/compiled/my_mobile.min.js' %}"></script>
+    {% if debug %}
+      <script src="{% static 'livereload-js/dist/livereload.js' %}?host=localhost"></script>
+    {% endif %}
+
+  </body>
+</html>

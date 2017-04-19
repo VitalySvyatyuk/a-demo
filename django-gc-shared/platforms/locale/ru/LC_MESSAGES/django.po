@@ -1,0 +1,934 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-08 13:25+0300\n"
+"PO-Revision-Date: 2016-10-10 18:06+0230\n"
+"Last-Translator: asdf asdfs <v.rizhenkov@grandcapital.ru>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.7.8\n"
+
+msgid "Leverage"
+msgstr "Кредитное плечо"
+
+msgid "Initial deposit"
+msgstr "Начальный депозит"
+
+msgid "Available to demo accounts only."
+msgstr "Доступно только для демо-счетов"
+
+msgid "Execution system"
+msgstr "Система исполнения"
+
+msgid "Currency"
+msgstr "Валюта"
+
+msgid "Market execution"
+msgstr "Market Execution"
+
+msgid "Instant execution"
+msgstr "Instant execution"
+
+msgid "American-style options"
+msgstr "Опционы американского типа"
+
+msgid "European-style options"
+msgstr "Опционы европейского типа"
+
+msgid "The following leverage settings are available for the current balance of your account:"
+msgstr "При Вашем балансе доступны следующие варианты плеча:"
+
+msgid "Account id"
+msgstr "Номер счета"
+
+msgid "Account ID at the trading platform"
+msgstr ""
+
+msgid "Account type"
+msgstr "Тип счета"
+
+msgid "Creation timestamp"
+msgstr "Дата создания"
+
+#, fuzzy
+#| msgid "Account created"
+msgid "Account deleted"
+msgstr "Счет создан"
+
+#, fuzzy
+#| msgid "Accounts archive"
+msgid "Account is archived"
+msgstr "Архив счетов"
+
+#, fuzzy
+#| msgid "Accounts archive"
+msgid "Account was automatically archived"
+msgstr "Архив счетов"
+
+#, fuzzy
+#| msgid "Replication ratio"
+msgid "Deletion reason"
+msgstr "Коэффициент копирования"
+
+#, fuzzy
+#| msgid "Withdraw"
+msgid "Fully withdrawn"
+msgstr "Вывести средства"
+
+msgid "Last block reason"
+msgstr ""
+
+#, fuzzy
+#| msgid "Investment creation date"
+msgid "Investment agreement accepted"
+msgstr "Дата создания"
+
+msgid "Category name"
+msgstr "Название категории"
+
+msgid "List of quotes"
+msgstr "Список котировок"
+
+msgid "Example: EURUSD, GBPUSD, AUDCAD"
+msgstr "Пример: EURUSD, GBPUSD, AUDCAD"
+
+msgid "buy"
+msgstr "buy"
+
+msgid "sell"
+msgstr "sell"
+
+msgid "buy limit"
+msgstr ""
+
+msgid "sell limit"
+msgstr ""
+
+msgid "buy stop"
+msgstr ""
+
+msgid "sell stop"
+msgstr "sell stop"
+
+msgid "withdraw/deposit"
+msgstr "ввод/вывод"
+
+msgid "credit"
+msgstr "кредит"
+
+msgid "Binary options style"
+msgstr "Тип бинарных опционов"
+
+msgid "American-style options can be closed before expiration date, but have much lower reward rate than European-style options"
+msgstr "Опционы американского типа обладают возможностью досрочного закрытия, однако вознаграждение по ним гораздо меньше, чем по опционам европейского типа"
+
+msgid "Password recovered and sent on your email"
+msgstr "Пароль восстановлен и выслан на ваш Email"
+
+msgid "Leverage successfully changed"
+msgstr "Кредитное плечо успешно изменено"
+
+msgid "Request to restore account has be created"
+msgstr "Запрос на восстановление счёта успешно создан"
+
+msgid "Balance successfully changed"
+msgstr "Баланс успешно изменён"
+
+msgid "Leverage should be different from current one"
+msgstr "Кредитное плечо должно отличаться от выбранного"
+
+msgid "You need to close all trades before changing options style"
+msgstr "Чтобы сменить тип бинарных опционов вы должны закрыть все позиции"
+
+msgid "Amount"
+msgstr "Объём"
+
+#, python-format
+msgid "Account history for account %(account)s"
+msgstr "История операций для счета %(account)s"
+
+msgid "Status on"
+msgstr "Статус на"
+
+msgid "Order ID"
+msgstr "Номер ордера"
+
+msgid "Open time"
+msgstr "Дата открытия"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Lots"
+msgstr ""
+
+msgid "Symbol"
+msgstr "Инструмент"
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "S/L"
+msgstr ""
+
+msgid "T/P"
+msgstr ""
+
+msgid "Close time"
+msgstr "Дата закрытия"
+
+msgid "Close price"
+msgstr ""
+
+msgid "Commission"
+msgstr "Комиссия"
+
+msgid "Swap"
+msgstr "Своп"
+
+msgid "Profit"
+msgstr "Доход"
+
+msgid "Totals"
+msgstr "Итого"
+
+msgid "ago"
+msgstr "назад"
+
+msgid "Open"
+msgstr "Открыта"
+
+msgid "No account history available."
+msgstr "Нет истории операций для данного счета."
+
+msgid "My accounts"
+msgstr "Мои счета"
+
+msgid "Demo and contest accounts"
+msgstr "Демо и конкурсные счета"
+
+msgid "Real accounts"
+msgstr "Реальные счета"
+
+msgid "Account"
+msgstr "Счет"
+
+msgid "Registraton date"
+msgstr "Дата открытия"
+
+msgid "Balance"
+msgstr "Баланс"
+
+msgid "Filled documents"
+msgstr "Заполненные документы"
+
+msgid "Action"
+msgstr "Действие"
+
+msgid "Account history"
+msgstr "История операций"
+
+msgid "Deposit money"
+msgstr "Ввести средства"
+
+msgid "Withdraw money"
+msgstr "Вывести средства"
+
+msgid "Internal transfer"
+msgstr "Внутренний перевод"
+
+msgid "Change leverage"
+msgstr "Изменить кредитное плечо"
+
+msgid "Change options style"
+msgstr "Изменить тип опционов "
+
+msgid "Become PAMM master"
+msgstr "Стать управляющим"
+
+msgid "Password recovery"
+msgstr "Восстановление пароля"
+
+msgid "You have no accounts associated with your profile"
+msgstr "У вас нет открытых счетов"
+
+msgid "If you want to open a new account, then click"
+msgstr "Если вы хотите открыть новый счет, нажмите"
+
+msgid "Open account"
+msgstr "Открыть счет"
+
+msgid "Archived accounts"
+msgstr "Счета в архиве"
+
+msgid "Restore"
+msgstr "Восстановить"
+
+msgid "You have already requested to restore this account"
+msgstr "Вы уже оставили заявку на восстановление этого счёта"
+
+msgid "Request this account to be restored"
+msgstr "Создать заявку на восстановление счёта"
+
+msgid "bonus"
+msgstr "бонус"
+
+#, python-format
+msgid "Agent list for account %(account)s"
+msgstr "Список агентов для счета %(account)s"
+
+#, python-format
+msgid "Account %(account)s has no Real clients."
+msgstr "Счет %(account)s не имеет клиентов с реальными счетами."
+
+#, python-format
+msgid "List of demo agents for account %(account)s"
+msgstr "Список демо-агентов для счета %(account)s"
+
+#, python-format
+msgid "Account %(account)s has no Demo clients."
+msgstr "Счет %(account)s не имеет клиентов с демо счетами."
+
+msgid "Choose account"
+msgstr "Выберите счет"
+
+msgid "Choose"
+msgstr "Выберите"
+
+msgid "Date"
+msgstr "Дата"
+
+msgctxt "short"
+msgid "Name"
+msgstr "Имя"
+
+msgid "Country"
+msgstr "Страна"
+
+msgid "City"
+msgstr "Город"
+
+msgctxt "short"
+msgid "Phone"
+msgstr "Телефон"
+
+msgctxt "short"
+msgid "Email"
+msgstr "Электропочта"
+
+msgid "Choose new leverage"
+msgstr "Выберите новое кредитное плечо"
+
+msgid "Choose new options style"
+msgstr "Выберите новый тип бинарных опционов"
+
+#, python-format
+msgid ""
+"Create %(account_type_name)s\n"
+"    account"
+msgstr "Создать счет %(account_type_name)s"
+
+msgid "Account details"
+msgstr "Параметры счета"
+
+#, python-format
+msgid ""
+"\n"
+"                You can't have more than one %(acc_type)s account and\n"
+"            "
+msgid_plural ""
+"\n"
+"                You can't have more than %(max_number)s %(acc_type)s accounts and\n"
+"            "
+msgstr[0] ""
+"\n"
+"К сожалению, счёт %(acc_type)s может быть только один, а "
+msgstr[1] ""
+"\n"
+"К сожалению, число счетов %(acc_type)s не может быть больше %(max_number)s, а "
+msgstr[2] ""
+"\n"
+"К сожалению, число счетов %(acc_type)s не может быть больше %(max_number)s, а "
+
+#, python-format
+msgid ""
+"\n"
+"                you already have an account of this type\n"
+"            "
+msgid_plural ""
+"\n"
+"                you already have %(current_number)s accounts of this type\n"
+"            "
+msgstr[0] ""
+"\n"
+"у вас уже есть такой счёт."
+msgstr[1] ""
+"\n"
+"у вас уже открыто %(current_number)s счёта этого типа."
+msgstr[2] ""
+"\n"
+"у вас уже открыто %(current_number)s счетов этого типа."
+
+msgid "mt4.sucurity.obligation"
+msgstr "Все полученные данные будут использоваться только внутри компании. Мы никогда не предоставим ваши данные третьим лицам."
+
+msgid "Create account"
+msgstr "Создать счёт"
+
+msgid "Account settings"
+msgstr "Настройки счёта"
+
+msgid "Please wait while account is being created"
+msgstr "Ваш счёт в процессе создания"
+
+msgid "Create"
+msgstr "Создать"
+
+msgid "Cancel"
+msgstr "Отменить"
+
+#, python-format
+msgid "Congratulations! You just opened %(acc_type)s account! Please, save its password in a secure place. You will also receive account's details by email."
+msgstr "Поздравляем, вы открыли счёт %(acc_type)s! Пожалуйста, сохраните пароль от счёта в надёжном месте. Данные счёта были также отправлены Вам по электронной почте."
+
+msgid "Account number"
+msgstr "Номер счёта"
+
+msgid "Account login"
+msgstr "Логин счета"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgctxt "button"
+msgid "Continue"
+msgstr "Продолжить"
+
+msgid "Account creation failed, please try again later"
+msgstr "При создании счета произошла ошибка, попробуйте еще раз позже"
+
+msgid "Deposit"
+msgstr "Ввести средства"
+
+msgid "Demo deposit"
+msgstr "Демо депозит"
+
+#, fuzzy
+#| msgid "bank transfer"
+msgid "Bank transfer"
+msgstr "банковский перевод"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Become a LAMM manager"
+msgstr "Стать управляющим"
+
+msgid "Change comission type"
+msgstr "Изменить тип комиссии"
+
+msgid "Accept investors manualy"
+msgstr "Принимать инвесторов вручную"
+
+msgid "Auto accept investors"
+msgstr "Автоматически принимать инвесторов"
+
+msgid "Withdraw"
+msgstr "Вывести средства"
+
+msgid "Other actions"
+msgstr "Другие действия"
+
+msgid "Account [[acc.mt4_id]] blocked"
+msgstr "Счет [[acc.mt4_id]] заблокирован"
+
+msgid "Same problem?"
+msgstr ""
+
+msgid "For transactions larger than $800 our payment system requires us to verify the customer's data for security reasons. To pass this verification you need to upload scans or photos of the following documents:"
+msgstr "При транзакциях свыше $800 платёжная система выставляет запрос на подтверждение данных плательщика во избежание мошенничества и махинаций с финансами. Пожалуйста, пройдите процедуру дополнительной верификации. Для этого необходимо загрузить сканы либо фото следующих документов в читаемом виде:"
+
+msgid "Your ID or passport"
+msgstr "Паспорт"
+
+msgid "Your card which was used to make the payment. The first 4 and the last 4 digits of its number should be visible. Please cover all the other digits."
+msgstr "Карта, с которой были списаны средства (достаточно, чтобы были читаемы 4 первые и последние цифры)"
+
+msgid "A document which can verify your address (not more than 6 months old). For example, utility bill, rental agreement, bank statement, etc."
+msgstr "Документ, подтверждающий адрес проживания,  не старше 6 месяцев (счет на коммунальные платежи, выписка по счету, договор аренды и пр.)"
+
+msgid " - or - "
+msgstr "- или -"
+
+msgid "A second document confirming your ID (driving license, etc.)"
+msgstr "Дополнительный документ подтверждающий вашу личность (например водительские права)"
+
+msgid "Request was created, but you can still <a href='/account/profile/documents'>upload more documents</a> if you need."
+msgstr "Заявка на разблокировку создана, но Вы все равно можете <a href='/account/profile/documents'>загрузить дополнительные документы</a>."
+
+msgid "You can <a href='/account/profile/documents'>upload documents</a> in your Private Office."
+msgstr "Вы можете <a href='/account/profile/documents'>загрузить документы</a> в Личном Кабинете."
+
+msgid "You haven't uploaded any documents."
+msgstr "У вас нет загруженных документов."
+
+msgid "Request created "
+msgstr "Заявка создана"
+
+msgid "Request unlock"
+msgstr "Разблокируйте меня!"
+
+msgid "Change style"
+msgstr "Изменить тип опционов "
+
+msgid "Deep ECN liquidity and excellent execution on a popular trading platform MetaTrader4"
+msgstr ""
+"Глубокая ECN ликвидность и отличное исполнение в популярной\n"
+"торговой платформе MetaTrader4"
+
+msgid "Demo account"
+msgstr "Демо счет"
+
+msgid "No investments"
+msgstr "Без вложений"
+
+msgid "Live account"
+msgstr "Реальный счет"
+
+msgid "Min. deposit of $"
+msgstr "Мин. депозит $"
+
+msgid "ARUM.PRO professional platform and its browser version ARUM.WEB"
+msgstr ""
+"Профессиональная платформа ARUM.PRO и ее браузерная версия\n"
+"ARUM.WEB"
+
+msgid "Single account for trading as a trader or as an investor in the investment system ARUM.Invest"
+msgstr ""
+"Единый счет для работы в качестве трейдера или инвестора в\n"
+"инвестиционной системе ARUM.Invest"
+
+msgid "Deposit to demo account"
+msgstr "Демо депозит"
+
+msgid "Deposit and Withdrawal history"
+msgstr "Заявки на ввод и вывод"
+
+msgid "Created at"
+msgstr "Создано"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Comment"
+msgstr "Комментарий"
+
+msgid "History for account"
+msgstr "История операций для счета"
+
+msgid "Today"
+msgstr "Сегодня"
+
+msgid "Yesterday"
+msgstr "Вчера"
+
+msgid "Last week"
+msgstr "Последняя неделя"
+
+msgid "Last month"
+msgstr "Последний месяц"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Choose date range"
+msgstr "Выберите даты"
+
+msgid "Filter"
+msgstr "Фильтровать"
+
+msgid "Open orders"
+msgstr "Открытые ордера"
+
+msgid "Closed orders"
+msgstr "Закрытые ордера"
+
+msgid "Loading"
+msgstr "Загрузка"
+
+msgid "Сегодня"
+msgstr ""
+
+msgid "Вчера"
+msgstr ""
+
+msgid "Текущая неделя"
+msgstr ""
+
+msgid "Текущий месяц"
+msgstr ""
+
+msgid "Прошлый месяц"
+msgstr ""
+
+msgid "Указать интервал"
+msgstr ""
+
+msgid "Показать"
+msgstr ""
+
+msgid "A new password will be sent within an hour to e-mail address you set when account was created."
+msgstr "В течение часа на эл. адрес, указанный при создании счета, будет выслан новый пароль."
+
+msgid "Request password recovery"
+msgstr "Создать заявку на восстановление пароля"
+
+msgid "Accounts archive"
+msgstr "Архив счетов"
+
+msgid "Here you can find all your archived accounts"
+msgstr "Здесь вы можете найти все свои архивированные счета"
+
+msgid "In progress"
+msgstr "В процессе"
+
+msgid "Бонусы"
+msgstr ""
+
+msgid "получить бонус"
+msgstr ""
+
+msgid "Contests"
+msgstr "Конкурсы"
+
+msgid "Participate in a contest"
+msgstr "Участвовать в конкурсе"
+
+msgid "ID"
+msgstr "Номер"
+
+msgid "Place"
+msgstr "Место"
+
+msgid "Equity"
+msgstr "Средства"
+
+msgid "There is no accounts to display"
+msgstr "Нет счетов для отображения"
+
+msgid "LAMM Investments"
+msgstr "LAMM инвестиции"
+
+msgid "Create portfolio"
+msgstr "Создать портфель"
+
+msgid "Profitability"
+msgstr "Доходность"
+
+msgid "Portfolio"
+msgstr "Портфель"
+
+msgid "Master"
+msgstr "Управляющий"
+
+msgid "Replication ratio"
+msgstr "Коэффициент копирования"
+
+msgid "Comission"
+msgstr "Комиссия"
+
+msgid "Max Loss"
+msgstr "Макс просадка"
+
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Disconnect from the manager"
+msgstr "Открепиться от управляющего"
+
+msgid "Cancel investment request"
+msgstr "Отменить заявку на инвестирование"
+
+msgid "My LAMM investors"
+msgstr "Мои LAMM инвесторы"
+
+msgid "Reward"
+msgstr "Награда"
+
+msgid "Demo"
+msgstr "Демо"
+
+msgid "Real"
+msgstr "Реальный"
+
+msgid "Binding date"
+msgstr "Дата привязки"
+
+msgid "Disconnect investor"
+msgstr "Открепить инвестора"
+
+msgid "Confirm request"
+msgstr "Подтвердить заявку"
+
+msgid "Reject request"
+msgstr "Отклонить заявку"
+
+msgid "PAMM Investments"
+msgstr "PAMM инвестиции"
+
+msgid "Invest"
+msgstr "Инвестировать"
+
+msgid "There is no account to display"
+msgstr "Нет счетов для отображения"
+
+msgid "Total account balance"
+msgstr "Общий баланс счёта"
+
+msgid "Invetsments amount"
+msgstr "Объём инвестиций"
+
+msgid "Rollover time"
+msgstr "Время следующего ролловера"
+
+msgid "My PAMM investors"
+msgstr "Мои PAMM инвесторы"
+
+msgid "Open PAMM account"
+msgstr "Открыть PAMM счет"
+
+msgid "Investments amount"
+msgstr "Объём инвестиций"
+
+msgid "Investment creation date"
+msgstr "Дата создания"
+
+msgid "Total investments"
+msgstr "Итого инвестиций"
+
+msgid "came in"
+msgstr "присоединилось"
+
+msgid "came out"
+msgstr "отсоединилось"
+
+msgid "Partnership"
+msgstr "Партнёрство"
+
+msgid "demo"
+msgstr "demo"
+
+msgid "Total<br> on real accounts"
+msgstr "Всего<br> на реальных счетах"
+
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "                        Total<br> on <a ng-href=\"[[::BASE_URL]]partnership\">referral</a> accounts\n"
+#| "                    "
+msgid ""
+"\n"
+"                        Total<br> on <a ng-href=\"[[::BASE_URL]]partnership\">referral</a> accounts\n"
+"                    "
+msgstr ""
+"\n"
+"Сумма<br> на <a ng-href=\"[[::BASE_URL]]partnership\">партнёрских</a> счетах"
+
+msgid "Hide accounts balance"
+msgstr "Скрыть баланс счетов"
+
+msgid "ECN.MT"
+msgstr ""
+
+msgid "Account was disabled because of"
+msgstr "Счет был заблокирован по причине "
+
+msgid "More"
+msgstr "Подробнее"
+
+#, python-format
+msgid ""
+"\n"
+"                According to <a href=\"%(link)s\">the conditions of Welcome Bonus 500</a>, deposit of the amount of profit made or larger is required in order to unblock funds and continue trading.\n"
+"              "
+msgstr ""
+"\n"
+"Согласно <a href=\"%(link)s\">условиям акции Велком-бонус 500</a> для разблокировки средств и продолжения торговли необходимо пополнить счет на сумму равную полученной прибыли или большую."
+
+msgid "ECN.PRO"
+msgstr ""
+
+#, fuzzy
+#| msgid "Invest"
+msgid "ECN Invest"
+msgstr "Инвестировать"
+
+msgid "default"
+msgstr ""
+
+#, python-format
+msgid "Password recovery for account %(account)s"
+msgstr "Восстановление пароля счета %(account)s"
+
+msgid "Please wait untill your documens will be aprroved"
+msgstr "Пожалуйста дождитесь пока ваши документы будут подтверждены"
+
+msgid "Your request for an investment account was received, please wait for our employees to contact you"
+msgstr "Ваша заявка на инвестиционный счёт получена, пожалуйста ожидайте, пока с вами свяжутся наши сотрудники"
+
+msgid "Your account is being created"
+msgstr "Ваш счёт в процессе создания"
+
+msgid ", please wait"
+msgstr ", пожалуйста подождите"
+
+msgid "We're sorry, the account creation seems to have failed. Please <a href='javascript:window.history.back();'>press 'Back'</a> in your browser and try again after 5 minutes. If the problem persists, please contact our support."
+msgstr "Приносим свои извинения, во время создания счёта произошла ошибка. Пожалуйста, <a href='javascript:window.history.back();'>нажмите \"Назад\"</a> в вашем браузере и попробуйте снова через 5 минут. Если проблема будет сохраняться, пожалуйста, обратитесь в нашу службу поддержки."
+
+msgid "Account created"
+msgstr "Счет создан"
+
+#, python-format
+msgid ""
+"\n"
+"                        Congratulations! You have opened a new %(account_type)s account in Grandcapital LTD!\n"
+"                        Your account id is %(account_id)s.\n"
+"                    "
+msgstr ""
+"\n"
+"Поздравляем! Вы открыли новый %(account_type)s счет в Grandcapital LTD! Номер Вашего счета %(account_id)s."
+
+#, python-format
+msgid ""
+"\n"
+"                Access password was emailed to %(email)s\n"
+"            "
+msgstr ""
+"\n"
+"Пароль для доступа был отправлен на адрес %(email)s"
+
+msgid "Go to your account list management"
+msgstr "Перейти к управлению моими счетами"
+
+#, python-format
+msgid ""
+"\n"
+"            Now you can take part in&nbsp;<a href=\"%(link)s\">\"Micro Trade\"</a>&nbsp;\n"
+"            contest and get additional profit\n"
+"        "
+msgstr ""
+"\n"
+"Теперь Вы можете участвовать в&nbsp;<a href=\"%(link)s\">конкурсе на центовых счетах</a>."
+
+msgid "You need to set up a secure authentication method before opening a Real account."
+msgstr "Перед открытием реального счёта вам необходимо настроить средство безопасной аутентификации"
+
+msgid "Error while loading account data. Using cached data."
+msgstr "Ошибка при загрузке данных счета. Использованы данные из кэша."
+
+#, python-format
+msgid "Password recovery request for account #%(id)s created successfully. Notification with the account password has been sent to your e-mail."
+msgstr "Запрос на восстановление пароля счета %(id)s принят. Уведомление с паролем счета отправлено на ваш email."
+
+#, python-format
+msgid "Leverage for account #%(id)s changed successfully."
+msgstr "Кредитное плечо счета номер %(id)s было изменено."
+
+#, python-format
+msgid "Request #%(id)s created successfully."
+msgstr "Запрос номер %(id)s создан."
+
+#~ msgid "Options style successfully changed"
+#~ msgstr "Тип опционов успешно изменён"
+
+#~ msgid "other"
+#~ msgstr "другое"
+
+#~ msgid "Your documents is on approving"
+#~ msgstr "Ваши документы ожидают подтверждения"
+
+#~ msgid "Open Web-trader"
+#~ msgstr "Открыть Веб-терминал"
+
+#~ msgid "Demo standard"
+#~ msgstr "DEMO"
+
+#~ msgid "Options style for account #%(id)s changed successfully."
+#~ msgstr "Тип бинарных опционов счёта номер %(id)s был изменён."
+
+#~ msgid "Tick size"
+#~ msgstr "Размер тика"
+
+#~ msgid "Open price"
+#~ msgstr "Цена открытия"
+
+#~ msgid "Stop out level"
+#~ msgstr "Уровень стопов"
+
+#~ msgid "Swap long"
+#~ msgstr "Своп длинных позиций"
+
+#~ msgid "Swap short"
+#~ msgstr "Своп коротких позиций"
+
+#~ msgid "Contract size"
+#~ msgstr "Размер контракта"
+
+#~ msgid "Tick cost"
+#~ msgstr "Цена тика"
+
+#~ msgid "Margin"
+#~ msgstr "Маржа"
+
+#~ msgid "Initial margin"
+#~ msgstr "Входная маржа"
+
+#~ msgid "Group"
+#~ msgstr "Группа"
+
+#~ msgid "Min. spread"
+#~ msgstr "Мин. спред"
+
+#~ msgid "Max. spread"
+#~ msgstr "Макс. спред"
+
+#~ msgid "Avg. spread"
+#~ msgstr "Средний спред"
+
+#~ msgid "Spread"
+#~ msgstr "Спред"
+
+#~ msgid "Margin currency"
+#~ msgstr "Валюта маржи"
+
+#~ msgid "Title"
+#~ msgstr "Название"
+
+#~ msgid "Night margin"
+#~ msgstr "Ночная маржа"
+
+#~ msgid "Volume"
+#~ msgstr "Объем"
+
+#~ msgid "Spread digits"
+#~ msgstr "Кол-во цифр спреда"
+
+#~ msgid "Execution type"
+#~ msgstr "Тип исполнения"
+
+#~ msgid "Is trading allowed?"
+#~ msgstr "Торговля разрешена?"

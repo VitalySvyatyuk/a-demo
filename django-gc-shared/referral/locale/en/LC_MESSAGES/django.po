@@ -1,0 +1,1471 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-16 17:48+0300\n"
+"PO-Revision-Date: 2015-10-21 18:35+0230\n"
+"Last-Translator: Elena Girman <e.girman@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.7.6\n"
+
+msgid "Size"
+msgstr "Size"
+
+msgid "Target"
+msgstr "Target"
+
+msgid "You don't have a RealIB account"
+msgstr "You do not have a Real IB account"
+
+msgid "You've already made a request for certificate creation"
+msgstr "You have already requested the certificate"
+
+msgid "Domain"
+msgstr "Domain"
+
+msgid ""
+"API will be valid for the domain and all its subdomains. Example: "
+"grandcapital.ru"
+msgstr ""
+"API will be valid for the domain and all its subdomains. Example: grandbroker.com"
+
+msgid "Partner account"
+msgstr "Partner account"
+
+msgid ""
+"Referral number of this account will be used for links from this domain."
+msgstr ""
+"Referral number of this account will be used for links from this domain."
+
+msgid "Please enter a value between $0.01 and $10.00"
+msgstr "Please enter a value between $0.01 and $10.00"
+
+msgid "Russian"
+msgstr "Russian"
+
+msgid "English"
+msgstr "English"
+
+msgid "Indonesian"
+msgstr "Indonesian"
+
+msgid "Chinese"
+msgstr "Chinese"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Type value"
+msgstr "Type value"
+
+msgid "Banner file name on Grandcapital server."
+msgstr "Banner file name on Grand Capital server."
+
+msgid "Image"
+msgstr "Image"
+
+msgid "File on Grandcapital server."
+msgstr "File on Grand Capital server."
+
+msgid "Which section this banner belongs to."
+msgstr "Which section this banner belongs to."
+
+msgid "Set of banners"
+msgstr "Set of banners"
+
+msgid "Which section this banner belongs to"
+msgstr "Which section this banner belongs to"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "URL this banner point to."
+msgstr "URL this banner leads to."
+
+msgid "Width"
+msgstr "Width"
+
+msgid "Banner width in pixels."
+msgstr "Banner width in pixels."
+
+msgid "Height"
+msgstr "Height"
+
+msgid "Banner height in pixels."
+msgstr "Banner height in pixels."
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Interactive (clickable) banner"
+msgstr "Interactive (clickable) banner"
+
+msgid "Target added in admin"
+msgstr "Target added in admin panel"
+
+msgid "Published"
+msgstr "Published"
+
+msgid "Banner in rotation"
+msgstr "Banner in rotation"
+
+msgid "banner"
+msgstr "banner"
+
+msgid "banners"
+msgstr "banners"
+
+msgid "Agent code"
+msgstr "Agent code"
+
+msgid "Click count"
+msgstr "Click count"
+
+msgid "Unique click count"
+msgstr "Unique click count"
+
+msgid "Agent code click"
+msgstr "Agent code click"
+
+msgid "Agent code clicks"
+msgstr "Agent code clicks"
+
+msgid "Created"
+msgstr "Created"
+
+msgid "Partner domain"
+msgstr "Partner domain"
+
+msgid "Account"
+msgstr "Account"
+
+msgid "Sum of the rebate"
+msgstr "Rebate amount"
+
+msgid "In USD, from $0.01 to $10.00"
+msgstr "In USD, from $0.01 to $10.00"
+
+msgid "Rebate setting"
+msgstr "Rebate settings"
+
+msgid "Rebate settings"
+msgstr "Rebate settings"
+
+msgid "Name of set"
+msgstr "Name of set"
+
+msgid "Your name"
+msgstr "Your name"
+
+msgid "Phone number"
+msgstr "Phone number"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Сhoose one of your accounts"
+msgstr "Choose an account"
+
+msgid "Open account"
+msgstr "Open an account"
+
+msgid "Clicks"
+msgstr "Clicks"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Add domain"
+msgstr "Add domain"
+
+msgid "Delete domain"
+msgstr "Delete domain"
+
+msgid "Change rebate"
+msgstr "Change rebate"
+
+msgid "Updated at"
+msgstr "Updated at"
+
+msgid ""
+"\n"
+"          <span class=\"total-text\">Number of<br>\n"
+"            <span class=\"annotation\">active customers\n"
+"              <span class=\"third-tip bottom\">Customers which had at least "
+"one trading operation during the current month.\n"
+"                  You should have at least 2 such customers to get partner's "
+"reward.\n"
+"              </span>\n"
+"            </span>\n"
+"          </span>\n"
+"          "
+msgstr ""
+"\n"
+"<span class=\"total-text\">Number of<br>\n"
+"<span class=\"annotation\">active clients\n"
+"<span class=\"third-tip bottom\">Clients which had at least one trading operation during the current month.\n"
+"You should have at least 2 such clients to get partner commission.\n"
+"</span>\n"
+"</span>\n"
+"</span>"
+
+msgid ""
+"\n"
+"          <span class=\"total-text\">Number of\n"
+"            <span class=\"annotation\">new\n"
+"              <span class=\"third-tip bottom\">Active customers, who "
+"registered during the current month.\n"
+"                  You should have at least 1 such customer to get partner's "
+"reward.\n"
+"              </span>\n"
+"            </span> <br> active customers\n"
+"          </span>\n"
+"          "
+msgstr ""
+"\n"
+"<span class=\"total-text\">Number of\n"
+"<span class=\"annotation\">new\n"
+"<span class=\"third-tip bottom\">Active clients, who registered during the current month.\n"
+"You should have at least 1 such client to get partner commission.\n"
+"</span>\n"
+"</span> <br> active clients\n"
+"</span>"
+
+msgid ""
+"\n"
+"          <span class=\"total-text\">\n"
+"            <span class=\"annotation\">Estimated\n"
+"              <span class=\"third-tip bottom\">You will get this reward in "
+"the end of the month if you\n"
+"                  meet all the conditions of the partnership program.\n"
+"              </span>\n"
+"            </span>\n"
+"            <br>profit\n"
+"          </span>\n"
+"          "
+msgstr ""
+"\n"
+"<span class=\"total-text\">\n"
+"<span class=\"annotation\">Estimated\n"
+"<span class=\"third-tip bottom\">You will get this commission at the end of the month if you\n"
+"meet all the conditions of the partnership program.\n"
+"</span>\n"
+"</span>\n"
+"<br>profit\n"
+"</span>"
+
+msgid "Order<br>detailed report"
+msgstr "Order<br>detailed report"
+
+msgid "Warning"
+msgstr "Warning"
+
+msgid "You do not have enough active customers (less than 2)."
+msgstr "You do not have enough active clients (less than 2)."
+
+msgid "You do not have enough new active customer (less than 1)."
+msgstr "You do not have enough new active clients (less than 1)."
+
+msgid "Informers"
+msgstr "Informers"
+
+msgid "Banners"
+msgstr "Banners"
+
+msgid "Rotation banners link"
+msgstr "Rotation banner's link"
+
+msgid "Informer"
+msgstr "Informer"
+
+msgid "Forex quotes"
+msgstr "Forex quotes"
+
+msgid "Background color:"
+msgstr "Background color:"
+
+msgid "Text color:"
+msgstr "Text color:"
+
+msgid "Titles color:"
+msgstr "Titles color:"
+
+msgid "Select instruments:"
+msgstr "Select instruments:"
+
+msgid "of"
+msgstr "of"
+
+msgid "Embedding code:"
+msgstr "Embedding code:"
+
+msgid "Referral link"
+msgstr "Referral link"
+
+msgid "Desired page"
+msgstr "Desired page"
+
+msgid "Your referral link"
+msgstr "Your referral link"
+
+msgid "or"
+msgstr "or"
+
+msgid "Site page"
+msgstr "Site page"
+
+msgid "Select product"
+msgstr "Select product"
+
+msgid "Binary options"
+msgstr "Binary Options"
+
+msgid "Forex for beginners"
+msgstr "Forex for beginners"
+
+msgid "Classic Forex"
+msgstr "Classic Forex"
+
+msgid "Landing page"
+msgstr "Landing page"
+
+msgid "Select landing"
+msgstr "Select landing page"
+
+msgid "$500 bonus"
+msgstr "$500 bonus"
+
+#, python-format
+msgid "100%% on each Options deposit"
+msgstr "100%% on each Options deposit"
+
+msgid "Options welcome bonus"
+msgstr "Options Welcome Bonus"
+
+msgid "Offline materials"
+msgstr "Offline materials"
+
+msgid ""
+"\n"
+"        We provide our partners with high quality branded products. These "
+"products will help you to attract new clients and enable brand awareness.\n"
+"    "
+msgstr ""
+"\n"
+"We provide our partners with products of high quality. These products will help you attract new clients and enable to increase brand awareness."
+
+msgid "Guidebook"
+msgstr "Guidebook"
+
+msgid "Corporate style in printed products usage recommendations"
+msgstr "Recommendations on using corporate style in printed products "
+
+msgid "Guidebook's materials in vector format"
+msgstr "Guidebook's materials in vector format"
+
+#, python-format
+msgid ""
+"Dear %(user_fullname)s !\n"
+"We are glad to tell you, that %(date)s in partner group of\n"
+"your partner account %(referral)s registered a new client account "
+"%(new_account)s.\n"
+"You can get more details about this account in your profile on site.\n"
+"\n"
+"We are looking forward to working with you.\n"
+"\n"
+"With regards,\n"
+"partners department of Grand Capital LTD.\n"
+msgstr ""
+"Dear %(user_fullname)s !\n"
+"We are glad to inform you that %(date)s in the partner's group of\n"
+"your partner account %(referral)s a new client's account is registered %(new_account)s.\n"
+"You can see the detailed information about this account in your profile.\n"
+"\n"
+"We are looking forward to working with you.\n"
+"\n"
+"Regards,\n"
+"Partnership department of Grand Capital LTD.\n"
+
+msgid "Referral account created"
+msgstr "A referral account is created"
+
+msgid "Your reward"
+msgstr "Your commission"
+
+#, fuzzy
+#| msgid ""
+#| "Become a partner of our company and get increased partnership reward "
+#| "during the first two months.\n"
+#| "    This offer is valid for all instrument types: Forex, CFD, ECN and "
+#| "binary options."
+msgid ""
+"Become our partner and get increased commission for the first three months.\n"
+"    This offer is valid for all instruments: Forex, CFD, ECN and binary "
+"options."
+msgstr ""
+"Become our partner and receive increased commission for the first two months. This offer is valid for all instruments: FOREX, CFD, ECN and Binary Options."
+
+msgid ""
+"We offer greatly increased reward to all our new partners according to the "
+"following scheme:"
+msgstr ""
+"Our commission for new partners is calculated as follows:"
+
+msgid "Reward"
+msgstr "Commission"
+
+msgid "In/Out up to"
+msgstr "In/Out up to"
+
+msgid "In/Out over"
+msgstr "In/Out over"
+
+msgid "Reward for 1 standard lot"
+msgstr "For 1 standard lot"
+
+#, python-format
+msgid "From %(from)s till %(till)s"
+msgstr "From %(from)s to %(till)s"
+
+#, python-format
+msgid ""
+"\n"
+"                                    Reward for 1 standard lot as a %% of the "
+"company\n"
+"                                    commission for a group of CFD "
+"instruments\n"
+"                                "
+msgstr ""
+"\n"
+"For 1 standard lot as a %% of the company\n"
+"commission for a group of CFD instruments"
+
+#, python-format
+msgid ""
+"\n"
+"                                    Reward for 1 standard lot as a %% of the "
+"company commission for ECN type accounts\n"
+"                                "
+msgstr ""
+"\n"
+"For 1 standard lot as a %% of the company commission for ECN type accounts"
+
+msgid ""
+"\n"
+"                    Reward for the volume of trade for Options type "
+"accounts\n"
+"                "
+msgstr ""
+"\n"
+"Trading volume - based commission for Binary Options accounts"
+
+msgid ""
+"The sum of the partners reward is formed from the sum of  In / Out, volume "
+"of trade and groups of instruments:"
+msgstr ""
+"Standard commission amount depends on the in/out value, trade volume and the instruments used."
+
+#, python-format
+msgid "Till %(till)s"
+msgstr "Till %(till)s"
+
+#, python-format
+msgid "From %(from)s"
+msgstr "From %(from)s"
+
+msgid "from"
+msgstr "from"
+
+msgid "to"
+msgstr "to"
+
+#, python-format
+msgid ""
+"\n"
+"                                    Reward for the volume of trade as a %% "
+"of In/Out for Options type accounts\n"
+"                                "
+msgstr ""
+"\n"
+"                                    Reward for the volume of trade as a %% of In/Out for Options type accounts\n"
+"                                "
+
+msgid ""
+"\n"
+"                        Additionally for all account types you will get a "
+"bonus for clients that made\n"
+"                        a trading turnover of more than 5 lots for "
+"instruments in groups FOREX&nbsp;MAJORS,\n"
+"                        FOREX&nbsp;EXT&nbsp;1, FOREX&nbsp;EXT&nbsp;2 ($1000 "
+"for accounts of Options type) during the\n"
+"                        reporting period (paid once for each individual "
+"client)\n"
+"                    "
+msgstr ""
+"\n"
+"You will also get the extra bonus for clients whose trading volume exceeds 5 lots ($1000 for Binary Options accounts) by the end of the reporting period. (Promotion is valid for the following currency pairs: FOREX&nbsp;MAJORS,\n"
+"FOREX&nbsp;EXT&nbsp;1, FOREX&nbsp;EXT&nbsp;2  and for all trading account types)."
+
+msgid "Number of clients"
+msgstr "Number of clients"
+
+#, python-format
+msgid "More than %(from)s"
+msgstr "More than %(from)s"
+
+msgid "Bonus for 1 (one) client"
+msgstr "Bonus for 1 (one) client"
+
+msgid "Partner tools"
+msgstr "Partner tools"
+
+msgid "choose one of your accounts"
+msgstr "Choose an account"
+
+msgid "Domains"
+msgstr "Domains"
+
+msgid "My sites"
+msgstr "My websites"
+
+msgid ""
+"\n"
+"                    On this page you can get an API key and HTML code of a "
+"registration form that\n"
+"                    will allow you to include it in your site. Using this "
+"form,\n"
+"                    users of your site will be able to register Real "
+"Standard account directly at GrandCapital.\n"
+"                    All accounts, registered using the form, will be "
+"automatically bound to your\n"
+"                    partner code.\n"
+"                "
+msgstr ""
+"\n"
+"On this page you can get an API key and HTML code of a registration form that\n"
+"will allow you to put it on your website. Using this form,\n"
+"visitors of your website will be able to register a real Standard account directly at Grand Capital.\n"
+"All accounts, registered using the form, will be automatically bound to your\n"
+"partner code."
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "More"
+msgstr "More"
+
+msgid "Choose the banner set"
+msgstr "Choose the banner set"
+
+msgid "You can choose a set with appropriate banners."
+msgstr "Choose a set of banners you like"
+
+msgid ""
+"To use this service, register a domain on your account, or select a "
+"different account, please"
+msgstr ""
+"To use this service, register a domain on your account or select a different account, please"
+
+msgid "choose banner set"
+msgstr "choose banner set"
+
+msgid "Traffic rate"
+msgstr "Traffic rate"
+
+msgid "Registration forms"
+msgstr "Registration forms"
+
+msgid ""
+"\n"
+"                    On this page you can get an HTML code of a registration "
+"form that\n"
+"                    will allow you to include it in your site. Using this "
+"form,\n"
+"                    users of your site will be able to register account "
+"directly at GrandCapital.\n"
+"                    All accounts, registered using the form, will be "
+"automatically bound to your\n"
+"                    partner code.\n"
+"                "
+msgstr ""
+"\n"
+"On this page you can get an HTML code of a registration form that\n"
+"will allow you to put it on your website. Using this form,\n"
+"visitors of your website will be able to register an account directly at Grand Capital.\n"
+"All accounts, registered using the form, will be automatically bound to your\n"
+"partner code."
+
+msgid "Registration form code"
+msgstr "Registration form code"
+
+msgid "Contests \"FXTrade5\" registration form code"
+msgstr "Contest \"FXTrade5\" registration form code"
+
+msgid "Partner registration form code"
+msgstr "Partner registration form code"
+
+msgid "Partner \"Welcome Bonus\" registration form code"
+msgstr "Partner \"Welcome Bonus\" registration form code"
+
+msgid "Landings"
+msgstr "Landings"
+
+#, python-format
+msgid ""
+"\n"
+"                    You can put a link to main page or landing page. This "
+"page is designed to attract customers.\n"
+"                    The conversion rate of our landing pages reaches 10%% or "
+"even more. Every tenth user who\n"
+"                    got on the page, registers and became a client. This is "
+"very good index, so we recommend\n"
+"                    you to post links to our landing pages.\n"
+"                "
+msgstr ""
+"\n"
+"You can put a link to the main page or a landing page. This page is designed to attract clients.\n"
+"The conversion rate of our landing pages reaches 10%% or even more. Every 10th user who\n"
+"visits the page, registers and becomes a client. This is a very good index, so we recommend\n"
+"you to put links to our landing pages."
+
+msgid "Micro"
+msgstr "Micro"
+
+msgid "Bonus for every refill"
+msgstr "Bonus for every deposit"
+
+msgid "Welcome bonus"
+msgstr "Welcome Bonus"
+
+msgid "Please, choose banner set"
+msgstr "Please, choose banner set"
+
+msgid "There were no clicks on your banners."
+msgstr "There were no clicks on your banners."
+
+msgid "Hide"
+msgstr "Hide"
+
+msgid "Partner documents"
+msgstr "Partner documents"
+
+msgid ""
+"\n"
+"            <p>Upload in Private Office following documents to take full "
+"advantage of our partnership program:</p>\n"
+"            <p>1. Scan/photo of your Identity card or driver license</p>\n"
+"            <p>2. Scan/photo of filled and signed \"Appendix to the "
+"Partnership Agreement\"</p>\n"
+"        "
+msgstr ""
+"\n"
+"<p>Upload in the Private Office following documents to enjoy all the benefits of our partnership program:</p>\n"
+"<p>1. Scan/take a photo of your ID card or driver license</p>\n"
+"<p>2. Scan/photo of the \"Appendix to the Partnership Agreement\" with no empty fields, sign it</p>"
+
+msgid "Partnership Agreement"
+msgstr "Partnership Agreement"
+
+msgid ""
+"\n"
+"                Partnership Agreement determines the Company and Partner "
+"rights and obligations, principles of\n"
+"                their cooperation, amount and payment order of partner "
+"commission.\n"
+"            "
+msgstr ""
+"\n"
+"                Partnership Agreement determines the company and a partner rights and obligations, principles of\n"
+"                their cooperation, amount and payment order of partner commission.\n"
+"            "
+
+msgid "Download Agreement"
+msgstr "Download Agreement"
+
+msgid "Partner Certificate"
+msgstr "Partner Certificate"
+
+msgid "The Certificate will be created on Your name and sent on Your email"
+msgstr "The certificate will be created on your name and sent to your email"
+
+msgid "Order a sertificate"
+msgstr "Order a certificate"
+
+msgid ""
+"\n"
+"                    Grand Capital provides new service for IB partners – "
+"various Forex informers.Informers are automatically updated graphic "
+"elements, the sours of financial information like news and quotes or "
+"interactive trader’s calculators. All informers contain your embedded "
+"referral link.For correct traffic attribution make sure, that your domain is "
+"added to your partner’s account.\n"
+"                "
+msgstr ""
+"\n"
+"Grand Capital provides IB partners with a new service – various Forex informers. Informers are automatically updated graphic elements and are the source of financial information like news and quotes or interactive traders' calculators. All informers contain your embedded referral link. For correct traffic attribution make sure, that your domain is added to your partner account."
+
+msgid "Account:"
+msgstr "Account:"
+
+msgid "Domain:"
+msgstr "Domain:"
+
+msgid "Option calculator"
+msgstr "Option calculator"
+
+msgid "Next round of any contest"
+msgstr "Next round of any contest"
+
+msgid "Contest:"
+msgstr "Contest:"
+
+msgid "Any"
+msgstr "Any"
+
+msgid "Next economic event"
+msgstr "Next economic event"
+
+msgid "Financial news"
+msgstr "Financial news"
+
+msgid "Manager rating"
+msgstr "Managers' rating"
+
+msgid "Quotes"
+msgstr "Quotes"
+
+msgid "Next webinar"
+msgstr "Next webinar"
+
+msgid "Callback request"
+msgstr "Callback request"
+
+msgid ""
+"\n"
+"                    Please, make sure, that your domain is added to your "
+"partner’s account.\n"
+"                "
+msgstr ""
+"\n"
+"Please make sure that your domain is added to your partner  account."
+
+msgid ""
+"On this page you can get an API key and HTML code of a registration form "
+"that\n"
+"                will allow you to include it in your site. Using this form,\n"
+"                users of your site will be able to register Real Standard "
+"account directly at GrandCapital.\n"
+"                All accounts, registered using the form, will be "
+"automatically bound to your\n"
+"                partner code."
+msgstr ""
+"On this page you can get an API key and HTML code of a registration form that\n"
+"will allow you to add it to your website. Using this form,\n"
+"users of your website will be able to register a real Standard account directly at Grand Capital.\n"
+"All accounts, registered using the form, will be automatically bound to your\n"
+"partner code."
+
+msgid "Get new key"
+msgstr "Get a new key"
+
+msgid "Get partner's certificate"
+msgstr "Get Partner Certificate"
+
+msgid ""
+"\n"
+"                Get a Partner's Certificate, proving that you are an "
+"official Grand Capital Partner.\n"
+"                We'll be happy to send you the certificate as soon as you "
+"upload to your Private Office\n"
+"                these documents:\n"
+"            "
+msgstr ""
+"\n"
+"Get a Partner Certificate, proving that you are an official Grand Capital partner.\n"
+"We will be happy to send you the certificate as soon as you upload the following documents in your Private Office:"
+
+msgid "A scan or photo of your ID"
+msgstr "A scan or photo of your ID"
+
+#, python-format
+msgid ""
+"\n"
+"                    <a href=\"%(link)s\">Additional Partner's Agreement</a> "
+"signed by you\n"
+"                "
+msgstr ""
+"\n"
+"                    <a href=\"%(link)s\">Additional Partner Agreement</a> signed by you\n"
+"                "
+
+#, python-format
+msgid ""
+"\n"
+"                You can upload the documents <a href=\"%(upload_url)s"
+"\">here</a>\n"
+"            "
+msgstr ""
+"\n"
+"                You can upload the documents <a href=\"%(upload_url)s\">here</a>\n"
+"            "
+
+msgid "Get printed certificate"
+msgstr "Get printed certificate"
+
+msgid "Partnership"
+msgstr "Affiliate programs"
+
+msgid "Partner Programs"
+msgstr "Affiliate programs"
+
+msgid "Web partner"
+msgstr "Web partner"
+
+msgid "Regional representative"
+msgstr "Regional representative"
+
+msgid "Franchising"
+msgstr "Franchising"
+
+msgid "White Label"
+msgstr "White Label"
+
+msgid "Regional</span><br><span>representative"
+msgstr "Regional</span><br><span>representative"
+
+msgid "Web partnership"
+msgstr "Web Partnership"
+
+msgid ""
+"\n"
+"                                    Web partnership - it is the possibility "
+"for the active internet users to join\n"
+"                                    a set up business on favorable terms and "
+"without investment. It is the first\n"
+"                                    level of partnership, which doesn't "
+"require special knowledge in financial markets.\n"
+"                                    In order to start collaboration with our "
+"company it is enough to have any internet\n"
+"                                    resource (site, blog, forum, a group in "
+"social networks and others), through\n"
+"                                    which you will attract clients. In this "
+"case, all the promotional material will\n"
+"                                    be provided by the company for you. This "
+"type of partnership is designed so that it\n"
+"                                    lets you obtain a high reward on par "
+"with serious partners of the company\n"
+"                                "
+msgstr ""
+"\n"
+"If you have a blog, a website, a forum or a community in any social media network, then you can benefit from GC web partnership program! It is a first-level partnership, which means that you do not need extensive market knowledge to enroll. All you need is to attract as many clients as you can with promotional material we will provide you with. No investment is required from you! "
+
+msgid "Become a web partner"
+msgstr "Become a web partner"
+
+msgid "How it works"
+msgstr "How it Works"
+
+msgid "You attract clients"
+msgstr "You attract clients"
+
+msgid "Clients from your site, blog, groups in social networks"
+msgstr "Clients register on GC website"
+
+msgid "Clients make trades on our company accounts"
+msgstr "Clients place trades with GC"
+
+msgid "You receive a reward for the trades or operations that they make"
+msgstr "You receive commission from every trade clients make"
+
+msgid "Benefits"
+msgstr "Benefits"
+
+msgid "You work with a a major well-known company"
+msgstr "Work with a trusted Forex broker (since 2006 on the market)"
+
+msgid ""
+"Grand Capitals investment products and online-trading services are in high "
+"demand on the market"
+msgstr ""
+"Grand Capital services are of great quality and always in high demand."
+
+#, python-format
+msgid "You get a high reward - up to 50%% on each trade of the client"
+msgstr "High profit – up to 50%% from each trade the client makes"
+
+msgid "No initial investments required"
+msgstr "No initial investment is required"
+
+msgid "There are no limits on profit made"
+msgstr "No limits to the profit you can make"
+
+msgid ""
+"You and your clients receive access to all of the Grand Capital services"
+msgstr ""
+"You and your clients receive access to all GC services"
+
+msgid "Your clients will be serviced by Grand Capital"
+msgstr "You do not need to provide your clients with any assistance – we will provide them with the best services possible."
+
+msgid "You can expand a partners network  all around the world"
+msgstr "You can expand your partners’ network all around the world"
+
+msgid "Example of real earnings"
+msgstr "Real-life example"
+
+msgid "Igor,Moscow"
+msgstr "Francisco, Sao Paulo"
+
+msgid "5 days"
+msgstr "5 days"
+
+msgid "1 client"
+msgstr "1 client"
+
+msgid "1 month"
+msgstr "1 month"
+
+msgid "15 clients, 500$"
+msgstr "15 clients, $500"
+
+msgid "3 months"
+msgstr "3 months"
+
+msgid "100 clients, 3500$ per month"
+msgstr "100 clients, $3500 per month"
+
+msgid "12 months"
+msgstr "12 months"
+
+msgid "more than 300 clients, 12650$ per month"
+msgstr "more than 300 clients, $12650 per month"
+
+msgid "Multilevel partnership"
+msgstr "Multilevel Partnership"
+
+msgid ""
+"\n"
+"                                    You can earn revenue from attracting not "
+"only clients but also sub-partners.\n"
+"                                    Grand Capital Partner signed up through "
+"you is your sub-partner,\n"
+"                                    you will also receive income from his "
+"profit\n"
+"                                "
+msgstr ""
+"\n"
+"You can profit by attracting not only clients, but also sub-partners. If a user, attracted by you, will become a GC partner, you will also receive a certain percentage from his/her profit. "
+
+msgid ""
+"\n"
+"                                    In the diagram on the right you can see "
+"the interest rates for different levels of sub-partners.\n"
+"                                    For your convenience, in the partnership "
+"report, you will receive detailed calculations\n"
+"                                    for each sub-partner\n"
+"                                "
+msgstr ""
+"\n"
+"On the right you can see the interest rates for different levels of sub-partnership. You will receive detailed report showing your income received from each sub-partner."
+
+msgid "Grand Capital partner"
+msgstr "Grand Capital partner"
+
+msgid "Standard reward"
+msgstr "Standard commission"
+
+msgid "Level"
+msgstr "Level"
+
+msgid "Our support"
+msgstr "Our Support"
+
+msgid "Transparent partners statistics in the Personal cabinet"
+msgstr "Transparent partners' statistics in the Private Office"
+
+msgid "Advertising<br>materials"
+msgstr "Promo<br>materials"
+
+msgid "Ready strategy<br>to attract clients"
+msgstr "Working strategies<br>to attract more clients"
+
+msgid "Partners department<br>specialists consultation"
+msgstr "Our partnership department<br>assistance"
+
+msgid "Representative<br>Certificate"
+msgstr "Representative<br>Certificate"
+
+msgid "Free education"
+msgstr "Free education"
+
+msgid "Regional  representative"
+msgstr "Regional  Representative"
+
+msgid ""
+"\n"
+"                               Regional representative program give the "
+"possibility for any company to expand their\n"
+"                               business at the expense of the Grand Capital "
+"company's services. The regional\n"
+"                               representative status allows you to work on "
+"behalf of company's name\n"
+"                               in your city and get an increased partnership "
+"reward\n"
+"                           "
+msgstr ""
+"\n"
+"Regional representative program gives an opportunity to individuals and existing companies to benefit from representation of GC services. Regional representative status allows you to work on behalf of Grand Capital in your city and receive commission for each client."
+
+msgid "Become a regional representative"
+msgstr "Become a regional representative"
+
+msgid "Your office"
+msgstr "The clients sign up through your office"
+
+msgid "Increased commissions - discussed individually"
+msgstr "Individual commissions (program tailored specifically for your business)"
+
+msgid ""
+"The status of the regional representative of a major company implies a "
+"higher level of client confidence"
+msgstr ""
+"High level of clients' confidence and satisfaction"
+
+msgid "You can use all of the company's  licenses"
+msgstr "A product of high quality"
+
+msgid ""
+"Easy to interest the client – Grand Capital's investment products and "
+"services are in high demand on the market"
+msgstr ""
+"Easy to interest a client – Grand Capital investment products and services are in high demand on the market"
+
+msgid "Individual page of the representative on the Grand Capital's web site"
+msgstr "Your company’s profile on GC website"
+
+msgid "Access to all of the Grand Capital Services"
+msgstr "Access to all GC services"
+
+msgid ""
+"Ability to conduct training in your office regarding the Grand Capital "
+"programs"
+msgstr ""
+"Ability to offer training on GC programs and services right in your office"
+
+msgid "Requirements for the representative"
+msgstr "To Become a Representative You Will Need to:"
+
+msgid "Having your own office"
+msgstr "Be a legal entity"
+
+msgid "Be a legal entity"
+msgstr "Have your own office"
+
+msgid "Knowledge of the specifics of the financial markets"
+msgstr "Knowledge/experience on financial markets"
+
+msgid "High-quality consulting and training of the clients"
+msgstr "Proven quality of consulting services"
+
+msgid "Grand Capital's Approval of your marketing activities"
+msgstr "Consult with GC regarding your marketing activities"
+
+msgid "Example of results"
+msgstr "Estimated expenses/profit"
+
+msgid "The expenses for opening the office:"
+msgstr "Opening an office:"
+
+msgid "till"
+msgstr "till"
+
+msgid "Monthly expenses:"
+msgstr "Monthly expenses:"
+
+msgid "Office staff:"
+msgstr "Office staff:"
+
+msgid "employees"
+msgstr "employees"
+
+msgid "Average monthly income:"
+msgstr "Average monthly income:"
+
+msgid "Ready-to launch and development model for your business"
+msgstr "Ready-to-launch model for your business"
+
+msgid "Working and proven techniques to attract new customers"
+msgstr "We provide you with working techniques to attract new clients"
+
+msgid "Ongoing technical support for your office and clients"
+msgstr "Ongoing technical support for you and your clients"
+
+msgid "No need to buy software"
+msgstr "No need to buy<br> trading software"
+
+msgid "Work under a well-known brand with the right to use all licenses"
+msgstr "Represent a trusted and reliable broker"
+
+msgid "Individual conditions of cooperation"
+msgstr "Individual program"
+
+msgid ""
+"Application for collaboration on the \"Regional representative\" program"
+msgstr ""
+"Apply for Regional Representative program"
+
+msgid "Send application"
+msgstr "Send application"
+
+msgid ""
+"\n"
+"                                Participate in the development of Grand "
+"Capital company by franchising and\n"
+"                                get a high monthly income. Franchising – "
+"it's a form of running a business,\n"
+"                                in which one company (franchisor) gives the "
+"other company (franchisees)\n"
+"                                the right to use the company's business "
+"model and brand for a fee (royalty).\n"
+"                                Grand Capital gives the possibility for the "
+"investors to grow expand their business\n"
+"                                with a franchise without royalty. At the "
+"same time Grand Capital provides a working\n"
+"                                business model, own brand, advertising and "
+"technical support, consultancy and others.\n"
+"                                All this allows us to avoid many of the "
+"mistakes and build a proper\n"
+"                                successful business with the support of a "
+"major company\n"
+"                            "
+msgstr ""
+"\n"
+"Start your business with Grand Capital and join hundreds of successful entrepreneurs from all over the world! Franchising is when a company (Franchiser) provides another company (Franchisee) with a licensed privilege to use the company’s business model and brand for a fee. Become our Franchisee and get your own profitable business! We will provide you with a working business model, advertising and technical support and other instruments to make your business successful."
+
+msgid "Begin Partnership"
+msgstr "Apply"
+
+msgid "Your independent income"
+msgstr "Your independent income"
+
+msgid "Income from<br>consulting services"
+msgstr "Income from<br>consulting services"
+
+msgid "Income from<br>client training"
+msgstr "Income from<br>client training"
+
+msgid "Other income"
+msgstr "Other income"
+
+msgid "High brand recognition - franchise of a known company Grand Capital"
+msgstr "High level of positive brand recognition"
+
+msgid "Large market potential - stable demand for trading services"
+msgstr "Large market potential for online trading services"
+
+msgid ""
+"Complete services package: training, advertising, software, support, a "
+"personal page on the Grand Capital web site"
+msgstr ""
+"Complete package of services: training, advertising,  software, support, personal page on GC website."
+
+msgid "Unconditional Franchise"
+msgstr "Unconditional Franchise"
+
+msgid "No royalty"
+msgstr "No royalty"
+
+msgid ""
+"Several sources of income: from clients trades, training, consulting and "
+"others"
+msgstr ""
+"Several income opportunities: commission from clients’ trading, training services, consulting services, etc."
+
+msgid "Requirements for franchisees"
+msgstr "To Become a Franchisee You Will Need to:"
+
+msgid "Franchisee shall comply with the internal regulations of the company"
+msgstr "Comply with international regulations"
+
+msgid ""
+"Office of the franchisee must be branded in accordance with the requirements "
+"of Grand Capital"
+msgstr ""
+"The office must be branded in accordance with GC requirements"
+
+msgid ""
+"Attracting and customer service should be carried out only by the scheme, "
+"which will be provided on training"
+msgstr ""
+"You can attract clients and provide customer service only in accordance with guidelines we will provide you during the training."
+
+msgid ""
+"Franchisee shall ensure the normal operation of the office and finance "
+"office operating expenses"
+msgstr ""
+"Franchisee must ensure a proper working environment"
+
+msgid "Proposal for a franchise is not a public offer"
+msgstr "Proposal for a franchise is not a public offer"
+
+msgid "Our Support"
+msgstr "Our Support"
+
+msgid "Ready promotional<br>materials"
+msgstr "We will provide you with<br>all the promotion materials"
+
+msgid "Attracting customers<br>through own<br>representatives"
+msgstr "You can attract clients<br>through your own<br>representatives"
+
+msgid "We provide<br>all the software"
+msgstr "We will provide you<br>with trading software"
+
+msgid "Technical support<br>of your clients"
+msgstr "We will provide technical<br>support to your clients"
+
+msgid "You get access to<br>all of the Grand Capital<br>training materials"
+msgstr "You will get access to<br>all Grand Capital<br>training materials"
+
+msgid "Individual counseling and<br>training of the franchisees"
+msgstr "We will provide individual counseling<br>and training to our franchisees"
+
+msgid "Application for collaboration on the \"Franchising\" program"
+msgstr "Apply for Franchising program"
+
+msgid ""
+"\n"
+"                                White Label partners program was developed "
+"for companies that are already working\n"
+"                                on the market and have their own client "
+"base. White Label partner gets the possibility\n"
+"                                to expand their company's range of services "
+"by providing the services of Internet trading.\n"
+"                                In this case White Label attracts and "
+"services the clients under their own brand.\n"
+"                                And Grand Capital provides software products "
+"and own intellectual developments\n"
+"                                in the use of White Label\n"
+"                            "
+msgstr ""
+"\n"
+"White label partnership program is designed for companies that have their own client base. With GC you can expand your range of services by offering Internet trading. White Label partner attracts clients under its own brand, while Grand Capital provides all the necessary software and a number of other instruments for successful business."
+
+msgid ""
+"Your clients. Your income depends only on your activity - the income is not "
+"limited in any way"
+msgstr ""
+"You attract clients under your own brand"
+
+msgid "Your legal entity<br>under your own brand"
+msgstr "Your brand"
+
+msgid "Trading Platform"
+msgstr "Trading platform"
+
+msgid "Clients make trades on<br>your company accounts"
+msgstr "Clients trade with your company"
+
+msgid ""
+"You can position yourself as an independent broker, without spending the "
+"money to buy the MetaTrader 4 terminal"
+msgstr ""
+"Position yourself as an independent broker without buying the MT4 terminal"
+
+msgid "Large market potential - strong demand for online trading services"
+msgstr "Large market potential for online trading services"
+
+msgid "Increased customer base by attracting new clients"
+msgstr "Increased customer base by attracting new clients"
+
+msgid ""
+"Huge selection of tools - more than 330 financial instruments (CFD, Futures, "
+"Stocks, Indices, Options, Forex)"
+msgstr ""
+"Wide range of trading instruments (330 assets including CFD, futures, stocks, indices and Forex)"
+
+msgid "Profitable spreads and commissions"
+msgstr "Low spreads and commissions"
+
+msgid "Full financial and legal independence"
+msgstr "Financial and legal independence"
+
+msgid "Individual conditions for each White Label"
+msgstr "Individual program tailored for your company"
+
+msgid "Requirements"
+msgstr "Requirements"
+
+msgid "Initial capital to start up the business"
+msgstr "Base capital"
+
+msgid "Database of live clients"
+msgstr "Client database"
+
+msgid "Knowledge of the financial services market"
+msgstr "Proven knowledge of financial services offered by the company"
+
+msgid "Registered legal entity"
+msgstr "Registered legal entity"
+
+msgid "The use of Grand Capitals trading resources"
+msgstr "Grand Capital trading resources"
+
+msgid "Consultation with technical support specialists"
+msgstr "Technical support"
+
+msgid "Software updates"
+msgstr "Software updates"
+
+msgid "Free training<br>for your staff"
+msgstr "Free training<br>for your staff"
+
+msgid "Joint development of<br>strategies to promote"
+msgstr "Promotion strategies"
+
+msgid "Application for collaboration on the \"White Label\" program"
+msgstr "Apply for White Label program"
+
+msgid "Disable rebate"
+msgstr "Disable rebate"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "Spread rebate for your clients"
+msgstr "Spread rebate for your clients"
+
+msgid ""
+"\n"
+"        <p>On this page you can set up spread rebate for all your clients:</"
+"p>\n"
+"        <ul>\n"
+"            <li>Rebate is automatically transferred to client's account "
+"after each trade</li>\n"
+"            <li>The funds for rebate are deducted from the partner's "
+"account, thus the partner's balance can go to negative numbers</li>\n"
+"            <li>The rebate is calculated for trades of any volume</li>\n"
+"            <li>The rebate can amount from $1 to $10 per lot</li>\n"
+"        </ul>\n"
+"        "
+msgstr ""
+"\n"
+"        <p>On this page you can set up spread rebate for all your clients:</p>\n"
+"        <ul>\n"
+"            <li>Rebate is automatically transferred to a client's account after each trade</li>\n"
+"            <li>The funds for rebate are deducted from the partner account, thus the partner's balance can go to negative numbers</li>\n"
+"            <li>The rebate is calculated for trades of any volume</li>\n"
+"            <li>The rebate can amount from $1 to $10 per lot</li>\n"
+"        </ul>\n"
+"        "
+
+msgid "Set up rebate"
+msgstr "Set up rebate"
+
+msgid "Your accounts with enabled rebate"
+msgstr "Your accounts with enabled rebate"
+
+msgid "Rebate value"
+msgstr "Rebate value"
+
+msgid "Date of activation"
+msgstr "Activation date"
+
+msgid "per lot"
+msgstr "per lot"
+
+msgid ""
+"Are you sure you want to turn off spread rebate for the clients of your "
+"partner account"
+msgstr ""
+"Are you sure you want to turn off spread rebate for the clients of your partner account?"
+
+msgid "Redirects from referral link"
+msgstr "Redirects from the referral link"
+
+msgid "No clicks"
+msgstr "No clicks"
+
+msgid "You have no accounts"
+msgstr "You have no accounts"
+
+msgid ""
+"On this page you can get an HTML code of a registration form that\n"
+"                will allow you to include it in your site. Using this form,\n"
+"                users of your site will be able to register Real Standard "
+"account directly at GrandCapital.\n"
+"                All accounts, registered using the form, will be "
+"automatically bound to your\n"
+"                partner code.\n"
+"        "
+msgstr ""
+"On this page you can get an HTML code of a registration form that will allow you to include embed on your website. Using this form, users of your website will be able to register a real Standard account directly at Grand Capital.\n"
+"All accounts, registered using the form, will be automatically bound to your\n"
+"partner code."
+
+#, python-format
+msgid "  Please, get your API key.<br><a href= %(api_key)s>Get my API key</a> "
+msgstr "  Please, get your API key.<br><a href= %(api_key)s>Get my API key</a> "
+
+msgid "Registration code"
+msgstr "Registration code"
+
+#, python-format
+msgid ""
+"\n"
+"            To be able to withdraw funds from your partner account, please, "
+"download and print\n"
+"            <a href=\"%(agreement_link)s\">the partner agreement</a>, sign "
+"its last page, scan it or\n"
+"            take a photo of it and upload it using the form below.\n"
+"            <br/>\n"
+"            We will also need a scan of your ID card or passport, you can "
+"upload it using the same form.\n"
+"        "
+msgstr ""
+"\n"
+"            To be able to withdraw funds from your partner account, please, download and print\n"
+"            <a href=\"%(agreement_link)s\">the Partner Agreement</a>, sign its last page, scan it or\n"
+"            take a photo of it and upload it using the form below.\n"
+"            <br/>\n"
+"            We will also need a scan of your ID card or passport, you can upload it using the same form.\n"
+"        "
+
+msgid "Upload"
+msgstr "Upload"
+
+#, python-format
+msgid "You have created a request for printed certificate # %i"
+msgstr "You have created a request for a printed certificate # %i"
+
+msgid "Failed to remove the domain."
+msgstr "Failed to remove the domain."
+
+msgid "Domain was successfully deleted."
+msgstr "Domain was successfully deleted."
+
+#, python-format
+msgid "Successfully uploaded document %s"
+msgstr "Successfully uploaded document %s"
+
+msgid "Your partnership application form was succesfully submitted"
+msgstr "Your partnership application form was successfully submitted"
+
+#~ msgid "From %(from)s<br>till %(till)s"
+#~ msgstr "From %(from)s<br>to %(till)s"
+

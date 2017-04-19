@@ -1,0 +1,76 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+<h2 class="modal-title offset-bottom-25">{% trans "Recommend us to a friend" %}</h2>
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+
+<div class="fields">
+    <form ng-submit="ok()">
+        <p ng-if="!formData.ib_account.choices.length" class="text-center offset-top-20">{% trans "Have you enjoyed working with us?" %}</p>
+        <p ng-if="formData.ib_account.choices.length" class="text-center offset-top-20">{% trans "We justify your expectations" %}</p>
+        <p class="text-center offset-bottom-30">{% trans "Tell friends about us!" %}</p>
+        <div class="row offset-bottom-20">
+            <div class="small-5 large-5 columns">
+                <label class="offset-top-10">{% trans "Friend's name" %}</label>
+            </div>
+            <div class="small-7 large-7 columns">
+                <input type="text"
+                    ng-disabled="isLoading" 
+                    ng-model="form.name">
+                <div
+                    ng-if="errors.name"
+                    ng-repeat="err in errors.name"
+                    ng-bind="err"
+                    class="error">
+                </div>
+            </div>
+        </div>
+        <div class="row offset-bottom-20">
+            <div class="small-5 large-5 columns">
+                <label class="offset-top-10">{% trans "Friend's email" %}</label>
+            </div>
+            <div class="small-7 large-7 columns">
+                <input type="email" 
+                    ng-disabled="isLoading"
+                    ng-model="form.email">
+                <div
+                    ng-if="errors.email"
+                    ng-repeat="err in errors.email"
+                    ng-bind="err"
+                    class="error">
+                </div>
+            </div>
+        </div>
+        <div ng-if="formData.ib_account.choices.length" class="row offset-bottom-20">
+            <div class="small-5 large-5 columns">
+                <label class="offset-top-10" for="email">{% trans "IB account" %}</label>
+            </div>
+            <div class="small-7 large-7 columns">
+                <div class="select-wrapper">
+                    <select nd-disabled="isLoading"
+                            ng-model="form.ib_account"
+                            ng-options="r.value as r.display_name for r in formData.ib_account.choices">
+                    </select>
+                </div>
+                <div
+                    ng-if="errors.ib_account"
+                    ng-repeat="err in errors.ib_account"
+                    ng-bind="err"
+                    class="error">
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <input type="submit" class="button medium third-black to-white offset-bottom-20 offset-top-10" value="{% trans 'Recommend' %}"/>
+        </div>
+    </form>
+</div>
+
+{% comment %}
+<div ng-if="!formData.ib_account.choices.length">
+    <p class="text-center">{% trans "We pay for your reference. Become our Partner" %}</p>
+
+    <div class="text-center">
+      <a ng-click="cancel()" class="button medium third-black to-white offset-top-20" href="{% url 'account_app' %}create/partnership">{% trans "Become a partner" %}</a> 
+    </div> 
+</div>
+{% endcomment %}
+

@@ -1,0 +1,31 @@
+{% load i18n staticfiles app_tags %}
+<div class="row">
+  <label for="domains_referral" class="small-3 large-3 column">{% trans "Domain" %}:</label>
+  <div class="small-9 large-9 column" ng-switch on="domainInputState">
+
+    <div ng-switch-when="add">
+      <input type="text" style="width: 200px;" class="small-input" ng-disabled="globalLoading" ng-model="newDomain">
+      <button class="button" ng-click="createDomain(newDomain)" ng-disabled="!selectedAccount || !newDomain">{% trans "Save" %}</button>
+      <button class="button third" ng-click="setDomainInputState(null)">{% trans "Cancel" %}</button>
+      <div
+        ng-if="domainErrors.domain"
+        ng-repeat="err in domainErrors.domain"
+        ng-bind="err"
+        class="form-error">
+      </div>
+    </div>
+
+    <div ng-switch-default>
+      <div class="select-wrapper small-input">
+        <select
+          ng-model="selectedDomain"
+          ng-change="selectDomain(selectedDomain)"
+          ng-options="dom.domain for dom in domains |filter:{ib_account:(selectedAccount? selectedAccount.id: null)}"
+        ></select>
+      </div>
+      <button class="button" ng-click="setDomainInputState('add')" ng-disabled="!selectedAccount">{% trans "Add domain" %}</button>
+      <button class="button second" ng-click="deleteDomain()" ng-disabled="!selectedDomain">{% trans "Delete domain" %}</button>
+    </div>
+
+  </div>
+</div>

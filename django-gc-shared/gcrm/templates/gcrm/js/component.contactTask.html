@@ -1,0 +1,133 @@
+{% load i18n %}
+
+<div ng-switch="contactTask.mode">
+  <div class="media" ng-switch-default>
+    <div class="media-left">
+      <div class="media-object">
+        <i class="fa fa-fw fa-2x">[[::contactTask.object.getIcon()]]</i>
+      </div>
+    </div>
+    <div class="media-body">
+      <span ng-switch="::contactTask.isLink">
+        <strong ng-switch-when="true"><a ui-sref="contact.feed({id: contactTask.object.data.contact.id})">[[::contactTask.object.data.contact.name]]</a></strong>
+        <br ng-switch-when="true">
+        <strong ng-switch-default>
+          {% trans "Task for" %} [[::contactTask.Users.mapping[contactTask.object.data.assignee].data.name.short]]
+        </strong>
+        <small
+          ng-class="::{
+            'time-expired': contactTask.object.data.is_expired,
+            'pull-right': !contactTask.isLink
+          }"
+          title="[[::contactTask.object.data.deadline|moment:'LLL']]">
+          [[::contactTask.object.data.deadline|moment:'calendar']]
+        </small>
+      </span>
+      <br>
+      <readmore-lines ng-if="::!contactTask.isLink" text="::contactTask.object.data.text|linky|nl2br" ></readmore-lines>
+      <span ng-if="::contactTask.isLink" ng-bind-html="::contactTask.object.data.text|linky|nl2br"></span>
+      <span ng-if="::!contactTask.isLink">
+        <br>
+        <a ng-if="::contactTask.object.data.is_editable" ng-click="contactTask.mode = 'edit'">{% trans "Edit" %}</a>
+        <a ng-if="::contactTask.object.data.is_completable" ng-click="contactTask.mode = 'complete'">{% trans "Complete" %}</a>
+      </span>
+    </div>
+  </div>
+
+  <div class="media" ng-switch-when="closed">
+    <div class="media-left">
+      <div class="media-object">
+        <i class="fa fa-fw fa-2x text-muted">[[::contactTask.object.getIcon()]]</i>
+      </div>
+    </div>
+
+    <div class="media-body">
+      <small class="pull-right" title="[[::contactTask.object.data.closed_at|moment:'LLL']]">
+        [[::contactTask.object.data.closed_at|moment:'calendar']]
+      </small>
+      <strong>
+        {% trans "Task for" %} [[::contactTask.Users.mapping[contactTask.object.data.assignee].data.name.short]]
+        <span class="text-muted">{% trans "completed at" %}</span>
+      </strong>
+      <br>
+      <readmore-lines class="text-muted" text="::contactTask.object.data.text|linky|nl2br" ></readmore-lines>
+      <span ng-if="::contactTask.object.data.close_comment">
+        <br>
+        <strong>{% trans "Result" %}:</strong> [[::contactTask.object.data.close_comment]]
+      </span>
+    </div>
+  </div>
+
+  <div class="media" ng-switch-when="edit">
+    <div class="media-left">
+      <div class="media-object">
+
+        <div class="dropdown clickable open" ng-click="contactTask.selectOpen = !contactTask.selectOpen">
+          <span class="fa-stack fa-lg fa-fw">
+            <i class="fa fa-stack-2x">[[contactTask.object.getIcon()]]</i>
+            <i class="fa fa-stack-top-right fa-caret-down"></i>
+          </span>
+          <div class="dropdown-menu" ng-if="contactTask.selectOpen">
+            <a ng-repeat="(type, label) in contactTask.TASK_TYPES" class="dropdown-item" ng-click="contactTask.object.data.task_type=type"><i class="fa fa-lg">[[::contactTask.TYPES_ICON[type] ]]</i> [[::label]]</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <form class="media-body" ng-submit="contactTask.save()">
+      <p>
+        <strong>{% trans "Task for" %}: <user-select model="contactTask.object.data.assignee" hide-null-manager="true" classes="'clickable'"></user-select></strong>
+        <span class="form-inline pull-right">
+          <span class="media-heading-after">{% trans "deadline" %}:</span>
+          <input class="form-control form-control-sm form-control-transparent" type="datetime-local" required ng-model="contactTask.object.data.deadline">
+        </span>
+      </p>
+      <p>
+        <div class="text-md-right">
+          <a ng-click="contactTask.setDeadlineToday()">{% trans "Today" %}</a>
+          <a ng-click="contactTask.setDeadlinePlus30Min()">{% blocktrans %}In 30 minutes{% endblocktrans %}</a>
+          <a ng-click="contactTask.setDeadlineNextHour()">{% blocktrans %}In an hour{% endblocktrans %}</a>
+          <a ng-click="contactTask.setDeadlineTomorrow()">{% trans "Tomorrow" %}</a>
+          <a ng-click="contactTask.setDeadlineNextWeek()">{% blocktrans %}In a week{% endblocktrans %}</a>
+        </div>
+        <textarea class="form-control input-sm" rows="2" required ng-model="contactTask.object.data.text" placeholder="{% trans "Comment" %}"></textarea>
+        <div class="btn-group btn-group-sm">
+          <button type="submit" class="btn btn-primary-outline"><i class="fa fa-check"></i> {% trans "Save" %}</button>
+          <button type="button" class="btn btn-secondary-outline" ng-if="::contactTask.object.data.id" ng-click="contactTask.object.revertData(); contactTask.mode = null"><i class="fa fa-times"></i> {% trans "Cancel" %}</button>
+          <button type="button" class="btn btn-danger-outline" ng-click="contactTask.remove()"><i class="fa fa-trash"></i> {% trans "Delete" %}</button>
+        </div>
+      </p>
+    </form>
+  </div>
+
+  <div class="media" ng-switch-when="complete">
+    <div class="media-left">
+      <div class="media-object">
+        <i class="fa fa-fw fa-2x">[[::contactTask.object.getIcon()]]</i>
+      </div>
+    </div>
+
+    <div class="media-body">
+      <span
+        ng-class="::{'time-expired': contactTask.object.data.is_expired}"
+        class="pull-right"
+        title="[[::contactTask.object.data.deadline|moment:'LLL']]">
+        [[::contactTask.object.data.deadline|moment:'calendar']]
+      </span>
+      <strong>{% trans "Task for" %} [[::contactTask.Users.mapping[contactTask.object.data.assignee].data.name.short]]</strong>
+      <br>
+      <readmore-lines text="::contactTask.object.data.text|linky|nl2br"></readmore-lines>
+
+      <form ng-submit="contactTask.complete(completeComment)">
+        <textarea class="form-control form-control-sm" rows="2" required ng-model="completeComment" placeholder="{% trans "Comment" %}"></textarea>
+
+        <div class="btn-group btn-group-sm">
+          <button type="submit" class="btn btn-primary-outline"><i class="fa fa-check"></i> {% trans "Complete" %}</button>
+          <button type="button" class="btn btn-secondary-outline" ng-click="contactTask.mode = null"><i class="fa fa-times"></i> {% trans "Cancel" %}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

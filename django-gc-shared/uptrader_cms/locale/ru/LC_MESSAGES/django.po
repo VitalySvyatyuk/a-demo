@@ -1,0 +1,710 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-03 18:30+0300\n"
+"PO-Revision-Date: 2016-11-03 18:01+0230\n"
+"Last-Translator: sdf asdf <test@test.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.7.8\n"
+
+msgid "Countries"
+msgstr "Страны"
+
+msgid "All countries"
+msgstr "Все страны"
+
+msgid "Importance"
+msgstr "Важность"
+
+msgid "Any"
+msgstr "Любая"
+
+msgid "Company news"
+msgstr "Новости компании"
+
+msgid "Economic indicator"
+msgstr "Экономический индикатор"
+
+msgid "Economic indicators"
+msgstr "Экономические индикаторы"
+
+msgid "Usual"
+msgstr "Обычное"
+
+msgid "Important"
+msgstr "Важное"
+
+msgid "Very important"
+msgstr "Очень важное"
+
+msgid "a week before"
+msgstr "за нед. до"
+
+msgid "quarter"
+msgstr "квартал"
+
+msgid "month"
+msgstr "месяц"
+
+msgid "m/m"
+msgstr ""
+
+msgid "q/q"
+msgstr ""
+
+msgid "y/y"
+msgstr ""
+
+msgid "Display order from min(first) to max (last)"
+msgstr "Порядок отображения от минимального (первый) до максимального (последний)"
+
+msgid "Priority"
+msgstr "Приоритет"
+
+#, fuzzy
+#| msgid "4th quarter of"
+msgid "1th quarter"
+msgstr "4 кв."
+
+#, fuzzy
+#| msgid "2nd quarter of"
+msgid "2nd quarter"
+msgstr "2 кв."
+
+#, fuzzy
+#| msgid "3rd quarter of"
+msgid "3rd quarter"
+msgstr "3 кв."
+
+#, fuzzy
+#| msgid "4th quarter of"
+msgid "4th quarter"
+msgstr "4 кв."
+
+msgid "bln"
+msgstr ""
+
+msgid "mln"
+msgstr ""
+
+msgid "thousand"
+msgstr ""
+
+msgid "barr"
+msgstr ""
+
+msgid "4th quarter of"
+msgstr "4 кв."
+
+msgid "3rd quarter of"
+msgstr "3 кв."
+
+msgid "2nd quarter of"
+msgstr "2 кв."
+
+msgid "1st quarter of"
+msgstr "1 кв."
+
+msgid "Economic event"
+msgstr "Экономическое событие"
+
+msgid "Economic events"
+msgstr "Экономические события"
+
+msgid "Documents"
+msgstr "Документы"
+
+msgid "Privacy Policy"
+msgstr "Политика конфеденциальности"
+
+msgid "Risk Disclosure"
+msgstr "Соглашение о рисках"
+
+msgid "Regulation"
+msgstr "Регулирование"
+
+msgid "Cookie Policy"
+msgstr "Политика cookies"
+
+msgid "Agents and Representatives"
+msgstr "Агенты и представительства"
+
+msgid "Document name"
+msgstr ""
+
+msgid "Category"
+msgstr "Категория"
+
+#, python-format
+msgid "Supported extensions: %(ext)s. Filesize limit: %(limit)s Mb"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Legal document"
+msgstr ""
+
+msgid "Legal documents"
+msgstr ""
+
+msgid "Calendar of events"
+msgstr "Календарь событий"
+
+msgid " The economic calendar is one of the most important tools in Forex trading. It is formed by specialists on the basis of past and current performance and demonstrates future projections. "
+msgstr ""
+"Экономический календарь служит одним из важнейших инструментов в торговле на Форекс. Он\n"
+"формируется специалистами на основе прошлых и текущих показателей и\n"
+"демонстрирует прогнозы на будущее."
+
+msgid " Reading the economic calendar is easy. It contains the following parameters: the time of the news, the country index, period, previous value, forecast, the actual value, the degree of importance. "
+msgstr ""
+"Читать экономический календарь несложно. В нем присутствуют следующие параметры: время выхода\n"
+"новости, страна, показатель, период, предыдущее значение, прогноз, фактическое значение, степень\n"
+"важности."
+
+msgid " Which forex news are the most important? The first one is the discount rate, gross domestic product, unemployment data, sales data for new building, inflation. "
+msgstr ""
+"Какие новости Форекс являются наиболее важными? В первую очередь это: учетная ставка, валовой\n"
+"продукт, данные по безработице, данные по продажам новостроя, инфляция."
+
+msgid "Current time"
+msgstr "Текущее время"
+
+msgid "Prior to the news left"
+msgstr "До выхода новостей осталось"
+
+msgid "Time"
+msgstr "Время"
+
+msgid "Country"
+msgstr "Страна"
+
+msgid "Event"
+msgstr "Событие"
+
+msgid "Past"
+msgstr "Прошлое"
+
+msgid "Forecast"
+msgstr "Прогноз"
+
+msgid "Fact"
+msgstr "Факт"
+
+msgid "There are no events"
+msgstr "Нет событий"
+
+msgid "Author"
+msgstr "Автор"
+
+msgid "Categories"
+msgstr "Категории"
+
+msgid "Other news in category"
+msgstr "Другие новости в категории"
+
+msgid "News in category"
+msgstr "Новости в категории"
+
+msgid "News"
+msgstr "Новости"
+
+msgid "All news"
+msgstr "Все новости"
+
+msgid "Read more..."
+msgstr "Читать далее..."
+
+msgid "Hide"
+msgstr ""
+
+msgid "Company News"
+msgstr "Новости компании"
+
+msgid "Read more"
+msgstr "Читать далее"
+
+msgid "Filter"
+msgstr "Фильтр"
+
+msgid "Your access to analytics content"
+msgstr "Доступ к разделам аналитики"
+
+msgid "Analytics type"
+msgstr "Вид аналитики"
+
+msgid "Access conditions"
+msgstr "Условия предоставления"
+
+msgid "Access"
+msgstr "Доступ"
+
+msgid "Available"
+msgstr "Есть"
+
+msgid "Unavailable"
+msgstr "Нет"
+
+msgid "Economic calendar"
+msgstr "Экономический календарь"
+
+msgid "Public access"
+msgstr "Публичный доступ"
+
+msgid "Percent pays"
+msgstr "Процентные ставки"
+
+msgid "Forexpros.ru news"
+msgstr "Новости Forexpros.ru"
+
+msgid ""
+"\n"
+"            This page holds information about which analytics content types you are allowed to access.\n"
+"        "
+msgstr ""
+"\n"
+"В этом разделе находится информация о Вашей возможности доступа к тому или иному виду аналитического материала."
+
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "It will be used as the address of the page"
+msgstr "Будет использован как адрес страницы"
+
+msgid "Slug"
+msgstr "Слаг"
+
+msgid "News with current language and slug already exists!"
+msgstr "Новость с таким языком и слагом уже существует!"
+
+msgid "Old drupal id"
+msgstr "Старый drupal id"
+
+msgid "Discount rate"
+msgstr "Ставка"
+
+msgid "Country for indicator"
+msgstr "Страна для индикатора"
+
+msgid "Countries for indicators"
+msgstr "Страны для индикаторов"
+
+msgid "Indicator name"
+msgstr "Название индикатора"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "FxStreet ID"
+msgstr "Идентификатор FxStreet"
+
+msgid "Event name"
+msgstr "Название события"
+
+msgid "Indicator"
+msgstr "Индикатор"
+
+msgid "Start typing the name of the indicator"
+msgstr "Начните вводить название индикатора"
+
+msgid "Event time"
+msgstr "Время события"
+
+msgid "Period"
+msgstr "Период"
+
+msgid "Previous"
+msgstr "Предыдущее"
+
+msgid "Prediction"
+msgstr "Прогноз"
+
+msgid "Facts"
+msgstr "Факты"
+
+
+
+
+#~ msgid "Economic calendar. Forex economic calendar"
+#~ msgstr "Экономический календарь. Экономический календарь Forex."
+
+#~ msgid "Forex economic calendar"
+#~ msgstr "Экономический календарь Forex"
+
+
+#~ msgid "Moscow time (GMT +04:00)"
+#~ msgstr "По московскому времени (GMT +04:00)"
+
+#~ msgid "first name"
+#~ msgstr "Имя"
+
+#~ msgid "last name"
+#~ msgstr "Фамилия"
+
+#~ msgid "middle name"
+#~ msgstr "Отчество"
+
+#~ msgid "Example: Russia"
+#~ msgstr "Пример: Россия"
+
+#~ msgid "City"
+#~ msgstr "Город"
+
+#~ msgid "The city where you live"
+#~ msgstr "Город в котором вы живете"
+
+#~ msgid "Address"
+#~ msgstr "Адрес"
+
+#~ msgid "Example: pr. Stachek, 8A"
+#~ msgstr "Пример: пр. Стачек, 8А"
+
+#~ msgid "Account"
+#~ msgstr "Счет"
+
+#~ msgid "Select one of your accounts."
+#~ msgstr "Выберите один из счетов."
+
+#~ msgid "Password"
+#~ msgstr "Пароль"
+
+#~ msgid "Account password. Password can be recovered in the section <a href=\"%s\">My accounts</a>."
+#~ msgstr "Пароль доступа к счёту. Восстановить пароль можно в разделе <a href=\"%s\">Мои счета</a>."
+
+#~ msgid "You should <a href=\"%(link)s\" target=\"_blank\">complete the verification process</a> before withdrawing from account %(account)s"
+#~ msgstr "Вы должны <a href=\"%(link)s\" target=\"_blank\">пройти верификацию</a>, прежде чем вы сможете выводить деньги со счёта %(account)s"
+
+#~ msgid "Error accessing account."
+#~ msgstr "Ошибка доступа к счету."
+
+#~ msgid "The password you entered is incorrect."
+#~ msgstr "Введен неверный пароль."
+
+#~ msgid "Internal error while checking password"
+#~ msgstr "Внутренняя ошибка при проверке пароля. Попробуйте еще раз позже"
+
+#~ msgid "%s: %s in %d hours"
+#~ msgstr "%s: %s через %d часа"
+
+#~ msgid "Financial news"
+#~ msgstr "Финансовая новость"
+
+#~ msgid "Financial news plural"
+#~ msgstr "Финансовые новости"
+
+#~ msgid "Analytic page"
+#~ msgstr "Аналитика (обзоры, премаркеты)"
+
+#~ msgid "Analytic pages"
+#~ msgstr "Аналитика (обзоры, премаркеты)"
+
+#~ msgid "Analytic reviews"
+#~ msgstr "Аналитические обзоры"
+
+#~ msgid "Video analytics"
+#~ msgstr "Видео аналитика"
+
+#~ msgid "Audio analytics"
+#~ msgstr "Аудио аналитика"
+
+#~ msgid "Title"
+#~ msgstr "Название"
+
+#~ msgid "Language"
+#~ msgstr "Язык"
+
+#~ msgid "Forum topic"
+#~ msgstr "Тема на форуме"
+
+
+
+#~ msgid "Name"
+#~ msgstr "Имя"
+
+#~ msgid "Neutral"
+#~ msgstr "Нейтрально"
+
+#~ msgid "Sell"
+#~ msgstr "Продавать"
+
+#~ msgid "Strong Sell"
+#~ msgstr "Активно продавать"
+
+#~ msgid "Buy"
+#~ msgstr "Покупать"
+
+#~ msgid "Strong Buy"
+#~ msgstr "Активно покупать"
+
+#~ msgid "Moving Averages"
+#~ msgstr "Скол. средние"
+
+#~ msgid "Indicators"
+#~ msgstr "Индикаторы"
+
+#~ msgid "Summary"
+#~ msgstr "Резюме"
+
+#~ msgid "Analytics"
+#~ msgstr "Аналитика"
+
+#~ msgctxt "analytics"
+#~ msgid "Subscribe"
+#~ msgstr "Подписаться"
+
+#~ msgid "Analytics reviews"
+#~ msgstr "Аналитические обзоры"
+
+#~ msgid "Index"
+#~ msgstr "Показатель"
+
+#~ msgid "Previous value"
+#~ msgstr "Предыдущее значение"
+
+#~ msgid "No events"
+#~ msgstr "Нет экономических событий"
+
+#~ msgid "Capitalize on the news"
+#~ msgstr "Заработать на новостях"
+
+#~ msgid "Current interest rates"
+#~ msgstr "Текущие процентные ставки"
+
+#~ msgid "Holidays schedule"
+#~ msgstr "Расписание праздников"
+
+#~ msgid "Current value"
+#~ msgstr "Текущее значение"
+
+#~ msgid "Latest consideration"
+#~ msgstr "Последнее рассмотрение"
+
+#~ msgid "Following consideration"
+#~ msgstr "Следующее рассмотрение"
+
+#~ msgid "There are no bids"
+#~ msgstr "Нет ставок"
+
+#~ msgid "National holiday"
+#~ msgstr "Национальный праздник"
+
+#~ msgid "There are no holidays"
+#~ msgstr "Нет праздников"
+
+#~ msgid "All holidays"
+#~ msgstr "Все праздники"
+
+#~ msgid "Grand Capital video analytics"
+#~ msgstr "Видео аналитика от Grand Capital"
+
+#~ msgid "Subscribe to video analytics"
+#~ msgstr "Подпишитесь на видеоаналитику"
+
+#~ msgid "Dozens of economic indicators are published in the world every day. The heads of central banks and other influential persons make their statements. Weekly webinar &quot;Market review&quot; is summarizing major news and publications relevant to past and current week."
+#~ msgstr "Каждый день в мире публикуются десятки экономических показателей, выступают главы Центробанков и прочие влиятельные персоны. Еженедельный вебинар \"Обзор рынка. Важные события недели\" посвящен обзору основных новостей и публикаций, актуальных на прошлой и текущей недели."
+
+#~ msgid "Podcasts: forex audio analytics"
+#~ msgstr "Ayдио аналитика"
+
+#~ msgid "Podcasts: audio analytics"
+#~ msgstr "Подкасты: аудио аналитика"
+
+#~ msgid "My accounts"
+#~ msgstr "Мои счета"
+
+#~ msgid "already have an account?"
+#~ msgstr "У вас уже есть счет?"
+
+#~ msgid "login"
+#~ msgstr "номер счета"
+
+#~ msgid "Financial reviews"
+#~ msgstr "Финансовые обзоры"
+
+#~ msgid "News by date:"
+#~ msgstr "Новости по дате:"
+
+#~ msgid "Holidays"
+#~ msgstr "Расписание праздников"
+
+#~ msgid "The national holidays of various countries can have a substantial effect on the volatility of the financial markets. As such, we recommend taking into account such information when planning your trading operations."
+#~ msgstr "Национальные праздники могут оказывать значительное влияние на Форекс, поэтому их необходимо учитывать при планировании своих торговых операций."
+
+#~ msgid "Holiday"
+#~ msgstr "Праздник"
+
+#~ msgid "News by categories"
+#~ msgstr "Новости по категориям"
+
+#~ msgid "All"
+#~ msgstr "Все"
+
+#~ msgid "In this page, you can listen to the analyst in video"
+#~ msgstr "В данном разделе, Вы можете прослушать аналитику в видео формате"
+
+#~ msgid "You can listen to audio analytics here"
+#~ msgstr "В данном разделе, Вы можете прослушать аналитику в аудио формате"
+
+#~ msgid ""
+#~ "\n"
+#~ "        Forex News from Dow Jones is one of leading world agencies of financial information.\n"
+#~ "        The Wall Street Journal publisher is included into News Corporation\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "Новости Forex(Форекс) от Dow Jones - одно из ведущих мировых агентств финансовой информации, издатель The Wall Street Journal. Входит в структуру News Corporation"
+
+#~ msgid ""
+#~ "\n"
+#~ "        Fundamental analysis by Grand Capital experts: key national economic indicators affecting\n"
+#~ "        Forex traders and currency rates, Forex market forecasts\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "Обзоры по фундаментальному анализу  от специалистов компании Grand Capital - ключевые макроэкономические показатели состояния национальной экономики, воздействующие на участников валютного рынка Forex (Форекс) и уровень валютных курсов, прогнозы рынка Forex(Форекс)"
+
+#~ msgid "Daily market reviews from Sergei Kostenko, senior trader of Grand Capital"
+#~ msgstr "Ежедневные обзоры рынка от финансового аналитика Grand Capital Сергея Костенко"
+
+#~ msgid ""
+#~ "\n"
+#~ "        Technical Forex market analysis by Grand Capital experts:\n"
+#~ "        forecasting the direction of prices through the study of past price changes.\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "Аналитика рынка Forex(Форекс) по техническому  анализу  от специалистов компании Grand Capital - прогнозирование изменений цен в будущем на основе анализа изменений цен в прошлом"
+
+#~ msgid "Reviews by categories"
+#~ msgstr "Обзоры по категориям"
+
+#~ msgid "Fundamental reviews"
+#~ msgstr "Фундаментальные обзоры"
+
+#~ msgid "Technical reviews"
+#~ msgstr "Технические обзоры"
+
+#~ msgid "Premarkets"
+#~ msgstr "Премаркеты"
+
+#~ msgid "Reviews by date:"
+#~ msgstr "Обзоры по дате:"
+
+#~ msgid "Access to this part is limited"
+#~ msgstr "Доступ к разделу ограничен"
+
+#~ msgid ""
+#~ "\n"
+#~ "        <p>Grand Capital company has wide staff of analytics, who place actual information about Forex market daily.</p>\n"
+#~ "        <p>In order to get access it is necessary to log into Private Office and keep the following conditions:</p>\n"
+#~ "        <strong>\n"
+#~ "            <p>Presence of a real account with at least $100 on it</p>\n"
+#~ "        </strong>\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "<p>Компания Grand Capital обладает обширным штатом аналитиков, ежедневно размещающих актуальную информацию о рынке Forex.</p>\n"
+#~ "        <p>Для понимания основ работы на рынке Forex(Форекс), рекомендуем Вам пройти <a href=\"{% not_my \"tutorial_description\" \"base_education\" \"recorded\" %}\">бесплатный базовый семинар обучения</a>.</p>\n"
+#~ "        <p>Для доступа необходимо соблюдение следующих условий:</p>"
+
+#~ msgid "FOREX ANALYTICS - Forex forecast, Forex analytics, Forex news"
+#~ msgstr "АНАЛИТИКА FOREX - прогноз Forex, аналитика Forex, новости Forex"
+
+#~ msgid "Online Forex news"
+#~ msgstr "Новости форекс онлайн"
+
+#~ msgid "Forex Analytics"
+#~ msgstr "Аналитика Forex"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Daily Forex market reviews.\n"
+#~ "                <span style=\"color: #099999;\">Unique articles</span> from analytics of the company.\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Ежедневные обзоры рынка Forex. <span style=\"color: #099999;\">Уникальные статьи</span> от аналитиков компании."
+
+#~ msgid ""
+#~ "\n"
+#~ "                            In order to get access it is nececcary to log in into\n"
+#~ "                            <a href=\"%(link)s?next=%(request.path)s\"> Private Office </a>\n"
+#~ "                            and keep the following conditions:\n"
+#~ "                        "
+#~ msgstr ""
+#~ "\n"
+#~ "Для доступа необходимо <a href=\"%(link)s?next=%(request.path)s\">войти в личный кабинет</a> и соблюдение следующих условий:"
+
+#~ msgid "In order to get access it is nececcary to keep the following conditions"
+#~ msgstr "Для доступа необходимо соблюдение следующих условий"
+
+#~ msgid "Authors"
+#~ msgstr "Авторы"
+
+#~ msgid "Video archive"
+#~ msgstr "Видео архив"
+
+#~ msgid "Subscribe"
+#~ msgstr "Подписаться"
+
+#~ msgid "Presence of a real account"
+#~ msgstr "Наличие реального счета"
+
+#~ msgid "Presence of a real account with at least $%s on it"
+#~ msgstr "Наличие реального счета, со средствами от $%s"
+
+#~ msgid "terms of the offer"
+#~ msgstr "условия оферты"
+
+#~ msgid "Internal error while doing payment"
+#~ msgstr "Во время проведения платежа возникла ошибка. Попробуйте еще раз позже"
+
+#~ msgid "Grand Capital Analytics"
+#~ msgstr "Аналитика Grand Capital"
+
+#~ msgid "Read all reviews"
+#~ msgstr "Читать все обзоры"
+
+#~ msgid "Latest update"
+#~ msgstr "Последнее изменение"
+
+#~ msgid "Fundamental review"
+#~ msgstr "Фундаментальный обзор"
+
+#~ msgid "Technical review"
+#~ msgstr "Технический обзор"
+
+#~ msgid "Premarket"
+#~ msgstr "Премаркет"
+
+#~ msgid "Actual value"
+#~ msgstr "Фактическое значение"
+
+#~ msgid "Internal error while doing payment '                             ': %s"
+#~ msgstr "Внутренняя ошибка при выполнении платежа: %s"
+
+#~ msgid ""
+#~ "\n"
+#~ "                    If you are already regisered, please\n"
+#~ "                    <a href=\"%(auth_login_url)s?next=%(request_path)s\" title=\"Sign in\">Sign in</a>.\n"
+#~ "                    "
+#~ msgstr ""
+#~ "\n"
+#~ "Если вы уже зарегистрированы, пожалуйста, <a href=\"%(auth_login_url)s?next=%(request_path)s\" title=\"Sign in\">войдите</a>."
+
+#~ msgid "After signing in, you will be redirected back to this page"
+#~ msgstr "После входа вы вернетесь на эту страницу"

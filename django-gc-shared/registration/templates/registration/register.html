@@ -1,0 +1,63 @@
+{% extends "private_office/base.html" %}
+
+{% load i18n app_tags %}
+
+{% block title %}{{ block.super }} — {% trans "Register" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Register" %}</h1>
+    <div class="container">
+        {% if user.is_authenticated %}
+            <p>{% blocktrans %}You're already signed in as <strong>{{ user }}</strong>.{% endblocktrans %}</p>
+        {% else %}
+            <form method="POST" id="registration-form" class="register-form" action=".">
+                <input type="hidden" name="next" value="{{ next }}"/>
+                {% include "includes/form.html" %}
+
+                <div class="checkbox-wrapper">
+                    <input autocomplete="off" required="required" id="signup_19" type="checkbox"><label for="signup_19"></label>
+                    <label class="required" for="signup_19">
+                        {% trans "I agree with the" %}
+                        <a class="form_link" href="/static/agreements/ARUM_privacy_policy_13.01_en.pdf" target="_blank">
+                        {% trans "Privacy Policy" context "login popup" %}
+                        </a>
+                    </label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input autocomplete="off" required="required" id="signup_30" type="checkbox"><label for="signup_30"></label>
+                    <label class="required" for="signup_30">{% trans "I agree, that trading leveraged products such as Forex and CFDs carries a high risk and can lead to complete loss of my deposit." %}</label>
+                </div>
+
+                <br>
+                {% gcbutton "submit" _("Register") "first medium" %}
+
+                {% url "auth_login" as login_url %}
+                <span>{% blocktrans %}or maybe you are <a href="{{ login_url }}?next={{ next }}">already a user</a>?{% endblocktrans %}</span>
+            </form>
+            <div>
+                <p>&nbsp;</p>
+                {% blocktrans %}
+                    <p>If you have any questions please contact us by email: <a href="mailto:info@arumcapital.eu">info@arumcapital.eu</a></p>
+                {% endblocktrans %}
+            </div>
+
+
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.23.custom.min.js"></script>
+    <script type="text/javascript" src="{% url "django.views.i18n.javascript_catalog" %}"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("input:first").focus();
+            $("input.datepicker" ).datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "1900:2020",
+            });
+        })
+    </script>
+    {{ form.media }}
+{% endblock %}}

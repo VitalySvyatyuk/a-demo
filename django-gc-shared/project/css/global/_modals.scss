@@ -1,0 +1,554 @@
+.reveal-modal{
+  background: $gc-inverted-color;
+  box-shadow: none;
+  color: $basic-color;
+  outline: none !important;
+  padding: 2.5rem;
+  @include box-sizing(border-box);
+  &, h1, h2, h3, h4, h5, h6, p, a, a:hover{
+    color: $basic-color;
+  }
+  label.offset-top-10 {
+    margin-top: 0 !important;
+  }
+  .modal-title{
+    font: 400 3rem/3rem $font-light;
+    text-align: center;
+  }
+  .modal-manager-info{
+    padding-top: 3.5rem;
+  }
+  .close-reveal-modal.icon.cross{
+    color: $basic-color;
+    font: 400 1.8rem/1.875rem $font-light;
+    right: 1rem;
+    top: 1rem;
+  }
+  // input[type="text"], input[type="password"], input[type="email"]{
+  //   background: $gc-inverted-color;
+  //   border-color: $gc-inverted-color;
+  // }
+  // a{
+  //   &.bordered{
+  //     border-bottom-color: $gc-inverted-color;
+  //   }
+  // }
+  select[multiple="multiple"], select[multiple], textarea{
+    height: 120px;
+  }
+  /* for form item with multiple select or textarea */
+  .form-item.big{
+    min-height: 150px !important;
+  }
+}
+
+/* adaptive reveal modal */
+body.gc .reveal-modal{
+  @include respond-to(gc-small-down){
+    padding: 2rem 1rem !important;
+  }
+  &.small{
+    width: 640px;
+    @include respond-to(gc-medium-down){
+      width: 100%;
+    }
+  }
+  &.medium{
+    width: 900px;
+    @include respond-to-custom(0, 900px){
+      width: 100%;
+    }
+  }
+}
+
+.reveal-modal{
+  &.tiny{
+    h2{
+      font: 2.25rem $font-light;
+    }
+  }
+}
+
+.reveal-modal.gc-small{
+  .reveal-form{
+    padding: 1.5rem 0 !important;
+  }
+}
+
+/*-----------------------------------------for animation with angular-----------------------------------------------*/
+.reveal-modal.fade{
+  @include transform-translate(0, -25%);
+  opacity: 0;
+}
+.reveal-modal.fade.in{
+  @include transform-translate(0, 0);
+  opacity: 1;
+}
+
+.reveal-modal-bg{
+  @include single-transition;
+}
+.reveal-modal-bg.fade.in{
+  opacity: 1;
+}
+.reveal-modal-bg.fade{
+  opacity: 0;
+}
+
+/*-------------------------custom size for modal - adaptive until 1024 - private office-----------------------------*/
+.reveal-modal.gc-small{
+  margin: 0 auto;
+  width: 640px;
+}
+.reveal-modal.gc-medium{
+  margin: 0 auto;
+  width: 820px;
+}
+
+/*--------------------------------------------for modals in private office-------------------------------------------*/
+.my .reveal-modal{
+  @include single-transition;
+  .modal-title{
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  .modal-title span{
+    display: block;
+    font-size: 1.8rem;
+  }
+  .reveal-form{
+    padding: 1.5rem;
+    &.thin {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  div.fields{
+    border-top: 1px rgba(0, 0, 0, 0.2) solid;
+    border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
+    margin: 1.25rem 0;
+    padding: .625rem 0;
+  }
+  .form-item{
+    min-height: 50px;
+    label{
+      line-height: 1;
+      & + .description{
+        margin: 0;
+      }
+    }
+  }
+}
+
+.radio-wrapper{
+  margin: 0 auto;
+  width: 300px;
+}
+
+/*--------------------------------------------side modals in private office-----------------------------------------*/
+.reveal-modal.gc-side-modal {
+  width: rem-calc(370);
+  position: fixed;
+  left: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  opacity: 1;
+  top: 100px !important;
+  @include transform-mix(translate(-100%, 0) scale(0, 0));
+  .close-reveal-modal.icon.cross {
+    opacity: 0;
+    display: none;
+    padding: 1rem;
+    background-color: $gc-inverted-color;
+    top: 0;
+    left: 80%;
+    right: inherit;
+    @include single-transition;
+    &:hover,&:focus,&:active {
+      background-color: $gc-inverted-color;
+    }
+  }
+  &.in {
+    @include transform-mix(translate(0, 0) scale(1, 1));
+    .close-reveal-modal.icon.cross {
+      opacity: 1;
+      left: 100%;
+      display: block;
+    }
+  }
+}
+
+/*---------------------------------reveal form - with lines - before and after--------------------------------------*/
+.reveal-form{
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.2) transparent;
+  margin: 1.875rem 0;
+  padding: 1.875rem 0;
+  .row{
+    margin: .75rem 0;
+  }
+  .form-item{
+    @include clearfix;
+    min-height: 50px;
+    label{
+      line-height: 1;
+      & + .description{
+        margin: 0;
+      }
+    }
+  }
+}
+
+/*---------------------------------reveal table - with lines - before and after--------------------------------------*/
+.reveal-modal table.table-reveal{
+  background: none;
+  border-top: 1px rgba(0, 0, 0, 0.2) solid;
+  border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
+  border-left: none;
+  border-right: none;
+  margin: 0 auto;
+  margin: 40px auto 0 auto;
+  table-layout: auto;
+  width: 100%;
+  span{
+    display: inline-block
+  }
+  input{
+    &[type='range']{
+      margin: 0;
+      width: 15.5rem
+    }
+    &.small[type="text"], &.small[type="password"], &.small[type="email"]{
+      text-align: center;
+      width: 60px;
+    }
+  }
+  tr{
+    background: none;
+    &:first-child td{
+      vertical-align: middle;
+    }
+  }
+  tr.errors td, div.errors,td.errors {
+    color: $gc-first-color;
+  }
+  td{
+    border: none;
+    color: $basic-color;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    padding: 20px 0;
+    text-align: left;
+    vertical-align: top;
+    &:first-child {font-family: $font-med; width: 38%;}
+    ul {
+      list-style-type: none;
+      list-style-image: none;
+      margin-left: 0px;
+    }
+  }
+}
+
+/*----------------------------------------general for forms in modals------------------------------------------------*/
+[data-reveal]{
+  &.reveal-modal{
+    .cross {background: none !important; border-bottom: none !important;}
+    a{
+      color: $gc-second-color;
+      &:hover, &:active, &:focus{
+        border-bottom: 1px solid transparentize($gc-second-color, .6);
+      }
+      &.bordered {
+        border: 0;
+        &:hover, &:active, &:focus{
+          border-bottom: 1px solid transparentize($gc-second-color, .6);
+        } 
+      }
+    }
+  }
+  .icon-help{
+    margin-left: 0.25rem;
+    & + span{
+	  margin-left: 3.25rem
+	}
+  }
+  &.reveal-modal-alt{
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    .reveal-modal-inner{
+      margin: 0 auto;
+      position: relative;
+      @media #{$small-only}{
+        min-height: 100vh;
+      }
+      @media #{$medium-up}{
+        @include reveal-modal-style($padding:$reveal-modal-padding * 1.5);
+      }
+      @include reveal-modal-style(
+        $bg: $gc-inverted-color,
+        $padding: $reveal-modal-padding,
+        $border: true,
+        $radius: false
+      );
+      &.medium{
+        max-width: 650px;
+      }
+      &.small{
+        max-width: 500px;
+      }
+    }
+  }
+  div.fields{
+    border-top: 1px rgba(0, 0, 0, 0.2) solid;
+    border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
+    margin: 1.25rem 0;
+    padding: .625rem 0 1.25rem;
+    & > p{
+      text-align: center;
+      padding: .5rem 0;
+    }
+    p.description{
+      margin-left: 30%;
+    }
+    span.link-show-hidden{
+      border-bottom: 2px white dashed;
+      cursor: pointer;
+      font: 1.125rem $font-med;
+    }
+    div.checkbox-wrapper{
+      margin-left: 30%;
+      width: 60%;
+      p.description{
+        margin-left: 28px;
+        margin-top: -5px;
+      }
+    }
+    .errors{
+      color: $gc-second-color;
+      font: 1.125rem $font-med;
+      & a{
+        border-bottom: 1px solid $gc-second-color;
+        color: $gc-second-color;
+      }
+    }
+  }
+  div.oauth-block {
+    border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
+    text-align: center;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  div.form-field {
+    line-height: 45px;
+    padding: .3125rem 0;
+    position: relative;
+    input, select {
+      left: 30%;
+      position: absolute;
+      width: 60%;
+    }
+    label {
+      width: 30%;
+      line-height: 1.125;
+    }
+    .phone-select {
+      width: 13.5%;
+      /*!rtl:raw:
+      right: 75%;
+      margin-right: 8px;
+      */
+    }
+    .phone-input {
+      /*!rtl:ignore*/
+      left: 45%;
+      width: 45%;
+    }
+    .required {
+      color: $gc-third-color;
+      font: 1.125rem $font-med;
+    }
+  }
+}
+
+/*------------------------------------------------modal-manager-info-------------------------------------------------*/
+.modal-manager-info {
+	@include clearfix;
+	.photo {
+      border: 5px $gc-inverted-color solid;
+      display: block;
+      float: left;
+      width: 100px;
+	}
+	.info {
+      float: left;
+      font-size: 0.875rem;
+      margin-left: 2rem;
+      width: 18%;
+    }
+	.name {
+      font: 1.125rem/1.5rem $font-med;
+    }
+	.age {
+      color: transparentize($gc-inverted-color, .5);
+      display: inline-block;
+      margin-right: 10px;
+      padding-bottom: 0.5rem;
+	}
+	.quotation {
+      float: left;
+      font: 1rem $font-reg-italic;
+      margin-left: 1rem;
+      width: 60%;
+	}
+    .account-title{
+      text-align: right;
+      word-wrap: break-word;
+      h3{font: 1.5rem $font-med; margin-right: 10px;}
+    }
+    .account-info{
+        border-left: 1px solid $gc-inverted-color;
+        p {margin-left: 10px;}
+    }
+}
+
+/*----------------------------------------------------photo---------------------------------------------------------*/
+.photo-modal{
+  height: auto;
+  left: 50%;
+  margin-left: -292px;
+  min-height: 500px;
+  width: 584px;
+  img.user-photo{
+    border: 1px solid #000;
+    height: 13.25rem;
+    width: 13.25rem;
+  }
+  h2{
+    border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
+    font: 2.25rem $font-light;
+    padding-bottom: 1.5rem;
+  }
+  p{
+    font-size: 1.125rem;
+    padding: 0 2rem;
+  }
+}
+
+/*---------------------------------------modals with tables in private office---------------------------------------*/
+.finance-modal, .history-modal, .archive-modal{
+  height: auto;
+  left: 50%;
+  margin-left: -410px;
+  min-height: 500px;
+  width: 820px;
+  .third-vscroller-track{
+    max-height: 440px;
+  }
+  .scroller-wrapper{background: $gc-third-color;}
+  table{
+    width: 101%;
+    thead td{
+      font-family: $font-med;
+    }
+    tbody td{font-family: $font-reg;}
+    tbody{
+      max-height: 440px;
+    }
+    td{
+      color: darken($basic-color, 10%);
+    }
+  }
+}
+.archive-filters{
+  @include clear-ul;
+  li{
+    display: inline-block;
+    padding: .15rem .78rem;
+    @include box-sizing(border-box);
+    &.active{
+      background: $gc-first-color-hover;
+      border-radius: 5px;
+      a{
+        border-bottom-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+  a{
+    border-bottom-style: dashed !important;
+  }
+}
+.archive-interval{
+  color: $basic-color;
+  font-size: 1.125rem;
+  *{vertical-align: middle;}
+  input, select{font: 1rem $font-light;}
+  .interval-day{margin-left: .9375rem; width: 3.7rem;}
+  .interval-month{width: 5.5rem;}
+  .interval-year{margin-right: .9375rem; width: 4.7rem;}
+  .button{margin-left: .3125rem;}
+}
+
+/*-----------------------------------------------------finance-------------------------------------------------------*/
+.finance-modal {
+  table{
+    td{
+      font-size: .875rem;
+      line-height: 1.2;
+      padding: .4rem .8125rem;
+      &:nth-child(3){width: 16.6%;}
+      &:last-child{
+        width: 26.4%;
+      }
+    }
+    tbody td{
+      text-align: left;
+    }
+  }
+}
+
+/*------------------------------------------------accounts history---------------------------------------------------*/
+.history-modal{
+  table{
+    td{
+      padding: .625rem .8125rem;
+      &:first-child, &:last-child{
+        text-align: left;
+      }
+    }
+  }
+}
+
+/*-----------------------------------------------inbox messages view-------------------------------------------------*/
+.message-modal{
+  height: auto;
+  left: 50%;
+  margin-left: -380px;
+  min-height: 300px;
+  width: 760px;
+  .table-reveal{
+    tr td {font-size: 1rem; padding: 0.75rem 0; vertical-align: top !important;}
+  }
+}
+
+/*----------------------------------------------------image---------------------------------------------------------*/
+.reveal-modal.img-modal{
+  margin: 0 auto;
+  padding: 2rem;
+  width: 1000px;
+}
+
+/*----------------------------------------------------request---------------------------------------------------------*/
+.reveal-modal.request-modal{
+  margin: 0 auto;
+  width: 680px;
+  textarea{width: 100%;}
+  .h4{
+    font-family: $font-reg;
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+}

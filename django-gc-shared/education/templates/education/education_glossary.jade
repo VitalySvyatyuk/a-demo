@@ -1,0 +1,23 @@
+extends education/education_base
+
+- load i18n
+
+block tabs
+  - var tab_category = 'glossary'
+  | {{ block.super }}
+
+block title
+  - trans "Glossary"
+  |  {{ block.super }}
+
+block tabs_content
+    - regroup terms|dictsort:"question" by question|first|upper as letters_list
+    div.benefits__info.js-tab-content.state-visible
+      .education-glossary
+        for letter in letters_list
+            .education-glossary-letter
+              .letter= letter.grouper
+              ul
+                for question in letter.list
+                    li
+                      a.link(href="{% url 'term_details' question.pk %}")= question.question

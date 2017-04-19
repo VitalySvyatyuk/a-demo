@@ -1,0 +1,19 @@
+{% load i18n %}
+{% blocktrans %}
+    <ol class="offset-bottom-15">
+        <li>
+            Fill out an application for the money transfer at any Lider service location,
+            providing the following information:
+            <ul>
+                <li>
+                    Your name, date and place of birth, passport information,
+                    including the residence address (registration); </li>
+                <li> Receiver's name - <strong>{{ PAYMENTS_RECEIVER }}</strong>; </li>
+                <li> In the field "Purpose of transfer" choose "Financial aid". </li>
+            </ul>
+        </li>
+        <li> Show the identification document; </li>
+        <li> Make a payment and commission fee according to system’s tariffs. </li>
+        <li><strong> Don't forget to get a verification number – transaction number from the operator. </strong></li>
+    </ol>
+{% endblocktrans %}

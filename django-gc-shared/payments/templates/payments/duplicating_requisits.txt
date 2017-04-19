@@ -1,0 +1,5 @@
+Пользователем {{ user.first_name }} {{ user.last_name }} (https://grandcapital.ru/my{% url "admin:auth_user_change" user.id %}) были созданы реквизиты "{{ payment_system.name }}:{{ purse }}", дублирующие реквизиты{% if other_reqs|length > 1 %} пользователей{% else %} пользователя{% endif %}:
+
+{% for req in other_reqs %}- {{ req.user.first_name }} {{ req.user.last_name }} (https://grandcapital.ru/my{% url "admin:auth_user_change" req.user.id %}): https://grandcapital.ru/{% url "admin:requisits_userrequisit_change" req.id %}
+
+{% endfor %}

@@ -1,0 +1,213 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+	| {% trans "Advantages" %} {{ block.super }}
+
+block content
+	.page_head(style="background-image: url({% static 'img/marketing-site/bg/bg--hands-01.jpg' %})")
+		.container
+			.row
+				.col-xs-12.white-bc
+					- breadcrumbs
+					h1.page_head__title.page_head__title--white
+						- trans "Why ARUM CAPITAL"
+
+
+	.advantages
+		.advantages__item.advantages__item--01(style="background-image: url({% static 'img/marketing-site/bg/bg--hand-01.jpg' %})")
+			.advantages__item__content
+				h3.subtitle.subtitle--red.advantages__item__subtitle
+					| 01
+				h2.page_title.page_title--red.advantages__item__title
+					- trans "Regulation by CySEC (MIFID)"
+				p
+					- trans "ARUM Capital is the holder of a license of the Cyprus Securities and Exchange Commission of the Republic of Cyprus that is part of the EU regulation of MiFID."
+				ul.dashed_list
+					li.dashed_list__item
+						- trans "Transaction quality guarantee"
+					li.dashed_list__item
+						- trans "Corporate governance"
+					li.dashed_list__item
+						- trans "Audit and risk management"
+			img.advantages__item__picture(src="{% static 'img/marketing-site/bg/bg--hand-01.jpg' %}")
+
+
+		.advantages__item.advantages__item--02
+			.advantages__item__content
+				h3.subtitle.subtitle--red.advantages__item__subtitle
+					| 02
+				h2.page_title.page_title--red.advantages__item__title
+					-trans "Safeguarding Arrangements"
+				ul.dashed_list
+					li.dashed_list__item
+						-trans "Custodianship with the majour high street banks"
+					li.dashed_list__item
+						-trans "Participant in the Investment Compensation Fund"
+					li.dashed_list__item
+						-trans "Client funds are kept on a segregated account"
+
+
+		.advantages__item.advantages__item--03
+			.advantages__item__content
+				h3.subtitle.subtitle--red.advantages__item__subtitle
+					| 03
+				h2.page_title.page_title--red.advantages__item__title
+					- trans "Great trading conditions"
+				ul.dashed_list
+					li.dashed_list__item
+						- trans "99,9&#37; of orders are executed within 60 ms"
+					li.dashed_list__item
+						- trans "Real market spreads of 0.1 pip"
+					li.dashed_list__item
+						- trans "No Requote and Reject"
+			img.advantages__item__picture(src="{% static 'img/marketing-site/bg/bg--man-phone-01.png' %}")
+
+		.advantages__item.advantages__item--04
+			.advantages__item__content
+				h3.subtitle.subtitle--red.advantages__item__subtitle
+					| 04
+				h2.page_title.page_title--red.advantages__item__title
+					- trans "Trusted liquidity provider"
+				p
+					- trans "Our liquidity provider is the largest British institutional broker CFH Clearing. The company operates from 2008 in FOREX liquidity market and has proved to be one of the most trusted and technologically advanced in the field. "
+				p
+					- trans "The partners of the company are such liquidity providers as Citi, Barclays, Deutsche Bank and others."
+				p
+					- trans "Thanks to the strategic partnership with CFH we provide our clients with Tier 1 Market Depth."
+				img.advantages__item__logo(src="{% static 'img/marketing-site/etc/logo--cfh-clearing.png' %}")
+
+
+		.advantages__item.advantages__item--05
+			.advantages__item__content
+				h3.subtitle.subtitle--red.advantages__item__subtitle
+					| 05
+				h2.page_title.page_title--red.advantages__item__title
+					- trans "Direct execution of all the transactions via FIX-protocol*"
+				p
+					- trans "Market Execution and direct execution of all transactions via FIX-protocol enable us to open positions in a split of a second and give us an opportunity for multiple trading techniques depending on the execution speed."
+				p
+					- trans "*Financial Information eXchange (FIX) protocol is a messaging standard developed specifically for the real-time electronic exchange of securities transactions."
+				img.advantages__item__logo(src="{% static 'img/marketing-site/etc/logo--fix-protocol.png' %}")
+
+
+		.advantages__item.advantages__item--06
+			.advantages__item__content
+				h3.subtitle.subtitle--red.advantages__item__subtitle
+					| 06
+				h2.page_title.page_title--red.advantages__item__title
+					- trans "Ideal conditions for all types of trading robots"
+				p
+					- trans "We welcome the use of:"
+				ul.dashed_list
+					li.dashed_list__item
+						- trans "Scalpers and intraday trading robots"
+					li.dashed_list__item
+						- trans "High frequency automated algorithmic trading (HFT)"
+					li.dashed_list__item
+						- trans "Impulse and news trading robots "
+			img.advantages__item__picture(src="{% static 'img/marketing-site/bg/bg--macbook-03.png' %}")
+
+
+
+		.advantages__item.advantages__item--07
+			.advantages__item__content
+				h3.subtitle.subtitle--red.advantages__item__subtitle
+					| 07
+				h2.page_title.page_title--red.advantages__item__title
+					- trans "Professional trading platforms"
+				ul.dashed_list
+					li.dashed_list__item
+						- trans "A widely-used trading platform MetaTrader4 with a friendly interface"
+					li.dashed_list__item
+						- trans "Professional trading platform with tick quotes and ARUM.PRO Market Depth"
+					li.dashed_list__item
+						- trans "Browser version of ARUM.PRO trading platform – ARUM WEB which operates on any device"
+			img.advantages__item__picture(src="{% static 'img/marketing-site/bg/bg--workers.png' %}")
+
+
+		.advantages__item.advantages__item--08
+			.advantages__item__content
+				h3.subtitle.subtitle--red.advantages__item__subtitle
+					| 08
+				h2.page_title.page_title--red.advantages__item__title
+					- trans "Over 110 trading financial instruments"
+				ul.dashed_list
+					li.dashed_list__item
+						- trans "Major and cross currency pairs, including pairs with exotic currencies, Roubles and Chinese Yuan"
+					li.dashed_list__item
+						- trans "SPOTs"
+					li.dashed_list__item
+						- trans "CFD-contracts on world stock exchange indices"
+
+
+		.advantages__item.advantages__item--09
+			.advantages__item__content
+				h3.subtitle.subtitle--red.advantages__item__subtitle
+					| 09
+				h2.page_title.page_title--red.advantages__item__title
+					- trans "A unique investment service"
+				p
+					- trans "ARUM.Invest is a service of tracking and copying transactions where risk management is on the side of the investor and aggregation of transactions is in the pool"
+				ul.dashed_list
+					li.dashed_list__item
+						- trans "Complete control over your funds"
+					li.dashed_list__item
+						- trans "Stop loss (weekly and absolute)"
+					li.dashed_list__item
+						- trans "Identical prices of the traders and those of the investors"
+				img.advantages__item__logo.advantages__item__logo--bigger-margin(src="{% static 'img/marketing-site/etc/logo--invest--01.png' %}")
+
+
+
+		.advantages__item.advantages__item--10
+			.advantages__item__content
+				h3.subtitle.subtitle--red.advantages__item__subtitle
+					| 10
+				h2.page_title.page_title--red.advantages__item__title
+					- trans "Qualified support"
+				ul.dashed_list
+					li.dashed_list__item
+						- trans "We reply to any queries related to our services"
+					li.dashed_list__item
+						- trans "We advise on matters of deposits/withdrawals of funds"
+					li.dashed_list__item
+						- trans "We accept inquiries on technical errors"
+			img.advantages__item__picture(src="{% static 'img/marketing-site/bg/bg--happy-people.png' %}")
+
+	.advantages__ps
+		h2.page_title
+			- trans "Any questions?"
+		a.button.button--outline.js-open-popup(href="#", data-popup-target="callback_request")
+			span.button__text
+				- trans "Request a call back"
+
+
+	.call_to_action_pageblock.call_to_action(style="background-image: url({% static 'img/marketing-site/bg/bg--keyboard-1.jpg' %})")
+		.container.call_to_action__container.cancel-position-for-btn
+			span.call_to_action__text.call_to_action__text--big.call_to_action__text--white
+				- trans "Become our client"
+			.call_to_action__buttons_box
+				{% if LANGUAGE_CODE == 'ru' %}
+				div.risk-hidden-ru.mobile-view
+					a.call_to_action__button__item.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+						span.button__text
+							- trans "Open a demo account"
+				{% else %}
+				div.risk-hidden-en.mobile-view
+					a.call_to_action__button__item.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+						span.button__text
+							- trans "Open a demo account"
+				{% endif %}
+				{% if LANGUAGE_CODE == 'ru' %}
+				div.risk-hidden-ru.mobile-view
+					a.call_to_action__button__item.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+						span.button__text
+							- trans "Open an account"
+				{% else %}
+				div.risk-hidden-en.mobile-view
+					a.call_to_action__button__item.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+						span.button__text
+							- trans "Open an account"
+				{% endif %}

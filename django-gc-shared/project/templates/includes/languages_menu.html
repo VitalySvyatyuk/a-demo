@@ -1,0 +1,9 @@
+{% load i18n app_tags %}
+<span class="lang-{{ LANGUAGE_CODE }} current" data-dropdown="lang" data-options="is_hover:true">{{ LANGUAGE_CODE|language_name_local }}</span>
+<ul id="lang" class="lang-list" data-dropdown-content="">
+  {% for key, value in LANGUAGE_SETTINGS.items|order_items %}
+      {% if LANGUAGE_CODE != key %}
+          <li data-value="{{ key }}"><a href="{{ value.redirect_to }}{{ request.path }}"><span class="lang-{{ key }}"></span>{{ key|language_name_local }}</a></li>
+      {% endif %}
+  {% endfor %}
+</ul>

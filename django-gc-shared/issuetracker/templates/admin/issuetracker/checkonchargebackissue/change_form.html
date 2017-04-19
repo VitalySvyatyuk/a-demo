@@ -1,0 +1,72 @@
+{% extends "admin/change_form.html" %}
+
+{% load i18n staticfiles admin_urls admin_static admin_modify %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/new_style.min.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<h1>{% trans "Request status" %}: {{original.status}}</h1>
+<div class=" large-6">
+  <h3><b>{% trans "Profile data" %}:</b></h3>
+  <p>{% trans "First name" %}: {{ original.author.first_name }}</p>
+  <p>{% trans "Last name" %}: {{ original.author.last_name }}</p>
+  <p>{% trans "Middle name" %}: {{ original.author.profile.middle_name }}</p>
+</div>
+<h3><b>{% trans "Documents" %}:</b></h3>
+{% for document in original.author.documents.all %}
+<div class="columns large-6">
+<img src="{{ document.file.url }}"></br>
+  <p><a target="_blank" href="{{ document.file.url }}">{% trans "Open in full size" %}</a></p>
+</div>
+{% endfor %}
+<table>
+  <thead>
+    <tr>
+     <th><p>{% trans "Deposit request ID" %}:</p></th>
+     <th><p>{% trans "Account" %}:</p></th>
+     <th><p>{% trans "Amount" %}:</p></th>
+     <th><p>{% trans "Payment system" %}: </p></th>
+     <th><p>{% trans "Creation date" %}:</p></th>
+     <th><p>{% trans "Status" %}:</p></th>
+    </tr>
+  </thead>
+  {% for deposit_request in original.chargeback_requests %}
+  <tr>
+    <td class="large-6">
+      <p>{{ deposit_request.id }}</p>
+    </td>
+    <td class=" large-6">
+      <p>{{ deposit_request.account }}</p>
+    </td>
+    <td class=" large-6">
+      <p>{{ deposit_request.amount_money }}</p>
+    </td>
+    <td class=" large-6">
+      <p>{{ deposit_request.payment_system }}</p>
+    </td>
+    <td class=" large-6">
+      <p>{{ deposit_request.creation_ts }}</p>
+    </td>
+    <td class=" large-6">
+      <p>{{ deposit_request.status }}</p>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="row offset-top-20">
+  <form action="{{ form_url }}" method="POST" novalidate>
+    {% csrf_token %}
+    <input type="hidden" name="status" value="closed">
+    <input type="submit" class="button medium" value="{% trans "Unblock" %}" class="default" name="_save"/>
+  </form>
+  <form action="{{ form_url }}" method="POST" novalidate>
+    {% csrf_token %}
+    <input type="hidden" name="status" value="rejected">
+    <textarea placeholder="{% trans "Rejection comment" %}" name="comment" id="comment"></textarea>
+    <input type="submit" class="button second medium" value="{% trans "Decline" %}" class="default" name="_save"/>
+  </form>
+</div>
+{% endblock %}

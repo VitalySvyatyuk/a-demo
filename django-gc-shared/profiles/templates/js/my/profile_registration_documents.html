@@ -1,0 +1,81 @@
+{% extends "js/my/profile_steps.html" %}
+{% load i18n %}
+
+{% block steps %}
+  {% with category='documents' %}
+      {{ block.super }}
+  {% endwith %}
+{% endblock %}
+
+{% block tabscontent %}
+  <div class="active upload-documents steps">
+    <div class="third-light-wrapper">
+      <div class="small-8 columns">
+        {% trans "You have completed your registration and now you can <a href='[[::BASE_URL]]create'>open a Demo Account</a>. In order to open Live Accounts you need to upload the documents for confirmation of the account." %}
+      </div>
+    </div>
+    <div class="small-5 columns">
+        <div class="third-light-wrapper">
+            <h4 class="h4">{% trans "Upload documents" %}</h4>
+            <form name='uploadDocumentsForm' ng-submit="bulk_upload()">
+          <div ng-repeat="field in formFields.name.choices" ng-if="['passport_scan', 'address_proof', 'residential_address'].indexOf(field.value) != -1">
+
+                  <p class="h5" ng-bind="field.display_name"></p>
+                  <p ng-if="field.value == 'passport_scan'">
+                    {% trans "Proof of Identification (POI) – clear colour scanned copy of your <span style='font-weight:bold;'>International Passport</span>. If you do not hold an International Passport, you may provide one other form of valid government-issued identification document (ID card, Driving License). The POI should contain holder’s full name, photo and signature, date of birth, issue/expiry date and document number. In order to open a live trading account this document must be uploaded." %}
+                  </p>
+                  <p ng-if="field.value == 'residential_address'">
+                    {% trans "For citizens of the Russian Federation, Republic of Belarus, Ukraine, Armenia, Uzbekistan, Tajikistan, Turkmenistan the local passport page with the registered residential address can serve as a proof of residence, <span style='font-weight:bold;'>only in cases</span> where the presented POI document is a different than the local passport. In other words, one document cannot be accepted for multiple use." %}
+                  </p>
+                  <p ng-if="field.value == 'address_proof'">
+                    {% trans "Proof of Residential Address (POR) – clear coloured scanned copy of a recent utility bill, bank statement, local authority bill or any other official document stating your name and full address, as written in your online registration with ArumCapital. The POR issue date must be less than 6 months back." %}
+                  </p>
+                  <div class="form-item offset-top-20">
+                    {# <div class="labels with-description"> #}
+                        {# <label class="required" ng-bind="::formFields.file.label"></label> #}
+                    {# </div> #}
+                    <div class="upload-button-wrap upload-wrap">
+                      <upload-button files="files[field.value]">
+                          {% trans "Choose file" %}
+                      </upload-button>
+                      <div
+                          ng-if="errors[field.value]"
+                          ng-repeat="err in errors[field.value].file"
+                          ng-bind="err"
+                          class="error">
+                      </div>
+                      <p class="description" ng-bind="::formFields.file.help_text"></p>
+                    </div>
+                    <div class="upload-wrap">
+
+                    </div>
+                  </div>
+
+          </div>
+                <br>
+                <button type="submit" class="button medium">{% trans "Send documents to verify" %}</button>
+            </form>
+          <!--<a class="button medium offset-top-40" ng-href="[[::BASE_URL]]create">{% trans "Go to account opening" %}</a>-->
+            <br><br>
+
+        <span ng-if="!user.profile.status_info.verified" class="form-error reg-error">
+            {% trans "You will be able to open a real accounts after your documents are verified. Now you can <a href='[[::BASE_URL]]create'>open Demo accounts only.</a>" %}
+        </span>
+
+
+        </div>
+    </div>
+    <div class="small-6 columns right">
+        <div class="check-list-wrapper third-light-wrapper">
+            <h4 class="h4">{% trans "You have uploaded" %}</h4>
+            <ul class="uploads-list offset-top-40">
+                <li ng-repeat="doc in documents">
+                    <span ng-bind="doc.name_display"></span>
+                    <time ng-bind="doc.creation_ts|momentFromNow"></time>
+                    {# <a class="icon cross" ng-click="remove($index)"></a> #}
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+{% endblock %}

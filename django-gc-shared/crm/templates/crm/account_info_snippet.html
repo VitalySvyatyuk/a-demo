@@ -1,0 +1,23 @@
+{% load app_tags shared_tags %}
+
+{% if is_staff %}
+<a href="{{ ADMIN_PREFIX }}admin/mt4/mt4account/{{ account.id }}/" {% if account.is_fully_withdrawn %}style="background-color: #ff746d;"{% endif %}>{{ account }}</a>
+(<a href="{% url "mt4_account_history" account.mt4_id %}"
+    onclick='window.open("{% url "mt4_account_history" account.mt4_id %}", "_blank",
+            "menubar=no,toolbar=no,location=no,directories=no,status=no,resizable=yes,scrollbars=yes"); return false;'>
+    {{ account.creation_ts|date:"d.m.Y" }}
+</a>)
+{% else %}
+    {{ account }} ({{ account.creation_ts|date:"d.m.Y" }})
+{% endif %}
+
+<br/>
+
+{% if forloop.counter == 5 and not forloop.last %}
+    <span style="border-bottom: 1px black dashed; cursor: pointer;" onclick="$(this).next().show(); $(this).hide(); return false;">Показать ещё {{ forloop.revcounter0 }}</span>
+    <div style="display:none;">
+{% endif %}
+{% if forloop.counter > 5 and forloop.last %}
+    <span style="border-bottom: 1px black dashed; cursor: pointer;" onclick="$(this).parent().prev().show(); $(this).parent().hide(); return false;">Скрыть</span>
+    </div>
+{% endif %}

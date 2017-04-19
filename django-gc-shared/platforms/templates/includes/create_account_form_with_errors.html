@@ -1,0 +1,105 @@
+{% load app_tags i18n staticfiles %}
+<div class="reveal-modal-inner medium">
+    <h2 class="modal-title">{% trans "Account settings" %}</h2>
+    <a class="close-reveal-modal icon cross"></a>
+    <br/>
+    <div class="text-center hide" id="wait_for_create">
+        {% trans "Please wait while account is being created" %}
+        <br/><br/>
+        <br/><br/>
+    </div>
+    {% if too_many_accounts %}
+        <div class="text-center offset-top-20">
+            {% blocktrans count acc_type.max_per_user as max_number %}
+                You can't have more than one {{ acc_type }} account and
+            {% plural %}
+                You can't have more than {{ max_number }} {{ acc_type  }} accounts and
+            {% endblocktrans %}
+            {% blocktrans count num_of_accounts as current_number %}
+                you already have an account of this type
+            {% plural %}
+                you already have {{ current_number }} accounts of this type
+            {% endblocktrans %}
+        </div>
+    {% else %}
+        <form action="{% url 'mt4_process_create_account' acc_type.slug %}" data-next-popup="{{request.GET.next}}" method="post" id="create_form">
+            <table class="table-reveal">
+                <tbody>
+                {% for field in form.visible_fields %}
+                    {% if field.name != "agreements" %}
+                        <tr class="hide errors" id="{{ field.name }}">
+                            <td colspan="2"><span></span></td>
+                        </tr>
+                        <tr>
+                            <td>{{ field.label_tag }}</td>
+                            <td>
+                                {{ field }}
+                                {% if field.help_text %}<p class="description">{{ field.help_text }}</p>{% endif %}
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+            {% for field in form.hidden_fields %}
+                {{ field }}
+            {% endfor %}
+            <div class="offset-top-40 inverted-checkbox">
+                <div class="errors hide" id="agreements"><span></span></div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" name="agreements" id="id_agreements" required="required">
+                    <label for="id_agreements"></label>
+                    <label for="id_agreements">
+                        {{ form.agreements.help_text }}
+                    </label>
+                </div>
+            </div>
+            {% csrf_token %}
+            <div class="text-center offset-top-40">
+                <input type="submit" value="{% trans "Create" %}" class="button third medium">
+                &emsp;
+                <a href="#" class="bordered fs-16"
+                   onclick="$('a.close-reveal-modal').trigger('click'); return false;">{% trans "Cancel" %}</a>
+            </div>
+        </form>
+
+        <div class="text-center hide" id="create_response">
+            <div class="text-center offset-top-20">
+                {% blocktrans %}Congratulations! You just opened {{ acc_type }} account! Please, save its password in a secure place. You will also receive account's details by email.{% endblocktrans %}
+            </div>
+            <div class="text-center">
+                <table class="table-reveal">
+                    <tbody>
+                         <tr>
+                            <td><label>{% blocktrans %}Account number{% endblocktrans %}:</label></td>
+                            <td><span id="mt4_id"></span></td>
+                        </tr>
+                        <tr id="account_login_row">
+                            <td><label>{% blocktrans %}Account login{% endblocktrans %}:</label></td>
+                            <td><span id="acc_login"></span></td>
+                        </tr>
+                        <tr>
+                            <td><label>{% trans "Password" %}:</label></td>
+                            <td><span id="mt4_password"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center offset-top-40">
+                <a class="button third medium" id="continue_btn" href="#">{% trans "Continue" context "button" %}</a>
+            </div>
+        </div><!--id="create_response"-->
+    {% endif %}
+</div>
+    <script>
+        ACCOUNT_APP_URL = "{% url 'account_app' %}";
+        ACCOUNT_CREATE_HANDLER = function(trading, partnership) {
+            var type = '';
+            if (trading){type = "trading";}
+            if (partnership){type = "partnership";}
+            location.href = ACCOUNT_APP_URL + type;
+        };
+        WEBTRADER_URL = null;
+        ERROR_MSG = '{% trans "Account creation failed, please try again later" %}';
+    </script>
+    <script src="{% static 'js/compiled/create_account.min.js' %}"></script>

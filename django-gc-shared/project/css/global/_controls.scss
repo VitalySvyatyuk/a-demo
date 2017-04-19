@@ -1,0 +1,929 @@
+/*----------------------------------------------------labels---------------------------------------------------------*/
+label, .label {
+  background: none;
+  cursor: default;
+  color: $basic-color;
+  display: inline-block;
+  font: rem-calc(15) $font-reg;
+  padding: rem-calc(17) 0 0 0;
+}
+
+/*----------------------------------------------------inputs---------------------------------------------------------*/
+body input[type="text"],
+body input[type="password"],
+body input[type="search"],
+body input[type="number"],
+body input[type="tel"],
+body input[type="email"],
+body input[type="url"],
+body textarea{
+  background: $gc-inverted-color;
+  border: rem-calc(1) solid #cccccc;
+  // border-radius: 5px;
+  box-shadow: none !important;
+  color: $basic-color;
+  display: inline-block;
+  font: rem-calc(15) $font-med;
+  margin: 0;
+  outline: none;
+  padding: 0 1rem;
+  height: rem-calc(48);
+  vertical-align: middle;
+  -webkit-transition: none;
+  transition: none;
+  &:hover, &:active, &:focus {
+    background: $gc-inverted-color;
+    border-color: $gc-first-color;
+  }
+  &.small-input{
+    // border: 1px solid lighten($basic-color, 45%);
+    // border-radius: 3px;
+    height: 30px;
+    font: 1rem/1.5 $font-light;
+    &:hover, &:active, &:focus{
+      border-color: $basic-color-hover;
+    }
+  }
+  @mixin text-input-placeholder-style {
+    color: lighten($basic-color, 5%);
+  }
+  &:-moz-placeholder {
+    @include text-input-placeholder-style;
+  }
+  &::-moz-placeholder {
+    @include text-input-placeholder-style;
+  }
+  &::-webkit-input-placeholder {
+    @include text-input-placeholder-style;
+  }
+  &:-ms-input-placeholder {
+    @include text-input-placeholder-style;
+  }
+}
+
+input:not([type="submit"]),
+input:not([type="radio"]),
+input:not([type="checkbox"]),
+select{
+  &:disabled{
+    background: #d8d8d8 !important;
+    border-color: #d8d8d8 !important;
+    color: lighten($basic-color, 30%);
+    cursor: default;
+    // &:hover, &:active, &:focus {
+    //   background: lighten($basic-color, 60%) !important;
+    //   border-color: lighten($basic-color, 60%) !important;
+    // }
+  }
+}
+
+body textarea{
+  resize: vertical;
+  padding: rem-calc(10);
+  // &.small-textarea{
+  //   border: 1px solid lighten($basic-color, 45%);
+  //   border-radius: 3px;
+  //   height: auto;
+  //   min-height: 32px;
+  //   height: auto;
+  //   font: 1rem/2.1 $font-light;
+  //   &:hover, &:active, &:focus{
+  //     border-color: $basic-color-hover;
+  //   }
+  // }
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+input[type="text"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="email"], input[type="url"] {height: 2.5rem;}
+
+/* Input type="range" */
+
+input[type=number]{
+  &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+    -webkit-appearance: none; margin: 0px;
+  }
+  -moz-appearance:textfield;
+}
+
+input[type="range"] {
+  display: inline-block;
+  @mixin range-input-track-style {
+    background: $basic-color;
+    border: none;
+    border-radius: 0.25rem;
+    height: 0.5rem;
+  }
+  @mixin range-input-thumb-style {
+    background: $gc-third-color;
+    border: none;
+    border-radius: 0.25rem;
+    display: block;
+    height: 1.5rem;
+    text-align: center;
+    width: 1.5rem;
+  }
+
+  /* Webkit */
+  & {
+    -webkit-appearance: none;
+    @include range-input-track-style;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    @include range-input-thumb-style;
+  }
+
+  /* Mozilla */
+  &::-moz-range-track {
+    @include range-input-track-style;
+  }
+  &::-moz-range-thumb {
+    @include range-input-thumb-style;
+  }
+
+  /* Internet Explorer */
+
+  &::-ms-track, &::-ms-fill-lower {
+    @include range-input-track-style;
+  }
+  &::-ms-thumb {
+    @include range-input-thumb-style;
+  }
+}
+
+/*----------------------------------------------------checkboxes---------------------------------------------------------*/
+input[type="checkbox"]{
+  display: none;
+  visibility: hidden;
+  & + label {
+    background: transparent;
+    border: 1px solid #cccccc;
+    height: 20px;
+    margin: 0;
+    opacity: 1;
+    vertical-align: middle;
+    width: 20px;
+    & + label{
+      display: inline-block;
+      // font: 1rem/1.25rem $font-light;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      @include user-select-none;
+      &:hover, &:focus, &:active{input[type="checkbox"] + label{opacity: 1;}}
+    }
+    &:hover, &:focus, &:active{
+      border-color: $gc-first-color;
+    }
+  }
+  &:checked + label{
+    background: url(../img/arum-capital/check.png) no-repeat;
+    opacity: 1;
+    background-size: 80% auto;
+    background-position: 2px 4px;
+    border-color: $gc-first-color;
+  }
+}
+// /*inverted bg + first checkmark*/
+// input[type="checkbox"].inverted, .inverted-checkbox input[type="checkbox"]{
+//   & + label{
+//     background: $gc-inverted-color;
+//   }
+//   &:checked + label{
+//     background: url(../img/icons.png) -400px -120px $gc-inverted-color;
+//   }
+// }
+/*transparent bg + third border + inverted checkmark*/
+// input[type="checkbox"].third-checkbox, .third-checkbox input[type="checkbox"]{
+//   & + label{
+//     background: none;
+//     border: 2px solid $gc-third-color-hover;
+//     &:hover, &:focus, &:active{
+//       background: $gc-third-color-hover;
+//     }
+//   }
+//   &:checked + label{
+//     background: url(../img/icons.png) -362px -122px $gc-third-color-hover;
+//   }
+// }
+/*inverted bg*/
+// input[type="checkbox"].white-bg-checkbox, .white-bg-checkbox input[type="checkbox"]{
+//   & + label {background: $gc-inverted-color; opacity: 1;}
+// }
+
+/*----------------------------------------------------select---------------------------------------------------------*/
+body select{
+  background: $gc-inverted-color url(../img/arum-capital/select-arrow.png) no-repeat;
+  @include bidi(background-position, center right, center left);
+  border: rem-calc(1) #cccccc solid;
+  font: rem-calc(15) $font-med;
+  height: rem-calc(48);
+  outline: none;
+  padding: 0 1.375rem 0 .5rem;
+  &:hover, &:focus, &:active{
+    background: $gc-inverted-color url(../img/arum-capital/select-arrow.png) no-repeat;
+    @include bidi(background-position, center right, center left);
+    border-color: $gc-first-color;
+  }
+}
+
+body select[multiple="multiple"], body select[multiple]{
+  height: 200px;
+  width: 100%;
+}
+
+@-moz-document url-prefix(){
+  body select{
+    background-color: $gc-inverted-color;
+    padding: 5px 27px 5px 3px  !important;
+    &:hover, &:focus, &:active{
+      background-color: $gc-inverted-color;
+      border-color: $gc-first-color;
+    }
+  }
+}
+
+body .select-wrapper select{
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: $gc-inverted-color url(../img/arum-capital/select-arrow.png) no-repeat;
+  @include bidi(background-position, center right, center left);
+  border: none !important;
+  height: 100%;
+  overflow: hidden;
+  padding: 0 1.375rem 0 .5rem;
+  position: relative;
+  text-align: left !important;
+  vertical-align: middle;
+  width: 100%;
+  @include box-sizing(border-box);
+  &::-ms-expand {display: none;}
+  &:hover, &:active, &:focus{
+    border: 2px solid $gc-third-color;
+  }
+}
+.select-wrapper{
+  background: $gc-inverted-color;
+  border: rem-calc(1) #cccccc solid;
+  display: inline-block;
+  font: rem-calc(15) $font-med;
+  height: rem-calc(48);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  vertical-align: middle;
+  z-index: 1;
+  @include box-sizing(border-box);
+  &:hover, &:active, &:focus{
+    border-color: $gc-first-color;
+  }
+  &:before{
+    background: $gc-inverted-color url(../img/arum-capital/select-arrow.png) no-repeat;
+    @include bidi(background-position, center right, center left);
+    content:'';
+    display: inline-block;
+    height: rem-calc(27);
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 29px;
+    z-index: -1;
+    @include box-sizing(border-box);
+  }
+  &.small-input{
+    // border: 1px solid lighten($basic-color, 45%);
+    // border-radius: 3px;
+    height: 30px;
+    select{
+      font: 1rem/1.9 $font-light;
+    }
+    &:hover, &:active, &:focus{
+      border-color: $basic-color-hover;
+    }
+    &:before{
+      top: -5px;
+    }
+  }
+}
+:-moz-any(.select-wrapper):before {
+  background-color: #fff;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* for phone widget - for input after phone select - input width */
+body .phone-wrapper {
+  /*!rtl:ignore*/
+  padding-left: 95px;
+  position: relative;
+  .phone-select{
+    /*!rtl:ignore*/
+    left: 0;
+    position: absolute;
+    width: 75px;
+    select{
+      margin-right: 10px;
+      padding-right: 27px;
+    }
+  }
+  .phone-input{
+    width: 100% !important;
+  }
+}
+//markup:
+//{% if field.name == "phone" %}
+//    <div class="phone-wrapper">
+//{% endif %}
+//    {{ field }}
+//{% if field.name == "phone" %}
+//    </div>
+//{% endif %}
+
+/*----------------------------------------------------slider ui-------------------------------------------------------*/
+.manager-rating-page .range-wrapper{
+  .ui-slider-handle{
+    background: $gc-third-color;
+    border-radius: 50%;
+    height: 11px;
+    position: absolute;
+    top: -3px;
+    width: 11px;
+    &:hover, &:active, &:focus{
+      border: none !important;
+    }
+  }
+  .slider{
+    background: $basic-color;
+    border-radius: 5px;
+    height: 5px;
+    position: relative;
+  }
+  .ui-widget-header{
+    background: $gc-third-color;
+    height:5px;
+    left: 0;
+    position:absolute;
+  }
+}
+
+/*----------------------------------------------------buttons---------------------------------------------------------*/
+button, body .button, body a.button {
+  background: $gc-first-color;
+  border: none;
+  color: $gc-inverted-color;
+  font: rem-calc(14) $font-reg;
+  margin: 0;
+  padding: 0.4rem .75rem;
+  vertical-align: middle;
+  outline: 0;
+  &:hover, &:focus, &:active{
+    background: $gc-first-color-hover;
+  }
+  // &.gray{
+  //   background: #7c7c7c;
+  //   &:hover, &:focus, &:active{
+  //     background: $basic-color;
+  //   }
+  // }
+  &.second {
+    background: transparent;
+    border: 1px solid $gc-second-color;
+    color: $gc-second-color;
+    &:hover, &:focus, &:active {
+      background-color: $gc-second-color;
+      color: $gc-inverted-color;
+    }
+    &.inverted {
+      background: transparent;
+      border: 1px solid $gc-second-color;
+      color: $gc-second-color;
+      &:hover, &:focus, &:active {
+        background-color: $gc-second-color;
+        color: $gc-inverted-color;
+      }
+    }
+  }
+  &.inverted {
+    background: transparent;
+    border: 1px solid $gc-first-color;
+    color: $gc-first-color;
+    &:hover, &:focus, &:active {
+      background-color: $gc-first-color;
+      color: $gc-inverted-color;
+    }
+  }
+  // &.third, &.third-black{
+  //   background: $gc-third-color;
+  //   color: $basic-color;
+  //   &:hover, &:focus, &:active{
+  //     background: $gc-inverted-color;
+  //   }
+  // }
+  // &.to-white{
+  //   &:hover, &:focus, &:active{
+  //     background: $gc-inverted-color !important;
+  //   }
+  // }
+  // &.white{
+  //   background: $gc-inverted-color;
+  //   color: $gc-first-color;
+  //   &:hover, &:focus, &:active{
+  //     color: $gc-first-color-dark-hover;
+  //   }
+  // }
+  // &.white-second{
+  //   background: $gc-inverted-color;
+  //   color: $gc-second-color;
+  //   &:hover, &:focus, &:active {
+  //     color: $gc-second-color-dark;
+  //   }
+  // }
+  // &.white-third{
+  //   background: $gc-inverted-color;
+  //   color: $gc-third-color;
+  //   &:hover, &:focus, &:active{
+  //     color: $gc-third-color-hover;
+  //   }
+  // }
+  // &.white-black{
+  //   background: $gc-inverted-color;
+  //   color: $basic-color;
+  //   &:hover, &:focus, &:active{
+  //     background: $bg-color;
+  //   }
+  // }
+  &:not(.second).medium, &.big {
+    line-height: 1.125rem;
+    padding: rem-calc(14) rem-calc(29);
+    font-size: rem-calc(14);
+    text-transform: uppercase;
+    letter-spacing: 0.03rem;
+  }
+  // &.ml.big{
+  //   font-family: $font-med;
+  //   height: auto;
+  //   line-height: 100%;
+  //   padding-top: 1rem;
+  //   padding-bottom: 1.125rem;
+  // }
+  &[disabled], &[disabled="disabled"]{
+    background: transparent;
+    // border-color: lighten($basic-color, 50%);
+    color: lighten($basic-color, 20%);
+    cursor: default;
+    &:hover, &:active, &:focus {
+      background: transparent;
+      border-color: lighten($basic-color, 50%);
+      color: lighten($basic-color, 20%);
+    }
+  }
+}
+/*------------------------------------------------tabs - not tabs--------------------------------------------------*/
+.left-tab, .right-tab, .center-tab {
+  position: relative;
+  &:after {
+    content: '';
+    border: 15px solid transparent;
+    border-bottom: 15px solid $gc-third-color;
+    position: absolute;
+    top: -30px;
+    @include respond-to(gc-large-down){border: none;}
+  }
+}
+
+.left-tab:after {
+  left: 15%;
+}
+.center-tab:after {
+  left: 47%;
+}
+.right-tab:after {
+  right: 15%;
+}
+
+/*------------------------------------------------private office form--------------------------------------------------*/
+.my .container .form-item{
+  input[type="text"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="url"],
+  select{
+    width: 260px;
+  }
+  &.select-row {
+    select {
+      width: 55%;
+    }
+  }
+}
+body .form-row {
+  .description {
+    margin-top: -7px;
+  }
+  .checkbox-desc {
+    padding-left: 34px;
+  }
+  input[type="checkbox"] + label + label {
+    line-height: 1.1;
+    padding-bottom: 4px;
+  }
+}
+body .form-item, .form-row{
+  margin: rem-calc(15) 0 rem-calc(10);
+  position: relative;
+  @extend .clearfix;
+  .phone-input{
+    width: 162px;
+  }
+  .phone-select, .phone-input{
+    vertical-align: middle;
+  }
+  input[type="text"], input[type="password"], input[type="search"], input[type="email"], input[type="number"]{
+    @include respond-to(gc-large-down){width: 100%;}
+    &:hover, &:active, &:focus {border-color: $gc-first-color;}
+  }
+  input[type="file"]{margin-bottom: 0;}
+  select{
+    @include respond-to(gc-large-down){width: 100%;}
+    &:hover, &:active, &:focus {border-color: $gc-first-color;}
+  }
+  textarea{
+    // border: 2px solid $gc-inverted-color;
+    width: 400px;
+    max-width: 100%;
+    min-height: 100px;
+    &:hover, &:active, &:focus {border-color: $gc-first-color;}
+
+  }
+  &.textarea-row textarea {
+    width: 55%;
+    float: left;
+  }
+  input[type="checkbox"]{
+    & + label{
+      margin: 10px 0;
+      & + label{margin: 10px 0;}
+    }
+  }
+  input[type="checkbox"] {
+    visibility: visible;
+    display: inline;
+    & + .description{ display: inline-block;}
+  }
+  input[type="radio"] {
+    display: inline;
+    margin-bottom: 0.37rem;
+    margin-right: 0.25rem;
+  }
+  select[multiple="multiple"]{
+    height: 200px;
+    width: 500px;
+    background: $gc-inverted-color;
+    &:hover, &:focus, &:active {
+      border-color: $gc-first-color;
+      background: $gc-inverted-color;
+    }
+    @include respond-to(gc-large-down) {width: 100%;}
+  }
+  .error{
+    color: $gc-first-color;
+    font: .9rem $font-med;
+    line-height: 1;
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+    word-wrap: break-word;
+    a{
+      border-bottom: 1px solid transparentize($gc-second-color, .5);
+      &:hover, &:focus {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+  span.error{
+    background: none;
+    padding: 0;
+    margin: .3rem 0 0;
+  }
+  ul label{font: 1rem $font-reg;}
+}
+
+.form-error{
+  color: $gc-second-color !important;
+  font: 0.9rem $font-med;
+  line-height: 1;
+  margin-top: .3rem;
+  word-wrap: break-word;
+  a{
+    border-bottom: 1px solid transparentize($gc-second-color, .5);
+    &:hover, &:focus {
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+.third-tip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  text-align: left;
+  white-space: normal;
+  left: 0;
+  z-index: 100;
+  padding: .825rem 1rem;
+  border-radius: 5px;
+  background-color: $gc-third-color;
+  width: 13rem;
+  font: 1rem $font-reg;
+  color: $gc-inverted-color;
+  margin-bottom: 15px;
+  margin-left: -34px;
+  &:before {
+    @include css-triangle(10px,$gc-third-color,top);
+    position: absolute;
+    bottom: -20px;
+    left: 40px;
+  }
+  &.bottom {
+    top: 100%;
+    margin-top: 15px;
+    bottom: auto;
+    &:before {
+      @include css-triangle(10px,$gc-third-color,bottom);
+      position: absolute;
+      top: -20px;
+      left: 40px;
+    }
+  }
+}
+.annotation {
+  @extend a.dashed;
+  cursor: pointer;
+  position: relative;
+  &:hover .third-tip {
+    display: block;
+  }
+}
+.modal-annotation {
+  &:before {
+    content: "?";
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    background-color: $gc-third-color;
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.7rem;
+    line-height: 1.1rem;
+    border-radius: 50%;
+    text-align: center;
+    color: $gc-inverted-color;
+    margin-left: 0.2rem;
+  }
+  display: inline;
+  position: relative;
+  &:hover{
+    &:before {
+      background-color: $gc-third-color-hover;
+    }
+    .third-tip {
+      display: block;
+      top: -2rem;
+      left: auto;
+      bottom: inherit;
+      right: -14rem;
+      min-height: 80px;
+      &:before {
+        @include css-triangle(10px,$gc-third-color,right);
+        position: absolute;
+        left: -20px;
+        top: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+  .modal-annotation {
+    &:before {
+      background-color: transparent;
+      color: #000;
+      width: auto;
+      height: auto;
+    }
+  }
+  .modal-annotation:hover{
+    &:before{
+      background-color: transparent;
+    }
+  }
+}
+
+.black{
+  @extend .button;
+  @extend .medium;
+  @extend .offset-top-20;
+  @extend .offset-bottom-20;
+}
+
+.checkbox-wrapper{
+  position: relative;
+  input[type="checkbox"]{
+    // display: none !important;
+    // visibility: hidden !important;
+    display: block;
+    visibility: visible;
+    position: absolute;
+    top: 14px;
+    left: 2px;
+    opacity: 0;
+    & + label{
+      margin: 11px 0 10px 0;
+      display: inline-block;
+      vertical-align: top;
+      position: absolute;
+      top: 0;
+      left: 0;
+      & + label{
+        margin: 10px 3px;
+        padding-top: 3px;
+        width: 100%;
+        padding-left: 31px;
+        display: inline-block;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+.checkbox-wrapper-mt4 {
+  display: inline-block;
+  & + .description {
+    padding-left: 10px;
+    line-height: 1.5;
+    vertical-align: middle;
+    display: inline-block;
+    width: 95%;
+  }
+}
+
+form span.required{
+  color: red;
+  font-size: rem-calc(14);
+}
+form label.required{
+  &:after{
+    color: inherit;
+    content: '*';
+    margin-left: .31rem;
+    color: $gc-first-color;
+  }
+}
+
+/*----------------------------------------------------scrollbars-----------------------------------------------------*/
+
+.scroller-wrapper {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/*first horisontal - example of markup in pamm rating page*/
+.scroller{
+  height: 100%;
+  overflow-x: scroll;
+  &::-webkit-scrollbar{
+    width: 0;
+  }
+}
+.scroller-bar{
+  background: $gc-first-color;
+  border-radius: 3px;
+  height: 100%;
+  pointer-events: auto;
+  position: absolute;
+  -webkit-transition: opacity .2s linear;
+  transition: opacity .2s linear;
+  &:hover, &:active, &:focus{
+    background: $gc-first-color-hover;
+  }
+}
+.scroller-track{
+  background: $basic-color;
+  height: 9px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  &:hover, &:active, &:focus{
+    background: $basic-color-hover;
+  }
+  &.thick {
+    height: 0.9rem;
+  }
+  .scroll-fwd-h, .scroll-back-h {
+    width: 0.9rem;
+    height: 100%;
+    display: block;
+    background-color: $gc-first-color;
+    position: absolute;
+  }
+  .scroll-back-h {
+    left: 0;
+  }
+  .scroll-fwd-h {
+    right: 0;
+  }
+}
+
+/*first vertical scrollbar - example of markup in video blocks - analitic video, education*/
+.vscroller{
+  height: 100%;
+  overflow-y: scroll;
+  &::-webkit-scrollbar{
+    width: 0;
+  }
+}
+.first-vscroller-bar{
+  background: $gc-first-color;
+  border: 1px solid transparent;
+  pointer-events: auto;
+  position: absolute;
+  -webkit-transition: opacity .2s linear;
+  transition: opacity .2s linear;
+  width: 100%;
+  &:hover, &:active, &:focus{
+    background: $gc-first-color-hover;
+  }
+}
+.first-vscroller-track{
+  background: $basic-color;
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  width: .5rem;
+  z-index: 1;
+  &:hover, &:active, &:focus{
+    background: $basic-color-hover;
+  }
+  &.left-track{
+    left: 0;
+  }
+  &.right-track{
+    right: 0;
+  }
+  &.gray-bg{
+    border: .5rem solid #d2d2d2;
+    width: 1.5rem;
+  }
+}
+
+/*third vertical scrollbar - example of markup in private office - finance reveal modal*/
+.third-vscroller-bar{
+  background: $gc-third-color;
+  border: 1px solid lighten($basic-color, 30%);
+  border-top: none;
+  border-bottom: none;
+  pointer-events: auto;
+  position: absolute;
+  -webkit-transition: opacity .2s linear;
+  transition: opacity .2s linear;
+  width: 100%;
+  &:hover, &:active, &:focus{
+    background: $gc-third-color-hover;
+  }
+}
+.third-vscroller-track{
+  background: lighten($basic-color, 30%);
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  width: 12px;
+  z-index: 1;
+  &:hover, &:active, &:focus{
+    background: $basic-color;
+  }
+  &.left-track{
+    left: 0;
+  }
+  &.right-track{
+    right: 0;
+  }
+}
+
+/* fix for modal in private office */
+body.my .ui-dialog{
+  background: $gc-inverted-color;
+  form input{
+    border-color: transparentize($basic-color, .5);
+    margin-bottom: .625rem;
+  }
+  .ui-button-text{
+    padding: 0 1em !important;
+  }
+}

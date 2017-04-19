@@ -1,0 +1,34 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {% trans "Company News" %} {{ block.super }}
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title
+            - trans "Company News"
+
+  .news-list: .container
+    for news in object_list
+        - var very_first = object_list.number==1 and forloop['first']
+        .row.news-item-wrapper(class=('main-item' if very_first else ''))
+          .news-item
+            div(class=('col-md-5' if very_first else 'col-md-4')).news-part
+                if news.image
+                    a.image-wrapper(href="{% url 'company_news_by_slug' news.slug %}")
+                        img(src="{{ news.image.url }}", alt="").news-image
+                        span.more-link
+                          - trans "Read more"
+            div(class=('col-md-7' if very_first else 'col-md-8')).news-part
+                a.news-item-header(href="{% url 'company_news_by_slug' news.slug %}")= news.title
+                p.news-item-date= news.event_date|date:"SHORT_DATE_FORMAT"
+                p.news-item-content
+                    | {{ news.body|safe|truncatewords_html:50 }}
+                p.news-item-date.mobile= news.event_date|date:"SHORT_DATE_FORMAT"
+    include marketing_site/components/pagination

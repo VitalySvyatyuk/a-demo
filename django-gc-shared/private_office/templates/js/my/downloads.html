@@ -1,0 +1,87 @@
+{% load staticfiles inbox i18n %}
+<div class="stocks-container">
+
+    <h1 class="offset-top-35 offset-bottom-35">{% trans "Downloads centre" %}</h1>
+
+    <div class="row offset-bottom-55">
+        <div class="columns small-3">
+            <div class="downloads-item po-white-block">
+                <div class="header-block">
+                    <div class="logo mt4"></div>
+                    <div class="header">
+                        {% trans "ARUM.MT MetaTrader4" %}
+                    </div>
+                </div>
+                {% if LANGUAGE_CODE == 'ru' %}
+                <a href="#" class="download-link icon windows not-ready-platform-ru"><span>{% trans "For Windows" %}</span></a>
+                <a href="#" class="download-link icon apple not-ready-platform-ru"><span>{% trans "For iPhone" %}</span></a>
+                <a href="#" class="download-link icon android not-ready-platform-ru"><span>{% trans "For Android" %}</span></a>
+                <a href="#" class="download-link icon ipad not-ready-platform-ru"><span>{% trans "For IPad/Tablet" %}</span></a>
+                <div class="footer-block">
+                    <a href="#" class="download-link not-ready-platform-ru"><span>{% trans "User's manual (pdf)" %}</span></a>
+                </div>
+                {% else %}
+                <a href="#" class="download-link icon windows not-ready-platform-en"><span>{% trans "For Windows" %}</span></a>
+                <a href="#" class="download-link icon apple not-ready-platform-en"><span>{% trans "For iPhone" %}</span></a>
+                <a href="#" class="download-link icon android not-ready-platform-en"><span>{% trans "For Android" %}</span></a>
+                <a href="#" class="download-link icon ipad not-ready-platform-en"><span>{% trans "For IPad/Tablet" %}</span></a>
+                <div class="footer-block">
+                    <a href="#" class="download-link not-ready-platform-en"><span>{% trans "User's manual (pdf)" %}</span></a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="columns small-3">
+            <div class="downloads-item po-white-block">
+                <div class="header-block">
+                    <div class="logo pro"></div>
+                    <div class="header">
+                        {% trans "ARUM.PRO" %}
+                    </div>
+                </div>
+                {% if LANGUAGE_CODE == 'ru' %}
+                <a href="#" class="download-link icon windows not-ready-platform-ru"><span>{% trans "For real accounts" %}</span></a>
+                <a href="#" class="download-link icon windows not-ready-platform-ru"><span>{% trans "For demo accounts" %}</span></a>
+                <div class="footer-block">
+                    <a href="#" class="download-link not-ready-platform-ru"><span>{% trans "User's manual (pdf)" %}</span></a>
+                    <a href="#" class="download-link not-ready-platform-ru"><span>{% trans "API description for the FIX protocol (pdf)" %}</span></a>
+                </div>
+                {% else %}
+                <a href="#" class="download-link icon windows not-ready-platform-en"><span>{% trans "For real accounts" %}</span></a>
+                <a href="#" class="download-link icon windows not-ready-platform-en"><span>{% trans "For demo accounts" %}</span></a>
+                <div class="footer-block">
+                    <a href="#" class="download-link not-ready-platform-en"><span>{% trans "User's manual (pdf)" %}</span></a>
+                    <a href="#" class="download-link not-ready-platform-en"><span>{% trans "API description for the FIX protocol (pdf)" %}</span></a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="columns small-3">
+            <div class="downloads-item po-white-block">
+                <div class="header-block">
+                    <div class="logo web"></div>
+                    <div class="header">
+                        {% trans "ARUM.WEB" %}
+                    </div>
+                </div>
+                {% if LANGUAGE_CODE == 'ru' %}
+                <a href="#" class="download-link not-ready-platform-ru"><span>{% trans "Manual (pdf)" %}</span></a>
+                {% else %}
+                <a href="#" class="download-link not-ready-platform-en"><span>{% trans "Manual (pdf)" %}</span></a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="columns small-3">
+            <div class="downloads-item po-white-block">
+                <div class="header-block">
+                    <div class="logo invest"></div>
+                    <div class="header">
+                        {% trans "ARUM.Invest" %}
+                    </div>
+                </div>
+                <a href="#" class="download-link"><span>{% trans "MT4 signals copying advisor" %}</span></a>
+                <a href="#" class="download-link"><span>{% trans "Manual (pdf)" %}</span></a>
+            </div>
+        </div>
+    </div>
+</div>

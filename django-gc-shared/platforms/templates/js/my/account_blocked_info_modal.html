@@ -1,0 +1,28 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+<h2 class="modal-title offset-bottom-30">
+    <span>{% trans "Account [[acc.mt4_id]] blocked" %}</span>
+</h2>
+
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+
+<div class="modal-white-bg text-left">
+  <!--<p>{% trans "Same problem?" %}</p>-->
+  <span style="margin-left:20px;">{% trans "For transactions larger than $800 our payment system requires us to verify the customer's data for security reasons. To pass this verification you need to upload scans or photos of the following documents:" %}</span>
+    <br/>
+  <ol>
+    <li> {% trans "Your ID or passport" %}</li>
+    <li> {% trans "Your card which was used to make the payment. The first 4 and the last 4 digits of its number should be visible. Please cover all the other digits." %}</li>
+    <li> {% trans "A document which can verify your address (not more than 6 months old). For example, utility bill, rental agreement, bank statement, etc." %}</li>
+   {% trans " - or - " %}
+    <li value="3"> {% trans "A second document confirming your ID (driving license, etc.)" %}</li>
+  </ol>
+    <br/>
+  <span ng-if="info.data.check_chargeback">{% trans "Request was created, but you can still <a href='/account/profile/documents'>upload more documents</a> if you need." %}</span>
+  <span ng-if="!info.data.check_chargeback">{% trans "You can <a href='/account/profile/documents'>upload documents</a> in your Private Office." %}</span>
+    <br/>
+  <div ng-if="!info.data.has_doc">
+    <span >{% trans "You haven't uploaded any documents." %}</span>
+  </div>
+  <button class="medium offset-top-20" ng-click="createChargebackIssue()" ng-disabled="info.data.check_chargeback || !info.data.has_doc" >
+    [[info.data.check_chargeback ? "{% trans "Request created " %}" :  "{% trans "Request unlock" %}" ]]  </button>
+</div>

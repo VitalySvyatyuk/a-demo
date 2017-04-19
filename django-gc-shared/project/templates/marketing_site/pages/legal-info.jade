@@ -1,0 +1,31 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {% trans "Legal documentation" %} {{ block.super }}
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title
+            - trans "Legal documentation"
+
+
+
+          br
+          br
+         .legal-info(style="padding-left: 60px")
+          .col-sm-6
+            ul.info-list
+              for doc in documents
+                p
+                  a.document-link.link--icon.link--icon-download.large(href=doc.file.url, target="_blank")
+                    span.bordered= doc.name
+                    span.grayed
+                      | &nbsp;
+                      = doc.extension|slice:"1:"
+

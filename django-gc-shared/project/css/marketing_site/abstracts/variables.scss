@@ -1,0 +1,72 @@
+//margins
+$container_side_margin: 15px;
+
+//widths
+$_slider_arrow_width: 55px;
+//heights
+$button_height: 50px;
+$header_height: 40px;
+//colors
+$warn: #e8072a;
+$cherry: #e9082a;
+$blood: #ff0326;
+$revenge: #c20724;
+$anger: #db0825;
+$meat: #e20211;
+
+$grass: #00a925;
+
+$sea_bottom: #efefef;
+$cream: #fbfbfb;
+$milk: #f4f4f4;
+$stone: #ececec;
+$galaxy: #365160;
+$steel: #292929;
+$rock: #232323;
+$darkness: #0e0e0e;
+$groom: #1f5060;
+$sky: #0089ce;
+
+
+
+
+
+$concrete: #747474;
+$cloud: #bcc6d0;
+
+//media queries (notice: there are some local media queries starting with the underscore char: $_scaling_range)
+	//aspect ratios:
+$rect_aspect_ratio: 'min-aspect-ratio: 6/10';
+$square_aspect_ratio: 'min-aspect-ratio: 3/4';
+	// for retina and other HDPI
+$HDPI: 'only screen and (-webkit-min-device-pixel-ratio: 1.3),
+only screen and (-o-min-device-pixel-ratio: 13/10),
+only screen and (min-resolution: 120dpi)';
+
+$max_phones: 'max-width: 500px';
+$min_phones: 'min-width: 501px';
+
+$max_ipad: 'max-width: 767px';
+$min_ipad: 'min-width: 768px';
+
+$max_tablets: 'max-width: 992px';
+$min_tablets: 'min-width: 993px';
+
+$max_tablets--landscape: 'max-width: 1024px';
+$min_tablets--landscape: 'min-width: 1025px';
+
+$max_laptop: 'max-width: 1279px';
+$min_laptop: 'min-width: 1280px';
+
+$max_desktop: 'max-width: 1600px';
+$min_desktop: 'min-width: 1601px';
+
+$_charts_smaller: 'max-width: 700px';
+
+//other
+$icons_path: '../img/marketing-site/icons/';
+$other_pics_path: '../img/marketing-site/etc/';
+$background_path: '../img/marketing-site/bg/';
+
+//font families
+$lato: 'Lato';

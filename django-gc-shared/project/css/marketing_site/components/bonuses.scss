@@ -1,0 +1,40 @@
+.bonuses{
+	padding: 100px 0;
+
+	@media (#{$max_ipad}){
+		padding: 70px 0;
+	}
+	@media (#{$max_phones}){
+		padding: 55px 0 45px;
+	}
+}
+.bonuses__box{
+	@media (#{$max_ipad}){
+		margin-bottom: 33px;
+	}
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+.bonuses__item{
+	position: relative;
+
+	padding-left: 30px;
+}
+.bonuses__number{
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	color: $groom;
+	font-size: 16px;
+}
+.bonuses__text{
+	display: inline-block;
+
+	margin-top: 15px;
+
+	color: #070707;
+	font-size: 15px;
+}

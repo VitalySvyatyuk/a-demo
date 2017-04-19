@@ -1,0 +1,73 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {% trans "VIP services" %} {{ block.super }}
+block content
+  .page_head(style="background-image: url({% static 'img/marketing-site/bg/bg-cool-man.jpg' %})")
+    .container
+      .row
+        .col-xs-12.white-bc
+          - breadcrumbs
+          h1.page_head__title.page_head__title--white
+            - trans "VIP services"
+
+  .vip-list
+    .container
+      .row
+        .col-md-6
+          .vip-list-element
+            h2.page_title.page_title--red
+              - trans "A Dedicated Assistant"
+            p
+              - trans "Private and prompt assistance with any queries of the clients with a personal touch"
+            ul
+              li
+                - trans "Website guidance and advice on the services we offer"
+              li
+                - trans "Help with deposits/withdrawals "
+              li
+                - trans "Legal support "
+        .col-md-6
+          .vip-list-element
+            h2.page_title.page_title--red
+              - trans "Upgraded terms and conditions for deposits and withdrawals "
+            ul
+              li
+                - trans "Refund of charges for deposits and withdrawals"
+              li
+                - trans "Priority assistance with deposits and withdrawals applications"
+              li
+                - trans "Deposit of an advance payment prior to the arrival of the funds"
+      .row
+        .col-md-6
+          .vip-list-element
+            h2.page_title.page_title--red
+              - trans "Dedicated training sessions and workshops"
+            p
+              - trans "You get a chance to receive free training on our software which will enable you to advance to a new level of trading on currency markets"
+        .col-md-6
+          .vip-list-element
+            h2.page_title.page_title--red
+              - trans "VIP status conditions"
+            p
+              - trans "In order to get a VIP status a balance of over 30 000 USD on our accounts is required"
+            a.link(href="/static/agreements/VIP_Service_Regulation16_01_2017.pdf", target="_blank")
+              - trans "VIP service terms and conditions"
+
+  .vip-call-to-action.call_to_action(style="background-image: url({% static 'img/marketing-site/bg/bg-arumpro-become-client.jpg' %})")
+    .container.call_to_action__container
+      span.call_to_action__text.call_to_action__text--white
+        - trans "Become our client"
+      {% if LANGUAGE_CODE == 'ru' %}
+      div.risk-hidden-ru
+        a.call_to_action__button.call_to_action__button--blue.button.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+          span.button__text
+            - trans "Register"
+      {% else %}
+      div.risk-hidden-en
+        a.call_to_action__button.call_to_action__button--blue.button.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+          span.button__text
+            - trans "Register"
+      {% endif %}

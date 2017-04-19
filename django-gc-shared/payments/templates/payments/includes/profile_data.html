@@ -1,0 +1,10 @@
+{% load i18n %}
+
+<table class="user-data">
+    <tr><td>{% trans "Username" %}</td><td>{{ profile }}</td></tr>
+    <tr><td>{% trans "Name" %}</td><td>{{ profile.user.first_name }}</td></tr>
+    <tr><td>{% trans "Surname" %}</td><td>{{ profile.user.last_name }}</td></tr>
+    <tr><td>{% trans "Mobile phone" %}</td><td>{{ profile.phone_mobile }}</td></tr>
+    <tr><td>{% trans "Country" %}</td><td>{{ profile.country }}</td></tr>
+    <tr><td>{% trans "City" %}</td><td>{{ profile.city }}</td></tr>
+</table>

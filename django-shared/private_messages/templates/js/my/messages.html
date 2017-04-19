@@ -1,0 +1,56 @@
+{% load staticfiles inbox i18n %}
+<div class="messages-inbox">
+  <h1 class="offset-bottom-35 offset-top-35">{% trans "Inbox" %}</h1>
+  <p ng-if="!messages">{% trans "No messages." %}</p>
+
+  <div class="offset-bottom-30 messages-actions">
+    <button class="button with-cross" ng-click="markDeleted('checked')">{% trans "Delete" %}</button>
+    <button class="button inverted second" ng-click="markRead('checked')">{% trans "Mark as read" %}</button>
+    <button class="button inverted second" ng-click="markUnread('checked')">{% trans "Mark as new" %}</button>
+  </div>
+
+  <table class="offset-bottom-30">
+    <thead>
+      <tr>
+        <td>
+          <input id="select-all" type="checkbox" class="third-checkbox white-bg-checkbox" ng-model="allChecked"/>
+          <label for="select-all"></label>
+        </td>
+        <td>{% trans "Sender" %}</td>
+        <td>{% trans "Subject" %}</td>
+        <td>{% trans "Date" %}</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat-start="message in messages.items" ng-class="{'new-message': message.new, active: selected === message || message.isChecked}">
+
+        <td>
+          <input id="chk_[[::message.id]]" type="checkbox" class="third-checkbox" ng-model="message.isChecked"/>
+          <label for="chk_[[::message.id]]"></label>
+        </td>
+        <td><div class="overflow-td">Arum Capital</div></td>
+        <td><div class="overflow-td"><a ng-click="select(message)">[[::message.subject]]</a></div></td>
+        <td>[[::message.sent_at|momentFromNow]]</td>
+
+      </tr>
+      <tr class="message-wrapper" ng-repeat-end ng-show="isDataDisplayed">
+        <td colspan="4" class="text-left">
+          <div slide-this-show="selected === message">
+            <div ng-switch on="::!message.campaign">
+              <p ng-if="isDataDisplayed" ng-switch-when="true" class="offset-bottom-25" ng-bind-html="::getHtmlBody(message)"></p>
+              <iframe ng-if="isDataDisplayed" ng-switch-default ng-src="[[::message.campaign.url]]"></iframe>
+            </div>
+            <div class="offset-top-30 messages-actions" ng-class="::{'text-center': message.campaign}">
+              <button class="button second with-cross" ng-disabled="globalLoading" ng-click="markDeleted(message)">{% trans "Delete" %}</button>
+              <button class="button" ng-disabled="globalLoading" ng-click="markUnread(message)">{% trans "Mark as new" %}</button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="newsfeed-pagination gray-pagination">
+    <paginator object="messages" class="left" />
+    <per-page object="messages" class="right">{% trans "Per page" %}</per-page>
+  </div>
+</div>

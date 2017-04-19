@@ -1,0 +1,79 @@
+{% load staticfiles inbox i18n %}
+
+<div class="gc-accordion-item" ng-controller="AccountsPartnershipController" name="partnership" accordion-show="selectedCategory === 'partnership'" accordion-click="selectCategory('partnership')">
+  <div class="title-wrapper" title>
+    <span class="title">{% trans "Partnership" %}</span>
+    <a href="[[::BASE_URL]]create/partnership" class="button second right">{% trans "Create account" %}</a>
+  </div>
+  <div content ng-if="!isDataHidden">
+    {% include "js/my/_accounts_local_nav.html" %}
+    <table class="table-big-green">
+      <thead>
+        <tr>
+          <td>{% trans "ID" %}</td>
+          <td>{% trans "Account type" %}</td>
+          <td>{% trans "Balance" %}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="notification" ng-if="!accounts.length">
+          <td colspan="5">{% trans "There is no accounts to display" %}</td>
+        </tr>
+        <tr ng-repeat-start="acc in accounts" ng-class="{'active': account === acc}" ng-click="selectAccount(acc)" account-display="account === acc && !isDataHidden">
+          <td>
+            <span>[[::acc.mt4_id]]</span>
+          </td>
+          <td>
+            <span ng-bind="::acc.group_display"></span>
+          </td>
+          <td ng-bind="!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].balance_display)"></td>
+        </tr>
+        <tr ng-repeat-end ng-if="account === acc" class="with-active">
+          <td colspan="3">
+            {% include "js/my/_accounts_local_nav_adaptive.html" %}
+            <table class="table-light-green">
+              <thead>
+                <tr>
+                  <td>{% trans "ID" %}</td>
+                  <td>{% trans "Date" %}</td>
+                  <td>{% trans "Name" context "short" %}</td>
+                  <td>{% trans "Phone" context "short" %}</td>
+                  <td>{% trans "Email" context "short" %}</td>
+                  <td>{% trans "Balance" %}</td>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr class="notification" ng-if="isAgentsLoading">
+                  <td colspan="6">{% trans "Loading" %}</td>
+                </tr>
+
+                <tr class="notification" ng-if="!isAgentsLoading && !agents.length && !demoAgents.length">
+                  <td colspan="6">{% trans "There is no accounts to display" %}</td>
+                </tr>
+
+                <tr ng-repeat="agent in agents">
+                  <td>[[::agent.mt4_id]] ([[::agent.group_display]])</td>
+                  <td>[[::agent.regdate|momentFromNow]]</td>
+                  <td>[[::agent.name]]</td>
+                  <td>&lrm;[[::agent.phone_mobile]]</td>
+                  <td class="long-word">[[::agent.email]]</td>
+                  <td>&lrm;[[::agent.balance.amount|currency:agent.balance.currency.symbol]]</td>
+                </tr>
+
+                <tr ng-repeat="agent in demoAgents">
+                  <td>[[::agent.mt4_id]] {% trans "demo" %}</td>
+                  <td>[[::agent.regdate|momentFromNow]]</td>
+                  <td>[[::agent.name]]</td>
+                  <td>&lrm;[[::agent.phone_mobile]]</td>
+                  <td class="long-word">[[::agent.email]]</td>
+                  <td>&lrm;[[::agent.balance.amount|currency:agent.balance.currency.symbol]]</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

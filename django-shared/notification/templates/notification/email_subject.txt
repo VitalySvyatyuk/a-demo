@@ -1,0 +1,1 @@
+{% load i18n %}{% if display_prefix %}[{{ current_site.domain }}] {% endif %}{% blocktrans %}{{ message }}{% endblocktrans %}

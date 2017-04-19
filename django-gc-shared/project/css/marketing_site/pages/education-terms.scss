@@ -1,0 +1,64 @@
+.education-terms{
+  margin-top: 92px;
+  margin-bottom: 55px;
+  .education-terms-questions{
+    position: relative;
+    margin-bottom: 94px;
+    ul{
+      margin: 0;
+      padding-left: 300px;
+      li{
+        display: inline-block;
+        vertical-align: top;
+        width: 49%;
+        margin-bottom: 31px;
+        a.link{
+          color: #1f5060;
+          border-bottom: 1px solid #1f5060;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .education-terms-questions:last-child{
+    margin-bottom: 0;
+  }
+  .education-terms-questions:after{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #797979;
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  .education-terms-questions.question-a:after{
+    content:"Общие вопросы";
+  }
+  .education-terms-questions.question-b:after{
+    content:"Особенности работы";
+  }
+  .education-terms-questions.question-c:after{
+    content:"Общие вопросы";
+  }
+}
+
+
+@media(max-width: 767px){
+  .education-terms{
+    .education-terms-questions{
+      ul{
+        padding-left: 40px;
+        li{
+          display:block;
+          width: 100%;
+        }
+      }
+    }
+    .education-terms-questions:after{
+      top: -40px;
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {% trans "Trading innovations" %} {{ block.super }}
+
+block content
+  .page_head(style="background-image: url({% static 'img/marketing-site/bg/bg-innovation-header.jpg' %})")
+    .container
+      .row
+        .col-xs-12.white-bc
+          - breadcrumbs
+          h1.page_head__title.page_head__title--white
+            - trans "Trading innovations"
+
+
+  .innovation
+    .container
+      .row
+        .col-md-6
+          .innovation-element
+            h2.page_title.page_title--red.innovation-bid
+              - trans "Market Depth"
+            p
+              - trans "A unique technology is implemented in ARUM.PRO trading platform.  Due to the Market Depth the trader will see the true liquidity depth in real time as well as the parity of Sell/Buy in the volume of the executed transactions"
+            ul
+              li
+                - trans "Liquidity depth in real time"
+              li
+                - trans "Real volume of transactions"
+              li
+                - trans "A unique analytical tool"
+        .col-md-6
+          .innovation-element
+            h2.page_title.page_title--red.innovation-note
+              - trans "Tick chart"
+            p
+              - trans "A tick chart shows the details of all iterations of a trading tool historically and in real time. The tool is available on ARUM.PRO trading platform."
+            ul
+              li
+                - trans "A unique analytical tool "
+              li
+                - trans "Control over the transactions execution"
+              li
+                - trans "Setup of micro-levels of support and resistance "
+      .row
+        .col-md-6
+          .innovation-element
+            h2.page_title.page_title--red.innovation-arrow
+              - trans "Direct execution of all the transactions via FIX-protocol"
+            p
+              - trans "Market Execution and direct execution of all the transactions via FIX-protocol enable us to open positions in a split of a second and give opportunity for multiple trading techniques depending on the execution speed."
+            ul
+              li
+                - trans "A minimum delay in sending of trade orders to the market "
+              li
+                - trans "No market manipulation guarantee from the brokers "
+              li
+                - trans "Orders are executed at the best order available from the liquidity provider"
+        .col-md-6
+          .innovation-element
+            h2.page_title.page_title--red.innovation-eye
+              - trans "Open API FIX-protocol for trading robots"
+            p
+              - trans "We offer our clients an opportunity to link their trading robots directly to the international liquidity providers under FIX-protocol."
+            ul
+              li
+                - trans "API-interface for the connection of trading robots"
+              li
+                - trans "No interference into the work of algorithms "
+              li
+                - trans "Direct link of transactions to the external service providers"
+      .row
+        .col-md-6
+          .innovation-element
+            h2.page_title.page_title--red.innovation-graphic
+              - trans "Details of the true ECN-volume"
+            p
+              - trans "Historical charts with data of trading tools have real market data on the liquidity volumes. It enables one to account for the market volume when analyzing the market. "
+            ul
+              li
+                - trans "Possible to analyze a tool chart based on the volume"
+              li
+                - trans "Shows historical data on tool volumes"
+              li
+                - trans "Multiple timeframes on the volume"
+        .col-md-6
+          .call_to_action
+            span.call_to_action__text.call_to_action__text--big.page_title
+              - trans "Experience the power of our ECN-liquidity"
+            .buttons_box
+              {% if LANGUAGE_CODE == 'ru' %}
+              div.risk-hidden-ru.mobile-view
+                a.call_to_action__button__item.button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                  span.button__text
+                    - trans "Open a demo account"
+              {% else %}
+              div.risk-hidden-en.mobile-view
+                a.call_to_action__button__item.button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                  span.button__text
+                    - trans "Open a demo account"
+              {% endif %}
+              {% if LANGUAGE_CODE == 'ru' %}
+              div.risk-hidden-ru.mobile-view
+                a.call_to_action__button__item.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                  span.button__text
+                    - trans "Open an account"
+              {% else %}
+              div.risk-hidden-en.mobile-view
+                a.call_to_action__button__item.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                  span.button__text
+                    - trans "Open an account"
+              {% endif %}
+
+
+

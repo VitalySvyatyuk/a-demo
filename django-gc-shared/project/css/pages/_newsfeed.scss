@@ -1,0 +1,578 @@
+.newsfeed-page{
+  h1 span{
+    font-size: 1.5rem;
+  }
+
+  .green-title{
+    background: $gc-first-color;
+    color: $gc-inverted-color;
+    font: 1.5rem/2rem $font-light;
+    padding: rem-calc(5) 1.25rem
+  }
+
+  .tags{
+    span{
+      font-family: $font-reg;
+    }
+    a{
+      border-bottom: 2px solid transparent;
+      color: $gc-first-color;
+      font-family: $font-med;
+      &:hover, &:focus, &:active{
+        border-bottom-color: transparentize($gc-first-color, .5);
+      }
+    }
+  }
+
+  .newsfeed-item{
+    @include clearfix;
+    background: $gc-inverted-color;
+    margin: .625rem 0;
+    padding: 2rem 3rem 1.5rem 0;
+    .date{
+      display: block;
+      font: 4.5rem/4rem $font-light;
+      text-align: center;
+      span{
+        display: block;
+        font: .875rem $font-med;
+      }
+    }
+    .content{
+      .title{
+        font: 1.125rem/1.5 $font-med;
+      }
+    }
+    .text {
+      img {
+        float: left;
+        margin-right: 1rem;
+      }
+   }
+  }
+
+  .category-news-block{
+    background: $gc-inverted-color;
+    font: .875rem $font-light;
+    padding: .5rem 2.5rem 2.5rem 4.5rem;
+    .left{
+      max-width: 65%;
+    }
+    ul{
+      list-style: none;
+      li{
+        margin-top: 1.75rem;
+        a{
+          display: block;
+          &:hover, &:focus, &:active{
+            .title{
+              border-bottom: 1px solid $basic-color;
+            }
+          }
+        }
+      }
+    }
+    .date{
+      display: block;
+      font: .875rem/.755rem $font-med;
+    }
+    .title{
+      font: .875rem/.875rem $font-light;
+    }
+  }
+
+  &.fin-newsfeed{
+    .newsfeed-item{
+      .date{
+        font: 1.875rem/2rem $font-light;
+      }
+      .title{
+        @include user-select-none;
+        line-height: 2rem;
+        .icon{
+          background: url(../img/icons.png) no-repeat -240px -120px;
+          cursor: pointer;
+          float: left;
+          height: 8px;
+          margin: .8rem .5rem 0 0;
+          margin-right: .625rem;
+          width: 14px;
+        }
+        .with-inner{
+          display: block;
+          padding-left: 23px !important;
+          width: 95%;
+        }
+        span:last-child{
+          display: block;
+          padding-left: 1.375rem;
+        }
+        &.active{
+          .icon{
+            background-position: -200px -120px;
+          }
+        }
+      }
+      .inner{
+        clear: both;
+        display: none;
+        padding-left: 1.475rem;
+      }
+    }
+  }
+}
+
+/* adaptive news items */
+body .newsfeed-page {
+  .newsfeed-item{
+    @include respond-to(gc-small-down){
+      padding: 2rem .625rem 1.5rem;
+    }
+    .date{
+      @include respond-to(gc-medium-down){
+        font-size: 3.5rem;
+        line-height: 3rem;
+      }
+      @include respond-to(gc-small-down){
+        margin-bottom: 1.25rem;
+        text-align: left;
+        &.fin-news-date{
+          padding-left: 1.375rem;
+        }
+        &:after{
+          border-bottom: 1px solid transparentize($basic-color, .8);
+          content: "";
+          display: block;
+          margin-top: 2rem;
+          width: 70%;
+        }
+        span{
+          @include align-middle;
+        }
+      }
+    }
+  }
+  &.fin-newsfeed{
+    .newsfeed-item{
+      .title{
+        .with-inner{
+          @include respond-to-custom(0, 800px){
+            width: 90%;
+          }
+          @include respond-to-custom(0, 500px){
+            width: 85%;
+          }
+          @include respond-to-custom(0, 319px){
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*-----------------------------------------------tags, date filter---------------------------------------------------*/
+/* general, wrapper */
+.newsfeed-dates-tags{
+  background: $gc-third-color;
+  border-radius: .625rem;
+  padding: 1.25rem;
+}
+.tags-nav, .date-filter{
+  a{
+    border-radius: .3rem;
+    display: inline-block;
+    margin-bottom: .25rem;
+  }
+}
+/* tags filter */
+.tags-nav{
+  margin-bottom: 1rem;
+  span.font-med{
+    margin-right: .625rem;
+  }
+  a{
+    padding: .3rem .625rem;
+    &.active{
+      background: $gc-first-color;
+      color: $gc-inverted-color;
+      font-family: $font-med;
+      .cross{
+        line-height: 0;
+        &:after{
+          @include align-middle;
+          color: $gc-inverted-color;
+          font-size: 1.25rem;
+          margin: .14rem 0 0 .125rem;
+        }
+      }
+    }
+    &:hover, &:focus, &:active{
+      &:not(.active){
+        background: lighten($gc-third-color, 15%);
+      }
+    }
+  }
+  .select-wrapper{display: none;}
+}
+/* date filter */
+.date-filter{
+  .days{
+    @include clear-ul;
+    display: inline-block;
+    font: 1rem/2 $font-light;
+    margin: 0 .625rem;
+    li{
+      display: inline-block;
+      text-align: center;
+      width: 1.5rem;
+      a{
+        height: 100%;
+        width: 100%;
+      }
+      &.active{
+        a{
+          background: $gc-first-color;
+          color: $gc-inverted-color;
+          cursor: default;
+          font-family: $font-med;
+        }
+      }
+      &:hover, &:focus, &:active{
+        &:not(.active) a{
+          background: lighten($gc-third-color, 15%);
+        }
+      }
+    }
+  }
+  & > div{
+    display: inline-block;
+    font-size: 1rem;
+    &:first-of-type{
+      margin-right: .75rem;
+    }
+    & > a.with-icon{
+      display: inline-block;
+      font-size: .75rem;
+      line-height: 1.75rem;
+      span{
+        border-bottom: 1px dotted $basic-color;
+        font-size: 1rem;
+        &:hover, &:focus, &:active{
+          border-color: transparent;
+        }
+      }
+    }
+  }
+}
+/* date dropdown */
+.newsfeed-date-dropdown{
+  background: $gc-third-color;
+  cursor: pointer;
+  @include bidi(margin, .75rem 0 0 -1rem, .75rem 0 0 1rem)
+  padding: 0;
+  position: absolute;
+  text-align: left;
+  z-index: 50;
+  display: none;
+  left: auto !important;
+  &.f-open-dropdown {
+    display: block;
+  }
+  &.month{
+    width: 6.5rem;
+  }
+  &.year li{
+    padding-left: 1rem;
+  }
+  &:before{
+    border: 10px transparent solid;
+    border-bottom-color: $gc-third-color;
+    border-top: none;
+    content: '';
+    left: 50%;
+    margin-left: -10px;
+    position: absolute;
+    top: -10px;
+  }
+  li{
+    display: block;
+    font: 1rem/1.75rem $font-reg;
+    padding: 0 1rem 0 1.25rem;
+    &:first-of-type{
+      padding-top: .25rem;
+    }
+    &:last-of-type{
+      padding-bottom: .5rem;
+    }
+    a{
+      @extend .bordered;
+      border-radius: 0;
+      line-height: 1.2;
+    }
+    &:hover, &:focus, &:active{
+      background: lighten($gc-third-color, 15%);
+      a{
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+
+/* adaptive filters */
+body{
+  @include respond-to(gc-medium-down){
+    .newsfeed-dates-tags{
+      padding: 0;
+    }
+    .tags-nav:not(.fin-news-tags){
+      background: $gc-first-color;
+      border-radius: .625rem .625rem 0 0;
+      color: $gc-inverted-color;
+      padding: 1rem 1.25rem;
+      a{
+        display: none;
+      }
+      .select-wrapper, span.font-med{
+        @include align-middle;
+        width: 49%;
+      }
+      span.font-med{
+        margin-right: 0;
+      }
+    }
+    .date-filter{
+      border-radius: 0 0 .625rem .625rem;
+    }
+    .tags-nav.fin-news-tags{
+      padding: 1rem 1.25rem 0;
+      span.font-med{
+        display: block;
+        margin: 0 0 1rem;
+      }
+    }
+  }
+  @include respond-to-custom(0, 940px){
+    .tags-nav{
+      margin: 0;
+    }
+  }
+  @include respond-to-custom(641px, 1222px){
+    .tags-nav span.font-med{
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+  @include respond-to(gc-small-down){
+    .tags-nav:not(.fin-news-tags){
+      .select-wrapper, span.font-med{
+        width: 100%;
+      }
+      .select-wrapper{
+        margin-top: .5rem;
+      }
+    }
+  }
+  .date-filter{
+    @include respond-to-custom(941px, 1222px){
+      padding: 0;
+    }
+    @include respond-to-custom(641px, 940px){
+      padding: 1.25rem 0 0;
+    }
+    @include respond-to(gc-medium-down){
+      padding: 1.25rem;
+    }
+    .days{
+      @include respond-to-custom(0, 1222px){
+        display: block;
+        margin: .625rem 0 0;
+      }
+    }
+  }
+}
+@include respond-to(gc-medium-down){
+  .newsfeed-date-dropdown{
+    width: auto !important;
+    &.month.open{
+      left: 1.6rem !important;
+    }
+    &.year.open{
+      left: 7.2rem !important;
+    }
+  }
+}
+
+/*----------------------------------------------- cke_editable ---------------------------------------------------*/
+.newsfeed-page .newsfeed-item .content .text, body.cke_editable{
+  margin-top: 1.25rem;
+  p{
+    margin-top: .75rem;
+  }
+  a{
+    border-bottom: 1px solid transparent;
+    color: $gc-second-color;
+    &:hover, &:focus, &:active{
+      border-bottom-color: transparentize($gc-second-color, .5);
+    }
+  }
+}
+body.cke_editable{
+  background: $gc-inverted-color;
+  min-width: 0;
+  padding: 1rem;
+}
+
+/* adaptive cke_editable */
+.newsfeed-page .newsfeed-item .content .text, body.cke_editable{
+  a{
+    @include respond-to(gc-large-down){
+      display: inline-block;
+      font-size: 1rem;
+      margin-top: .625rem;
+    }
+  }
+}
+
+/*--------------------------------------------------pagination---------------------------------------------------*/
+.newsfeed-pagination{
+  text-align: center;
+  ul{
+    @include clear-ul;
+    // background: $gc-first-color;
+    border-radius: .5rem;
+    display: inline-block;
+    height: 2.5rem;
+    overflow: hidden;
+    li{
+      @include align-middle;
+      line-height: 2.5rem;
+      height: 100%;
+
+      &.dots{
+        &:hover, &:active, &:focus{
+          background: none;
+        }
+      }
+      &:hover, &:active, &:focus{
+        // background: $gc-first-color-hover;
+      }
+      a, span, &.dots{
+        padding: 0 .625rem;
+      }
+      a{
+        @include align-middle;
+        color: $basic-color;
+        font: 1.125rem/2.5rem $font-light;
+        height: 100%;
+        width: 100%;
+      }
+      &.active{
+        margin: 0 .25rem;
+        span{
+          @include align-middle;
+          // background: $gc-inverted-color;
+          // border-radius: 50%;
+          // color: $gc-first-color;
+          font-family: $font-light;
+          line-height: 2.2rem;
+          height: 35px;
+          padding: 0;
+          width: 35px;
+          border: 1px solid $gc-second-color;
+        }
+        &:hover, &:active, &:focus{
+          background: none;
+        }
+      }
+      &.title{
+        // border-right: 2px solid $gc-first-color-dark;
+        font-size: 1.125rem;
+        margin-right: .625rem;
+        padding: 0 .625rem;
+        font-family: $font-light;
+        &:hover, &:active, &:focus{
+          background: none;
+        }
+      }
+      &.prev, &.next{
+        border: none;
+        width: 54px;
+        a{
+          background: url(../img/arrow-up.png) no-repeat;
+          border-radius: 0;
+          display: inline-block;
+          height: 100%;
+          padding: 0;
+          width: 100%;
+          &:hover, &:active, &:focus{
+            // background-color: $gc-first-color-hover;
+            text-decoration: none;
+          }
+        }
+      }
+      &.prev{
+        // border-right: 2px solid $gc-first-color-dark;
+        margin-right: -.25rem;
+        & > a{
+          @include transform-rotate(-90deg);
+          background-position: center center;
+          // background-position: -108px -200px !important;
+        }
+      }
+      &.next{
+        // background-position: -54px -200px;
+        // border-left: 2px solid $gc-first-color-dark;
+        margin-left: -.25rem;
+        & > a{
+          @include transform-rotate(90deg);
+          background-position: center center;
+          // background-position: -162px -200px !important;
+        }
+      }
+    }
+  }
+}
+
+/* adaptive pagination */
+.newsfeed-pagination{
+  ul{
+    li{
+      @include respond-to(gc-small-down){
+        display: none;
+        &.prev, &.next, &.active, &.basic, &.dots{
+          display: inline-block;
+        }
+      }
+      @include respond-to-custom(0, 768px){
+        &.for-hide{
+          display: none;
+        }
+        a, span{padding: 0 .8rem;}
+      }
+      @include respond-to(gc-xsmall-down){
+        a, span{padding: 0 .625rem;}
+        &.prev, &.next{
+          width: 46px;
+        }
+        &.prev{
+          background-position: -5px -200px;
+          & > a{
+            background-position: -113px -200px !important;
+          }
+        }
+        &.next{
+          background-position: -59px -200px;
+          & > a{
+            background-position: -167px -200px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*-----------------------------------------------links in shared ---------------------------------------------------*/
+.gc a.b-share__handle.b-share__link{
+  border-bottom: none;
+}

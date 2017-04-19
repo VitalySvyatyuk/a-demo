@@ -1,0 +1,15 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags %}
+{% block title %}{{ block.super }} - {% trans "My profile" %}{% endblock %}
+
+{% block content %}
+  <h1 class="green">{% trans "Upload document" %}</h1>
+  <div class="container">
+  <p>{% trans "Upload copy a document that confirms your date of birth" %}</p>
+  <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+      {% include "includes/form.html" %}
+      {% gcbutton "submit" _("Upload document") "black"%}
+  </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags profiles_tags %}
+
+{% block title %}{{ block.super }} - {% trans "Upload avatar" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Upload avatar" %}</h1>
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            {% include "includes/form.html" %}
+            {% gcbutton "submit" _("Save") "black" %}
+        </form>
+{% endblock %}

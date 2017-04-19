@@ -1,0 +1,571 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-30 13:25+0300\n"
+"PO-Revision-Date: 2016-09-30 13:35+0230\n"
+"Last-Translator:   <v.rizhenkov@grandcapital.ru>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Translated-Using: django-rosetta 0.7.8\n"
+
+#, python-format
+msgid "Your password for account at %(hostname)s: %(password)s"
+msgstr "Ваш пароль от личного кабинета %(hostname)s: %(password)s"
+
+msgid "Please use latin-based characters only"
+msgstr "Пожалуйста, используйте латиницу"
+
+msgid "First name"
+msgstr "Имя"
+
+msgid "Please use Engilsh only"
+msgstr "Только на английском, используйте латиницу"
+
+msgid "Last name"
+msgstr "Фамилия"
+
+msgid "Mobile phone"
+msgstr "Мобильный телефон"
+
+msgid "Your password will be sent to you by SMS"
+msgstr "Ваш пароль будет отправлен на ваш мобильный телефон"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Enter a valid Email address"
+msgstr "Введите верный адрес электронной почты"
+
+msgid "Agent code"
+msgstr "Код агента"
+
+msgid "If you don't know what it is, leave empty"
+msgstr "Если вы не знаете что это, не заполняйте"
+
+msgid "I am over 18 years old"
+msgstr "Мне больше 18 лет"
+
+msgid "Your e-mail has not been confirmed or not in the database. Please use the form password recovery through SMS"
+msgstr "Ваш e-mail еще не подтвержден или отсутствует в базе. Пожалуйста, воспользуйтесь формой восстановления пароля через SMS"
+
+msgid "Subscribe to get company news (no more than 3 times at week)."
+msgstr ""
+"Я согласен получать информационную рассылку о новшествах компании, не более "
+"3 раз в неделю."
+
+#, python-format
+msgid ""
+"Email you provided is already registered in our system.<br/>    If you "
+"forgot the password, please visit <a href='%(recovery)s'>the password "
+"recovery page</a>.<br/>    If you remember your password, use it to log in "
+"to your <a href='%(private_office)s'>Private Office</a>"
+msgstr ""
+"Адрес электронной почты, который вы предоставили, уже зарегистрирован на "
+"другой аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного "
+"Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого "
+"восстановления пароля личного кабинета</a>.<br/> Если вы помните свой "
+"пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
+
+#, python-format
+msgid ""
+"Mobile phone you provided is already registered in our system.<br/>    If "
+"you forgot the password, please visit <a href='%(recovery)s'>the password "
+"recovery page</a>.<br/>    If you remember your password, use it to log in "
+"to your <a href='%(private_office)s'>Private Office</a>"
+msgstr ""
+"Номер телефона, который вы предоставили, уже зарегистрирован на другой "
+"аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного "
+"Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого "
+"восстановления пароля личного кабинета</a>.<br/> Если вы помните свой "
+"пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
+
+#, python-format
+msgid ""
+"Email you provided is already registered in our system.<br/>        If you "
+"forgot the password, please visit <a href='%(recovery)s'>the password "
+"recovery page</a>.<br/>        If you remember your password, use it to log "
+"in to your <a href='%(private_office)s'>Private Office</a>"
+msgstr ""
+"Адрес электронной почты, который вы предоставили, уже зарегистрирован на "
+"другой аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного "
+"Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого "
+"восстановления пароля личного кабинета</a>.<br/> Если вы помните свой "
+"пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
+
+msgid "Please enter your phone number in international format"
+msgstr "Пожалуйста, введите свой номер телефона в международном формате"
+
+#, python-format
+msgid ""
+"Mobile phone you provided is already registered in our system.<br/>"
+"            If you forgot the password, please visit <a "
+"href='%(recovery)s'>the password recovery page</a>.<br/>            If you "
+"remember your password, use it to log in to your <a "
+"href='%(private_office)s'>Private Office</a>"
+msgstr ""
+"Номер телефона, который вы предоставили, уже зарегистрирован на другой "
+"аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного "
+"Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого "
+"восстановления пароля личного кабинета</a>.<br/> Если вы помните свой "
+"пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
+
+msgid "Login, E-mail or Mobile phone"
+msgstr "Ваш логин, E-mail или Телефон"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Remember me"
+msgstr "Запомнить меня"
+
+#, python-format
+msgid "Check this if you want to stay logged in for the next %s days"
+msgstr "Отметьте это, если хотите, чтобы система запомнила вас на %s дней"
+
+msgid ""
+"Please enter correct login, e-mail address or mobile phone and password. Note that password is "
+"case-sensitive."
+msgstr ""
+"Пожалуйста, введите правильный логин, адрес электронной почты либо телефон и пароль. Не "
+"забудьте, что в пароле прописные и строчные буквы различаются."
+
+msgid "This account is inactive."
+msgstr "Эта учётная запись отключена"
+
+#, python-format
+msgid "Your new password: %s"
+msgstr "Ваш новый пароль: %s"
+
+msgid "Account activation failed"
+msgstr "Не удалось активировать учётную запись"
+
+msgid "Done"
+msgstr "Готово"
+
+msgid "Password reset successfully"
+msgstr "Пароль успешно восстановлен"
+
+msgid "sign in"
+msgstr "войти"
+
+msgid "Password reset"
+msgstr "Восстановление пароля"
+
+msgid "Reset"
+msgstr "Сброс"
+
+msgid "Password reset failed"
+msgstr "Не удалось восстановить пароль"
+
+msgid "Email with password reset instructions has been sent."
+msgstr ""
+"На ваш электронный адрес было отправлено письмо с инструкциями по "
+"восстановлению пароля."
+
+msgid "Back to main page"
+msgstr "Вернуться на главную"
+
+msgid "New password has been sent to your mobile phone"
+msgstr "Новый пароль отправлен на ваш мобильный телефон"
+
+#, python-format
+msgid "You're already signed in as <strong>%(user)s</strong>."
+msgstr "Вы уже вошли в систему как <strong>%(user)s</strong>."
+
+msgid ""
+"\n"
+"      Forgotten your password? Enter your e-mail address below, and we'll\n"
+"      e-mail instructions for setting a new one.\n"
+"    "
+msgstr ""
+"\n"
+"Забыли свой пароль? Введите свой адрес электронной почты ниже и мы отправим вам инструкции по его восстановлению."
+
+#, python-format
+msgid ""
+"\n"
+"      You can also use <a href=\"%(password_reset_link)s\" style=\"text-decoration: underline;\">password recovery form via SMS</a>\n"
+"    "
+msgstr ""
+"\n"
+"Вы также можете воспользоваться формой <a href=\"%(password_reset_link)s\" style=\"text-decoration: underline;\">восстановления пароля через SMS</a>"
+
+msgid "Reset my password"
+msgstr "Восстановить мой пароль"
+
+msgid ""
+"\n"
+"          Forgotten your password? Enter your mobile phone below, and we'll\n"
+"          send a new one.\n"
+"        "
+msgstr ""
+"\n"
+"Забыли свой пароль? Введите номер своего мобильного телефона и мы отправим вам новый пароль."
+
+#, python-format
+msgid ""
+"\n"
+"          You can also use <a href=\"%(password_reset_link)s\" style=\"text-decoration: underline;\">password recovery form via E-Mail</a>\n"
+"        "
+msgstr ""
+"\n"
+"Вы также можете воспользоваться формой <a href=\"%(password_reset_link)s\" style=\"text-decoration: underline;\">восстановления пароля через E-Mail</a>"
+
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+msgid "Thanks!"
+msgstr ""
+
+msgid "Sign in"
+msgstr "Войти"
+
+#, python-format
+msgid ""
+"\n"
+"                    You're already signed in as <strong>%(user)s</strong>,\n"
+"                    <a href=\"%(logout_url)s\" title=\"logout\">logout</a>?\n"
+"                "
+msgstr ""
+"\n"
+"Вы уже вошли как <strong>%(user)s</strong>, <a href=\"%(logout_url)s\" title=\"logout\">выйти</a>?"
+
+#, python-format
+msgid ""
+"\n"
+"                    Please login to open an account or\n"
+"                    <a href=\"%(register_url)s?next=%(next)s\">register</a> in 30 seconds!\n"
+"                "
+msgstr ""
+"\n"
+"Чтобы открыть счёт, пожалуйста, войдите или <a href=\"%(register_url)s?next=%(next)s\">зарегистрируйтесь</a> за 30 секунд!"
+
+#, python-format
+msgid ""
+"\n"
+"                or maybe you've <a href=\"%(password_reset_url)s\" title=\"reset password\">forgotten</a> your password?\n"
+"            "
+msgstr ""
+"\n"
+"или, быть может, вы <a href=\"%(password_reset_url)s\" title=\"reset password\">забыли</a> свой пароль?"
+
+msgid "Logged out"
+msgstr "Вы вышли из системы"
+
+msgid "You're receiving this email because you requested a password reset."
+msgstr "Вы получили это письмо, потому что запросили восстановление пароля."
+
+msgid "Please go to the following page and choose a new password:"
+msgstr "Пожалуйста перейдите по ссылке ниже и установите новый пароль:"
+
+msgid "Your username, in case you've forgotten:"
+msgstr "Ваше имя пользователя:"
+
+msgid "Thanks for using our site!"
+msgstr "Спасибо за использование наших услуг!"
+
+msgid "Grand Capital"
+msgstr ""
+
+#, python-format
+msgid ""
+"or maybe you are <a href=\"%(login_url)s?next=%(next)s\">already a user</a>?"
+msgstr ""
+"или, быть может, вы <a href=\"%(login_url)s?next=%(next)s\">уже "
+"зарегистрированы</a>?"
+
+msgid ""
+"\n"
+"                    <p>If you have any questions please contact us by email: <a href=\"mailto:info@arumcapital.eu\">info@arumcapital.eu</a></p>\n"
+"                "
+msgstr ""
+"\n"
+"<p>Если у вас есть какие-нибудь вопросы, пожалуйста, свяжитесь с нами по e-mail: <a href=\"mailto:info@arumcapital.eu\">info@arumcapital.eu</a></p>"
+
+#, python-format
+msgid ""
+"Dear %(user_profile)s!\n"
+"\n"
+"We congratulate you on the successful registration with %(site_name)s!\n"
+"You can now take advantage of any product, service and promotion of our company.\n"
+"\n"
+"To enter your Private Office you will need:\n"
+msgstr ""
+"Здравствуйте, %(user_profile)s!\n"
+"\n"
+"Поздравляем Вас с успешной регистрацией Личного кабинета в %(site_name)s.\n"
+"Теперь Вы можете воспользоваться всеми продуктами, сервисами и акциями компании.\n"
+"\n"
+"Для входа в Личный Кабинет вам понадобятся:\n"
+
+#, python-format
+msgid ""
+"\n"
+"Username: %(email)s\n"
+"Password: %(password)s\n"
+msgstr ""
+"\n"
+"Логин: %(email)s\n"
+"Пароль: %(password)s\n"
+
+#, python-format
+msgid ""
+"\n"
+"Username: %(phone_mobile)s\n"
+"Password: was sent to %(phone_mobile)s via SMS\n"
+msgstr ""
+"\n"
+"Логин: %(phone_mobile)s\n"
+"Пароль: был отправлен на %(phone_mobile)s по SMS\n"
+
+#, python-format
+msgid ""
+"\n"
+"Your password was created automatically, you can change it in Private Office\n"
+"(https://%(site_domain)s%(change_password)s), tab Settings, Security.\n"
+msgstr ""
+"\n"
+"Пароль был создан автоматически, в дальнейшем Вы сможете изменить его в Личном кабинете:\n"
+"(https://%(site_domain)s%(change_password)s), раздел Настройки, вкладка Безопасность.\n"
+
+#, python-format
+msgid ""
+"\n"
+"You are just 3 steps away from earning on the Forex market:\n"
+"\n"
+"1. Select an account type (https://%(site_domain)s%(trading_account_types_url)s) and open it in the Private Office\n"
+"\n"
+"2. Deposit money on your account (https://%(site_domain)s%(operations_with_money_url)s)\n"
+"\n"
+"3. Download MetaTrader 4 terminal (https://%(site_domain)s%(platforms_mt4_url)s) or use web-terminal (https://%(site_domain)s%(platforms_webtrader_url)s). Web-terminal doesn’t require installation.\n"
+"\n"
+"Now you can start trading. You have access to more than 330 instruments in Forex, CFD and binary options markets.\n"
+"\n"
+"\n"
+"To trade successfully you can use all special offers from %(site_name)s:\n"
+"\n"
+"·  get best bonuses (https://%(site_domain)s%(bonus_frontpage_url)s);\n"
+"\n"
+"·  trade on your own (https://%(site_domain)s%(trading_account_types_url)s) or invest (https://%(site_domain)s%(pamm_frontpage_url)s) in successful Managers’ accounts;\n"
+"\n"
+"·  participate in contests with great prizes (https://%(site_domain)s%(contests_frontpage_url)s);\n"
+msgstr ""
+"\n"
+"Вам осталось всего 3 шага до получения прибыли на финансовых рынках:\n"
+"\n"
+"1. Выберите нужный тип счета (https://%(site_domain)s%(trading_account_types_url)s) и откройте его через Личный кабинет.\n"
+"\n"
+"2. Пополните счет (https://%(site_domain)s%(operations_with_money_url)s) любым удобным способом.\n"
+"\n"
+"3. Скачайте терминал MetaTrader 4 (https://%(site_domain)s%(platforms_mt4_url)s) или воспользуйтесь веб-терминалом (https://%(site_domain)s%(platforms_webtrader_url)s), который не требует загрузки.\n"
+"\n"
+"Теперь вы можете начинать торговлю: вам доступны более 330 инструментов на рынках форекс, cfd и бинарных опционов.\n"
+"\n"
+"\n"
+"Чтобы Ваша работа на рынке была успешной, воспользуйтесь всеми предложениями от %(site_name)s:\n"
+"\n"
+"·  получите самые выгодные бонусы (https://%(site_domain)s%(bonus_frontpage_url)s);\n"
+"\n"
+"·  торгуйте сами (https://%(site_domain)s%(trading_account_types_url)s) или инвестируйте (https://%(site_domain)s%(pamm_frontpage_url)s) в счета успешных управляющих;\n"
+"\n"
+"·  участвуйте в интересных конкурсах (https://%(site_domain)s%(contests_frontpage_url)s) с отличными призами;\n"
+
+#, python-format
+msgid ""
+"\n"
+"·  become a partner (https://%(site_domain)s%(partnership_frontpage_url)s).\n"
+msgstr ""
+"\n"
+"·  становитесь партнером (https://%(site_domain)s%(partnership_frontpage_url)s) компании и зарабатывайте больше.\n"
+
+#, python-format
+msgid ""
+"\n"
+"Best regards!\n"
+"\n"
+"%(site_name)s Team\n"
+msgstr ""
+"\n"
+"Удачного трейда!\n"
+"\n"
+"Компания %(site_name)s\n"
+
+#, python-format
+msgid "Greetings at %(site_name)s!"
+msgstr "Приветствуем вас на %(site_name)s!"
+
+msgid "Your password was sent via SMS to your phone number"
+msgstr "Ваш пароль будет отправлен по SMS на ваш мобильный телефон"
+
+msgid ""
+"Your IP address has been blocked due to 20 unsuccessfull logon attempts. "
+"Please wait at least 20 minutes before trying again"
+msgstr ""
+"Ваш IP-адрес был заблокирован в связи с 20 неуспешными попытками входа. "
+"Пожалуйста подождите по крайней мере 20 минут прежде чем пробовать снова."
+
+msgid ""
+"Phone number for your account is not confirmed. Please use phone-base "
+"password recovery."
+msgstr ""
+"Номер телефона для этой учётной записи не подтверждён. Пожалуйста, "
+"воспользуйтесь восстановление пароля по телефону."
+
+msgid "Password successfully changed"
+msgstr "Пароль успешно изменен"
+
+
+#~ msgid ""
+#~ "Grand Capital Limited is not authorised by the FCA to provide services in "
+#~ "the United Kingdom so we don't allow registrations from the UK."
+#~ msgstr ""
+#~ "Компания Grand Capital Ltd. не имеет лицензии FCA на осуществление "
+#~ "деятельности на территории Соединённого Королевства, в связи с этим "
+#~ "регистрация для жителей Великобритании невозможна."
+
+#~ msgid "First contact with the client"
+#~ msgstr "Первая связь с клиентом"
+
+#~ msgid ""
+#~ "Email you provided is already registered in our system.<br/>If you forgot "
+#~ "the password, please visit <a href='%(recovery)s'>the password recovery "
+#~ "page</a>.<br/>If you remember your password, use it to log in to your <a "
+#~ "href='%(private_office)s'>Private Office</a>"
+#~ msgstr ""
+#~ "Адрес электронной почты, который вы предоставили, уже зарегистрирован на "
+#~ "другой аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного "
+#~ "Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого "
+#~ "восстановления пароля личного кабинета</a>.<br/> Если вы помните свой "
+#~ "пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
+
+#~ msgid ""
+#~ "\n"
+#~ "We are happy to see you among the community of %(site_name)s traders and wish you successful trading!\n"
+#~ "\n"
+#~ "%(site_name)s Team\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Благодарим Вас за то, что Вы присоединились к сообществу трейдеров %(site_name)s. Удачных торгов!\n"
+#~ "\n"
+#~ "Компания %(site_name)s\n"
+
+#~ msgid "Greetings at GrandCapital.ru!"
+#~ msgstr "Приветствуем вас на GrandCapital.ru!"
+
+#~ msgid "Email"
+#~ msgstr "E-mail"
+
+#~ msgid "Country"
+#~ msgstr "Страна"
+
+#~ msgid "Example: Russia"
+#~ msgstr "Например: Россия"
+
+#~ msgid "State / Province"
+#~ msgstr "Область"
+
+#~ msgid "Example: +7 (911) 200-19-55"
+#~ msgstr "Например: +7 (911) 200-19-55"
+
+#~ msgid ""
+#~ "Your account is not activated. It will be blocked in %d days. To activate "
+#~ "it, please follow the link you received by email. If you have problems with "
+#~ "account activation, please contact your personal manager."
+#~ msgstr ""
+#~ "Ваша учётная запись не активирована и будет заблокирована через %d дней. "
+#~ "Чтобы активировать её, пожалуйста, пройдите по ссылке, которую Вы получили "
+#~ "по электронной почте. Если у Вас возникают проблемы с активацией учётной "
+#~ "записи, пожалуйста, свяжитесь с Вашим персональным менеджером."
+
+#~ msgid "user"
+#~ msgstr "пользователь"
+
+#~ msgid "activation key"
+#~ msgstr "ключ активации"
+
+#~ msgid "registration profile"
+#~ msgstr "профиль регистрации"
+
+#~ msgid "registration profiles"
+#~ msgstr "профили регистрации"
+
+#~ msgid "Wrong token"
+#~ msgstr "Неверный код"
+
+#~ msgid "Invalid phone number"
+#~ msgstr "Неверный номер телефона"
+
+#~ msgid ""
+#~ "You are asking for too many text messages. Please wait 5 minutes and try "
+#~ "again later"
+#~ msgstr ""
+#~ "Вы запросили слишком много СМС. Подождите 5 минут и попробуйте еще раз"
+
+#~ msgid ""
+#~ "You are asking for too many calls. Please wait 5 minutes and try again later"
+#~ msgstr ""
+#~ "Вы запросили слишком много звонков. Подождите 5 минут и попробуйте еще раз"
+
+#~ msgid "The automated call was queued"
+#~ msgstr "Звонок был поставлен в очередь"
+
+#~ msgid ""
+#~ "\n"
+#~ "            Please press the button below to get the verification token as text message (SMS) on your phone number\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "Нажмите кнопку ниже для того, чтобы получить SMS-токен на телефон "
+
+#~ msgid "Send an SMS"
+#~ msgstr "Отправить SMS"
+
+#~ msgid ""
+#~ "\n"
+#~ "            The message was sent succesfully\n"
+#~ "            (if you can't receive the message, you can order\n"
+#~ "            an <a id=\"make_call\" class=\"pointer\">automated call</a>)\n"
+#~ "            <br/>\n"
+#~ "            You will receive a unique code which you should enter in the following field:\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "Сообщение было успешно отправлено (если сообщение не дошло, то вы можете <a id=\"make_call\" class=\"pointer\">заказать автоматический звонок</a>)<br/>В сообщении содержится токен, который следует ввести в расположенное ниже поле:"
+
+#~ msgid ""
+#~ "\n"
+#~ "            The call was queued succesfully. You will hear a unique\n"
+#~ "            code (4 digits) which you should enter in the following field:\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "Звонок был успешно запланирован. Вы услышите токен (4 цифры), которые следует ввести в расположенное ниже поле: "
+
+#~ msgid "Check"
+#~ msgstr "Проверить"
+
+#~ msgid "OTP check"
+#~ msgstr "Проверка OTP"
+
+#~ msgid "The message was sent succesfully"
+#~ msgstr "Сообщение было успешно отослано"
+
+#~ msgid "Failed to send SMS. Please try again later"
+#~ msgstr "Не удалось отправить SMS. Попробуйте еще раз позже"
+
+#~ msgid "Account successfully activated"
+#~ msgstr "Учётная запись успешно активирована"
+
+#~ msgid "Successfull account activation on"
+#~ msgstr "Вы успешно активировали свою учётную запись"

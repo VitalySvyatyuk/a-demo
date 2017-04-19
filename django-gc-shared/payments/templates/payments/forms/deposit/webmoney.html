@@ -1,0 +1,30 @@
+{% extends "payments/forms/deposit/base.html" %}
+
+{% load i18n %}
+
+{% block header %}
+    <div class="small-5 medium-5 large-5 columns instruction">
+        <p>
+            {% blocktrans trimmed %}
+            In case there's a problem with automatic transfer, please transfer the money manually
+            to one of the following purses and send the details of the transfer to our support department:
+            {% endblocktrans %}
+        </p>
+        <ul style="list-style: disc inside;">
+            <li>Z469443201694 (USD)</li>
+            <li>E504594670400 (EUR)</li>
+            <li>R375162439228 (RUB)</li>
+            <li>U117455318947 (UAH)</li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block ps %}
+    <div class="small-12 medium-12 large-12 columns">
+        <div class="left small-4 medium-5 large-4 columns">
+            {% with field=form.purse %}
+                {% include "payments/includes/field.html" %}
+            {% endwith %}
+        </div>
+    </div>
+{% endblock %}

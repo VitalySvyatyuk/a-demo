@@ -1,0 +1,37 @@
+[
+   {
+      "model" : "crm.personalmanager",
+      "fields" : {
+         "on_vacancies_until" : null,
+         "country_state_names" : "",
+         "needs_call_check" : true,
+         "works_with_ib" : false,
+         "amo_id" : null,
+         "ib_account" : null,
+         "user" : 1,
+         "force_tasks_full_day" : false,
+         "worktime_end" : "16:00:00",
+         "daily_limit" : null,
+         "amo_synced_at" : null,
+         "is_on_vacancies" : false,
+         "reassign_agent_code_to_office" : false,
+         "can_request_new_customers" : false,
+         "sip_name" : "",
+         "can_be_auto_assigned" : false,
+         "can_see_all_users" : true,
+         "last_assigned" : "2017-01-31T13:19:16.778",
+         "can_set_agent_codes" : false,
+         "works_with_office_clients" : true,
+         "is_office_supermanager" : true,
+         "allowed_ips" : "*",
+         "substitute" : null,
+         "worktime_start" : "09:00:00",
+         "amo_unsynced" : true,
+         "has_document_access" : false,
+         "languages" : "ru",
+         "can_see_all_calls" : false,
+         "office" : null
+      },
+      "pk" : 1
+   }
+]

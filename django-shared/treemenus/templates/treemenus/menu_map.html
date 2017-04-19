@@ -1,0 +1,49 @@
+{% extends "design_2014/private_office/base.html" %}
+{% load i18n  %}
+
+{% block css %}{{ block.super }}
+    <style type="text/css">
+        .menu-map a
+        {
+            text-decoration:none;
+        }
+
+        h2.green a
+        {
+            text-decoration:none;
+        }
+
+        h2.green a:hover
+        {
+            text-decoration:underline;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Карта сайта" %}</h1>
+    <div class="container">
+    {% for menu_item in menu.root_item.children %}
+        {% if menu_item.caption %}
+            <h2 calss="green">
+                <a href="{{ menu_item.url }}">{{ menu_item.caption }}</a>
+            </h2>
+        {% endif %}
+        {% if menu_item.get_flattened %}
+             <table class="menu-map">
+                <tbody>
+                  {% for menu_ch in menu_item.get_flattened %}
+                      {% if not forloop.first and menu_ch.caption %}
+                        <tr>
+                            <td>
+                                <a href="{{ menu_ch.url }}">{{ menu_ch.caption_with_spacer|safe }}</a>
+                            </td>
+                        </tr>
+                      {% endif %}
+                  {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+

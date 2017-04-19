@@ -1,0 +1,48 @@
+.call_to_action_pageblock{
+	padding-top: 110px;
+	padding-bottom: 110px;
+
+	@media (#{$max_tablets}){
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+	@media (#{$max_phones}){
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
+}
+
+.for-true-border{
+	.link--icon-download{
+		margin-left: 27px;
+		padding-left: 0
+	}
+	.link--icon-download:before{
+		left: -27px;
+	}
+}
+
+.page_head__title__img.mt-four-logo{
+  display: inline-block;
+  margin-top: 50px;
+  margin-right: -48px;
+  margin-bottom: 16px;
+  width: 119px;
+  height: 62px;
+}
+
+.page_head__title__img.invest-logo{
+  display: inline-block;
+  margin-top: 50px;
+  margin-right: -48px;
+  margin-bottom: 16px;
+  width: 140px;
+  height: 62px;
+}
+
+a.download__ios{
+  display: inline-block;
+  margin-top: 20px;
+}
+
+

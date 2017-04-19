@@ -1,0 +1,52 @@
+{% extends alternate_base|default:"design_2014/private_office/base.html" %}
+
+{% load i18n %}
+
+{% block title %}{{ block.super }} — {% trans "Account created" %}!{% endblock %}
+
+{% block external_analytics %}{{ block.super }}
+<script>
+    dataLayer.push({
+        'event': 'new_account_opened',
+        'account_type': '{{ group_slug }}'
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+    <h1 class="green">{% trans "Account created" %}!</h1>
+    <div class="container">
+        <p>
+            <strong>
+                {% block congratulations %}
+                    {% blocktrans with account.mt4_id as account_id %}
+                        Congratulations! You have opened a new {{ account_type }} account in Grandcapital LTD!
+                        Your account id is {{ account_id }}.
+                    {% endblocktrans %}
+                {% endblock %}
+            </strong>
+        </p>
+
+        <p>
+            {% blocktrans with account.user.email as email %}
+                Access password was emailed to {{ email }}
+            {% endblocktrans %}
+        </p>
+
+        <p>
+            {% block after_open_link %}
+                <a href="{% url "mt4_account_list" %}">{% trans 'Go to your account list management' %}</a>
+            {% endblock %}
+            </p>
+
+        {% block extra %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block js %}{{ block.super }}
+  <script type="text/javascript">
+    if (typeof Android !== "undefined" && Android !== null) {
+      Android.closeWebView()
+    }
+  </script>
+{% endblock %}

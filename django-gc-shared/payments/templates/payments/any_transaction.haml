@@ -1,0 +1,77 @@
+- extends "private_office/base.html"
+
+- load i18n app_tags coffeescript staticfiles
+
+- block extrahead
+    {{ block.super }}
+    <style>
+        .custom-combobox {
+            position: relative;
+            display: inline-block;
+        }
+        .custom-combobox-toggle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin-left: -1px;
+            padding: 0;
+            /* support: IE7 */
+            *height: 1.7em;
+            *top: 0.1em;
+        }
+        .custom-combobox-input {
+            margin: 0;
+            padding: 0.3em;
+        }
+    </style>
+
+- block js
+    {{ block.super }}
+
+    :javascript
+        {% inlinecoffeescript %}
+        $(() ->
+            availableTags = {{ form.fields.comment.choices|safe }}
+            $("#id_comment").autocomplete source: availableTags
+
+            $("#id_account").change(() ->
+                that = this
+                $(that).next().text "{% trans 'Loading account data' %}"
+                $.ajax(
+                    url: "{% url 'mt4_account_info' %}#{@value}",
+                    success: (data) ->
+
+                        if data.accounts[that.value]
+                            acc = data.accounts[that.value]
+                            if acc.bonuses
+                                msg = "#{acc.account} {% trans "balance" %} #{acc.balance} (#{acc.bonuses[0][0]} #{acc.bonuses[0][1]}), {% trans "leverage" %} 1:#{acc.leverage}"
+                            else
+                                msg = "#{acc.account} {% trans "balance" %} #{acc.balance} ({% trans "no bonuses" %}), {% trans "leverage" %} 1:#{acc.leverage}"
+                            $("#id_currency").val("#{acc.currency}")
+                        else
+                            msg = "..."
+
+                        $(that).next().text msg
+                        return
+                )
+                return
+            )
+            if $("#id_account").val()
+                $("#id_account").change()
+            return
+        )
+        {% endinlinecoffeescript %}
+
+- block title
+    {{ block.super }} — {% trans "Make transaction" %}
+
+- block content
+    %h1.green
+        {% trans "Make transaction" %}
+    .container
+        %form{method: "POST"}
+            - block form
+                - include "includes/form.html"
+                {% trans "Make" as msg %}
+                %br
+                - gcbutton "submit" msg "black"

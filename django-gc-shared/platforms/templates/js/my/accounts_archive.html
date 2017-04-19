@@ -1,0 +1,17 @@
+{% load staticfiles inbox i18n %}
+<div class="small-wrapper">
+    <h1 class="row text-center offset-bottom-25">{% trans "Accounts archive" %}</h1>
+    <p class="row text-center offset-bottom-40">{% trans "Here you can find all your archived accounts" %}</p>
+    <ul class="clearfix archived-list">
+        <li ng-repeat="acc in accounts">
+            <div>{% trans "Account" %} [[acc.mt4_id]]<br>([[acc.group_display]])</div>
+            <div>
+                <button class="button medium"
+                    ng-click="restore(acc)"
+                    ng-disabled="globalLoading || acc.archived_status === 'restoring'"
+                    ng-bind="acc.archived_status === 'restoring'?'{% trans "In progress" %}':'{% trans "Restore" %}'">
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>

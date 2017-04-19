@@ -1,0 +1,178 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | ARUM.PRO {{ block.super }}
+
+block content
+  .two-bg-wrapper(style="height: 368px;width: 100%;position: relative;")
+    .half-a(style="background-image: url({% static 'img/marketing-site/bg/bg-arumpro-pro.jpg' %})")
+    .half-b(style="background-image: url({% static 'img/marketing-site/bg/bg-arumpro-web.jpg' %})")
+    .container.center-block
+      .row
+        .col-md-6
+          .row
+            .col-xs-12.white-bc(style="margin-bottom:94px;")
+              - breadcrumbs
+          .arumpro-header-text.arumpro-header-left
+            h1
+              | ARUM.PRO
+            p
+              - trans "Professional trading platform with a powerful analytical and trading engine "
+        .col-md-6
+          .arumpro-header-text.arumpro-header-right
+            h1
+              | ARUM.WEB
+            p
+              - trans "Browser version of ARUM.PRO platform enables operation from any device"
+
+
+  .arumpro
+    .arumpro-advantages-skin
+      .container
+        .arumpro-advantages
+          .row
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-arumpro-bid-ask-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Market<br>depth"
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-arumpro-computer-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Adaptive<br>interface"
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-arumpro-star-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Customisable<br>chart period"
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-arumpro-base-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Indicator<br>base"
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-arumpro-graphic-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Real historical<br>volumes"
+            .col-md-2.col-xs-6
+              img(src="{% static 'img/marketing-site/icons/icon-arumpro-notebook-retina.png' %}", alt="capital advantages")
+              p
+                - trans "Tick<br>chart"
+
+    .arumpro-windows
+      .container
+        .row
+          .col-md-6
+            h2.page_title
+              - trans "For Windows"
+            p
+              - trans "ARUM.PRO platform has an adaptive interface enabling to customize desktops due to chart modules, news feeds, quotes, Market Depth and the like. "
+            p
+              - trans "The platform provides a Market Depth of ECN-liquidity online and contains real historical volume of trading on each financial instrument. The platform also provides tick chart tools, indicator base and other tools for technical analysis. "
+            //- ul.arumpro-dropdown
+            //-   li.arumpro-dropdown-top
+            //-     a.arumpro-dropdown-top(href="#")
+            //-       - trans "Download the platform"
+            //-     ul.arumpro-dropdown-inside
+            //-       li
+            //-         a(href="#")
+            //-           - trans "For real account"
+            //-       li
+            //-         a(href="#")
+            //-           - trans "For demo account"
+            {% if LANGUAGE_CODE == 'ru' %}
+            ul.arumpro-dropdown.not-ready-platform-ru
+              li.arumpro-dropdown-top
+                a.arumpro-dropdown-top(href="#")
+                  - trans "Download the platform"
+            a.link(href="#")
+              - trans "User guide"
+              |  (pdf)
+            {% else %}
+            ul.arumpro-dropdown.not-ready-platform-en
+              li.arumpro-dropdown-top
+                a.arumpro-dropdown-top(href="#")
+                  - trans "Download the platform"
+            a.link(href="#")
+              - trans "User guide"
+              |  (pdf)
+            {% endif %}
+          .col-md-6
+             .apps__slider_box.apps__slider_box--windows
+              .apps__slider_arrow_box
+                button.slider_arrow.slider_arrow--left.apps__slider_arrow.apps__slider_arrow--left.js-slider-prev-arrow-1(type="button")
+                button.slider_arrow.slider_arrow--right.apps__slider_arrow.apps__slider_arrow--right.js-slider-next-arrow-1(type="button")
+              .apps__slider.js-slider(data-slick="{\"slidesToShow\": 1, \"slidesToScroll\": 1, \"fade\": true, \"arrows\": true, \"dots\": false, \"dotsClass\": \"apps__dots\", \"prevArrow\": \".js-slider-prev-arrow-1\", \"nextArrow\": \".js-slider-next-arrow-1\", \"autoplay\": false, \"autoplaySpeed\": 10000, \"responsive\": [{\"breakpoint\": 768, \"settings\": {\"dots\": true, \"arrows\": true}}]}")
+                .apps__slider_item_box
+                  img.apps__slider_item_pic(src="{% static 'img/marketing-site/pictures/img-arumpro-display.jpg' %}")
+
+        .row(style="margin-top:15px;")
+          .col-md-6
+             .apps__slider_box.apps__slider_box--windows
+              .apps__slider_arrow_box
+                button.slider_arrow.slider_arrow--left.apps__slider_arrow.apps__slider_arrow--left.js-slider-prev-arrow-2(type="button")
+                button.slider_arrow.slider_arrow--right.apps__slider_arrow.apps__slider_arrow--right.js-slider-next-arrow-2(type="button")
+              .apps__slider.js-slider(data-slick="{\"slidesToShow\": 1, \"slidesToScroll\": 1, \"fade\": true, \"arrows\": true, \"dots\": false, \"dotsClass\": \"apps__dots\", \"prevArrow\": \".js-slider-prev-arrow-2\", \"nextArrow\": \".js-slider-next-arrow-2\", \"autoplay\": false, \"autoplaySpeed\": 10000, \"responsive\": [{\"breakpoint\": 768, \"settings\": {\"dots\": true, \"arrows\": true}}]}")
+                .apps__slider_item_box
+                  img.apps__slider_item_pic(src="{% static 'img/marketing-site/pictures/img-arumpro-screen.jpg' %}")
+          .col-md-6
+            h2.page_title
+              - trans "For Internet browser"
+            p
+              - trans "Browser version of ARUM.PRO professional trading platform enabling the operation from any device supported by most Internet browsers."
+            ul
+              li
+                  - trans "Customizable desktops and environment"
+              li
+                  - trans "A wide range of modules including news feeds"
+              li
+                  - trans "One-click trading"
+              li
+                  - trans "Market Depth and tick charts"
+              li
+                  - trans "5 types of trading reports, logging  "
+            .arumpro-windows-links
+              {% if LANGUAGE_CODE == 'ru' %}
+              div.not-ready-platform-ru
+                a.button(href="#")
+                  span.button__text
+                    - trans "Go to the platform"
+              {% else %}
+              div.not-ready-platform-en
+                a.button(href="#")
+                  span.button__text
+                    - trans "Go to the platform"
+              {% endif %}
+              a.link(href="#")
+                - trans "User guide"
+                |  (pdf)
+
+
+  .arumpro-become-client
+    .container
+      .row
+        .col-md-6
+          span.call_to_action__text.call_to_action__text--big.call_to_action__text--white
+            - trans "Become our client"
+        .col-md-6
+          {% if LANGUAGE_CODE == 'ru' %}
+          div.risk-hidden-ru.mobile-view
+            a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+              span.button__text
+                - trans "Open a demo account"
+          {% else %}
+          div.risk-hidden-en.mobile-view
+              a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                span.button__text
+                  - trans "Open a demo account"
+          {% endif %}
+          {% if LANGUAGE_CODE == 'ru' %}
+          div.risk-hidden-ru.mobile-view
+            a.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+              span.button__text
+                - trans "Register"
+          {% else %}
+          div.risk-hidden-en.mobile-view
+              a.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                span.button__text
+                  - trans "Register"
+          {% endif %}

@@ -1,0 +1,26 @@
+{% load i18n profiles_tags %}
+
+<div class="status" id="{{ validation.key }}">
+    {% if adminform and request.user.is_superuser or request.user|has_group:"Managers" %}
+        <a href="{% url "profiles_confirm_field" profile.user.username validation.key "t" %}">
+            <div style="margin-right: 5px;{% if validation.is_valid %}display:none;{% endif %}"
+                 class="sprite s_ok" title="{% trans "Mark as valid" %}"></div>
+        </a>
+
+        <a href="{% url "profiles_confirm_field" profile.user.username validation.key "f" %}">
+            <div style="margin-right: 5px;{% if validation.is_valid == False %}display:none;{% endif %}"
+                 class="sprite s_reject" title="{% trans "Mark as invalid" %}"></div>
+        </a>
+
+        <a href="{% url "profiles_confirm_field" profile.user.username validation.key "c" %}">
+            <div style="margin-right: 5px;{% if validation.is_valid == None %}display:none;{% endif %}"
+                 class="sprite s_clear" title="{% trans "Clear marks" %}"></div>
+        </a>
+    {% else %}
+        {% if validation.is_valid %}
+            <div class="sprite s_ok" title="{{ validation.comment|default:"" }}"></div>
+        {% elif validation.is_valid == False %}
+            <div class="sprite s_reject" title="{{ validation.comment|default:"" }}"></div>
+        {% endif %}
+    {% endif %}
+</div>

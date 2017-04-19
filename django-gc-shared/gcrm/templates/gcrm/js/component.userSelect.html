@@ -1,0 +1,14 @@
+{% load i18n %}
+
+<div class="dropdown dropdown-inline open" ng-class="::userSelect.classes" ng-click="userSelect.open = !userSelect.open">
+  [[userSelect.model? userSelect.Users.mapping[userSelect.model].data.name.short : '---{% trans "Manager" %}---']]
+  <i class="fa fa-fw fa-caret-down"></i>
+
+  <div class="dropdown-menu" ng-if="userSelect.open">
+    <a class="dropdown-item" ng-if="::!userSelect.hideNullManager" ng-click="userSelect.setModel(null)">{% trans "No manager" %}</a>
+
+    <div class="dropdown-divider" ng-repeat-start="office in userSelect.offices"></div>
+    <h6 class="dropdown-header text-center">[[::office.name]]</h6>
+    <a class="dropdown-item" ng-repeat-end ng-repeat="user in office.managers|orderBy:'data.name.short'" ng-click="userSelect.setModel(user)">[[::user.data.name.short]]</a>
+  </div>
+</div>

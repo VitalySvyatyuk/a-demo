@@ -1,0 +1,26 @@
+{% load i18n %}
+<div class="media">
+  <div class="media-left">
+    <div class="media-object" ng-class="::contactCall.object.data.disposition=='ANSWERED'?'text-success':'text-warning'">
+      <i class="fa fa-fw fa-2x fa-phone"></i>
+    </div>
+  </div>
+
+  <div class="media-body">
+    <small class="pull-right" title="[[::contactCall.object.data.call_date|moment:'LLL']]">[[::contactCall.object.data.call_date|moment:'calendar']]</small>
+
+    <span>
+      [[::contactCall.object.data.a]]
+      <span>-></span>
+      [[::contactCall.object.data.b]]
+
+      [[::contactCall.object.data.disposition]], [[::contactCall.object.data.duration]] {% trans "sec" %}
+    </span>
+
+    <span ng-switch="contactCall.playerShown">
+      <a ng-switch-default type="button" ng-click="contactCall.showPlayer()">{% trans "Play" %}</a>
+      <audio ng-switch-when="true" ng-src="[[contactCall.object.data.record]]" controls="controls" class="player" autoplay="autoplay">
+    </span>
+
+  </div>
+</div>

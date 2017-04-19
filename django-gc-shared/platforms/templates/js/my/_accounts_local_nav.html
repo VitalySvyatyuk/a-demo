@@ -1,0 +1,94 @@
+{% load i18n %}
+<div class="my-sidebar left-side" account-desktop-menu ng-hide="isHidden || !account">
+  <div class="my-sidebar-content">
+    {# DEPOSIT menu #}
+    <ul class="services" ng-switch on="account.is_demo && !account.is_contest" ng-if="!account.no_inout">
+      <li ng-switch-when="true" class="with-list">
+        <a easy-slide-block default="true"><span>{% trans "Deposit" %}</span></a>
+        <ul content-block>
+          <li><a ng-click="accountActions.demoDeposit()">{% trans "Demo deposit" %}</a></li>
+        </ul>
+      </li>
+      <li ng-switch-default class="with-list">
+        <a easy-slide-block default="true"><span>{% trans "Deposit" %}</span></a>
+        <ul content-block>
+          <li><a href="[[::BASE_URL]]payments/deposit?s=bankusd&account=[[account.mt4_id]]">{% trans "Bank transfer" %}</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    {# Common actions #}
+    <ul class="services" ng-switch ng-if="account.group !== 'real_ib'">
+      <li ng-switch-default class="with-list">
+        <a easy-slide-block default="true"><span>{% trans "Settings" %}</span></a>
+        <ul content-block>
+          <li ng-if="!account.is_options && !account.group.endsWith('_ss')">
+            <a ng-click="accountActions.changeLeverage()">{% trans "Leverage" %}</a>
+          </li>
+          <li ng-if="!account.group.endsWith('_cfh')">
+            <a ng-click="accountActions.recoverPassword()">{% trans "Password recovery" %}</a>
+          </li>
+          <li ng-if="account.is_options && !account.is_demo">
+            <a ng-click="accountActions.changeOptionsStyle()">{% trans "Change options style" %}</a>
+          </li>
+          <li ng-if="!account.is_pamm_master && account.can_be_pamm_master">
+            <a ng-click="accountActions.becomeMaster()">{% trans "Become a LAMM manager" %}</a>
+          </li>
+{% comment %}
+          <li ng-if="!account.is_pamm_investor && account.can_be_pamm_investor">
+            <a ng-if="!account.is_options" target="_blank" href="{% url "pamm_rating" %}">{% trans "Become investor" %}</a>
+            <a ng-if="account.is_options" target="_blank" href="{% url "pamm_rating" %}?type=opt">{% trans "Become investor" %}</a>
+          </li>
+{% endcomment %}
+           {# PAMM Master actions #}
+          <li ng-if="account.is_pamm_master">
+            <a ng-click="accountActions.changeCommissionType()">{% trans "Change comission type" %}</a>
+          </li>
+          <li ng-switch on="account.pamm_master.auto_accept" ng-if="account.is_pamm_master">
+            <a ng-switch-when="true" ng-click="accountActions.setAutoAcceptManaged(false)">{% trans "Accept investors manualy" %}</a>
+            <a ng-switch-default ng-click="accountActions.setAutoAcceptManaged(true)">{% trans "Auto accept investors" %}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+
+
+    {# IB actions #}
+    <ul class="services" ng-if="account.group === 'real_ib'">
+      <li>
+        <a ng-click="accountActions.recoverPassword()"><strong>{% trans "Password recovery" %}</strong></a>
+      </li>
+      {% comment %}<li>
+        <a ng-click="accountActions.changeRebate()"><strong>{% trans "Change rebate" %}</strong></a>
+      </li>{% endcomment %}
+    </ul>
+  </div>
+</div>
+
+
+<div class="my-sidebar right-side" account-desktop-menu ng-hide="isHidden || !account">
+  <div class="my-sidebar-content">
+    {# WITHDRAW menu #}
+    <ul class="services" ng-switch on="account.is_demo || account.no_inout">
+      <li ng-switch-when="true" class="with-list inactive-text">
+        <a><span>{% trans "Withdraw" %}</span></a>
+      </li>
+      <li ng-switch-default class="with-list">
+        <a easy-slide-block default="true"><span>{% trans "Withdraw" %}</span></a>
+        <ul content-block>
+          <li><a href="[[::BASE_URL]]payments/withdraw?s=bankusd&account=[[account.mt4_id]]">{% trans "Bank transfer" %}</a></li>
+        </ul>
+      </li>
+      <li ng-switch-default><a href="[[::BASE_URL]]payments/transfer?account=[[account.mt4_id]]"><strong>{% trans "Internal transfer" %}</strong></a></li>
+    </ul>
+    {# Other actions #}
+    <ul class="services">
+      <li>
+        <a href="[[::BASE_URL]][[account.mt4_id]]/history"><strong>{% trans "Account history" %}</strong></a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+

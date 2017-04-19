@@ -1,0 +1,65 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+<p class="h2 offset-bottom-5 font-med text-center" >{% trans "Refer friends" %}</p>
+<div class="offset-bottom-10 fs-18 text-center font-med">
+    <span>{% trans "and get rewards for&nbsp;the&nbsp;trading of&nbsp;each one" %}</span>
+</div>
+
+<div ng-mouseenter="spotIt()">
+    <form ng-submit="ok()">
+        <div class="offset-bottom-10">
+            <label class="offset-top-10">{% trans "Friend's name" %}:</label>
+            <input type="text"
+                ng-disabled="isLoading" 
+                ng-model="form.name">
+            <div
+                ng-if="errors.name"
+                ng-repeat="err in errors.name"
+                ng-bind="err"
+                class="error">
+            </div>
+        </div>
+        <div class="offset-bottom-10">
+            <label class="offset-top-10">{% trans "Friend's email" %}:</label>
+
+            <input type="email" 
+                ng-disabled="isLoading"
+                ng-model="form.email">
+            <div
+                ng-if="errors.email"
+                ng-repeat="err in errors.email"
+                ng-bind="err"
+                class="error">
+            </div>
+        </div>
+        <div ng-if="formData.ib_account.choices.length" class="offset-bottom-10">
+            <label class="offset-top-10" for="email">{% trans "IB account" %}:</label>
+            <div class="select-wrapper">
+                <select nd-disabled="isLoading"
+                        ng-model="form.ib_account"
+                        ng-options="r.value as r.display_name for r in formData.ib_account.choices">
+                </select>
+            </div>
+            <div
+                ng-if="errors.ib_account"
+                ng-repeat="err in errors.ib_account"
+                ng-bind="err"
+                class="error">
+            </div>
+        </div>
+        <div class="text-center">
+            <input type="submit" class="button medium third-black to-white offset-bottom-10 offset-top-25" value="{% trans 'Recommend' %}"/>
+        </div>
+    </form>
+</div>
+
+{% comment %}
+<div ng-if="!formData.ib_account.choices.length">
+    <p class="text-center">{% trans "We pay for your reference. Become our Partner" %}</p>
+
+    <div class="text-center">
+      <a ng-click="cancel()" class="button medium third-black to-white offset-top-20" href="{% url 'account_app' %}create/partnership">{% trans "Become a partner" %}</a> 
+    </div> 
+</div>
+{% endcomment %}
+

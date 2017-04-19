@@ -1,0 +1,51 @@
+{% load i18n %}
+
+<table class="table table-sm table-active">
+  <tbody>
+    <tr ng-repeat="info in contactInfo.info">
+      <th style="width:1%; white-space:nowrap;">
+
+        <div class="dropdown open" ng-click="open = !open">
+          <div ng-switch="info.type">
+            <span ng-switch-when="phone">{% trans "Phone" %}</span>
+            <span ng-switch-when="email">Email</span>
+            <span ng-switch-when="address">{% trans "Address" %}</span>
+            <i class="fa fa-fw fa-caret-down"></i>
+          </div>
+
+          <div class="dropdown-menu" ng-if="open">
+            <a class="dropdown-item" ng-click="info.type = 'phone'; open = false">{% trans "Phone" %}</a>
+            <a class="dropdown-item" ng-click="info.type = 'email'; open = false">Email</a>
+            <a class="dropdown-item" ng-click="info.type = 'address'; open = false">{% trans "Address" %}</a>
+          </div>
+        </div>
+
+      </th>
+
+      <td>
+        <div class="input-group" ng-switch="info.type">
+          <input class="form-control form-control-transparent" type="text" placeholder="{% trans "Enter value" %}" ng-model="info.value" ng-change="contactInfo.update()">
+          <span class="input-group-btn">
+            <a ng-switch-when="phone" class="btn btn-secondary text-info" href="skype:sip:[[info.value]]?call" title="Skype"><i class="fa fa-skype"></i></a>
+            <a ng-switch-when="phone" class="btn btn-secondary text-info" href="sip:sip:[[info.value]]" title="SIP"><i class="fa fa-phone"></i></a>
+            <a ng-switch-when="email" class="btn btn-secondary text-info" href="https://teamwox.grandgroup.net/email/new?to=sip:[[info.value]]&name=[[::object.data.user.name]]" title="TeamWox">TW</a>
+            <a ng-switch-when="email" class="btn btn-secondary text-info" href="mailto:sip:[[info.value]]"><i class="fa fa-envelope"></i></a>
+            <a ng-switch-when="address" class="btn btn-secondary text-info" target="_blank" href="https://www.google.ru/maps/search/[[info.value]]/" title="{% trans "Show on map" %}"><i class="fa fa-globe"></i></a>
+          </span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <div class="btn-group btn-group-sm pull-right">
+          <button type="button" class="btn btn-primary" ng-click="contactInfo.save()">
+            <i class="fa fa-save"></i> {% trans "Save" %}
+          </button>
+          <button type="button" class="btn btn-secondary" ng-click="contactInfo.revert()">
+            <i class="fa fa-times"></i> {% trans "Revert" %}
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

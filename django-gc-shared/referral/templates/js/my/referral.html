@@ -1,0 +1,38 @@
+{% load i18n staticfiles app_tags  %}
+
+
+<div class="row offset-top-35 offset-bottom-15">
+  <h1>{% trans "Partnership" %}</h1>
+</div>
+<div>
+  <dl id="materials" class="materials accordion arrow-right">
+    <dd class="accordion-navigation active">
+      {% include "js/my/referral_link.html" %}
+    </dd>
+
+    <dd class="accordion-navigation active">
+      <a class="with-icon pointer" easy-slide-block default="true">{% trans "Banners" %}</a>
+      <div class="content" content-block></div>
+      {# {% include "js/my/referral_banners.html" %} #}
+    </dd>
+    <dd class="accordion-navigation active">
+      <a class="with-icon dollar" easy-slide-block default="true">{% trans "Informers" %}</a>
+      <div class="content" content-block>
+        {# {% include "js/my/referral_informers.html" %} #}
+      </div>
+    </dd>
+  {% if LANGUAGE_CODE == "ru" %}
+    <dd class="accordion-navigation active">
+      {% include "js/my/referral_offline.html" %}
+    </dd>
+  {% endif %}
+  </dl>
+</div>
+<script src="{% static 'js/vendor/colpick.js' %}"></script>
+<script src="{% static 'js/vendor/django_ajax_send_csrf.js' %}"></script>
+<script>
+    $(".my .materials .small-input").click(function(){
+         $(this).focus();
+         $(this).select();
+    });
+</script>

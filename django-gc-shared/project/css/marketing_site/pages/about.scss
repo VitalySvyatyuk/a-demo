@@ -1,0 +1,30 @@
+.working_principles_pageblock{
+	padding-top: 35px;
+	padding-bottom: 103px;
+
+	background-repeat: no-repeat;
+	background-position: top;
+	background-image: url(../img/marketing-site/bg/bg--ipad-man.png);
+
+	@media (#{$max_ipad}){
+		background-image: url(../img/bg/bg--blur.png);
+		padding-bottom: 0;
+	}
+}
+.working_presentation_pageblock__img_box{
+	height: 400px;
+
+	margin-top: 20px;
+
+	text-align: right;
+
+	@media (#{$min_ipad}){
+		display: none;
+	}
+	@media (#{$max_phones}){
+		height: 300px;
+	}
+}
+.working_presentation_pageblock__img{
+	height: 100%;
+}

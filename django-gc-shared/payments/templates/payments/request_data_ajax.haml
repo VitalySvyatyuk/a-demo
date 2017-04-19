@@ -1,0 +1,234 @@
+- load i18n currency_tags app_tags
+
+:css
+    #payment_data fieldset {
+        margin-top: 5px;
+    }
+    #payment_data fieldset.collapsed * {
+        display: none;
+    }
+    #payment_data fieldset.collapsed, #change-committed-dialog fieldset.collapsed p.title {
+        display: block !important;
+    }
+    #payment_data fieldset.collapsed .collapse-toggle {
+        display: inline !important;
+    }
+    #payment_data p.title {
+        font-weight: bold;
+    }
+    a.link {
+        text-decoration: underline;
+        color: blue;
+    }
+    tr.green {
+        background-color: palegreen;
+    }
+    tr.red {
+        background-color: #ffbfbf;
+    }
+    tr.yellow {
+        background-color: yellow;
+    }
+
+%fieldset
+    %p.title
+        {% trans "Payment data" %}
+    %table.payment_data
+        %tr
+            %td {% trans "Account" %}
+            %td {{ object.account }}
+        %tr
+            %td {% trans "Payment system" %}
+            %td {{ object.payment_system }}
+        %tr
+            %td {% trans "Purse (account)" %}
+            %td
+                - if operation == "withdraw"
+                    - if object.requisit
+                        {{ object.requisit.purse }}
+                    - else
+                        {{ object.params.purse }}
+                - else
+                    {{ object.purse }}
+        %tr
+            %td {% trans "Sum" %}
+            %td {% signed_amount object.amount object.currency %}
+
+        - if object.active_balance
+            %tr
+                %td {% trans "Balance at the time of request" %}
+                %td {% signed_amount object.active_balance object.currency %}
+        %tr{class: "{% if profitability_deposit != None %}{% if profitability_deposit > 0 %}green{% else %}red{% endif %}{% else %}yellow{% endif %}"}
+            %td {% trans "Relative profit" %}
+            %td
+                - if profitability_deposit != None
+                    {{ profitability_deposit|floatformat:2 }} ({{ last_updated }})
+                - else
+                    {% trans "(updating)" %}
+        %tr
+            %td {% trans "Total profit" %}
+            %td
+                - if profit != None
+                    {{ profit }}
+                - else
+                    {% trans "(updating)" %}
+        %tr
+            %td {% trans "Amount in accounts' currency" %}
+            %td
+                - if object.conversion_rate
+                    - if object.account.is_micro
+                        - signed_amount object.amount_converted_mt4_before object.account.currency precision=4
+                    - else
+                        - signed_amount object.amount_converted_mt4_before object.account.currency
+                    ({{ object.converted_mt4_for_date_before }}, {% trans "exchange rate" %} {{ object.conversion_rate|floatformat:4 }})
+                - else
+                    &mdash;
+                %br
+                - if object.amount_converted_mt4_now
+                    - if object.account.is_micro
+                        - signed_amount object.amount_converted_mt4_now object.account.currency precision=4
+                    - else
+                        - signed_amount object.amount_converted_mt4_now object.account.currency
+                    ({{ object.converted_mt4_for_date_now }})
+                - else
+                    &mdash;
+        %tr
+            %td {% trans "Processing fee" %}
+            %td
+                - if object.commission
+                    - signed_amount object.commission object.commission_currency
+                - else
+                    &mdash;
+        %tr
+            %td {% trans "Client will receive" %}
+            %td
+                - if object.what_client_gets
+                    - signed_amount object.what_client_gets object.commission_currency
+                - else
+                    &mdash;
+                    
+    %a.link{href: "{% url 'mt4_account_history' object.account.mt4_id %}"}
+        {% trans "Trade history" %}
+
+- with object.params as params
+    - if params
+        %fieldset.collapse.collapsed
+            %p.title
+                {% trans 'Payment details' %} (<a class="collapse-toggle" href="#">{% trans "show" %}</a>)
+            - include 'payments/includes/payment_request_params.html'
+
+- if request
+    - with request.params as params
+        - if params
+            %fieldset.collapse.collapsed
+                %p.title
+                    {% trans "Request details" %} (<a class="collapse-toggle" href="#">{% trans "show" %}</a>)
+                - include 'payments/includes/payment_request_params.html'
+
+- with object.account as account
+    %fieldset.collapse.collapsed
+        %p.title
+            {% trans "Account details" %} (<a class="collapse-toggle" href="#">{% trans "show" %}</a>)
+        - include 'payments/includes/account_data.html'
+
+- with object.account.user.accounts.non_demo as accounts
+    %fieldset.collapse.collapsed
+        %p.title
+            {% trans "All accounts data" %} (<a class="collapse-toggle" href="#">{% trans "show" %}</a>)
+        - include 'payments/includes/all_accounts_data.html'
+
+- with object.account.get_totals.bonus as bonuses
+    %fieldset.collapse.collapsed
+        %p.title
+            {% trans "Bonus details" %} (<a class="collapse-toggle" href="#">{% trans "show" %}</a>)
+        - include 'payments/includes/bonuses.html'
+
+- with object.account.user.profile as profile
+    %fieldset.collapse.collapsed
+        %p.title
+            {% trans "Profile data" %} (<a class="collapse-toggle" href="#">{% trans "show" %}</a>)
+        - include 'payments/includes/profile_data.html'
+
+- with object.account.user.documents.all as documents
+    %fieldset.collapse.collapsed
+        %p.title
+            {% trans "Uploaded documents" %} (<a class="collapse-toggle" href="#">{% trans "show" %}</a>)
+        - include 'payments/includes/documents.html'
+
+%fieldset.collapse.collapsed
+    - if is_ib
+        %p.title
+            {% trans "Deposit systems from IB" %} (<a class="collapse-toggle" href="#">{% trans "show" %}</a>)
+    - else
+        %p.title
+            {% trans "Deposit systems details" %} (<a class="collapse-toggle" href="#">{% trans "show" %}</a>)
+    - include 'payments/includes/payment_data.html'
+
+{# added to avoid autofocus issue #}
+%span.ui-helper-hidden-accessible
+    %input{type: "text"}
+
+- if operation == "withdraw"
+    - url "payments_ajax_withdrawrequest_update" as link_to_update
+- else
+    - url "payments_ajax_depositrequest_update" as link_to_update
+
+%form
+    %fieldset
+        - if operation == "withdraw"
+            %label{for: "select_is_payed"}
+                {% trans "Approved (money withdrawn from account)" %}
+            %select#select_is_payed{name: "is_payed"}
+                %option{value: ""}
+                    {% trans "Not yet" %}
+                %option{value: "false"}
+                    {% trans "Cancelled" %}
+                - if perms.payments.can_commit_payments
+                    %option{value: "true"}
+                        {% trans "Yes (withdraw from trading platform)" %}
+
+            %label{for: "select_is_committed"}
+                {% trans "Payment committed" %}
+            %select#select_is_committed{name: "is_committed"}
+                %option{value: ""}
+                    {% trans "Not yet" %}
+                %option{value: "false"}
+                    {% trans "Cancelled" %}
+                %option{value: "true"}
+                    {% trans "Yes" %}
+        - else
+            %label{for: "select_is_payed"}
+                {% trans "Client made payment" %}
+            %select#select_is_payed{name: "is_payed"}
+                %option{value: ""}
+                    {% trans "Not yet" %}
+                %option{value: "false"}
+                    {% trans "Cancelled" %}
+                - if perms.payments.can_commit_payments
+                    %option{value: "true"}
+                        {% trans "Yes (deposit to trading platform)" %}
+
+            %label{for: "select_is_committed"}
+                {% trans "Money transferred to account" %}
+            %select#select_is_committed{name: "is_committed"}
+                %option{value: ""}
+                    {% trans "Not yet" %}
+                %option{value: "false"}
+                    {% trans "Cancelled" %}
+                %option{value: "true"}
+                    {% trans "Yes" %}
+
+        %label{for: "public-comment"}
+            {% trans "Public comment" %}
+        %textarea#public-comment.ui-widget-content.ui-corner-all{cols: "30", name: "public_comment"}
+
+        %label{for: "private-comment"}
+            {% trans "Internal comment" %}
+        %textarea#private-comment.ui-widget-content.ui-corner-all{cols: "30", name: "private_comment", value: ""}
+        %input{type: "hidden", name: "request_id", value: ""}
+
+        %label{for: "reason"}
+            {% trans "Withdrawal reason" %}
+        %input#reason.ui-widget-content.ui-corner-all{type: "text", name: "reason", value: "", readonly: "true"}
+
+        {% csrf_token %}

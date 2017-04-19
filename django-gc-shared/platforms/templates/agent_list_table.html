@@ -1,0 +1,34 @@
+{% load i18n %}
+{% regroup agents|dictsort:"group" by group as agents_list %}
+{% for l in agents_list %}
+    <h4>{{ l.grouper }}</h4>
+    <table class="gctable agents tablesorter {sortlist: [[1,0]]}">
+        <thead>
+        <tr>
+            <th>{% trans "Account" %}</th>
+            <th>{% trans "Date" %}</th>
+            <th>{% trans "Name" context "short" %}</th>
+            <th width="10%">{% trans "Country" %}</th>
+            <th>{% trans "City" %}</th>
+            <th>{% trans "Phone" context "short" %}</th>
+            <th>{% trans "Email" context "short" %}</th>
+            <th width="10%" class="{sorter: 'russian_float'}">{% trans "Balance" %}</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for agent in l.list %}
+            <tr class="agent-info {% cycle 'odd' 'even' %}">
+                <td>{{ agent.site.mt4_id|default:agent.mt4.login }}</td>
+                <td nowrap="nowrap">{{ agent.mt4.regdate|date:"Y-m-d" }}</td>
+                <td nowrap="nowrap">{{ agent.mt4.name }}</td>
+                <td nowrap="nowrap">{{ agent.mt4.country }}</td>
+                <td nowrap="nowrap">{{ agent.mt4.city }}</td>
+                <td nowrap="nowrap">{{ agent.site.user.profile.phone_mobile }}</td>
+                <td nowrap="nowrap">{{ agent.site.user.email }}</td>
+                <td nowrap="nowrap">{{ agent.mt4.balance|floatformat }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endfor %}

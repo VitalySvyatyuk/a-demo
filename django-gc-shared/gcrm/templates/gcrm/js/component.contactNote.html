@@ -1,0 +1,58 @@
+{% load i18n %}
+
+<div ng-switch="contactNote.mode">
+  <div class="media" ng-switch-default>
+    <div class="media-left">
+      <div class="media-object">
+        <i class="fa fa-fw fa-2x fa-sticky-note-o text-muted"></i>
+      </div>
+    </div>
+
+    <div class="media-body">
+      <small class="pull-right"
+        title="[[::contactNote.object.data.creation_ts|moment:'LLL']]">
+        [[::contactNote.object.data.creation_ts|moment:'calendar']]
+      </small>
+
+      <strong ng-if="::contactNote.Users.mapping[contactNote.object.data.author]">
+        {% trans "From" %} [[::contactNote.Users.mapping[contactNote.object.data.author].data.name.short]]
+        <br>
+      </strong>
+
+      <readmore-lines text="::contactNote.object.data.text|linky|nl2br" ></readmore-lines>
+      <span ng-if="::contactNote.object.data.is_editable">
+        <br>
+        <a ng-click="contactNote.mode = 'edit'">{% trans "Edit" %}</a>
+      </span>
+    </div>
+  </div>
+
+  <div class="media" ng-switch-when="edit">
+    <div class="media-left">
+      <div class="media-object">
+        <i class="fa fa-fw fa-2x fa-sticky-note-o text-muted"></i>
+      </div>
+    </div>
+
+    <form class="media-body" ng-submit="contactNote.save()">
+      <small class="pull-right"
+        ng-if="::contactNote.object.data.creation_ts"
+        title="[[::contactNote.object.data.creation_ts|moment:'LLL']]">
+        [[::contactNote.object.data.creation_ts|moment:'calendar']]
+      </small>
+
+      <strong ng-if="::contactNote.Users.mapping[contactNote.object.data.author]">
+        {% trans "From" %} [[::contactNote.Users.mapping[contactNote.object.data.author].data.name.short]]
+        <br>
+      </strong>
+      <span>
+        <textarea class="form-control input-sm" rows="2" required ng-model="contactNote.object.data.text" placeholder="{% trans "Comment" %}"></textarea>
+        <div class="btn-group btn-group-sm">
+          <button type="submit" class="btn btn-primary-outline"><i class="fa fa-check"></i> {% trans "Save" %}</button>
+          <button type="button" class="btn btn-secondary-outline" ng-if="::contactNote.object.data.id" ng-click="contactNote.object.revertData(); contactNote.mode = null"><i class="fa fa-times"></i> {% trans "Cancel" %}</button>
+          <button type="button" class="btn btn-danger-outline" ng-click="contactNote.remove()"><i class="fa fa-trash"></i> {% trans "Delete" %}</button>
+        </div>
+      </span>
+    </form>
+  </div>
+</div>

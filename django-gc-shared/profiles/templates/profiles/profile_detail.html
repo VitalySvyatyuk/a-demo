@@ -1,0 +1,129 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n profiles_tags cache thumbnail app_tags %}
+
+{% block title %}{{ block.super }} - {% trans "My profile" %}{% endblock %}
+
+{% block content %}
+    {% with profile.user as user %}
+        <div class="profile container">
+            <div class="data">
+                <h4>{{ profile }}
+                    {% if request.user == user %}
+                        <a class="edit" href="{% url "profiles_edit_profile" %}">
+                            ({% trans "Edit profile" %})
+                        </a>
+                    {% else %}
+                        {% if request.user|has_group:"Managers" %}
+                            <a class="edit"
+                               href="{% url "profiles_edit_profile" user.username %}">
+                                ({% trans "Edit profile" %})
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                </h4>
+                {% if request.user.is_staff  or request.user == user %}
+                    <table class="profile-data">
+                        <tbody>
+                        {# FIXME: would be great to iterate over Model's fields ... #}
+                        {% if profile.birthday %}
+                            <tr>
+                                <td class="key">{% trans "Birthday" %}</td>
+                                <td class="value">{{ profile.birthday }}</td>
+                            </tr>
+                        {% endif %}
+                        <tr>
+                            <td class="key">{% trans "Country" %}</td>
+                            <td class="value">{{ profile.country|default:"" }}</td>
+                        </tr>
+                        <tr>
+                            <td class="key">{% trans "State" %}</td>
+                            <td class="value">{{ profile.state|default:"" }}</td>
+                        </tr>
+                        <tr>
+                            <td class="key">{% trans "City" %}</td>
+                            <td class="value">{{ profile.city|default:"" }}</td>
+                        </tr>
+                        <tr>
+                            <td class="key">{% trans "Address" %}</td>
+                            <td class="value">{{ profile.address|default:"" }}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="key">{% trans "ICQ" %}</td>
+                            <td class="value">{{ profile.icq|default:"" }}</td>
+                        </tr>
+                        <tr>
+                            <td class="key">{% trans "Skype" %}</td>
+                            <td class="value">{{ profile.skype|default:"" }}</td>
+                        </tr>
+                        <tr>
+                            <td class="key">{% trans "E-mail" %}</td>
+                            <td class="value">{{ profile.user.email|urlize }}</td>
+                        </tr>
+
+                        {# TODO: how phones should be presented #}
+                        <tr>
+                            <td class="key">{% trans "Home Phone" %}</td>
+                            <td class="value">{{ profile.phone_home|default:"" }}</td>
+                        </tr>
+                        <tr>
+                            <td class="key">{% trans "Work Phone" %}</td>
+                            <td class="value">{{ profile.phone_work|default:"" }}</td>
+                        </tr>
+                        <tr>
+                            <td class="key">{% trans "Mobile Phone" %}</td>
+                            <td class="value">{{ profile.phone_mobile|default:"" }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    {% with user.documents.active as documents %}
+                        {% if documents %}
+                            <hr/>
+                            <div class="user-documents">
+                                <table class="user-documents">
+                                    <tr>
+                                        <th>{% trans "Documents you uploaded" %}</th>
+                                    </tr>
+                                    <tbody>
+                                    {% for document in documents %}
+                                        <tr id="doc-{{ document.id }}">
+                                            <td class="key">{{ document }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                    {% cache 86400 user_accounts user.username user.accounts.all.count %}
+                        {% with user.accounts.active as accounts %}
+                            {% if accounts %}
+                                <hr/>
+                                <div class="user-accounts">
+                                    <table class="user-accounts">
+                                        <tr>
+                                            <th>{% trans "Account id" %}</th>
+                                            <th>{% trans "Account type" %}</th>
+                                        </tr>
+                                        <tbody>
+                                        {% for account in accounts %}
+                                            <tr>
+                                                <td class="key center">{{ account.mt4_id }}</td>
+                                                {# FIXME: use {% url "%}" and a view for that! #}
+                                                <td class="value">{{ account.group|default:"" }}</td>
+                                                {#                        <td class="value">{% if account.group %}{{ account.group }}{% endif %}</td>#}
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% endif %}
+                        {% endwith %}
+                    {% endcache %}
+                {% endif %}
+            </div>
+            <div class="clear"></div>
+        </div>
+    {% endwith %}
+{% endblock %}

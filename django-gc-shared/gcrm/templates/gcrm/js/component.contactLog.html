@@ -1,0 +1,37 @@
+{% load i18n %}
+<div class="media">
+  <div class="media-left">
+    <div class="media-object">
+      <i class="fa fa-fw fa-2x" ng-class="::contactLog.icon"></i>
+    </div>
+  </div>
+
+  <div class="media-body" ng-switch="::contactLog.type">
+    <small class="pull-right" title="[[::contactLog.object.data.at|moment:'LLL']]">[[::contactLog.object.data.at|moment:'calendar']]</small>
+
+    <div ng-switch-when="manager changed">
+      <span class="label label-default">
+        [[::contactLog.object.data.params.old.name.short||'―']]
+      </span>
+      <i class="fa fa-long-arrow-right"></i>
+      <span class="label label-success">
+        [[::contactLog.object.data.params.new.name.short||'―']]
+      </span>
+      <i>
+        [[::contactLog.object.data.params.comment]] <strong>[[::contactLog.object.data.user.name.short]]</strong>
+      </i>
+    </div>
+
+    <div ng-switch-default="manager changed">
+      <span class="label label-info">[[::contactLog.object.data.object_string]]</span>
+      <strong>[[::contactLog.object.data.event]]</strong>
+      <span ng-if="::contactLog.object.data.user">
+        {% trans "by" %}
+        <strong>[[::contactLog.object.data.user.name.short]]</strong>
+      </span>
+      <pre class="small">[[::contactLog.object.data.params|json]]</pre>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,39 @@
+{% load app_tags i18n staticfiles %}
+<div class="reveal-modal-inner medium">
+    <h2 class="modal-title">
+
+
+
+
+
+        {% if not user_verified %}
+
+        {% trans "Please wait untill your documens will be aprroved" %}
+
+        {% else %}
+
+            {% if not user_allow_open_invest %}
+
+            {% trans "Your request for an investment account was received, please wait for our employees to contact you" %}
+
+            {% else %}
+
+            There are account with current email please contact support!
+
+            {% endif %}
+
+        {% endif %}
+
+    </h2>
+    <a class="close-reveal-modal icon cross"></a>
+
+    <div >
+
+
+        <br/>
+
+
+
+    </div>
+
+</div>

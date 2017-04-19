@@ -1,0 +1,149 @@
+.quotes{
+
+}
+
+.quotes__tabs_box{
+	@include clearfix;
+
+	@media (#{$max_ipad}){
+		margin-left: -15px;
+		width: calc(100%  + 30px);
+	}
+}
+.quotes__tab{
+	float: left;
+	width: 33.3%;
+
+	padding: 15px 0;
+
+	&:hover{
+		background-color: rgba($sea_bottom, 0.4);
+
+		.quotes__tab__title{
+			//border-bottom-color: black;
+		}
+	}
+
+	&.state-active-tab{
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+		background-color: $sea_bottom;
+		cursor: default;
+
+		.quotes__tab__title{
+			border-bottom: none;
+		}
+	}
+}
+.quotes__tab__title{
+	color: $galaxy;
+	font-size: (15em/16);
+	text-transform: uppercase;
+
+	//border-bottom: 1px dashed rgba(black, 0.3);
+
+	transition: border-bottom-color .4s ease;
+
+	.state-active-tab &{
+		color: $steel;
+	}
+}
+
+.quotes__table{
+	display: none; //shown via JS
+	position: relative;
+	width: 100%;
+
+	margin-bottom: 32px;
+
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+	background-color: $sea_bottom;
+
+	text-align: left;
+
+	&.state-visible{
+		display: table;
+	}
+
+	@media (#{$max_ipad}){
+		margin-left: -15px;
+		width: calc(100%  + 30px);
+		margin-bottom: 15px;
+	}
+}
+.quotes__table__row{
+	&:last-child{
+		.quotes__table__cell{
+			padding-bottom: 25px;
+
+			border-bottom: none;
+		}
+	}
+
+	&:not(.quotes__table__head_row):hover{
+		background-color: white;
+		cursor: pointer;
+	}
+}
+.quotes__table__head_row{
+	border-bottom: 1px solid #ddd;
+}
+.quotes__table__cell{
+	padding: 13px 0;
+
+	&:first-child{
+		padding-left: 29px;
+
+		@media (#{$max_phones}){
+			padding-left: $container_side_margin;
+		}
+	}
+
+	&--hidden-on-mobiles{
+		@media (#{$max_phones}){
+			display: none;
+		}
+	}
+}
+.quotes__table__head_text{
+	color: #8a8a8a;
+	font-weight: 300;
+}
+
+.quotes__table__cell_text{
+	font-size: (15em/16);
+
+
+	&--red{
+		color: $revenge;
+
+		&:before{
+			background: url(#{$icons_path}i--arrow-down--red.png) no-repeat center / auto 100%;
+		}
+	}
+	&--green{
+		color: $grass;
+
+		&:before{
+			background: url(#{$icons_path}i--arrow-up--green.png) no-repeat center / auto 100%;
+		}
+	}
+	&--arrow{
+		padding-left: 21px;
+		
+		position: relative;
+		
+		&:before{
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			top: 0;
+			margin: auto;
+
+			width: 11px;
+			height: 15px;
+
+
+		}
+	}
+}

@@ -1,0 +1,82 @@
+{% load staticfiles inbox i18n %}
+<div class="history-wrapper">
+    <h1 class="offset-bottom-35 offset-top-35">{% trans "History for account" %} [[ mt4accountMt4ID ]]</h1>
+
+    <div class="row filters-wrapper">
+        <ul class="offset-bottom-20 history-filters">
+            <li>
+                <a class="button" ng-class="{active: filterMode == 'today'}" ng-click="filterToday()">{% trans "Today" %}</a></li>
+            <li>
+                <a class="button" ng-class="{active: filterMode == 'yesterday'}" ng-click="filterYesterday()">{% trans "Yesterday" %}</a></li>
+            <li>
+                <a class="button" ng-class="{active: filterMode == 'week'}" ng-click="filterWeek()">{% trans "Last week" %}</a></li>
+            <li>
+                <a class="button" ng-class="{active: filterMode == 'month'}" ng-click="filterMonth()">{% trans "Last month" %}</a></li>
+            <li>
+                <a class="button" ng-class="{active: !filterMode}" ng-click="clearFilter()">{% trans "All" %}</a></li>
+            <li>
+                <a ng-click="showRangeFilter = !showRangeFilter" class="reveal">{% trans "Choose date range" %}</a></li>
+        </ul>
+
+        <div ng-show="showRangeFilter" class="offset-bottom-20 history-interval">
+            <div class="input-wrapper">
+                <input ng-model="dateFrom" type="text" gc-datepicker max-date="dateTo"/>
+                <input ng-model="dateTo" type="text" gc-datepicker min-date="dateFrom"/>
+                <button class="button picker" ng-click="filterRange()">{% trans "Filter" %}</button>
+            </div>
+        </div>
+    </div>
+
+    <dl class="tabs yellow-tabs">
+        <dd class="opened_tab_lnk" ng-class="{active: tradesMode == 'opened'}">
+            <a ng-click="switchTradesMode('opened')">{% trans "Open orders" %}</a>
+        </dd>
+        <dd class="closed_tab_lnk" ng-class="{active: tradesMode == 'closed'}">
+            <a ng-click="switchTradesMode('closed')">{% trans "Closed orders" %}</a>
+        </dd>
+    </dl>
+
+    <div class="tab_content" infinite-scroll="trades.more()" infinite-scroll-disabled="!trades.hasMore">
+        <table class="gctable offset-bottom-20" >
+            <thead>
+                <th class="nowrap">{% trans "Order ID" %}</th>
+                <th>{% trans "Symbol" %}</th>
+                <th class="w7">{% trans "Type" %}</th>
+                <th class="nowrap">{% trans "Open time" %}</th>
+                <th class="nowrap">{% trans "Close time" %}</th>
+                <th>{% trans "Price" %}</th>
+                <th class="w4">{% trans "Lots" %}</th>
+                <th class="w4">{% trans "S/L" %}</th>
+                <th class="w4">{% trans "T/P" %}</th>
+                <th>{% trans "Commission" %}</th>
+                <th class="w5">{% trans "Swap" %}</th>
+                <th>{% trans "Profit" %}</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="trade in trades.items">
+                    <td>[[:: trade.ticket ]]</td>
+                    <td>[[:: trade.symbol ]]</td>
+                    <td>[[:: trade.cmd_name ]]</td>
+                    <td class="nowrap" title="[[:: trade.open_time|momentHumanize ]]">
+                        [[ trade.open_time|momentFromNow ]]
+                    </td>
+                    <td class="nowrap" title="[[:: trade.close_time|momentHumanize ]]">
+                        [[ trade.close_time|momentFromNow ]]
+                    </td>
+                    <td>[[:: trade.open_price|number:5 ]]</td>
+                    <td>[[:: trade.volume ]]</td>
+                    <td>[[:: trade.sl ]]</td>
+                    <td>[[:: trade.tp ]]</td>
+                    <td>[[:: trade.commission ]]</td>
+                    <td>[[:: trade.swaps ]]</td>
+                    <td class="nowrap">[[:: trade.profit|number:2 ]]</td>
+                </tr>
+                <tr ng-if="trades.isLoading">
+                    <td colspan="12">
+                        <strong>{% trans "Loading" %}...</strong>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

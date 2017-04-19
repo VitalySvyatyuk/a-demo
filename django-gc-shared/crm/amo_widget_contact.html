@@ -1,0 +1,257 @@
+<script type="text/javascript">
+jQ(function(){
+    var gc_crm_baseurl = "https://grandcapital.ru";
+    var contact_id_val = jQ(".phone_wrapper input").first().val();
+    if(contact_id_val.indexOf("usr") !== 0)
+        return;
+    var contact_id = contact_id_val.replace('usr', '');
+    function agent_code_info(data) {
+        if(data.agent_code)
+            return '' + data.agent_code + ' ' + (data.agent_code_partner_office?'<span style="background-color:#FFCC00">партнёрский офис</span>':'');
+    }
+    function phone_link(num, isValid) {
+        return '<span style="background-color:#'+(isValid?'C7F464':'FFCC00')+'">'+num+'</span> <a class="skype" href="skype:'+num+'?call">Skype</a> <a class="sip" href="sip:'+num+'">SIP</a>';
+    }
+    function set_placeholder_text(msg) {
+        jQ("#gc_loading_placeholder td").html("<span style='color: red'>"+msg+"</span>");
+    }
+    function add_info_row(name, value) {
+        if(value && value.toString().length > 0)
+            jQ("<tr><td class='contact_info_detail_field_name'>"+name+"</td><td>"+value+"</td></tr>").insertBefore(jQ("#gc_loading_placeholder"));
+    }
+    function add_account_row(account) {
+        if(account.is_deleted)
+            var s = "Удалён";
+        else if (account.is_archived)
+            var s = "Архивирован";
+        else
+            var s = "$"+account.balance;
+        jQ("#mt4panel tbody").append("<tr><td><a target='_blank' href='https://grandcapital.ru/my/office/accounts/"+account.id+"/history/'>"+account.name+"</a></td><td>"+s+"</td><td>"+account.creation_ts+"</td></tr>");
+        jQ.each(account.bonuses, function(i, bonus) {
+            jQ("#mt4panel tbody").append("<tr><td><b>Бонус</b></td><td>"+bonus.money+"</td><td><b>"+bonus.name+"</b></td></tr>");
+        });
+    }
+
+    function add_similar_row(profile) {
+        var accsInfo = "";
+        if(profile.accounts_count)
+            accsInfo = "<b>"+profile.accounts_count+" счетов</b>";
+        jQ("#similarpanel tbody").append("<tr><td><a target='_blank' href='"+profile.amo_link+"'>"+
+            profile.name+" "+accsInfo+"</a></td><td>"+profile.created_at+"</td><td>"+profile.manager+"</td></tr>");
+    }
+
+    function make_link(href, label, no_base_url) {
+        var base_url;
+        if (no_base_url) {
+            base_url = "";
+        } else {
+            base_url = gc_crm_baseurl;
+        }
+        return '<a href="' + base_url + href +'">' + label + '</a>';
+    }
+
+    /* Hide some things */
+    jQ('.tr_company, .position_wrapper, .phone_wrapper, .web_wrapper, .email_wrapper, .im_wrapper, .add_new_field_tr, .popup-top--link.popup-top--link--del').hide();
+
+    jQ('.tr_wrapper_534748, .tr_wrapper_552906').hide(); /* Hide Lead and Registration date */
+    jQ('.tr_wrapper_552910').hide(); /* Hide activity area */
+
+
+    /* Disable ability to select manager */
+    jQ('select[name="contact[0][MAIN_USER]"]').closest(".contact_info_detail_field").text(jQ('select[name="contact[0][MAIN_USER]"] :selected').text());
+
+    /* Disable delete note */ 
+    jQ('.note--delete').remove()
+
+    //Disable ability to change deal status from contact
+    // jQ('td.deal-status .crm-c-wrap').text(jQ('td.deal-status .amo-lead-status-select :selected').text());
+    // jQ('td.deal-status .crm-c-select').hide();
+    if(window.location.search.indexOf('super')>=0) {
+        jQ('body').addClass('gcsuper');
+    } else {
+        jQ('body').addClass('gcuser');
+    }
+
+    /* */
+    jQ('.add_deal_block').html("<button class='control--button' id='show-mt4-accounts'>Mt4 Счета <b></b></button> <button class='control--button' id='show-survey'>Опросник <b></b></button> <button style='display:none' class='control--button' id='show-similars'>Похожие ЛК <b></b></button>")
+
+    jQ('#leads_tbl_holder').html("<div class='infopanel' id='mt4panel' style='display:none'><table><thead><tr class='grey_text'><th>Счёт</th><th>Баланс</th><th>Создан</th></tr></thead><tbody></tbody></table></div><div class='infopanel' id='surveypanel' style='display:none'><iframe src='"+gc_crm_baseurl+"/crm/user/"+contact_id+"/survey' style='width:100%; height:500px;'></iframe></div><div class='infopanel' id='similarpanel' style='display:none'><table><thead><tr class='grey_text'><th>Имя</th><th>Регистрация</th><th>Менеджер</th></tr></thead><tbody></tbody></table></div>");
+
+    jQ('body').on('click', '#show-mt4-accounts', function(){
+        jQ('#mt4panel').slideToggle();
+    });
+
+    jQ('body').on('click', '#show-similars', function(){
+        jQ('#similarpanel').slideToggle();
+    });
+
+    jQ('body').on('click', '#show-survey', function(){
+        jQ('#surveypanel').slideToggle();
+    });
+
+    // Disable confirmation of page reload
+    window.onbeforeunload = function () {};
+
+    // Init placeholder for phones with spinner
+    jQ("<tr id='gc_loading_placeholder'><td colspan=2 style='text-align:center;'><img src='https://grandcapital.ru/static/loading.gif'></img></td></tr>").insertAfter(jQ(".position_wrapper"));
+
+    jQ(".iframeholder").html("<iframe src='"+gc_crm_baseurl+"/crm/user/"+contact_id+"/page'></iframe>");
+    jQ.ajax({
+        url: gc_crm_baseurl + "/crm/ajax/load/contact_info/" + contact_id,
+        xhrFields: {
+            withCredentials: true
+        }
+    }).done(function(data, status) {
+        if(data.status == 'err_auth') {
+            set_placeholder_text("Для просмотра контактной информации, вы должны быть авторизированы в системе <a href='https://grandcapital.ru/my/accounts/login/' targer='_blank'>GrandCapital</a>.");
+        } else if(data.status == 'err_manager') {
+            set_placeholder_text("Для просмотра объектов, вы должны быть авторизированы в системе <a href='https://grandcapital.ru/my/accounts/login/' targer='_blank'>GrandCapital</a> под учётной записью менеджера. Возможно вы забыли выйти из обычного аккаунта и зайти под нужным?");
+        } else if(data.status == 'err_ip') {
+            set_placeholder_text("Доступ с вашего IP невозможен.");
+        } else if(data.status == 'err_quota') {
+            set_placeholder_text("Вы исчерпали свой лимит на просмотр контактной информации. Попробуйте позже.");
+        } else if(data.status != 'ok') {
+            set_placeholder_text("В рот мне ноги! Что за ошибка '"+data.status+"' ?! Возможно вы используете старую версию браузера! Мы советуем Google Chrome.");
+
+        // status is ok
+        } else {
+
+            add_info_row("", "<a href='"+gc_crm_baseurl+data.reassign_url+"' target='_blank'>Сменить менеджера</a>");
+
+            if (data.admin_links) {
+                add_info_row("Admin", make_link(data.admin_links.admin_url, "User") + " " + make_link(data.admin_links.profile_admin_url, "Profile"));
+            }
+
+            if(data.avatar.length > 2)
+                add_info_row("", "<img src='"+gc_crm_baseurl+data.avatar+"'></img>");
+
+            add_info_row("Телефон", phone_link(data.phone_mobile, data.has_valid_phone));
+
+            add_info_row("С акции", data.source_action_type);
+            add_info_row("С домена", data.source_domain);
+            add_info_row("Из системы", data.source_system);
+
+            add_info_row("Код агента", agent_code_info(data));
+            add_info_row("Email", '<a href="mailto:' + data.email + '">' + data.email + '</a> <a href="https://teamwox.grandgroup.net/email/new?to=' + data.email + '&name=' + data.name + '" target="_blank">TW</a>');
+            if (data.social_profile) {
+                add_info_row("", "<a href='"+data.social_profile+"'>Соц. профиль</a>");
+            }
+            add_info_row("Регистр.", data.created_at);
+
+            if(data.documents && data.documents.length > 0) {
+                var s = "";
+                data.documents.forEach(function(doc){
+                    s += '<a href="https://grandcapital.ru' + doc.url + '" target="_blank">' + doc.name + '</a><br/>';
+                });
+                add_info_row("Документы", s);
+            }
+
+            add_info_row("Местное время", data.local_time);
+            add_info_row("Активность", data.last_activity_at);
+            add_info_row("Посл. действие", data.last_activity);
+            if(data.last_activities)
+                data.last_activities.forEach(function(act){
+                    add_info_row(act.at, act.name);
+                });
+
+            if(data.partner_domains && data.partner_domains.length > 0)
+                add_info_row("Парт. Домены", data.partner_domains.join("<br/>"));
+
+            jQ.each(data.accounts, function(i, a) {
+                add_account_row(a);
+            });
+            jQ("#show-mt4-accounts b").html(data.accounts.length);
+
+            if(data.similar.length > 0) {
+                jQ.each(data.similar, function(i, a) {
+                    add_similar_row(a);
+                });
+                jQ("#show-similars b").html(data.similar.length);
+                jQ("#show-similars").show();
+            }
+
+            if (data.survey_stats == "empty") {
+                jQ("#show-survey").css('background', 'linear-gradient(to bottom, #FAA 0%, #FCAAAA 17%, #E6AAAA 100%) repeat scroll 0% 0% transparent');
+            } else if (data.survey_stats == "partial") {
+                jQ("#show-survey").css('background', 'linear-gradient(to bottom, #F3F82B 0%, #FCF2AA 17%, #D4E720 100%) repeat scroll 0% 0% transparent');
+            } else if (data.survey_stats == "full") {
+                jQ("#show-survey").css('background', 'linear-gradient(to bottom, #AFA 0%, #AAFCAA 17%, #AAE6AA 100%) repeat scroll 0% 0% transparent');
+            }
+
+            jQ("#gc_loading_placeholder").hide();
+        }
+    });
+
+    /* Add 'read more' for long comments */
+    jQ('.contact__note .note--body--content').each(function(i, el) {
+        var content = jQ(this).text();
+        if(content.length < 256)
+            return;
+        var show = content.substr(0, 256);
+        jQ(this).html('<span class="gc-full-text" >'+jQ(this).html()+'</span><span class="gc-short-text">'+show+'...</span> <a href="#" class="gc-more-text">Показать</a>');
+    });
+
+    jQ(".gc-more-text").click(function(){
+        jQ(this).parent().find(".gc-full-text, .gc-short-text").toggle();
+        if(jQ(this).text() == "Показать")
+            jQ(this).text("Скрыть");
+        else
+            jQ(this).text("Показать");
+    });
+
+    jQ("body").on('click', 'a.sip, a.skype', function(e, el) {
+        jQ.ajax({
+            url: gc_crm_baseurl + "/api/crm/customer/" + contact_id + "/mark_called",
+            xhrFields: {
+                withCredentials: true
+            },
+            crossDomain: true
+        });
+    });
+
+    //highlight notes
+    jQ('.note-note a.note--user-link[href="/private/account/show_profile.php?ID='+AMOCRM.user_info.user+'"]').parent().parent().parent().css('background', 'RGBA(0, 255, 0, 0.1)');
+
+    jQ('.task a.note--user-link[href="/private/account/show_profile.php?ID='+AMOCRM.user_info.user+'"]').css('background', 'RGBA(0, 255, 0, 0.1)').css('font-weight', 'bold');
+});
+</script>
+<style type='text/css'>
+/*<![CDATA[*/
+button#add_new_deal {
+    display: none;
+}
+
+.gc-full-text {
+    display: none;
+}
+
+.infopanel {
+    border: 1px solid #D6D7D9;
+    background-color: #ffffff;
+    padding: 5px;
+    font-size: 13px;
+}
+.infopanel table th, .infopanel table td {
+    padding: 5px 15px 5px 5px;
+}
+
+.iframeholder {
+    width: 100%;
+}
+
+.iframeholder iframe {
+    width: 100%;
+    min-height: 900px;
+}
+
+.gcuser .note.task .note--delete { display:none; }
+
+.gcuser .task-edit .note--header-task  { display:none; }
+.gcuser #note_edit_new_task.task-edit .note--header-task { display:block; }
+
+
+/*]]>*/
+</style>
+
+
+<div class="iframeholder"></div>

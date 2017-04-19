@@ -1,0 +1,105 @@
+
+{% load staticfiles i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div class="main row offset-top-20">
+        {% if status == 'done' %}
+            <h3>{% trans "This document is already verified" %}</h3>
+            <button class="medium" onclick="window.close()">{% trans "Close" %}</button>
+        {% else %}
+            {% for document in documents %}
+            <div class="container">
+                <div class="row" style="margin-bottom:50px;">
+
+                    <div class="col-lg-6">
+                        {% if forloop.first %}
+                        <h2>{% trans "Field description" %}:</h2>
+                        {% for key, value in document.fields.items %}
+                            <p>{{ key }}: {{ value }}</p>
+                        {% endfor %}
+
+                        <h3>{% trans "Main data" %}:</h3>
+                        <p>{% trans "First name" %}: {{ document.user.first_name }}</p>
+                        <p>{% trans "Last name" %}: {{ document.user.last_name }}</p>
+                        <p>{% trans "Middle name" %}: {{ document.user.profile.middle_name }}</p>
+                        <p>{% trans "Birthday" %}: {{ document.user.profile.birthday }}</p>
+                        <p>{% trans "Country" %}: {{ document.user.profile.country }}</p>
+                        <p>{% trans "City" %}: {{ document.user.profile.city }}</p>
+                        <p>{% trans "Address" %}: {{ document.user.profile.address }}</p>
+                        <p>{% trans "TIN" %}: {{ document.user.profile.tin }}</p>
+                        <h3>{% trans "Questionnaire data" %}:</h3>
+                        <p>{% trans "Nationality" %}: {{ document.user.profile.nationality }}</p>
+                        <p>{% trans "Net Capital" %}: {{ document.user.profile.net_capital }}</p>
+                        <p>{% trans "Annual Income" %}: {{ document.user.profile.annual_income }}</p>
+                        <p>{% trans "Tax Residence" %}: {{ document.user.profile.tax_residence }}</p>
+                        <p>{% trans "US Citizen" %}: {{ document.user.profile.us_citizen }}</p>
+                        <p>{% trans "Employment Status" %}: {{ document.user.profile.employment_status }}</p>
+                        <p>{% trans "Income Source" %}: {{ document.user.profile.source_of_funds }}</p>
+                        <p>{% trans "Nature of business" %}: {{ document.user.profile.nature_of_biz }}</p>
+                        <p>{% trans "Finanacial Commitments" %}: {{ document.user.profile.financial_commitments }}</p>
+                        <p>{% trans "Acc turnover" %}: {{ document.user.profile.account_turnover }}</p>
+                        <p>{% trans "Purpose" %}: {{ document.user.profile.purpose }}</p>
+                        <p>{% trans "Edu level" %}: {{ document.user.profile.education_level }}</p>
+
+                        <p>{% trans "investment_undertaking" %}: {{ document.user.profile.investment_undertaking }}</p>
+
+                        <p>{% trans "transferable_securities" %}: {{ document.user.profile.transferable_securities }}</p>
+
+                        <p>{% trans "derivative_instruments" %}: {{ document.user.profile.derivative_instruments }}</p>
+
+                        <p>{% trans "forex_instruments" %}: {{ document.user.profile.forex_instruments }}</p>
+
+                        {% endif %}
+                    </div>
+                
+                    <div class="col-lg-6">
+                        <h2>{% trans "Document" %}:</h2>
+                        <h3>{% trans "Type" %}: {{ document.name }}</h3>
+                        <img src="{{ document.file.url }}"></br>
+                        <p><a target="_blank" href="{{ document.file.url }}">{% trans "Open in full resolution" %}</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+            {% endfor %}
+            {% if buttons != 'invest' %}
+            <div class="container">
+            <div class="row col-lg-2">
+                <form action="." method="POST" style="margin-bottom:30px;">
+                    {% csrf_token %}
+                    <input type="hidden" name="status" value="match">
+                    <button class="btn btn-success btn-lg" id="btnMatch" onclick="$(this).parent().submit()">{% trans "Approve" %}</button>
+                </form>
+                <form action="." method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="status" value="nomatch">
+                    <label for="comment">{% trans "Reject comment" %}</label> <textarea name="comment" id="comment" style="width: 700px;resize: none;"></textarea>
+                    <button class="btn btn-lg btn-danger" id="btnNMatch" onclick="$(this).parent().submit()">{% trans "Reject" %}</button>
+                </form>
+            </div>
+            </div>
+            {% else %}
+            <div class="col-mg-12" style="padding-left: 40px; padding-bottom: 50px;">
+
+                <form action="." method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="status" value="match">
+                    <button style="font-size: 30px;" class="btn btn-lg btn-success" onclick="$(this).parent().submit()">{% trans "Make user able to open Invest accounts" %}</button>
+                </form>
+
+            </div>
+            {% endif %}
+        {% endif %}
+
+</body>
+<script src="{% static 'js/vendor/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/verify_doc.js' %}"></script>
+</html>

@@ -1,0 +1,133 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {% trans "Trader's calculator" %} {{ block.super }}
+
+block scripts
+  script(src="{% static 'knockout/build/output/knockout-latest.js' %}")
+  script(src="{% static 'js/compiled/calculator.min.js' %}")
+  script(src="{% static 'rangeslider.js/dist/rangeslider.min.js' %}")
+  script.
+    $('input[type="range"]').rangeslider({
+      polyfill: false,
+    });
+
+    data = {{ data|safe }};
+    exchange_rates = {{ exchange_rates|safe }};
+
+    $(function () {
+
+        $(".tabs__button.js-tab").click(function (e) {
+            $("select#contract_type").val($(this).data().name);
+            $("select#contract_type").change();
+        });
+
+        $("#start_calc").click(function (e) {
+            e.preventDefault();
+            $("#calc-result").show();
+        });
+
+        viewPort = new Calculator(data, exchange_rates);
+        ko.applyBindings(viewPort);
+
+        $("select#contract_type").val("ECN.MT");
+        $("select#contract_type").change();
+    });
+
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title
+            - trans "Trader's calculator"
+
+  .container.trading-calculator-page
+    div
+      - trans "Account type:"
+    .tabs__box.benefits__tabs_box
+      button.tabs__button.js-tab.state-active-tab(type="button", data-name="ECN.MT", data-tab-index="01_calculator_acc", data-tab-category="calculator")
+        .tabs__button__text_box
+          span.tabs__button__text ECN.MT
+      button.tabs__button.js-tab(type="button", data-name="ECN.PRO", data-tab-index="02_calculator_acc", data-tab-category="calculator")
+        .tabs__button__text_box
+          span.tabs__button__text ECN.PRO
+      button.tabs__button.js-tab(type="button", data-name="ECN.INVEST", data-tab-index="03_calculator_acc", data-tab-category="calculator")
+        .tabs__button__text_box
+          span.tabs__button__text ECN.INVEST
+      select#contract_type(name='contract_type', style='display: none;', data-bind='options: contract_type, value: contract_type_value, optionsCaption: "{% trans "Select an item..." %}"')
+
+
+    div.benefits__info.js-tab-content.state-visible
+      .row
+        .col-md-6.col-lg-3.col-xs-12.input_box.popup__sign_form_box__input_row
+          label.input_box__label(for='') {% trans "Account's currency" %}
+          select.select.input_box__input(data-bind='options: deposit_currency, value: deposit_currency_value')
+        .col-md-6.col-lg-3.col-xs-12.input_box.popup__sign_form_box__input_row
+          label(for='').input_box__label {% trans "Category" %}
+          select.select.input_box__input(data-bind='options: category, value: category_value')
+        .col-md-6.col-lg-3.col-xs-12.input_box.popup__sign_form_box__input_row
+          label.input_box__label {% trans "Open price" %}
+          input.input_box__input(type='text', value='1000', data-bind='value: open_price')
+        .col-md-6.col-lg-3.col-xs-12.input_box.popup__sign_form_box__input_row
+          label.input_box__label {% trans "Balance" %}
+          .range-form-row
+            input.input_box__input.balance-input#balance(type='text', value='5000', data-bind='value: balance')
+            input.input_box__input.range-input#balance_range(type='range', min='0', max='10000', value='5000', data-bind='value: balance')
+      .row
+        .col-md-6.col-lg-3.col-xs-12.input_box.popup__sign_form_box__input_row
+          label.input_box__label(for='') {% trans "Instrument" %}
+          select.select.input_box__input(data-bind='options: instrument, value: instrument_value')
+        .col-md-6.col-lg-3.col-xs-12.input_box.popup__sign_form_box__input_row
+          label.input_box__label {% trans "Close price" %}
+          input.input_box__input(type='text', value='1000', data-bind='value: close_price')
+        .col-md-6.col-lg-3.col-xs-12.input_box.popup__sign_form_box__input_row
+          label.input_box__label {% trans "Operation type" %}
+          select.select.input_box__input(data-bind='options: action_type, value: action_type_value')
+        .col-md-6.col-lg-3.col-xs-12.input_box.popup__sign_form_box__input_row
+          label.input_box__label(for='') {% trans "Leverage" %}
+          select.select.input_box__input(data-bind='value: leverage_value, options: leverage')
+      .row
+        .col-md-6.col-lg-3.col-xs-12.input_box.popup__sign_form_box__input_row
+          label.input_box__label {% trans "Volume" %}
+          input.input_box__input(type='text', value='1000', data-bind='value: lots')
+        .col-md-6.col-lg-3.col-xs-12.input_box.popup__sign_form_box__input_row
+          label.input_box__label {% trans "Profit rate" %}
+          input.input_box__input(type='text', value='1000', data-bind='value: currency_rate1')
+        .col-md-6.col-lg-3.col-xs-12.input_box.popup__sign_form_box__input_row
+          label.input_box__label {% trans "Margin rate" %}
+          input.input_box__input(type='text', value='1000', data-bind='value: currency_rate2')
+        .col-xs-3
+    h2.page_title
+      - trans "Trade results"
+    .table-responsive.adaptive-table-wrapper
+      table.table.adaptive-table.results-table
+        thead
+          tr
+            th {% trans "Profit" %}
+            th {% trans "Profit in points" %}
+            th {% trans "Price of a point" %}
+            th {% trans "Equity" %}
+            th {% trans "Maximal loss possible" %}
+            th {% trans "Margin needed" %}
+        tr
+          td(data-bind='text: result_profit')
+          td(data-bind='text: result_profit_points')
+          td(data-bind='text: result_point_price')
+          td(data-bind='text: result_funds')
+          td(data-bind='text: result_max_loss')
+          td(data-bind='text: result_required_deposit')
+  .account-types-page:.action-block
+    .container
+      .row
+        .col-md-8
+          p.action-text
+            - trans "You may try any account type on a Demo Account under terms and conditions identical to the real trading account."
+        .col-md-4.action-button-wrapper
+          a.button.button--outline(href=if_link,  data-popup-target=if_data, class=if_class)
+            span.button__text
+              - trans "Open a demo account"

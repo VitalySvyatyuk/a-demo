@@ -1,0 +1,8 @@
+{% load i18n %}
+
+{% for doc in documents %}
+    <a href="{{ doc.file.url }}">{{ doc.get_name_display }}</a>
+    <br/>
+{% empty %}
+    <span>{% trans "No documents" %}</span>
+{% endfor %}

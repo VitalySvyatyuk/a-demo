@@ -1,0 +1,17 @@
+{% extends "payments/forms/deposit/base.html" %}
+
+{% block ps %}
+    <div class="clearfix offset-bottom-30">
+        <div class="medium-6 columns in-out10">
+            {% with field=form.purse %}
+                {% include "payments/includes/field.html" %}
+            {% endwith %}
+        </div>
+        <div class="medium-6 columns in-out10">
+            {% with field=form.secure_id %}
+                {% include "payments/includes/field.html" %}
+            {% endwith %}
+        </div>
+    </div>
+    {{ form.media.js }}
+{% endblock %}

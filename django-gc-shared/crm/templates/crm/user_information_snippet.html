@@ -1,0 +1,49 @@
+{% load crm_tags %}
+
+{% if new_customer %}<h4>{{ crm.user.get_full_name|default:"[Имя не указано]" }}</h4>{% endif %}
+Зарегистрирован {{ crm.user.date_joined|date }}<br/>
+{% with crm.user.profile as profile %}
+    {{ profile.country|default:"[Страна не указана]" }}<br/>
+    {{ profile.city|default:"[Город не указан]" }}<br/>
+    {% crm_show_phone profile.phone_mobile %}<br/>
+{% endwith %}
+{{ crm.user.email }}
+{% if new_customer %}
+    <input type="hidden" id="new-customer-crm-pk" value="{{ crm.pk }}"/>
+
+        <h3>Счета</h3>
+    {% for account in crm.user.accounts.all %}
+        <p>
+        <a href="{{ ADMIN_PREFIX }}admin/mt4/mt4account/{{ account.id }}/">{{ account }}</a>
+        (<a href="{% url "mt4_account_history" account.mt4_id %}"
+            onclick='window.open("{% url "mt4_account_history" account.mt4_id %}", "_blank",
+                    "menubar=no,toolbar=no,location=no,directories=no,status=no,resizable=yes,scrollbars=yes"); return false;'>
+        {{ account.creation_ts|date:"d.m.Y" }}
+        </a>)
+        </p>
+    {% empty %}
+        <p>У данного пользователя счетов нет</p>
+    {% endfor %}
+
+    {% if crm.calls.all %}
+        <h3>Неудачные звонки</h3>
+        <table>
+        <thead>
+            <tr>
+                <th>Дата</th>
+                <th>Комментарий</th>
+                <th>Звонил(а)</th>
+            </tr>
+        </thead>
+            <tbody>
+            {% for call in crm.calls.all %}
+                <tr>
+                    <td>{{ call.get_date_string }}</td>
+                    <td>{{ call.comment|safe }}</td>
+                    <td>{{ call.caller.get_full_name }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endif %}

@@ -1,0 +1,38 @@
+{% load i18n %}
+<!-- 1024 -->
+<div class="adaptive-nav-block">
+  <a ng-if="!account.is_demo && !account.no_inout" href="[[::BASE_URL]]payments/deposit" ng-click="showMenuOther = false" class="icon-pig-before">{% trans "Deposit" %}</a>
+  <a ng-if="account.is_demo" ng-click="accountActions.demoDeposit(); showMenuOther = false" class="icon-pig-before">{% trans "Deposit" %}</a>
+  <a ng-if="account.no_inout" class="icon-pig-before inactive-text">{% trans "Deposit" %}</a>
+  <a ng-if="!account.is_demo && !account.no_inout" href="[[::BASE_URL]]payments/withdraw" ng-click="showMenuOther = false" class="icon-money-before">{% trans "Withdraw" %}</a>
+  <a ng-if="account.is_demo || account.no_inout" class="icon-money-before inactive-text">{% trans "Withdraw" %}</a>
+  <a ng-if="!account.is_demo && !account.no_inout" href="[[::BASE_URL]]payments/transfer" ng-click="showMenuOther = false" class="icon-transfer-before">{% trans "Internal transfer" %}</a>
+  <a ng-if="account.is_demo || account.no_inout" class="icon-transfer-before inactive-text">{% trans "Internal transfer" %}</a>
+  <a ng-class="{'active': showMenuOther}" ng-click="showMenuOther = !showMenuOther" class="icon-menu-black-before">{% trans "Other actions" %}</a>
+</div>
+<ul class="ul-white-dropdown" ng-show="showMenuOther" ng-class="{'open': showMenuOther}">
+  <li ng-if="account.group !== 'real_ib' && account.group !== 'realstandard_ss' && account.group !== 'demostandard_ss' && !account.is_options"><a ng-click="accountActions.changeLeverage()">{% trans "Leverage" %}</a></li>
+  <li><a ng-click="accountActions.recoverPassword()">{% trans "Password recovery" %}</a></li>
+  <li ng-if="account.is_options && !account.is_demo">
+    <a ng-click="accountActions.changeOptionsStyle()">{% trans "Change options style" %}</a>
+  </li>
+  <li ng-if="!account.is_pamm_master && account.can_be_pamm_master">
+    <a ng-click="accountActions.becomeMaster()">{% trans "Become a LAMM manager" %}</a>
+  </li>
+{% comment %}
+  <li ng-if="!account.is_pamm_investor && account.can_be_pamm_investor">
+    <a target="_blank" href="{% url "pamm_rating" %}">{% trans "Become investor" %}</a>
+  </li>
+{% endcomment %}
+{% comment %}  <li ng-if="account.group === 'real_ib'">
+     <a ng-click="accountActions.changeRebate()">{% trans "Change rebate" %}</a>
+  </li>{% endcomment %}
+  <li ng-if="account.is_pamm_master"><a ng-click="accountActions.changeCommissionType()">{% trans "Change comission type" %}</a></li>
+  <li ng-if="account.is_pamm_master" ng-switch on="account.pamm_master.auto_accept">
+    <a ng-switch-when="true" ng-click="accountActions.setAutoAcceptManaged(false)">{% trans "Accept investors manualy" %}</a>
+    <a ng-switch-default ng-click="accountActions.setAutoAcceptManaged(true)">{% trans "Auto accept investors" %}</a>
+  </li>
+  <li>
+    <a href="[[::BASE_URL]][[account.mt4_id]]/history">{% trans "Account history" %}</a>
+  </li>
+</ul>

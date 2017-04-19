@@ -1,0 +1,3332 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-20 16:35+0300\n"
+"PO-Revision-Date: 2016-07-02 19:56+0230\n"
+"Last-Translator:   <valexeev@grandcapital.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.7.11\n"
+
+msgid "Beneficiary"
+msgstr "Получатель"
+
+msgid "Beneficiary Bank"
+msgstr "Банк получателя"
+
+msgid "Beneficiary Bank's Code"
+msgstr "Код банка получателя"
+
+msgid "Beneficiary Bank's Address"
+msgstr "Адрес банка получателя"
+
+msgid "Beneficiaries Account Number"
+msgstr "Номер счета получателя"
+
+#, fuzzy
+#| msgid "Payment card"
+msgid "Payment Reference"
+msgstr "Пластиковые карты"
+
+msgid "Bank transfer"
+msgstr "Банковский перевод"
+
+msgid "Your access level doesn't allow you to process payments"
+msgstr "Ваш уровень доступа не позволяет вам проводить платежи"
+
+msgid "Commit payments"
+msgstr "Провести платёж"
+
+msgid "Mark as failed"
+msgstr "Отметить как неудачный"
+
+msgid "General"
+msgstr "Основное"
+
+msgid "Details"
+msgstr "Детали"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Payment system<br>(clickable)"
+msgstr "Платежная система<br>(кликабельно)"
+
+msgid "Trade"
+msgstr "Сделка"
+
+msgid "scan of receipt"
+msgstr "скан расписки"
+
+msgid "manager"
+msgstr "менеджер"
+
+msgid "Sum"
+msgstr "Сумма"
+
+msgid "Info"
+msgstr "Инфо"
+
+msgid "Account"
+msgstr "Счет"
+
+msgid "My attention"
+msgstr "Необходимо моё внимание"
+
+msgid "Needed"
+msgstr "Необходимо"
+
+msgid "Processing stage"
+msgstr "Этап обработки"
+
+msgid "Financial dept."
+msgstr "Финансовый департамент"
+
+msgid "Partnership dept."
+msgstr ""
+
+msgid "Needs approval"
+msgstr "Необходимо одобрение"
+
+msgid "Paying out"
+msgstr "Выплачивается"
+
+msgid "Closed"
+msgstr "Закрыто"
+
+msgid "Open"
+msgstr "Открыто"
+
+msgid "Amount"
+msgstr "Сумма"
+
+#, python-brace-format
+msgid "{0} h. {1} m."
+msgstr "{0} ч. {1} м."
+
+msgid "Left"
+msgstr "Осталось"
+
+#, python-brace-format
+msgid "<a onclick=\"winopen('Requests group', '{url}'); return false;\" href=\"{url}\"><b>Details</b></a>"
+msgstr "<a onclick=\"winopen('Группа заявок', '{url}'); return false;\" href=\"{url}\"><b>Подробности</b></a>"
+
+msgid "Payment systems"
+msgstr "Платежные системы"
+
+msgid "Approvals needed"
+msgstr "Нужны одобрения"
+
+msgid "Paying out to client"
+msgstr "Выплачивается клиенту"
+
+msgid "Your comment"
+msgstr "Ваш комментарий"
+
+msgid "Needs manager's attention"
+msgstr "Требуется внимание менеджера"
+
+msgid "Manager will receive a task in the CRM"
+msgstr "Менеджер получит задачу в CRM"
+
+msgid "Transaction type"
+msgstr "Тип транзакции"
+
+msgid "No such account"
+msgstr "Нет такого счёта"
+
+msgid "Not enough funds on account"
+msgstr "На счёте недостаточно средств"
+
+msgid "Withdraw the funds I earn"
+msgstr "Вывожу заработаные средства"
+
+msgid "In need of money"
+msgstr "Нуждаюсь в деньгах"
+
+msgid "Not satisfied with the service"
+msgstr "Не устраивает сервис"
+
+msgid "Other reasons"
+msgstr "Другое"
+
+msgid "Money waiting"
+msgstr "Ожидается поступление денег"
+
+msgid "Processing"
+msgstr "В обработке"
+
+msgid "Canceled by client"
+msgstr "Отменена клиентом"
+
+msgid "Verification"
+msgstr "Проверка"
+
+msgid "Money sending"
+msgstr "Деньги отправляются"
+
+msgid "Done"
+msgstr "Выполнен"
+
+msgid "Canceled"
+msgstr "Отменён"
+
+msgid "Example: 5.2"
+msgstr "Например, 5.2"
+
+msgid "Exchange rate at request date"
+msgstr "Обменный курс на момент заявки"
+
+msgid "Payment system"
+msgstr "Платежная система"
+
+msgid "Balance"
+msgstr "Баланс"
+
+msgid "Balance on getting request"
+msgstr "Баланс на момент получения заявки"
+
+msgid "Currency"
+msgstr "Валюта"
+
+msgid "Internal comment"
+msgstr "Внутренний комментарий"
+
+msgid "Public comment"
+msgstr "Публичный комментарий"
+
+msgid "Manager's comment is shown to client"
+msgstr "Комментарий менеджера виден клиенту"
+
+msgid "Creation timestamp"
+msgstr "Время создания"
+
+msgid "Is payed"
+msgstr "Оплачено ли"
+
+msgid "Is committed"
+msgstr "Оплачен"
+
+msgid "When this field changes, client gets a notification"
+msgstr "Когда это поле меняется клиент получает уведомление"
+
+msgid "Automatically"
+msgstr "Автоматически"
+
+msgid "Request is rejected by client"
+msgstr "Заявка отклонена по просьбе клиента"
+
+msgid "Purse"
+msgstr "Кошелек"
+
+msgid "Select one of your accounts"
+msgstr "Выберите один из ваших счетов"
+
+msgid "Deposit request"
+msgstr "Запрос на ввод средств"
+
+msgid "Deposit requests"
+msgstr "Запросы на ввод средств"
+
+msgid "Sender"
+msgstr "Sender (Отправитель)"
+
+msgid "Passport data"
+msgstr "Паспортные данные"
+
+msgid "Intermediary Bank’s code"
+msgstr "Код банка-корреспондента"
+
+msgid "Payment Details"
+msgstr "Назначение платежа"
+
+msgid "Departments"
+msgstr "Отделы"
+
+msgid "Needs attention"
+msgstr "Требуется внимание"
+
+msgid "Updated at"
+msgstr "Обновлено"
+
+msgid "Created at"
+msgstr "Создано"
+
+msgid "Can edit approvals"
+msgstr "Может редатикровать одобрения"
+
+msgid "Withdraw request group"
+msgstr "Группа заявок на вывод"
+
+msgid "Withdraw request groups"
+msgstr "Группы заявок на вывод"
+
+msgid "Your account didn't have enough funds when the request was processed."
+msgstr "На момент обработки заявки на Вашем счёте было недостаточно средств."
+
+msgid "Dealing room"
+msgstr ""
+
+#, fuzzy
+#| msgid "Find an office"
+msgid "Back office"
+msgstr "Найти отделение"
+
+#, fuzzy
+#| msgid "Cancel"
+msgid "Compliance"
+msgstr "Отменить"
+
+#, fuzzy
+#| msgid "Automatic withdrawal"
+msgid "Approve withdrawal"
+msgstr "Автоматический вывод"
+
+msgid "Withdraw Requests Group"
+msgstr "Группы заявок на вывод"
+
+msgid "Who made decision"
+msgstr "Автор решения"
+
+msgid "Is accepted"
+msgstr "Принят"
+
+msgid "Comment"
+msgstr "Комментарий"
+
+msgid "Requisit"
+msgstr "Выберите реквизит"
+
+msgid "Select one of your payment details"
+msgstr "Выберите один из ваших реквизитов"
+
+msgid "Reason of withdrawal"
+msgstr "Причина вывода"
+
+msgid "Choose the reason of withdrawal"
+msgstr "Выберите причину вывода"
+
+msgid "Is ready for payout"
+msgstr "Готово к выплате"
+
+msgid "Closed by"
+msgstr "Закрыто"
+
+msgid "Who closed the request"
+msgstr "Кто закрыл заявку"
+
+msgid "Withdraw request"
+msgstr "Запрос на вывод средств"
+
+msgid "Withdraw requests"
+msgstr "Запросы на вывод средств"
+
+msgid "Money<br>withdraw<br>from account"
+msgstr "Деньги<br>сняты<br>со счёта"
+
+msgid "Money<br>paid out<br>to client"
+msgstr "Деньги<br>выплачены<br>клиенту"
+
+msgid "Client<br>made<br>payment"
+msgstr "Клиент<br>совершил<br>платёж"
+
+msgid "Money<br>deposited<br>to account"
+msgstr "Деньги<br>зачислены<br>на счёт"
+
+msgid "Error getting balance"
+msgstr "Ошибка при получении баланса"
+
+msgid "Author"
+msgstr "Автор"
+
+msgid "Manual transaction"
+msgstr "Ручная транзакция"
+
+msgid "Manual transactions"
+msgstr "Ручные транзакции"
+
+msgid "Name"
+msgstr "Ваше полное имя"
+
+msgid "Priority"
+msgstr ""
+
+msgid "defines order in list"
+msgstr ""
+
+#, fuzzy
+#| msgid "Payment card"
+msgid "Payment category"
+msgstr "Пластиковые карты"
+
+#, fuzzy
+#| msgid "Payment card"
+msgid "Payment categories"
+msgstr "Пластиковые карты"
+
+#, fuzzy
+#| msgid "Payment system"
+msgid "Payment type"
+msgstr "Платежная система"
+
+#, fuzzy
+#| msgid "Wrong amount"
+msgid "Minimum amount"
+msgstr "Пожалуйста, введите корректную сумму"
+
+msgid "Maximum amount"
+msgstr ""
+
+msgid "Commission"
+msgstr "Комиссия"
+
+#, fuzzy
+#| msgid "Processing stage"
+msgid "Processing times"
+msgstr "Этап обработки"
+
+msgid "Category"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+#, fuzzy
+#| msgid "Payment system"
+msgid "Payment system image"
+msgstr "Платежная система"
+
+msgid "Link to payment process"
+msgstr ""
+
+#, fuzzy
+#| msgid "Payment committed"
+msgid "Payment method"
+msgstr "Платёж проведён"
+
+#, fuzzy
+#| msgid "Payment Details"
+msgid "Payment methods"
+msgstr "Назначение платежа"
+
+msgid "It is too late to cancel this request"
+msgstr "Эту заявку отменить уже нельзя"
+
+msgid "Request successfuly canceled"
+msgstr "Заявка успешна отменена"
+
+msgid "Due to technical issues service is temporarily unavailable"
+msgstr "По техническим причинам сервис временно недоступен"
+
+msgid "Invalid payment system name"
+msgstr "Неверная платёжная система"
+
+msgid "You should provide operation type"
+msgstr "Вы должны указать тип операции"
+
+msgid "Payment system not found"
+msgstr "Платежная система не найдена"
+
+msgid "Data is invalid"
+msgstr "Данные не верны"
+
+msgid "qiwi_bad_request"
+msgstr ""
+
+msgid "Your documents will be checked soon"
+msgstr "Ваши документы скоро будут проверены"
+
+msgid "15 minutes"
+msgstr "15 минут"
+
+msgid "up to 3 days"
+msgstr "до 3 дней"
+
+msgid "Receiver"
+msgstr "Получатель"
+
+msgid "Fill in your first, last and middle name (if any)"
+msgstr "Укажите ваши ФИО"
+
+#, python-format
+msgid "Withdrawal of funds from the account - %(time)s"
+msgstr "Вывод денежных средств со счета – %(time)s"
+
+#, python-format
+msgid "Rouble transfer commission - %(fee)s"
+msgstr "Комиссия при рублевом переводе – %(fee)s"
+
+#, python-format
+msgid "Maximal sum of withdrawal - %(max_amount)s"
+msgstr "Максимальная сумма снятия – %(max_amount)s"
+
+msgid "Please fill out the form to request withdrawal of funds"
+msgstr "После заполнения формы Вы сформируете заявку на вывод средств."
+
+#, python-format
+msgid "You cannot withdraw more than %(amount)s in one request"
+msgstr "Нельзя вывести больше %(amount)s за один запрос"
+
+msgid "Yandex.Money"
+msgstr "Яндекс.Деньги"
+
+#, python-format
+msgid "Minimal sum of withdrawal - %(min_amount)s"
+msgstr "Минимальная сумма снятия – %(min_amount)s"
+
+msgid "Attention! Funds withdrawal is only possible for the same currencies"
+msgstr "Внимание! Вывод средств возможен в одной и той же валюте."
+
+msgid "Correspondent"
+msgstr "Банк-корреспондент"
+
+msgid "Passport_Data"
+msgstr "Паспортные данные"
+
+msgid "Bank_Account"
+msgstr "Номер расчетного счета"
+
+msgid "Tin"
+msgstr "ИНН"
+
+msgid "Bic"
+msgstr "БИК"
+
+msgid "bankbase.deposit.info"
+msgstr ""
+"Ввод средств на торговый счет посредством банковского перевода\n"
+"осуществляется в течение 3-5 банковских дней."
+
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Beneficiary address"
+msgstr "Адрес получателя"
+
+msgid "Your city and street address"
+msgstr "Город, улица, дом и квартира. Вводить латиницей"
+
+msgid "Your bank's name"
+msgstr "Название банка. Вводить латиницей"
+
+msgid "Enter up to 34 symbols"
+msgstr "Введите до 34 символов"
+
+msgid "Incorrect IBAN"
+msgstr "Неверный IBAN"
+
+msgid "SWIFT code. Enter up to 11 symbols"
+msgstr "SWIFT код. Введите до 11 символов"
+
+msgid "Incorrect SWIFT code"
+msgstr "Неверный SWIFT-код"
+
+msgid "Correspondent bank"
+msgstr "Банк-корреспондент"
+
+msgid "Correspondent bank's name"
+msgstr "Название банка-корреспондента. Вводить латиницей"
+
+msgid "Correspondent Bank's Code"
+msgstr "Код банка-корреспондента"
+
+msgid "Correspondent bank SWIFT code. Enter up to 11 symbols"
+msgstr "SWIFT код банка-корреспондента. Введите до 11 символов"
+
+msgid "Your country is not using IBAN codes"
+msgstr "В вашей стране не используется IBAN"
+
+msgid "Not valid bank account"
+msgstr "Неверный номер счета"
+
+msgid "bankbase.withdraw.info"
+msgstr ""
+"Вывод средств с торгового счета посредством банковского перевода\n"
+"осуществляется в течение 3-5 банковских дней."
+
+msgid "Bank transfer (EUR)"
+msgstr "Банковский перевод (Евро)"
+
+msgid "depends on the originating bank"
+msgstr "зависит от банка отправителя"
+
+msgid "3 to 5 days"
+msgstr "от 3 до 5 дней"
+
+#, python-format
+msgid "Deposit of funds to the account - %(time)s"
+msgstr "Ввод денежных средств на счет – %(time)s"
+
+#, python-format
+msgid "Euro transfer commission - %(fee)s"
+msgstr "Комиссия при переводе в евро – %(fee)s"
+
+msgid "Please fill out the form to request deposit of funds"
+msgstr "После заполнения формы Вы сформируете заявку на ввод средств."
+
+msgid "First, last and middle name (if any) in latin transcription. Example: Andrei Ivanovich Denisov"
+msgstr ""
+"Фамилия, имя и отчество (если есть). Вводить латиницей.\n"
+"Например: Denisov Andrei Ivanovich"
+
+msgid "Country of residention of beneficiary"
+msgstr "Страна резиденции получателя"
+
+msgid "Payment_Details"
+msgstr "Назначение платежа"
+
+msgid "Credit_Card_Number"
+msgstr "Номер карты"
+
+msgid "Bank transfer (RUR)"
+msgstr "Банковский перевод (Рубли)"
+
+#, python-format
+msgid "Minimal sum of deposit - %(min_amount)s"
+msgstr "Минимальная сумма пополнения – %(min_amount)s"
+
+msgid "<b>Please make sure </b> that your name in payment details matches the one in your account details"
+msgstr "Обратите внимание на то, что ФИО в реквизитах получателя должно совпадать с ФИО того, на кого зарегистрирован торговый счет в компании"
+
+msgid "Bank transfer (USD)"
+msgstr "Банковский перевод (Доллары)"
+
+#, python-format
+msgid "USD transfer commission - %(fee)s"
+msgstr "Комиссия при переводе в долларах – %(fee)s"
+
+msgid "Unknown type of account field"
+msgstr "Неизвестный тип аккаунта"
+
+msgid "Account does not exist"
+msgstr "Счет не существует"
+
+msgid "Can't operate on a demo account."
+msgstr "Невозмножно совершать операции ввода/вывода на демо-счетах"
+
+msgid "Deposit/withdrawal operations are unavailable for this account type."
+msgstr "Ввод/вывод средств недоступен для счетов этого типа."
+
+msgid "Choose currency"
+msgstr "Выберите валюту перевода"
+
+msgid "Amount of money to deposit."
+msgstr "Определите сумму денег для ввода."
+
+msgid "Attention! Specify amount on your account after deduction of the system's charge"
+msgstr "Внимание! Укажите сумму за вычетом комиссии системы - сумму к получению"
+
+#, python-format
+msgid "Your %(payment_system)s purse, e.g. %(example)s"
+msgstr "Ваша учетная запись в платежной системе \"%(payment_system)s\", например %(example)s"
+
+#, python-format
+msgid "Wrong %s purse number."
+msgstr "Неверный номер кошелька %s"
+
+#, python-format
+msgid "You cant deposit more than %(amount)s with %(system)s"
+msgstr "Нельзя ввести больше %(amount)s через %(system)s"
+
+msgid "Wrong amount"
+msgstr "Пожалуйста, введите корректную сумму"
+
+#, python-format
+msgid "Minimum deposit amount is %(amount)s %(currency)s"
+msgstr "Минимальная сумма пополнения %(amount)s %(currency)s"
+
+msgid "Cannot determine the account balance. Try again later or contact support"
+msgstr "Ошибка при определении баланса счета. Повторите позже, или свяжитесь с техподдержкой."
+
+msgid "Amount of money to withdraw"
+msgstr "Определите сумму денег для вывода"
+
+#, python-format
+msgid "You should <a href=\"%(link)s\" target=\"_blank\">complete the verification process</a> before withdrawing from account %(account)s"
+msgstr "Вы должны <a href=\"%(link)s\" target=\"_blank\">завершить процесс верификации</a> прежде чем выводить со счёта %(account)s"
+
+msgid "You can't withdraw funds from this account"
+msgstr "Вы не можете вывести средства с этого счета"
+
+#, python-format
+msgid "Minimal amount of money you can withdraw with this payment system is %(limit_value)s%(currency)s"
+msgstr "Минимальное кол-во средств, которое вы можете вывести с помощью этой платежной системы, равно %(limit_value)s %(currency)s"
+
+#, python-format
+msgid "Enter amount more than %s"
+msgstr "Введите сумму больше %s"
+
+#, python-format
+msgid "Maximal amount of money you can withdraw for a chosen account is %(limit_value)s%(currency)s "
+msgstr "Максимальное кол-во средств, которое вы можете вывести с этого счета, равно %(limit_value)s %(currency)s "
+
+msgid "Your name"
+msgstr "Ваше полное имя"
+
+msgid "First, last and middle name (if any). Example: Andrei Ivanovich Denisov"
+msgstr "Фамилия, имя и отчество (если есть). Например: Денисов Андрей Иванович"
+
+msgid "You can't change the name here, if you need to change your profile name, please contact support"
+msgstr "Вы не можете изменять свое имя здесь, если вам необходимо сменить имя в профайле пожалуйста обратитесь в службу поддержки"
+
+msgid "Name, surname. You could use capital Latin letters, hyphen and spaces. Example: ANDREI DENISOV"
+msgstr "Имя, фамилия. Используйте заглавные латинские буквы, а также дефис"
+
+msgid "Country"
+msgstr "Страна"
+
+msgid "The country where you live"
+msgstr "Страна, где вы живете"
+
+msgid "City"
+msgstr "Город"
+
+msgid "The city where you live"
+msgstr "Город, где вы живете"
+
+msgid "The country in which you receive transfer"
+msgstr "Страна, в которой будет получен перевод"
+
+msgid "The city in which you receive transfer"
+msgstr "Город, в котором будет получен перевод"
+
+msgid "Only uppercase latin letters and space are allowed"
+msgstr "Разрешены только заглавные латинские буквы и пробел"
+
+msgid "MoneyGram"
+msgstr "MoneyGram"
+
+#, python-format
+msgid "According to %s fees"
+msgstr "По тарифам %s"
+
+msgid "a day"
+msgstr "сутки"
+
+msgid "State"
+msgstr "Штат"
+
+msgid "Only for transfers from the U.S."
+msgstr "Только для переводов из США"
+
+msgid "Please specify the address specified in transfer"
+msgstr "Укажите адрес, указанный при переводе"
+
+msgid "Referral number"
+msgstr ""
+
+msgid "8-digit verification number for the copy of the form. For example, 12345678"
+msgstr "8-значный контрольный номер копии бланка. Например, 12345678"
+
+msgid "Answer to the security question"
+msgstr "Ответ на секретный вопрос"
+
+msgid "Answer to the question specified while committing the transfer"
+msgstr "Ответ на вопрос, полученный при переводе"
+
+msgid "Date of transaction"
+msgstr "Дата платежа"
+
+msgid "Please specify the date the transfer was committed"
+msgstr "Укажите дату совершения платежа"
+
+msgid "Please specify the country specified in transfer"
+msgstr "Укажите страну, указанную при переводе"
+
+msgid "Please specify the city specified in transfer"
+msgstr "Укажите город, указанный при переводе"
+
+msgid "First name, last name. Please, fill in the data strictly in this order."
+msgstr "Имя, отчество, фамилия. Строго в этой последовательности."
+
+msgid "Western Union"
+msgstr "Western Union"
+
+msgid "Money Transfer Control Number (MTCN)"
+msgstr "Контрольный номер перевода (MTCN)"
+
+msgid "10-digit verification number for the copy of the form. For example, 555-555-5555"
+msgstr "10-значный контрольный номер к копии бланка. Например, 555-555-5555"
+
+msgid "Loading payment data"
+msgstr "Загрузка данных платежей"
+
+msgid "Awaiting approval (and are possible to withdraw from account)"
+msgstr "Ожидают одобрение (и могут быть выведены со счёта)"
+
+msgid "Empty"
+msgstr "Пусто"
+
+msgid "Please choose payment system"
+msgstr "Выберите платёжную систему"
+
+msgid "Financial operations"
+msgstr "Операции с деньгами"
+
+msgid "Deposit funds"
+msgstr "Ввод средств"
+
+msgid "Withdraw funds"
+msgstr "Вывод средств"
+
+msgid "Internal transfer"
+msgstr "Внутренний перевод"
+
+msgid "Step 1. Transaction details"
+msgstr "Шаг 1. Детали перевода"
+
+msgid "Step 2. Verification"
+msgstr "Шаг 2. Подтверждение данных"
+
+msgid "Step 3. Payment"
+msgstr "Шаг 3. Оплата перевода"
+
+msgctxt "deposit"
+msgid "Payment system"
+msgstr "Способ пополнения"
+
+msgid ""
+"\n"
+"                        Print out or download the payment order and bring it to a local branch of your bank to conduct\n"
+"                        the transaction.\n"
+"                        "
+msgstr ""
+"\n"
+"Распечатайте платежное поручение, или получите его в электронном виде.\n"
+"Передайте его в отделение своего банка, для перевода средств со счета на счет.\n"
+"\n"
+"Если у Вас нет расчетного счета в банке, Вы можете внести сумму наличными деньгами, используя платежное поручение."
+
+msgid "Please verify the details:"
+msgstr "Внимательно проверьте данные:"
+
+msgid "Payments from your country may be restricted, in case your payment fails, see the instructions <a href='/faq/#/SKRILL'>here</a>"
+msgstr "Платежи из вашей страны могут быть ограничены, в случае если платёж не пройдёт воспользуйтесь <a href='/faq/#/SKRILL'>инструкцией</a>"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Transfer funds"
+msgstr "Перевести средства"
+
+msgid "Download requisits"
+msgstr "Получить реквизиты в PDF"
+
+msgid "print requisits"
+msgstr "Распечатать реквизиты"
+
+msgid "Print requisits"
+msgstr "Распечатать реквизиты"
+
+msgctxt "withdraw"
+msgid "Payment system"
+msgstr "Способ вывода средств"
+
+msgid ""
+"\n"
+"                    <p class=\"info offset-top-20\">\n"
+"                        We do not accept transfers from 3rd parties. All expenditures for returning a transfer to the sender are paid for\n"
+"                        by the customer.<br>\n"
+"                        Deposit of funds to customer's account, currency conversion between accounts and while withdrawing funds\n"
+"                        is carried out according to company's internal rates effective at the time of funds arrival or at the\n"
+"                        time of the withdrawal.<br>\n"
+"                        \"Amount\" field is only for information, we do not guarantee deposit of the exact amount of funds stated.<br>\n"
+"                        One customer may create not more than 10 withdrawal requests in a day.<br>\n"
+"                        Funds withdrawal is conducted by our Financial department from Monday to Friday from 9:00 to 18:00 (MSK).\n"
+"                        Withdrawal requests, created after 16:00 (MSK) are processed the next working day.\n"
+"                    </p>\n"
+"                "
+msgstr ""
+"\n"
+"<p class=\"info offset-top-20\">\n"
+"            Переводы от третьих лиц не принимаются. Все расходы, связанные с возвратом перевода на реквизиты\n"
+"            отправителя,\n"
+"            оплачиваются за счет клиента.<br>\n"
+"            Зачисление денежных средств на счет клиента, конвертация при переводе средств между счетами и при выводе\n"
+"            средств\n"
+"            производится по курсам компании, актуальным на момент поступления платежа или списания средств со счета\n"
+"            клиента.<br>\n"
+"            Поле «Сумма к зачислению» носит ознакомительный характер, зачисление указанной в нем суммы не гарантируется.<br>\n"
+"            Из одного Личного кабинета в течение суток может быть подано не более 10 заявок на вывод.<br>\n"
+"            Вывод средств производится Отделом платежей с понедельника по пятницу с 9:00 до 18:00 (мск). Заявки на\n"
+"            вывод,\n"
+"            созданные после 16:00 (мск), обрабатываются\n"
+"            на следующий день.<br>\n"
+"</p>"
+
+msgid "Exchange rates"
+msgstr "Обменный курс"
+
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li> Get to any Elexnet terminal; </li>\n"
+"        <li> Choose \"Payment systems\" option; </li>\n"
+"        <li> Choose \"HandyBank\"; </li>\n"
+"        <li> Choose \"Handy-number\"; </li>\n"
+"        <li>\n"
+"            Enter Handy-number: 218280 and company's co-number: 5509, in a field \"sender's comments\"\n"
+"            enter Your trading account number (login).\n"
+"        </li>\n"
+"        <li>\n"
+"            <strong>Take printed receipt that verifies your payment.</strong>\n"
+"        </li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"<ol class=\"offset-bottom-15\">\n"
+"    <li>Подойдите к любому терминалу Элекснет; </li>\n"
+"    <li>Выберите операцию «Платежные системы»;</li>\n"
+"    <li>Выберите пункт «HandyBank»;</li>\n"
+"    <li>Выберите пункт «Handy-номер»; </li>\n"
+"    <li>Введите Handy-номер: 218280 и со-номер:5509 компании,\n"
+"        в поле «Комментарий отправителя» введите Ваш № торгового счета (логин).</li>\n"
+"</ol>\n"
+"<strong>Обязательно возьмите распечатанное извещение, подтверждающее факт оплаты.</strong>\n"
+
+#, python-format
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            Fill out an application for the money transfer at any Lider service location,\n"
+"            providing the following information:\n"
+"            <ul>\n"
+"                <li>\n"
+"                    Your name, date and place of birth, passport information,\n"
+"                    including the residence address (registration); </li>\n"
+"                <li> Receiver's name - <strong>%(PAYMENTS_RECEIVER)s</strong>; </li>\n"
+"                <li> In the field \"Purpose of transfer\" choose \"Financial aid\". </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show the identification document; </li>\n"
+"        <li> Make a payment and commission fee according to system’s tariffs. </li>\n"
+"        <li><strong> Don't forget to get a verification number – transaction number from the operator. </strong></li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"<ol class=\"offset-bottom-15\">\n"
+"<li>\n"
+"В любом пункте обслуживания Lider заполните Бланк для отправки перевода, указывая следующие данные:\n"
+"<ul>\n"
+"<li> Свои ФИО, дату, место рождения, паспортные данные, включая адрес места жительства (регистрации); </li>\n"
+"<li>\n"
+"ФИО получателя перевода – <strong>%(PAYMENTS_RECEIVER)s</strong>;\n"
+"</li>\n"
+"<li> В графе «цель перевода» отметить «материальная помощь». </li>\n"
+"</ul>\n"
+"</li>\n"
+"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
+"<li> Внести сумму перевода и сумму комиссии в соответствии с тарифами системы. </li>\n"
+"</ol>\n"
+"<strong> Не забудьте получить у оператора контрольный номер перевода - номер транзакции. </strong>\n"
+
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li> On the home page www.handybank.ru go to the \"Enter the system\" section; </li>\n"
+"        <li> Enter your personal Handy-number and access password; </li>\n"
+"        <li> Choose 'Service payments' section, then – 'Financial services', then – 'GrandCapital Ltd'; </li>\n"
+"        <li> Choose payment verification method – 'Handy-code' or 'Handy-key' and execute the transfer; </li>\n"
+"        <li> In a field \"Trading account number\" fill in your login (trading account number). </li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"<ol class=\"offset-bottom-15\">\n"
+"<li>\n"
+"Зайти на главной странице сайта www.handybank.ru в раздел\n"
+"<a href=\"https://secure.handybank.ru/\">«Вход в систему»</a>\n"
+"</li>\n"
+"<li> В интерфейсе системы введите свой персональный Handy-номер и Код доступа; </li>\n"
+"<li> Выбрать раздел «Оплата услуг», далее – «Финансовые услуги», затем - «GrandCapital Ltd»; </li>\n"
+"<li> Указать в поле «Номер торгового счета» свой логин (торговый счет); </li>\n"
+"<li> В поле «Сумма» указать необходимый размер платежа и нажать кнопку «Далее»; </li>\n"
+"<li> Выбрать способ подтверждения оплаты – «Handy-код» или «Handy-ключ» и произвести платеж. </li>\n"
+"</ol>\n"
+"<strong>После совершения платежа, подтвердите свой платеж для финансового отдела</strong>\n"
+
+#, python-format
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any MIGOM’s bank-partner branch fill in the form to make the transaction. While filling in the blank it is necessary to sign the following data:\n"
+"            <ul>\n"
+"                <li> Transfer recipient: <strong>%(PAYMENTS_RECEIVER)s</strong>; </li>\n"
+"                <li> Recipient's country: Russia; </li>\n"
+"                <li> Recipient's city: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID; </li>\n"
+"        <li> Put in the sum in cash desk; </li>\n"
+"        <li> Take the transaction number consisting of 9 figures from the bank manager; </li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"<ol class=\"offset-bottom-15\">\n"
+"<li>\n"
+"В любом отделении банка-партнера MIGOM заполните Бланк для отправки перевода. При заполнении бланка обязательно укажите следующие данные:\n"
+"<ul>\n"
+"<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong>; </li>\n"
+"<li> Страна направления перевода: Россия; </li>\n"
+"<li> Город направления перевода: Санкт-Петербург. </li>\n"
+"</ul>\n"
+"</li>\n"
+"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
+"<li> </li>\n"
+"<li> Внесите сумму в кассу; </li>\n"
+"<li> После того, как Вы отправили денежный перевод, в личном кабинете заполните представленную форму, указав все данные.</li>\n"
+"</ol>\n"
+"<strong> Не забудьте получить у сотрудника Банка контрольный номер перевода, состоящий из 9 цифр. </strong>\n"
+
+#, python-format
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any MoneyGram office fill in the blank for the transaction specifying the following data:\n"
+"            <ul>\n"
+"                <li> The receiver of transfer: <strong>%(PAYMENTS_RECEIVER)s</strong>\n"
+"                    (It is necessary to fill in that field using Capital Latin letters); </li>\n"
+"                <li> Country of the transfer receiver: Russia; </li>\n"
+"                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID; </li>\n"
+"        <li> Put in the sum in cash desk. </li>\n"
+"        <li> Take copy of the blank with 8-figured referral number of the money transfer; </li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"<ol class=\"offset-bottom-15\">\n"
+"<li>\n"
+"В любом пункте обслуживания MoneyGram, заполните Бланк для отправки перевода, указывая следующие данные:\n"
+"<ul>\n"
+"<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong> (Данное поле необходимо заполнять заглавными латинскими буквами); </li>\n"
+"<li> Страна направления перевода: Россия; </li>\n"
+"<li> Город направления перевода: Санкт-Петербург. </li>\n"
+"</ul>\n"
+"</li>\n"
+"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
+"<li> Внесите сумму в кассу. </li>\n"
+"</ol>\n"
+"<strong> Не забудьте получить у сотрудника отделения копию бланка с 8-значным номером денежного перевода и ответ на секретный вопрос. </strong>\n"
+
+#, python-format
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any %(ps)s office fill in the blank for the transaction specifying the following data:\n"
+"            <ul>\n"
+"                <li> The receiver of transfer: <strong>%(PAYMENTS_RECEIVER)s</strong>\n"
+"                    (It is necessary to fill in that field using Capital Latin letters); </li>\n"
+"                <li> Country of the transfer receiver: Russia; </li>\n"
+"                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID;</li>\n"
+"        <li> Put in the sum in cash desk. </li>\n"
+"        <li> Take copy of the blank with 10-figured control number of the money transfer; </li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"<ol class=\"offset-bottom-15\">\n"
+"<li>\n"
+"В любом пункте обслуживания %(ps)s, заполните Бланк для отправки перевода, указывая следующие данные:\n"
+"<ul>\n"
+"<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong> (Данное поле необходимо заполнять заглавными латинскими буквами); </li>\n"
+"<li> Страна направления перевода: Россия; </li>\n"
+"<li> Город направления перевода: Санкт-Петербург. </li>\n"
+"</ul>\n"
+"</li>\n"
+"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
+"<li> Внесите сумму в кассу. </li>\n"
+"</ol>\n"
+"<strong> Не забудьте получить у сотрудника отделения копию бланка с 10-значным контрольным номером денежного перевода и ответ на секретный вопрос. </strong>\n"
+
+msgctxt "button"
+msgid "Continue"
+msgstr "Продолжить"
+
+msgid "In case there's a problem with automatic transfer, please transfer the money manually to one of the following purses and send the details of the transfer to our support department:"
+msgstr "В случае, если ваш платеж не проходит автоматически, необходимо осуществить перевод вручную на один из следующих кошельков и сообщить данные перевода в клиентскую поддержку:"
+
+msgid "Current balance on account"
+msgstr "Текущий баланс счёта"
+
+msgid "Can't get balance"
+msgstr "Не удалось получить баланс"
+
+msgid "Number of closed trades"
+msgstr "Кол-во закрытых позиций"
+
+msgid "Number of In/Out operations"
+msgstr "Кол-во операций ввода/вывода"
+
+msgid "Total volume"
+msgstr "Общиё объём"
+
+msgid "Profit per deposit"
+msgstr "Профит на депозит"
+
+msgid "In/Out/Inout/Credit"
+msgstr ""
+
+msgid "Profit"
+msgstr "Прибыль"
+
+msgid "Deposit"
+msgstr "Пополнить"
+
+msgid "Withdrawal"
+msgstr "Вывод"
+
+msgid "Relative profit"
+msgstr "Относительная прибыль"
+
+msgid "Invoice"
+msgstr "Счёт"
+
+msgid "Customer"
+msgstr "Клиент"
+
+msgctxt "invoice-full-name"
+msgid "Name"
+msgstr "Ф. И. О."
+
+msgid "Description (Payment Reference)"
+msgstr "Наименование (назначение платежа)"
+
+msgid "Price"
+msgstr ""
+
+msgid "Total Amount"
+msgstr "Итого"
+
+msgid "Wiring Details"
+msgstr "Реквизиты для перечисления"
+
+msgid "Beneﬁciary’s Name"
+msgstr "Наименование получателя"
+
+msgid "Beneﬁciary’s Bank"
+msgstr "Банк получателя"
+
+msgid "SWIFT Code"
+msgstr "SWIFT-код"
+
+msgid "Beneﬁciary’s Address"
+msgstr "Адрес получателя"
+
+msgid "Bank Address"
+msgstr "Адрес банка получателя"
+
+msgid "Beneﬁciary’s Account"
+msgstr "Счет"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "CEO"
+msgstr "Директор"
+
+msgid "Сustomer"
+msgstr "Клиент"
+
+msgid "Account payment is made by the Client within 5 (ﬁve) business days from the moment it’s posted. For payment, use the full,<br>unabridged payment description indicated for this account."
+msgstr "Оплата Счета производится Клиентом в течение 5 (пяти) рабочих дней с момента его выставления. В назначении платежа<br>должно быть полностью, без сокращений наименование платежа, указанное в настоящем счете."
+
+msgid "Account ID"
+msgstr "№ аккаунта"
+
+msgid "No bonuses"
+msgstr "Бонусов нет"
+
+msgid "No documents"
+msgstr "Документов нет"
+
+msgid "System"
+msgstr "Система"
+
+msgid "Ratio"
+msgstr "Отношение"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Surname"
+msgstr "Фамилия"
+
+msgid "Mobile phone"
+msgstr "Мобильный телефон"
+
+msgctxt "redirect_button"
+msgid "Payment system"
+msgstr "Платежная система"
+
+msgid "Please transfer the money to one of the following purses and send the details of the transfer to our support department"
+msgstr "Переведите деньги на один из указанных кошельков и сообщите данные перевода в клиентскую поддержку"
+
+msgid "Return to your account"
+msgstr "Вернуться в личный кабинет"
+
+msgid "Automatic payment failed."
+msgstr "Автоматический платеж не прошел."
+
+msgid "No pending requests"
+msgstr "Нет новых заявок"
+
+#~ msgid "Electronic payment systems"
+#~ msgstr "Электронные платежные системы"
+
+#~ msgid "Online banking"
+#~ msgstr "Интернет-банки"
+
+#~ msgid "Money order"
+#~ msgstr "Денежные переводы"
+
+#~ msgid "Manager"
+#~ msgstr "Менеджер"
+
+#~ msgid "Your account is not activated. You must activate your account to be able to withdraw money. To activate your account please follow the link you received by email. If you have any problems with account activation, please contact your personal manager."
+#~ msgstr "Ваша учётная запись не активирована. Для вывода средств Вы должны её активировать. Для этого пройдите, пожалуйста, по ссылке, которую Вы получили по электронной почте. Если у Вас возникают проблемы с активацией, обратитесь, пожалуйста, к Вашему персональному менеджеру."
+
+#~ msgid "Account history for account %(account)s"
+#~ msgstr "История счёта %(account)s"
+
+#~ msgid "No account history available."
+#~ msgstr "История счёта недоступна."
+
+#~ msgid "ago"
+#~ msgstr "тому назад"
+
+#~ msgid "Close price"
+#~ msgstr "Цены закрытия"
+
+#~ msgid "Totals"
+#~ msgstr "Итого"
+
+#~ msgid "Withdrawal requests for account"
+#~ msgstr "Заявки на вывод со счёта"
+
+#~ msgid "Time left. Date of the first request:"
+#~ msgstr "Осталось времени. Дата первой заявки:"
+
+#~ msgid "h"
+#~ msgstr "ч"
+
+#~ msgid "m"
+#~ msgstr "м"
+
+#~ msgid "Requests group"
+#~ msgstr "Группы заявок на вывод"
+
+#~ msgid "Approved"
+#~ msgstr "Одобрено"
+
+#~ msgid "Waiting"
+#~ msgstr "Ожидает"
+
+#~ msgid "In queue"
+#~ msgstr "В очереди"
+
+#~ msgid "Resolving"
+#~ msgstr "В обработке"
+
+#~ msgid "Withdrawal sum"
+#~ msgstr "Сумма вывода"
+
+#~ msgid "Balance at the time of request"
+#~ msgstr "Баланс на момент подачи заявки"
+
+#~ msgid "Current balance"
+#~ msgstr "Текущий баланс на счете"
+
+#~ msgid "Client"
+#~ msgstr "Клиент"
+
+#~ msgid "View account history"
+#~ msgstr "История счёта"
+
+#~ msgid "Deposit stats"
+#~ msgstr "Статистика ввода"
+
+#~ msgid "Bonuses"
+#~ msgstr "Бонусы"
+
+#~ msgid "Percent"
+#~ msgstr "Процент"
+
+#~ msgid "Tasks for"
+#~ msgstr "Задачи для"
+
+#~ msgid "You"
+#~ msgstr "Вы"
+
+#~ msgid "Return to your acc"
+#~ msgstr "Вернуться в ваш профиль"
+
+#~ msgid "Your comment, if needed"
+#~ msgstr "Ваш комментарий, если нужно"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"
+
+#~ msgid "Requests list"
+#~ msgstr "Список заявок"
+
+#~ msgid "Request"
+#~ msgstr "Заявка"
+
+#~ msgid "Withdrawn from acc"
+#~ msgstr "Снято со счёта"
+
+#~ msgid "Ready for payout"
+#~ msgstr "Готово к выплате"
+
+#~ msgid "Paid out"
+#~ msgstr "Выплачено"
+
+#~ msgid "Decline"
+#~ msgstr "Отклонить"
+
+#~ msgid "Reason"
+#~ msgstr "Причина"
+
+#~ msgid "Additional info"
+#~ msgstr "Доп. информация"
+
+#~ msgid "Who (IP)"
+#~ msgstr "Кто (IP)"
+
+#~ msgid "What"
+#~ msgstr "Что"
+
+#~ msgid "Group level"
+#~ msgstr "Уровень группы"
+
+#~ msgid "Loading account data"
+#~ msgstr "Загрузка данных счёта"
+
+#~ msgid "balance"
+#~ msgstr "баланс"
+
+#~ msgid "leverage"
+#~ msgstr "кредитное плечо"
+
+#~ msgid "no bonuses"
+#~ msgstr "бонусов нет"
+
+#~ msgid "Make transaction"
+#~ msgstr "Создать транзакцию"
+
+#~ msgid "Make"
+#~ msgstr "Создать"
+
+#~ msgid "Max deposit per day"
+#~ msgstr "Макс. сумма в сутки"
+
+#~ msgid "Max deposit per month"
+#~ msgstr "Макс. сумма в месяц"
+
+#~ msgid "Max one-time deposit"
+#~ msgstr "Макс. разовый платеж"
+
+#~ msgid "Max transactions per day"
+#~ msgstr "Макс. транзакций в день"
+
+#~ msgid "commission"
+#~ msgstr "комиссия"
+
+#~ msgid "Press the button to go to the payment system"
+#~ msgstr "Нажмите кнопку для перехода в платежную систему"
+
+#~ msgid "Payment data"
+#~ msgstr "Данные платежа"
+
+#~ msgid "Purse (account)"
+#~ msgstr "Кошелёк"
+
+#~ msgid "(updating)"
+#~ msgstr "(обновляется)"
+
+#~ msgid "Total profit"
+#~ msgstr "Общий профит"
+
+#~ msgid "Amount in accounts' currency"
+#~ msgstr "Сумма в валюте счёта"
+
+#~ msgid "exchange rate"
+#~ msgstr "Курс обмена"
+
+#~ msgid "Processing fee"
+#~ msgstr "Комиссия"
+
+#~ msgid "Client will receive"
+#~ msgstr "Клиент получит"
+
+#~ msgid "Trade history"
+#~ msgstr "История сделок"
+
+#~ msgid "Payment details"
+#~ msgstr "Параметры платежа"
+
+#~ msgid "show"
+#~ msgstr "показать"
+
+#~ msgid "Request details"
+#~ msgstr "Параметры заявки"
+
+#~ msgid "Account details"
+#~ msgstr "Параметры счёта"
+
+#~ msgid "All accounts data"
+#~ msgstr "Данные всех счетов"
+
+#~ msgid "Bonus details"
+#~ msgstr "Параметры бонусов"
+
+#~ msgid "Profile data"
+#~ msgstr "Данные профиля"
+
+#~ msgid "Uploaded documents"
+#~ msgstr "Загруженные документы"
+
+#~ msgid "Deposit systems from IB"
+#~ msgstr "Системы пополнения партнёра"
+
+#~ msgid "Deposit systems details"
+#~ msgstr "Системы ввода"
+
+#~ msgid "Approved (money withdrawn from account)"
+#~ msgstr "Одобрен (деньги сняты)"
+
+#~ msgid "Not yet"
+#~ msgstr "Ещё нет"
+
+#~ msgid "Cancelled"
+#~ msgstr "Отменён"
+
+#~ msgid "Yes (withdraw from trading platform)"
+#~ msgstr "Да (вывести со счёта)"
+
+#~ msgid "Yes"
+#~ msgstr "Да"
+
+#~ msgid "Client made payment"
+#~ msgstr "Клиент сделал платёж"
+
+#~ msgid "Yes (deposit to trading platform)"
+#~ msgstr "Да (зачислить на счёт)"
+
+#~ msgid "Money transferred to account"
+#~ msgstr "Деньги зачислены на счёт"
+
+#~ msgid "Withdrawal reason"
+#~ msgstr "Причина вывода"
+
+#~ msgid "Parameters"
+#~ msgstr "Параметры"
+
+#~ msgid "Close"
+#~ msgstr "Закрыть"
+
+#~ msgid ""
+#~ "\n"
+#~ "    In order to make a pay-in transaction by <strong>%(ps.name)s</strong> you should:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Введите средства на счет через систему <strong>%(ps.name)s</strong>:\n"
+
+#~ msgid "After your payment is completed, verify your payment for the financial department."
+#~ msgstr "После совершения платежа, подтвердите свой платеж для финансового отдела"
+
+#~ msgid "Declining request"
+#~ msgstr "Отклонение заявки"
+
+#~ msgid "This request can't be declined because it is already withdrawn from trading account."
+#~ msgstr "Эту заявку нельзя отменить потому что она уже снята со счёта."
+
+#~ msgid "This request is already processed"
+#~ msgstr "Эта заявка уже обработана."
+
+#~ msgid "Enter comment or choose one from the list"
+#~ msgstr "Введите комментарий или выберите из списка"
+
+#~ msgid "regional office"
+#~ msgstr "региональный офис"
+
+#~ msgid "Financial monitoring dept."
+#~ msgstr "ОФМ"
+
+#~ msgid "3%, but not less than 100 roubles"
+#~ msgstr "3%, но не менее 100 рублей"
+
+#~ msgid "First name"
+#~ msgstr "Имя"
+
+#~ msgid "Please use Cyrillic letters"
+#~ msgstr "Заполняется русскими буквами"
+
+#~ msgid "Enter Cyrillic letters"
+#~ msgstr "Введите русские буквы"
+
+#~ msgid "Last name"
+#~ msgstr "Фамилия"
+
+#~ msgid "Middle name"
+#~ msgstr "Отчество"
+
+#~ msgid "Tax ID of bank (or your tax ID)"
+#~ msgstr "Ваш ИНН (либо ИНН Вашего банка)"
+
+#~ msgid "Enter up to 12 digits"
+#~ msgstr "Введите не более 12 цифр"
+
+#~ msgid "Bank"
+#~ msgstr "Банк"
+
+#~ msgid "Bank name, address"
+#~ msgstr "Наименование, адрес"
+
+#~ msgid "Bank account"
+#~ msgstr "Расчетный счет"
+
+#~ msgid "Enter 20 digits"
+#~ msgstr "Введите 20 цифр"
+
+#~ msgid "Credit card number"
+#~ msgstr "Номер карты"
+
+#~ msgid "Enter up to 19 digits"
+#~ msgstr "Введите не более 19 цифр"
+
+#~ msgid "Enter from 12 to 19 digits"
+#~ msgstr "Введите от 12 до 19 цифр"
+
+#~ msgid "Correspondent account"
+#~ msgstr "Банк-корреспондент"
+
+#~ msgid "Bank Identifier Code"
+#~ msgstr "БИК"
+
+#~ msgid "Enter 9 digits"
+#~ msgstr "Введите 9 цифр"
+
+#~ msgid "Qiwi"
+#~ msgstr "Qiwi"
+
+#~ msgid "QIWI doesn't support one-time payments of more than 15000 roubles. If you need to deposit more money via QIWI, just commit several payments."
+#~ msgstr "QIWI не поддерживает единовременные платежи более 15000 рублей. Если вам необходимо ввести большее количество денег, просто оформите несколько платежей."
+
+#~ msgid "Amount should be above 5 roubles"
+#~ msgstr "Сумма должна быть больше 5 рублей"
+
+#~ msgid ""
+#~ "Dear client!\n"
+#~ "\n"
+#~ "You just made a deposit of %(usd_amount)s to your account %(account)s.\n"
+#~ "For transactions larger than $800 our payment system requires us to verify the customer's data for security reasons.\n"
+#~ "\n"
+#~ "To pass this verification you need to upload scans or photos of the following documents:\n"
+#~ "\n"
+#~ "1. Your ID or passport\n"
+#~ "2. Your card which was used to make the payment. The first 4 and the last 4 digits of its number should be visible.\n"
+#~ "Please cover all the other digits.\n"
+#~ "3. A document which can verify your address (not more than 6 months old). For example, utility bill, rental agreement,\n"
+#~ "bank statement, etc.\n"
+#~ "- or -\n"
+#~ "3. A second document confirming your ID (driving license, etc.)\n"
+#~ "\n"
+#~ "After you pass the verification, you will be able to start trading on your account %(account)s.\n"
+#~ "\n"
+#~ "We care about your security!"
+#~ msgstr ""
+#~ "Уважаемый клиент!\n"
+#~ "\n"
+#~ "Вы пополнили счет %(account)s  на сумму %(usd_amount)s.\n"
+#~ "\n"
+#~ "При транзакциях свыше $800 платёжная система выставляет запрос на подтверждение данных плательщика во избежание мошенничества и махинаций с финансами.\n"
+#~ "\n"
+#~ "Пожалуйста, пройдите процедуру дополнительной верификации. Для этого необходимо загрузить сканы либо фото следующих документов в читаемом виде:\n"
+#~ "\n"
+#~ "1. Паспорт \n"
+#~ "2. Карта, с которой были списаны средства (достаточно, чтобы были читаемы 4 первые и последние цифры)\n"
+#~ "3. Документ, подтверждающий адрес проживания,  не старше 6 месяцев (счет на коммунальные платежи, выписка по счету, договор аренды и пр.)\n"
+#~ "- или -\n"
+#~ "3. Дополнительный документ подтверждающий вашу личность (например водительские права)\n"
+#~ "\n"
+#~ "После прохождения верификации Вам будет доступна торговля на счёте %(account)s.\n"
+#~ "\n"
+#~ "Нам важна Ваша безопасность!"
+
+#~ msgid "We need to verify your deposit"
+#~ msgstr "Нам необходима дополнительная проверка ваших данных"
+
+#~ msgid ""
+#~ "\n"
+#~ "Your deposit on account %(account)s SUCCEEDED\n"
+#~ "-------------------------------------------------------\n"
+#~ "Payment system: %(payment_system)s\n"
+#~ "Purse: %(purse)s\n"
+#~ "Amount: %(amount)s\n"
+#~ "Currency: %(currency)s\n"
+#~ "Other info:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "ВВОД на счет %(account)s прошёл УСПЕШНО\n"
+#~ "-------------------------------------------------------\n"
+#~ "Платежная система: %(payment_system)s\n"
+#~ "Кошелек: %(purse)s\n"
+#~ "Сумма: %(amount)s\n"
+#~ "Валюта: %(currency)s\n"
+#~ "Другая информация о платеже:\n"
+
+#~ msgid "Manager comment"
+#~ msgstr "Комментарий менеджера"
+
+#~ msgid ""
+#~ "\n"
+#~ "Please upload your ID scan or photo to your Private Office during 10 days\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Пожалуйста, загрузите скан паспорта, (скан документа, подтверждающего Вашу личность) в Ваш личный кабинет в течение 10-ти дней\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Your deposit on account %(account)s SUCCEEDED\n"
+#~ msgstr ""
+#~ "\n"
+#~ "ВВОД на счет %(account)s прошёл УСПЕШНО\n"
+
+#~ msgid "(Automatic)"
+#~ msgstr "Автоматически"
+
+#~ msgid "Deposit request on account %(account)s created."
+#~ msgstr "Запрос на ВВОД средств на счет %(account)s создан"
+
+#~ msgid "Other info"
+#~ msgstr "Другое"
+
+#~ msgid "Current account balance"
+#~ msgstr "Текущий баланс на счете"
+
+#~ msgid ""
+#~ "\n"
+#~ "Deposit request on account %(account)s created\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Запрос на ВВОД средств на счет %(account)s создан\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Your deposit on account %(account)s FAILED\n"
+#~ "\n"
+#~ "Reason: %(comment)s\n"
+#~ "-------------------------------------------------------\n"
+#~ "Payment system: %(payment_system)s\n"
+#~ "Purse: %(purse)s\n"
+#~ "Amount: %(amount)s\n"
+#~ "Currency: %(currency)s\n"
+#~ "Request date and time: %(datetime)s\n"
+#~ "Other info:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "ВВОД на счет %(account)s НЕ ПРОШЁЛ\n"
+#~ "\n"
+#~ "Причина: %(comment)s\n"
+#~ "-------------------------------------------------------\n"
+#~ "Платежная система: %(payment_system)s\n"
+#~ "Кошелек: %(purse)s\n"
+#~ "Сумма: %(amount)s\n"
+#~ "Валюта: %(currency)s\n"
+#~ "Дата и время заявки: %(datetime)s\n"
+#~ "Другая информация о платеже:\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "You deposit on account %(account)s FAILED\n"
+#~ msgstr ""
+#~ "\n"
+#~ "ВВОД на счет %(account)s НЕ ПРОШЁЛ\n"
+
+#~ msgid "Hello! Your application for withdrawal of funds on the account №%(account_id)s is transferred in the financial department for approval and money transfer. It won’t take long. If you have any questions, please, write to us in Private Office https://grandbroker.com/account/trading"
+#~ msgstr ""
+#~ "Здравствуйте! \n"
+#~ "Ваша заявка на вывод средств по счету №%(account_id)s передана в финансовый отдел для утверждения и перечисления.  Это не займет много времени, вскоре Ваши средства будут переведены в собственность. \n"
+#~ "Если у Вас появились вопросы, пожалуйста, напишите нам в Личном кабинете https://grandcapital.ru/account/issues "
+
+#~ msgid ""
+#~ "\n"
+#~ "The application for withdrawal of %(amount_money)s is received in the finance department\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Заявка на вывод  %(amount_money)s поступила в финансовый отдел \n"
+
+#~ msgid "Hello! Your application for withdrawal of funds on the account №%(account_id)s is ready to the money transfer to your payment system: %(payment_system)s If you have any questions, please, write to us in Private Office https://grandbroker.com/account/trading"
+#~ msgstr ""
+#~ "Здравствуйте! \n"
+#~ "Ваша заявка на вывод средств по счету №%(account_id)s готова к выплате. Ожидайте зачисления на указанную Вами платежную систему: %(payment_system)s.\n"
+#~ "Если у Вас появились вопросы, пожалуйста, напишите нам в Личном кабинете https://grandcapital.ru/account/issues "
+
+#~ msgid ""
+#~ "\n"
+#~ "Your %(amount_money)s are ready for transfer to your payment details\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Ваши %(amount_money)s готовы к переводу на указанные реквизиты\n"
+
+#~ msgid "Hello! Your application for withdrawal of funds on the account №%(account_id)s is transferred to check in the technical department. It won’t take long. If you have any questions, please, write to us in Private Office https://grandbroker.com/account/trading"
+#~ msgstr ""
+#~ "Здравствуйте! \n"
+#~ "Ваша заявка на вывод средств по счету №%(account_id)s передана на проверку в отдел технической поддержки. Это не займет много времени.\n"
+#~ "Если у Вас появились вопросы, пожалуйста, напишите нам в Личном кабинете https://grandcapital.ru/account/issues "
+
+#~ msgid ""
+#~ "\n"
+#~ "The application for withdrawal of %(amount_money)s is verified\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Заявка на сумму %(amount_money)s проверяется\n"
+
+#~ msgid ""
+#~ "Your withdrawal from account %(account)s SUCCEEDED\n"
+#~ "-------------------------------------------------------\n"
+#~ "Payment system: %(payment_system)s\n"
+#~ "Purse: %(purse)s\n"
+#~ "Amount: %(amount)s\n"
+#~ "Currency: %(currency)s"
+#~ msgstr ""
+#~ "ВЫВОД со счета %(account)s прошёл УСПЕШНО\n"
+#~ "-------------------------------------------------------\n"
+#~ "Платежная система: %(payment_system)s\n"
+#~ "Кошелек: %(purse)s\n"
+#~ "Сумма: %(amount)s\n"
+#~ "Валюта: %(currency)s"
+
+#~ msgid "Requisit info"
+#~ msgstr "Другая информация о платеже"
+
+#~ msgid ""
+#~ "\n"
+#~ "Your withdrawal from account %(account)s SUCCEEDED\n"
+#~ msgstr ""
+#~ "\n"
+#~ "ВЫВОД со счета %(account)s прошёл УСПЕШНО\n"
+
+#~ msgid "Withdraw request on account %(account)s created."
+#~ msgstr "Запрос на ВЫВОД средств со счета %(account)s создан"
+
+#~ msgid ""
+#~ "\n"
+#~ "Withdraw request on account %(account)s created\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Запрос на ВЫВОД средств со счета %(account)s создан\n"
+
+#~ msgid ""
+#~ "Your withdrawal from account %(account)s FAILED\n"
+#~ "\n"
+#~ "Reason: %(comment)s\n"
+#~ "-------------------------------------------------------\n"
+#~ "Payment system: %(payment_system)s\n"
+#~ "Purse: %(purse)s\n"
+#~ "Amount: %(amount)s\n"
+#~ "Currency: %(currency)s\n"
+#~ "Request date and time: %(datetime)s"
+#~ msgstr ""
+#~ "ВЫВОД на счет %(account)s НЕ ПРОШЁЛ\n"
+#~ "\n"
+#~ "Причина: %(comment)s\n"
+#~ "-----------------------------------------------------------------\n"
+#~ "Платежная система: %(payment_system)s\n"
+#~ "Кошелек: %(purse)s\n"
+#~ "Сумма: %(amount)s\n"
+#~ "Валюта: %(currency)s\n"
+#~ "Дата и время заявки: %(datetime)s"
+
+#~ msgid ""
+#~ "\n"
+#~ "Your withdrawal from account %(account)s FAILED\n"
+#~ msgstr ""
+#~ "\n"
+#~ "ВЫВОД со счета %(account)s НЕ ПРОШЁЛ\n"
+
+#~ msgid "Partnership manager"
+#~ msgstr "Менеджер по партнёрству"
+
+#~ msgid "Recipient"
+#~ msgstr "Получатель"
+
+#~ msgid "Recipient's tax ID"
+#~ msgstr "ИНН получателя"
+
+#~ msgid "KPP"
+#~ msgstr "КПП"
+
+#~ msgid "Recipient's bank"
+#~ msgstr "Банк получателя"
+
+#~ msgid "Recipient's bank account"
+#~ msgstr "Расчетный счет получателя"
+
+#~ msgid "Recipient's bank correspondent account"
+#~ msgstr "Кор. счет банка получателя"
+
+#~ msgid "Recipient's bank BIC"
+#~ msgstr "БИК банка получателя"
+
+#~ msgid "Anelik"
+#~ msgstr "Anelik"
+
+#~ msgid "anelik.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством системы Anelik осуществляется в течение суток."
+
+#~ msgid "Transfer code"
+#~ msgstr "Номер транзакции"
+
+#~ msgid "Unique transfer code given by Anelik"
+#~ msgstr "Уникальный код перевода определяется Анелик"
+
+#~ msgid "Amount of money to deposit in selected currency<br/><strong>Attention!</strong> Specify amount on your account after deduction of the system's charge"
+#~ msgstr "Сумма денег для ввода в выбранной валюте (как минимум 10 денежных единиц), например: 105 или 105.2<br/><strong>Внимание!</strong> Укажите сумму за вычетом комиссии системы - сумму к получению"
+
+#~ msgid "anelik.withdraw.info"
+#~ msgstr ""
+#~ "Вывод средств с торгового счета посредством Anelik\n"
+#~ "осуществляется в течение 3-х суток"
+
+#~ msgid "Bank transfer (CNY)"
+#~ msgstr "Банковский перевод (CNY)"
+
+#~ msgid "Bank transfer (IDR)"
+#~ msgstr "Банковский перевод (Евро)"
+
+#~ msgid "from 15 minutes"
+#~ msgstr "15 минут"
+
+#~ msgid "Bank transfer (UAH)"
+#~ msgstr "Банковский перевод (Гривны)"
+
+#~ msgid "0.1%, but not less than 1 hryvnia"
+#~ msgstr "0.1%, но не менее 1 гривны"
+
+#~ msgid "Please use Cyrillic letters for your name"
+#~ msgstr "ФИО, заполняется русскими буквами"
+
+#~ msgid "Bank account "
+#~ msgstr "Расчетный счет (Рахунок)"
+
+#~ msgid "Enter 14 digits"
+#~ msgstr "Введите 14 цифр"
+
+#~ msgid "Bank Identifier Code "
+#~ msgstr "БИК (МФО)"
+
+#~ msgid "Enter 6 digits"
+#~ msgstr "Введите 6 цифр"
+
+#~ msgid "You can deposit money on an ECN account only through USD or EUR bank transfer"
+#~ msgstr "Счёт ECN можно пополнить только через банковский перевод в USD или EUR"
+
+#~ msgid "(including %s commission due to Welcome Bonus)"
+#~ msgstr "(в том числе, %s комиссия Welcome-бонуса)"
+
+#~ msgid "Expiry date"
+#~ msgstr "Срок действия"
+
+#~ msgid "ID number"
+#~ msgstr "№ паспорта"
+
+#~ msgid "Birthday"
+#~ msgstr "Дата рождения"
+
+#~ msgid "As specified on your credit card"
+#~ msgstr "Как указано на вашей карте"
+
+#~ msgid "Invalid credit card number!"
+#~ msgstr "Неверный номер карты"
+
+#~ msgid "Invalid expiry date"
+#~ msgstr "Неверный срок действия"
+
+#~ msgid "2%, but not less than 6 RMB"
+#~ msgstr "2%, но не менее $1"
+
+#~ msgid "Colibri"
+#~ msgstr "Колибри"
+
+#~ msgid "Contact"
+#~ msgstr "Контакт"
+
+#~ msgid "Elecsnet"
+#~ msgstr "Элекснет"
+
+#~ msgid "Account Number"
+#~ msgstr "Номер счёта"
+
+#~ msgid "Your account number at FasaPay. For example FP0023"
+#~ msgstr "Номер Вашего счёта в системе FasaPay, например FP0023"
+
+#~ msgid "depends on amount and region"
+#~ msgstr "зависит от суммы и региона"
+
+#~ msgid "3 days"
+#~ msgstr "3 дня"
+
+#~ msgid "Verification number"
+#~ msgstr "Номер транзакции"
+
+#~ msgid "Handy Bank"
+#~ msgstr "Handybank"
+
+#~ msgid "Korona"
+#~ msgstr "Корона"
+
+#~ msgid "Unique transfer code given by Лидер"
+#~ msgstr "Контрольный номер перевода"
+
+#~ msgid "Your account number at Liberty Reserve. For example U0650930"
+#~ msgstr "Номер Вашего аккаунта в системе «Liberty Reserve, например U0650930"
+
+#~ msgid "LiqPay.com"
+#~ msgstr "LiqPay.com"
+
+#~ msgid "LiqPay withdrawal is temporarily disabled due to technical issues. Please use another system."
+#~ msgstr "Вывод через LiqPay временно недоступен по техническим причинам. Пожалуйста используйте любую другую систему."
+
+#~ msgid "Migom"
+#~ msgstr "Migom"
+
+#~ msgid "Transaction numer"
+#~ msgstr "Номер транзакции"
+
+#~ msgid "The country from which you sent the money.(not the country you are from, etc.)"
+#~ msgstr "Страна, из которой Вы отправили перевод (не страна Вашего проживания, гражданства и т.д.)"
+
+#~ msgid "Amount of money to deposit in RUR<br/><strong>Attention!</strong> Specify amount on your account after deduction of the system's charge"
+#~ msgstr "Сумма денег для ввода в RUR (не меньше 10 рублей), например: 105 или 105.2<br/><strong>Внимание!</strong> Укажите сумму за вычетом комиссии системы - сумму к получению"
+
+#~ msgid "The name should consist of at least 3 words"
+#~ msgstr "Введите фамилию, имя и отчество (должно быть 3 слова)"
+
+#~ msgid "Amount of money to deposit in USD (at least 10 currency units)"
+#~ msgstr "Сумма денег для ввода в USD (не меньше 10 долларов), например: 105 или 105.2"
+
+#~ msgid "2%, but not less than $1"
+#~ msgstr "2%, но не менее $1"
+
+#~ msgid "Your Neteller's 12-digit Account ID or email address that is associated with their NETELLER account"
+#~ msgstr "Ваш NETELLER-идентификатор или адрес почты, привязанный к учетной записи NETELLER"
+
+#~ msgid "Secure ID"
+#~ msgstr "Защитный идентификатор"
+
+#~ msgid "Your Neteller's 6-digit Secure ID"
+#~ msgstr "Ваш шестизначный защитный идентификатор (Secure ID)"
+
+#~ msgid "You can't deposit less than $30"
+#~ msgstr "Нельзя перевести менее 30 USD"
+
+#~ msgid "Scan of receipt"
+#~ msgstr "Скан расписки"
+
+#~ msgid "Your account (e-mail) at OKPAY"
+#~ msgstr "Ваш счет (e-mail) в OKPAY"
+
+#~ msgid "WebMoney"
+#~ msgstr "Webmoney"
+
+#~ msgid "payoneer.withdraw.info"
+#~ msgstr "Вывод средств с торгового счета посредством системы Payoneer осуществляется в течение 3-х суток"
+
+#~ msgid "Your account number at Perfect Money. For example U1234567"
+#~ msgstr "Номер Вашего счёта в системе Perfect Money, например U1234567"
+
+#~ msgid "RBKMoney"
+#~ msgstr "RBKMoney"
+
+#~ msgid "Roboxchange"
+#~ msgstr "Робокасса"
+
+#~ msgid "Amount of money to deposit"
+#~ msgstr "Кол-во денег для ввода, например: 105 или 105.2"
+
+#~ msgid "Webmoney"
+#~ msgstr "Webmoney"
+
+#~ msgid "0.8% for USD, EUR, RUR; 12% for UAH"
+#~ msgstr "0.8% в USD, EUR, RUR; 12% в UAH"
+
+#~ msgid "0% (compensated by Grand Capital) for USD, EUR, RUR; 12% for UAH"
+#~ msgstr "0% (компенсируется компанией) в USD, EUR, RUR; 12% в UAH"
+
+#~ msgid "Not enough money."
+#~ msgstr "Не достаточно средств."
+
+#~ msgid "You should first make a deposit from this requisit. If you already have done this, please, contact support."
+#~ msgstr "Для вывода средств необходимо совершить ввод средств с этого кошелька. Если вы уже это сделали, обратитесь в техподдержку."
+
+#~ msgid "Please use WMZ, WMR or WME purse"
+#~ msgstr "Используйте WMZ, WMR или WME кошелек"
+
+#~ msgid "Instant withdrawal for Micro accounts up to 100$"
+#~ msgstr "Моментальный вывод – счет Micro до 100$."
+
+#~ msgid "For instant withdrawal make sure that your WebMoney Keeper is activated and WMID details is open (your name and contacts)"
+#~ msgstr "Для моментального вывода убедитесь что ваш WebMoney Keeper активирован, данные по WMID открыты (Ф.И.О и контакты) "
+
+#~ msgid "Protection code"
+#~ msgstr "Код протекции"
+
+#~ msgid "Enter protection code to protect the payment. If you don't know what it is, leave empty"
+#~ msgstr "Введите код протекции для увеличения безопасности платежа. Если не знаете, что это, оставьте пустым."
+
+#~ msgid "Amount of money to withdraw (in your account's currency)"
+#~ msgstr "Сумма денег для вывода в валюте счета"
+
+#~ msgid "Denied deposit request requires your attention {0}"
+#~ msgstr "Отклонённая заявка на вывод средств требует вашего внимания {0}"
+
+#~ msgid "Select one of your requisits"
+#~ msgstr "Выберите один из ваших реквизитов"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Для работы с системой Payoneer необходимо <a id=\"payoneer_req_link\" href=\"%(payoneer_reg_url)s\" title=\"перейти к заполнению формы\">заказать</a> карту.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "Для работы с картами MasterCard от GrandCapital необходимо <a id=\"payoneer_req_link\" href=\"%(payoneer_reg_url)s\" title=\"перейти к заполнению формы\">заказать</a> карту."
+
+#~ msgid ""
+#~ "\n"
+#~ "                Для вывода средств через систему Payoneer необходимо заполнить\n"
+#~ "                <a title=\"перейти к заполнению формы\" href=\"payments/%(operation)s?s=payoneer\">форму</a>.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "Для вывода средств на MasterCard от GrandCapital <a id=\"payoneer_req_link\" href=\"%(form_url)s\" title=\"перейти к заполнению формы\">заполните</a> форму."
+
+#~ msgid ""
+#~ "\n"
+#~ "    <ol class=\"offset-bottom-15\">\n"
+#~ "        <li>\n"
+#~ "            In any Contact Bank office fill in the blank for the transaction specifying the following data:\n"
+#~ "            <ul>\n"
+#~ "                <li> The receiver of transfer: <strong>%(PAYMENTS_RECEIVER)s</strong>\n"
+#~ "                    (It is necessary to fill in that field using Capital Latin letters); </li>\n"
+#~ "                <li> Country of the transfer receiver: Russia; </li>\n"
+#~ "                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
+#~ "            </ul>\n"
+#~ "        </li>\n"
+#~ "        <li> Show your ID; </li>\n"
+#~ "        <li> Put in the sum in cash desk. </li>\n"
+#~ "        <li> Take copy of the blank with 10-figured control number of the money transfer; </li>\n"
+#~ "    </ol>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<ol class=\"offset-bottom-15\">\n"
+#~ "<li>\n"
+#~ "В любом пункте обслуживания Контакт банка, заполните Бланк для отправки перевода, указывая следующие данные:\n"
+#~ "<ul>\n"
+#~ "<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong> (Данное поле необходимо заполнять заглавными латинскими буквами); </li>\n"
+#~ "<li> Страна направления перевода: Россия; </li>\n"
+#~ "<li> Город направления перевода: Санкт-Петербург. </li>\n"
+#~ "</ul>\n"
+#~ "</li>\n"
+#~ "<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
+#~ "<li> Внесите сумму в кассу. </li>\n"
+#~ "</ol>\n"
+#~ "<strong> Не забудьте получить у сотрудника отделения копию бланка с 10-значным контрольным номером денежного перевода и ответ на секретный вопрос. </strong>\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "    <ol class=\"offset-bottom-15\">\n"
+#~ "        <li>\n"
+#~ "            In any Zolotaya Korona office fill in the blank for the transaction specifying the following data:\n"
+#~ "            <ul>\n"
+#~ "                <li> The receiver of transfer: <strong>%(PAYMENTS_RECEIVER)s</strong>\n"
+#~ "                    (It is necessary to fill in that field using Capital Latin letters); </li>\n"
+#~ "                <li> Country of the transfer receiver: Russia; </li>\n"
+#~ "                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
+#~ "            </ul>\n"
+#~ "        </li>\n"
+#~ "        <li> Show your ID; </li>\n"
+#~ "        <li> Put in the sum in cash desk. </li>\n"
+#~ "        <li> Take copy of the blank with 10-figured control number of the money transfer; </li>\n"
+#~ "    </ol>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<ol class=\"offset-bottom-15\">\n"
+#~ "<li>\n"
+#~ "В любом пункте обслуживания Золотая Корона, заполните Бланк для отправки перевода, указывая следующие данные:\n"
+#~ "<ul>\n"
+#~ "<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong> (Данное поле необходимо заполнять заглавными латинскими буквами); </li>\n"
+#~ "<li> Страна направления перевода: Россия; </li>\n"
+#~ "<li> Город направления перевода: Санкт-Петербург. </li>\n"
+#~ "</ul>\n"
+#~ "</li>\n"
+#~ "<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
+#~ "<li> Внесите сумму в кассу. </li>\n"
+#~ "</ol>\n"
+#~ "<strong> Не забудьте получить у сотрудника отделения копию бланка с 10-значным контрольным номером денежного перевода и ответ на секретный вопрос. </strong>\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "    <ol class=\"offset-bottom-15\">\n"
+#~ "        <li>\n"
+#~ "            In any Western Union office fill in the blank for the transaction specifying the following data:\n"
+#~ "            <ul>\n"
+#~ "                <li> The receiver of transfer: <strong>%(PAYMENTS_RECEIVER)s</strong>\n"
+#~ "                    (It is necessary to fill in that field using Capital Latin letters); </li>\n"
+#~ "                <li> Country of the transfer receiver: Russia; </li>\n"
+#~ "                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
+#~ "            </ul>\n"
+#~ "        </li>\n"
+#~ "        <li> Show your ID; </li>\n"
+#~ "        <li> Put in the sum in cash desk. </li>\n"
+#~ "        <li> Take copy of the blank with 10-figured control number of the money transfer; </li>\n"
+#~ "    </ol>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<ol class=\"offset-bottom-15\">\n"
+#~ "<li>\n"
+#~ "В любом пункте обслуживания Western Union, заполните Бланк для отправки перевода, указывая следующие данные:\n"
+#~ "<ul>\n"
+#~ "<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong> (Данное поле необходимо заполнять заглавными латинскими буквами); </li>\n"
+#~ "<li> Страна направления перевода: Россия; </li>\n"
+#~ "<li> Город направления перевода: Санкт-Петербург. </li>\n"
+#~ "</ul>\n"
+#~ "</li>\n"
+#~ "<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
+#~ "<li> Внесите сумму в кассу. </li>\n"
+#~ "</ol>\n"
+#~ "<strong> Не забудьте получить у сотрудника отделения копию бланка с 10-значным контрольным номером денежного перевода и ответ на секретный вопрос. </strong>\n"
+
+#~ msgid "contact.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством системы Contaсt осуществляется в течение суток."
+
+#~ msgid ""
+#~ "\n"
+#~ "                <p class=\"info offset-top-20\">\n"
+#~ "                    We do not accept transfers from 3rd parties. All expenditures for returning a transfer to the sender are paid for\n"
+#~ "                    by the customer.<br>\n"
+#~ "                    Deposit of funds to customer's account, currency conversion between accounts and while withdrawing funds\n"
+#~ "                    is carried out according to company's internal rates effective at the time of funds arrival or at the\n"
+#~ "                    time of the withdrawal.<br>\n"
+#~ "                    \"Amount\" field is only for information, we do not guarantee deposit of the exact amount of funds stated.<br>\n"
+#~ "                    One customer may create not more than 10 withdrawal requests in a day.<br>\n"
+#~ "                    Funds withdrawal is conducted by our Financial department from Monday to Friday from 9:00 to 18:00 (MSK).\n"
+#~ "                    Withdrawal requests, created after 16:00 (MSK) are processed the next working day.\n"
+#~ "                </p>\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "<p>Важная информация о переводе</p>\n"
+#~ "\n"
+#~ "        <p class=\"info\">\n"
+#~ "            Переводы от третьих лиц не принимаются. Все расходы, связанные с возвратом перевода на реквизиты\n"
+#~ "            отправителя,\n"
+#~ "            оплачиваются за счет клиента.<br><br>\n"
+#~ "            Зачисление денежных средств на счет клиента, конвертация при переводе средств между счетами и при выводе\n"
+#~ "            средств\n"
+#~ "            производится по курсам компании, актуальным на момент поступления платежа или списания средств со счета\n"
+#~ "            клиента.<br><br>\n"
+#~ "            Поле «Сумма к зачислению» носит ознакомительный характер, зачисление указанной в нем суммы не гарантируется.<br><br>\n"
+#~ "            Из одного Личного кабинета в течение суток может быть подано не более 10 заявок на вывод.<br><br>\n"
+#~ "            Вывод средств производится Отделом платежей с понедельника по пятницу с 9:00 до 18:00 (мск). Заявки на\n"
+#~ "            вывод,\n"
+#~ "            созданные после 16:00 (мск), обрабатываются\n"
+#~ "            на следующий день.<br><br>\n"
+#~ "        </p>"
+
+#~ msgid "Commission MoneyGram system"
+#~ msgstr "Комиссия системы MoneyGram"
+
+#~ msgid "Intermediary Bank"
+#~ msgstr "Банк-корреспондент"
+
+#~ msgid "Details of payment"
+#~ msgstr "Назначение платежа"
+
+#~ msgid "Attention! Withdrawal is possible only when the level of available funds is 200% and above if there are open orders"
+#~ msgstr "Внимание! При наличии открытых позиций, вывод средств возможен только при условии соблюдения уровня свободных средств от 200% и выше"
+
+#~ msgid "View the details of your deposit requests here"
+#~ msgstr "Подробнее о всех заявках на ввод средств"
+
+#~ msgid "View the details of your withdraw requests here"
+#~ msgstr "Подробнее о всех заявках на вывод средств"
+
+#~ msgid "I agree with"
+#~ msgstr "Я согласен с"
+
+#~ msgid "terms and conditions"
+#~ msgstr "условиями акции"
+
+#~ msgid "Actions"
+#~ msgstr "Действия"
+
+#~ msgid "In progress"
+#~ msgstr "В процессе"
+
+#~ msgid "Rejected"
+#~ msgstr "Отклонена"
+
+#~ msgid "Approximate term of execution:"
+#~ msgstr "Примерный срок исполнения:"
+
+#~ msgid "Error happened while processing your request"
+#~ msgstr "Ошибка при обработке вашего запроса"
+
+#~ msgid "Error happened, please try again later"
+#~ msgstr "Произошла ошибка, попробуйте еще раз позже"
+
+#~ msgid "Operation type:"
+#~ msgstr "Тип операции:"
+
+#~ msgid "Funds deposit"
+#~ msgstr "Ввод средств"
+
+#~ msgid "Confirm your transfer for our financial department"
+#~ msgstr "Подтвердите свой платеж для финансового отдела"
+
+#~ msgid "Please wait while you are being transferred to the payment system's website"
+#~ msgstr "Подождите, пока идет перенаправление на сайт платежной системы"
+
+#~ msgid "Please wait, the request is being created"
+#~ msgstr "Пожалуйста подождите, заявка в процессе создания"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Having trouble with your deposit?\n"
+#~ "                Please wait while we redirect you to another payment system\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Проблемы со вводом? Подождите, пока мы перенаправим вас на альтернативный способ пополнения"
+
+#~ msgctxt "payment_fail"
+#~ msgid "Go"
+#~ msgstr "Перейти"
+
+#~ msgid ""
+#~ "\n"
+#~ "                    Deposit money through %(ps)s\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "Ввод средств через %(ps)s"
+
+#~ msgid ""
+#~ "\n"
+#~ "                    Withdraw money through %(ps)s\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "Вывод средств через %(ps)s"
+
+#~ msgid "You are not attached to any of regional offices."
+#~ msgstr "Вы не можете воспользоваться вводом/выводом через офис, пока вы не привязаны к региональному офису"
+
+#~ msgid "Seems like you are not personal manager. Thus you are not allowed to use this payment system."
+#~ msgstr "Вы не можете воспользоваться вводом/выводом через офис, если не являетесь персональным менеджером."
+
+#~ msgid "Your regional office are not allowed to withdraw or deposit."
+#~ msgstr "В вашем офисе не разрешено принимать или выдавать наличные."
+
+#~ msgid "You do not have any accounts"
+#~ msgstr "У вас нет торговых счетов"
+
+#~ msgid "To deposit or withdraw money you should first"
+#~ msgstr "Чтобы совершать финансовые операции, вы должны вначале"
+
+#~ msgid "open a real account"
+#~ msgstr "открыть реальный счёт"
+
+#~ msgid ""
+#~ "\n"
+#~ "                            Print out or download the payment order and bring it to a local branch of your bank to conduct\n"
+#~ "                            the transaction.\n"
+#~ "                        "
+#~ msgstr ""
+#~ "\n"
+#~ "Распечатайте платежное поручение, или получите его в электронном виде.\n"
+#~ "Передайте его в отделение своего банка, для перевода средств со счета на счет.\n"
+#~ "\n"
+#~ "Если у Вас нет расчетного счета в банке, Вы можете внести сумму наличными деньгами, используя платежное поручение."
+
+#~ msgid ""
+#~ "\n"
+#~ "                        <p>Important information about your transaction</p>\n"
+#~ "\n"
+#~ "                        <p class=\"info\">\n"
+#~ "                            We do not accept transfers from 3rd parties. All expenditures for returning a transfer to the sender are paid for\n"
+#~ "                            by the customer.<br><br>\n"
+#~ "                            Deposit of funds to customer's account, currency conversion between accounts and while withdrawing funds\n"
+#~ "                            is carried out according to company's internal rates effective at the time of funds arrival or at the\n"
+#~ "                            time of the withdrawal.<br><br>\n"
+#~ "                            \"Amount\" field is only for information, we do not guarantee deposit of the exact amount of funds stated.<br><br>\n"
+#~ "                            One customer may create not more than 10 withdrawal requests in a day.<br><br>\n"
+#~ "                            Funds withdrawal is conducted by our Financial department from Monday to Friday from 9:00 to 18:00 (MSK).\n"
+#~ "                            Withdrawal requests, created after 16:00 (MSK) are processed the next working day.\n"
+#~ "                        </p>\n"
+#~ "                    "
+#~ msgstr ""
+#~ "\n"
+#~ "<p>Важная информация о переводе</p>\n"
+#~ "\n"
+#~ "        <p class=\"info\">\n"
+#~ "            Переводы от третьих лиц не принимаются. Все расходы, связанные с возвратом перевода на реквизиты\n"
+#~ "            отправителя,\n"
+#~ "            оплачиваются за счет клиента.<br><br>\n"
+#~ "            Зачисление денежных средств на счет клиента, конвертация при переводе средств между счетами и при выводе\n"
+#~ "            средств\n"
+#~ "            производится по курсам компании, актуальным на момент поступления платежа или списания средств со счета\n"
+#~ "            клиента.<br><br>\n"
+#~ "            Поле «Сумма к зачислению» носит ознакомительный характер, зачисление указанной в нем суммы не гарантируется.<br><br>\n"
+#~ "            Из одного Личного кабинета в течение суток может быть подано не более 10 заявок на вывод.<br><br>\n"
+#~ "            Вывод средств производится Отделом платежей с понедельника по пятницу с 9:00 до 18:00 (мск). Заявки на\n"
+#~ "            вывод,\n"
+#~ "            созданные после 16:00 (мск), обрабатываются\n"
+#~ "            на следующий день.<br><br>\n"
+#~ "        </p>"
+
+#~ msgid "Step 3. Authentication"
+#~ msgstr "Шаг 3. Аутентификация"
+
+#~ msgid "%(request)s for account %(account)s created. A notice was sent on your email."
+#~ msgstr "%(request)s для счета %(account)s создан. Соответствующее уведомление отправлено на email."
+
+#~ msgid "Deposit on %(account)s through %(payment_system)s %(status)s."
+#~ msgstr "Ввод средств на счет %(account)s через %(payment_system)s %(status)s."
+
+#~ msgid "Withdrawal from %(account)s to %(requisit)s %(status)s."
+#~ msgstr "Вывод средств со счета %(account)s на %(requisit)s %(status)s."
+
+#~ msgid "Transfer request #%(id)s created successfully."
+#~ msgstr "Перевод №%(id)s создан"
+
+#~ msgid "Transfer succeeded"
+#~ msgstr "Перевод совершен"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Print out or download the payment order and bring it to a local branch of your bank to conduct\n"
+#~ "                the transaction.\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Распечатайте платежное поручение, или получите его в электронном виде.\n"
+#~ "Передайте его в отделение своего банка, для перевода средств со счета на счет.\n"
+#~ "\n"
+#~ "Если у Вас нет расчетного счета в банке, Вы можете внести сумму наличными деньгами, используя платежное поручение."
+
+#~ msgid ""
+#~ "\n"
+#~ "        <p>Important information about your transaction</p>\n"
+#~ "\n"
+#~ "        <p class=\"info\">\n"
+#~ "            We do not accept transfers from 3rd parties. All expenditures for returning a transfer to the sender are paid for\n"
+#~ "            by the customer.<br><br>\n"
+#~ "            Deposit of funds to customer's account, currency conversion between accounts and while withdrawing funds\n"
+#~ "            is carried out according to company's internal rates effective at the time of funds arrival or at the\n"
+#~ "            time of the withdrawal.<br><br>\n"
+#~ "            \"Amount\" field is only for information, we do not guarantee deposit of the exact amount of funds stated.<br><br>\n"
+#~ "            One customer may create not more than 10 withdrawal requests in a day.<br><br>\n"
+#~ "            Funds withdrawal is conducted by our Financial department from Monday to Friday from 9:00 to 18:00 (MSK).\n"
+#~ "            Withdrawal requests, created after 16:00 (MSK) are processed the next working day.\n"
+#~ "        </p>\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "<p>Важная информация о переводе</p>\n"
+#~ "\n"
+#~ "        <p class=\"info\">\n"
+#~ "            Переводы от третьих лиц не принимаются. Все расходы, связанные с возвратом перевода на реквизиты\n"
+#~ "            отправителя,\n"
+#~ "            оплачиваются за счет клиента.<br><br>\n"
+#~ "            Зачисление денежных средств на счет клиента, конвертация при переводе средств между счетами и при выводе\n"
+#~ "            средств\n"
+#~ "            производится по курсам компании, актуальным на момент поступления платежа или списания средств со счета\n"
+#~ "            клиента.<br><br>\n"
+#~ "            Поле «Сумма к зачислению» носит ознакомительный характер, зачисление указанной в нем суммы не гарантируется.<br><br>\n"
+#~ "            Из одного Личного кабинета в течение суток может быть подано не более 10 заявок на вывод.<br><br>\n"
+#~ "            Вывод средств производится Отделом платежей с понедельника по пятницу с 9:00 до 18:00 (мск). Заявки на\n"
+#~ "            вывод,\n"
+#~ "            созданные после 16:00 (мск), обрабатываются\n"
+#~ "            на следующий день.<br><br>\n"
+#~ "        </p>"
+
+#~ msgid "Automatic transaction failed"
+#~ msgstr "Автоматический платеж не прошел."
+
+#~ msgid "Get bonus"
+#~ msgstr "Получить бонус"
+
+#~ msgid "Bonus was deposited"
+#~ msgstr "Бонус был начислен"
+
+#~ msgid "Application was received for approval"
+#~ msgstr "Заявка была принята на рассмотрение"
+
+#~ msgid "The leverage on this account is higher than 1:100. You should lower it to receive bonus"
+#~ msgstr "Кредитное плечо выбранного счета выше 1:100. Для получения бонуса необходимо его понизить"
+
+#~ msgid "You have already received bonus on this account"
+#~ msgstr "На этом счете уже есть бонус"
+
+#~ msgid "You have already received bonus on this request"
+#~ msgstr "На эту заявку уже выдан бонус"
+
+#~ msgid "Insufficient funds on the account"
+#~ msgstr "Недостаточно средств на счете"
+
+#~ msgid "To be eligible for the bonus, you should deposit at least $300"
+#~ msgstr "Для получения бонуса необходимо пополнить счет на 300$"
+
+#~ msgid "Continue"
+#~ msgstr "Продолжить"
+
+#~ msgctxt "payments"
+#~ msgid "Amount"
+#~ msgstr "Сумма"
+
+#~ msgid "Choose one of your accounts"
+#~ msgstr "Выберите счет"
+
+#~ msgid "Choose one of your requisits or create a new one"
+#~ msgstr "Выберите один из ваших реквизитов"
+
+#~ msgid "New requisit"
+#~ msgstr "Новые данные"
+
+#~ msgid "Give these payment details a name, for example \"Forex wallet\". It will help you find them in forms more easily"
+#~ msgstr "Назовите реквизит для простоты поиска, например \"Кошелек для Forex\""
+
+#~ msgid "chronopay.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством системы Chronopay осуществляется в течение суток."
+
+#~ msgid "elecsnet.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством Элекснет осуществляется в течение суток."
+
+#~ msgid "fastpost.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством «Быстрая почта» осуществляется в течение суток."
+
+#~ msgid "handybank.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством Handybank осуществляется в течение суток"
+
+#~ msgid "leader.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством системы «Лидер» осуществляется в течение суток."
+
+#~ msgid "leader.withdraw.info"
+#~ msgstr ""
+#~ "Вывод средств с торгового счета посредством системы Лидер \n"
+#~ "осуществляется в течение 3-х суток"
+
+#~ msgid "libertyreserve.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством системы Liberty Reserve осуществляется автоматически (мгновенно)."
+
+#~ msgid "liqpay.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством Ликпей осуществляется автоматически (мгновенно)."
+
+#~ msgid "Phone"
+#~ msgstr "Номер телефона"
+
+#~ msgid "Use LiqPay.com format, please."
+#~ msgstr "Пожалуйста, используйте формат Liqpay, например +79626842111"
+
+#~ msgid "migom.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством системы MIGOM осуществляется в течение суток. "
+
+#~ msgid "moneybookers.deposit.info"
+#~ msgstr ""
+#~ "Ввод средств на торговый счет посредством Moneybookers\n"
+#~ "осуществляется автоматически (мгновенно)."
+
+#~ msgid "Account login"
+#~ msgstr "Счет"
+
+#~ msgid "Your login (e-mail) at OKPAY"
+#~ msgstr "Ваше имя пользователя (e-mail) в OKPAY"
+
+#~ msgid "onlinedengi.deposit.info"
+#~ msgstr "Ввод средств с карты VISA, MasterCard"
+
+#~ msgid "qiwi.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством QIWI Кошелька осуществляется автоматически (мгновенно)."
+
+#~ msgid "rbkmoney.deposit.info"
+#~ msgstr ""
+#~ "Ввод средств на торговый счет посредством RBK Money\n"
+#~ "осуществляется автоматически (мгновенно)."
+
+#~ msgid "webmoney.deposit.info"
+#~ msgstr ""
+#~ "Ввод средств на торговый счет посредством WebMoney\n"
+#~ "осуществляется автоматически (мгновенно)."
+
+#~ msgid "westernunion.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством системы Western Union осуществляется в течение суток"
+
+#~ msgid "yandex.deposit.info"
+#~ msgstr ""
+#~ "Ввод средств на торговый счет посредством Яндекс.Деньги\n"
+#~ "осуществляется автоматически (мгновенно)."
+
+#~ msgid ""
+#~ "\n"
+#~ "                Please, <a href=\"%(link)s\">create an account</a> to deposit funds.\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Чтобы воспользоваться системой ввода, <a href=\"%(link)s\">откройте торговый счет</a>."
+
+#~ msgid "Step 1. Fill the form in with the information about withdrawal "
+#~ msgstr "Шаг 1. Заполните форму"
+
+#~ msgid "Form requisits"
+#~ msgstr "Сформировать реквизиты"
+
+#~ msgid "Make request"
+#~ msgstr "Сформировать заявку"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Please, <a href=\"%(link)s\">create an account</a> to withdraw funds.\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Чтобы воспользоваться системой вывода, <a href=\"%(link)s\">откройте торговый счет</a>."
+
+#~ msgid "Step 1. Fill the form in with the information about withdrawal"
+#~ msgstr "Шаг 1. Заполните форму"
+
+#~ msgid "Step 2. Get your control number"
+#~ msgstr "Шаг 2. Получите контрольный номер"
+
+#~ msgid "You will receive the transfer's security code by email within 48 hours"
+#~ msgstr "В течении 48 часов Вам на электронную почту придет контрольный номер перевода"
+
+#~ msgid "Please visit any office of %(payment_system)s with your ID card"
+#~ msgstr "C документом, удостоверяющим личность, обратитесь в любое отделение %(payment_system)s"
+
+#~ msgid "To deposit money by credit cards we recommend using"
+#~ msgstr "Для ввода с банковских карт мы рекомендуем использовать платёжную систему"
+
+#~ msgid "Payments through DengiOnline payment system may fail due to technical problems."
+#~ msgstr "По техническим причинам платежи через систему Деньги Онлайн могут не проходить."
+
+#~ msgctxt "okpay"
+#~ msgid "Account login"
+#~ msgstr "Счет"
+
+#~ msgid "Last time you used"
+#~ msgstr "Последний раз вы использовали"
+
+#~ msgid "Deposit funds from bank account"
+#~ msgstr "Внесение средств на счет с банковского счета"
+
+#~ msgid "To deposit funds by wire transfer, you should form the details of the transfer in your Private Office, and use them to transfer funds in any office of your bank"
+#~ msgstr "Для пополнения торгового счета банковским переводом, Вам необходимо сформировать реквизиты платежа в личном кабинете, по которым произвести оплату в любом отделении Вашего банка, или удаленно"
+
+#~ msgid "Deposit funds from credit or debit card"
+#~ msgstr "Внесение средств на счет с банковской карты"
+
+#~ msgid "To deposit funds using your credit card, please choose one of the <b>processing systems</b> below and follow its instructions."
+#~ msgstr "Для пополнения торгового счета банковской картой, выберите одну из представленных <b>процессинговых систем</b>, и следуйте инструкциям, которые появятся в открывшемся диалоговом окне."
+
+#~ msgid "Deposit funds from an e-Wallet"
+#~ msgstr "Внесение средств на счет с электронной платежной системы"
+
+#~ msgid "To deposit funds from an e-Wallet, you should create deposit request in your Private Office and pay it through your payment system"
+#~ msgstr "Для пополнения торгового счета через электронную платежную систему, Вам необходимо сформировать платеж в личном кабинете, и оплатить его через платежную систему"
+
+#~ msgid "Deposit funds using money order"
+#~ msgstr "Внесение средств на счет через систему денежных переводов"
+
+#~ msgid "To deposit funds using money order, you should make the order in an office of your money order system. After that you should confirm the payment in your Private Office"
+#~ msgstr "Для пополнения торгового счета через денежный перевод, Вам необходимо оплатить перевод в отделении систем денежных переводов. После этого подтвердить платеж в личном кабинете"
+
+#~ msgid "To withdraw funds by wire transfer, you should create withdraw request in your Private Office"
+#~ msgstr "Для снятия средств с торгового счета банковским переводом, Вам необходимо сформировать заявку на вывод в личном кабинете"
+
+#~ msgid "Withdraw funds to an e-Wallet"
+#~ msgstr "Вывод  средств со счета через электронные платежные системы"
+
+#~ msgid "To withdraw funds to an e-Wallet, you should create withdraw request in your Private Office"
+#~ msgstr "Для снятия средств с торгового счета через электронную платежную систему, Вам необходимо сформировать заявку на вывод в личном кабинете"
+
+#~ msgid "Withdraw funds using money order"
+#~ msgstr "Вывод  средств со счета через систему денежных переводов"
+
+#~ msgid "To withdraw funds from your account using money order, you should create a withdrawal request in your Private Office, get from us the number of the order, and use it to receive your money in any office of the money order system."
+#~ msgstr "Для снятия средств с торгового счета через денежный перевод, Вам необходимо сформировать заявку в личном кабинете, получить номер перевода, и обратиться с ним в любой пункт обслуживания системы денежных переводов"
+
+#~ msgid "No account with such mt4_id"
+#~ msgstr "Нет такого счета"
+
+#~ msgid "Your withdraw request has been sent to our financial department"
+#~ msgstr "Запрос на вывод поступил в финансовый отдел"
+
+#~ msgid "You can see status of the request in table below"
+#~ msgstr "Статус запроса вы можете увидеть в таблице с последним запросом"
+
+#~ msgid "Your deposit request has been sent to our financial department"
+#~ msgstr "Запрос на ввод поступил в финансовый отдел"
+
+#~ msgid ""
+#~ "\n"
+#~ "            Step 2. Refer the payment order to your bank\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "Шаг 2. С платежным поручением обратитесь в банк"
+
+#~ msgid "Print the payment order or keep it in electronic form."
+#~ msgstr "Распечатайте  платежное поручение, или получите его в электронном виде."
+
+#~ msgid "Submit it to your bank to transfer funds from one account to another."
+#~ msgstr "Передайте его в отделение своего банка, для перевода средств со счета на счет."
+
+#~ msgid "If you don't have a bank account, you can deposit cash using the payment order."
+#~ msgstr "Если у Вас нет расчетного счета в банке, Вы можете внести сумму наличными деньгами, используя платежное поручение."
+
+#~ msgid "Confirm payment"
+#~ msgstr "Подтвердить платеж"
+
+#~ msgid ""
+#~ "or go <a href=\"javascript:history.back();\">back to form</a>\n"
+#~ "                "
+#~ msgstr "или <a href=\"javascript:history.back();\">вернуться</a>"
+
+#~ msgid ""
+#~ "\n"
+#~ "                    Please, <a href=\"%(link)s\">create an account</a> to deposit funds.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "Чтобы воспользоваться системой ввода, <a href=\"%(link)s\">откройте торговый счет</a>."
+
+#~ msgid ""
+#~ "\n"
+#~ "                    Please, <a href=\"%(link)s\">create an account</a> to withdraw funds.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "Чтобы воспользоваться системой вывода, <a href=\"%(link)s\">откройте торговый счет</a>."
+
+#~ msgid ""
+#~ "\n"
+#~ "                    If you need any help on deposit or withdrawal, please contact\n"
+#~ "                    our Customer Support Department at clients@grandcapital.net or ask your\n"
+#~ "                    question <a href=\"#\" onclick=\"open_onlinechat();\">online</a>.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "Если в процессе оформления перевода возникают вопросы, свяжитесь с клиентским отделом (clients@grandcapital.net, т. 8-800-333-10-03). Или задайте вопрос <a href=\"#\" onclick=\"open_onlinechat();\">онлайн</a>."
+
+#~ msgid ""
+#~ "\n"
+#~ "                        Attention! You should deposit and withdraw funds using the same method!\n"
+#~ "                        Although if you made a deposit through a system which doesn't support\n"
+#~ "                        withdrawals, you can withdraw you funds using any withdrawal system available.\n"
+#~ "                    "
+#~ msgstr ""
+#~ "\n"
+#~ "Внимание! Ввод и вывод средств должен осуществляться через одну и ту же платежную систему. В случае если система используется только для ввода, вывод осуществляется через любую систему вывода."
+
+#~ msgid ""
+#~ "\n"
+#~ "                        When you withdraw funds, please make sure that you have enough money on your\n"
+#~ "                        trading account and all your trading orders are closed. Please do not open\n"
+#~ "                        new trading orders before funds are withdrawn from your account.\n"
+#~ "                    "
+#~ msgstr ""
+#~ "\n"
+#~ "При выводе средств убедитесь, что на Вашем торговом счете достаточно средств, все позиции закрыты и не открывайте новых позиций до списания средств с торгового счета"
+
+#~ msgid "More"
+#~ msgstr "Подробнее"
+
+#~ msgid "Step 1. Complete the payment"
+#~ msgstr "Шаг 1. Выполните платеж"
+
+#~ msgid ""
+#~ "\n"
+#~ "                    If you need any help on deposit or withdrawal, please contact\n"
+#~ "                    our Customer Support Department at clients@grandcapital.net or ask your\n"
+#~ "                    question <a href=\"https://grandcapital.ru/webim/client.php?locale=%(LANGUAGE_CODE)s\" target=\"_blank\" onclick=\"if(navigator.userAgent.toLowerCase().indexOf('opera') != -1 &amp;&amp; window.event.preventDefault) window.event.preventDefault();this.newWindow = window.open('http://grandcapital.ru/webim/client.php?locale=%(LANGUAGE_CODE)s&amp;url='+escape(document.location.href)+'&amp;referrer='+escape(document.referrer), 'webim', 'toolbar=0,scrollbars=0,location=0,status=1,menubar=0,width=640,height=480,resizable=1');this.newWindow.focus();this.newWindow.opener=window;return false;\">online</a>.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "Если в процессе оформления перевода возникают вопросы, свяжитесь с клиентским отделом (clients@grandcapital.net, т.8-800-333-10-03). Или задайте вопрос <a href=\"https://grandcapital.ru/webim/client.php?locale=%(LANGUAGE_CODE)s\" target=\"_blank\" onclick=\"if(navigator.userAgent.toLowerCase().indexOf('opera') != -1 &amp;&amp; window.event.preventDefault) window.event.preventDefault();this.newWindow = window.open('http://grandcapital.ru/webim/client.php?locale=%(LANGUAGE_CODE)s&amp;url='+escape(document.location.href)+'&amp;referrer='+escape(document.referrer), 'webim', 'toolbar=0,scrollbars=0,location=0,status=1,menubar=0,width=640,height=480,resizable=1');this.newWindow.focus();this.newWindow.opener=window;return false;\">онлайн</a>."
+
+#~ msgid "To deposit funds on your trading account from credit or debit card, you should make a payment in your Private Office using your card's details"
+#~ msgstr "Для пополнения торгового счета банковской картой, Вам необходимо произвести платеж в личном кабинете, заполнив реквизиты карты"
+
+#~ msgid "Reject"
+#~ msgstr "Отклонить"
+
+#~ msgid "Maximal withdrawal per day using this system is %(amount)s<br> You can withdraw %(left)s using QIWI or use <a href='%(link)s'>Bank transfer</a> to withdraw any amount"
+#~ msgstr "Максимальная сумма, доступная для снятия за день - %(amount)s. Вы можете вывести еще %(left)s через QIWI или использовать <a href='%(link)s'>Банковский перевод</a> для вывода любой суммы"
+
+#~ msgid "Today you have already created withdrawal requests for %(amount)s which is maximal amount per day for this system. You can withdraw more of your funds using <a href='%(link)s'>Bank transfer</a>"
+#~ msgstr "Сегодня вы уже запросили вывод на сумму, превышающую дневной максимум для QIWI, равный %(amount)s. Вы можете вывести средства через <a href='%(link)s'>Банковский перевод</a>"
+
+#~ msgid "You have open orders on your account. Please close them and try again."
+#~ msgstr "На вашем счёте есть открытые сделки. Пожалуйста, закройте их и попробуйте снова."
+
+#~ msgid "Maximal sum of withdrawal - %(max_sum_in_day)s"
+#~ msgstr "Максимальная сумма снятия – %(max_sum_in_day)s"
+
+#~ msgid "If you want to withdraw more than %(amount)s roubles, you should use <a href='%(link)s'>Bank transfer</a>"
+#~ msgstr "Суммы больше %(amount)s выводятся через <a href='%(link)s'>Банковский перевод</a>"
+
+#~ msgid "Recipient's address"
+#~ msgstr "Адрес получателя"
+
+#~ msgid ""
+#~ "\n"
+#~ "        Print the payment order or keep it in electronic form.\n"
+#~ "        Submit it to your bank to transfer funds from one account to another.\n"
+#~ "        If you don't have a bank account, you can deposit cash using the payment order.\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "Распечатайте  платежное поручение,или получите его в электронном виде. Передайте его в отделение своего банка, для перевода средств со счета на счет.\n"
+#~ "Если у Вас нет расчетного счета в банке, Вы можете внести сумму наличными деньгами, используя платежное поручение."
+
+#~ msgid "download requisits"
+#~ msgstr "Получить реквизиты в PDF"
+
+#~ msgid "Automatic deposit"
+#~ msgstr "Автоматический ввод"
+
+#~ msgid "Requisits"
+#~ msgstr "Пользовательские реквизиты"
+
+#~ msgid "Pay"
+#~ msgstr "Вывести"
+
+#~ msgid "Withdraw money"
+#~ msgstr "Вывод средств"
+
+#~ msgid "Deposit money"
+#~ msgstr "Ввод средств"
+
+#~ msgid "or go <a href=\"javascript:history.back();\">back</a>"
+#~ msgstr "или <a href=\"javascript:history.back();\">вернуться</a>"
+
+#~ msgid ""
+#~ "\n"
+#~ "      Withdraw money from %(account)s through %(payment_system)s\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "Вывод средств со счета %(account)s через %(payment_system)s"
+
+#~ msgid ""
+#~ "\n"
+#~ "      Withdraw money through %(payment_system)s\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "Вывод средств через %(payment_system)s"
+
+#~ msgid ""
+#~ "\n"
+#~ "        You don't have <strong>%(payment_system)s</strong> requisits to withdraw money to.\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "У вас нет реквизитов <strong>%(payment_system)s</strong>, на которые можно выводить деньги"
+
+#~ msgid ""
+#~ "You don't have any accounts, on which you can withdraw money.\n"
+#~ "              Please, <a href=\"%(create_url)s\">open</a>, or <a href=\"%(bind_url)s\">bind existing</a> account.\n"
+#~ "          "
+#~ msgstr "У вас нет счетов, на которые можно выводить деньги. <a href=\"%(create_url)s\">Откройте</a>, или <a href=\"%(bind_url)s\">привяжите существующий</a> счет."
+
+#~ msgid "Add a new requisit"
+#~ msgstr "Добавить реквизит"
+
+#~ msgid ""
+#~ "\n"
+#~ "    Withdraw money from %(account)s through %(payment_system)s\n"
+#~ "  "
+#~ msgstr ""
+#~ "\n"
+#~ "Вывод средств со счета %(account)s через %(payment_system)s"
+
+#~ msgid "Our financial department received your request for withdrawal, but it may be denied, because you should use the same system that your clients used to deposit the majority of funds. In your case %(plural)s %(most_used)s, so you should use %(systems)s"
+#~ msgstr "Ваша заявка поступит в наш финансовый отдел, но, возможно, она будет отклонена, так как вывод средств осуществляется системой, соответствующей той, которой был произведён ввод большей части средств со стороны привлеченных партнером клиентов. В Вашем случае %(plural)s %(most_used)s, таким образом вывод должен происходить через %(systems)s"
+
+#~ msgid "Our financial department received your request for withdrawal, but it may be denied, because you should use the same system that you used to deposit the majority of funds. In your case %(plural)s %(most_used)s, so you should use %(systems)s"
+#~ msgstr "Ваша заявка поступит в наш финансовый отдел, но, возможно, она будет отклонена, так как вывод средств осуществляется системой, соответствующей той, которой был произведён ввод большей части депозита. В Вашем случае %(plural)s %(most_used)s, таким образом вывод должен происходить через %(systems)s"
+
+#~ msgid "they are"
+#~ msgstr "это"
+
+#~ msgid "it is"
+#~ msgstr "это"
+
+#~ msgid ""
+#~ "\n"
+#~ "      Deposit money on %(account)s through %(payment_system)s\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "Ввод средств на счет %(account)s через %(payment_system)s"
+
+#~ msgid ""
+#~ "\n"
+#~ "      Deposit money through %(payment_system)s\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "Ввод средств через %(payment_system)s"
+
+#~ msgid ""
+#~ "\n"
+#~ "    Deposit money on %(account)s through %(payment_system)s\n"
+#~ "  "
+#~ msgstr ""
+#~ "\n"
+#~ "Ввод средств на счет %(account)s через %(payment_system)s"
+
+#~ msgid "/static/img/payment_systems/logo_dengi_online_eng.png"
+#~ msgstr "/static/img/payment_systems/logo_dengi_online_ru.png"
+
+#~ msgid ""
+#~ "\n"
+#~ "Deposit request on account %(account)s created.\n"
+#~ "-------------------------------------------------------\n"
+#~ "Payment system: %(payment_system)s\n"
+#~ "Purse: %(purse)s\n"
+#~ "Amount: %(amount)s\n"
+#~ "Currency: %(currency)s\n"
+#~ "Other info:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Создан запрос на ВВОД средств на счет %(account)s\n"
+#~ "-----------------------------------------------\n"
+#~ "Платежная система: %(payment_system)s\n"
+#~ "Кошелек: %(purse)s\n"
+#~ "Сумма: %(amount)s\n"
+#~ "Валюта: %(currency)s\n"
+#~ "Другая информация о платеже:\n"
+
+#~ msgid ""
+#~ "Withdraw request on account %(account)s created.\n"
+#~ "-------------------------------------------------------\n"
+#~ "Payment system: %(payment_system)s\n"
+#~ "Purse: %(purse)s\n"
+#~ "Amount: %(amount)s\n"
+#~ "Currency: %(currency)s"
+#~ msgstr ""
+#~ "Создан запрос на ВЫВОД средств со счета %(account)s\n"
+#~ "-----------------------------------------------\n"
+#~ "Платежная система: %(payment_system)s\n"
+#~ "Кошелек: %(purse)s\n"
+#~ "Сумма: %(amount)s\n"
+#~ "Валюта: %(currency)s"
+
+#~ msgid "Amount of money to deposit in %(currency)s"
+#~ msgstr "Сумма денег для ввода в %(currency)s, например: 105 или 105.2"
+
+#~ msgid "Amount of money to deposit in selected currency"
+#~ msgstr "Сумма денег для ввода в выбранной валюте, например: 105 или 105.2"
+
+#~ msgid "Unique transfer code given by «Быстрая почта»"
+#~ msgstr "Контрольный номер перевода"
+
+#~ msgid "Amount of money to deposit in RUR"
+#~ msgstr "Сумма денег для ввода в RUR, например: 105 или 105.2"
+
+#~ msgid "Example: 555-555-5555"
+#~ msgstr "Например, 555-555-5555"
+
+#~ msgid "The country from which you sent the money (not the country you are from, etc.)"
+#~ msgstr "Страна, из которой Вы отправили перевод (не страна Вашего проживания, гражданства и т.д.)"
+
+#~ msgid "The city from which you sent the money (not the city you are in, etc.)"
+#~ msgstr "Город, из которого Вы отправили перевод (не город Вашего проживания)"
+
+#~ msgid "First, last and middle name (if any) in latin transcription.  Example: Andrei Ivanovich Denisov"
+#~ msgstr ""
+#~ "Фамилия, имя и отчество (если есть). Вводить латиницей.\n"
+#~ "Например: Denisov Andrei Ivanovich"
+
+#~ msgid "Choose the currency of your account"
+#~ msgstr "Выберите счет"
+
+#~ msgid "requisits"
+#~ msgstr "Пользовательский реквизит"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Withdraw money from %(account)s through %(payment_system)s\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Вывод средств со счета %(account)s через %(payment_system)s"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Withdraw money through %(payment_system)s\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Вывод средств через %(payment_system)s"
+
+#~ msgid "Amount of money to withdraw in <span class=\"currency\">%(currency)s</span>"
+#~ msgstr "Сумма денег для вывода в <span class=\"currency\">%(currency)s</span>, например: 105 или 105.2"
+
+#~ msgid "Amount of money to withdraw in selected currency"
+#~ msgstr "Сумма денег для вывода в выбранной валюте, например: 105 или 105.2"
+
+#~ msgid "All of yours withdraw requests"
+#~ msgstr "Подробнее о всех заявках на вывод средств"
+
+#~ msgid "Couldn't save requisit"
+#~ msgstr "Невозможно сохранить реквизит"
+
+#~ msgid "Deposit and withdraw payment systems must be the same"
+#~ msgstr "Внимание! Ввод и вывод средств должен осуществляться через одну и ту же платежную систему"
+
+#~ msgid ""
+#~ "\n"
+#~ "              Withdraw money from %(account)s through %(payment_system)s\n"
+#~ "          "
+#~ msgstr ""
+#~ "\n"
+#~ "Вывод средств со счета %(account)s через %(payment_system)s"
+
+#~ msgid ""
+#~ "\n"
+#~ "              Withdraw money through %(payment_system)s\n"
+#~ "          "
+#~ msgstr ""
+#~ "\n"
+#~ "Вывод средств через %(payment_system)s"
+
+#~ msgid "moneybookers.withdraw.info"
+#~ msgstr ""
+#~ "Вывод средств с торгового счета посредством Moneybookers\n"
+#~ "осуществляется в течение 3-х суток"
+
+#~ msgid "qiwi.withdraw.info"
+#~ msgstr ""
+#~ "Вывод средств с торгового счета посредством QIWI Кошелька\n"
+#~ "осуществляется в течение 3-х суток"
+
+#~ msgid "webmoney.withdraw.info"
+#~ msgstr ""
+#~ "Вывод средств с торгового счета посредством WebMoney осуществляется:\n"
+#~ "для счетов MICRO – автоматически,\n"
+#~ "для счетов STANDARD – в течение 3-х суток."
+
+#~ msgid "Rouble transfer commission - {0[fee]}"
+#~ msgstr "Комиссия при рублевом переводе – {0[fee]}"
+
+#~ msgid "Rouble transfer commission - depends on payment details"
+#~ msgstr "Комиссия при рублевом переводе – зависит от условий платежа"
+
+#~ msgid ""
+#~ "Withdrawal of funds from the account - %(time_to_withdraw)s\n"
+#~ "Euro transfer commission - %(withdraw_fee)s\n"
+#~ "Minimal sum of widrawal - %(min_amount_to_withdraw)s\n"
+#~ "\n"
+#~ "Please fill out the form to request withdrawal of funds"
+#~ msgstr ""
+#~ "Вывод денежных средств со счета – %(time_to_withdraw)s\n"
+#~ "Комиссия при переводе в евро – %(withdraw_fee)s\n"
+#~ "Минимальная сумма снятия – %(min_amount_to_withdraw)s\n"
+#~ "\n"
+#~ "После заполнения формы Вы сформируете заявку на вывод средств."
+
+#~ msgid ""
+#~ "Withdrawal of funds from the account - %(time_to_withdraw)s\n"
+#~ "Rouble transfer commission - %(withdraw_fee)s\n"
+#~ "Minimal sum of withdrawal - %(min_amount_to_withdraw)s\n"
+#~ "\n"
+#~ "Please fill out the form to request withdrawal of funds"
+#~ msgstr ""
+#~ "Вывод денежных средств со счета – %(time_to_withdraw)s\n"
+#~ "Комиссия при рублевом переводе – %(withdraw_fee)s \n"
+#~ "Минимальная сумма снятия – %(min_amount_to_withdraw)s\n"
+#~ "\n"
+#~ "После заполнения формы Вы сформируете заявку на вывод средств."
+
+#~ msgid ""
+#~ "Withdrawal of funds from the account - %(time_to_withdraw)s\n"
+#~ "USD transfer commission - %(withdraw_fee)s\n"
+#~ "Minimal sum of withdrawal - %(min_amount_to_withdraw)s\n"
+#~ "\n"
+#~ "Please fill out the form to request withdrawal of funds"
+#~ msgstr ""
+#~ "Вывод денежных средств со счета – %(time_to_withdraw)s\n"
+#~ "Комиссия при переводе в долларах – %(withdraw_fee)s \n"
+#~ "Минимальная сумма снятия – %(min_amount_to_withdraw)s\n"
+#~ "\n"
+#~ "После заполнения формы Вы сформируете заявку на вывод средств."
+
+#~ msgid ""
+#~ "Withdrawal of funds from the account - %(time_to_withdraw)s\n"
+#~ "Rouble transfer commission - depends on payment details\n"
+#~ "Minimal sum of withdrawal - %(min_amount_to_withdraw)s"
+#~ msgstr ""
+#~ "Вывод денежных средств со счета – %(time_to_withdraw)s\n"
+#~ "Комиссия при рублевом переводе – в зависимости от условий платежа\n"
+#~ "Минимальная сумма снятия – %(min_amount_to_withdraw)s"
+
+#~ msgid ""
+#~ "Withdrawal of funds from the account - %(time_to_withdraw)s\n"
+#~ "Instant withdrawal for Micro accounts up to 100$\n"
+#~ "Rouble transfer commission - %(withdraw_fee)s\n"
+#~ "Minimal sum of withdrawal - %(min_amount_to_withdraw)s\n"
+#~ "\n"
+#~ "For instant withdrawal make sure that your WebMoney Keeper is activated and WMID details is open (your name and contacts)\n"
+#~ "\n"
+#~ "Please fill out the form to request withdrawal of funds"
+#~ msgstr ""
+#~ "Вывод денежных средств со счета – %(time_to_withdraw)s\n"
+#~ "Моментальный вывод - счет Micro до 100$.\n"
+#~ "Комиссия при рублевом переводе – %(withdraw_fee)s\n"
+#~ "Минимальная сумма снятия  - %(min_amount_to_withdraw)s\n"
+#~ "\n"
+#~ "Для моментального вывода убедитесь что ваш WebMoney Keeper активирован, данные по WMID открыты (Ф.И.О и контакты)\n"
+#~ "\n"
+#~ "После заполнения формы Вы сформируете заявку на вывод средств."
+
+#~ msgid ""
+#~ "Withdrawal of funds from the account - %(time_to_withdraw)s\n"
+#~ "Rouble transfer commission - %(withdraw_fee)s\n"
+#~ "Minimal sum of withdrawal - %(min_amount_to_withdraw)s\n"
+#~ "\n"
+#~ "Please fill out the form to request withdrawal of funds\n"
+#~ "\n"
+#~ "Attention! Funds withdrawal is only possible for the same currencies"
+#~ msgstr ""
+#~ "Вывод денежных средств со счета – %(time_to_withdraw)s\n"
+#~ "Комиссия при рублевом переводе – %(withdraw_fee)s \n"
+#~ "Минимальная сумма снятия – %(min_amount_to_withdraw)s\n"
+#~ "\n"
+#~ "После заполнения формы Вы сформируете заявку на вывод средств.\n"
+#~ "\n"
+#~ "Внимание. Вывод средств возможен в одной и той же валюте."
+
+#~ msgid ""
+#~ "Withdrawal of funds from the account - %(time_to_withdraw)s\n"
+#~ "USD transfer commission - %(withdraw_fee)s\n"
+#~ "Minimal sum of withdrawal - 10$\n"
+#~ "\n"
+#~ "Please fill out the form to request withdrawal of funds"
+#~ msgstr ""
+#~ "Вывод денежных средств со счета – %(time_to_withdraw)s\n"
+#~ "Комиссия при переводе в долларах – %(withdraw_fee)s \n"
+#~ "Минимальная сумма при снятия – 10$\n"
+#~ "\n"
+#~ "После заполнения формы Вы сформируете заявку на вывод средств."
+
+#~ msgid ""
+#~ "Withdrawal of funds from the account - %(time_to_withdraw)s\n"
+#~ "Rouble transfer commission - %(withdraw_fee)s\n"
+#~ "Minimal sum of withdrawal - 300 roubles\n"
+#~ "\n"
+#~ "Please fill out the form to request withdrawal of funds"
+#~ msgstr ""
+#~ "Вывод денежных средств со счета – %(time_to_withdraw)s\n"
+#~ "Комиссия при рублевом переводе – %(withdraw_fee)s \n"
+#~ "Минимальная сумма при снятия – 300 рублей\n"
+#~ "\n"
+#~ "После заполнения формы Вы сформируете заявку на вывод средств."
+
+#~ msgid ""
+#~ "Withdrawal of funds from the account - %(time_to_withdraw)s\n"
+#~ "Rouble transfer commission - %(withdraw_fee)s\n"
+#~ "Minimal sum of widrawal - 6000 roubles\n"
+#~ "\n"
+#~ "After the form is filled you will be able to develop an application for withdrawal of funds."
+#~ msgstr ""
+#~ "Вывод денежных средств со счета – %(time_to_withdraw)s\n"
+#~ "Комиссия при рублевом переводе – %(withdraw_fee)s \n"
+#~ "Минимальная сумма при снятия – 6000 рублей\n"
+#~ "\n"
+#~ "После заполнения формы Вы сформируете заявку на вывод средств."
+
+#~ msgid ""
+#~ "Withdrawal of funds from the account - %(time_to_withdraw)s\n"
+#~ "USD transfer commission - %(withdraw_fee)s\n"
+#~ "Minimal sum of widrawal - 200$\n"
+#~ "\n"
+#~ "After the form is filled you will be able to develop an application for withdrawal of funds."
+#~ msgstr ""
+#~ "Вывод денежных средств со счета – %(time_to_withdraw)s\n"
+#~ "Комиссия при переводе в долларах – %(withdraw_fee)s \n"
+#~ "Минимальная сумма при снятия – 200$\n"
+#~ "\n"
+#~ "После заполнения формы Вы сформируете заявку на вывод средств."
+
+#~ msgid "rbkcard.withdraw.info"
+#~ msgstr "Вывод средств с торгового счета посредством банковского перевода осуществляется в течение 3-5 банковских дней."
+
+#~ msgid "rbkmoney.withdraw.info"
+#~ msgstr ""
+#~ "Вывод денежных средств со счета – 4\n"
+#~ "Моментальный вывод - счет Micro до 100$.\n"
+#~ "Комиссия при рублевом переводе – 0.08%\n"
+#~ "Минимальная сумма снятия  - 10$\n"
+#~ "\n"
+#~ "Для моментального вывода убедитесь что ваш WebMoney Keeper активирован, данные по WMID открыты (Ф.И.О и контакты)\n"
+#~ "\n"
+#~ "После заполнения формы Вы сформируете заявку на вывод средств."
+
+#~ msgid "bankeur.withdraw.info"
+#~ msgstr ""
+#~ "Вывод средств с торгового счета посредством банковского перевода\n"
+#~ "осуществляется в течение 3-5 банковских дней."
+
+#~ msgid "bankusd.withdraw.info"
+#~ msgstr ""
+#~ "Вывод средств с торгового счета посредством банковского перевода\n"
+#~ "осуществляется в течение 3-5 банковских дней."
+
+#~ msgid "fastpost.withdraw.info"
+#~ msgstr ""
+#~ "Вывод средств с торгового счета посредством системы «Быстрая почта»\n"
+#~ "осуществляется в течение 3-х суток"
+
+#~ msgid "libertyreserve.withdraw.info"
+#~ msgstr ""
+#~ "Вывод средств с торгового счета посредством «Liberty Reserve»\n"
+#~ "осуществляется в течение 3-х суток"
+
+#~ msgid "liqpay.withdraw.info"
+#~ msgstr ""
+#~ "В связи с плановой перерегистрацией платежной системы LiqPay, выводы через эту систему приостановлены до 25-28 сентября. <br>\n"
+#~ "Но мы можем вывести Вам средства <a href=\"/trading/operations_with_money/\">любой другой</a> удобной для Вас платежной системой с нашего сайта."
+
+#~ msgid "westernunion.withdraw.info"
+#~ msgstr "Вывод средств с торгового счета посредством Western Union."
+
+#~ msgid "yandex.withdraw.info"
+#~ msgstr ""
+#~ "Вывод средств с торгового счета посредством Яндекс.Деньги\n"
+#~ "осуществляется в течение 3-х суток"
+
+#~ msgid "Your full name"
+#~ msgstr "Ваши ФИО"
+
+#~ msgid "(IBAN)"
+#~ msgstr "IBAN (международный номер банковского счёта)"
+
+#~ msgid "(SWIFT)"
+#~ msgstr "SWIFT код"
+
+#~ msgid "Payment system (clickable)"
+#~ msgstr "Платежная система (кликабельно)"
+
+#~ msgid "office.deposit.info"
+#~ msgstr "Ввод средств на торговый счет посредством QIWI Кошелька осуществляется автоматически (мгновенно)."
+
+#~ msgid "office.withdraw.info"
+#~ msgstr ""
+#~ "Вывод средств с торгового счета посредством QIWI Кошелька\n"
+#~ "осуществляется в течение 3-х суток"
+
+#~ msgid "Address of payer"
+#~ msgstr "Адрес плательщика"
+
+#~ msgid "USD"
+#~ msgstr "USD"
+
+#~ msgid "City and State"
+#~ msgstr "Город"
+
+#~ msgid "The city from which you sent the money                                        (not the city you are in, etc.). State for transfers from U.S. only."
+#~ msgstr "Город, из которого Вы отправили перевод(не город Вашего проживания и т.д.)."
+
+#~ msgid ""
+#~ "\n"
+#~ "Your withdrawal from account %(account)s FAILED\n"
+#~ "\n"
+#~ "Reason: %(comment)s\n"
+#~ "-------------------------------------------------------\n"
+#~ "Payment system: %(payment_system)s\n"
+#~ "Purse: %(purse)s\n"
+#~ "Amount: %(amount)s\n"
+#~ "Currency: %(currency)s\n"
+#~ "Requisit info:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "ВЫВОД со счета %(account)s НЕ ПРОШЁЛ\n"
+#~ "\n"
+#~ "Причина: %(comment)s\n"
+#~ "-------------------------------------------------------\n"
+#~ "Платежная система: %(payment_system)s\n"
+#~ "Кошелек: %(purse)s\n"
+#~ "Сумма: %(amount)s\n"
+#~ "Валюта: %(currency)s\n"
+#~ "Другая информация о платеже:\n"
+
+#~ msgid "QIWI doesn't support payments of more than 15000 roubles"
+#~ msgstr "QIWI не поддерживает платежи более 15000 рублей"
+
+#~ msgid ""
+#~ "\n"
+#~ "%(status)s withdraw from account %(account)s\n"
+#~ msgstr ""
+#~ "\n"
+#~ "%(status)s ВЫВОД со счета %(account)s\n"
+
+#~ msgid "successful (payment_operation)"
+#~ msgstr "успешный"
+
+#~ msgid "failed (payment operation)"
+#~ msgstr "не совершен"
+
+#~ msgid "EUR"
+#~ msgstr "EUR"
+
+#~ msgid "RUR"
+#~ msgstr "RUR"
+
+#~ msgid "GOLD"
+#~ msgstr "GOLD"
+
+#~ msgid "UAH"
+#~ msgstr "UAH"
+
+#~ msgid "GPB"
+#~ msgstr "GBP"
+
+#~ msgid "Fast post"
+#~ msgstr "Быстрая почта"
+
+#~ msgid "Leader"
+#~ msgstr "Лидер"
+
+#~ msgid "successful"
+#~ msgstr "Средства успешно введены."
+
+#~ msgid "No authorized requisits found."
+#~ msgstr "Нет подтвержденных реквизитов."
+
+#~ msgid "Name, Address: City, Country"
+#~ msgstr "Имя, адрес: город, Страна"
+
+#~ msgid "Beneficiary bank's SWIFT"
+#~ msgstr "SWIFT банка получателя"
+
+#~ msgid "Benificiary bank's account"
+#~ msgstr "Банк-корреспондент банка получателя"
+
+#~ msgid "Correspondent bank SWIFT"
+#~ msgstr "Банк-корреспондент"
+
+#~ msgid "Is the data valid?"
+#~ msgstr "Данные верны?"
+
+#~ msgid "If you reject a requisit, leave a comment here"
+#~ msgstr "Если вы отклоните реквизит, опишите, почему"
+
+#~ msgid "Error while getting allowed withdraw amount for a chosen account."
+#~ msgstr "Ошибка при определении баланса для выбранного счета."
+
+#~ msgid "Added requisit %(requisit)s."
+#~ msgstr "Добавлен реквизит %(requisit)s"
+
+#~ msgid "Execution system"
+#~ msgstr "Система исполнения"
+
+#~ msgid "The account id or password you entered is incorrect."
+#~ msgstr "Вы ввели неверный номер счета или пароль"
+
+#~ msgid "Error processing your request. Retry in 5 minutes."
+#~ msgstr "Ошибка. Попробуйте повторить через 5 минут."
+
+#~ msgid "Why do you want to remove the account?"
+#~ msgstr "Почему вы хотите удалить счет"
+
+#~ msgid "Amount of money to deposit in USD"
+#~ msgstr "Кол-во денег для ввода в долларах"
+
+#~ msgid "Error while loading account data. Using cached data."
+#~ msgstr "Ошибка при загрузке данных счета. Использована сохраненная ранее информация."
+
+#~ msgid "Account %s successfully bound."
+#~ msgstr "Счет %s присоединен."
+
+#~ msgid "Your profile data was successfully updated with data from account %s."
+#~ msgstr "Данные вашего профиля были обновлены, используя данные счета %s."
+
+#~ msgid "Error while creating account. Contact the administrator."
+#~ msgstr "Ошибка при создании счета"
+
+#~ msgid "Uniqie requisit with value \"%s\" already exists"
+#~ msgstr "Уникальный реквизит со значением \"%s\" уже существует"
+
+#~ msgid "The account id you entered is already registered."
+#~ msgstr "Такой номер счета уже зарегистрирован в системе."
+
+#~ msgid "Choose report type"
+#~ msgstr "Выберите тип отчета"
+
+#~ msgid "Generate report for this account type"
+#~ msgstr "Выберите, по какому типу счетов выводить отчет"
+
+#~ msgid "Calculate deposits and withdrawals"
+#~ msgstr "Считать ввод/вывод"
+
+#~ msgid "If enabled, the report may take a long time to generate"
+#~ msgstr "Если включена эта опция, создание отчета может занять продолжительное время"
+
+#~ msgid "Error while loading data for account %s. Using cached data."
+#~ msgstr "Ошибка при загрузке данных счета %s. Использована сохраненная ранее информация."
+
+#~ msgid "Webmoney purse, e.g. Z238479008342"
+#~ msgstr "Номер кошелька, например Z238479008342"
+
+#~ msgid "Currency in which to deposit"
+#~ msgstr "Валюта для ввода средства"
+
+#~ msgid "Currency in which to withdraw"
+#~ msgstr "Валюта для вывода средств"
+
+#~ msgid "Attestat"
+#~ msgstr "Атестат"
+
+#~ msgid "Personal attestat"
+#~ msgstr "Персональный атестат"
+
+#~ msgid "Certified attestat"
+#~ msgstr "Сертифицированный атестат"
+
+#~ msgid "Wrong Webmoney purse number"
+#~ msgstr "Неверный номер кошелька"
+
+#~ msgid "Yandex purse"
+#~ msgstr "Яндекс.Кошелек"
+
+#~ msgid "Reciever Yandex.purse"
+#~ msgstr "Яндекс.Кошелек получателя"
+
+#~ msgid "All micro"
+#~ msgstr "Все Micro"
+
+#~ msgid "All real"
+#~ msgstr "Все Real"

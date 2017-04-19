@@ -1,0 +1,41 @@
+{% load i18n %}
+
+<span class="label label-default"
+   ng-repeat="id in userSelectFilter.model"
+   ng-click="userSelectFilter.removeId(id)"
+   ng-switch="::!id.substr? 1 : (id.startsWith('office')? 2 : 0)">
+  <span ng-switch-when="0">{% blocktrans %}No manager{% endblocktrans %}</span>
+  <span ng-switch-when="1">[[::userSelectFilter.Users.mapping[id].data.name.short]]</span>
+  <span ng-switch-when="2">[[::userSelectFilter.Users.mappingOffices[id.split('office')[1] ].name ]]</span>
+  <i class="fa fa-times"></i>
+</span>
+
+<div class="dropdown open" ng-class="::userSelectFilter.classes">
+  <div class="form-control form-control-sm text-center">
+    <span ng-click="userSelectFilter.open = !userSelectFilter.open">---{% trans "Manager" %}---</span>
+    <i ng-click="userSelectFilter.open = !userSelectFilter.open" class="fa fa-fw fa-caret-down pull-right"></i>
+  </div>
+
+
+  <div class="dropdown-menu" ng-if="userSelectFilter.open">
+    <div class="dropdown-item" ng-if="userSelectFilter.model.indexOf('null')<0" ng-hide="::userSelectFilter.hideNullManager"
+         ng-click="userSelectFilter.addUser(null)">
+      {% blocktrans %}No manager{% endblocktrans %}
+    </div>
+    <div class="dropdown-divider" ng-hide="::userSelectFilter.hideNullManager"></div>
+    <div class="dropdown-header text-center"
+      ng-repeat-start="office in userSelectFilter.offices"
+      ng-if="userSelectFilter.model.indexOf('office' + office.id)<0 && office.is_managable"
+      ng-click="userSelectFilter.addOffice(office)">
+      [[::office.name]]
+    </div>
+    <div class="dropdown-item"
+      ng-repeat="manager in office.managers|orderBy:'office.managers.data.name.short'"
+      ng-if="userSelectFilter.model.indexOf('office' + manager.data.office.id)<0 && userSelectFilter.model.indexOf(manager.data.id)<0 && manager.data.is_managable"
+      ng-click="userSelectFilter.addUser(manager)">
+      [[::manager.data.name.short]]
+      <strong class="pull-right" ng-if="userSelectFilter.usersInfo[manager.data.id]">[[userSelectFilter.usersInfo[manager.data.id] ]]</strong>
+    </div>
+    <div ng-repeat-end class="dropdown-divider" ng-if="userSelectFilter.model.indexOf('office' + office.id)<0 && office.is_managable"></div>
+  </div>
+</div>

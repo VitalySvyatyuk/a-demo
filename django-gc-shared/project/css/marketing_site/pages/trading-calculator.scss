@@ -1,0 +1,71 @@
+.trading-calculator-page {
+  .select.input_box__input, .input_box__input {
+    width: 100%;
+  }
+  .input_box__label {
+    height: 70px;
+    display: table-cell;
+    line-height: 1;
+    vertical-align: bottom;
+    padding-bottom: 20px;
+  }
+  .balance-input {
+    width: 30%;
+    margin-right: 10%;
+    float: left;
+  }
+  .results-table{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    .title-border{
+      border-bottom: 1px dashed #e8072a;
+    }
+    tr{
+      td, th{
+        padding-bottom: 20px;
+        padding-top: 21px;
+        padding-left: 28px;
+        width: 1%;
+        font-weight: 400;
+      }
+    }
+    thead{
+      th{
+        padding-bottom: 16px;
+        border-bottom: 0.5px solid #ededed;
+        color: #db0825;
+        font-size: .875em;
+      }
+    }
+  }
+  .range-input {
+    display: none;
+  }
+  .rangeslider {
+    margin-top: 20px;
+    float: left;
+    width: 60%;
+    display: block;
+    height: 4px;
+    position: relative;
+    background-color: #e7e7e7;
+    &__fill {
+      background-color: #e8072a;
+      display: block;
+      height: 100%;
+    }
+    &__handle {
+      background-color: #fff;
+      border-radius: 100%;
+      cursor: move;
+      height: 22px;
+      left: 0;
+      top: -10px;
+      position: absolute;
+      width: 22px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    }
+  }
+}

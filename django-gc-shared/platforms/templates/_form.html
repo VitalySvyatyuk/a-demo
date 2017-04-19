@@ -1,0 +1,49 @@
+{% load app_tags %}
+
+{% comment %}
+  Form template, which renders validated fields as readonly blocks. Not
+  moving to includes/ because it's not used anywhere else at the moment.
+{% endcomment %}
+
+{% for error in form.non_field_errors %}
+    <div class="errors">{{ error }}</div>
+{% endfor %}
+
+{% for field in form %}
+    <div class="form-item">
+        {% if not field.is_hidden %}
+            {% if field.label %}
+                <div class="label">
+                    {{ field.label_tag }}
+                    {% if field.field.required %}
+                        <span class="required">*</span>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            {% if field.errors %}
+                <div class="error">
+                    {% for error in field.errors %}{{ error|safe }}{% endfor %}
+                </div>
+            {% endif %}
+
+            {% if field.field.widget|is_checkbox %}
+                <div class="checkbox-wrapper-mt4">
+                    {{ field }}
+                </div>
+            {% else %}
+                {{ field }}
+            {% endif %}
+
+            <div class="description">
+                {% block description %}
+                    {{ field.help_text|safe }}
+                {% endblock %}
+            </div>
+        {% else %}
+            {{ field }}
+        {% endif %}
+    </div>
+
+    <div class="clear"></div>
+{% endfor %}

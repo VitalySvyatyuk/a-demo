@@ -1,0 +1,123 @@
+/*----------------------------------------------------Dropdowns---------------------------------------------------*/
+/*cities and call - dropdown*/
+$f-dropdown-list-hover-bg: none;
+@mixin active-links {
+  border-bottom: 1px solid $gc-first-color-dark;
+  color: $gc-third-color;
+}
+.top-bar .basic-dark-dropdown{
+  @include dropdown-container(list, false, none);
+  &:before{display: none;}
+  background: lighten($basic-color, 1%);
+  border: none;
+  li {
+    background: none;
+    display: block;
+    width: 100%;
+    padding: 8px 15px;
+    &:hover, &:active, &:focus {
+      background: darken($basic-color, 30%);
+    }
+    a{
+      background: none;
+      color: $gc-inverted-color;
+      display: block;
+      font: 1rem $font-reg;
+      height: 100%;
+    }
+  }
+}
+
+.gc-dropdown {
+  @include dropdown-container(content, false, 450px);
+  background: $gc-first-color-dark;
+  border: none;
+  padding: 2.5rem;
+  z-index: 1001;
+  &:hover, &:active, &:focus{
+    background: $gc-first-color-dark-hover;
+  }
+  & > p {
+    color: $gc-inverted-color;
+  font: 1.875rem $font-med;
+  margin-bottom: 2.5rem;
+  padding: 0;
+  }
+}
+
+/*request a call*/
+.request-call{
+  color: $gc-inverted-color;
+  margin-left: -200px;
+  top: 40px !important;
+  left: 0 !important;
+  width: 450px;
+  input[type="text"], select, textarea {
+    font: 1.125rem $font-reg;
+    float: right;
+    width: 250px;
+  }
+  input[type="text"], select{
+    height: 36px;
+    margin-bottom: 2.5rem;
+  }
+  input[type="submit"]{
+    background: $gc-inverted-color;
+    border: none;
+    border-radius: 0;
+    color: $gc-first-color-dark;
+    cursor: pointer;
+    float: right;
+    font: 1.125rem $font-med;
+    height: 36px;
+    margin: 1.875rem 0 0 0;
+    padding: 0 .6875rem;
+    width: auto;
+    &:hover, &:focus, &:active {
+      color: $gc-first-color-dark-hover;
+    }
+  }
+  form p{
+    margin-bottom: 1.25rem;
+    width: 100%;
+  }
+  textarea{
+    height: 80px;
+  }
+  label{color: $gc-inverted-color;}
+  form > label, form p{
+    float: left;
+    font: 1.125rem $font-reg;
+  }
+  form > label{
+    clear: left;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    margin-bottom: 2.375rem;
+  }
+  form {
+    margin-bottom: 1.75rem;
+  }
+  div{
+    &:first-of-type{
+      width: 16%;
+    }
+    float: left;
+    text-align: center;
+    width: 28%;
+    label {
+      font: 1rem $font-reg;
+      margin: 0 auto 7px auto;
+    }
+    input[type="radio"]{
+      height: auto;
+      margin: 0;
+      width: 100%;
+    }
+  }
+  .cross{
+    color: $gc-inverted-color;
+    cursor: pointer;
+    line-height: .8rem;
+  }
+}

@@ -1,0 +1,22 @@
+{% extends "admin/change_form.html" %}
+{% block extrastyle %}
+    {{ block.super }}
+    <style type="text/css">
+    span.insert {
+        background-color: palegreen;
+    }
+    span.delete, span.replace {
+        background-color: salmon;
+    }
+    span.equal {
+        background-color: inherit;
+    }
+    .prev {
+        opacity: 0.6;
+    }
+    .flat_json table {
+        border-right: 0px;
+    }
+    </style>
+{% endblock extrastyle %}
+

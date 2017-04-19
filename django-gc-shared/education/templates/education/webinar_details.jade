@@ -1,0 +1,50 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {{ event.webinar.name }} {{ block.super }}
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title= event.webinar.name
+
+  .webinar-item
+    .container
+      .row
+        .col-md-8
+          .webinar-item-info
+            .row
+              .col-md-2
+                p.calendar-date= event.starts_at|date:"j"
+                p.calendar-month= event.starts_at|date:"E"
+                p.calendar-time= event.starts_at|date:"H:i"
+              .col-md-10
+                p= event.webinar.description
+            - var record = event.webinar.get_latest_recorded_event
+            if record
+              .webinar-video-container!= record.youtube.get_embed_html_508_286|safe
+
+            if event.in_future
+              a.button(href="{% url 'webinar_registration' event.slug %}")
+                span.button__text
+                  - trans "Register for the webinar"
+
+        .col-md-3.col-md-offset-1
+          .webinar-item-aside
+            h2.page_title
+              - trans "Upcoming webinars"
+            - regroup next_webinars by starts_at.date as next_webinars_list
+            ul
+              for date in next_webinars_list|slice:":3"
+                li
+                  p.subtitle.subtitle--red= date.grouper|date:"j E"
+                  for event in date.list
+                    .webinar-inner-link: a(href="{% url 'webinar_details' event.slug %}").link= event.webinar.name
+
+            a.arrow_link(href="{% url 'education_webinars' %}")
+              - trans "All webinars"

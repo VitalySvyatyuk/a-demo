@@ -1,0 +1,41 @@
+.profits{
+	padding: 50px 0 55px;
+
+	background-color: $milk;
+
+	@media (#{$max_tablets}){
+		padding-bottom: 15px;
+	}
+}
+.profits__row{
+}
+.profits__item{
+	@media (#{$max_tablets}){
+		margin-bottom: 39px;
+		text-align: center;
+	}
+}
+.profits__img{
+	position: absolute;
+	top: 0;
+	left: $container_side_margin;
+
+	@media (#{$max_tablets}){
+		right: $container_side_margin;
+		margin: auto;
+	}
+}
+.profits__text{
+	display: block;
+	margin-top: 69px;
+
+	color: #275467;
+	font-size: 13px;
+	font-weight: 500;
+	text-transform: uppercase;
+
+	@media (#{$max_tablets}){
+		margin-top: 59px;
+		word-break: break-all;
+	}
+}

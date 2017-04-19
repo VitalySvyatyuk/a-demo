@@ -1,0 +1,55 @@
+{% load staticfiles i18n app_tags %}
+<script src="{% static 'js/vendor/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/django_ajax_send_csrf.js' %}"></script>
+<script type="text/javascript" src="{% absolute_url "jsi18n" %}"></script>
+<script type="text/javascript">
+    TARGET = window.TARGET || "main";
+    SEND_SMS_ADDRESS = '{% url "send_sms" %}';
+    MAKE_CALL_ADDRESS = '{% url "make_call" %}';
+    STEP_2 = {% if form.step2 %}true{% else %}false{% endif %};
+    $(function(){$("[name='target']").val(TARGET)});
+</script>
+<script type="text/javascript" src="{% static 'js/otp/sms_send.js' %}"></script>
+
+{% if form.auth_scheme == "sms" %}
+    <div id="sms_step1" {% if form.step2 %}style="display: none;"{% endif %}>
+        {% if preview %}
+            {% with phone_form as form %}
+                {% include "includes/_form.html" %}
+            {% endwith %}
+        {% else %}
+            {% for name, value in form.extra_fields.iteritems %}
+                <input type="hidden" id="id_{{ name }}" name="{{ name }}" value="{{ value }}" />
+            {% endfor %}
+            <input type="hidden" name="preview_hash" value="" />
+            {% blocktrans %}
+            Please press the button below to get the verification token as text message (SMS) on your phone number
+            {% endblocktrans %}
+        {% endif %}
+        <br/><br/>
+        <button id="sms_send">{% trans "Send" %}</button>
+    </div>
+    <div id="sms_step2" {% if not form.step2 %}style="display: none;"{% endif %}>
+        <span id="automated_call">
+            {% trans "If you <b>can't receive the message</b>, you can order an" %}
+            <input type="button" id="make_call" value="{% trans "automated call" %}" />
+            <br/>
+            {% trans "You will receive a unique code which you should enter in the following field:" %}
+        </span>
+        <span id="no_automated_call" style="display: none;">
+        {% blocktrans %}
+            The call was queued succesfully. You will hear a unique
+            code (4 digits) which you should enter in the following field:
+        {% endblocktrans %}
+        </span>
+        <label>
+            <br/><br/>
+            {% include "includes/_form.html" %}
+        </label>
+        {% if not form.hide_buttons %}{% gcbutton "submit" _("Check") "black" %}{% endif %}
+        <input type="hidden" id="id_target" name="target" value="" />
+    </div>
+{% else %}
+    {% include "includes/_form.html" %}
+    {% if not form.hide_buttons %}{% gcbutton "submit" _("Check") "black" %}{% endif %}
+{% endif %}

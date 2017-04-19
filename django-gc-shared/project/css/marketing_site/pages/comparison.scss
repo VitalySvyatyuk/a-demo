@@ -1,0 +1,113 @@
+.comparison-invest-img {
+  width: 90px;
+  margin-right: -10px;
+}
+.comparison{
+  margin-bottom: 50px;
+  .table-responsive {
+    margin-bottom: 98px;
+  }
+  table{
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    thead{
+      tr{
+        display: table-row;
+        th{
+          padding-bottom: 15px;
+          padding-top: 23px;
+          display: table-cell;
+          padding-left: 29px;
+          border-bottom: 0.5px solid #ededed;
+        }
+        th:first-child{
+          text-align: left;
+          color: #e8072a;
+          font-size: 15px;
+          font-weight: 400;
+        }
+      }
+    }
+    tbody{
+      tr{
+        display: table-row;
+        td{
+          text-align: center;
+          padding-bottom: 20px;
+          padding-top: 20px;
+          padding-left: 29px;
+          display: table-cell;
+          .comparison-checkmark{
+            width: 23px;
+            height: 16px;
+          }
+          .comparison-cross{
+            width: 17px;
+            height: 17px;
+          }
+          .comparison-web {
+            width: 60px;
+            margin-right: -10px;
+          }
+          .comparison-fix {
+            width: 100px;
+            margin-right: -10px;
+          }
+          a{
+            color: #e8072a;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding: 15px 30px;
+            text-decoration: none;
+            border: 1px solid  transparent;
+            text-align: center;
+          }
+          a:hover{
+            color: #e8072a;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            border: 1px solid  #e8072a;
+          }
+        }
+        td:first-child{
+          text-align: left;
+          color: #262626;
+          font-size: 15px;
+          font-weight: 600;
+        }
+      }
+      tr:not(:last-child):hover{
+        background-color: rgba(228, 228, 228, 0.5);
+      }
+    }
+  }
+  .comparison-demo-account{
+    > div{
+      > div:last-child{
+        text-align: right;
+      }
+    }
+    p{
+      color: #262626;
+      font-size: 24px;
+      font-weight: 300;
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 767px){
+  .comparison{
+    table{
+      tbody{
+        tr{
+          td:first-child{
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,211 @@
+.economic-calendar-page {
+  .calendar-filters {
+    margin-top: 60px;
+    background-color: #ececec;
+    border: 0.5px solid #ddd;
+    margin-bottom: 30px;
+    @include clearfix;
+  }
+  @media (#{$min_tablets}){ 
+    .current-time.column {
+      padding-right: 0;
+    }
+    .nearest-event.column {
+      padding-left: 0;
+    }
+  }
+  .current-time.column, .nearest-event.column {
+    .title {
+      display: block;
+      font-size: 24px;
+      padding-bottom: 20px;
+    }
+    .time-hours {
+      font-size: 30px;
+      color: #e8072a;
+      display: block;
+      padding-bottom: 10px;
+    }
+    .column-content {
+      display: block;
+      padding: 60px 20px 30px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .event-country {
+      padding-top: 10px;
+      .flag-icon {
+        width: 28px;
+        height: 18px;
+        float: none;
+        margin-right: 5px;
+        margin-bottom: -1px;
+      }
+      .country-code {
+        font-size: 22px;
+      }
+    }
+  }
+  .ui-datepicker-prev {
+    float: left;
+  }
+  .ui-datepicker-next {
+    float: right;
+  }
+  .ui-datepicker-title {
+    text-align: center;
+  }
+  .ui-datepicker-prev, .ui-datepicker-next {
+    .ui-icon {
+      display: none;
+    }
+    width: 50px;
+    height: 46px;
+    position: relative;
+    cursor: pointer;
+    &:before{
+        content: "";
+        position: absolute;
+        left: 20px;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        width: 12px;
+        height: 9px;
+        transition: transform .3s ease;
+        background: url(#{$icons_path}i--arrow--right-white.png) no-repeat center / 100% auto;
+    }
+    &:hover, &:focus, &:active  {
+      &:before {
+        transform: translateX(5px);
+      }
+    }
+  }
+  .ui-datepicker-prev {
+    &:before {
+      transform: rotate(-180deg);
+    }
+    &:hover, &:focus, &:active {
+      &:before {
+        transform: translateX(-5px) rotate(-180deg);
+      }
+    }
+  }
+  .ui-datepicker-prev, .ui-datepicker-next, .ui-datepicker-title {
+    display: block;
+    height: 46px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 46px;
+    background-color: #e8072a;
+  }
+  .ui-datepicker-calendar {
+    background-color: #fff;
+    height: 220px;
+    width: 100%;
+    font-weight: 400;
+    text-align: left;
+    thead th {
+      font-weight: 400;
+      color: #e8072a;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    td, th {
+      padding: 4px 11px;
+      &:first-of-type {
+        padding-left: 20px;
+      }
+      &:last-of-type {
+        padding-right: 20px;
+      }
+    }
+    tbody tr {
+      cursor: pointer;
+    }
+    tbody tr:hover td {
+      background-color: lighten(#ececec, 2%);
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+  .flag-icon {
+    width: 25px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    float: left;
+  }
+  .icon {
+    display: inline-block;
+    margin-right: 6px;
+  }
+  .icon-star {
+    background: url(../img/icons.png)  -320px -80px no-repeat;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+  }
+  .icon-star-fill {
+    background: url(../img/icons.png)  -280px -80px no-repeat;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+  }
+  padding-bottom: 60px;
+  .table {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    text-align: left;
+  }
+  .table-input-wrap {
+    margin-top: 15px;
+    .select {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      outline: 0;
+      padding-right: 20px;
+    }
+  }
+  .delimiter {
+    border-top: 0.5px solid #ededed;
+  }
+  .table {
+    thead th {
+      padding: 25px 25px 20px;
+      height: 100px;
+      vertical-align: top;
+      font-weight: 400;
+      // border-bottom: 0.5px solid #ededed;
+      .red-value {
+        color: #e8072a;
+      }
+    }
+    tr{
+      td{
+        padding: 20px 25px;
+        vertical-align: top;
+        &.with-flag {
+          padding-left: 55px;
+          padding-right: 0;
+          position: relative;
+          .flag-icon {
+            position: absolute;
+            left: 20px;
+            top: 22px;
+          }
+        }
+      }
+    }
+    tbody tr:hover{
+      background-color: rgba(228, 228, 228, 0.5);
+      cursor: pointer;
+    }
+  }
+}

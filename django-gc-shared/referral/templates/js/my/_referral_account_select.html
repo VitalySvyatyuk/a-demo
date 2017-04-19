@@ -1,0 +1,17 @@
+{% load i18n staticfiles app_tags %}
+<div class="row">
+  <label for="accounts_referral" class="small-3 medium-3 large-3 column">{% trans "Account" %}:</label>
+  <div class="small-9 large-9 column">
+    <div class="select-wrapper small-input">
+      <select title="{% trans "Сhoose one of your accounts" %}"
+        ng-model="selectedAccount"
+        ng-options="acc as acc.display for acc in accounts"
+        ng-change="selectFirstDomain()"
+      ></select>
+    </div>
+      {% if not request.user.accounts.real_ib %}
+        <a class="button" href="/account/create/partnership">{% trans "Open account" %}</a>
+      {% endif %}
+    <p ng-if="selectedAccount">{% trans "Clicks" %}: [[selectedAccount.ib_data.clicks.clicks]]</p>
+  </div>
+</div>

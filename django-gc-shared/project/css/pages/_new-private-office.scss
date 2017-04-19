@@ -1,0 +1,1766 @@
+/*-------------------------------------------------------grid--------------------------------------------------------*/
+.my-new.my{
+  overflow-y: scroll;
+  padding-top: rem-calc(40);
+  .row{
+    max-width: rem-calc(1260);
+    padding: 0 .625rem;
+    &.reset-padding { padding: 0 }
+    .left-pan {
+      width: 16.93%;
+      float: left;
+    }
+    .right-pan {
+      width: 17.42%;
+      float: left;
+      .block-wrapper {
+        padding-right: 0;
+      }
+    }
+    .mid-pan {
+      width: 65.65%;
+      float: left;
+      padding: 0 rem-calc(16);
+    }
+    .column{
+      padding: 0 .625rem;
+      &:first-child{padding-left: 0;}
+      &:last-child{padding-right: 0;}
+      .row{
+        margin-left: 0;
+        margin-right: 0;
+        .column{
+          padding: 0 .625rem;
+          &:first-child{padding-left: 0;}
+          &:last-child{padding-right: 0;}
+        }
+      }
+    }
+    .columns{
+      padding: 0 .625rem;
+      .row{
+        margin-left: 0;
+        margin-right: 0;
+        .columns{
+          padding: 0 .625rem;
+        }
+      }
+    }
+  }
+}
+
+
+/*-------------------------------------------------------icons-------------------------------------------------------*/
+.icon-img-before,
+.icon-settings-before,
+.icon-exit-before,
+.icon-invite-before,{
+  @include icon-set-before(18px, 19px);
+  &:before{
+    margin-right: rem-calc(5);
+  }
+}
+// .icon-img-before:before{background-position: -400px -160px;}
+// .icon-settings-before:before{background-position: -40px -160px;}
+// .icon-exit-before:before{background-position: -80px -160px;}
+// .icon-invite-before:before{background-position: -480px -160px;}
+.icon-settings-before:before {
+  background-image: url(../img/common/settings.svg);
+}
+.icon-exit-before:before {
+  background-image: url(../img/common/door.svg);
+}
+.icon-break{
+  @include icon(-120px, -280px, 20px, 22px);
+  border: none !important;
+  cursor: pointer;
+  &:hover, &:focus, &:active{
+    opacity: .5;
+  }
+}
+.icon-ok{
+  @include icon(-200px, -400px, 14px, 19px);
+  border: none !important;
+  cursor: pointer;
+  &:hover, &:focus, &:active{
+    opacity: .5;
+  }
+}
+.icon-cancel{
+  @include icon(-240px, -400px, 15px, 15px);
+  border: none !important;
+  cursor: pointer;
+  &:hover, &:focus, &:active{
+    opacity: .5;
+  }
+}
+.icon-cancel-basic{
+  @include icon(-280px, -160px, 18px, 18px);
+  border: none !important;
+  cursor: pointer;
+}
+.icon-cancel-basic.small{
+  @include icon(-440px, -240px, 13px, 13px);
+  border: none !important;
+  cursor: pointer;
+  margin: 0 .625rem;
+}
+.icon-cancel-inverted{
+  @include icon(-440px, -160px, 18px, 18px);
+  border: none !important;
+  cursor: pointer;
+}
+.icon-cancel-inverted.small{
+  @include icon(-440px, -200px, 13px, 13px);
+  border: none !important;
+  cursor: pointer;
+  margin: 0 .625rem;
+}
+
+.icon-edit{
+  @include icon(0, -440px, 18px, 18px);
+  border: none !important;
+  &:hover, &:focus, &:active{
+    opacity: .5;
+  }
+}
+
+.icon-eye{
+  // @include icon(-160px, -280px, 18px, 25px);
+  width: 18px;
+  height: 18px;
+  background-image: url(../img/common/eye.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  border: none !important;
+  cursor: pointer;
+  margin-left: .5rem;
+  vertical-align: top;
+  &.close-eye{background-image: url(../img/common/eye-closed.svg)}
+}
+
+.icon-move{
+  @include icon(-240px, -280px, 18px, 18px);
+  cursor: move;
+  opacity: .5;
+}
+
+.icon-warning{
+  @include icon(-160px, -320px, 25px, 29px);
+}
+
+.icon-warning-small{
+  @include icon(-200px, -320px, 17px, 19px);
+  margin-left: .3rem;
+}
+
+.icon-pig-before, .icon-money-before, .icon-transfer-before, .icon-menu-black-before{
+  @include icon-set-before(24px, 27px);
+}
+.icon-pig-before:before{background-position: -320px -360px;}
+.icon-money-before:before{background-position: -360px -360px;}
+.icon-transfer-before:before{background-position: -400px -360px;}
+.icon-menu-black-before:before{background-position: -440px -360px;}
+/*-------------------------------------------------------top bar-----------------------------------------------------*/
+.my-new.my .top-bar {
+  max-width: rem-calc(1260);
+  .top-bar-panel{
+    &.row{
+      padding: 0;
+    }
+    & > li{
+      display: inline-block !important;
+      float: none;
+      margin: 0 1.9rem;
+      vertical-align: top;
+      &:first-child, &:last-child {margin: 0; width: 16%;}
+      @include respond-to-custom(0, 1000px){
+        &.problem span:last-child{display: none;}
+      }
+      @include respond-to-custom(0, 893px){
+        &.chat span:last-child{display: none;}
+        &.forum span:last-child{display: none;}
+      }
+      @include respond-to-custom(0, 700px){
+        &.advisor span:last-child{display: none;}
+      }
+      @include respond-to(gc-large-down){
+        margin: 0 .5rem;
+        &.logo span:last-child{display: none;}
+      }
+    }
+  }
+}
+
+.top-bar-loading{
+  @include single-transition;
+  background: darken($basic-color, 5%);
+  height: 40px;
+  opacity: 1;
+  padding: .3125rem 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+  .loading-circle {
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      70% {
+        transform: rotate(160deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    border-radius: 50%;
+    width: rem-calc(20);
+    margin: rem-calc(3) auto;
+    position: relative;
+    height: rem-calc(20);
+    border: rem-calc(2) solid $gc-inverted-color;
+    border-top-color: transparent;
+    animation: spin 1s infinite linear;
+  }
+  &.ng-hide{
+    opacity: 0;
+  }
+}
+
+/*-------------------------------------------------------my header-----------------------------------------------------*/
+.my-new header .block-wrapper {
+  min-height: 210px;
+  position: relative;
+  padding: rem-calc(20) rem-calc(16);
+  &.main-block {
+    background-color: $gc-inverted-color;
+    padding-bottom: 0;
+    @include arrow-bg($gc-inverted-color, relative, 50%, 50%, 0deg, 12deg, 0deg, -12deg);
+    @include arrow-to-bottom(63%, 0);
+    box-shadow: 2px 0px 15px 0px rgba(0, 1, 1, 0.05);
+    &:after {
+      box-shadow: 0 9px 9px -5px rgba(0, 1, 1, 0.05);
+    }
+    &:before {
+      box-shadow: 3px 1px 9px 3px rgba(0, 1, 1, 0.05);
+    }
+  }
+  .profile-avatar {
+    margin: 0 auto;
+    overflow: hidden;
+    img {
+      width: auto;
+      height: rem-calc(38);
+    }
+  }
+  .user-name{
+    margin-top: rem-calc(10);
+    font-size: rem-calc(18);
+    font-family: $font-reg;
+    span {
+      display: block;
+      clear: both;
+    }
+    a{
+      //@include a-visited($basic-color);
+      &:hover, &:active, &:focus {border-bottom: 1px solid transparentize($basic-color, .5);}
+    }
+  }
+  .user-status-wrap {
+    padding-top: 4px;
+    padding-bottom: 5px;
+  }
+  .user-status {
+    font-size: rem-calc(14);
+    display: inline;
+    cursor: auto;
+    margin-top: 20px;
+    &.user-status-0, &.user-status-1 {
+      color: #c7102d;
+      border-bottom: 1px solid #c7102d;
+      transition: border-color .3ms ease;
+      cursor: pointer;
+      &:hover, &:focus, &:active {
+        border-color: transparent;
+      }
+    }
+    &.user-status-2 {
+      color: #ffa200;
+    }
+    &.user-status-3 {
+      color: #00a925;
+    }
+
+  }
+  .profile-menu {
+    @include clear-ul;
+    li {
+      float: none;
+      padding-top: rem-calc(1);
+      padding-bottom: rem-calc(1);
+      a>span {
+        font: rem-calc(14) $font-reg;
+        &:hover, &:active, &:focus {border-bottom: 1px solid transparentize($basic-color, .5);}
+      }
+    }
+  }
+}
+
+/*------------------------------------------------------- new nav -----------------------------------------------------*/
+.my-new .parts{
+  &.row{
+    margin: 0; padding: 0;
+    .column{
+      padding: 0 0;
+    }
+    .create-button .button {
+      width: 90%;
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
+  }
+}
+.my-new .global-nav{
+  background: none;
+  font-size: rem-calc(14);
+  font-family: $font-reg;
+  display: block;
+  padding: rem-calc(15) 0 rem-calc(17);
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  border-bottom: rem-calc(1) solid #d0d0d0;
+  &.active {
+    border-color: $gc-first-color;
+    cursor: default;
+    border-width: rem-calc(3);
+    font-family: $font-reg;
+    color: $gc-first-color;
+    padding-bottom: rem-calc(15);
+  }
+  &:hover, &:active, &:focus{
+    border-color: $gc-first-color-hover;
+    border-width: rem-calc(3);
+    padding-bottom: rem-calc(15);
+  }
+  span{
+    z-index: 1;
+    font: 1.35rem $font-reg;
+    position: relative;
+  }
+  .two-lines {
+    display: block;
+    margin-top: -7px;
+    margin-bottom: -8px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  &.inactive{
+    background: none !important;
+    border-color: lighten($basic-color, 55%);
+    color: lighten($basic-color, 35%);
+    cursor: default;
+  }
+}
+@mixin my-local-nav($my-nav-icon-x, $my-nav-icon-y){
+  &:before{
+    background-position: $my-nav-icon-x $my-nav-icon-y;
+  }
+}
+
+
+.my-new .my-local-nav{
+  @include clear-ul;
+  li {
+    display: table;
+    height: 28px;
+    margin-bottom: rem-calc(5);
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+  a{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    line-height: 1.1;
+    padding-left: 33px;
+    font-size: rem-calc(14);
+    &:before{
+      // background: url(../img/my-local-services.png) no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      content: '';
+      height: 22px;
+      width: 24px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -15px;
+    }
+    span{
+      border-bottom: 1px solid transparent;
+    }
+    // &.analitic{@include my-local-nav(0, 0);}
+    // &.computer{@include my-local-nav(0, -30px);}
+    // &.mtrader{@include my-local-nav(0, -60px);}
+    // &.learning{@include my-local-nav(0, -90px);}
+    // &.box{@include my-local-nav(0, -120px);}
+    // &.portfolio{@include my-local-nav(0, -150px);}
+    // &.sale{@include my-local-nav(0, -210px);}
+    &.document{
+      &:before {
+        background-image: url(../img/common/files-icon.svg);
+      }
+    }
+    &.case {
+      &:before {
+        background-image: url(../img/common/suitcase.svg);
+      }
+    }
+    &.chart {
+      &:before {
+        background-image: url(../img/common/graph.svg);
+      }
+    }
+    &.hat {
+      &:before {
+        background-image: url(../img/common/mortarboard.svg);
+      }
+    }
+    &.list {
+      &:before {
+        background-image: url(../img/common/docs.svg);
+      }
+    }
+    &.archive {
+      &:before {
+        background-image: url(../img/common/archive.svg);
+      }
+    }
+    &.inout-arrows {
+      &:before {
+        background-image: url(../img/common/inout.svg);
+      }
+    }
+    &.active, &:hover, &:active, &:focus {
+      & > span {border-color: transparentize($basic-color, .5);}
+    }
+    //&:visited {
+    //  & > span > span{
+    //    border-bottom-color: lighten($basic-color, 5%);
+    //    color: lighten($basic-color, 5%);
+    //  }
+    //}
+  }
+ // not ready platforms popap btn hover
+ .not-ready-platform-en, .not-ready-platform-ru{
+  position: relative;
+  display: inline-block;
+}
+.not-ready-platform-en:after, .not-ready-platform-ru:after{
+  display: none;
+  border: 1px solid  #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  z-index: 999999;
+  position: absolute;
+  bottom: -105px;
+  left: 0;
+  padding: 5px 10px;
+  font-size: 15px;
+  color: #000;
+  line-height: 1;
+  width: 200px;
+  text-align: left;
+}
+.not-ready-platform-en:after{
+  content: "The MetaTrader4 and ClearPro/ClearWeb platforms are not available now and will be available after this website is published.";
+}
+.not-ready-platform-ru:after{
+  content: "Платформы MetaTrader4 и ClearPro/ClearWeb в данный момент не доступны. Доступ появится после публикации сайта.";
+}
+.not-ready-platform-en:hover:after, .not-ready-platform-ru:hover:after{
+  display: block;
+}
+}
+
+/*------------------------------------------------------my main-----------------------------------------------------*/
+.my-new.my .main{
+  h1.green{
+    clear: both;
+    font: 1.875rem $font-med;
+    margin-bottom: 20px;
+  }
+  .container h2{
+    clear: both;
+    font: 1.875rem $font-light;
+    margin: 30px 0;
+  }
+  .for-hide-block{background-position: -240px -120px;}
+  .for-show-block{background-position: -200px -120px;}
+}
+
+/*---------------------------------------------------big accordion-----------------------------------------------------*/
+
+.accordion-block.gc-accordion.green{
+  @include single-transition;
+  margin: 0 auto;
+  width: 63%;
+  .gc-accordion-item {
+    border: none;
+    .title-wrapper {
+      min-height: 60px;
+      padding: 1.2rem 1rem;
+    }
+    &.active{
+      .title-wrapper{
+        background-color: $gc-inverted-color;
+        .button {
+        }
+        .title {
+          // &:before{ background-position: -120px -120px }
+        }
+        .icon-warning{
+          margin: -.2rem 0 0 .5rem;
+        }
+      }
+    }
+     // not ready platforms popap btn hover
+     .not-ready-platform-en, .not-ready-platform-ru{
+      position: relative;
+      display: inline-block;
+    }
+    .not-ready-platform-en:after, .not-ready-platform-ru:after{
+      display: none;
+      border: 1px solid  #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+      z-index: 999999;
+      position: absolute;
+      bottom: -105px;
+      left: 0;
+      padding: 5px 10px;
+      font-size: 15px;
+      color: #000;
+      line-height: 1;
+      width: 200px;
+      text-align: left;
+    }
+    .not-ready-platform-en:after{
+      content: "The MetaTrader4 and ClearPro/ClearWeb platforms are not available now and will be available after this website is published.";
+    }
+    .not-ready-platform-ru:after{
+      content: "Платформы MetaTrader4 и ClearPro/ClearWeb в данный момент не доступны. Доступ появится после публикации сайта.";
+    }
+    .not-ready-platform-en:hover:after, .not-ready-platform-ru:hover:after{
+      display: block;
+    }
+  }
+  .table-big-green{
+    border: 0;
+    border-top: none;
+    position: relative;
+    td.nested-wrapper {
+      padding: 0;
+      table.nested {
+        border: none;
+        cursor: default;
+        thead td { border: none }
+      }
+    }
+    // thead tr td { font-family: $font-med }
+    & > tbody > tr{
+      cursor: pointer;
+      height: rem-calc(64);
+      .account-header {
+        font: rem-calc(24) $font-reg;
+        margin-left: 2rem;
+        color: $gc-inverted-color;
+      }
+      &:not(.with-active) > td{
+        &:first-child {
+          border-left: none;
+          span {
+            display: block;
+            clear: both;
+            &:first-child{
+              font-family: $font-med;
+            }
+          }
+        }
+        &:last-child{
+          border-right: none;
+        }
+      }
+      &:hover {
+        background-color: #f3f3f3;
+      }
+      /* active tr with arrow */
+      &.active{
+        cursor: default;
+        td{
+          background-color: $gc-first-color;
+          position: relative;
+          color: $gc-inverted-color;
+          border-color: $gc-first-color-light;
+          border-bottom: none !important;
+          border-top: none !important;
+          font-family: $font-reg;
+          z-index: 10;
+          a {
+            color: $gc-inverted-color;
+            border-color: $gc-inverted-color;
+            &:hover, &:active, &:focus {
+              border-color: transparent;
+            }
+          }
+          &:first-child{
+            text-align: center;
+          }
+          &:first-child, &:last-child{
+            position: relative;
+            padding: 0;
+            div.overflow-td{
+              width: 95%;
+            }
+            &:after{
+              @include single-transition;
+              content: "";
+              display: inline-block;
+              vertical-align: middle;
+              position: absolute;
+              height: auto;
+              top: 0;
+              min-height: rem-calc(63);
+              bottom: 0;
+              left: 0;
+              width: 59px;
+              z-index: -1;
+              /*!rtl:ignore*/
+              background-position: right center;
+              background-repeat: no-repeat;
+            }
+          }
+          &:first-child:after {
+            background-image: url(../img/arum-capital/light-green-arrow-bottom.png);
+            left: -12px;
+            z-index: -1;
+            background-size: auto 100%;
+            background-position: left center;
+            @include rtl-flip;
+          }
+          &:last-child:after {
+            background-image: url(../img/arum-capital/light-green-arrow-top.png);
+            right: -18px;
+            left: inherit;
+            z-index: -1;
+            background-size: auto 100%;
+            @include rtl-flip;
+          }
+        }
+      }
+      &.disabled {
+        background-color: lighten($gc-second-color, 30%);
+      }
+    }
+    .description{
+      display: block;
+    }
+    &.invest{
+      & > tbody > tr:not(.with-active) > td:first-child{
+        text-align: left;
+      }
+    }
+  }
+  .notification{
+    background: none;
+    &:hover, &:focus, &:active, &.active {
+      background: none !important;
+    }
+    &.active td{background: none !important;}
+    td{
+      cursor: default;
+      @extend .text-center;
+      @extend .font-med;
+      &:before, &:after{display: none;}
+      a{
+        @extend .bordered;
+        vertical-align: baseline;
+      }
+    }
+  }
+  tr.with-disabled {
+    height: auto !important;
+    td {
+      border: 0;
+      padding: 0;
+    }
+  }
+  tr.with-active{
+    border: none;
+    height: 0 !important;
+    & > td{
+      border: none;
+      font-family: $font-reg;
+      padding: 0;
+      position: relative;
+      text-align: left;
+    }
+  }
+  .table-light-green{
+    left: -2.3%;
+    position: relative;
+    top: -1px;
+    border: 5px solid $gc-first-color;
+    width: 104.3%;
+    z-index: 10;
+    tr{cursor: default;}
+    .icon-ok, .icon-cancel, .icon-edit{
+      margin: 0 .5rem;
+    }
+  }
+}
+
+.warning-notification{
+  margin-top: .5rem;
+  *{vertical-align: top;}
+  .icon-warning{
+    background-color: none;
+    margin-top: .5rem;
+  }
+  p{
+    display: inline-block;
+    line-height: 1.3;
+    margin-left: .5rem;
+    width: 70%;
+    a{
+      //@include a-visited(red);
+      @extend .red-link;
+    }
+  }
+}
+
+/* adaptive green accordion - 1024 */
+@include respond-to(gc-large-down){
+  .accordion-block.gc-accordion.green{
+    width: 100%;
+    .table-big-green{
+      & > tbody > tr{
+        &:hover, &:focus, &:active {
+          // background: none;
+          & > td{border-color: $gc-first-color;}
+        }
+        &.active{
+          td{
+            border-color: #b5d9d0;
+            &:before,
+            &:after {
+              display: none !important;
+            }
+          }
+        }
+      }
+    }
+    .with-active{
+      & > td{
+        background: $gc-third-color;
+        &:before {
+          content: '';
+          border: 22px solid rgba(255,255,255,0);
+          border-bottom: 12px solid $gc-third-color;
+          left: 8%;
+          position: absolute;
+          top: -30px;
+        }
+      }
+    }
+    .table-light-green{
+      background: none;
+      border: 5px solid $gc-third-color;
+      border-top: none;
+      left: -5px !important;
+      width: 1004px !important;
+      tr td {
+        border: 1px solid $gc-third-color;
+      }
+      thead tr td {
+        background: lighten($gc-third-color, 35%);
+        color: $basic-color;
+      }
+      tbody tr {
+        background: $gc-inverted-color;
+        &:nth-of-type(even) {
+          background: $gc-inverted-color;
+        }
+      }
+    }
+  }
+  .warning-notification{
+    display: none;
+  }
+}
+
+/*------------------------------------------------accounts-money-----------------------------------------------------*/
+.accounts-total-sum {
+  .total-sum, .total-text, .total-eye {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .total-sum {
+    font-family: $font-light;
+    font-size: rem-calc(24);
+    display: inline-block;
+    // float: left;
+  }
+  .total-text {
+    line-height: 1;
+    text-align: left;
+    display: inline-block;
+    // float: left;
+    padding-right: rem-calc(10);
+    font-size: rem-calc(14);
+  }
+  .total-eye {
+    z-index: 900;
+  }
+}
+.bordered-wrapper {
+  width: 58%;
+  float: left;
+  padding: rem-calc(22) 0 rem-calc(15);
+  margin-top: rem-calc(-22);
+  display: inline-block;
+  border: 1px dashed $gc-first-color;
+  position: relative;
+  .accounts-stats {
+    padding-right: 1rem;
+    width: 33.33%;
+    float: left;
+    .total-text {
+      padding-bottom: rem-calc(8);
+    }
+  }
+  .account-stats-time {
+    position: absolute;
+    font-size: rem-calc(14);
+    color: $gc-first-color;
+    bottom: -0.5rem;
+    right: 1rem;
+    padding: 0 0.3rem;
+    background-color: $bg-color;
+  }
+}
+.accounts-stats {
+  // float: left;
+  // display: inline-block;
+  // width: 25%;
+  // margin-right: 5%;
+  margin: 0 auto;
+  &.amount {
+    // width: 100%;
+
+  }
+  &.report {
+    width: 16%;
+    float: right;
+    .accounts-total-sum {
+      color: $gc-first-color-dark;
+      .total-text {
+        border-bottom: 1px solid transparent;
+        margin-bottom: -1px;
+      }
+      &:hover, &:active, &:focus {
+        color: $gc-first-color;
+        .total-text {
+          border-bottom: 1px solid $gc-first-color;
+        }
+      }
+    }
+  }
+  .total-sum.negative {
+    color: $gc-second-color;
+  }
+
+}
+
+.trading-stats {
+  width: 63%;
+  margin: 0 auto;
+  // .days-nonstop {
+  //   width: 38%;
+  // }
+  // .client-status {
+  //   width: 27%;
+  // }
+}
+.referral-stats {
+  .bordered-wrapper {
+    width: 56%;
+  }
+  .alert-warning {
+    background-color: $gc-second-color;
+    color: $gc-inverted-color;
+    border-radius: 0.3rem;
+    padding: 0.625rem;
+    font-size: rem-calc(18);
+  }
+}
+/*----------------------------------------------my block deposit, withdrawal-----------------------------------------*/
+.my-sidebar{
+  @include single-transition;
+  height: 60px;
+  position: absolute;
+  opacity: 1;
+  width: 27.2%;
+  /*list with services*/
+  .services{
+    line-height: 1.2rem;
+    list-style: none !important;
+    margin-left: 0 !important;
+    & > li{
+      padding: .25rem 0;
+      & > a{
+        //@include a-visited($basic-color);
+        border-bottom: 1px dotted;
+        font-size: 1rem;
+      }
+    }
+    .with-list{
+      & > a.active{
+        font-family: $font-med;
+        &:after{background: url(../img/icons.png) -320px -280px;}
+      }
+      & > a{
+        border: none;
+        display: block;
+        position: relative;
+        span{
+          border-bottom: 1px dotted;
+          //@include a-visited($basic-color);
+          &:hover, &:focus, &:active{
+            border-color: rgba(255,255,255,0);
+          }
+        }
+        &:after{
+          background: url(../img/icons.png) -360px -280px;
+          content: "";
+          display: inline-block;
+          height: 6px;
+          position: absolute;
+          right: 0;
+          top: 35%;
+          width: 10px;
+        }
+      }
+      ul{
+        list-style: none;
+        margin-left: 0;
+        padding-bottom: .5rem;
+        padding-top: .5rem;
+        position: relative;
+        z-index: 200;
+        li{
+          a{
+            border-color: rgba(255,255,255,0) !important;
+            font-size: .875rem;
+            //@include a-visited($basic-color);
+            &:hover, &:focus, &:active{
+              border-color: $gc-first-color !important;
+              color: $gc-first-color-dark;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*arrows*/
+  &.left-side, &.right-side{
+    &:before,
+    &:after {
+      border: rem-calc(33) solid rgba(255,255,255,0);
+      content: '';
+      display: block;
+      position: absolute;
+      top: rem-calc(-3);
+      z-index: 3;
+    }
+    &:before{
+      border-left: rem-calc(10) solid $gc-second-color;
+    }
+    &:after{
+      border-left: rem-calc(10) solid $bg-color;
+    }
+  }
+  &.left-side{
+    left: -29.2%;
+    width: 26.7%;
+    &:before{
+      right: rem-calc(-42);
+    }
+    &:after{
+      right: rem-calc(-40);
+    }
+  }
+  &.right-side{
+    right: -29.2%;
+    &:before{
+      left: rem-calc(2);
+    }
+    &:after{
+      left: 0;
+    }
+    .services{
+      & > li{
+        padding-left: .5rem;
+      }
+    }
+  }
+
+  /*content*/
+  .my-sidebar-content{
+    background: $bg-color;
+    border: rem-calc(2) solid $gc-second-color;
+    min-height: 120px;
+    padding: .4rem .8rem .75rem;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+  &.disabled {
+    top: -1.9rem !important;
+    opacity: 0.5;
+    z-index: -1;
+    .my-sidebar-content {
+      border-color: lighten($basic-color,40%);
+    }
+    &:before, &:after {
+      display: none;
+    }
+  }
+  .services .with-list.inactive-text{
+    ul{
+      display: none !important;
+    }
+    a{
+      font-family: $font-reg;
+      &:after{
+        display: none;
+      }
+    }
+    &:hover, &:focus, &:active{
+      *{
+        color: $basic-color !important;
+      }
+    }
+  }
+}
+.accordion-block .gc-accordion-item:not(:last-of-type){
+  .my-sidebar-content{top: -50%;}
+}
+.accordion-block .gc-accordion-item:last-of-type{
+  .my-sidebar-content{bottom: -50%;}
+}
+.adaptive-nav-block{
+  display: none;
+}
+
+//disabled block
+.my .accordion-block .disabled-block{
+  @include clearfix;
+  background: $gc-second-color;
+  border: 0;
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  color: $gc-inverted-color;
+  padding-left: 1rem;
+  padding: 0.8rem;
+  a {
+    @extend .bordered;
+    color: $gc-inverted-color;
+    border-color: $gc-inverted-color;
+    display: inline-block;
+    float: right;
+  }
+  &:before {
+    content: '';
+    border: 18px solid rgba(255,255,255,0);
+    border-bottom: 17px solid $gc-second-color;
+    left: 7%;
+    position: absolute;
+    top: -29px;
+    display: block;
+  }
+}
+
+.ul-white-dropdown{
+  @include clear-ul;
+  background: $gc-inverted-color;
+  border: 3px solid $gc-third-color-hover;
+  border-top: none;
+  position: absolute;
+  right: -1px;
+  top: 61px;
+  width: 249px;
+  z-index: 20;
+  @include single-transition(all, 400ms, ease);
+  @include transform-origin(center, top);
+  &.ng-hide{
+    @include transform-scale(1, 0);
+  }
+  li {
+    padding: 0 1rem;
+    &:last-child{a{border-bottom: none;}}
+    &:active{
+      background: transparentize($gc-third-color, .8);
+      color: $gc-inverted-color;
+    }
+    a{
+      border-bottom: 1px solid transparentize($basic-color, .7);
+      color: $basic-color;
+      display: block;
+      font: 1.125rem $font-reg;
+      height: 100%;
+      padding: .85rem 0 .7rem 1rem;
+      &:hover, &:focus, &:active{
+        border-bottom-color: transparentize($basic-color, .7);
+      }
+    }
+  }
+}
+
+/*for 1024*/
+.ul-white-dropdown{
+  @include respond-to(gc-xlarge-up){
+    display: none !important;
+  }
+  @include respond-to-custom(1025px, 1280px){
+    display: none !important;
+  }
+}
+@include respond-to(gc-large-down){
+  .my .accordion-block .my-sidebar{
+    display: none;
+  }
+  .my .accordion-block .adaptive-nav-block{
+    @include clearfix;
+    border: 4px solid $gc-third-color;
+    border-bottom: none;
+    border-top: none;
+    display: block;
+    left: -4px;
+    position: relative;
+    width: 100.9%;
+    & > a{
+      background: $gc-third-color;
+      border-bottom: none;
+      display: block;
+      float: left;
+      font: 1.125rem $font-med;
+      color: $gc-inverted-color;
+      padding: 1.25rem 0;
+      text-align: center;
+      width: 25%;
+      &:active, &.active{
+        background: $gc-third-color-hover;
+      }
+      &:before{margin-top: -.3rem;}
+    }
+    .inactive-text{
+      &:focus, &:active{
+        background: $gc-third-color !important;
+      }
+    }
+  }
+  .my .accordion-block .ul-white-dropdown{
+    li {
+      a{
+        border-bottom-color: transparentize($basic-color, .7) !important;
+        &:hover, &:focus, &:active{
+          border-bottom-color: transparentize($basic-color, .7) !important;
+        }
+      }
+    }
+  }
+}
+
+/*------------------------------------------------my block row--------------------------------------------------*/
+.my-new .my-block-row{
+  border: 3px solid $bg-color;
+  display: table;
+  padding: 10px 25px 7px 25px;
+  margin: 0 0 10px -25px;
+  width: 107%;
+  h3{
+    border-bottom: 1px dotted $basic-color;
+    cursor: pointer;
+    clear: both;
+    display: inline-block;
+    float: left;
+    font: 1.5rem $font-med;
+    margin-bottom: 25px;
+    margin-right: 0;
+  }
+  h3 + span{
+    background: url(../img/icons.png) no-repeat;
+    display: inline-block;
+    height: 8px;
+    line-height: 30px;
+    margin: 11px 10px;
+    width: 14px;
+  }
+  .settings-ico{background-position: -240px -200px;}
+  &>button{
+    background: url(../img/icons.png) no-repeat;
+    float: right;
+    height: 18px;
+    margin: 6px 0 0 12px;
+    padding: 0;
+    width: 18px;
+    &:first-of-type{background-position: -240px -160px; cursor: pointer; margin: 6px 0 0 12px;}
+    &:last-of-type{background-position: -160px -160px; cursor: move; margin: 6px 0 0 0;}
+  }
+  &:hover, &:focus, &:active{
+    &>button:first-of-type{background-position: -280px -160px;}
+    &>button:last-of-type{background-position: -200px -160px;}
+    .settings-ico{background-position: -40px -160px;}
+    background: darken($bg-color, 8%);
+    cursor: move;
+    border-radius: 10px;
+  }
+  &:active{border: 3px solid $gc-inverted-color;}
+  .tabs{
+    clear: both;
+  }
+  table a{
+    border-bottom: 1px dotted $basic-color;
+      //@include a-visited($basic-color);
+      &:hover, &:active, &:focus {border-bottom: none;}
+    }
+    &>a{
+      border-bottom: 1px solid transparentize($basic-color, .5);
+      font: 0.75rem $font-light;
+      line-height: 1;
+      margin: 7px 0 0 0;
+      &:hover, &:active, &:focus {border-bottom: 1px solid darken($bg-color, 8%);}
+    }
+  }
+
+  /*-----------------------------------------------------banners-----------------------------------------------------*/
+  .my-new .my-banners{
+    clear: both;
+    color: $gc-inverted-color;
+    height: 140px;
+    margin: 0 0 29px 0;
+    padding: 18px 20px 10px 28px;
+    width: 100%;
+    &.arum-menu{
+      padding: rem-calc(50) 6% 0 rem-calc(55);
+      & > .columns {
+        line-height: rem-calc(46);
+      }
+      .arum-menu-link {
+        display: inline-block;
+        line-height: 1.4;
+        vertical-align: middle;
+        padding-left: rem-calc(40);
+        padding-right: rem-calc(10);
+        & > span {
+          &:hover, &:focus, &:active {
+            border-bottom: rem-calc(1) solid transparentize($gc-inverted-color, .5);
+          }
+        }
+        &:before {
+          content: "";
+          width: rem-calc(36);
+          height: rem-calc(36);
+          position: absolute;
+          margin-right: 1rem;
+          top: rem-calc(5);
+          left: 0;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+        &.document:before {
+          background-image: url(../img/arum-capital/document.png);
+        }
+        &.calculator:before {
+          background-image: url(../img/arum-capital/calculator.png);
+        }
+        &.calendar:before {
+          background-image: url(../img/arum-capital/calendar.png);
+        }
+        color: $gc-inverted-color;
+        font-size: rem-calc(14);
+        text-transform: uppercase;
+        letter-spacing: rem-calc(0.5);
+      }
+      background: url(../img/arum-capital/banner.jpg) no-repeat;
+      @include background-cover;
+    }
+    &.trading-signals-banner {
+      background: url(../img/banners/trading-signals-banner.png) no-repeat;
+      @include background-cover;
+      background-position: center center;
+    }
+    &.sprint-banner {
+      background: url(../img/banners/wsprint-lk.png) no-repeat;
+      @include background-cover;
+      background-position: center right;
+    }
+    &.january-banner {
+      @include background-cover;
+      background: url(../img/banners/june-pay-lk-banner.jpg) no-repeat;
+      background-position: center right;
+      color: $basic-color;
+      padding-right: 340px;
+      .sub-header {
+        padding-top: rem-calc(3);
+        font-size: rem-calc(16);
+        font-family: $font-med;
+        margin-bottom: 0;
+      }
+      h4 {
+        font-size: rem-calc(22);
+        line-height: 1.2;
+      }
+      &.zh-cn {
+        background: url(../img/banners/june-pay-lk-zh-cn.jpg) no-repeat;
+        color: $gc-inverted-color;
+      }
+      &.id {
+        background: url(../img/banners/june-pay-lk-id.jpg) no-repeat;
+        color: $gc-inverted-color;
+      }
+      &.ru {
+        background: url(../img/banners/june-pay-lk-ru.jpg) no-repeat;
+      }
+      &.ar {
+        background: url(../img/banners/june-pay-lk-ar.jpg) no-repeat;
+        /*!rtl:ignore*/
+        padding-right: 200px;
+        padding-left: 150px;
+      }
+    }
+    &.accounts{background-position: 0 0;}
+    &.invest{background-position: 0 -153px;}
+    &.balance{background-position: 0 -306px;}
+    &.education{background-position: 0 -459px;}
+    &.actions{background-position: 0 -612px;}
+    &.download{background-position: 0 -765px;}
+    &.partner{background-position: 0 -918px;}
+    &.vip{background-position: 0 -1071px;}
+    h4{
+      font: 1.625rem / 1.2 $font-med;
+      margin: 0 0 15px 0;
+      margin: 0 auto;
+    }
+    p{
+      font: 0.875rem/1.125rem $font-light;
+      margin-bottom: 15px;
+    }
+  }
+
+  /*-------------------------------------------------fixes for old html----------------------------------------------*/
+  .my-new.my{
+    table [class*="column"] + [class*="column"]:last-child {float: none !important;}
+    .auto-layout{table-layout: auto;}
+  }
+  .my-new.my .container{
+    background: lighten($gc-third-color, 24%);
+    clear: both;
+    padding: 40px;
+    margin: 0 0 20px 0;
+    legend {
+      font: 1.875rem "pfDinTextLight", "Helvetica Neue", "Arial";
+      margin: 30px 0;
+    }
+    a {
+     border-bottom: 1px solid transparentize($basic-color, .5);
+     &:hover, &:focus {
+      border-bottom-color: transparent;
+    }
+  }
+  u {text-decoration: none !important;}
+  h4{
+    clear: both;
+    font: 1.75rem "pfDinTextLight", "Helvetica Neue", "Arial";
+    margin: 30px 0;
+    a{
+      border-bottom: 1px solid transparentize($basic-color, .5);
+      font: 1rem "pfDinTextLight", "Helvetica Neue", "Arial";
+      //@include a-visited($basic-color);
+      &:hover, &:active, &:focus {border-color: transparent;}
+    }
+  }
+}
+.my-new.my .form-item{
+  ul{
+    list-style: none;
+    margin-left: 0;
+  }
+}
+/*fast fix for big tables*/
+.my-new.my .container{
+  display: table;
+  min-width: 100%;
+  table{
+    table-layout: auto;
+    td{font-size: 0.875rem !important;}
+  }
+}
+
+/*-------------------------------------------fixes for iframe - old pages-------------------------------------------*/
+.my.my-old .clearfix > .main > .row{
+  padding-left: 0;
+}
+body.my.my-old{
+  min-width: 0;
+}
+/*-------------------------------------------friend recommend button-------------------------------------------*/
+.friend-invitation-button {
+  position: fixed;
+  display: none;
+  left: 0;
+  z-index: 300;
+  top: 30rem;
+  @include single-transition;
+  @include transform-rotate(-90deg);
+  -ms-transform-origin: top left;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  .button.medium {
+    border-radius: 0;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.3rem;
+    @include icon-before(-284px, -439px, 24px, 35px);
+    &:before {
+      margin-top: -5px;
+      margin-right: 0.8rem;
+    }
+  }
+  &.active {
+    left: -3rem;
+    @include single-transition;
+  }
+}
+
+.my .footer {
+  font-size: rem-calc(14);
+  color: #8b8b8b;
+}
+
+.po-white-block {
+  padding: rem-calc(40);
+  background-color: $gc-inverted-color;
+  box-shadow: 2px 0px 15px 0px rgba(0, 1, 1, 0.05);
+}
+
+/*---------------------arum news-----------*/
+
+.news-link, .arrowed-link a {
+  font-size: rem-calc(14);
+  text-transform: uppercase;
+  color: $gc-third-color;
+  &:after {
+    content: "";
+    display: inline-block;
+    // background-color: $basic-color;
+    width: rem-calc(13);
+    height: rem-calc(13);
+    position: relative;
+    top: rem-calc(1);
+    margin-left: rem-calc(10);
+    background-image: url(../img/arum-capital/link-arrow.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+  }
+  &:hover, &:active, &:focus {
+    span {
+      border-bottom: rem-calc(1) solid transparentize($gc-third-color, .7);
+    }
+  }
+}
+
+.arum-news {
+  margin-top: 85px;
+  .news-header {
+    font-family: $font-light;
+    font-size: rem-calc(30);
+  }
+  .news-link {
+    font-size: rem-calc(14);
+    text-transform: uppercase;
+    color: $gc-third-color;
+    &:after {
+      content: "";
+      display: inline-block;
+      // background-color: $basic-color;
+      width: rem-calc(13);
+      height: rem-calc(13);
+      position: relative;
+      top: rem-calc(1);
+      margin-left: rem-calc(10);
+      background-image: url(../img/arum-capital/link-arrow.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center center;
+    }
+    &:hover, &:active, &:focus {
+      span {
+        border-bottom: rem-calc(1) solid transparentize($gc-third-color, .7);
+      }
+    }
+  }
+  .news {
+    font-size: rem-calc(15);
+    color: $gc-third-color;
+    float: left;
+  }
+  .time {
+    font-size: rem-calc(12);
+    color: #828282;
+    display: block;
+    float: left;
+    padding-top: rem-calc(5);
+    text-transform: uppercase;
+  }
+}
+
+/*---------------------arum downloads page-----------*/
+.downloads-item, .create-account-item {
+  padding: rem-calc(25) rem-calc(25) 0;
+  min-height: rem-calc(430);
+  .header-block {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: rem-calc(26);
+  }
+  .footer-block {
+    border-top: 1px solid #ddd;
+    padding-top: rem-calc(21);
+    margin-top: rem-calc(5);
+  }
+  .logo {
+    height: rem-calc(48);
+    width: 100%;
+    margin-bottom: rem-calc(20);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    &.mt4 {
+      background-image: url(../img/arum-capital/arum-mt4.png);
+    }
+    &.pro {
+      background-image: url(../img/arum-capital/arum-pro.png);
+    }
+    &.invest {
+      background-image: url(../img/arum-capital/arum-invest.png);
+    }
+    &.web {
+      background-image: url(../img/arum-capital/arum-web.png);
+    }
+  }
+  .header {
+    text-align: center;
+    font-size: rem-calc(22);
+    padding-bottom: rem-calc(20);
+  }
+  .download-link {
+    font-size: rem-calc(15);
+    color: $gc-third-color;
+    display: block;
+    line-height: rem-calc(20);
+    height: rem-calc(45);
+    &:hover span {
+      border-bottom: 1px solid transparentize($gc-second-color, .6);
+    }
+    &.icon:before {
+      content: "";
+      display: block;
+      width: rem-calc(25);
+      height: rem-calc(25);
+      float: left;
+      margin-top: rem-calc(-4);
+      background-size: auto rem-calc(22);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: rem-calc(15);
+    }
+    &.windows:before {
+      background-image: url(../img/arum-capital/windows-icon.png);
+    }
+    &.apple:before {
+      background-image: url(../img/arum-capital/apple-icon.png);
+    }
+    &.android:before {
+      background-image: url(../img/arum-capital/android-icon.png);
+    }
+    &.ipad:before {
+      background-image: url(../img/arum-capital/ipad-icon.png);
+    }
+  }
+  // not ready platforms popap btn hover
+  .not-ready-platform-en, .not-ready-platform-ru{
+    position: relative;
+  }
+  .not-ready-platform-en:after, .not-ready-platform-ru:after{
+    display: none;
+    border: 1px solid  #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    z-index: 999999;
+    position: absolute;
+    bottom: -89px;
+    left: 0;
+    padding: 5px 10px;
+    font-size: 15px;
+    color: #000;
+    line-height: 1;
+    width: 200px;
+    text-align: left;
+    text-transform: none;
+  }
+  .not-ready-platform-en:after{
+    content: "The MetaTrader4 and ClearPro/ClearWeb platforms are not available now and will be available after this website is published.";
+  }
+  .not-ready-platform-ru:after{
+    content: "Платформы MetaTrader4 и ClearPro/ClearWeb в данный момент не доступны. Доступ появится после публикации сайта.";
+  }
+  .not-ready-platform-en:hover:after, .not-ready-platform-ru:hover:after{
+    display: block;
+  }
+}
+
+.create-account-item {
+	.logo.half {
+		width: 40%;
+		margin-left: 5%;
+		margin-right: 5%;
+		float: left;
+		background-position: right;
+	}
+	padding-bottom: rem-calc(20);
+	.content {
+		margin: 0 auto;
+		width: rem-calc(270);
+	}
+	.footer-block {
+		margin-top: rem-calc(20);
+     // not ready platforms popap btn hover
+     .not-ready-platform-en, .not-ready-platform-ru{
+      position: relative;
+    }
+    .not-ready-platform-en:after, .not-ready-platform-ru:after{
+      display: none;
+      border: 1px solid  #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+      z-index: 999999;
+      position: absolute;
+      bottom: -115px;
+      left: 0;
+      padding: 5px 10px;
+      font-size: 15px;
+      color: #000;
+      line-height: 1;
+      width: 200px;
+      text-align: left;
+      text-transform: none;
+    }
+    .not-ready-platform-en:after{
+      content: "The MetaTrader4 and ClearPro/ClearWeb platforms are not available now and will be available after this website is published.";
+    }
+    .not-ready-platform-ru:after{
+      content: "Платформы MetaTrader4 и ClearPro/ClearWeb в данный момент не доступны. Доступ появится после публикации сайта.";
+    }
+    .not-ready-platform-en:hover:after, .not-ready-platform-ru:hover:after{
+      display: block;
+    }
+  }
+  .button {
+    margin: 0 auto rem-calc(20);
+    display: block;
+    width: rem-calc(270);
+    .desc {
+     display: block;
+     text-transform: none;
+     margin-top: rem-calc(5);
+   }
+ }
+}
+
+/*---------------------arum message-popup -----------*/
+.message-tip-parent {
+  position: relative;
+}
+.message-tip {
+  position: absolute;
+  display: block;
+  background-color: $gc-inverted-color;
+  top: rem-calc(45);
+  left: 0;
+  color: $basic-color;
+  padding: rem-calc(25) rem-calc(25) rem-calc(20) rem-calc(20);
+  font-size: rem-calc(15);
+  min-width: rem-calc(400);
+  text-align: left;
+  box-shadow: 0px 0px 15px 2px rgba(0, 1, 1, 0.1);
+  .icon.cross {
+    position: absolute;
+    top: rem-calc(5);
+    right: rem-calc(10);
+    color: $gc-first-color;
+  }
+  .message-body {
+    display: block;
+    float: left;
+  }
+  &:before {
+    border: inset rem-calc(10);
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    border-color: transparent transparent $gc-inverted-color transparent;
+    border-bottom-style: solid;
+    position: absolute;
+    top: rem-calc(-20);
+    left: rem-calc(30);
+    z-index: 89;
+  }
+  .read-all {
+    margin-top: rem-calc(20);
+    color: $gc-first-color;
+    display: block;
+    float: left;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+}
+
+.reg-error {
+  padding-left: 30px;
+}
+
+.collapsed-row {
+  .columns {
+    &:first-of-type {
+      padding-left: 0 !important;
+    }
+    &:last-of-type {
+      padding-right: 0 !important;
+    }
+  }
+}
+
+#SnapABug_Button {
+  display: none;
+}

@@ -1,0 +1,12 @@
+{% load i18n %}
+
+<table>
+<tr><td>{% trans "System" %}</td><td>{% trans "Deposit" %}</td><td>{% trans "Ratio" %}</td></tr>
+    {% for system, amount, percent in stats %}
+    <tr>
+        <td>{{ system }}</td>
+        <td>{{ amount }} USD</td>
+        <td>{{ percent }}%</td>
+    </tr>
+    {% endfor %}
+</table>

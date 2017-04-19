@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="input-group">
+            <input class="form-control" ng-model="params.search" placeholder="Введите любую информацию для поиска: Имя, Фамилию, Отчество, Номер счёта, Телефон, ID" ng-enter="params.page = 1; params.method = 'clients'; reload()">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="params.page = 1; params.method = 'ib'; reload()">Клиенты IB</button>
+                <button class="btn btn-default" type="button" ng-click="params.page = 1; params.method = 'clients';  reload()">Найти</button>
+            </span>
+        </div><!-- /input-group -->
+        <table class="table table-condensed" ng-class="{'text-muted': is_loading}" style="font-size: 12.7px">
+            <thead>
+                <tr>
+                    <th>ФИО</th>
+                    <th>Менеджер</th>
+                    <th>Регистрация</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-if="is_loading && !objects">
+                    <td colspan="4">Загружаю...</td>
+                </tr>
+                <tr ng-repeat-start="object in objects" ng-click="select(object)">
+                    <td>{{ object.name }}</td>
+                    <td>{{ object.manager }} <a href="{{ object.reassign_url }}" target="_blank">сменить</a> </td>
+                    <td>{{ object.joined_at }}</td>
+                    <td>
+                        <a class="btn btn-default btn-xs" ng-if="is_superuser" href="{{ object.admin_url }}" target="_blank">Admin</a>
+                        <a class="btn btn-default btn-xs" ng-if="is_superuser" href="{{ object.profile_admin_url }}" target="_blank">Profile</a>
+                        <a class="btn btn-default btn-xs" href="{{ object.amo_url }}" target="_blank">AmoCRM</a>
+                    </td>
+                </tr>
+                <tr ng-repeat-end ng-if="object.id == selected_id">
+                    <td colspan="4" style="border-top: none">
+                        <strong ng-if="is_loading_more">Загружаю...</strong>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Номер счёта</th>
+                                    <th>Баланс</th>
+                                    <th>Дата создания</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="acc in object.more.accounts">
+                                    <td>{{acc.mt4_id}} ({{acc.group}})</td>
+                                    <td ng-if="acc.is_deleted">Удалён</td>
+                                    <td ng-if="!acc.is_deleted && acc.is_archivded">Архивирован</td>
+                                    <td ng-if="!(acc.is_deleted || acc.is_archived)">{{acc.balance}}</td>
+                                    <td>{{acc.created_at}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="pagination pull-left">
+            <li ng-class="{disabled: params.page == 1}"><a href="javascript:void(0)" ng-click="goto(1)">&larr;</a></li>
+            <li ng-class="{disabled: params.page == 1}"><a href="javascript:void(0)" ng-click="gotoPrev()">&laquo;</a></li>
+            <li ng-repeat="i in pagesRange()" ng-class="{active: params.page == i}"><a href="javascript:void(0)" ng-click="goto(i)">{{i}}</a></li>
+            <li ng-class="{disabled: params.page == num_pages}"><a href="javascript:void(0)" ng-click="gotoNext()">&raquo;</a></li>
+            <li ng-class="{disabled: params.page == num_pages}"><a href="javascript:void(0)" ng-click="goto(num_pages)">&rarr;</a></li>
+        </ul>
+    </div>
+</div>

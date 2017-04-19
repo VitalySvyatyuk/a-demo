@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tornado WS handler stats</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Connected quotes clients:</td><td>{{ connected_quotes }}</td>
+    </tr>
+    <tr>
+        <td>Connected trades clients:</td><td>{{ connected_trades }}</td>
+    </tr>
+    <tr>
+        <td>Closed connections:</td><td>{{ closed_connections }}</td>
+    </tr>
+    <tr>
+        <td>Opened connections:</td><td>{{ opened_connections }}</td>
+    </tr>
+    <tr>
+        <td>Subscribed real quotes:</td><td>{% for quote in quotes_real %}{{ quote }} {% end %}</td>
+    </tr>
+    <tr>
+        <td>Subscribed demo quotes:</td><td>{% for quote in quotes_demo %}{{ quote }} {% end %}</td>
+    </tr>
+    <tr>
+        <td>Time on server:</td><td>{{ now }}</td>
+    </tr>
+    <tr>
+        <td>Last quote time:</td><td>{{ last_quote_time }}</td>
+    </tr>
+    <tr>
+        <td>Last quote data:</td><td>{{ last_quote_raw }}</td>
+    </tr>
+    <tr>
+        <td>Last trade data:</td><td>{{ last_trade_raw }}</td>
+    </tr>
+    <tr>
+        <td>Quotes processed:</td><td>{{ quotes_processed }}</td>
+    </tr>
+    <tr>
+        <td>Buffer size:</td><td>{% for name, size in buffers.items() %}{{ name }}: {{ size }} KB<br/>{% end %}</td>
+    </tr>
+    <tr>
+        <td>Last quote processing time (ms):</td><td>{{ last_quote_processing_time }}</td>
+    </tr>
+    <tr>
+        <td>Last quote in between time (ms):</td><td>{{ last_quote_in_between_time }}</td>
+    </tr>
+</table>
+</body>
+</html>

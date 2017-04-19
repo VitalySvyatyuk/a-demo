@@ -1,0 +1,20 @@
+{% load i18n %}
+<div class="accounts-total-sum">
+    <span class="total-text">
+            <span ng-if="::pageCategory === 'trading'">
+                {% trans "Total<br> on real accounts" %}
+            </span>
+            <span ng-if="::pageCategory === 'partnership'">
+                    {% blocktrans %}
+                        Total<br> on <a ng-href="[[::BASE_URL]]partnership">referral</a> accounts
+                    {% endblocktrans %}
+            </span>
+    </span>
+    <span class="total-sum">
+        $<span ng-if="showMoney && mt4Data !== null" ng-bind="totalRealUSD|number:2"></span>
+        <span ng-if="!showMoney || mt4Data == null" class="hidden-amount">*****</span>
+    </span>
+    <span class="total-eye">
+        <div ng-click="toggleShowMoney()" ng-class="{'close-eye': !showMoney}" class="icon icon-eye tip-right" data-tooltip data-options="show_on:large" title="{% trans "Hide accounts balance" %}"></div>
+    </span>
+</div>

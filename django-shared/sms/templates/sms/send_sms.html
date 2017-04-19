@@ -1,0 +1,15 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+  <h1 class="green">{% trans "Send sms" %}</h1>
+  <div class="container">
+    <form method="POST" action=".">
+      {% include "includes/form.html" %}
+
+      {% csrf_token %}
+      <input type="submit" name="submit" value="Send" />
+    </form>
+  </div>
+{% endblock %}

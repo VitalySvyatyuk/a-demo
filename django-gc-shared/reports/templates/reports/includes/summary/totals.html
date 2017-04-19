@@ -1,0 +1,25 @@
+{% if caption %}
+<tr>
+    <th colspan="{% if report.show_agent_code %}13{% else %}12{% endif %}">{{ caption }}</th>
+</tr>
+{% endif %}
+<tr>
+    <th colspan="{% if report.show_agent_code %}8{% else %}7{% endif %}">Итого</th>
+    <th>Ввод</th>
+    <th>Вывод</th>
+    <th>In/out</th>
+    <th>Profit</th>
+    <th>Volume</th>
+    <th>Комиссия</th>
+    <th>Options</th>
+</tr>
+<tr>
+    <td colspan="{% if report.show_agent_code %}8{% else %}7{% endif %}">&nbsp;</td>
+    <td>{{ totals.deposit|floatformat:2 }} $</td>
+    <td>{{ totals.withdraw|floatformat:2 }} $</td>
+    <td>{{ totals.in_out|floatformat:2 }} $</td>
+    <td>{{ totals.profit|floatformat:2 }} $</td>
+    <td>{{ totals.volume|floatformat:2 }}</td>
+    <td>{{ totals.commission|floatformat:2 }}</td>
+    <td>{{ totals.options|floatformat:2 }}</td>
+</tr>

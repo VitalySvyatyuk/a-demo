@@ -1,0 +1,40 @@
+{% load i18n %}
+<div class="container">
+  <div class="row">
+    <div class="columns">
+      <p class="h1">{% trans "Trading platforms" %}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="columns small-8 top-55">
+      <ul class="tabs zic" data-tabs id="trading-platforms-tabs" data-match-height="true">
+        <li class="small-6 tabs-title is-active"><a href="#metatrader">{% trans "MetaTrader" %}</a></li>
+        <li class="small-6 tabs-title"><a href="#webtrader">{% trans "WebTrader" %}</a></li>
+      </ul>
+      <div class="tabs-content zic" data-tabs-content="trading-platforms-tabs">
+        <div class="tabs-panel is-active" id="metatrader">
+          <p class="top-40">{% trans "Built in 2005, MetaTrader 4 today is the most popular trading terminal all over the world." %}</p>
+          <p class="top-50 h2">{% trans "MT4 advantages:" %}</p>
+          <div class="row">
+            <div class="columns small-6">
+              <ul class="top-15 dots-list">
+                <li>{% trans "User experience: MT4 interface is extremely clear and user friendly." %}</li>
+                <li>{% trans "Flexibility: MT4 platform works with a wide selection of assets from currencies to CFDs and is compatible with thousands of external apps for charting and analysis." %}</li>
+              </ul>
+            </div>
+            <div class="columns small-6">
+              <ul class="top-15 dots-list">
+                <li>{% trans "Convenience: MetaTrader 4 supports automated trading (trading robots)." %}</li>
+                <li>{% trans "Security: all user data is encrypted with a secure 129-bit key and the trader’s IP is also kept secret." %}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="top-30">
+            <a href="https://download.mql5.com/cdn/web/7977/mt4/justbroker4setup.exe" class="submit-button">{% trans "Download" %}</a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

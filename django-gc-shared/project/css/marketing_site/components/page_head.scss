@@ -1,0 +1,68 @@
+.page_head{
+	padding: 100px 0;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	
+	@media (#{$max_ipad}){
+		padding: 70px 0;
+	}
+	@media (#{$max_phones}){
+		padding: 50px 0;
+	}
+}
+.page_head__title{
+	font-size: 52px;
+	font-weight: 400;
+
+	margin: 12px 0 0;
+
+	&--white{
+		color: white;
+	}
+
+	@media (#{$max_ipad}){
+		font-size: 36px;
+	}
+}
+.page_head__title__img{
+	display: inline-block;
+
+	margin-top: 50px;
+	margin-right: -60px;
+	margin-bottom: 10px;
+
+	@media (#{$max_tablets--landscape}){
+		width: 99px;
+
+		margin-top: 30px;
+		margin-right: -44px;
+		margin-bottom: 30px;
+	}
+	@media (#{$max_tablets}){
+		margin-bottom: 14px;
+	}
+}
+.page_head__title__info{
+	display: inline-block;
+	vertical-align: baseline;
+
+	margin-left: 30px;
+
+	max-width: 390px;
+
+	font-size: 18px;
+	font-weight: 300;
+
+	&--white{
+		color: white;
+	}
+
+	@media (#{$max_tablets--landscape}){
+		display: block;
+		margin-left: 0;
+		margin-top: 44px;
+		font-size: 15px;
+	}
+}

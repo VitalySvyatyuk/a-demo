@@ -1,0 +1,89 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+<h2 class="modal-title offset-bottom-15">{% trans "Authentication using SMS" %}</h2>
+
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+
+{# sms #}
+<form class="row modal-white-bg"
+ng-if="OTPInfo.type === 'sms' && OTPStep === 'init'"
+ng-submit="OTPInitSMS()">
+  <p class="offset-bottom-10">{% trans "Please enter your mobile phone number" %}</p>
+  <div class="clearfix">
+
+    <div class="small-8 large-8 column">
+      <div class="phone-wrapper">
+        <div class="select-wrapper phone-select">
+          <select
+            dir="auto"
+            ng-model="OTPInfo.phone_number.country"
+            ng-disabled="isLoading">
+            <option
+              ng-repeat="o in formData.phone_number.country_choices"
+              ng-selected="OTPInfo.phone_number.country === o.id"
+              value="[[::o.id]]"
+              ng-bind-html="::formatPhoneCodeLabel(o)">
+            </option>
+          </select>
+        </div>
+        <input
+          dir="auto"
+          class="phone-input"
+          input-mask="formData.phone_number.phone_masks[OTPInfo.phone_number.country]"
+          ng-model="OTPInfo.phone_number.tail"
+          ng-disabled="isLoading"
+          type="text">
+      </div>
+      <p class="form-error" ng-repeat="err in errors.phone_number" ng-bind="err"></p>
+    </div>
+
+    <div class="small-4 large-4 left">
+      <button class="medium" type="submit" ng-disabled="isLoading">{% trans "Send an SMS" %}</button>
+    </div>
+  </div>
+</form>
+
+{# write code #}
+<form class="row modal-white-bg"
+ng-if="OTPInfo.type === 'sms' && OTPStep === 'confirm'"
+ng-submit="OTPBind()">
+  <p class="sms-success">{% trans "SMS was sent succesfully" %}</p>
+  <p class="offset-bottom-10">{% trans "You will receive a unique code which you should enter in the following field:" %}</p>
+  <div class="clearfix">
+    <div class="small-8 large-8 column">
+      <input type="text"
+      ng-disabled="isLoading"
+      ng-model="OTPInfo.otp_token">
+      <p class="form-error" ng-if="isTokenInvalid">{% trans "Invalid token, try again" %}</p>
+    </div>
+    <div class="small-4 large-4 left">
+      <button class="medium" type="submit" ng-disabled="isLoading">{% trans "Make binding" %}</button>
+    </div>
+  </div>
+{% comment %}  <p class="third-color-bg icon-phone-before offset-top-20">
+    {% trans "If you <b>can't receive the message</b>, you can order an" %} <a class="bordered" ng-click="OTPInitVoice()">{% trans "automated call" %}</a>
+  </p>{% endcomment %}
+</form>
+
+{# voice #}
+<form class="row modal-white-bg"
+ng-if="OTPInfo.type === 'voice' && OTPStep === 'confirm'"
+ng-submit="OTPBind()">
+  <p class="sms-success">{% trans "Call is successfully planned" %}</p>
+  <p class="offset-bottom-10">{% trans "You will hear a unique code (4 digits) which you should enter in the following field:" %}</p>
+  <div class="clearfix">
+    <div class="small-8 large-8 column">
+      <input type="text"
+      ng-disabled="isLoading"
+      ng-model="OTPInfo.otp_token">
+      <p class="form-error" ng-if="isTokenInvalid">{% trans "Invalid token, try again" %}</p>
+    </div>
+    <div class="small-4 large-4 left">
+      <button class="medium" type="submit" ng-disabled="isLoading">{% trans "Make binding" %}</button>
+    </div>
+  </div>
+</form>
+
+<p class="text-center offset-top-30">{% trans "You can also use" %} <a class="bordered" ng-click="toTOTP()">{% trans "mobile app" %}</a> {% trans "for authentication" %}</p>
+
+
+

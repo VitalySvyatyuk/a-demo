@@ -1,0 +1,287 @@
+{% load i18n %}
+
+<script type="text/ng-template" id="contactInfo.html">
+  <div ng-switch="contactInfo.isEditing" class="contact-info">
+    <div ng-switch-when="true">
+      <div class="input-group">
+        <select class="form-control input-sm" ng-model="contactInfo.info.type">
+          <option value="phone">{% trans "Phone" %}</option>
+          <option value="email">{% trans "E-mail" %}</option>
+          <option value="address">{% trans "Address" %}</option>
+        </select>
+        <span class="input-group-btn">
+          <a ng-if="contactInfo.info.type=='phone'" class="btn btn-sm btn-success" href="sip:[[::contactInfo.info.value]]" title="SIP">
+            <i class="fa fa-phone"></i>
+          </a>
+          <a ng-if="contactInfo.info.type=='phone'" class="btn btn-sm btn-info" href="skype:[[::contactInfo.info.value]]?call" title="Skype">
+            <i class="fa fa-skype"></i>
+          </a>
+          <a ng-if="contactInfo.info.type=='address'" class="btn btn-sm btn-info" href="https://www.google.ru/maps/search/[[::contactInfo.info.value]]/" target="_blank" title="{% trans "Show on map" %}">
+            <i class="fa fa-globe"></i>
+          </a>
+          <a ng-if="contactInfo.info.type=='email'" class="btn btn-sm btn-info" href="https://teamwox.grandgroup.net/email/new?to=[[::contactInfo.info.value]]&name=[[::contactInfo.object.data.name]]" target="_blank" title="Teamwox">
+            TW
+          </a>
+          <a ng-if="contactInfo.info.type=='email'" class="btn btn-sm btn-info" href="mailto:[[::contactInfo.info.value]]" target="_blank" title="Email">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </span>
+      </div>
+      <textarea class="form-control input-sm" rows="2" ng-model="contactInfo.info.value"></textarea>
+      <div class="btn-group btn-group-justified" role="group">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-success" ng-disabled="!contactInfo.info.value" ng-click="contactInfo.save()">
+            <i class="fa fa-check"></i>
+          </button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-warning" ng-click="contactInfo.cancel()">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-danger" ng-click="contactInfo.remove()">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="input-group" ng-switch-when="false">
+      <input class="form-control input-sm" type="text" value="[[::contactInfo.info.value]]" ng-click="contactInfo.edit()">
+      <span class="input-group-btn">
+        <a ng-if="contactInfo.info.type=='phone'" class="btn btn-sm btn-success" href="sip:[[::contactInfo.info.value]]" title="SIP">
+          <i class="fa fa-phone"></i>
+        </a>
+        <a ng-if="contactInfo.info.type=='phone'" class="btn btn-sm btn-info" href="skype:[[::contactInfo.info.value]]?call" title="Skype">
+          <i class="fa fa-skype"></i>
+        </a>
+        <a ng-if="contactInfo.info.type=='address'" class="btn btn-sm btn-info" href="https://www.google.ru/maps/search/[[::contactInfo.info.value]]/" target="_blank" title="{% trans "Show on map" %}">
+          <i class="fa fa-globe"></i>
+        </a>
+        <a ng-if="contactInfo.info.type=='email'" class="btn btn-sm btn-info" href="https://teamwox.grandgroup.net/email/new?to=[[::contactInfo.info.value]]&name=[[::contactInfo.object.data.name]]" target="_blank" title="Teamwox">
+          <i class="fa fa-envelope"></i>
+        </a>
+        <a ng-if="contactInfo.info.type=='email'" class="btn btn-sm btn-info" href="mailto:[[::contactInfo.info.value]]" target="_blank" title="Email">
+          <i class="fa fa-envelope"></i>
+        </a>
+      </span>
+    </div>
+  </div>
+</script>
+
+<div class="row well well-sm">
+  <div class="col-md-4" ng-switch="::!!object.data.user">
+    <div ng-switch-when="true" class="input-group">
+      <span class="input-group-addon input-sm">{% trans "Client" %}</span>
+      <input type="text" class="form-control" ng-model="::object.data.user.name" readonly>
+    </div>
+    <div ng-switch-when="false" class="input-group">
+      <span class="input-group-addon input-sm">{% trans "Lead" %}</span>
+      <input type="text" class="form-control" ng-model="object.data.name" ng-change="onFieldChange()" placeholder="{% trans "Name" %}">
+    </div>
+  </div>
+
+  <div class="col-md-5">
+    <span ng-repeat="tag in object.data.system_tags">
+      <span class="label label-default" style="background-color: [[::tag|toColor]]">[[::tag]]</span>
+    </span>
+    <span ng-repeat="tag in object.data.tags" ng-click="editTag(tag)">
+      <span class="label label-default" style="background-color: [[::tag|toColor]]">[[::tag]]</span>
+    </span>
+    <span ng-click="editTag()">
+      <span class="btn label label-success">
+        {% blocktrans %}ADD TAG{% endblocktrans %}
+        <i class="fa fa-plus"></i>
+      </span>
+    </span>
+  </div>
+
+  <div class="col-md-3">
+    <div class="btn-group pull-right" role="group">
+      <button type="button" class="btn btn-danger" ng-if="object.isChanged" ng-click="object.revertData()">
+        <i class="fa fa-undo"></i>
+      </button>
+      <button type="button" class="btn btn-success" ng-if="object.isChanged" ng-click="object.saveChanges()">
+        <i class="fa fa-save"></i>
+        {% blocktrans %}Save changes{% endblocktrans %}
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="well">
+      <div class="contact-info">
+        <div ng-class="{'has-error': object.errors.manager}">
+          <div class="input-group">
+            <span class="input-group-addon input-sm">{% trans "Manager" %}</span>
+            <select
+              class="form-control input-sm"
+              ng-model="object.data.manager"
+              ng-change="object.refreshStateStatus()"
+              ng-options="m.data.id as m.data.name group by m.data.office.name for m in Users.objects.items|orderBy:'data.name'">
+              <option value="">{% blocktrans %}---Manager not set---{% endblocktrans %}</option>
+            </select>
+          </div>
+          <div class="change-manager" ng-if="object.data.manager != object.state.manager  && (!Users.mapping[object.data.manager].data.is_managable || !Users.mapping[object.state.manager].data.is_managable)">
+            <textarea class="form-control input-sm" rows="2" ng-model="reassignComment" placeholder="{% trans "Comment/reason" %}"></textarea>
+            <button type="button" class="btn btn-sm btn-success btn-block" ng-click="reassign(reassignComment)">
+              {% blocktrans %}Create request{% endblocktrans %}
+            </button>
+          </div>
+          <p ng-repeat="err in object.errors.manager" ng-bind="::err" class="text-danger text-center"></p>
+        </div>
+        <ul class="list-unstyled">
+          <li ng-repeat="req in object.data.reassign_requests|orderBy:'created_at'" title="{% trans "Author's comment:" %} [[::req.comment]]">
+            <span class="label label-warning">
+              [[::Users.mapping[req.author].data.name]]: <i class="fa fa-user"></i> <i class="fa fa-arrow-right"></i> [[::Users.mapping[req.new_manager].data.name]]
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div ng-if="::object.data.user">
+        <p class="text-center">
+          <strong>{% blocktrans %}Account data{% endblocktrans %}</strong>
+        </p>
+
+        {% if user.is_superuser %}
+        <div class="btn-group btn-group-xs btn-group-justified" ng-if="::object.data.user">
+          <a target="_blank" href="[[::object.data.user.links.user_admin]]" class="btn btn-default" role="button">{% trans "User" %}</a>
+          <a target="_blank" href="[[::object.data.user.links.user_profile_admin]]" class="btn btn-default" role="button">{% trans "Profile" %}</a>
+        </div>
+        {% endif %}
+
+        <div class="input-group contact-info">
+          <span class="input-group-addon has-success input-sm">{% trans "Registration" %}</span>
+          <input class="form-control input-sm" type="text" ng-value="::object.data.user.registration_ts|date" readonly>
+        </div>
+
+        <div class="input-group contact-info">
+          <span class="input-group-addon has-success input-sm">{% trans "Activity" %}</span>
+          <input class="form-control input-sm" type="text" ng-value="::object.data.user.last_activity_ts|date" readonly>
+          <span class="input-group-btn">
+            <a class="btn btn-sm btn-info" ng-click="activitiesShow = !activitiesShow">{% trans "Details" %}</a>
+          </span>
+        </div>
+        <div class="contact-info small" ng-if="activitiesShow">
+          <p class="text-center">{% blocktrans %}Last 10 actions{% endblocktrans %}</p>
+          <ul>
+            <li ng-repeat="act in object.data.user.last_activities track by $index">[[::act]]</li>
+          </ul>
+        </div>
+
+        <div class="input-group contact-info" ng-if="::object.data.user.agent_code.value">
+          <span class="input-group-addon has-success input-sm">{% blocktrans %}Agent code{% endblocktrans %}</span>
+          <input class="form-control input-sm" type="text" ng-value="::object.data.user.agent_code.value" readonly>
+          <span class="input-group-addon has-success text-warning input-sm" ng-if="object.data.user.agent_code.from_partner">
+            <strong>
+              {% blocktrans %}Partner office{% endblocktrans %}
+            </strong>
+          </span>
+        </div>
+
+        <div class="input-group contact-info">
+          <div class="form-group" ng-class="object.data.user.phone.is_verified?'has-success':'has-warning'">
+            <input class="form-control input-sm" type="text" ng-value="object.data.user.phone.value" readonly>
+          </div>
+          <span class="input-group-addon input-sm text-success" ng-if="object.data.user.otp.device=='SMS'" title="{% trans "OTP using phone" %}">
+            <i class="fa fa-lock"></i> OTP
+          </span>
+
+          <span class="input-group-btn">
+            <a class="btn btn-sm btn-success" href="sip:[[::object.data.user.phone.value]]" title="SIP">
+              <i class="fa fa-phone"></i>
+            </a>
+            <a class="btn btn-sm btn-info" href="skype:[[::object.data.user.phone.value]]?call" title="Skype">
+              <i class="fa fa-skype"></i>
+            </a>
+          </span>
+        </div>
+
+        <p class="text-center text-danger" ng-if="::!object.data.user.otp.device">
+          <i class="fa fa-unlock"></i> {% blocktrans %}No OTP assigned{% endblocktrans %}
+        </p>
+
+        <p class="text-center text-success" ng-if="::object.data.user.otp.device=='TOTP'">
+          <i class="fa fa-lock"></i> {% blocktrans %}OTP application{% endblocktrans %}
+        </p>
+
+        <div class="input-group contact-info">
+          <input class="form-control input-sm" type="text" ng-value="::object.data.user.email" readonly>
+          <span class="input-group-btn">
+            <a class="btn btn-sm btn-info" href="https://teamwox.grandgroup.net/email/new?to=[[::object.data.user.email]]&name=[[::object.data.user.name]]" target="_blank" title="Teamwox">
+              TW
+            </a>
+            <a class="btn btn-sm btn-info" href="mailto:[[::object.data.user.email]]" target="_blank" title="Email">
+              <i class="fa fa-envelope"></i>
+            </a>
+          </span>
+        </div>
+
+        <div class="contact-info">
+          <div class="input-group">
+            <input class="form-control input-sm" type="text" ng-value="::object.data.user.location.address" readonly>
+            <span class="input-group-addon input-sm">
+              <i class="fa fa-clock-o"></i>
+              [['now'|moment:'HH:mm':object.data.user.location.timezone]]
+            </span>
+            <span class="input-group-btn">
+              <a class="btn btn-sm btn-info" href="https://www.google.ru/maps/search/[[::object.data.user.location.address]]/" target="_blank" title="{% trans "Show on map" %}">
+                <i class="fa fa-globe"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <p class="text-center"><strong>{% trans "Documents" %}</strong></p>
+
+          <p class="text-center text-success" ng-if="::object.data.user.has_valid_documents">
+            <i class="fa fa-check"></i> {% blocktrans %}Identity confirmed{% endblocktrans %}
+          </p>
+          <p class="text-center text-warning" ng-if="::!object.data.user.has_valid_documents">
+            <i class="fa fa-question"></i> {% blocktrans %}Identity not confirmed{% endblocktrans %}
+          </p>
+
+          <ul ng-if="object.data.user.documents.length">
+            <li ng-repeat="doc in object.data.user.documents">
+              <a href="[[::doc.url]]" target="_blank">[[::doc.name]]</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-info" ng-if="object.data.user.partnership.domains.length">
+          <p class="text-center"><strong>{% blocktrans %}Partner domains{% endblocktrans %}</strong></p>
+          <ul>
+            <li ng-repeat="domain in object.data.user.partnership.domains">
+              <a href="http://[[::domain]]" target="_blank">[[::domain]]</a>
+            </li>
+          </ul>
+        </div>
+
+        <br>
+        <p class="text-center">
+          <strong>{% blocktrans %}Additional details{% endblocktrans %}</strong>
+        </p>
+      </div>
+
+      <contact-info ng-repeat="info in object.data.info" object="object" info="info" on-change="onInfoChange()"></contact-info>
+      <div class="text-center">
+        <button type="button" class="btn btn-link" ng-click="addNewContactInfo()">{% trans "Add" %}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="btn-group btn-group-justified">
+      <a ui-sref-active="active" ui-sref="contact.feed({id: object.data.id})" class="btn btn-primary">{% trans "Feed" %}</a>
+      <a ui-sref-active="active" ui-sref="contact.mt4accounts({id: object.data.id})" class="btn btn-primary">{% trans "Accounts" %}</a>
+      <a ui-sref-active="active" ui-sref="contact.payments({id: object.data.id})" class="btn btn-primary">{% trans "In/Out" %}</a>
+      <a ui-sref-active="active" ui-sref="contact.calls({id: object.data.id})" class="btn btn-primary">{% trans "Calls" %}</a>
+      <a ui-sref-active="active" ui-sref="contact.logs({id: object.data.id})" class="btn btn-primary">{% trans "Logs" %}</a>
+    </div>
+    <ui-view></ui-view>
+  </div>
+</div>

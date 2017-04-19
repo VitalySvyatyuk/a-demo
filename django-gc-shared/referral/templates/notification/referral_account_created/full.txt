@@ -1,0 +1,11 @@
+{% load i18n %}
+{% blocktrans with user_fullname=user.get_full_name date=new_account.creation_ts|date:"d.m.Y" %}Dear {{ user_fullname }} !
+We are glad to tell you, that {{ date }} in partner group of
+your partner account {{ referral }} registered a new client account {{ new_account }}.
+You can get more details about this account in your profile on site.
+
+We are looking forward to working with you.
+
+With regards,
+partners department of Grand Capital LTD.
+{% endblocktrans %}

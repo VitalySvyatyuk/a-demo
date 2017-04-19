@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-06 19:13+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Permissions"
+msgstr ""
+
+msgid "Telephony"
+msgstr ""
+
+msgid "Shift time"
+msgstr ""
+
+msgid "Clients assignment"
+msgstr ""
+
+msgid "Is active"
+msgstr ""
+
+msgid "Client data"
+msgstr ""
+
+msgid "Decision"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Author"
+msgstr ""
+
+msgid "Client"
+msgstr ""
+
+msgid "Agent code"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Empty"
+msgstr ""
+
+msgid "Current manager"
+msgstr ""
+
+msgid "Requested manager"
+msgstr ""
+
+msgid "Previous manager"
+msgstr ""
+
+msgid "Accept all requests which specify new manager"
+msgstr ""
+
+msgid ""
+"According to the deposit request id{r.id}({r.payment_system} {r.amount_money!"
+"s}) on account {r.account} from {r.creation_ts:%Y/%m/%d %H:%M:%S} the funds "
+"haven't been deposited yet Motivation to deposit with Welcome Bonus 500 "
+"(account %d)"
+msgstr ""
+
+#, python-format
+msgid "Motivate to deposit Welcome Bonus 500 (account %d)"
+msgstr ""
+
+msgid "Has access to all clients"
+msgstr ""
+
+msgid "Office head"
+msgstr ""
+
+msgid "Can manage office's clients"
+msgstr ""
+
+msgid "Date and time of the last client assignment"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Can be assigned to clients automatically"
+msgstr ""
+
+msgid "NEXT button"
+msgstr ""
+
+msgid "Can get client through the NEXT button"
+msgstr ""
+
+msgid "Verify calls"
+msgstr ""
+
+msgid "Verify that the manager calls the clients they get"
+msgstr ""
+
+msgid ""
+"Allowed IP-addresses. Separated by spaces. Specify \"*\" to allow any IP. "
+"Subnets can be specified: 192.168.1.0/25"
+msgstr ""
+
+msgid "Day limit"
+msgstr ""
+
+msgid ""
+"How much clients per day can be viewed. If not specified, a default value is "
+"used. WARGNING: if you increase this limit make sure that the manager has at "
+"least IP filter enabled"
+msgstr ""
+
+msgid "IB account number"
+msgstr ""
+
+msgid "Office"
+msgstr ""
+
+msgid "Change agent code to the office"
+msgstr ""
+
+msgid ""
+"If a user registers with the manager's agent code, change it to the office's "
+"agent code"
+msgstr ""
+
+msgid "Works with the office"
+msgstr ""
+
+msgid "Works with the clients of the office"
+msgstr ""
+
+msgid "Works with languages"
+msgstr ""
+
+msgid "Comma-separated language codes, e.g. ru,en,zh-cn"
+msgstr ""
+
+msgid "Countries/Regions"
+msgstr ""
+
+msgid "Names of countries and regions, separated by spaces. In English."
+msgstr ""
+
+msgid "Can view all calls"
+msgstr ""
+
+msgid "Start of the shift"
+msgstr ""
+
+msgid "End of the shift"
+msgstr ""
+
+msgid "Set tasks for the whole day"
+msgstr ""
+
+msgid "Force all the tasks to be set for the whole day"
+msgstr ""
+
+msgid "On vacation"
+msgstr ""
+
+msgid "On vacation until"
+msgstr ""
+
+msgid "Substitute for the vacation"
+msgstr ""
+
+msgid "Manager"
+msgstr ""
+
+msgid "Managers"
+msgstr ""
+
+msgid "Request author"
+msgstr ""
+
+msgid "Assign to"
+msgstr ""
+
+msgid "Processed"
+msgstr ""
+
+msgid "Comment"
+msgstr ""
+
+msgid "Rejection reason"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "Approved"
+msgstr ""
+
+msgid "Declined"
+msgstr ""
+
+msgid "Creation date"
+msgstr ""
+
+msgid "Changed at"
+msgstr ""
+
+msgid "Manager reassign request"
+msgstr ""
+
+msgid "Manager reassign requests"
+msgstr ""
+
+msgid "First contact with the client"
+msgstr ""
+
+#, python-brace-format
+msgid "Process chat request received on {0}"
+msgstr ""

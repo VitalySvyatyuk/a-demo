@@ -1,0 +1,38 @@
+{% load staticfiles i18n %}
+<div class="modal fade in" tabindex="-1" role="dialog" style="display: block">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ui-sref="contacts()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">{% trans "Add a new contact" %}</h4>
+      </div>
+      <div class="modal-body">
+        <form id="contactForm" class="form-horizontal" ng-submit="save(continueThen)">
+          <div class="form-group">
+            <label for="nameInput" class="col-sm-2 form-control-label">{% trans "Name" %}</label>
+            <div class="col-sm-10">
+              <input ng-model="object.data.name" type="text" class="form-control input-sm" id="nameInput" ng-required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="emailInput" class="col-sm-2 form-control-label">{% trans "E-mail" %}</label>
+            <div class="col-sm-10">
+              <input ng-model="object.data.info[0].value" type="email" class="form-control input-sm" id="emailInput">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="nameInput" class="col-sm-2 form-control-label">{% trans "Phone" %}</label>
+            <div class="col-sm-10">
+              <input ng-model="object.data.info[1].value" type="phone" class="form-control input-sm" id="phoneInput">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-sm btn-default" ng-disabled="check()" form="contactForm" value="{% trans "Save" %}">
+        <input type="submit" class="btn btn-sm btn-primary" ng-disabled="check()" form="contactForm" ng-click="continueThen = true" value="{% trans "Save and continue editing" %}">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade in"></div>

@@ -1,0 +1,44 @@
+{% load i18n app_tags profiles_tags %}
+<style>
+    .status {
+        float: left;
+        margin-left: .5em;
+    }
+</style>
+
+
+<div class="clearfix profile-steps stocks-container edit-profile">
+    {% block steps %}
+    <div class="steps-items clearfix">
+        <div {% if category == 'info' %}class="active"{% endif %}>
+            <div class="step-item-container">
+
+                <span class="step-number">01</span>
+                <span class="step-header">{% trans "Complete registration" %}</span>
+                <span class="step-subheader">{% trans "in 5 minutes" %}</span>
+
+            </div>
+        </div>
+        <div {% if category == 'documents' %}class="active"{% endif %}>
+            <div class="step-item-container">
+
+                <span class="step-number">02</span>
+                <span class="step-header">{% trans "Account confirmation" %}</span>
+                <span class="step-subheader">{% trans "Up to 1 day" %}</span>
+
+            </div>
+        </div>
+        <div>
+            <div class="step-item-container">
+                <span class="step-number">03</span>
+                <span class="step-header">{% trans "Start work" %}</span>
+                <span class="step-subheader">{% trans "on live accounts" %}</span>
+                
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <div class="tabs-content">
+        {% block tabscontent %}{% endblock %}
+    </div>
+</div>

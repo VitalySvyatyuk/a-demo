@@ -1,0 +1,155 @@
+@charset "utf-8";
+.gcl_quotes
+{
+	clear:both;
+	width:100% !important;
+}
+#gcl_quotes_buttons_block
+{
+	clear:both;
+}
+.gcl_quotes_button
+{
+	text-align: center;
+	float:left;
+	height:18px;
+	font-family: "Verdana", "Tahoma", "Arial";
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 700;
+	color: #268686;
+	text-decoration: underline;
+}
+.gcl_quotes_button:hover
+{
+	color: #00d0d0;
+	text-decoration: none;
+	cursor: pointer;
+}
+.gcl_quotes_button:visited;
+{
+	color: #268686;
+	text-decoration: underline;
+}
+.gcl_quotes_button_selected{
+	color: #00d0d0 !important;
+	text-decoration: none !important;
+}
+
+#gcl_quotes_top
+{
+	background-attachment: scroll;
+	background-color: transparent;
+	background-image: url("../img/kotirovki.jpg");
+	background-position: 15px 5px;
+	background-repeat: no-repeat;
+	font-family: "Verdana", "Tahoma", "Arial";
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 700;
+	line-height: normal;
+	padding-bottom: 20px;
+	padding-left: 70px;
+	padding-right: 0px;
+	padding-top: 20px;
+	color:#268686;
+}
+#gcl_quotes_top a:hover { 
+color: #00d0d0;
+text-decoration: none;
+}
+#gcl_quotes_top a:visited { 
+color: #268686;
+text-decoration: underline;
+}
+#gcl_quotes_top a { 
+color: #268686;
+text-decoration: underline;
+}
+#gcl_quotes_top a :link{ 
+color: #268686;
+text-decoration: underline;
+}
+.gcl_quotes_gcl_quotess_image
+{
+	text-align:center;
+}
+
+.gcl_quotesl_gcl_quotess_th{
+	width: 100% !important;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	vertical-align: inherit;
+}
+.gcl_quotesl_gcl_quotess_th .ask,
+.gcl_quotesl_gcl_quotess_th .bid
+{
+	text-align:center;
+	margin-left:5px;
+	width:73px !important;
+	border-bottom-color: #268686;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	color: #268686;
+	font-family: "Arial", "Tahoma", "Verdana";
+	font-size: 12px !important;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+}
+.gcl_quotesl_gcl_quotess_th .empty
+{
+	color: #268686;
+	width: 64px !important;
+	height: 15px !important;
+	font-family: "Arial", "Tahoma", "Verdana";
+	font-size: 12px !important;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	border-bottom-style: dotted;
+	border-bottom-color: #268686;
+	border-bottom-width: 2px;
+}
+.gcl_quotesl_gcl_quotess_th div
+{
+	float:left;
+}
+#gcl_quotes_block_gcl_quotess{	
+	clear:both;
+	border: 0;
+	margin: 0;
+}
+#gcl_quotes_body div:hover div{
+	color: #00d0d0;
+	cursor: pointer;
+}
+#gcl_quotes_body div div{
+	float:left;
+	color: #268686;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	font-family: "Arial", "Tahoma", "Verdana";
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+#gcl_quotes_body div.gcl_quotes_selected div{
+	color: #00d0d0 !important;
+}
+
+
+#gcl_quotes_body > div > div { width: 55px !important; padding-left: 15px !important; padding-right: 0 !important}
+#gcl_quotes_body > div > div:first-child { width: 9px !important; padding-left: 2px !important; padding-right: 1px !important}

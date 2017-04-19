@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LeadCRM</title>
+
+        {% block css %}
+        <!-- Bootstrap -->
+        <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+        <style type="text/css">
+            /*body, html {
+                margin: 0; padding: 0; height: 100%; overflow: hidden;
+            }*/
+        </style>
+
+        {% endblock css %}
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body ng-app="CRMDashboard">
+    <nav class="navbar navbar-default" role="navigation" ng-controller="NavBar">
+        <div class="container-fluid">
+            <div class="alerts">
+                <div class="alert-notifications-unavailable alert alert-warning" style="display:none">
+                    <strong>Внимание!</strong>
+                    Для работы с CRM необходимо чтобы ваш браузер принимал уведомления.
+                    <a class="request-desktop-notifications" href="#">Принимать уведомления.</a>
+                </div>
+            </div>
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainnavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'crm_dashboard' %}">Панелька</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="mainnavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#/summary">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        Сводка
+                    </a></li>
+                    {% if request.user.crm_manager.is_office_supermanager or request.user.is_superuser %}
+                    <li class="active"><a href="#/summary_total">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        Подчинённые
+                    </a></li>
+                    {% endif %}
+                    <li class="active"><a href="#/frame/amo">
+                        <span class="glyphicon glyphicon-fire"></span>
+                        CRM
+                    </a></li>
+                    <li class="active"><a href="#/search">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Поиск
+                    </a></li>
+                    <li class="active"><a href="#/calls">
+                        <span class="glyphicon glyphicon-phone-alt"></span>
+                        Звонки
+                    </a></li>
+                    <li class="active"><a href="#/viewlogs">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                        Просмотры</a></li>
+                    <li class="active"><a href="#/frame/gc">
+                        <span class="glyphicon glyphicon-heart"></span>
+                        Сайт
+                    </a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active" ng-if="newClientLoading" ng-show="availableClients"><a>Поиск клиента...</a></li>
+                    <li class="active" ng-if="!newClientLoading" ng-show="availableClients"><a ng-click="getNewClient()">Получить клиента(Доступно <span ng-bind="availableClients"></span>)</a></li>
+                    <li><a>{{user.get_full_name}}</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <div ng-view></div>
+    </div>
+
+    {% block js %}
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'underscore/underscore-min.js' %}"></script>
+    <script src="{% static 'moment/min/moment-with-locales.min.js' %}"></script>
+    <script src="{% static 'angular/angular.min.js' %}"></script>
+    <script src="{% static 'angular-route/angular-route.min.js' %}"></script>
+    <script src="{% static 'highcharts/highcharts-all.js' %}"></script>
+    <script src="{% static 'highcharts-ng/dist/highcharts-ng.min.js' %}"></script>
+
+
+    <script src="{% static 'crm/apps/dashboard/js/app.js' %}"></script>
+    <script src="{% static 'crm/apps/dashboard/js/navbar.js' %}"></script>
+    <script src="{% static 'crm/apps/dashboard/js/frame.js' %}"></script>
+    <script src="{% static 'crm/apps/dashboard/js/search.js' %}"></script>
+    <script src="{% static 'crm/apps/dashboard/js/calls.js' %}"></script>
+    <script src="{% static 'crm/apps/dashboard/js/viewlogs.js' %}"></script>
+    <script src="{% static 'crm/apps/dashboard/js/summary.js' %}"></script>
+
+    <script type="text/javascript">
+        moment.lang('ru');
+        var csrftoken = '{{ csrf_token|escapejs }}';
+
+        var URL_FRAME_TPL = "{% static 'crm/apps/dashboard/templates/frame.html' %}";
+        var URL_SEARCH_TPL = "{% static 'crm/apps/dashboard/templates/search.html' %}";
+        var URL_CALLS_TPL = "{% static 'crm/apps/dashboard/templates/calls.html' %}";
+        var URL_VIEWLOGS_TPL = "{% static 'crm/apps/dashboard/templates/viewlogs.html' %}";
+        var URL_SUMMARY_TPL = "{% static 'crm/apps/dashboard/templates/summary.html' %}";
+
+        var URL_VIEWLOGS_AJAX = "{% url 'crm_viewlogs_ajax' %}";
+        var URL_SEARCH_AJAX = "{% url 'crm_search_ajax' %}";
+        var URL_USER_MORE_AJAX = "{% url 'crm_user_more_ajax' %}";
+        var URL_CALLS_AJAX = "{% url 'telephony_calls_ajax' %}";
+
+        var IS_SUPERUSER = {{ user.is_superuser|yesno:"true,false" }};
+
+        $(function() {
+            /* Desktop notifications */
+
+            /* Hack for chrome */
+            if(Notification.permission === undefined) {
+                if(window.webkitNotifications.checkPermission() !== 0)
+                    $('#alert-notifications-unavailable').show();
+            } else if(Notification.permission !== "granted")
+                    $('#alert-notifications-unavailable').show();
+            $('a.request-desktop-notifications').click(function(el, ev) {
+                Notification.requestPermission(function (status) {
+                    if (status === "granted") {
+                        var n = new Notification("Теперь вы можете принимать уведомления от CRM!");
+                        n.onshow = function () { setTimeout(n.close, 5000); }
+                    }
+                    location.reload();
+                });
+            });
+
+            var crm_notifications_last_text = "";
+            var do_crm_notifications = function () {
+                $.ajax({
+                    url: "{% url "crm_retrieve_next_notification" %}",
+                }).done(function(data, status) {
+                    if(data.type !== undefined && crm_notifications_last_text != data.text) {
+                        crm_notifications_last_text = data.text;
+                        var n = new Notification(data.type_display, {
+                            body: data.text,
+                            icon: "/static/img/ico-analitics.png"
+                        });
+                        if(data.type == 'new_client')
+                            n.onclick = function () {
+                                window.open(data.crm_link);
+                            }
+                    }
+                });
+            };
+            setInterval(do_crm_notifications, 30000);
+        });
+    </script>
+    {% endblock js %}
+    </body>
+</html>

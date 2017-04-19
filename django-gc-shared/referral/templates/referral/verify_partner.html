@@ -1,0 +1,26 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load app_tags i18n %}
+
+{% block title %}
+    Верификация счета RealIB
+{% endblock %}
+
+{% block content %}
+    <h1 class="{{ css_classes.color }}">Верификация счета RealIB</h1>
+    <div class="container">
+        {% blocktrans %}
+            To be able to withdraw funds from your partner account, please, download and print
+            <a href="{{ agreement_link }}">the partner agreement</a>, sign its last page, scan it or
+            take a photo of it and upload it using the form below.
+            <br/>
+            We will also need a scan of your ID card or passport, you can upload it using the same form.
+        {% endblocktrans %}
+        <br/>
+        <form action="." method="POST" enctype="multipart/form-data">
+            {% include "includes/form.html" %}
+            {% gcbutton "submit" _("Upload") "black" %}
+        </form>
+
+    </div>
+{% endblock %}

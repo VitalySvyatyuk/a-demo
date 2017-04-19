@@ -1,0 +1,17 @@
+{% load i18n %}
+<div
+  ng-repeat="record in objects.items"
+  ng-switch="::record.data.feed_type">
+  <contact-task class="event" ng-switch-when="task" object="record" on-delete="remove(record)" on-complete="addRecord(newNote)"></contact-task>
+  <contact-note class="event" ng-switch-when="note" object="record" on-delete="remove(record)"></contact-note>
+  <contact-mt4-account class="event" ng-switch-when="mt4account" object="record"></contact-mt4-account>
+  <contact-payment class="event" ng-switch-when="payment" object="record"></contact-payment>
+  <contact-call class="event" ng-switch-when="call" object="record"></contact-call>
+  <contact-log class="event" ng-switch-when="log" object="record"></contact-log>
+</div>
+<p class="text-md-center" ng-if="objects.left">
+  <button type="button" class="btn btn-default" ng-click="objects.loadMore()">{% trans "Show more" %} ([[objects.left]])</button>
+</p>
+<div class="lead text-muted text-md-center" title="[[::object.data.creation_ts|moment:'LLL']]">
+    {% trans "Added at" %} [[::object.data.creation_ts|moment:'calendar']]
+</div>

@@ -1,0 +1,62 @@
+.my.my-old .clearfix > .main > .row{
+  padding-left: 0;
+}
+body.my.my-old{
+  .info-messages-block {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  min-width: 0;
+  .block-white {
+    box-shadow: 2px 0px 15px 0px rgba(0, 1, 1, 0.05);
+    .errors {
+      margin-top: 0.6rem;
+      padding: 0.6rem 4rem 0.6rem 3.3rem;
+      color: $gc-first-color;
+      position: relative;
+      &:before {
+        content: "";
+        @extend .icon-warning;
+        position: absolute;
+        left: 0.8rem;
+        top: 1rem;
+      }
+    }
+    background-color: $gc-inverted-color;
+    padding: rem-calc(45) rem-calc(50);
+    .phone-select {
+      width: 11%;
+      float: left;
+      margin-right: 5% !important;
+    }
+    .phone-input {
+      width: 39% !important;
+      float: left;
+    }
+    .checkbox-wrapper {
+      input[type="checkbox"] + label + label {
+        // padding-left: 3px;
+      }
+    }
+    .form-item  {
+      & > div {
+        width: 45%;
+        float: left;
+      }
+      input {
+        width: 55%;
+        float: left;
+      }
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: rem-calc(45);
+    }
+    a:not(.button) {
+      border-bottom: 1px transparentize($basic-color, .5) solid;
+      &:hover, &:focus, &:active{
+        border-bottom-color: transparent
+      }
+    }
+  }
+}

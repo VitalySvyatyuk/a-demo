@@ -1,0 +1,35 @@
+{% load i18n %}
+<table class="table table-sm small">
+  <thead>
+    <tr>
+      <th></th>
+      <th>{% trans "Account" %}</th>
+      <th>{% trans "Deposit" %}</th>
+      <th>{% trans "Withdraw" %}</th>
+      <th>{% trans "Payment system" %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="record in objects|orderBy:'data.creation_ts'" ng-class="::{
+      'table-success': record.data.status == 'done',
+      'table-active text-muted': record.data.status.startsWith('canceled'),
+      'table-warning': record.data.status != 'done' && !record.data.status.startsWith('canceled')
+    }">
+      <th scope="row" title="[[::record.data.id]]">[[::record.data.creation_ts|moment:'calendar']]</th>
+      <td>[[::record.data.account.mt4_id]] ([[::record.data.account.group_name]])</td>
+      <td>[[::record.data.type=='deposit'?record.data.amount.display:'']]</td>
+      <td>[[::record.data.type=='withdraw'?record.data.amount.display:'']]</td>
+      <td>[[::record.data.payment_system]]</td>
+      <td>[[::record.data.status]]</td>
+    </tr>
+  </tbody>
+  <thead>
+    <tr>
+      <th></th>
+      <th>{% trans "Totals" %}</th>
+      <th>[[::totals.deposit|number]] $</th>
+      <th>[[::totals.withdraw|number]] $</th>
+      <th></th>
+    </tr>
+  </thead>
+</table>

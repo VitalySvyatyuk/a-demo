@@ -1,0 +1,23 @@
+{% load i18n %}
+
+    <div class="small-3 medium-3 large-3 columns">
+        {% with field=form.account %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+{% block header %}{% endblock %}
+{% block ps %}{% endblock %}
+
+    <div class="small-3 medium-3 large-3 columns">
+        {% with field=form.amount %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+    <div class="small-2 medium-2 large-2 columns{% if withdraw_form.payment_system == "handybank" %} offset-bottom-60{% endif %}">
+        {% with field=form.currency %}
+            {% include "payments/includes/field.html" %}
+        {% endwith %}
+    </div>
+<input type="submit" class="button medium" value="{% trans 'Continue' context 'button' %}"/>
+
+{% csrf_token %}

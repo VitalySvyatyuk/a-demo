@@ -1,0 +1,16 @@
+{% load i18n %}
+<div class="row">
+  <div class="col-md-6">
+    <paginator objects="tablefooter.objects"></paginator>
+  </div>
+  <div class="col-md-4 text-md-center">
+    <i>{% trans "Totals: " %}[[tablefooter.objects.count]]</i>
+  </div>
+  <div class="col-md-6">
+    <perpage objects="tablefooter.objects"></perpage>
+  </div>
+</div>
+
+
+
+

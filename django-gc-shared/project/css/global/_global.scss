@@ -1,0 +1,529 @@
+.font-light{
+  font-family: $font-light;
+}
+/*
+.font-light-italic{
+  font-family: $font-light-italic;
+}
+*/
+.font-reg{
+  font-family: $font-reg;
+}
+.font-reg-italic{
+  font-family: $font-reg-italic;
+}
+.font-med{
+  font-family: $font-med !important;
+}
+.font-med-italic{
+  font-family: $font-med-italic;
+}
+
+
+
+/*-----------------------------------------------------colors---------------------------------------------------------*/
+.color-gc-first-color {color: $gc-first-color;}
+.color-gc-second-color {color: $gc-second-color;}
+.color-gc-third-color {color: $gc-third-color;}
+.red-link{
+  color: red !important;
+  border-color: red !important;
+  &:hover, &:focus, &:active{
+    border-color: transparent !important;
+  }
+}
+
+/*-----------------------------------------------------media-----------------------------------------------------------*/
+
+.valign{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Cross icon */
+.icon {
+  display: inline-block;
+}
+.icon.cross {
+  color: $basic-color;
+  font: 1.6875rem $font-med;
+}
+.icon.cross:after {
+  content: "\00D7";
+}
+.icon.cross.red {
+  color: $gc-second-color;
+}
+
+/* Social networks */
+.networks {
+  padding: 0;
+  list-style: none;
+  margin-left: 0;
+  li {
+	  display: inline-block;
+    a {
+      background: url(../img/icons.png) no-repeat;
+	  display: block;
+	  height: 25px;
+	  width: 26px;
+	  }
+	.facebook {background-position: 0 -40px;}
+	.vk {background-position: -40px -40px;}
+	.twitter {background-position: -80px -40px;}
+	.youtube {background-position: -120px -40px;}
+	.rss {background-position: -160px -40px;}
+  }
+}
+
+/*----------------------------------------------------little reset-----------------------------------------------------*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, p, table, th, td, embed, object, figure, select, ul li ul, ul li ol, ul li ul li, ul li ol li {
+  padding: 0;
+  margin: 0;
+}
+
+fieldset, img, abbr {
+  border: none;
+}
+
+address, caption, cite, code, dfn, em,
+h1, h2, h3, h4, h5, h6, strong, th, var {
+  font-weight: normal;
+  font-style: normal;
+}
+
+strong, b{
+  font-family: $font-med;
+  font-weight: normal;
+}
+
+em, i{
+  font-family: $font-reg-italic;
+  font-style: italic;
+}
+
+ul{
+  // list-style-image: url(../img/red_circle.png);
+  margin-left: 20px;
+}
+
+form ul {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+}
+
+ol{
+  margin-left: 20px;
+}
+a, ins {
+  text-decoration: none;
+}
+
+html {
+  direction: ltr;
+}
+/*-----------------------------------------------------main styles-----------------------------------------------------*/
+body {
+  @extend body;
+  background: $bg-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+}
+
+h1, .h1 {
+  font: rem-calc(36) $font-light;
+  @include respond-to(gc-medium-down){
+    font: 1.875rem $font-light;
+  }
+}
+
+h2, .h2 {
+  font: 1.75rem $font-med;
+  @include respond-to(gc-medium-down){
+    font: 1.5rem $font-light;
+  }
+}
+
+h3, .h3 {
+  font: 1.375rem $font-light;
+}
+
+h4, .h4 {
+  font: 1.5rem $font-med;
+}
+
+h5, .h5 {
+  font: 1.125rem $font-med;
+}
+
+h6, .h6 {
+  font: 1.125rem $font-reg;
+}
+
+a{
+  &.h1, &.h2, &.h3, &.h4, &.h5, &.h6{
+    border-bottom: 1px solid transparentize($basic-color, .5);
+    &:hover, &:focus, &:active{
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+hr {
+  border: none;
+  margin: 0;
+}
+
+body {
+  color: $basic-color;
+  font-family: $font-reg;
+  line-height: 1.2;
+  font-size: rem-calc(15);
+}
+.my .main .container p{margin-bottom: 20px;}
+
+a {
+  color: $basic-color;
+  &:hover, &:focus, &:active{
+    color: $basic-color;
+  }
+  &.bordered {
+    border-bottom: 1px transparentize($basic-color, .5) solid;
+    &:hover, &:focus, &:active{
+      border-bottom-color: transparent
+    }
+    &.with-icon{
+      border: none;
+      .title{
+        border-bottom: 1px transparentize($basic-color, .5) solid;
+      }
+      &:hover, &:focus, &:active .title{
+        border-bottom-color: transparent !important;
+      }
+    }
+  }
+  &.dashed{
+    border-bottom: 1px transparentize($basic-color, .5) dashed;
+    &:hover, &:focus, &:active{
+      border-bottom-color: transparent;
+    }
+    &.with-icon{
+      border: none;
+      .title{
+        border-bottom: 1px transparentize($basic-color, .5) dashed;
+      }
+      &:hover, &:focus, &:active .title{
+        border-bottom-color: transparent;
+      }
+    }
+  }
+  &.dotted {
+    border-bottom: 1px transparentize($basic-color, .5) dotted;
+    &:hover, &:focus, &:active {
+      border-bottom-color: transparent;
+    }
+    &.with-icon {
+      border: none;
+      .title {
+        border-bottom: 1px transparentize($basic-color, .5) dotted;
+      }
+      &:hover, &:focus, &:active .title {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+
+p {
+  font-size: rem-calc(15);
+  line-height: 1.3;
+}
+
+body p a, body span a {
+  border-bottom: 1px solid transparentize($basic-color, .5);
+  &:hover, &:focus, &:active{
+    border-bottom-color: transparent;
+  }
+}
+
+fieldset legend {
+  background: none;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+/* Font sizes */
+.fs-10 {
+  font-size: 0.625rem !important;
+}
+.fs-12 {
+  font-size: 0.75rem !important;
+}
+.fs-14 {
+  font-size: 0.875rem !important;
+}
+.fs-16 {
+  font-size: 1rem !important;
+}
+.fs-18 {
+  font-size: 1.125rem !important;
+}
+.fw-bold {
+  font-weight: 700;
+}
+
+/*for dropdown*/
+[data-options="is_hover:true"] > .content {
+  background: none;
+  border: none;
+  font-size: $base-font-size;
+  height: auto;
+  max-height: none;
+  padding: 0;
+  width: 100%;
+  z-index: 99;
+}
+.f-dropdown li:hover, .f-dropdown li:focus {
+  background: none !important;
+}
+
+/*for descriptions*/
+.description{
+  font-size: 0.75rem;
+  line-height: 1;
+  margin-top: 5px;
+  a{
+    border-bottom: 1px solid transparentize($basic-color, .5);
+	&:hover, &:focus {
+      border-bottom-color: transparent;
+	}
+  }
+}
+
+/*for phone widget*/
+body select.phone-select{
+  margin-right: 10px;
+  padding-right: 27px;
+  width: 85px;
+}
+
+/*Angular ng-cloak css: makes DOM elements hidden until AngularJS loads*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/*--------------------------------------fixes for base - header, footer, nav------------------------------------------*/
+/* not adaptive */
+body {min-width: 76.4rem;} // Hot-fix для адаптивности
+body.my {
+  min-width: 76.4rem;
+  .row{
+    max-width: 76.4rem
+  }
+}
+
+/* adaptive */
+body.my.my-new {
+  min-width: 64rem;
+}
+body.adaptive {
+  min-width: 100%;
+  overflow-x: hidden;
+}
+
+body.gc{
+  .row{
+    max-width: 76.4rem;
+    padding: 0 10px;
+    &.reset-padding, &.gc-grid{
+      padding: 0;
+    }
+    .columns{
+      padding: 0 10px;
+      .row{
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        .columns{
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
+.reset-margin {
+  margin: 0 !important;
+}
+/*---------------------------------------------------global margins---------------------------------------------------*/
+@for $i from 1 through 30 {
+  .offset-top-#{$i*5} {
+    margin-top: ($i*0.3125rem) !important;
+  }
+  .offset-bottom-#{$i*5} {
+    margin-bottom: ($i*0.3125rem) !important;
+  }
+}
+
+/*---------------------------------------------------global classes---------------------------------------------------*/
+@media only screen and (max-width: #{lower-bound($gc-small-range)}) {
+  @include grid-html-classes($size:xsmall);
+}
+
+/* Utility classes */
+.inline-block {
+  display: inline-block !important;
+}
+
+.full-justify {
+  text-align: justify !important;
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.custom-scroll {
+  &::-webkit-scrollbar {background: $basic-color; width: 0.5rem; border-radius: 0.25rem; overflow: hidden;}
+  &::-webkit-scrollbar-thumb {
+    background: $gc-first-color; height: 2rem;
+    border-radius: 0.125rem;
+  }
+}
+.arrows{
+  background: url(../img/icons.png) no-repeat;
+  display: inline-block;
+  height: 8px;
+  margin-left: 10px;
+  width: 14px;
+  &.arrow-down{
+    background-position: -280px -120px;
+    &.gray{background-position: -200px -120px;}
+    &.white{background-position: -120px -120px;}
+  }
+  &.arrow-up{
+    background-position: -320px -120px;
+    &.gray{background-position: -240px -120px;}
+    &.white{background-position: -160px -120px;}
+  }
+}
+
+.square-arrow{
+  background: url(../img/icons.png) no-repeat;
+  display: inline-block;
+  height: 12px;
+  margin: 0 5px;
+  width: 10px;
+  &.arrow-down{
+    &.gray{background-position: -240px -320px;}
+  }
+  &.arrow-up{
+    &.gray{background-position: -280px -320px;}
+  }
+}
+
+.inactive{
+  position: relative;
+  z-index: 1;
+  &:after{
+    background: $basic-color-hover;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: .2;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+.overflow-td{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+/* callout */
+body .callout-wrapper{
+  @include respond-to(gc-large-up) {
+    padding-left: 3.75rem !important;
+  }
+}
+
+.callout {
+  border: 3px solid $gc-third-color;
+  padding: 1.25rem;
+  position: relative;
+  &:after{
+    border: 20px solid;
+    border-color: $bg-color $bg-color $gc-third-color $gc-third-color;
+    content: '';
+    display: block;
+    position: absolute;
+    right: -3px;
+    top: -3px;
+  }
+}
+
+.inactive-text{
+  border: none !important;
+  cursor: default !important;
+  opacity: .5;
+  *{
+    border: none !important;
+    cursor: default !important;
+  }
+  &:hover, &:focus, &:active{
+    border: none !important;
+    color: inherit !important;
+    cursor: default !important;
+  }
+}
+
+/* adaptive select block */
+//example in partnership page
+.adaptive-select-block{
+  background: $gc-first-color;
+  color: $gc-inverted-color;
+  display: none;
+  padding: 1.25rem;
+  &.third {
+    background: $gc-third-color;
+    color: $basic-color;
+  }
+  p{
+    font: 1.125rem $font-med;
+  }
+}
+
+/* adaptive adaptive-select-block */
+.adaptive-select-block{
+  @include respond-to(gc-medium-down){
+    display: block;
+  }
+  .select-wrapper, p{
+    @include respond-to(gc-medium-down){
+      @include align-middle;
+      width: 49%;
+    }
+    @include respond-to(gc-small-down){
+      width: 100%;
+    }
+  }
+  p{
+    @include respond-to(gc-small-down){
+      margin-bottom: .625rem;
+    }
+  }
+}

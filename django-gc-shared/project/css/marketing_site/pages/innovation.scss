@@ -1,0 +1,94 @@
+.innovation{
+  padding-top: 71px;
+  padding-bottom: 86px;
+  .call_to_action{
+    margin-bottom: -5px;
+  }
+  .innovation-element{
+    padding: 0 51px;
+    ul{
+      list-style: none;
+      padding-left: 26px;
+      li{
+        position: relative;
+        margin-bottom: 10px;
+      }
+      li:after{
+        content: "";
+        display: block;
+        background-image: url(../img/marketing-site/icons/icon-vps-list.svg);
+        width: 19px;
+        height: 2px;
+        position: absolute;
+        top: 6px;
+        left: -26px;
+      }
+    }
+    h2{
+      position: relative;
+    }
+    h2:after{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0px;
+    }
+    .innovation-bid:after{
+      background: url(../img/marketing-site/icons/icon-innovation-bid-retina.png) no-repeat center / auto 100%;
+      width: 34px;
+      height: 34px;
+      left: -50px;
+    }
+    .innovation-note:after{
+      background: url(../img/marketing-site/icons/icon-innovation-note-retina.png) no-repeat center / auto 100%;
+      width: 38px;
+      height: 22px;
+      left: -55px;
+      top: 5px;
+    }
+    .innovation-graphic:after{
+      background: url(../img/marketing-site/icons/icon-innovation-graphic-retina.png) no-repeat center / auto 100%;
+      width: 35px;
+      height: 33px;
+      left: -55px;
+    }
+    .innovation-arrow:after{
+      background: url(../img/marketing-site/icons/icon-innovation-arrow-retina.png) no-repeat center / auto 100%;
+      width: 37px;
+      height: 33px;
+      left: -60px;
+    }
+    .innovation-eye:after{
+      background: url(../img/marketing-site/icons/icon-innovation-eye-retina.png) no-repeat center / auto 100%;
+      width: 31px;
+      height: 31px;
+      left: -50px;
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .innovation{
+    .innovation-element{
+      margin-bottom: 100px;
+      padding-right: 0;
+      padding-left: 0;
+      .innovation-bid:after, .innovation-note:after, .innovation-graphic:after, .innovation-arrow:after, .innovation-eye:after{
+        left: 0;
+        top: -40px;
+      }
+    }
+    > div{
+      > div:last-child{
+        .innovation-element{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+

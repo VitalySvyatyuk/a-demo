@@ -1,0 +1,25 @@
+{% load staticfiles inbox i18n %}
+
+<div class="trading-stats text-right offset-top-15 offset-bottom-35" ng-cloak>
+  <div class="row">
+    <div class="accounts-stats amount text-center">
+      {% include "js/my/accounts_total_sum.html" %}
+    </div>
+  </div>
+</div>
+
+<div class="accordion-block gc-accordion green offset-bottom-60" accounts-accordion ng-if="::accountsPageType === 'partnership' && checkAvailableModules('partnership')">
+    {% include "js/my/accounts_partnership.html" %}
+</div>
+
+<div class="accordion-block gc-accordion green offset-bottom-60" accounts-accordion ng-if="::accountsPageType === 'trading'">
+    {% include "js/my/accounts_trading.html" %}
+    {% comment %}
+    {% include "js/my/accounts_pamm_investments.html" %}
+    {% include "js/my/accounts_pamm_master.html" %}
+    {% include "js/my/accounts_investments.html" %}
+    {% include "js/my/accounts_master.html" %}
+    {% include "js/my/accounts_contests.html" %}
+    {# include "js/my/accounts_bonuses.html" #}
+    {% endcomment %}
+</div>

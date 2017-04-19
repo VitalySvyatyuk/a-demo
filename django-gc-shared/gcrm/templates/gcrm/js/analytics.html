@@ -1,0 +1,124 @@
+{% load i18n %}
+
+<div class="row">
+  <div class="input-group col-sm-4">
+    <daterangepicker
+      start="filters.stats_date_0"
+      end="filters.stats_date_1"
+      on-change="filter()">
+    </daterangepicker>
+    <span class="input-group-btn">
+      <button class="btn btn-secondary" type="button" ng-click="filter()"><i class="fa fa-calendar"></i></button>
+    </span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-16">
+    <table class="table table-bordered table-hover table-sm">
+      <thead class="thead-default text-md-center">
+        <tr>
+          <th rowspan="2" sorter="manager.data.name.short" objects="orderer">{% trans "Managers" %}</th>
+          <th class="text-md-center" colspan="3">{% trans "Payments" %}</th>
+          <th class="text-md-center" colspan="2">{% trans "Totals calls" %}</th>
+          <th class="text-md-center" colspan="2">{% trans "Answered calls" %}</th>
+          <th class="text-md-center" colspan="2">{% trans "Not answered calls" %}</th>
+          <th class="text-md-center" colspan="2">{% trans "Contacts" %}</th>
+        </tr>
+        <tr>
+          <th class="text-md-center" sorter="payments.totals" objects="orderer">{% trans "In/Out" %}</th>
+          <th class="text-md-center" sorter="payments.deposit" objects="orderer">{% trans "In" %}</th>
+          <th class="text-md-center" sorter="payments.withdraw" objects="orderer">{% trans "Out" %}</th>
+
+          <th class="text-md-center" sorter="calls.totals.count" objects="orderer">{% trans "Count" %}</th>
+          <th class="text-md-center" sorter="calls.totals.duration" objects="orderer">{% trans "Hours" %}</th>
+          <th class="text-md-center" sorter="calls.answered.count" objects="orderer">{% trans "Count" %}</th>
+          <th class="text-md-center" sorter="calls.answered.duration" objects="orderer">{% trans "Hours" %}</th>
+          <th class="text-md-center" sorter="calls.not_answered.count" objects="orderer">{% trans "Count" %}</th>
+          <th class="text-md-center" sorter="calls.not_answered.duration" objects="orderer">{% trans "Hours" %}</th>
+
+          <th class="text-md-center" sorter="contacts.by_button" objects="orderer">{% trans "By button" %}</th>
+          <th class="text-md-center" sorter="contacts.totals" objects="orderer">{% trans "All" %}</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="objects.count==0"><td colspan="5"><div class="text-md-center">{% trans "No items to display" %}</div></td></tr>
+        <tr ng-repeat-start="(office, data) in objects" class="text-md-center text-md-center table-active">
+          <th colspan="12" class="text-md-center">[[::data.objects[0].manager.data.office.name]]</th>
+        </tr>
+        <tr ng-repeat="stat in data.objects|orderBy:orderer.sortField:orderer.sortReversed">
+          <td>[[::stat.manager.data.name.short]]</td>
+
+          <td>[[::(!stat.payments.totals? '-' : (stat.payments.totals|number:2))]]</td>
+          <td>[[::(!stat.payments.deposit? '-' : (stat.payments.deposit|number:2))]]</td>
+          <td>[[::(!stat.payments.withdraw? '-' : (stat.payments.withdraw|number:2))]]</td>
+
+          <td>[[::(!stat.calls.totals.count? '-' : stat.calls.totals.count)]]</td>
+          <td title="[[::stat.calls.totals.duration / 60|number:2]] мин" ng-switch="::!!stat.calls.totals.duration">
+            <span ng-switch-default>
+              [[::stat.calls.totals.duration / 60 / 60 |number:2]] {% trans "h." %}
+            </span>
+            <span ng-switch-when="false">-</span>
+          </td>
+
+          <td>[[::(!stat.calls.answered.count? '-' : stat.calls.answered.count)]]</td>
+          <td title="[[::stat.calls.answered.duration / 60|number:2]] мин" ng-switch="::!!stat.calls.answered.duration">
+            <span ng-switch-default>
+              [[::stat.calls.answered.duration / 60 / 60 |number:2]] {% trans "h." %}
+            </span>
+            <span ng-switch-when="false">-</span>
+
+          </td>
+
+          <td>[[::(!stat.calls.not_answered.count? '-' : stat.calls.not_answered.count)]]</td>
+          <td title="[[::stat.calls.not_answered.duration / 60|number:2]] мин" ng-switch="::!!stat.calls.not_answered.duration">
+            <span ng-switch-default>
+              [[::stat.calls.not_answered.duration / 60 / 60 |number:2]] {% trans "h." %}
+            </span>
+            <span ng-switch-when="false">-</span>
+          </td>
+
+          <td>[[::(!stat.contacts.by_button? '-' : stat.contacts.by_button)]]</td>
+          <td>[[::(!stat.contacts.totals? '-' : stat.contacts.totals)]]</td>
+
+        </tr>
+        <tr ng-repeat-end class="text-md-center ">
+          <th>{% trans "Summary" %}</th>
+
+          <th>[[(!data.summary.payments.totals? '-' : (data.summary.payments.totals|number:2))]]</th>
+          <th>[[(!data.summary.payments.deposit? '-' : (data.summary.payments.deposit|number:2))]]</th>
+          <th>[[(!data.summary.payments.withdraw? '-' : (data.summary.payments.withdraw|number:2))]]</th>
+
+          <th>[[(!data.summary.calls.totals.count? '-' : data.summary.calls.totals.count)]]</th>
+          <th title="[[data.summary.calls.totals.duration / 60|number:2]] мин" ng-switch="!!data.summary.calls.totals.duration">
+            <span ng-switch-default>
+              [[data.summary.calls.totals.duration / 60 / 60 |number:2]] {% trans "h." %}
+            </span>
+            <span ng-switch-when="false">-</span>
+          </th>
+
+          <th>[[(!data.summary.calls.answered.count? '-' : data.summary.calls.answered.count)]]</th>
+          <th title="[[data.summary.calls.answered.duration / 60|number:2]] мин" ng-switch="!!data.summary.calls.answered.duration">
+            <span ng-switch-default>
+              [[data.summary.calls.answered.duration / 60 / 60 |number:2]] {% trans "h." %}
+            </span>
+            <span ng-switch-when="false">-</span>
+
+          </th>
+
+          <th>[[(!data.summary.calls.not_answered.count? '-' : data.summary.calls.not_answered.count)]]</th>
+          <th title="[[data.summary.calls.not_answered.duration / 60|number:2]] мин" ng-switch="!!data.summary.calls.not_answered.duration">
+            <span ng-switch-default>
+              [[data.summary.calls.not_answered.duration / 60 / 60 |number:2]] {% trans "h." %}
+            </span>
+            <span ng-switch-when="false">-</span>
+          </th>
+
+          <th>[[(!data.summary.contacts.by_button? '-' : data.summary.contacts.by_button)]]</th>
+          <th>[[(!data.summary.contacts.totals? '-' : data.summary.contacts.totals)]]</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,244 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {% trans "Account types" %} {{ block.super }}
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title
+            - trans "Account types"
+
+
+
+  .account-types-page
+    .container
+        .account-types-table-wraper.adaptive-table-wrapper
+            table.adaptive-table.account-types-table
+              thead
+                tr.bordered-row
+                  th
+                    - trans "Features"
+                  th.account-types-cell ECN.MT
+                  th.account-types-cell ECN.PRO
+                  th.account-types-cell ECN.Invest
+              tbody
+                tr
+                  td
+                    - trans "Min. deposit"
+                  td $500
+                  td $1000
+                  td $100
+
+                tr
+                  td
+                    - trans "Platforms"
+                  td ARUM.MT4
+                  td ARUM.PRO, ARUM.WEB
+                  td ARUM.MT4
+                tr
+                  td: span.tooltip.js-tooltip(title="{% trans 'Market Depth is a tool of ARUM.PRO platform due to which one can track the volume of applications against the price. The spread level is directly dependent on the position volume.' %}")
+                    - trans "Market Depth"
+                  td
+                    - trans "Unavailable"
+                  td
+                    - trans "Available"
+                  td
+                    - trans "Unavailable"
+                tr
+                  td: span.tooltip.js-tooltip(title="{% trans 'Hedging of positions is the possibility to open opposite positions on a single trading tool without having to close the current positions. ' %}")
+                    - trans "Hedging of positions "
+                  td
+                    - trans "Available"
+                  td
+                    - trans "Unavailable"
+                  td
+                    - trans "Available"
+                tr
+                  td: span.tooltip.js-tooltip(title="{% trans 'Commission for a complete transaction is charged twice (opening/ closing of a position) at the moment when the position is opened. The figure is calculated based on the nominal cost of the position, equal to 1 000 000 USD.' %}")
+                    - trans "Commission"
+                  td
+                    - trans "$2.5* per $100 000 traded"
+                  td
+                    - trans "$2.5* per $100 000 traded"
+                  td
+                    - trans "$5* per $100 000 traded"
+                    br
+                    - trans '(included in the spread)'
+                tr
+                  td: span.tooltip.js-tooltip(title="{% trans 'Roll over of a position for the next trading day is a method of transferring a position to the next trading day. SWAP is charging of a positive or a negative commission for keeping of the position. ReOpen position is automatic re-opening of a position less the positive or negative commission difference.' %}")
+                    - trans "Roll over of a position"
+                  td
+                    - trans 'SWAP'
+                  td
+                    - trans 'ReOpen position'
+                  td
+                    - trans 'NON'
+                    br
+                    - trans 'Compulsory closing of positions at the end of the week'
+                tr
+                  td
+                    - trans "Algorithmic Trading"
+                  td
+                    - trans "Yes"
+                  td
+                    - trans "Yes"
+                    br
+                    - trans "API FIX-protocol for EA"
+                  td
+                    - trans "Yes"
+                tr
+                  td
+                    - trans "Phone dealing"
+                  td
+                    - trans "Only for closing"
+                  td
+                    - trans "Only for closing"
+                  td
+                    - trans "No"
+                tr
+                  td
+                    - trans "Trading Times"
+                  td(colspan="3").text-center
+                    - trans '24/5 trading halted for 1 minute between 22:00 – 22:01 (GMT)'
+                tr
+                  td
+                    - trans "Maximum number of orders"
+                  td
+                    | 1000
+                    br
+                    - trans "(including pending orders)"
+                  td
+                    - trans "Unlimited"
+                  td
+                    | 100
+                    br
+                    - trans "(including pending orders)"
+                tr
+                  td
+                    - trans "Demo accounts"
+                  td
+                    - trans "Yes"
+                  td
+                    - trans "Yes"
+                  td
+                    - trans "No"
+                tr
+                  td
+                    - trans "Trading instruments"
+                  td(colspan="2").text-center
+                    - trans "110+ currency pairs, 10 CFD-contracts on world stock indices"
+                    br
+                    a(href="{% url 'specifications' %}").link
+                      - trans "Contract specification"
+                  td
+                    - trans "30 major instruments"
+                    br
+                    a(href="{% url 'specifications' %}").link
+                      - trans "Contract specification"
+                tr
+                  td: span.tooltip.js-tooltip(title="{% trans 'Leverage is the proportion of the borrowed funds against the own funds. For instance, a leverage of 1:1000 gives the chance to open positions up to 100 times the deposit.' %}")
+                    - trans "Leverage"
+                  td(colspan="2").text-center
+                    | {% blocktrans with leverage="1:100" %}Up to {{ leverage }}{% endblocktrans %}
+                  td
+                    - trans "Special leverage calculation"
+                    br
+                    a(href="#").link
+                      - trans "More"
+                tr
+                  td: span.tooltip.js-tooltip(title="{% trans 'Spread is a difference between the Bid and the Ask price.' %}")
+                    - trans "Spread"
+                  td(colspan="3").text-center
+                    - trans "Floating from 0.1 pip"
+                tr
+                  td: span.tooltip.js-tooltip(title="{% trans 'Limit & Stop Levels are a minimum distance from the current market price that allows pending orders and the Stop Loss and Take Profit market orders.' %}")
+                    - trans "Limit & Stop Levels"
+                  td(colspan="3").text-center
+                    | 0
+                tr
+                  td: span.tooltip.js-tooltip(title="{% trans 'Market Execution is execution of an order on a current market price with no repeated queries (requite).' %}")
+                    - trans "Execution"
+                  td(colspan="3").text-center
+                    | Market Execution
+                tr
+                  td
+                    - trans "Minimum order size"
+                  td(colspan="3").text-center
+                    - trans "0.01 lot (1000 units of base currency)"
+                    |  /
+                    - trans "0.01 (1000 units of base currency)"
+                tr
+                  td
+                    - trans "Maxumum position volume"
+                  td(colspan="3").text-center
+                    - trans "Unlimited"
+                tr
+                  td: span.tooltip.js-tooltip(title="{% trans 'Margin Call – is a level where a warning is made of insufficient margin for further support of the positions. Stop Out is a level of mandatory closing of a position because the marginal level is too low to sustain an open position.' %}")
+                    - trans "Margin call / Stop out"
+                  td(colspan="3").text-center
+                    | 150% / 100%
+                tr.bordered-row
+                  td
+                    - trans "Partial fills"
+                  td(colspan="3").text-center
+                    -trans "Inadequate liquidity can lead to partial fills, with the remaining order filled at next best prices according to market depth"
+              tfoot
+                tr
+                  td
+                  td.button-cell
+                    {% if LANGUAGE_CODE == 'ru' %}
+                    div.not-ready-platform-ru
+                      a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                        - trans "Open an account"
+                    {% else %}
+                    div.not-ready-platform-en
+                      a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                        - trans "Open an account"
+                    {% endif %}
+                  td.button-cell
+                    {% if LANGUAGE_CODE == 'ru' %}
+                    div.not-ready-platform-ru
+                      a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                        - trans "Open an account"
+                    {% else %}
+                    div.not-ready-platform-en
+                      a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                        - trans "Open an account"
+                    {% endif %}
+                  td.button-cell
+                    {% if LANGUAGE_CODE == 'ru' %}
+                    div.risk-hidden-ru
+                      a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                        - trans "Open an account"
+                    {% else %}
+                    div.risk-hidden-en
+                      a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                        - trans "Open an account"
+                    {% endif %}
+        p
+          | *
+          - trans 'Commission for a complete transaction is charged twice (opening / closing of a position)'
+      .action-block
+        .container
+          .row
+            .col-md-8
+              p.action-text
+                - trans "You may try ECN.MT and ECN.PRO accounts in Demo version under terms and conditions identical to the real trading account."
+            .col-md-4.action-button-wrapper
+              {% if LANGUAGE_CODE == 'ru' %}
+              div.not-ready-platform-ru
+                a.button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                  span.button__text
+                    - trans "Open a demo account"
+              {% else %}
+              div.not-ready-platform-en
+                a.button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                  span.button__text
+                    - trans "Open a demo account"
+              {% endif %}

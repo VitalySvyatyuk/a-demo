@@ -1,0 +1,22 @@
+{% load i18n app_tags %}
+<div class="clearfix offset-bottom-40">
+  <div class="clearfix offset-top-30 offset-bottom-30">
+    <h1>{% trans "Documents and Agreements" %}</h1>
+  </div>
+
+
+    {% legal_documents request.LANGUAGE_CODE as documents %}
+    <div class="account-block-jb">
+  <ul>
+    {% for i in documents %}
+<li>
+  {{ i }}
+    <a class="red-link" href={{ i.file.url }} target="_blank">
+
+      <span class="bordered"> {% trans "Download" %} PDF </span>
+    </a>
+</li>
+    {% endfor %}
+</ul>
+  </div> 
+</div>

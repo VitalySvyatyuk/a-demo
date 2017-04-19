@@ -1,0 +1,18 @@
+{% load i18n %}
+
+<form method="POST">
+  <div class="form-item">
+    <div class="label fleft">
+      <label for="{{ key }}">{% trans "Code" %}
+      <span class="required">*</span>
+    </div>
+
+    <div class="clear"></div>
+
+    <input name="{{ key }}" />
+
+    <div class="description">
+      {% trans "Enter the confirmation code you have received." %}
+    </div>
+  </div>
+</form>

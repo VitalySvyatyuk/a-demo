@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CRM User page</title>
+
+        {% block css %}
+        <!-- Bootstrap -->
+        <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+        <style type="text/css">
+            /*body, html {
+                margin: 0; padding: 0; height: 100%; overflow: hidden;
+            }*/
+        </style>
+
+        {% endblock css %}
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div ng-app="CRMUserpage">
+            <div class="row">
+                <div class="col-lg-12" ng-controller="Userpage">
+                    <h4 class="text-danger pull-right" ng-if="error" ng-bind="error">
+                    </h4>
+                    <div class="player pull-right">
+                        <audio ng-if="current_audio" ng-attr-src="[[current_audio]]" controls="controls">
+                    </div>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a href="#calls" role="tab" data-toggle="tab">Звонки</a></li>
+                        <li><a href="#callsmail" role="tab" data-toggle="tab">Автоответчик</a></li>
+                        <li><a href="#logs" role="tab" data-toggle="tab">Логи</a></li>
+                        <li><a href="#drequests" role="tab" data-toggle="tab">Ввод</a></li>
+                        <li><a href="#wrequests" role="tab" data-toggle="tab">Вывод</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="calls">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Дата</th>
+                                        <th>Кто</th>
+                                        <th>Кому</th>
+                                        <th>Результат</th>
+                                        <th>Длительность</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="object in calls">
+                                        <td><a href="[[object.url]]" target="_blank" ng-bind="object.call_date |momentHumanize"></a></td>
+                                        <td ng-bind="object.source"></td>
+                                        <td ng-bind="object.dest"></td>
+                                        <td ng-bind="object.disposition"></td>
+                                        <td ng-bind="object.duration"></td>
+                                        <td><button ng-if="object.record" ng-click="play(object.record)">PLAY</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="callsmail">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Дата</th>
+                                        <th>Кто</th>
+                                        <th>Длительность</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="object in vmcalls">
+                                        <td><a href="[[object.url]]" target="_blank" ng-bind="object.call_date |momentHumanize"></a></td>
+                                        <td ng-bind="object.source"></td>
+                                        <td ng-bind="object.duration"></td>
+                                        <td><button ng-if="object.record" ng-click="play(object.record)">PLAY</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="logs">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Дата</th>
+                                        <th>Событие</th>
+                                        <th>Кто</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat-start="object in logs">
+                                        <td ng-bind="object.at |momentHumanize"></td>
+                                        <td ng-bind="object.event_display"></td>
+                                        <td>[[object.user]] - [[object.ip]]</td>
+                                        <td><button ng-click="showLogDetails($index)">Подробности</button></td>
+                                    </tr>
+                                    <tr ng-repeat-end ng-if="selectedLog == $index">
+                                        <td colspan=4>
+                                            <pre>[[object.params |json]]</pre>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="drequests">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Дата</th>
+                                        <th>Счёт</th>
+                                        <th>Система</th>
+                                        <th>Сумма</th>
+                                        <th>Статус</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat-start="object in depositRequests">
+                                        <td ng-bind="object.creation_ts |momentHumanize"></td>
+                                        <td ng-bind="object.account"></td>
+                                        <td ng-bind="object.payment_system"></td>
+                                        <td ng-bind="object.amount"></td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-send" title="Оплачено" ng-class="{
+                                                'text-success': object.is_payed === true,
+                                                'text-muted': object.is_payed === null,
+                                                'text-danger': object.is_payed === false,
+                                            }"></span>
+                                            <span class="glyphicon glyphicon-circle-arrow-down" title="Зачислено" ng-class="{
+                                                'text-success': object.is_committed === true,
+                                                'text-muted': object.is_committed === null,
+                                                'text-danger': object.is_committed === false,
+                                            }"></span>
+                                        </td>
+                                        <td><button ng-click="showDRDetails($index)">Подробности</button></td>
+                                    </tr>
+                                    <tr ng-repeat-end ng-if="selectedDR == $index">
+                                        <td colspan="6">
+                                            <ul class="list-unstyled">
+                                                <li>ID: [[object.id]]</li>
+                                                <li>Счёт: [[object.purse]]</li>
+                                                <li>trade_id: [[object.trade_id]]</li>
+                                                <li><pre>[[object.params]]</pre></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="wrequests">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Дата</th>
+                                        <th>Счёт</th>
+                                        <th>Система</th>
+                                        <th>Сумма</th>
+                                        <th>Статус</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat-start="object in withdrawRequests">
+                                        <td ng-bind="object.creation_ts |momentHumanize"></td>
+                                        <td ng-bind="object.account"></td>
+                                        <td ng-bind="object.payment_system"></td>
+                                        <td ng-bind="object.amount"></td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-circle-arrow-down" title="Снято со счёта" ng-class="{
+                                                'text-success': object.is_payed === true,
+                                                'text-muted': object.is_payed === null,
+                                                'text-danger': object.is_payed === false,
+                                            }"></span>
+                                            <span class="glyphicon glyphicon-send" title="Отправлено" ng-class="{
+                                                'text-success': object.is_committed === true,
+                                                'text-muted': object.is_committed === null,
+                                                'text-danger': object.is_committed === false,
+                                            }"></span>
+                                        </td>
+                                        <td><button ng-click="showWRDetails($index)">Подробности</button></td>
+                                    </tr>
+                                    <tr ng-repeat-end ng-if="selectedWR == $index">
+                                        <td colspan="6">
+                                            <ul class="list-unstyled">
+                                                <li>ID: [[object.id]]</li>
+                                                <li>Группа: <a target="_blank" ng-href="[[object.group_link]]">[[object.group_id]]</a></li>
+                                                <li>Причина: [[object.reason]]</li>
+                                                <li>Счёт: [[object.purse]]</li>
+                                                <li>trade_id: [[object.trade_id]]</li>
+                                                <li>closed_by: [[object.closed_by]]</li>
+                                                <li>private_comment: [[object.private_comment]]</li>
+                                                <li>public_comment: [[object.public_comment]]</li>
+                                                <li><pre>[[object.params]]</pre></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% block js %}
+         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'moment/min/moment-with-locales.min.js' %}"></script>
+        <script src="{% static 'underscore/underscore-min.js' %}"></script>
+        <script src="{% static 'angular/angular.min.js' %}"></script>
+
+
+
+        <script src="{% static 'crm/apps/userpage/js/app.js' %}"></script>
+        <script src="{% static 'crm/apps/userpage/js/services.js' %}"></script>
+        <script src="{% static 'crm/apps/userpage/js/userpage.js' %}"></script>
+
+        <script type="text/javascript">
+            moment.lang('ru');
+            var csrftoken = '{{ csrf_token|escapejs }}';
+
+            var URL_CALLS_INDEX = "{% url 'telephony_calls_by_user_ajax' user_id=user.id %}";
+            var URL_VMCALLS_INDEX = "{% url 'telephony_vmcalls_by_user_ajax' user_id=user.id %}";
+            var URL_LOGS_INDEX = "{% url 'crm_logs_by_user_ajax' user_id=user.id %}";
+
+            var URL_DEPOSIT_REQUEST_INDEX = "{% url 'crm_user_deposit_requests_ajax' user_id=user.id %}";
+            var URL_WITHDRAW_REQUEST_INDEX = "{% url 'crm_user_withdraw_requests_ajax' user_id=user.id %}";
+        </script>
+
+        {% endblock js %}
+    </body>
+</html>

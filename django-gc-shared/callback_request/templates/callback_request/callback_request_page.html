@@ -1,0 +1,113 @@
+{% extends "private_office/base.html" %}
+
+{% load i18n callback_tags  %}
+{% block content %}
+<div class="container">
+    <p class="text-center h1 offset-top-10 offset-bottom-30">{% trans "Request Callback" %}</p>
+    <form method="POST" action="{% url 'callback_request_page' %}" id="callback_request">
+        {% csrf_token %}
+
+        {% for error in form.non_field_errors %}
+            <div class="errors">{{ error }}</div>
+        {% endfor %}
+      
+      <div class="form-item">
+        <div>
+          <label for="name">{% trans "Name" context "callback" %}:</label>
+        </div>
+        <input name="name" id="name" type="text" value="{{ user.get_full_name }}"/>
+        {% if form.name.errors %}
+            <div class="error">
+                {% for error in form.name.errors %}
+                    {{ error|safe }}
+                {% endfor %}
+            </div>
+        {% endif %}
+      </div>  
+
+      <div class="form-item">
+        <div>
+          <label for="phone_number">{% trans "Phone" context "callback" %}:</label>
+        </div>
+        <input name="phone_number" id="phone_number" type="text" value="{{ user.profile.phone_mobile }}"/>
+        {% if form.phone_number.errors %}
+            <div class="error">
+                {% for error in form.phone_number.errors %}
+                    {{ error|safe }}
+                {% endfor %}
+            </div>
+        {% endif %}
+      </div>  
+
+      <div class="form-item select-row">
+        <div>
+          <label for="category">{% trans "Category" context "callback" %}:</label>
+        </div>
+        <select name="category" id="category">
+            {% callback_request_choices as callback_choices %}
+            {% for key, value in callback_choices %}
+                <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+        </select>
+        {% if form.category.errors %}
+            <div class="error">
+                {% for error in form.category.errors %}
+                    {{ error|safe }}
+                {% endfor %}
+            </div>
+        {% endif %}
+      </div>
+      
+      <div class="form-item textarea-row">
+        <div>
+          <label for="comment">{% trans "Comment" context "callback" %}:</label>
+        </div>
+        <textarea name="comment" id="comment" cols="5"></textarea>
+        {% if form.comment.errors %}
+            <div class="error">
+                {% for error in form.comment.errors %}
+                    {{ error|safe }}
+                {% endfor %}
+            </div>
+        {% endif %}
+      </div>
+
+      <label class="offset-top-20 offset-bottom-10">{% trans "Appropriate time" %}:</label>
+      <div class="form-item row">
+        <div class="small-3 columns">
+            <input class="radio_box__input" type="radio" id="anytime" name="time_of_day" value="any" checked />
+            <label for="anytime">
+                <span class="radio_box__tick"></span>
+                <span class="radio_box__label">
+                    {% trans "Any" context "callback" %}    
+                </span>
+            </label>
+        </div>
+        <div class="small-3 columns">
+            <input class="radio_box__input" type="radio" id="morning" name="time_of_day" value="morning"/>
+            <label for="morning">
+                <span class="radio_box__tick"></span>
+                <span class="radio_box__label">9:00...12:00</span>
+            </label>
+        </div>
+        <div class="small-3 columns">
+            <input class="radio_box__input" type="radio" id="afternoon" name="time_of_day" value="afternoon"/>
+            <label for="afternoon">
+                <span class="radio_box__tick"></span>
+                <span class="radio_box__label">12:00...16:00</span>
+            </label>
+        </div>
+        <div class="small-3 columns">
+            <input class="radio_box__input" type="radio" id="evening" name="time_of_day" value="evening"/>
+            <label for="evening">
+                <span class="radio_box__tick"></span>
+                <span class="radio_box__label">16:00...20:00</span>
+            </label>
+        </div>
+      </div>
+      <div class="offset-top-30">
+        <input type="submit" value="{% trans 'Request a call' %}" class="button medium">
+      </div>
+    </form>
+</div>
+{% endblock content %}

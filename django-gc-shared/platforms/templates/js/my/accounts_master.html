@@ -1,0 +1,82 @@
+{% load staticfiles inbox i18n %}
+<div class="gc-accordion-item" ng-show="checkAvailableModules('master') && $parent.there_are_pamm_masters()" ng-controller="AccountsMasterController" name="master" accordion-show="selectedCategory === 'master'" accordion-click="selectCategory('master')">
+  <div class="title-wrapper" title>
+    <span class="title">{% trans "My LAMM investors" %}</span>
+    <span ng-if="hasPendingManagedAccounts" class="icon-warning"></span>
+  </div>
+  <div content ng-if="!isDataHidden">
+    {% include "js/my/_accounts_local_nav.html" %}
+    <table class="table-big-green managed">
+      <thead>
+        <tr>
+          <td>{% trans "ID" %}</td>
+          <td>{% trans "Account type" %}</td>
+          <td>{% trans "Leverage" %}</td>
+          <td>{% trans "Balance" %}</td>
+          <td>{% trans "Reward" %}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="notification" ng-if="!accounts.length">
+          <td colspan="5">{% trans "There is no accounts to display" %}</td>
+        </tr>
+        <tr ng-repeat-start="acc in accounts" ng-class="{'active': account === acc}" ng-click="selectAccount(acc)" account-display="account === acc && !isDataHidden">
+          <td>
+            <span ng-if="acc.pamm_master.topic_url"> <a target="_blank" href="[[::acc.pamm_master.topic_url]]"> [[::acc.pamm_master.alias]] [[::acc.mt4_id]] </a> </span>
+            <span ng-if="!acc.pamm_master.topic_url"> [[::acc.pamm_master.alias]] [[::acc.mt4_id]] </span>
+            <span ng-if="accountHasPendingManagedAccounts(acc)" class="icon-warning-small"></span>
+          </td>
+          <td>
+            <span ng-bind="::acc.group_display"></span>
+            <p class="description" ng-bind="::acc.is_demo?'{% trans "Demo" %}':'{% trans "Real" %}'"></p>
+          </td>
+          <td ng-bind="!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : '1:' + mt4Data[acc.mt4_id].leverage)"></td>
+          <td>&lrm;[[ !showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].balance_display) ]]</td>
+          <td>
+            <div class="overflow-td" ng-bind="formatComission(acc.pamm_master)"></div>
+          </td>
+        </tr>
+        <tr ng-repeat-end ng-if="account === acc" class="with-active">
+          <td colspan="5">
+            {% include "js/my/_accounts_local_nav_adaptive.html" %}
+            <table class="table-light-green">
+              <thead>
+                <tr>
+                  <td>{% trans "ID" %}</td>
+                  <td>{% trans "Balance" %}</td>
+                  <td>{% trans "Binding date" %}</td>
+                  <td>{% trans "Equity" %}</td>
+                  <td>{% trans "Actions" %}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="notification" ng-if="!acc.pamm_master.managed_accounts.length">
+                  <td colspan="5">{% trans "There is no accounts to display" %}</td>
+                </tr>
+                <tr ng-repeat="managed in acc.pamm_master.managed_accounts">
+                  <td>
+                    <span>[[::managed.mt4_id]] ([[::managed.group_display]])</span><span class="icon-warning-small" ng-if="managed.status === STATUS_PENDING"></span>
+                  </td>
+                  <td>
+                    <div class="overflow-td">&lrm; [[!showMoney? '*****' : (!mt4Data[managed.mt4_id]? '...' : mt4Data[managed.mt4_id].balance_display)]]</div>
+                  </td>
+                  <td ng-bind="managed.bind_ts|momentFromNow"></td>
+                  <td>
+                    <div class="overflow-td">&lrm; [[!showMoney? '*****' : (!mt4Data[managed.mt4_id]? '...' : mt4Data[managed.mt4_id].equity_display)]]</div>
+                  </td>
+                  <td>
+                    <a ng-if="managed.status === STATUS_ACCEPTED" ng-click="unbindManaged(acc, managed)" class="icon-break" title="{% trans "Disconnect investor" %}"></a>
+                    <span ng-if="managed.status === STATUS_PENDING">
+                      <a ng-click="acceptManaged(acc, managed)" class="icon-ok" title="{% trans "Confirm request" %}"></a>
+                      <a ng-click="rejectManaged(acc, managed)" class="icon-cancel" title="{% trans "Reject request" %}"></a>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

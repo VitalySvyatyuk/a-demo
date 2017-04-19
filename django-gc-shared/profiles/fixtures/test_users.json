@@ -1,0 +1,42 @@
+[
+   {
+      "model" : "auth.user",
+      "pk" : 1,
+      "fields" : {
+         "user_permissions" : [
+            206
+         ],
+         "username" : "admin",
+         "is_superuser" : true,
+         "first_name" : "Admin",
+         "email" : "admin@uptrader.us",
+         "groups" : [],
+         "last_name" : "Uptrader",
+         "password" : "pbkdf2_sha256$20000$v48mgYPLLwAM$1H5SSSvMon1Omgb20w9xQcJ0h21TttDrBRlNN2jOFGs=",
+         "is_active" : true,
+         "last_login" : "2017-01-27T19:30:31.763",
+         "date_joined" : "2017-01-27T19:30:17.826",
+         "is_staff" : true
+      }
+   },
+   {
+      "model" : "auth.user",
+      "pk" : 3,
+      "fields" : {
+         "is_active" : true,
+         "last_login" : "2017-01-30T15:59:03.655",
+         "is_staff" : false,
+         "date_joined" : "2017-01-30T15:58:23.164",
+         "username" : "tester",
+         "is_superuser" : false,
+         "user_permissions" : [
+            206
+         ],
+         "email" : "tester@uptrader.us",
+         "first_name" : "Mr",
+         "last_name" : "Tester",
+         "groups" : [],
+         "password" : "pbkdf2_sha256$20000$i4rCAOz8NAKl$tqzLk/mjxFIo2MRQO8U3uAJi+pHHHvbS1WOcCi+7FEg="
+      }
+   }
+]

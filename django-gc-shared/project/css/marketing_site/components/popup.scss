@@ -1,0 +1,377 @@
+.popup{
+	//centering with translate(-50%,-50%) causes blur, so using hardcoded height/width value.
+	display: none;
+	position: absolute;
+
+	padding: 0 0 50px;
+	z-index: 210;
+	left: 0;
+	right: 0;
+
+	margin: auto;
+	margin-top: 70px;
+
+	background-color: white;
+	//border-radius: 9px;
+	box-shadow: 0 11px 10px rgba(0, 0, 0, 0.15);
+
+	&--sign{
+		max-width: 480px;
+	}
+
+	&--callback{
+		padding-left: 15px;
+		padding-right: 15px;
+		max-width: 642px;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+	@media (#{$max_laptop}){
+		margin-top: 64px;
+	}
+	@media (#{$max_ipad}){
+		padding-bottom: 30px;
+		margin-top: 64px;
+
+		max-height: calc(100vh - 64px);
+		overflow: auto;
+	}
+	@media (#{$max_phones}){
+		padding: 0 0 30px;
+	}
+	@media (max-height: 700px) and (min-width: 1300px){
+		margin-top: 60px;
+
+		padding-bottom: 20px;
+	}
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.popup.ie-popup{
+		width: 50%;
+	}
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (max-width:800px) {
+	.popup.ie-popup{
+		width: 80%;
+	}
+}
+.popup__close_btn{
+	position: absolute;
+	right: -46px;
+	top: -46px;
+
+	width: 46px;
+	height: 46px;
+
+	background-color: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	border-radius: 50%;
+
+	cursor: pointer;
+
+	transition: box-shadow .4s ease;
+
+	&:hover{
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+	}
+
+	&:before{
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		margin: auto;
+
+		width: 22px;
+		height: 22px;
+
+		background: url(#{$icons_path}i--cross--thin.svg) no-repeat center / 100% auto;
+	}
+
+	@media (#{$max_ipad}){
+		right: 3px;
+		top: 23px;
+
+		box-shadow: none !important;
+	}
+}
+.popup__title{
+	color: #1e1e1e;
+	font-size: 30px;
+	font-weight: 300;
+
+	text-align: center;
+
+	@media (#{$max_ipad}){
+		padding: 0 $container_side_margin;
+		margin-bottom: 10px;
+
+		text-align: left;
+	}
+}
+
+.popup__tabs_box{
+	@include clearfix;
+
+	height: 52px;
+	line-height: 52px;
+
+	@media (#{$max_ipad}){
+		display: none;
+	}
+}
+.popup__tabs_item{
+	float: left;
+
+	width: 50%;
+
+	/* Style for "Rectangle" */
+	width: 240px;
+	height: 52px;
+	background-color: #ececec;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+
+	cursor: pointer;
+
+	text-align: center;
+	color: $groom;
+	font-size: 15px;
+	text-transform: uppercase;
+
+	transition: background-color .2s ease, border-color .2s ease;
+
+	&:first-child{
+		border-right: 1px solid #ddd;
+	}
+	&:last-child{
+		border-left: 1px solid #ddd;
+	}
+
+
+	&.state-active-tab{
+		background-color: white;
+		border-color: white;
+	}
+	&:hover{
+		background-color: rgba(#ececec, 0.4);
+	}
+}
+.popup__content_box{
+	display: none;
+
+	&.state-visible{
+		display: block;
+	}
+}
+.popup__sign_form_box{
+	padding: 0 30px;
+
+	@media (#{$max_ipad}){
+		padding: 0 $container_side_margin;
+	}
+}
+.popup__sign_form_box__input_row{
+	@include clearfix;
+
+	margin-bottom: 20px;
+
+	&--checkbox{
+		margin-top: 30px;
+
+		@media (#{$max_ipad}){
+			margin-top: 20px;
+		}
+	}
+
+	@media (#{$max_ipad}){
+		margin-bottom: 6px;
+	}
+}
+.popup__sign_form_box__checkbox_label{
+}
+.popup__sign_form_box__checkbox_box{
+	width: 70%;
+	float: right;
+
+	@media (#{$max_ipad}){
+		width: 100%;
+		float: left;
+	}
+}
+.popup__sign_form_box__submit_form_box{
+	margin-top: 30px;
+
+	text-align: center;
+}
+.popup__sign_form__button{
+	@media (#{$max_ipad}){
+		width: 100%;
+
+		margin-bottom: $container_side_margin;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	&--mobile{
+		@media (#{$min_ipad}){
+			display: none;
+		}
+	}
+
+	&--desktop{
+		@media (#{$max_ipad}){
+			display: none;
+		}
+	}
+}
+.callback-time-columns {
+	white-space: nowrap;
+}
+
+a.form_link{
+	padding-left: 5px;
+}
+
+#modal_language_selection_overlay{
+	background: rgba(0, 0, 0, 0.7);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100000;
+	display: none;
+	.modal_language_selection{
+		position: fixed;
+		top: 110px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		width: 500px;
+		height: 110px;
+		background-color: #fff;
+		z-index: 100001;
+		text-align: center;
+		background-image: url(../img/marketing-site/bg/lang-select-bg.jpg);
+		background-size: cover;
+		.modal_language_selection-wrapper{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			button{
+				position: absolute;
+				top: 0;
+				right: 0;
+				background-image: url(../img/marketing-site/icons/close-icon.png);
+				background-size: cover;
+				width: 35px;
+				height: 35px;
+			}
+			p{
+				font-size: 18px;
+				color: #fff;
+				margin: 0;
+				padding: 20px;
+			}
+			a{
+				text-decoration: none;
+				color: #fff;
+				position: relative;
+				padding: 10px;
+				padding-left: 27px;
+			}
+			a.ru-lang:after, a.eng-lang:after{
+				content: "";
+				display: block;
+				width: 18px;
+				height: 18px;
+				position: absolute;
+				top: 9px;
+				left: 5px;
+			}
+			a.ru-lang:after{
+				background-image: url(../img/marketing-site/icons/i--flag--rus.png);
+				position: absolute;
+			}
+			a.eng-lang:after{
+				background-image: url(../img/marketing-site/icons/gb.svg);
+				border-radius: 50%;
+				background-size: 100%;
+			}
+			a:hover{
+				border: 1px solid  #fff;
+				border-radius: 8px;
+			}
+		}
+	}
+}
+
+
+
+@media(max-width: 767px){
+	#modal_language_selection_overlay{
+		.modal_language_selection{
+			height: 155px;
+			width: 300px;
+			.modal_language_selection-wrapper{
+				.col-lg-6:last-child{
+					margin-top: 25px;
+				}
+			}
+		}
+	}
+}
+
+
+// Success request popup
+#success-callbackForm-send_overlay{
+	background: rgba(0, 0, 0, 0.7);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100000;
+	display: none;
+	#success-callbackForm-send{
+		padding: 20px 0;
+		width: 30%;
+		height: 130px;
+		text-align: center;
+		background-color: #fff;
+		border: 1px solid  #ccc;
+		position: fixed;
+		z-index: 99999;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
+		p{
+			margin: 0;
+			padding-bottom: 10px;
+			font-size: 17px;
+		}
+		button:hover{
+			color: #fff;
+		}
+	}
+}
+
+
+@media(max-width: 767px){
+	#success-callbackForm-send_overlay{
+		#success-callbackForm-send{
+			width: 250px;
+			height: 200px;
+		}
+	}
+}

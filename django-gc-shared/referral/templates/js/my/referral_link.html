@@ -1,0 +1,58 @@
+{% load i18n staticfiles app_tags %}
+<a class="with-icon link" easy-slide-block default="true">{% trans "Referral link" %}</a>
+<div class="content partner-referral" content-block>
+  {% include "js/my/_referral_account_select.html" %}
+  {% include "js/my/_referral_domain_select.html" %}
+  <div class="row">
+    <label class="small-3 medium-3 large-3 column">{% trans 'Desired page' %}:</label>
+    <p class="small-9 medium-9 large-9 column links">
+      <input type="text" class="small-input" ng-model="pageLink"/>
+    </p>
+  </div>
+  <div class="row">
+    <label class="small-3 medium-3 large-3 column">{% trans 'Your referral link' %}:</label>
+    <p class="small-9 medium-9 large-9 column links">
+      <input type="text" class="small-input" readonly ng-value="refLink"/>
+      {% trans 'or' %}
+      <input type="text" class="small-input" readonly ng-value="refLinkAlt"/>
+    </p>
+  </div>
+
+  <div class="row">
+    <label class="small-3 medium-3 large-3 column">{% trans 'Site page' %}:</label>
+    <div class="small-9 medium-9 large-9 column links">
+      <div class="small-4 medium-4 large-4 column">
+        <div class="select-wrapper small-input">
+          <select ng-model="selectedProduct">
+            <option value="0" disabled>{% trans "Select product" %}</option>
+            <option value="0" disabled> landing 1 </option>
+            <option value="1"> landing 2 </option>
+            <option value="2"> landing 3 </option>
+          </select>
+        </div>
+      </div>
+      <div class="small-8 medium-8 large-8 column">
+        <input type="text" class="small-input" readonly ng-value="productLink"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <label class="small-3 medium-3 large-3 column">{% trans 'Landing page' %}:</label>
+    <div class="small-9 medium-9 large-9 column links">
+      <div class="small-4 medium-4 large-4 column">
+        <div class="select-wrapper small-input">
+          <select ng-model="selectedLanding">
+            <option value="0" disabled> landing 1 </option>
+            <option value="1"> landing 2 </option>
+            <option value="2"> landing 3 </option>
+          </select>
+        </div>
+      </div>
+      <div class="small-8 medium-8 large-8 column">
+        <input type="text" class="small-input" readonly ng-value="landingLink"/>
+      </div>
+    </div>
+  </div>
+
+</div>

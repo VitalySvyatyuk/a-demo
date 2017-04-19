@@ -1,0 +1,61 @@
+- load i18n callback_tags
+
+#success-callbackForm-send_overlay
+    #success-callbackForm-send
+        p
+            - trans "Thank you! Your request has been sent. In the near future you will be contacted by our staff."
+        button.button.button--outline
+            span.button__text
+                - trans "OK"
+
+.popup.popup--callback.js-popup.ie-popup(data-popup-name="callback_request")
+    .popup__close_btn.js-close-all-popups
+    .popup__content_box.state-visible
+        h2.popup__title
+            - trans "Request Callback"
+        .popup__sign_form_box
+            form#callback_request-form
+                - csrf_token
+                .input_box.popup__sign_form_box__input_row
+                    label.input_box__label(for='name') {% trans "Name" context "callback" %}
+                    input.input_box__input(name='name', type='text', value='{{ user.get_full_name }}', required)
+                .input_box.popup__sign_form_box__input_row
+                    label.input_box__label(for='phone_number') {% trans "Phone" context "callback" %}
+                    input.input_box__input#phone_number(name='phone_number', type='text', value='{{ user.profile.phone_mobile }}', required)
+                if no_category
+                    input(type='hidden', name='category', value='general')
+                else
+                    .input_box.popup__sign_form_box__input_row
+                        label.input_box__label(for='category') {% trans "Category" context "callback" %}
+                        - callback_request_choices as callback_choices
+                        select.select.input_box__input(name="category")
+                            for key, value in callback_choices
+                                option(value=key)= value
+                .input_box.popup__sign_form_box__input_row
+                    label.input_box__label(for='comment') {% trans "Comment" context "callback" %}
+                    textarea.textarea#comment.input_box__input(name='comment')
+                p {% trans "Appropriate time" %}
+                .input_box.popup__sign_form_box__input_row.row
+                    .radio_box.popup__sign_form_box__radio_box.col-md-3.callback-time-columns
+                        input#anytime.radio_box__input(type='radio', name='time_of_day', value='any', checked)
+                        label(for='anytime')
+                            .radio_box__tick
+                            span.radio_box__label.popup__sign_form_box__checkbox_label {% trans "Any" context "callback" %}
+                    .radio_box.popup__sign_form_box__radio_box.col-md-3.callback-time-columns
+                        input#morning.radio_box__input(type='radio', name='time_of_day', value='morning')
+                        label(for='morning')
+                            .radio_box__tick
+                            span.radio_box__label.popup__sign_form_box__checkbox_label 9:00...12:00
+                    .radio_box.popup__sign_form_box__radio_box.col-md-3.callback-time-columns
+                        input#afternoon.radio_box__input(type='radio', name='time_of_day', value='afternoon')
+                        label(for='afternoon')
+                            .radio_box__tick
+                            span.radio_box__label.popup__sign_form_box__checkbox_label 12:00...16:00
+                    .radio_box.popup__sign_form_box__radio_box.col-md-3.callback-time-columns
+                        input#evening.radio_box__input(type='radio', name='time_of_day', value='evening')
+                        label(for='evening')
+                            .radio_box__tick
+                            span.radio_box__label.popup__sign_form_box__checkbox_label 16:00...20:00
+                .popup__sign_form_box__submit_form_box
+                    button.popup__sign_form__button.popup__sign_form__button.button(type="submit")
+                        span.button__text {% trans 'Request a call' %}

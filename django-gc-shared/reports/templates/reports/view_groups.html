@@ -1,0 +1,16 @@
+{% extends "reports/base_report.html" %}
+
+{% load i18n %}
+
+{% block report_title %}Содержимое групп счетов{% endblock %}
+
+{% block report_form %}
+    {% for group in account_groups %}
+        <h3><a href="#" onclick="$('#group{{ group.pk }}').toggle();">{{ group.name }}</a></h3>
+        <ul id="group{{ group.pk }}" style="display:none;">
+            {% for acc in group.account_mt4_ids %}
+                <li>{{ acc }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}

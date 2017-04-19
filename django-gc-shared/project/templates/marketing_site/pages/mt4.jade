@@ -1,0 +1,189 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+	| MetaTrader4 | Arum Capital
+block content
+	.page_head(style="background-image: url({% static 'img/marketing-site/bg/bg--overlayed-graphs.jpg' %})")
+		.container
+			.row
+				.col-xs-12.white-bc
+					- breadcrumbs
+					h1.page_head__title.page_head__title--white
+						img.page_head__title__img.mt-four-logo(src="{% static 'img/marketing-site/etc/techs_logos/logo--mt4.png' %}")
+						| MetaTrader4
+						span.page_head__title__info.page_head__title__info--white
+							- trans "is one of most popular platforms for trading in FOREX and CFD markets"
+
+	.profits
+		.container
+			.row.profits__row
+				.col-xs-6.col-md-4.col-lg-2.profits__item
+					img.profits__img(src="{% static 'img/marketing-site/etc/digit-4.png' %}")
+					span.profits__text
+						- trans "4 order<br> types"
+				.col-xs-6.col-md-4.col-lg-2.profits__item
+					img.profits__img(src="{% static 'img/marketing-site/etc/unlocked.png' %}")
+					span.profits__text
+						- trans "Hedging of<br> positions "
+				.col-xs-6.col-md-4.col-lg-2.profits__item
+					img.profits__img(src="{% static 'img/marketing-site/etc/digit-7.png' %}")
+					span.profits__text
+						- trans "7 time<br> periods"
+				.col-xs-6.col-md-4.col-lg-2.profits__item
+					img.profits__img(src="{% static 'img/marketing-site/etc/database.png' %}")
+					span.profits__text
+						- trans "Indicators<br> base"
+				.col-xs-6.col-md-4.col-lg-2.profits__item
+					img.profits__img(src="{% static 'img/marketing-site/etc/digit-3.png' %}")
+					span.profits__text
+						- trans "3 chart<br> types"
+				.col-xs-6.col-md-4.col-lg-2.profits__item
+					img.profits__img(src="{% static 'img/marketing-site/etc/automatic-loading.png' %}")
+					span.profits__text
+						- trans "Algorithmic<br> trading"
+
+	.apps
+		.apps__item
+			.container
+				.row
+					.col-xs-12.col-md-12.col-xl-6
+						h2.page_title.apps__title
+							- trans "For Windows and Mac"
+						p.apps__item__text
+							- trans "One of the most popular platforms in the world for FOREX and CFD markets trading. Dozens of thousands of traders enjoy the simple and user-friendly platform environment."
+						p.apps__item__text
+							- trans "MetaTrader 4 platform is rich in features and meets all the requirements of trading. It gives traders a powerful range of graphic tools and multiple indicators, news feed, quotes and charts, all updated real-time. "
+						p.apps__item__text
+							- trans "The platform enables one to work with any number of open charts, use customized indicators and automated trading systems."
+						.apps__links_box.for-true-border
+							{% if LANGUAGE_CODE == 'ru' %}
+							div.not-ready-platform-ru
+								a.apps__link.button(href="#")
+									span.button__text
+										- trans "Download the platform"
+							{% else %}
+							div.not-ready-platform-en
+								a.apps__link.button(href="#")
+									span.button__text
+										- trans "Download the platform"
+							{% endif %}
+							{% if LANGUAGE_CODE == 'ru' %}
+							a.apps__link.link.link--icon.link--icon-download(href="/static/agreements/instruction_MAC_ru.pdf", target='_blank')
+								- trans "User manual Mac"
+								|  (pdf)
+							{% else %}
+							a.apps__link.link.link--icon.link--icon-download(href="/static/agreements/instruction_MAC_en.pdf", target='_blank')
+								- trans "User manual Mac"
+								|  (pdf)
+							{% endif %}
+					.col-xs-12.col-md-12.col-xl-6
+						.apps__slider_box.apps__slider_box--windows
+							.apps__slider_arrow_box
+								//- button.slider_arrow.slider_arrow--left.apps__slider_arrow.apps__slider_arrow--left.js-slider-prev-arrow-1(type="button")
+								//- button.slider_arrow.slider_arrow--right.apps__slider_arrow.apps__slider_arrow--right.js-slider-next-arrow-1(type="button")
+							.apps__slider.js-slider(data-slick="{\"slidesToShow\": 1, \"slidesToScroll\": 1, \"fade\": true, \"arrows\": true, \"dots\": false, \"dotsClass\": \"apps__dots\": false, \"prevArrow\": \".js-slider-prev-arrow-1\", \"nextArrow\": \".js-slider-next-arrow-1\", \"autoplay\": false, \"autoplaySpeed\": 10000, \"responsive\": [{\"breakpoint\": 768, \"settings\": {\"dots\": true, \"arrows\": false}}]}")
+								.apps__slider_item_box
+									img.apps__slider_item_pic(src="{% static 'img/marketing-site/pictures/pic--imac-graphs-1.png' %}")
+								//- .apps__slider_item_box
+								//- 	img.apps__slider_item_pic(src="{% static 'img/marketing-site/pictures/pic--imac-graphs-1.png' %}")
+								//- .apps__slider_item_box
+								//- 	img.apps__slider_item_pic(src="{% static 'img/marketing-site/pictures/pic--imac-graphs-1.png' %}")
+
+		.apps__item
+			.container
+				.row
+					.col-xs-12.col-md-12.col-xl-8.col-xl-offset-1.apps__item__col--right
+						h2.page_title.apps__title
+							- trans "For Android"
+						p.apps__item__text
+							- trans "Free application for FOREX trading on Android smartphones. Now you can do your trading any time from any place wherever mobile Internet is available. "
+						p.apps__item__text
+							- trans "The application supports quotes of financial tools in real-time, a complete range of trade orders including pending orders and chart trading. "
+						ul.dashed_list
+							li.dashed_list__item
+								- trans "Interactive quote charts with scaling and scroll down real-time options"
+							li.dashed_list__item
+								- trans "7 timeframes: M1, M5, M15, M30, H1, H4 and D1"
+							li.dashed_list__item
+								- trans "Technical indicators"
+						.apps__links_box
+							a.apps__link
+								img(src="{% static 'img/marketing-site/etc/google-play-button.png' %}")
+
+					.col-xs-12.col-md-12.col-xl-3
+						.apps__slider_box.apps__slider_box--android
+							.apps__slider_arrow_box
+								//- button.slider_arrow.slider_arrow--left.apps__slider_arrow.apps__slider_arrow--left.js-slider-prev-arrow-2(type="button")
+								//- button.slider_arrow.slider_arrow--right.apps__slider_arrow.apps__slider_arrow--right.js-slider-next-arrow-2(type="button")
+							.apps__slider.js-slider(data-slick="{\"slidesToShow\": 1, \"slidesToScroll\": 1, \"fade\": true, \"arrows\": true, \"dots\": false, \"dotsClass\": \"apps__dots\": false, \"prevArrow\": \".js-slider-prev-arrow-2\", \"nextArrow\": \".js-slider-next-arrow-2\", \"autoplay\": false, \"autoplaySpeed\": 10000, \"responsive\": [{\"breakpoint\": 768, \"settings\": {\"dots\": true, \"arrows\": false}}]}")
+								.apps__slider_item_box
+									img.apps__slider_item_pic.apps__slider_item_pic--small(src="{% static 'img/marketing-site/pictures/pic--android-graph-01.png' %}")
+								//- .apps__slider_item_box
+								//- 	img.apps__slider_item_pic.apps__slider_item_pic--small(src="{% static 'img/marketing-site/pictures/pic--android-graph-01.png' %}")
+								//- .apps__slider_item_box
+								//- 	img.apps__slider_item_pic.apps__slider_item_pic--small(src="{% static 'img/marketing-site/pictures/pic--android-graph-01.png' %}")
+
+
+		.apps__item
+			.container
+				.row
+					.col-xs-12.col-md-12.col-xl-6
+						h2.page_title.apps__title
+							- trans "For iOS (iPhone и iPad)"
+						p.apps__item__text
+							- trans "You can install a free full version of the most popular FOREX trading platform – MetaTRader4 on your iPhone or iPad. It will enable you to manage your account, trade in financial markets and use over 30 technical indicators for your analysis. "
+						ul.dashed_list
+							li.dashed_list__item
+								- trans "Financial Instruments quotes in real time"
+							li.dashed_list__item
+								- trans "A full range of trade orders including pending orders"
+							li.dashed_list__item
+								- trans "Trading from/using the charts"
+						//- a.download__ios(href="http://www.metatrader4.com/en/trading-platform/help/userguide/install_mac")
+						//- 	- trans "Download for iOS"
+						.apps__links_box
+							a.apps__link
+								img(src="{% static 'img/marketing-site/etc/appstore-button.png' %}")
+
+					.col-xs-12.col-md-12.col-xl-6
+						.apps__slider_box.apps__slider_box
+							.apps__slider_arrow_box
+								//- button.slider_arrow.slider_arrow--left.apps__slider_arrow.apps__slider_arrow--left.js-slider-prev-arrow-3(type="button")
+								//- button.slider_arrow.slider_arrow--right.apps__slider_arrow.apps__slider_arrow--right.js-slider-next-arrow-3(type="button")
+							.apps__slider.js-slider(data-slick="{\"slidesToShow\": 1, \"slidesToScroll\": 1, \"fade\": true, \"arrows\": true, \"dots\": false, \"dotsClass\": \"apps__dots\": false, \"prevArrow\": \".js-slider-prev-arrow-3\", \"nextArrow\": \".js-slider-next-arrow-3\", \"autoplay\": false, \"autoplaySpeed\": 10000, \"responsive\": [{\"breakpoint\": 768, \"settings\": {\"dots\": true, \"arrows\": false}}]}")
+								.apps__slider_item_box
+									img.apps__slider_item_pic.apps__slider_item_pic--big(src="{% static 'img/marketing-site/pictures/pic--ios-osx-app-1.png' %}")
+								//- .apps__slider_item_box
+								//- 	img.apps__slider_item_pic.apps__slider_item_pic--big(src="{% static 'img/marketing-site/pictures/pic--ios-osx-app-1.png' %}")
+								//- .apps__slider_item_box
+								//- 	img.apps__slider_item_pic.apps__slider_item_pic--big(src="{% static 'img/marketing-site/pictures/pic--ios-osx-app-1.png' %}")
+
+	.call_to_action_pageblock.call_to_action(style="background-image: url({% static 'img/marketing-site/bg/bg--keyboard-1.jpg' %})")
+		.container.call_to_action__container.cancel-position-for-btn
+			span.call_to_action__text.call_to_action__text--big.call_to_action__text--white
+				- trans "Become our client"
+			.call_to_action__buttons_box
+				{% if LANGUAGE_CODE == 'ru' %}
+				div.risk-hidden-ru.mobile-view
+					a.call_to_action__button__item.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+						span.button__text
+							- trans "Open a demo account"
+				{% else %}
+				div.risk-hidden-en.mobile-view
+					a.call_to_action__button__item.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+						span.button__text
+							- trans "Open a demo account"
+				{% endif %}
+				{% if LANGUAGE_CODE == 'ru' %}
+				div.risk-hidden-ru.mobile-view
+					a.call_to_action__button__item.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+						span.button__text
+							- trans "Open an account"
+				{% else %}
+				div.risk-hidden-en.mobile-view
+					a.call_to_action__button__item.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+						span.button__text
+							- trans "Open an account"
+				{% endif %}

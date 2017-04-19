@@ -1,0 +1,191 @@
+{% load i18n %}
+
+<p class="h2 offset-bottom-30">{% trans "Your reward" %}</p>
+
+<p>{% blocktrans %}We do not differentiate between old and new partners. All the partners of Grand&nbsp;Capital
+get equally profitable partnership terms. You will receive increased commission on all of our instruments, be it
+Forex, CFD, ECN or Binary Options.{% endblocktrans %}</p>
+
+<p>{% trans "The sum of the partners reward is formed from the sum of  In / Out, volume of trade and groups of instruments:" %}</p>
+<table class="offset-top-20 offset-bottom-20">
+    <thead>
+        <tr>
+            <td>
+                {% trans "Reward" %}
+            </td>
+            <td>
+                {% blocktrans %}In/Out up to{% endblocktrans %} $30&nbsp;000
+            </td>
+            <td>
+                {% trans "In/Out over" %} $30&nbsp;000
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{% trans "Reward for 1 standard lot" %}</td>
+            <td>{% blocktrans with from="$15" till="$70" %}From {{ from }} till {{ till }}{% endblocktrans %}</td>
+            <td>{% blocktrans with from="$18" till="$80" %}From {{ from }} till {{ till }}{% endblocktrans %}</td>
+        </tr>
+        <tr>
+            <td>
+                                {% blocktrans %}
+                                    Reward for 1 standard lot as a % of the company
+                                    commission for a group of CFD instruments
+                                {% endblocktrans %}
+            </td>
+            <td>70%</td>
+            <td>80%</td>
+        </tr>
+        <tr>
+            <td>
+                                {% blocktrans %}
+                                    Reward for 1 standard lot as a % of the company commission for ECN type accounts
+                                {% endblocktrans %}
+            </td>
+            <td>70%</td>
+            <td>80%</td>
+        </tr>
+        <tr>
+            <td>
+				{% blocktrans %}
+                    Reward for the volume of trade for Options type accounts
+                {% endblocktrans %}
+            </td>
+            <td>4%</td>
+            <td>5%</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- adaptive version for reward block -->
+<div class="gc-accordion third offset-top-20 offset-bottom-20">
+    <div class="gc-accordion-item" data-gc-accordion>
+        <a href="#" class="title" data-gc-accordion-toggle>
+            {% blocktrans with from="$30&nbsp;000" %}From {{ from }}{% endblocktrans %}
+        </a>
+        <div class="content">
+            <table class="reward-table">
+                <tbody>
+                    <tr>
+                        <td>{% trans "Reward for 1 standard lot" %}</td>
+                        <td>
+                            {% trans "from" %} $15 {% trans "to" %} $70
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                {% blocktrans %}
+                                    Reward for 1 standard lot as a % of the company
+                                    commission for a group of CFD instruments
+                                {% endblocktrans %}
+                        </td>
+                        <td>70%</td>
+                    </tr>
+                    <tr>
+                        <td>
+                                {% blocktrans %}
+                                    Reward for 1 standard lot as a % of the company commission for ECN type accounts
+                                {% endblocktrans %}
+                        </td>
+                        <td>70%</td>
+                    </tr>
+                    <tr>
+                        <td>
+                                {% blocktrans %}
+                                    Reward for the volume of trade as a % of In/Out for Options type accounts
+                                {% endblocktrans %}
+                        </td>
+                        <td>4%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="gc-accordion-item" data-gc-accordion>
+        <a href="#" class="title" data-gc-accordion-toggle>
+            {% blocktrans with from="$10&nbsp;000" till="$30&nbsp;000" %}From {{ from }} till {{ till }}{% endblocktrans %}
+        </a>
+        <div class="content">
+            <table class="reward-table">
+                <tbody>
+                    <tr>
+                        <td>{% trans "Reward for 1 standard lot" %}</td>
+                        <td>{% trans "from" %} $18 {% trans "to" %} $80</td>
+                    </tr>
+                    <tr>
+                        <td>
+                                {% blocktrans %}
+                                    Reward for 1 standard lot as a % of the company
+                                    commission for a group of CFD instruments
+                                {% endblocktrans %}
+                        </td>
+                        <td>80%</td>
+                    </tr>
+                    <tr>
+                        <td>
+                                {% blocktrans %}
+                                    Reward for 1 standard lot as a % of the company commission for ECN type accounts
+                                {% endblocktrans %}
+                        </td>
+                        <td>80%</td>
+                    </tr>
+                    <tr>
+                        <td>
+                                {% blocktrans %}
+                                    Reward for the volume of trade as a % of In/Out for Options type accounts
+                                {% endblocktrans %}
+                        </td>
+                        <td>5%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- adaptive version for reward block end -->
+
+<!-- options reward block -->
+<p>
+                    {% blocktrans %}
+                        Additionally for all account types you will get a bonus for clients that made
+                        a trading turnover of more than 5 lots for instruments in groups FOREX&nbsp;MAJORS,
+                        FOREX&nbsp;EXT&nbsp;1, FOREX&nbsp;EXT&nbsp;2 ($1000 for accounts of Options type) during the
+                        reporting period (paid once for each individual client)
+                    {% endblocktrans %}
+</p>
+<table class="adaptive-rotated-table without-thead offset-top-20 offset-bottom-20">
+    <tbody>
+        <tr>
+            <td><span>{% trans "Number of clients" %}</span></td>
+            <td>
+                <span>
+                    {% blocktrans with till="15" %}Till {{ till }}{% endblocktrans %}
+                </span>
+            </td>
+            <td>
+                <span>
+                    {% blocktrans with from="16" till="50" %}From {{ from }} till {{ till }}{% endblocktrans %}
+                </span>
+            </td>
+            <td>
+                <span>
+                    {% blocktrans with from="51" till="100" %}From {{ from }} till {{ till }}{% endblocktrans %}
+                </span>
+            </td>
+            <td>
+                <span>
+                    {% blocktrans with from="100" %}More than {{ from }}{% endblocktrans %}
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td><span>{% trans "Bonus for 1 (one) client" %}</span></td>
+            <td><span>$10</span></td>
+            <td><span>$25</span></td>
+            <td><span>$35</span></td>
+            <td><span>$50</span></td>
+        </tr>
+    </tbody>
+</table>
+<!-- options reward block end -->

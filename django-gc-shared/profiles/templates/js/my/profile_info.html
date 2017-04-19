@@ -1,0 +1,21 @@
+{% extends "js/my/profile_base.html" %}
+{% load i18n %}
+
+{% block tabs %}
+  {% with 'info' as category %}
+    {{block.super}}
+  {% endwith %}
+{% endblock %}
+
+{% block tabscontent %}
+<div class="active private-data">
+  <form ng-submit="save()">
+  {% include "js/my/_profile_info.html" %}
+
+
+  <div class="third-light-wrapper bottom" ng-if="!user.profile.status_info.sended_docs && user.profile.email_verified">
+    <button type="submit" class="button medium" ng-disabled="globalLoading ">{% trans "Save" %}</button>
+  </div>
+  </form>
+</div>
+{% endblock %}

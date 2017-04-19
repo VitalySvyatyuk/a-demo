@@ -1,0 +1,40 @@
+{% load tree_menu_tags i18n %}
+
+{% for menu_item in menu.root_item.all_children %}
+    {% if menu_type == "breadcrumb" %}
+        {% if menu_item.is_selected %}
+            <div class="row breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="/" itemprop="url">
+                    <span itemprop="title">{% trans "Main" %}</span>
+                </a> / {% show_menu_item menu_item %}
+            </div>
+        {% endif %}
+    {% else %}
+        {% if menu_item.is_visible %}
+            {% show_menu_item menu_item %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{% comment %}
+{% ifequal menu_type "unordered-list" %}
+<div id="menu">
+	<ul class="menu" id="mi-{{ menu.root_item.id }}">
+		{% for menu_item in menu.root_item.all_children %}
+            {% if menu_item.is_visible %}
+			    {% show_menu_item menu_item %}
+            {% endif %}
+		{% endfor %}
+	</ul>
+</div>
+{% endifequal %}
+
+{% ifequal menu_type "bottom-menu" %}
+	<ul class="menu" id="mi-{{ menu.root_item.id }}">
+		{% for menu_item in menu.root_item.all_children %}
+            {% if menu_item.is_visible %}
+			    {% show_menu_item menu_item %}
+            {% endif %}
+		{% endfor %}
+	</ul>
+{% endifequal %}{% endcomment %}

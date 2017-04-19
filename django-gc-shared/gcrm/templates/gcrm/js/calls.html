@@ -1,0 +1,78 @@
+{% load i18n %}
+
+<div class="row">
+  <div class="input-group col-sm-8">
+    <form ng-submit="filter()">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="{% trans "Search by phone number" %}" ng-model="filters.search">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button" ng-click="filter()"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-16">
+    <table class="table table-bordered table-hover table-sm table-fixed">
+      <thead class="thead-default">
+        <tr>
+          <th class="text-md-center column-fixed" sorter="call_date" objects="objects">{% trans "Date" %}</th>
+          <th class="text-md-center">{% trans "From" %}</th>
+          <th class="text-md-center">{% trans "To" %}</th>
+          <th class="text-md-center">{% trans "Disposition" %}</th>
+          <th class="text-md-center">{% trans "Duration" %}</th>
+          <th class="text-md-center">{% trans "Record" %}</th>
+        </tr>
+        <tr>
+          <th>
+            <daterangepicker
+              classes="'form-control-sm'"
+              start="filters.call_date_0"
+              end="filters.call_date_1"
+              on-change="filter()">
+            </daterangepicker>
+          </th>
+          <th colspan="2">
+            <user-select-filter
+              model="filters.manager"
+              on-change="filter()"
+              hide-null-manager="true">
+            </user-select-filter>
+          </th>
+          <th>
+            <select  class="form-control form-control-sm" ng-model="filters.disposition" ng-change="filter()">
+              <option value="all" selected>{% trans "All" %}</option>
+              <option value="answered">{% trans "Answered" %}</option>
+              <option value="not_answered">{% trans "Not answered" %}</option>
+            </select>
+          </th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="objects.count==0"><td colspan="6"><div class="text-md-center">{% trans "No items to display" %}</div></td></tr>
+        <tr ng-repeat="item in objects.items">
+          <td class="text-md-center" title="[[::item.data.call_date|moment:'LLL']]">[[::item.data.call_date|moment:'calendar']]</td>
+          <td class="text-md-center"  ng-if="::item.data.a.id"><a ui-sref="contact.feed({id: item.data.a.id})" ng-bind="::item.data.a.name"></a></td>
+          <td class="text-md-center"  ng-if="::!item.data.a.id">[[::item.data.a]]</td>
+          <td class="text-md-center"  ng-if="::item.data.b.id"><a ui-sref="contact.feed({id: item.data.b.id})" ng-bind="::item.data.b.name"></a></td>
+          <td class="text-md-center"  ng-if="::!item.data.b.id">[[::item.data.b]]</td>
+          <td class="text-md-center">[[::item.data.disposition]]</td>
+          <td class="text-md-center" title="[[::item.data.duration / 60|number:2]] {% trans "minutes" %}">[[::item.data.duration]] {% trans "sec" %}</td>
+          <td class="text-md-center" ng-switch="::item.data.record">
+            <span ng-switch-when="null">-</span>
+            <span ng-switch-default ng-switch="currentPlayedId==item.data.id">
+              <a ng-switch-default type="button" ng-click="showPlayer(item.data.id)">{% trans "Play" %}</a>
+              <audio ng-switch-when="true" ng-src="[[::item.data.record]]" controls="controls" class="player" autoplay="autoplay"></audio>
+            </span>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+    <tablefooter objects="objects" class="buttons"></tablefooter>
+  </div>
+</div>

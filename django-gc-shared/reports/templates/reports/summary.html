@@ -1,0 +1,91 @@
+{% extends "reports/base_report.html" %}
+
+{% load i18n %}
+
+{% block report_title %}{% trans "Summary report" %}{% endblock %}
+
+{% block report_table %}
+<table class="gctable report tablesorter">
+    <thead>
+    <tr>
+        <th>{% trans "Account" %}</th>
+        <th>{% trans "Account type" %}</th>
+        <th>{% trans "Name" %}</th>
+        {% if report.show_agent_code %}<th>{% trans "Agent code" %}</th>{% endif %}
+        <th>{% trans "Deposit" %}</th>
+        <th>{% trans "Withdrawl" %}</th>
+        <th>{% trans "In/Out" %}</th>
+        <th>{% trans "Credit" %}</th>
+        <th>{% trans "Volume" %}</th>
+        <th>{% trans "Commission" %}</th>
+        <th>{% trans "Options" %}</th>
+        <th>{% trans "Profit" %}</th>
+        <th>{% trans "Last Balance" %}</th>
+        <th>{% trans "Unrealized P/L" %}</th>
+        <th>{% trans "Equity" %}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in report.data %}
+      <tr class="data">
+                <td>{{ row.login }}</td>
+                <td>{{ row.group }}</td>
+                <td>{{ row.name }}</td>
+                {% if report.show_agent_code %}<td>{{ row.agent_account }}</td>{% endif %}
+                <td class="nowrap {sorter: 'russian_float'}">{{ row.deposit|floatformat:2 }} $</td>
+                <td class="nowrap {sorter: 'russian_float'}">{{ row.withdraw|floatformat:2 }} $</td>
+                <td class="nowrap {sorter: 'russian_float'}">{{ row.in_out|floatformat:2 }} $</td>
+                <td class="nowrap {sorter: 'russian_float'}">{{ row.credit|floatformat:2 }} $</td>
+                <td class="nowrap {sorter: 'russian_float'}">{{ row.volume|floatformat:2 }}</td>
+                <td class="nowrap {sorter: 'russian_float'}">{{ row.commission|floatformat:2 }}</td>
+                <td class="nowrap {sorter: 'russian_float'}">{{ row.options|floatformat:2 }}</td>
+                <td class="nowrap {sorter: 'russian_float'}">{{ row.profit|floatformat:2 }} $</td>
+                <td class="nowrap {sorter: 'russian_float'}">{{ row.balance|floatformat:2 }} $</td>
+                <td class="nowrap {sorter: 'russian_float'}">{{ row.unrealized_pl|floatformat:2 }} $</td>
+                <td class="nowrap {sorter: 'russian_float'}">{{ row.equity|floatformat:2 }} $</td>
+            </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        {% if report.ib_totals %}
+            {% include 'reports/includes/summary/totals.html' with totals=report.ib_totals caption="Клиенты из-под IB" %}
+            {% include 'reports/includes/summary/totals.html' with totals=report.non_ib_totals caption="Прямые клиенты" %}
+            <tr>
+                <th colspan="{% if report.show_agent_code %}13{% else %}12{% endif %}">Итого</th>
+            </tr>
+        {% endif %}
+        {% include 'reports/includes/summary/totals.html' with totals=report.totals %}
+    </tfoot>
+</table>
+
+    {% include 'reports/includes/totals.html' %}
+
+
+
+
+{% if "new_accounts" in report %}
+<table class='gctable report'>
+    <thead>
+        <tr>
+            <th>Открыто ЛК</th>
+            {% if "new_mt4_accounts" in report %}<th>Открыто счетов</th>{% endif %}
+            {% if "new_demo_mt4_accounts" in report %}<th>Открыто demo</th>{% endif %}
+            {% if "new_direct_accounts_count" in report %}<th>Открыто прямых real</th>{% endif %}
+            {% if "new_partner_accounts_count" in report %}<th>Открыто real из-под IB</th>{% endif %}
+            <th>Пополнено из новых</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ report.new_accounts }}</td>
+            {% if "new_mt4_accounts" in report %}<td>{{ report.new_mt4_accounts }}</td>{% endif %}
+            {% if "new_demo_mt4_accounts" in report %}<td>{{ report.new_demo_mt4_accounts }}</td>{% endif %}
+            {% if "new_direct_accounts_count" in report %}<td>{{ report.new_direct_accounts_count }}</td>{% endif %}
+            {% if "new_partner_accounts_count" in report %}<td>{{ report.new_partner_accounts_count }}</td>{% endif %}
+            <td>{{ report.deposited_new_mt4_accounts }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+{% endblock %}

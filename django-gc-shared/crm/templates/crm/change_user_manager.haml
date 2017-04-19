@@ -1,0 +1,62 @@
+- extends 'crm/lovely_base.haml'
+
+- load i18n app_tags shared_tags
+
+- block title
+    Перекрепление клиента
+
+- block css
+
+- block js
+
+- block header
+
+- block content
+    .container
+        - if not obj.id
+            %form.form-horizontal{role:"form", method:"POST"}
+                .form-group
+                    %label.col-lg-2.control-label Клиент
+                    .col-lg-10
+                        %p.form-control-static= profile
+                .form-group
+                    %label.col-lg-2.control-label CRM
+                    .col-lg-10
+                        %p.form-control-static
+                            %a{href:"={profile.get_amo.get_url}", target:"_blank"} Ссылка
+
+                .form-group
+                    %label.col-lg-2.control-label Текущий менеджер
+                    .col-lg-10
+                        %p.form-control-static= profile.manager.crm_manager|default:"Пусто"
+
+                - csrf_token
+                .form-group
+                    %label.col-lg-2.control-label= form.assign_to.label
+                    .col-lg-10
+                        %select.form-control{id:"id_{{form.assign_to.name}}", name:"{{form.assign_to.name}}"}
+                            - for value, text in form.assign_to.field.choices
+                                %option{value: "{{value}}"}
+                                    = text
+                        %p.help-block
+                            %span.label.label-primary Не знаете на кого перекрепить?
+                            Просто выберите "---------" и оставьте комментарий! В таком случае ответственный за обработку заявок сам выберет подходящего менеджера!
+
+                .form-group
+                    %label.col-lg-2.control-label= form.comment.label
+                    .col-lg-10
+                        %textarea.form-control{id:"id_{{form.comment.name}}", name:"{{form.comment.name}}", rows:"3"}
+                        - if user.crm_manager and user.crm_manager.is_office_supermanager
+                            %p.help-block
+                                %span.label.label-primary Важно!
+                                <b>Ваши заявки</b> на перекрепления между менеджерами {% if user.crm_manager.office %}офиса <b>{{user.crm_manager.office}}</b>{% endif %} будут обработаны <b>мгновенно</b>, так как вы являетесь <b>главным менеджером</b>!
+                .text-center
+                    %button.btn.btn-primary{type:"submit"} Сохранить
+        - elif obj.id and obj.is_completed
+            %br
+            %br
+            %p.text-center Менеджер клиента <b>={profile}</b> был успешно изменён с <b>{{obj.previous.crm_manager|default:"Пусто"}}</b> на <b>={obj.assign_to.crm_manager}</b>!
+        - elif obj.id and not obj.is_completed
+            %br
+            %br
+            %p.text-center <b>Заявка</b> на смену менеджера клиента <b>={profile}</b> с <b>{{obj.previous.crm_manager|default:"Пусто"}}</b> на <b>={obj.assign_to.crm_manager}</b> была успешно создана!

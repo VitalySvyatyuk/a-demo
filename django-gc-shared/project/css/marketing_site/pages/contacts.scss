@@ -1,0 +1,82 @@
+.contacts-page {
+  .contacts-item {
+    @include clearfix;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #c9c9c9;
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+  .contacts-item-header, .contacts-item-lang {
+    font-size: 30px;
+    font-weight: 300;
+    margin: 0;
+  }
+  .contacts-item .contact-wrapper {
+    margin-top: 40px;
+  }
+  .contacts-item .contact {
+    font-size: 18px;
+    margin-top: 10px;
+    display: block;
+    text-decoration: none;
+    .caption {
+      font-size: 15px;
+      color: #afafaf;
+      display: inline-block;
+    }
+    .mail {
+      border-bottom: 1px solid #262626;
+      transition: border-color .2s ease;
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+  .contacts-item .flag-icon {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+  .contacts-map {
+    height: 330px;
+    width: 100%;
+  }
+  .hide {
+    display: none;
+  }
+  .balloon-address {
+    @extend body;
+  }
+  .ballon-image {
+    width: 24px;
+    height: 24px;
+    float: left;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background: url(#{$icons_path}location-mark.svg) no-repeat center / auto 100%;
+  }
+  .balloon-content-wrapper {
+    padding: 20px;
+    max-width: 350px;
+  }
+  .buttons-block {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    .button {
+      margin-bottom: 20px;
+      @media (#{$max_ipad}){
+        width: 100%;
+      }
+    }
+    .button:first-of-type {
+      margin-right: 16px;
+    }
+  }
+}

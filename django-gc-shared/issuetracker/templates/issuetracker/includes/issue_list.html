@@ -1,0 +1,27 @@
+{% load i18n %}
+
+  <table id="issues-list" class="gctable">
+    <tbody>
+      <tr>
+        <th class="key">{% trans "Ticket id" %}</th>
+        <th class="value">{% trans "Department" %}</th>
+        <th class="value">{% trans "Created" %}</th>
+        <th class="value">{% trans "Status" %}</th>
+        <th class="value">{% trans "Subject" %}</th>
+      </tr>
+
+      {% for issue in issues %}
+        <tr class="data">
+          <td><a href="{% url "issuetracker_issue_detail" issue_id=issue.id %}">{{ issue.id }}</a></td>
+          <td>{{ issue.department.get_name_display }}</td>
+          <td>{{ issue.creation_ts }}</td>
+          <td>{{ issue.get_status_display }}</td>
+          <td>{{ issue.title }}</td>
+        </tr>
+      {% empty %}
+        <tr class="data">
+          <td colspan="5">{% trans "No tickets" %}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>

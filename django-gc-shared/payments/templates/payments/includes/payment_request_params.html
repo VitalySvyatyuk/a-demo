@@ -1,0 +1,1 @@
+{% load i18n %}{% if params %}<table>{% for key, value in params.iteritems %}{% with key|capfirst as param %}<tr><td>{% trans param %}</td><td>{{ value }}</td></tr>{% endwith %}{% endfor %}</table>{% else %}&mdash;{% endif %}

@@ -1,0 +1,331 @@
+.education-full__tabs{
+  margin-top: 128px;
+  .tabs__button{
+    border: 1px solid  #fff;
+    background-color: transparent;
+    .tabs__button__text_box{
+      .tabs__button__text{
+        color: #fff;
+      }
+    }
+  }
+  .state-active-tab{
+    background-color: #fff;
+    .tabs__button__text_box{
+      .tabs__button__text{
+        color: #262626;
+      }
+    }
+  }
+  .js-tab-content{
+    display: none;
+  }
+  .js-tab-content.state-visible{
+    display: block;
+  }
+}
+.education-terms{
+  margin-top: 92px;
+  margin-bottom: 55px;
+  .education-terms-questions{
+    position: relative;
+    margin-bottom: 94px;
+    ul{
+      margin: 0;
+      padding-left: 300px;
+      li{
+        display: inline-block;
+        vertical-align: top;
+        width: 49%;
+        margin-bottom: 31px;
+        a.link{
+          color: #1f5060;
+          border-bottom: 1px solid rgba(30,60,95,0.4);
+          text-decoration: none;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .education-terms-questions:last-child{
+    margin-bottom: 0;
+  }
+  .education-terms-questions .question {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #797979;
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
+
+
+@media(max-width: 767px){
+  .education-terms{
+    .education-terms-questions{
+      ul{
+        padding-left: 65px;
+        li{
+          display:block;
+          width: 100%;
+        }
+      }
+    }
+    .education-terms-questions:after{
+      top: -40px;
+      left: 0;
+    }
+  }
+}
+
+.education-glossary{
+  margin-top: 92px;
+  margin-bottom: 55px;
+  .education-glossary-letter{
+    position: relative;
+    padding-bottom: 43px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 44px;
+    ul{
+      margin: 0;
+      padding-left: 102px;
+      li{
+        display: inline-block;
+        vertical-align: top;
+        width: 33%;
+        margin-bottom: 31px;
+        a.link{
+          color: #1f5060;
+          border-bottom: 1px solid rgba(30,60,95,0.4);
+          text-decoration: none;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .education-glossary-letter:first-child{
+    margin-top: 0;
+  }
+  .education-glossary-letter:last-child{
+    border-bottom: none;
+  }
+  .education-glossary-letter .letter{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #797979;
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
+
+@media(max-width: 767px){
+  .education-glossary{
+    .education-glossary-letter{
+      ul{
+        padding-left: 40px;
+        li{
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 1199px){
+  .education-glossary{
+    .education-glossary-letter{
+      ul{
+        padding-left: 40px;
+        li{
+          width: 32%;
+        }
+      }
+    }
+  }
+}
+
+.education-webinar{
+  margin-bottom: 50px;
+  .pagination{
+    margin-top: 63px;
+    margin-bottom: 45px;
+    .pagination__arrow_button--left{
+      float: left;
+      margin-top: 16px;
+      border-bottom: none;
+    }
+    .pagination__arrow_button--right{
+      float: right;
+      margin-top: 16px;
+      border-bottom: none;
+    }
+    span.pagination__button{
+      color: #262626;
+      font-size: 24px;
+      font-weight: 400;
+    }
+    .pagination__arrow_button:before{
+      top: -3px;
+    }
+    a.pagination__number_button{
+      width: 140px;
+    }
+  }
+  .education-webinar-schedule{
+    table{
+      width: 100%;
+      border-collapse: separate;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      .button__text{
+        text-transform: capitalize;
+        letter-spacing: 0;
+      }
+      thead{
+        tr{
+          display: table-row;
+          th{
+            text-align: left;
+            color: #636262;
+            font-size: 15px;
+            font-weight: 400;
+            padding-left: 25px;
+            padding-bottom: 15px;
+            display: table-cell;
+            padding-top: 23px;
+            border-bottom: 0.5px solid #ededed;
+          }
+        }
+      }
+      tbody{
+        tr{
+          display: table-row;
+          td{
+            text-align: left;
+            vertical-align: top;
+            width: 20%;
+            padding: 37px 0;
+            padding-left: 25px;
+            padding-right: 10px;
+            display: table-cell;
+            border: 1px solid transparent;
+            .subtitle.subtitle--red{
+              margin-top: 0;
+            }
+            a.link{
+              color: #1f5060;
+              border-bottom: 1px solid #1f5060;
+              text-decoration: none;
+            }
+            p.time{
+              color: #929292;
+              font-size: 16px;
+              font-weight: 400;
+              position: relative;
+              padding-left: 18px;
+              float: left;
+              clear: both;
+            }
+            p.time:after{
+              content: "";
+              display: block;
+              background-image: url(../img/marketing-site/icons/icon-education-webinar-clock.svg);
+              width: 14px;
+              height: 14px;
+              position: absolute;
+              top: 1px;
+              left: 0;
+            }
+            a.button{
+              width: auto;
+              min-width: 120px;
+              padding: 5px 10px;
+              display: block;
+              height: 25px;
+              line-height: 0;
+              display: none;
+              margin: 13px 0;
+            }
+            .link-wrap {
+              @include clearfix;
+              display: block;
+              float: left;
+            }
+            .placeholder {
+              display: none;
+            }
+          }
+          td:hover{
+            border-color: #e8072a;
+            p.time.to-hide{
+              display: none;
+            }
+            a.button{
+              display: block;
+              float: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .education-full__tabs{
+    .benefits__tabs_box__button{
+      display: block;
+      width: 100%;
+    }
+  }
+  .education-webinar{
+    margin-bottom: 50px;
+    .education-webinar-schedule{
+      table{
+        thead{
+          tr{
+            th{
+              display: none;
+            }
+          }
+        }
+        tbody{
+          tr{
+            td{
+              display: block;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px){
+  .education-full__tabs{
+    .benefits__tabs_box__button{
+      width: 33%;
+    }
+  }
+  .education-webinar{
+    .education-webinar-schedule{
+      table{
+        tbody{
+          tr{
+            td{
+              padding-left: 5px;
+              padding-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

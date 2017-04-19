@@ -1,0 +1,10 @@
+Новая заявка на перекрепление
+Автор: {{obj.author.crm_manager}}
+Клиент: {{obj.user.get_full_name}} (id{{obj.user.id}})
+Клиент в CRM: {{obj.user_crm_url}}
+Текущий менеджер: {{obj.user.profile.manager.crm_manager}}
+Желаемый менеджер: {{obj.assign_to.crm_manager}}
+
+Комментарий: {{obj.comment|default:"Пусто"}}
+
+Заявка: {{ current_site.domain }}{% url 'admin:crm_managerreassignrequest_change' obj.id %}

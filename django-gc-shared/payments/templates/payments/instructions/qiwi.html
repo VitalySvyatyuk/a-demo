@@ -1,0 +1,40 @@
+{% load i18n app_tags staticfiles %}
+
+{% trans "Payment system" as msg context "redirect_button" %}
+<div class="text-center">
+    <a class="button medium" href="https://qiwi.ru/" target="_top">Перейти</a>
+</div>
+<br/>
+Для того, чтобы оплатить выставленный счет в системе Qiwi, выполните следующие действия:
+<br/><br/>
+<ol>
+    <li>
+        Зайдите в свой кошелёк в системе QIWI
+        <br/><br/>
+        <div class="text-center">
+            <img src="{% static 'img/payments/instructions/qiwi/1.png' %}" alt=""/>
+        </div>
+        <br/>
+    </li>
+    <li>
+        Выберите пункт "Счета"
+        <br/><br/>
+        <div class="text-center">
+            <img src="{% static 'img/payments/instructions/qiwi/2.png' %}" alt=""/>
+        </div>
+        <br/>
+    </li>
+    <li>
+        Найдите счёт от Grand Capital и нажмите "Оплатить"
+        <br/><br/>
+        <div class="text-center">
+            <img src="{% static 'img/payments/instructions/qiwi/3.png' %}" alt=""/>
+        </div>
+        <br/><br/>
+    </li>
+</ol>
+
+<div class="text-center">
+    <button class="button medium" onclick="window.history.back(); return false;">{% trans "Back" %}</button>
+    <a class="button medium" href="https://qiwi.ru/" target="_top">Перейти</a>
+</div>

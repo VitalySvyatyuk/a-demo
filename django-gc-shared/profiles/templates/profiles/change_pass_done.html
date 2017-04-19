@@ -1,0 +1,12 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags profiles_tags %}
+
+{% block content %}
+<h1>{% trans "Your password has been changed successfully" %}</h1>
+<div class="container">
+    {% blocktrans %}
+    <p>Your password has been changed.</p>
+    {% endblocktrans %}
+</div>
+{% endblock %}

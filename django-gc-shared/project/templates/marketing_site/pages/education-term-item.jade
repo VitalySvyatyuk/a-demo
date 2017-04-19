@@ -1,0 +1,55 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | Ввод/вывод средств | Arum Capital
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title
+            | Готовность
+
+  .education-term-item
+    .container
+      .row
+        .col-md-8
+          .education-term-item-info
+            .text
+              p
+                | Готовность характерна для первой фазы любой торговой системы, так как это сигнал, который показывает трейдеру направление движения рынка.
+              P
+                | Однако иногда под готовностью понимают зону на графике цены, где трейдер собирается входить в рынок или выходить из него, ориентируясь на различные показатели.
+              P
+                | Готовность предполагает несколько стадий — предупреждение о появлении торгового сигнала, сигнал, совершение торговой операции, которое уже относится к фазе трейдинга.Источник: www.alpari.ru, «Готовность»
+            img.img-responsive(src="{% static 'img/marketing-site/pictures/img-education-term-item-trader.jpg' %}", alt="capital trader")
+        .col-md-3.col-md-offset-1
+          .education-term-item-aside
+            h2.page_title
+              | Другие термины
+            ul
+              li
+                a(href="#").link
+                  | Изменение риска инвестиций?
+              li
+                a(href="#").link
+                  | Что такое позиция?
+              li
+                a(href="#").link
+                  | Как работает платформа?
+              li
+                a(href="#").link
+                  | Изменение риска инвестиций?
+              li
+                a(href="#").link
+                  | Что такое позиция?
+              li
+                a(href="#").link
+                  | Как работает платформа?
+            a.arrow_link(href="#")
+              | все термины
+
+

@@ -1,0 +1,20 @@
+- load app_tags i18n
+
+- pagination_links object_list.paginator object_list.number window=1 margin=1 as pages_list
+
+if pages_list|length > 1
+	.pagination
+		if object_list.has_previous
+			a.pagination__button.pagination__arrow_button.pagination__arrow_button--left(href="?{% mixquery page=object_list.previous_page_number %}")
+				- trans "Previous"
+
+		for page in pages_list
+			if page
+				a.pagination__number_button(href="?{% mixquery page=page %}", class=('state-active' if page == object_list.number else ''))
+					span.pagination__button= page
+			else
+				span.pagination__button.pagination__button--margin
+					| ...
+		if object_list.has_next
+			a.pagination__button.pagination__arrow_button.pagination__arrow_button--right(href="?{% mixquery page=object_list.next_page_number %}")
+				- trans "Next"

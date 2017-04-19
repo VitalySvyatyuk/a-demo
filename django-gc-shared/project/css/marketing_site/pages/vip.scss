@@ -1,0 +1,46 @@
+.vip-list{
+  margin-top: 47px;
+  .vip-list-element{
+    ul{
+      list-style: none;
+      li{
+        position: relative;
+        margin-bottom: 10px;
+      }
+      li:after{
+        content: "";
+        display: block;
+        background-image: url(../img/marketing-site/icons/icon-vps-list.svg);
+        width: 19px;
+        height: 2px;
+        position: absolute;
+        top: 6px;
+        left: -26px;
+      }
+    }
+    a{
+      position: relative;
+      color: #1f5060;
+      margin-left: 27px;
+    }
+    a:after{
+      content: "";
+      display: block;
+      background: url(../img/marketing-site/icons/icon-vip-download-retina.png) no-repeat center / auto 100%;
+      width: 15px;
+      height: 18px;
+      position: absolute;
+      top: -3px;
+      left: -27px;
+    }
+  }
+  .button{
+    margin-top: 61px;
+    margin-bottom: 80px;
+  }
+}
+.vip-call-to-action {
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}

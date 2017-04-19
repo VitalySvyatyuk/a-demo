@@ -1,0 +1,386 @@
+doctype html
+
+- load staticfiles i18n app_tags
+
+html
+	head
+		//the must have tags
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width")
+		link(rel="shortcut icon", href="{% static 'img/arum-capital/favicon.ico' %}", type="image/x-icon")
+		link(rel="icon", href="{% static 'img/arum-capital/favicon.ico' %}", type="image/x-icon")
+
+		link(rel="stylesheet", href="{% versioned 'tooltipster/dist/css/tooltipster.bundle.min.css' %}")
+		link(rel="stylesheet", href="{% versioned 'css/main.min.css' %}")
+
+		//page title
+		title
+			block title
+				| | Arum capital
+
+	- url 'account_app' as account_url
+	if user.is_authenticated
+		- var if_link = account_url
+		- var if_create_link = account_url + "create"
+		- var if_accounts_link = account_url + "trading"
+		- var if_partner_link = account_url + "referral"
+		- var if_data = false
+		- var if_dat = false
+		- var if_class = false
+	else
+		- var if_link = "#"
+		- var if_create_link = "#"
+		- var if_accounts_link = "#"
+		- var if_partner_link = "#"
+		- var if_data = "login_01"
+		- var if_dat = "login_03"
+		- var if_class = "js-open-popup"
+
+	body
+		#modal_language_selection_overlay
+			.modal_language_selection.row
+				.modal_language_selection-wrapper
+					button
+					p
+						-trans "Choose your language"
+					//- p.col-md-6
+					//- 	a.eng-lang(href="https://arumcapital.eu/")
+					//- 		|	English
+					//- p.col-md-6
+					//- 	a.ru-lang(href="https://ru.arumcapital.eu/")
+					//- 		|	Русский
+					.col-lg-6
+						a.eng-lang.current-lang(href='')
+							span
+								| {{ LANGUAGE_CODE|language_name_local }}
+					for key, value in LANGUAGE_SETTINGS.items|order_items
+						if LANGUAGE_CODE != key
+							.col-lg-6
+								a.ru-lang(href="{{ value.redirect_to }}{{ request.path }}")
+									span
+										| {{ key|language_name_local }}
+		main.page_wrapper
+			header.header.js-header
+				.container.header__container
+
+					if not user.is_authenticated
+						a.header__menu_item.visible_on_phones.header__text_item--signup-icon.js-open-popup(href="#", data-popup-target="login_01")
+					else
+						a.header__menu_item.visible_on_phones.header__text_item--signup-icon(href="{% url 'account_app' %}")
+
+					a.header__logo_box_mobile.header__menu_item.visible_on_phones(href="{% url 'frontpage' %}")
+						img.header__logo_mobile(src="{% static 'img/marketing-site/etc/logo-arum-white-text.png' %}", alt="Arum Capital Logo")
+
+					a.header__logo_box.header__menu_item.hidden_on_mobiles(href="{% url 'frontpage' %}")
+						img.header__logo(src="{% static 'img/marketing-site/etc/logo-arum.png' %}", alt="Arum Capital Logo")
+
+					div.hidden_on_phones.header__menu_item.header__location_dropdown_opener.js-dropdown-opener(data-dropdown-target="location_1", type="button")
+						.header__location_dropdown__img_box
+							span.header__location_dropdown__img.flag-icon(class="flag-icon-{{ LANGUAGE_CODE }}")
+						span.header__location_dropdown__title.header__location_dropdown__title--toggler.header__text_item
+							| {{ LANGUAGE_CODE|language_name_local }}
+
+						.header__location_dropdown.dropdown.js-dropdown(data-dropdown-name="location_1")
+							div.header__location_list.dropdown__list
+								div.dropdown__item.dropdown__item--small.header__location_item
+									span.dropdown__item_text.dropdown__item_text--lowercase.dropdown__item_text--arrow-down
+										| {{ LANGUAGE_CODE|language_name_local }}
+								for key, value in LANGUAGE_SETTINGS.items|order_items
+									if LANGUAGE_CODE != key
+										a.dropdown__item.header__location_item(href="{{ value.redirect_to }}{{ request.path }}")
+											span.dropdown__btn.header__location_btn
+												.header__location_dropdown__img_box.header__location_dropdown__img_box--inside-dropdown
+													span.flag-icon.header__location_dropdown__img(class="flag-icon-{{ key }}")
+												span.dropdown__item_text.dropdown__item_text--lowercase
+													| {{ key|language_name_local }}
+					.header__menu.js-menu
+						- include 'marketing_site/components/menus.jade' with mobile=True
+
+						.header__info_box
+							{% if LANGUAGE_CODE == 'ru' %}
+							a.header__menu_item.header__text_item.header__text_item--phone-icon-on-mobiles.header__text_item--medium(href="tel:88003507710")
+								span.header__text_item__content
+									| 8 800 350 77 10
+							a.header__menu_item.header__text_item.header__text_item--point-icon.header__text_item--point-icon--red(href="#")
+								span.header__text_item__content
+									| Консультант&nbsp;оффлайн
+							{% else %}
+							a.header__menu_item.header__text_item.header__text_item--phone-icon-on-mobiles.header__text_item--medium(href="tel:35725123291")
+								span.header__text_item__content
+									| +357 251 232 91
+							a.header__menu_item.header__text_item.header__text_item--point-icon.header__text_item--point-icon--red(href="#")
+								span.header__text_item__content
+									| Консультант&nbsp;оффлайн
+							{% endif %}
+							button.header__menu_item.header__location_dropdown_opener.js-dropdown-opener(data-dropdown-target="location_2", type="button")
+								.header__location_dropdown__img_box
+								span.header__location_dropdown__title.header__location_dropdown__title--toggler.header__text_item
+									- trans "Choose language"
+
+							.header__info_box_dropdown.dropdown.js-dropdown(data-dropdown-name="location_2")
+								div.header__location_list.dropdown__list
+									div.dropdown__item.dropdown__item--small.header__location_item
+										span.dropdown__item_text.dropdown__item_text--lowercase.dropdown__item_text--arrow-down
+											| {{ LANGUAGE_CODE|language_name_local }}
+									for key, value in LANGUAGE_SETTINGS.items|order_items
+										if LANGUAGE_CODE != key
+											a.dropdown__item.header__location_item(href="{{ value.redirect_to }}{{ request.path }}")
+												span.dropdown__btn.header__location_btn
+													.header__location_dropdown__img_box.header__location_dropdown__img_box--inside-dropdown
+														span.flag-icon.header__location_dropdown__img(class="flag-icon-{{ key }}")
+													span.dropdown__item_text.dropdown__item_text--lowercase
+														| {{ key|language_name_local }}
+							.header__info_box__button_box
+								a.header__info_box__button.button(href=if_create_link,  data-popup-target=if_data, class=if_class)
+									span.button__text
+										| Открыть счет
+								a.header__info_box__button.button.button--outline(href=if_create_link,  data-popup-target=if_data, class=if_class)
+									span.button__text
+										| Открыть демо-счет
+					{% if LANGUAGE_CODE == 'ru' %}
+					a.hidden_on_phones.header__menu_item.header__text_item.header__text_item--phone-icon-on-mobiles.header__text_item--medium(href="tel:88003507710")
+						span.header__text_item__content
+							| 8 800 350 77 10
+					a.hidden_on_phones.header__menu_item.header__text_item.header__text_item--phone-icon.hidden_on_mobiles.js-open-popup(href="#", data-popup-target="callback_request")
+						span.header__text_item__content
+							- trans "Request a call back"
+					{% else %}
+					a.hidden_on_phones.header__menu_item.header__text_item.header__text_item--phone-icon-on-mobiles.header__text_item--medium(href="tel:35725123291")
+						span.header__text_item__content
+							| +357 251 232 91
+					a.hidden_on_phones.header__menu_item.header__text_item.header__text_item--phone-icon.hidden_on_mobiles.js-open-popup(href="#", data-popup-target="callback_request")
+						span.header__text_item__content
+							- trans "Request a call back"
+					{% endif %}
+					//- a.header__text_item.header__text_item--point-icon.header__text_item--point-icon--green(href="#")
+					//-   | Консультант&nbsp;
+					//-     span.hidden_on_mobiles
+					//-       | онлайн
+					a.hidden_on_phones.header__menu_item.header__menu_item--zero-margin.header__text_item.hidden_on_desktop(href="#")
+						span.header__text_item__content
+							| ARUM.WEB
+					a.hidden_on_phones.header__menu_item.header__text_item.header__text_item--point-icon.header__text_item--point-icon#live-chat-link.red(href="#", data-livechat)
+						span.header__text_item__content
+							- trans "Live chat"
+					a.hidden_on_phones.header__menu_item.header__menu_item--zero-margin.header__text_item.hidden_on_mobiles(href="#")
+						span.header__text_item__content
+							| ARUM.WEB
+					button.header__menu_item.header__menu_item--float-right.header__burger.js-open-menu.hidden_on_mobiles(type="button", title="Открыть меню")
+
+					if not user.is_authenticated
+						{% if LANGUAGE_CODE == 'ru' %}
+						div.risk-hidden-ru
+							a.hidden_on_phones.header__menu_item.header__menu_item--float-right.header__text_item.header__text_item--signup-icon.js-open-popup(href=if_accounts_link,  data-popup-target=if_dat, class=if_class)
+								span.header__text_item__content
+									span
+										- trans "Authorization"
+						{% else %}
+						div.risk-hidden-en
+							a.hidden_on_phones.header__menu_item.header__menu_item--float-right.header__text_item.header__text_item--signup-icon.js-open-popup(href=if_accounts_link,  data-popup-target=if_dat, class=if_class)
+								span.header__text_item__content
+									span
+										- trans "Authorization"
+						{% endif %}
+					else
+						a.hidden_on_phones.header__menu_item.header__menu_item--float-right.header__text_item.header__text_item--signup-icon(href="{% url 'account_app' %}")
+							span.header__text_item__content
+								span= user.first_name|default:user
+
+					button.header__menu_item.header__menu_item--float-right.header__burger.js-open-menu.hidden_on_desktop(type="button", title="Открыть меню")
+
+			.subheader
+				.container.subheader__container
+					a.subheader__logo_box(href="{% url 'frontpage' %}")
+						img.subheader__logo(src="{% static 'img/marketing-site/etc/logo-arum--word.png' %}", alt="Arum Capital Logo")
+					a.subheader__live_box.hidden_on_mobiles(href="{% url 'ecn' %}")
+						| ECN/STP Live
+					.subheader__buttons_box
+						{% if LANGUAGE_CODE == 'ru' %}
+						div.risk-hidden-ru
+							a.button.button--outline.subheader__buttons_box__left_button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+								span.button__text
+									- trans "Open a demo account"
+						{% else %}
+						div.risk-hidden-en
+							a.button.button--outline.subheader__buttons_box__left_button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+								span.button__text
+									- trans "Open a demo account"
+						{% endif %}
+						{% if LANGUAGE_CODE == 'ru' %}
+						div.risk-hidden-ru
+							a.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+								span.button__text
+									- trans "Open an account"
+						{% else %}
+						div.risk-hidden-en
+							a.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+								span.button__text
+									- trans "Open an account"
+						{% endif %}
+			nav.nav.js-main-nav.hidden_on_mobiles
+				.container
+					ul.nav__list
+						- include 'marketing_site/components/menus.jade' with main=True
+
+			block content
+
+			nav.footer_nav
+				.container
+					.row
+						- include 'marketing_site/components/menus.jade' with bottom=True
+
+
+			footer.footer
+				.cookies_risk-warning
+					.row
+						p
+							- trans "Risk Warning: Trading leveraged products such as Forex and CFDs carries a high risk. You can lose all your invested capital. Please consider our"
+							a(href="{% static 'agreements/Risk_Disclosure.pdf' %}", target='_blank')
+								- trans "Risk Disclosure." context 'warning popup'
+						//- button.cookies_risk-warning_btn.col-lg-2
+						//- 	-trans "Ok"
+
+				.footer__box.footer__box--hidden-tablets
+					.container
+						.row
+							.col-xs-12.col-lg-3
+								a.footer__logo_link(href="#")
+									img.footer__logo(src="{% static 'img/marketing-site/etc/logo-arum--word.png' %}", alt="Arum Capital Logo")
+							.col-xs-12.col-lg-3
+								<span class="footer__legals">LEGAL: Arum Capital is a brand name owned and operated by ArumPro Capital Ltd., a Cyprus Investment Firm (Reg. no. HE352951), regulated by the Cyprus Securities and Exchange Commission (CySEC) under CIF license xxx/17. ArumPro Capital Ltd. is located at 2 Gregory Afxentiou Street, Office 201, Limassol 4003, Cyprus.</span>
+								//- h3.footer__title
+								//- 	- trans "Corporate documents:"
+								//- ul.footer__list
+								//- 	li.footer__list_item
+								//- 		a.footer__list_link(href="#")
+								//- 			- trans "Non-disclosure policy"
+								//- 	li.footer__list_item
+								//- 		a.footer__list_link(href="#")
+								//- 			- trans "Anti-money laundering  and counter-terrorist financing policy"
+								//- 	li.footer__list_item
+								//- 		a.footer__list_link(href="#")
+								//- 			- trans "Legal documents and contracts"
+							{% if LANGUAGE_CODE == 'ru' %}
+							.col-xs-12.col-lg-3.footer__phones_col
+								h3.footer__title
+									- trans "Company’s Agent in the Russian Federation:"
+								a.footer__phone(href="tel:88003507710")
+									| 8-800-350-77-10
+								a.footer__phone.footer__phone--last(href="tel:74952408133")
+									| +7 (495) 240-81-33
+								h3.footer__title
+									- trans "Company Office:"
+								a.footer__phone(href="tel:35725123291")
+									| +357 251 232 91
+							{% else %}
+							.col-xs-12.col-lg-3.footer__phones_col
+								h3.footer__title
+									- trans "Company Office:"
+								a.footer__phone(href="tel:35725123291")
+									| +357 251 232 91
+							{% endif %}
+							.col-xs-12.col-lg-3
+								span.footer__legals
+
+
+
+				.footer__box.footer__box--hidden-desktop.footer__logo_box
+					.container
+						.row
+							.col-xs-12.col-md-4
+								a.footer__logo_link(href="#")
+									img.footer__logo(src="{% static 'img/marketing-site/etc/logo.png' %}", alt="Arum Capital Logo")
+							.col-xs-12.col-md-8
+								span.footer__legals
+				.footer__box.footer__box--hidden-desktop.footer__box--border-on-mobiles.footer__info_box
+					.container
+						.row
+							{% if LANGUAGE_CODE == 'ru' %}
+							.col-xs-12.col-md-3.footer__box__item--visible-mobiles
+								h3.footer__title
+									- trans "Company’s Agent in the Russian Federation:"
+								a.footer__phone(href="tel:88003507710")
+									| 8-800-350-77-10
+								a.footer__phone.footer__phone--last(href="tel:74952408133")
+									| +7 (495) 240-81-33
+							.col-xs-12.col-md-3.col-md-offset-1.footer__box__item--visible-mobiles
+								h3.footer__title
+									- trans "Company Office:"
+								a.footer__phone(href="tel:35725123291")
+									| +357 251 232 91
+							{% else %}
+							.col-xs-12.col-md-3.col-md-offset-1.footer__box__item--visible-mobiles
+								h3.footer__title
+									- trans "Company Office:"
+								a.footer__phone(href="tel:35725123291")
+									| +357 251 232 91
+							{% endif %}
+							.col-xs-12.col-md-5.footer__box__links
+								<span class="footer__legals">LEGAL: Arum Capital is a brand name owned and operated by ArumPro Capital Ltd., a Cyprus Investment Firm (Reg. no. HE352951), regulated by the Cyprus Securities and Exchange Commission (CySEC) under CIF license xxx/17. ArumPro Capital Ltd. is located at 2 Gregory Afxentiou Street, Office 201, Limassol 4003, Cyprus.</span>
+								//- h3.footer__title.footer__title--hidden-mobiles
+								//- 	- trans "Corporate documents:"
+								//- ul.footer__list
+								//- 	li.footer__list_item
+								//- 		a.footer__list_link(href="#")
+								//- 			- trans "Non-disclosure policy"
+								//- 	li.footer__list_item
+								//- 		a.footer__list_link(href="#")
+								//- 			- trans "Anti-money laundering  and counter-terrorist financing policy"
+								//- 	li.footer__list_item
+								//- 		a.footer__list_link(href="#")
+								//- 			- trans "Legal documents and contracts"
+							{% if LANGUAGE_CODE == 'ru' %}
+							.col-xs-12.col-md-3.footer__box__item--hidden-mobiles
+								h3.footer__title
+									- trans "Company’s Agent in the Russian Federation:"
+								a.footer__phone(href="tel:88003507710")
+									| 8-800-350-77-10
+								a.footer__phone.footer__phone--last(href="tel:74952408133")
+									| +7 (495) 240 81 33
+							.col-xs-12.col-md-3.col-md-offset-1.footer__box__item--hidden-mobiles
+								h3.footer__title
+									- trans "Company Office:"
+								a.footer__phone(href="tel:35725123291")
+									| +357 251 232 91
+							{% else %}
+							.col-xs-12.col-md-3.col-md-offset-1.footer__box__item--hidden-mobiles
+								h3.footer__title
+									- trans "Company Office:"
+								a.footer__phone(href="tel:35725123291")
+									| +357 251 232 91
+							{% endif %}
+				.footer__risks_box
+					.container
+						span.footer__risks_text
+							a.link(href="{% url 'legal_documentation' %}")
+								- trans 'Risk Disclosure'
+							|:
+							- trans "Currency pairs (FOREX) and CFD, being marginal products, are of high risk level and may result in the loss of all of invested capital. Hence, Currency pairs and CFDs may not be suitable for all investors. You should not risk more than you can afford to lose. Before you start trading please ensure you understand the risks involved and that you have sufficient level of expertise and experience."
+							br
+							- trans "We do not offer services to countries such as USA, Canada, Japan, Brazil, North Korea, Belgium, France and the non-cooperative countries under FATF."
+
+		.js-overlay.js-close-navigation.js-close-menu.overlay
+		if not user.is_authenticated
+			- auth_popup request
+		include callback_request/callback_request_popup
+
+		script(src="/jsi18n")
+		script(src="{% versioned 'js/compiled/bundle.marketing.js' %}")
+		script(src="{% versioned 'js/marketing_main.js' %}")
+		{% if LANGUAGE_CODE == 'ru' %}
+		script(src="{% versioned 'js/jquery.cookiebar_ru.js' %}")
+		script(src="{% versioned 'js/not-ready-platform-ru.js' %}")
+		{% else %}
+		script(src="{% versioned 'js/jquery.cookiebar_en.js' %}")
+		script(src="{% versioned 'js/not-ready-platform-en.js' %}")
+		{% endif %}
+		//- script(src="{% versioned 'js/risk_popup.js' %}")
+		//- script(src="{% versioned 'js/jquery.cookie.js' %}")
+
+
+		include includes/snapengage_code.html
+
+		if debug
+			script(src="{% static 'livereload-js/dist/livereload.js' %}?host=localhost")
+
+		block scripts

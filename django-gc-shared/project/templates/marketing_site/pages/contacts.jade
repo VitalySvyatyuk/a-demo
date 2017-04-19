@@ -1,0 +1,198 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {% trans "Contacts" %} {{ block.super }}
+
+block content
+  .page_head.inout_page_head
+    .container
+      .row
+        .col-xs-12
+          - breadcrumbs
+          h1.page_head__title
+            - trans "Contacts"
+  {% if LANGUAGE_CODE == 'en' %}
+  .contacts-page: .container
+    .contacts-items
+
+      .contacts-item
+        .row
+          .col-md-5
+            p.contacts-item-header
+              - trans "Customer support service"
+            p.contacts-item-lang
+              span.flag-icon.flag-icon-en
+              - trans "English"
+            .contact-wrapper
+              a.contact(href="tel:74957778535")
+                | +357 251 232 91
+              a.contact(href="mailto:info@arumcapital.eu")
+                span.mail info@arumcapital.eu
+            .buttons-block
+              a.button.button--outline(href="#", data-livechat)
+                span.button__text
+                  - trans "Live chat"
+              a.button.js-open-popup(href="#", data-popup-target="callback_request")
+                span.button__text
+                  - trans "Request a call back" context "contact-page-btn"
+          .col-md-7
+            #map-en.contacts-map
+
+      //- .contacts-item
+      //-   .row
+      //-     .col-md-5
+      //-       p.contacts-item-header
+      //-         - trans "Customer support service"
+      //-       p.contacts-item-lang
+      //-         span.flag-icon.flag-icon-ru
+      //-         - trans "Russian"
+      //-       .contact-wrapper
+      //-         a.contact(href="tel:88007775511")
+      //-           | 8 (800) 350 77 10
+      //-           | &nbsp;&nbsp;
+      //-           span.caption
+      //-             - trans "Call free"
+      //-         a.contact(href="tel:74957778535")
+      //-           | +7 (495) 240 81 33
+      //-           | &nbsp;&nbsp;
+      //-           span.caption
+      //-             - trans "Moscow phone"
+      //-         a.contact(href="mailto:info@arumcapital.eu")
+      //-           span.mail info@arumcapital.eu
+      //-       .buttons-block
+      //-         a.button.button--outline(href="#", data-livechat)
+      //-           span.button__text
+      //-             - trans "Live chat"
+      //-         a.button.js-open-popup(href="#", data-popup-target="callback_request")
+      //-           span.button__text
+      //-             - trans "Request a call back" context "contact-page-btn"
+
+      //-     .col-md-7
+      //-       #map-ru.contacts-map
+
+    .hide
+      #balloon-content-layout
+        .balloon-content-wrapper
+          .ballon-image
+          p.balloon-address $[properties.address]
+  {% else %}
+  .contacts-page: .container
+    .contacts-items
+
+
+      .contacts-item
+        .row
+          .col-md-5
+            p.contacts-item-header
+              - trans "Customer support service"
+            p.contacts-item-lang
+              span.flag-icon.flag-icon-ru
+              - trans "Russian"
+            .contact-wrapper
+              a.contact(href="tel:88007775511")
+                | 8 (800) 350 77 10
+                | &nbsp;&nbsp;
+                span.caption
+                  - trans "Call free"
+              a.contact(href="tel:74957778535")
+                | +7 (495) 240 81 33
+                | &nbsp;&nbsp;
+                span.caption
+                  - trans "Moscow phone"
+              a.contact(href="mailto:info@arumcapital.eu")
+                span.mail info@arumcapital.eu
+            .buttons-block
+              a.button.button--outline(href="#", data-livechat)
+                span.button__text
+                  - trans "Live chat"
+              a.button.js-open-popup(href="#", data-popup-target="callback_request")
+                span.button__text
+                  - trans "Request a call back" context "contact-page-btn"
+
+          .col-md-7
+            //- #map-ru.contacts-map
+
+      .contacts-item
+        .row
+          .col-md-5
+            p.contacts-item-header
+              - trans "Customer support service"
+            p.contacts-item-lang
+              span.flag-icon.flag-icon-en
+              - trans "English"
+            .contact-wrapper
+              a.contact(href="tel:74957778535")
+                | +357 251 232 91
+              a.contact(href="mailto:info@arumcapital.eu")
+                span.mail info@arumcapital.eu
+            .buttons-block
+              a.button.button--outline(href="#", data-livechat)
+                span.button__text
+                  - trans "Live chat"
+              a.button.js-open-popup(href="#", data-popup-target="callback_request")
+                span.button__text
+                  - trans "Request a call back" context "contact-page-btn"
+          .col-md-7
+            #map-en.contacts-map
+
+    .hide
+      #balloon-content-layout
+        .balloon-content-wrapper
+          .ballon-image
+          p.balloon-address $[properties.address]
+  {% endif %}
+  //- .container
+  //-   p
+  //-     - trans "*Support is the official agent of the company by Arum Capital, Limited Liability Company"
+
+block scripts
+  script(src="//api-maps.yandex.ru/2.1/?lang={{ LANGUAGE_CODE }}", type="text/javascript")
+  script.
+    var layoutEl = $("#balloon-content-layout")
+    var mapsIds = ['map-en'];
+    //- var mapsIds = ['map-ru', 'map-en'];
+    var mapsObj = {};
+    var placemarks = {};
+    var addressObj = {
+      //- 'map-ru': {
+
+      //-   "coords": [55.7495, 37.5371],
+      //-   "address-en": "Presnenskaya Emb. 12, 12 floor, Moscow 123100, Russia",
+      //-   "address-ru": "123100, город Москва, Пресненская набережная, д.12, этаж 12 "
+      //- },
+      'map-en': {
+        "coords": [34.6971, 33.0493],
+        "address-en": "<h3 style='margin:0;'>Merchant Location :</h3> 2 Gregory Afxentiou Street, 2nd floor, Office 201, 4003, Limassol, Cyprus",
+        "address-ru": "<h3 style='margin:0;'>Расположение :</h3> Кипр, 4003, Лимасол, ул. Грегори Афксентиу 2, 2 этаж, офис 201"
+      }
+    }
+
+
+
+    ymaps.ready(init);
+
+
+    function init() {
+      var balloonContentLayout = ymaps.templateLayoutFactory.createClass(layoutEl.html())
+      layoutEl.remove()
+
+      for (i = 0; i < mapsIds.length; i++) {
+        mapsObj[mapsIds[i]] = new ymaps.Map(mapsIds[i], {
+          center: addressObj[mapsIds[i]].coords,
+          zoom: 18,
+          controls: []
+        })
+
+        placemarks[mapsIds[i]] = new ymaps.Placemark(mapsObj[mapsIds[i]].getCenter(), {
+            address: addressObj[mapsIds[i]]["address-{{ LANGUAGE_CODE }}"]|| addressObj[mapsIds[i]]["address-en"]
+        }, {
+          balloonContentLayout: balloonContentLayout,
+          balloonCloseButton: false
+        })
+
+        mapsObj[mapsIds[i]].geoObjects.add(placemarks[mapsIds[i]])
+        placemarks[mapsIds[i]].balloon.open()
+      }
+    }

@@ -1,0 +1,3 @@
+{% load i18n %}
+<p>{% trans "Name" %}: <a href="https://{{object.assignee.profile.get_site_domain}}{{object.contact.get_absolute_url}}">{{object.contact.name}}</a></p>
+<p>{% trans "Text" %}: {{object.text}}</p>

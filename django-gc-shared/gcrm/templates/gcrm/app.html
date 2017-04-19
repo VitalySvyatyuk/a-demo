@@ -1,0 +1,104 @@
+{% extends 'gcrm/base.html' %}
+{% load staticfiles i18n app_tags %}
+
+{% block content %}
+<div ng-app="GCRM" ng-cloak ng-controller="Main">
+  <base href="/gcrm/"/>
+
+  <nav class="navbar navbar-dark bg-inverse">
+    <a class="navbar-brand" ui-sref="contacts()">GCRM</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item" ui-sref-active="active">
+        <a class="nav-link" ui-sref="contacts()" ui-sref-opts="{reload: true}">{% trans "Contacts" %}</a>
+      </li>
+      <li class="nav-item dropdown" uib-dropdown on-toggle="showNextButton=open">
+        <a class="nav-link" uib-dropdown-toggle>
+          {% trans "Tasks" %}
+        </a>
+        <div uib-dropdown-menu class="dropdown-menu">
+          <a class="dropdown-item" ui-sref="tasks()">{% trans "My tasks" %}</a>
+          <a class="dropdown-item" ui-sref="tasks_all()">{% trans "All tasks" %}</a>
+          <a class="dropdown-item" ui-sref="reassigns()">{% trans "Reassignments" %}</a>
+        </div>
+      </li>
+      <li class="nav-item" ui-sref-active="active">
+        <a class="nav-link" ui-sref="accounts()">{% trans "Accounts" %}</a>
+      </li>
+      <li class="nav-item" ui-sref-active="active">
+        <a class="nav-link" ui-sref="analytics()">{% trans "Analytics" %}</a>
+      </li>
+      <li class="nav-item" ui-sref-active="active">
+        <a class="nav-link" ui-sref="calls()">{% trans "Calls" %}</a></li>
+      </li>
+      <li ng-if="Users.me.data.is_supermanager" class="nav-item" ui-sref-active="active">
+        <a class="nav-link" ui-sref="managers()">{% trans "Managers" %}</a>
+      </li>
+      <li class="nav-item" next-button></li>
+      <li class="nav-item" tasks-info></li>
+    </ul>
+    <form class="form-inline pull-xs-right" ng-submit="contactSearch(contactSearchString)">
+      <input class="form-control" type="text" placeholder="{% trans "Search by contacts" %}" ng-model="contactSearchString">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary btn-success-outline" type="submit"><i class="fa fa-search"></i></button>
+      </span>
+    </form>
+  </nav>
+
+  <div class="container-fluid">
+    <ui-view></ui-view>
+  </div>
+
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<!-- <script src="//cdn.ravenjs.com/1.1.16/angular,console,jquery,native/raven.min.js"></script>
+<script>
+    Raven.config('https://63a07a3fe0364396a7ca6a460372359e@sentry-pony.grandcapital.net/3').install();
+    Raven.setUser({
+        id: '{{ request.user.id }}'
+    });
+</script> -->
+<script type="text/javascript">
+  var LANGUAGE_CODE = '{{LANGUAGE_CODE|lower}}';
+  var MY_USER_ID = {{user.id}};
+  var TASK_TYPES = {
+    {% for slug, label in task_types %}
+      {{ slug }}: '{{ label }}',
+    {% endfor %}
+  };
+  {% if debug %}
+  setTimeout(function() {
+    showAngularStats({position: 'topright'})
+  }, 1000);
+  {% endif %}
+</script>
+
+<script src="{% versioned 'compiled/js/gcrm.js' %}"></script>
+{% with LANGUAGE_CODE|lower as lang %}
+    <script src="{% versioned 'angular-i18n/angular-locale_'|add:lang|add:'.js' %}"></script>
+{% endwith %}
+
+
+<!-- <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'underscore/underscore-min.js' %}"></script>
+<script src="{% static 'underscore.string/dist/underscore.string.min.js' %}"></script>
+<script type="text/javascript">
+  _.mixin(s.exports());
+  // moment.locale('{{ LANGUAGE_CODE|lower }}');
+</script>
+<script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script> -->
+
+<script type="text/javascript">
+  var LOCALE = {
+    "All Time": "{% trans "All Time" %}",
+    "Today": "{% trans "Today" %}",
+    "Yesterday": "{% trans "Yesterday" %}",
+    "Last 3 Days": "{% trans "Last 3 Days" %}",
+    "Last 7 Days": "{% trans "Last 7 Days" %}",
+    "Last 30 Days": "{% trans "Last 30 Days" %}",
+    "This Month": "{% trans "This Month" %}"
+  }
+</script>
+{% endblock %}

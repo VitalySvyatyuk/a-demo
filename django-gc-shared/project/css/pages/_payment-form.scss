@@ -1,0 +1,200 @@
+/*------------------------------------------------on/out account form--------------------------------------------------*/
+.my-new .form-head{
+  @include clear-ul;
+  li{
+    display: inline-block;
+    font: 1.125rem $font-light;
+  }
+  .arrow{padding: 0 20px;}
+  .step{font-family: $font-med;}
+}
+
+/*-------------------------------------------------step arrows--------------------------------------------------------*/
+.first-step, .second-step, .third-step {
+	position: relative;
+}
+.first-step:after {
+	left: 8%;
+}
+.second-step:after {
+	left: 32%;
+}
+.third-step:after {
+	left: 56%;
+}
+.throbber {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-image: url('../img/ajax-loader-my.gif');
+  background-repeat: no-repeat;
+}
+/*-----------------------------------------------------tab form-------------------------------------------------------*/
+.my-new .payment-form{
+  .columns{padding: 0 10px;}
+}
+
+.third-light-wrapper.forms-wrapper{
+  .error {
+    position: absolute;
+    top: 100px;
+    left: 0.625rem;
+    z-index: 1;
+    padding: .625rem 1rem;
+    border-radius: 5px;
+    color: $gc-inverted-color;
+    background-color: $gc-third-color;
+    max-width: 195px;
+    font: 1rem $font-reg;
+    &:before {
+      @include css-triangle(10px,$gc-third-color,bottom);
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      margin-left: -10px;
+    }
+  }
+  padding-bottom: 100px;
+  .row{margin: 0 0 1rem;}
+  .row > .columns, form > .columns:not(.instruction){
+    height: 100px;
+    position: relative;
+    margin-top: .625rem;
+  }
+  form > .large-12{padding: 0;}
+  .row > .columns.transfer-mode{
+    height: auto;
+    margin-bottom: .625rem;
+  }
+  /*.columns .columns{
+    &:first-of-type{padding-left: 0;}
+  }*/
+  .button {bottom: 40px; left: 50px; position: absolute;}
+}
+.transfer .third-light-wrapper.forms-wrapper{
+  padding-bottom: 1.875rem;
+  .button {position: static;}
+}
+
+.payment-form .third-light-wrapper{
+  margin-bottom: 1.25rem;
+  position: relative;
+  select.phone-select{
+    float: left;
+    width: 25% !important;
+  }
+  input.phone-input{
+    float: right;
+    width: 70%;
+  }
+  .row label{display: block; margin-bottom: .625rem; text-align: left;}
+  label + span {display: inline-block; line-height: 40px; padding: 0 0 0 10px; font-family: $font-med;}
+  input[type="text"]{
+    &.amount{float: left; text-align: right;}
+  }
+  .transfer-mode{
+    ul{
+      margin-top: 1rem;
+      [type="radio"]{margin-bottom: 0; width: 20px;}
+    }
+  }
+  .instruction{
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    strong{font-family: $font-light; font-weight: normal;}
+    li{
+      line-height: 1.5;
+      ul{
+        list-style-image: none;
+        list-style-type: square;
+      }
+    }
+  }
+  h5{
+    font: 1.875rem $font-reg;
+  }
+  table{
+    background: none;
+    border: none;
+    width: 100%;
+    tr{
+      background: none;
+      td{
+        border: none;
+        padding: .4rem;
+        &:first-of-type{
+          text-align: right;
+        }
+        &:last-of-type{
+          font: 1.125rem $font-med;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.my-new .handybank{
+  & ~ div{
+    margin-bottom: 50px;
+    @include respond-to-custom(0, 1222px){margin-bottom: 100px;}
+  }
+}
+
+/*payment systems*/
+.my-new .dropdown-payments{
+  background: url(../img/arum-capital/select-arrow.png) no-repeat $gc-inverted-color;
+  background-position: right center;
+  border: rem-calc(1) solid #d8d8d8;
+  cursor: default;
+  display: block;
+  font: 1.125rem $font-reg;
+  height: 2.5rem;
+  line-height: 36px;
+  overflow: hidden;
+  padding: 0 1.375rem 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  &:hover, &:active, &:focus {border-color: $gc-third-color;}
+  .small-payment-icon{
+    border: none;
+    height: 36px;
+    margin-right: -5px;
+    &:hover, &:focus, &:active{border: none;}
+  }
+}
+
+.my-new .hover-payments-withdraw, .my-new .hover-payments-deposit {
+  @include dropdown-container(content, false, none);
+  border: 2px solid $gc-third-color;
+  padding: 1.5rem 0;
+  width: 1014px;
+  left: auto;
+  &:before{display: none;}
+  & > div {
+    display: inline-block;
+    margin: .9rem 2.5rem;
+  }
+  p{
+    font: 0.875rem $font-med;
+    margin: 0 0 .3rem .2rem;
+    height: auto;
+  }
+  ul{
+    @include clear-ul;
+    li.columns{
+      padding: 0 .3rem;
+      a{width: 100%;}
+    }
+    li{ display: inline-block; margin: 0 .2rem;}
+  }
+  .row > .columns{
+    padding: 0 32.5px;
+  }
+  .one-ps{min-width: 158px;}
+}
+
+/*info after form*/
+.my-new.my .info{clear: both; font: 0.75rem $font-light; margin-bottom: 25px;}

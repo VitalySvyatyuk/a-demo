@@ -1,0 +1,79 @@
+/* Tabs */
+.tabs {
+	dd {
+		/* Counting width for tabs controls */
+		// &:first-child:nth-last-child(1) {
+		// 	max-width: 100%;
+		// }
+		// &:first-child:nth-last-child(2),
+		// &:first-child:nth-last-child(2) ~ dd {
+		// 	max-width: 50%;
+		// }
+		// &:first-child:nth-last-child(3),
+		// &:first-child:nth-last-child(3) ~ dd {
+		// 	max-width: 33.3333%;
+		// }
+		// &:first-child:nth-last-child(4),
+		// &:first-child:nth-last-child(4) ~ dd {
+		// 	max-width: 25%;
+		// }
+		// &:first-child:nth-last-child(5),
+		// &:first-child:nth-last-child(5) ~ dd {
+		// 	max-width: 20%;
+		// }
+
+		/* Styling tabs - green tabs*/
+
+		& > a {
+			border: none;
+			background-color: transparent;
+			text-align: center;
+			font: rem-calc(15) $font-reg;
+			color: $gc-third-color;
+			// border-left: 2px $gc-first-color-dark-hover solid;
+			height: rem-calc(54);
+			text-transform: uppercase;
+			letter-spacing: rem-calc(.5);
+			padding: 0 rem-calc(45);
+			@include valign-before;
+			span {
+				line-height: 1.25rem;
+				vertical-align: middle;
+				display: inline-block;
+				position: relative;
+				// top: -0.125rem;
+				text-align: left;
+			}
+		}
+
+		&:first-child > a {
+			border: none;
+		}
+
+		&.active > a {
+			// border-left-color: $gc-inverted-color;
+			// color: $gc-second-color;
+			cursor: default;
+			pointer-events: none;
+			color: $basic-color;
+			// border-top: rem-calc(2) solid $gc-first-color;
+			background-color: $gc-inverted-color !important;
+		}
+		&:hover a {
+			background: transparent;
+		}
+
+	}
+}
+
+.tabs-content {
+	background: $gc-inverted-color;
+	margin-bottom: 0;
+	padding: rem-calc(34);
+	& > .content {
+		width: 100%;
+	}
+	table {
+		margin: 0;
+	}
+}

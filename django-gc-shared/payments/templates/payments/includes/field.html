@@ -1,0 +1,29 @@
+{% load app_tags %}
+{% if field.field.widget|is_checkbox %}
+    <div class="checkbox-wrapper">
+        {{ field }}<label for="{{ field.auto_id }}"></label>
+        {{ field.label_tag }} {% if field.field.required %}<span class="required">*</span>{% endif %}
+        {% block validation_marks %}{% endblock %}
+    </div>
+    <p class="description">{{ field.help_text|safe }}</p>
+    {% if field.errors %}
+        <p id="{{ field.auto_id }}" class="error">{{ field.errors|join:"<br/>" }}</p>
+    {% endif %}
+{% elif field.field.widget|is_select %}
+{#    подхватывает радиобаттоны #}
+    <label{% if field.field.required %} class="required"{% endif %}>{{ field.label }}</label>
+    <div class="select-wrapper">
+        {{ field }}
+    </div>
+    <p class="description">{{ field.help_text|safe }}</p>
+    {% if field.errors %}
+        <p id="{{ field.auto_id }}" class="error">{{ field.errors|join:"<br/>" }}</p>
+    {% endif %}
+{% else %}
+    <label{% if field.field.required %} class="required"{% endif %}>{{ field.label }}</label>
+    {{ field }}
+    <p class="description">{{ field.help_text|safe }}</p>
+    {% if field.errors %}
+        <p id="{{ field.auto_id }}" class="error">{{ field.errors|join:"<br/>" }}</p>
+    {% endif %}
+{% endif %}

@@ -1,0 +1,6 @@
+- load app_tags i18n
+%input{type: "hidden", name: "ps", value: "{{ form.payment_system.slug }}"}
+- include "includes/_form.html"
+- csrf_token
+- gcbutton "submit" _("Pay") "black"
+

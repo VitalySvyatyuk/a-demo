@@ -1,0 +1,110 @@
+{% load staticfiles inbox i18n %}
+<div class="gc-accordion-item" ng-show="checkAvailableModules('master') && $parent.there_are_lamm_masters()" ng-controller="AccountsLammMasterController" name="master" accordion-show="selectedCategory === 'lammMaster'" accordion-click="selectCategory('lammMaster')">
+  <div class="title-wrapper" title>
+    <span class="title">{% trans "My PAMM investors" %}</span>
+    <span ng-if="hasPendingManagedAccounts" class="icon-warning"></span>
+    <a href="{% url 'mt4_process_create_account' 'realPAMM_1' %}" class="button  medium right" data-reveal-form>{% trans "Open PAMM account" %}</a>
+</div>
+  <div content ng-if="!isDataHidden">
+    {% include "js/my/_accounts_local_nav.html" %}
+    <table class="table-big-green managed">
+      <thead>
+        <tr>
+          <td>{% trans "ID" %}</td>
+          <td>{% trans "Account type" %}</td>
+          <td>{% trans "Leverage" %}</td>
+          <td>{% trans "Balance" %}</td>
+          <td>{% trans "Reward" %}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="notification" ng-if="!accounts.length">
+          <td colspan="5">{% trans "There is no accounts to display" %}</td>
+        </tr>
+        <tr ng-repeat-start="acc in accounts" ng-class="{'active': account === acc}" ng-click="selectAccount(acc)" account-display="account === acc && !isDataHidden">
+          <td>
+            <!-- Make a temporary variable for pamm_rating_info URL :( -->
+            <span style="display: none;"> [[tmp_var = "{% url 'pamm_rating_info' 1 %}".replace("1", acc.mt4_id)]] </span>
+
+            <span> <a target="_blank" href="[[::tmp_var]]"> [[::acc.lamm_master.alias]] [[::acc.mt4_id]] </a> </span>
+            <span ng-if="accountHasPendingManagedAccounts(acc)" class="icon-warning-small"></span>
+          </td>
+          <td>
+            <span ng-bind="::acc.group_display">XXX</span>
+            <p class="description" ng-bind="::acc.is_demo?'{% trans "Demo" %}':'{% trans "Real" %}'"></p>
+          </td>
+          <td ng-bind="!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : '1:' + mt4Data[acc.mt4_id].leverage)"></td>
+          <td ng-bind="!showMoney? '*****' : (!mt4Data[acc.mt4_id]? '...' : mt4Data[acc.mt4_id].balance_display)"></td>
+          <td>
+            <div class="overflow-td">[[::acc.lamm_master.fee_rate]]</div>
+          </td>
+        </tr>
+        <tr ng-repeat-end ng-if="account === acc" class="with-active">
+          <td colspan="5">
+            {% include "js/my/_accounts_local_nav_adaptive.html" %}
+            <table class="table-light-green">
+              <thead>
+                <tr>
+                  <td>{% trans "ID" %}</td>
+                  <td>{% trans "Investments amount" %}</td>
+                  <td>{% trans "Investment creation date" %}</td>
+                  <td>{% trans "Status" %}</td>
+                  <td>{% trans "Actions" %}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="notification" ng-if="!acc.lamm_master.lamm_investors.items.length">
+                  <td colspan="5">{% trans "There is no accounts to display" %}</td>
+                </tr>
+                <tr ng-repeat="managed in acc.lamm_master.lamm_investors.items | filter: {InvestStatus:'!'+STATUS_INVEST_REJECTED}">
+                  <td >
+                    <p class="text-center">
+                      <a class="font-med bordered">[[::managed.Investor]]</a>
+                      <span class="icon-warning-small" ng-if="managed.InvestStatus === STATUS_PENDING"></span>
+                    </p>
+                  </td>
+                  <td>
+                    <div class="overflow-td font-med">&lrm;$[[::managed.Amount]]</div>
+                  </td>
+                  <td class="font-reg">[[::managed.CreateTime|momentFromNow]]</td>
+                  <td>
+                    <div class="overflow-td" title="[[managed.Status]]">[[managed.Status]]</div>
+                  </td>
+                  <td>
+                    <a ng-if="managed.InvestStatus === STATUS_ACCEPTED || managed.InvestStatus === STATUS_INVEST_FULL" ng-click="unbindManaged(acc, managed)" class="icon-break"></a>
+                    <span ng-if="managed.InvestStatus === STATUS_PENDING">
+                      <a ng-click="acceptManaged(acc, managed)" class="icon-ok"></a>
+                      <a ng-click="rejectManaged(acc, managed)" class="icon-cancel"></a>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot ng-hide="!acc.lamm_master.lamm_investors.items.length">
+                <tr>
+                  <td colspan="5" class="nested-wrapper">
+                    <table class="nested">
+                      <thead>
+                        <tr>
+                          <td>
+                            {% trans "Total investments" %}
+                          </td>
+                          <td>
+                            <p class="text-left"><span class="font-light">{% trans "came in" %} &nbsp;</span> +$[[::acc.lamm_master.lamm_investors.in]]</p>
+                            <p class="text-left"><span class="font-light">{% trans "came out" %} &nbsp;</span> -$[[::acc.lamm_master.lamm_investors.out]]</p>
+                          </td>
+                          <td colspan="2">
+                            <p>Дата Rollover <span class="font-light" ng-bind="acc.lamm_master.rollover.exec_date|momentFromNow"></span></p>
+                          </td>
+                        </tr>
+                      </thead>
+                    </table>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

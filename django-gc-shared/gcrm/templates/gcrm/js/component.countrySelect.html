@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<div class="dropdown dropdown-inline open block">
+  <span class="label label-default"
+        ng-repeat="item in countrySelect.selectedCountry"
+        ng-click="countrySelect.removeCountry(item)">
+    [[::item.data.name]]&nbsp;<i class="fa fa-times"></i>
+  </span>
+
+  <input class="form-control form-control-sm" type="text" placeholder="{% trans "Country" %}"
+         ng-model="countrySelect.countryName"
+         ng-change="countrySelect.searchCountry(countrySelect.countryName)">
+
+  <div class="dropdown-menu" ng-if="countrySelect.countries.length && countrySelect.countryName">
+    <a class="dropdown-item" ng-repeat="item in countrySelect.countries" ng-click="countrySelect.addCountry(item)">
+      [[::item.data.name]]
+    </a>
+  </div>
+</div>

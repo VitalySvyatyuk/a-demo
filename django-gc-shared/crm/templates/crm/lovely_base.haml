@@ -1,0 +1,28 @@
+{% load i18n app_tags shared_tags staticfiles %}
+!!! 5
+%html{lang:"en"}
+    %head
+        %meta{charset:"utf-8"}
+        %title {% block title %}Уютная Панель{% endblock title %} | GC CRM
+        %meta{name:"viewport", content:"width=device-width, initial-scale=1.0"}
+        / Le styles
+        %link{href:"{% static 'bootstrap3/css/bootstrap.min.css' %}", rel:"stylesheet"}
+        :css
+            {% block css %}{% endblock css %}
+
+        {% block extrahead %}{% endblock extrahead %}
+
+    %body
+        #header
+            {% block header %}{% endblock header %}
+
+        #content
+            {% block content %}{% endblock content %}
+
+        / Le javascript
+        / Placed at the end of the document so the pages load faster
+        %script{src:"{% static 'js/vendor/jquery.js' %}"}
+        %script{src:"{% static 'bootstrap3/js/bootstrap.min.js' %}"}
+        {% block extrafooter %}{% endblock extrafooter %}
+        :javascript
+            {% block js %}{% endblock js %}

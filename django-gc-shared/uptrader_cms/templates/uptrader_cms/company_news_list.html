@@ -1,0 +1,90 @@
+{% extends "design_2014/marketing_site/base.html" %}
+{% load node_filters pytils_dt shared_tags i18n app_tags %}
+
+{% block breadcrumbs %}
+    {% breadcrumbs name=header %}
+{% endblock %}
+
+{% block adaptiveclass %} adaptive{% endblock %}
+{% block viewport %}width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1{% endblock %}
+
+{% block scripts %}{{ block.super }}
+    <script type="text/javascript">
+        $(function () {
+            $('#tags-nav').change(function(){
+                location.href = $(this).val();
+            });
+        
+            $(".more-link").click(function(event) {
+                event.preventDefault()
+                $(this).hide()
+                $(this).siblings('.more-text, .more-link, .description').toggle()
+            });
+        
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+<div class="main newsfeed-page">
+    <div class="row">
+        <h1>{{ header }}</h1>
+        <div class="newsfeed-dates-tags offset-bottom-50 offset-top-50">
+            {% include filters_template %}
+        </div>
+        {% regroup object_list by month as news_by_month %}
+
+        {% for month in news_by_month %}
+            <h2 class="green-title">{{ month.grouper|date:"F Y" }}</h2>
+            {% for news_item in month.list %}
+                <div class="newsfeed-item offset-top-10" itemscope
+                     itemtype="http://schema.org/{% if page_mode == "analytics" %}BlogPosting{% else %}NewsArticle{% endif %}">
+                    <div class="xsmall-12 small-2 large-2 columns">
+                        <time itemprop="datePublished" class="date" datetime="{{ news_item.event_date|date:'c' }}">
+                            {{ news_item.event_date.day }}
+                            <span>{{ news_item.event_date|date:"E"|capfirst }}</span>
+                        </time>
+                    </div>
+                    <div class="xsmall-12 small-10 large-10 columns content">
+                        <h4 class="title" itemprop="headline">
+                            <a itemprop="url" href="{{ news_item.get_absolute_url }}">
+                                {{ news_item.title|capfirst }}
+                            </a>
+                            {% if request.user.is_staff %}<a href="{{ news_item.edit_link }}">Edit
+                                </a>{% endif %}
+                        </h4>
+
+                        <div class="text">
+                            <div itemprop="description" class="description clearfix offset-bottom-10">
+                                {{ news_item.body|safe|truncatewords_html:50 }}
+                            </div>
+                            <a href="#" class="more-link">
+                                {% trans "Read more..." %}
+                            </a>
+                            <div itemprop="text" class="more-text hide clearfix">
+                                {{ news_item.body|safe }}
+                                {% if LANGUAGE_CODE == 'ru' and news_item.forum_topic %}
+                                    <a class="right" href="{{ news_item.forum_topic.get_absolute_url }}">Обсудить на форуме</a>
+                                {% endif %}
+                            </div>
+                            <a href="#" class="more-link hide left offset-top-10">
+                                {% trans "Hide" %}
+                            </a>
+                        </div>
+                        {% if news_item.categories.all %}
+                            <div class="tags offset-top-20" itemprop="keywords">
+                                <span>{% trans "Categories" %}:</span>&ensp;{% for category in news_item.categories.all %}
+                                <a href="{% url "company_news_list" %}?category={{ category.slug }}">
+                                {{ category.title }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% if pages_list %}
+        {% include "uptrader_cms/includes/pagination_template.html" %}
+    {% endif %}
+    </div>
+</div>
+{% endblock %}

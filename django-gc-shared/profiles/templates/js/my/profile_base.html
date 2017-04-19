@@ -1,0 +1,42 @@
+{% load i18n app_tags profiles_tags %}
+<style>
+    .status {
+        float: left;
+        margin-left: .5em;
+    }
+</style>
+
+<div class="clearfix stocks-container edit-profile">
+    <h1 class="offset-bottom-35 offset-top-35">{% trans "Profile settings" %}</h1>
+    <dl class="tabs">
+        {% block tabs %}
+        <dd {% if category == 'info' %}class="active"{% endif %}>
+            <a ng-href="[[::BASE_URL]]profile/info">
+                <span>{% trans "Personal information" %}</span>
+            </a>
+        </dd>
+        <dd {% if category == 'documents' %}class="active"{% endif %}>
+            <a ng-href="[[::BASE_URL]]profile/documents">
+                <span>{% trans "Documents" %}</span>
+            </a>
+        </dd>
+        <dd {% if category == 'security' %}class="active"{% endif %}>
+            <a ng-href="[[::BASE_URL]]profile/security">
+                <span>{% trans "Security" %}</span>
+            </a>
+        </dd>
+        {% comment %}
+            
+        <dd {% if category == 'subscriptions' %}class="active"{% endif %}>
+            <a ng-href="[[::BASE_URL]]profile/subscriptions">
+                <span>{% trans "Subscriptions" %}</span>
+            </a>
+        </dd>
+        {% endcomment %}
+        {% endblock %}
+    </dl>
+
+    <div class="tabs-content">
+        {% block tabscontent %}{% endblock %}
+    </div>
+</div>

@@ -1,0 +1,81 @@
+{% load crm_tags %}
+
+<table cellpadding="2" cellspacing="0" border="1">
+    <thead>
+        <tr>
+            <th>С</th>
+            <th>По</th>
+            <th>Регистраций</th>
+            <th>Нераспределённых клиентов</th>
+            <th>Клиентов со старыми менеждерами</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{date_from}}</td>
+            <td>{{date_to}}</td>
+            <td>{{users_count}}</td>
+            <td>{{current_free}}</td>
+            <td>{{current_rotten.count}} ({{current_rotten.managers|join:", "}})</td>
+        </tr>
+    </tbody>
+</table>
+
+{% regroup managers by manager.office as managers_list %}
+{% for mans in managers_list %}
+    <p>{{ mans.grouper|default:"СПб" }}</p>
+    <table cellpadding="2" cellspacing="0" border="1" style="text-align: center;">
+        <thead>
+            <tr>
+                <th>Показатели</th>
+                {% for man in mans.list %}
+                    <th>{{man.manager.user.profile.get_full_name}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Всего клиентов в базе</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.all_clients}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Закреплённые клиенты</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.clients}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Клиенты по кнопке</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.clients_taken}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Обзвонено клиентов(мин 1 звонок и 30 сек/0 сек)</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.clients_called_30}}/{{man.clients_called_0}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Все звонки/Время</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.calls.total.count}} <br/> {{man.calls.total.duration|pretty_seconds}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Отвеченные/Время</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.calls.answered.count}} <br/> {{man.calls.answered.duration|pretty_seconds}}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td><b>Неотвеченные/Время</b></td>
+                {% for man in mans.list %}
+                    <td>{{man.calls.not_answered.count}} <br/> {{man.calls.not_answered.duration|pretty_seconds}}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+{% endfor %}

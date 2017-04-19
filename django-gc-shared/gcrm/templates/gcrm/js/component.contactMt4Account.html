@@ -1,0 +1,25 @@
+{% load i18n %}
+<div class="media" ng-class="::{'text-muted': contactMt4Account.account.data.is_deleted}">
+  <div class="media-left">
+    <div class="media-object">
+      <span class="fa fa-fw fa-2x fa-trademark fa-flip-horizontal"></span>
+    </div>
+  </div>
+
+  <div class="media-body">
+    <small class="pull-right" title="[[::contactMt4Account.object.data.creation_ts|moment:'LLL']]">[[::contactMt4Account.object.data.creation_ts|moment:'calendar']]</small>
+
+    <span class="label label-info">[[::contactMt4Account.object.data.mt4_id]] ([[::contactMt4Account.object.data.group_name]])</span>
+    <br>
+    <span>
+      {% trans "Balance" %}: [[::contactMt4Account.object.data.balance.display]]
+    </span>
+    <ul class="list-unstyled">
+      <li ng-repeat="(slug, money) in contactMt4Account.object.data.bonus_details">
+        <i class="fa fa-plus small"></i>&nbsp;{% trans "bonus" %}&nbsp;<strong>[[::slug]]:</strong> [[::money]]
+      </li>
+        <a target="_blank" href="/my/office/accounts/[[::contactMt4Account.object.data.mt4_id]]/history/">{% trans "History" %}</a>
+        <a ng-click="contactMt4Account.contactSearch('ib:' + contactMt4Account.object.data.mt4_id)">{% trans "Clients" %}</a>
+    </ul>
+  </div>
+</div>

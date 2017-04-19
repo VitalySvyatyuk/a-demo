@@ -1,0 +1,859 @@
+{% extends "design_2014/marketing_site/base.html" %}
+
+{% load staticfiles i18n %}
+
+{% block scripts %}
+    {{ form.media }}
+    <script>
+        function gcAccordion () {
+        $('.gc-accordion').on('click', '[data-gc-accordion-toggle]', function (e){
+                e.preventDefault();
+                $(this).closest('[data-gc-accordion]').children('.content').slideToggle('400');
+                $(this).closest('[data-gc-accordion]').toggleClass('active');
+            });
+        }
+        gcAccordion();
+
+		$(".adaptive-select-block select").change(function(){
+			$('.tabs dd').removeClass("active");
+			$('.tabs-content .content').removeClass("active");
+			var id = $('.adaptive-select-block select option:selected').val();
+			$('#'+id).addClass("active");
+			$('#tab-'+id).addClass("active");
+		});
+
+        $('.tabs').on('toggled', function (event, tab) {
+            $('.adaptive-select-block select').val(tab.attr("id"));
+        });
+    </script>
+{% endblock %}
+
+{% block title %}
+    {% if LANGUAGE_CODE == "ru" %}
+        Партнерские программы Форекс с лучшими условиями - {{ block.super }}
+    {% else %}
+        {% trans "Partnership" %} - {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block description %}{% if LANGUAGE_CODE == "ru" %}Партнерская программа на Форексе (Forex) от брокера Grand Capital. Лучшие условия для партнеров, до 50% от сделки и без стартовых вложений!{% endif %}{% endblock %}
+{% block keywords %}{% if LANGUAGE_CODE == "ru" %}форекс, forex, партнерка, дилер, представитель, франшиза, партнерство, франчайзинг, Партнерская программа Форекс{% endif %}{% endblock %}
+
+{% block viewport %}width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1{% endblock %}
+{% block adaptiveclass %} adaptive{% endblock %}
+
+{% block content %}
+<div class="main partnership-program">
+    <h1 class="row offset-bottom-30">{% trans "Partner Programs" %}</h1>
+
+    <div class="row">
+        <div class="adaptive-select-block">
+            <p>{% trans "Select partnership program" %}</p>
+            <div class="select-wrapper">
+                <select name="select-partnership">
+                    <option value="web">{% trans "Web partner" %}</option>
+                {% if LANGUAGE_CODE != 'ru' %}
+                    <option value="cpa">{% trans "CPA" %}</option>
+                {% endif %}
+                    <option value="regional">{% trans "Regional representative" %}</option>
+                    <option value="franchise">{% trans "Franchising" %}</option>
+                    <option value="white-label">{% trans "White Label" %}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- tabs -->
+        <dl class="tabs" data-tab role="tablist" data-options="scroll_to_content:false;deep_linking:true">
+            <dd id="tab-web" class="active">
+                <a href="#web" role="tab" class="partnership-tab-img web"></a>
+                <a href="#web">
+                    <span>{% trans "Web partner" %}</span>
+                </a>
+            </dd>
+        {% if LANGUAGE_CODE != 'ru' %}
+            <dd id="tab-cpa">
+                <a href="#cpa" role="tab" class="partnership-tab-img cpa"></a>
+                <a href="#cpa">
+                    <span>{% trans "CPA" %}</span>
+                </a>
+            </dd>
+        {% endif %}
+            <dd id="tab-regional">
+                <a href="#regional" role="tab" class="partnership-tab-img regional"></a>
+                <a href="#regional">
+                    <span>{% trans "Regional</span><br><span>representative" %}</span>
+                </a>
+            </dd>
+            <dd id="tab-franchise">
+                <a href="#franchise" role="tab" class="partnership-tab-img franchise"></a>
+                <a href="#franchise">
+                    <span>{% trans "Franchising" %}</span>
+                </a>
+            </dd>
+            <dd id="tab-white-label">
+                <a href="#white-label" role="tab" class="partnership-tab-img whitelabel"></a>
+                <a href="#white-label">
+                    <span>{% trans "White Label" %}</span>
+                </a>
+            </dd>
+        </dl>
+        <!-- tabs end -->
+
+        <!-- tabs content -->
+        <div class="tabs-content">
+
+            <!-- panel 1 -->
+            <div class="content active" id="web" role="tabpanel">
+                <p class="h2 offset-bottom-40 hide-for-small-down">{% trans "Web partnership" %}</p>
+
+                <!-- info panel 1 -->
+                <div class="program-info offset-bottom-60">
+                    <div class="partnership-info-img web"></div>
+                    <p class="small-12 medium-6 large-8">
+                                {% blocktrans %}
+                                    Web partnership - it is the possibility for the active internet users to join
+                                    a set up business on favorable terms and without investment. It is the first
+                                    level of partnership, which doesn't require special knowledge in financial markets.
+                                    In order to start collaboration with our company it is enough to have any internet
+                                    resource (site, blog, forum, a group in social networks and others), through
+                                    which you will attract clients. In this case, all the promotional material will
+                                    be provided by the company for you. This type of partnership is designed so that it
+                                    lets you obtain a high reward on par with serious partners of the company
+                                {% endblocktrans %}
+                    </p>
+                    <a class="button third-black medium" data-reveal-href="{% url 'mt4_process_create_account' 'real_ib' %}" data-reveal-form>
+                        {% trans "Become a web partner" %}
+                    </a>
+                </div><!-- <<< info panel 1 -->
+
+                <!-- how it works panel 1-->
+                <p class="h2 offset-bottom-30">{% trans "How it works" %}</p>
+
+                <div class="clearfix partnership-scheme offset-bottom-60 text-center">
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img add-client"></span>
+                        <p>{% trans "You attract clients" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img computer"></span>
+                        <p>{% trans "Clients from your site, blog, groups in social networks" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img logo"></span>
+                        <p>{% trans "Clients make trades on our company accounts" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns">
+                        <span class="partnership-scheme-img money"></span>
+                        <p>{% trans "You receive a reward for the trades or operations that they make" %}</p>
+                    </div>
+                </div><!-- <<< how it works panel 1-->
+
+                <!-- advantages panel 1-->
+                <div class="row offset-bottom-60">
+                    <div class="small-12 large-6 columns">
+                        <p class="h2 offset-bottom-30">{% trans "Benefits" %}</p>
+                        <ul>
+                            <li>{% trans "Grand Capital has the largest partners' commissions in the industry – from $15 per lot" %}</li>
+                            <li>{% trans "You work with a a major well-known company" %}</li>
+                            <li>{% trans "Grand Capitals investment products and online-trading services are in high demand on the market" %}</li>
+                            <li>{% trans "No initial investments required" %}</li>
+                            <li>{% trans "There are no limits on profit made" %}</li>
+                            <li>{% trans "You and your clients receive access to all of the Grand Capital services" %}</li>
+                            <li>{% trans "Your clients will be serviced by Grand Capital" %}</li>
+                            <li>{% trans "You can expand a partners network  all around the world" %}</li>
+                        </ul>
+                    </div>
+                    <div class="small-12 large-6 columns">
+                        <div class="callout">
+                            <h3 class="offset-bottom-20">{% trans "Example of real earnings" %}</h3>
+                            <div class="example-img person {{ LANGUAGE_CODE }}">
+                                <span>{% trans "Igor,Moscow" %}</span>
+                            </div>
+                            <p>
+                                <strong>{% trans "5 days" %}</strong> - {% trans "1 client" %}<br>
+                                <strong>{% trans "1 month" %}</strong> - {% trans "15 clients, 500$" %}<br>
+                                <strong>{% trans "3 months" %}</strong> - {% trans "100 clients, 3500$ per month" %}<br>
+                                <strong>{% trans "12 months" %}</strong> - {% trans "more than 300 clients, 12650$ per month" %}
+                            </p>
+                        </div>
+                    </div>
+                </div><!-- <<< advantages panel 1-->
+
+                <!-- multilevel -->
+
+                <div class="row multilevel-partner offset-bottom-60">
+                    <div class="small-12 large-7 columns">
+                        <p class="h2">{% trans "Multilevel partnership" %}</p>
+                        <p class="offset-top-30">
+                                {% blocktrans %}
+                                    You can earn revenue from attracting not only clients but also sub-partners.
+                                    Grand Capital Partner signed up through you is your sub-partner,
+                                    you will also receive income from his profit
+                                {% endblocktrans %}
+                        </p>
+                        <p class="offset-top-45">
+                                {% blocktrans %}
+                                    In the diagram on the right you can see the interest rates for different levels of sub-partners.
+                                    For your convenience, in the partnership report, you will receive detailed calculations
+                                    for each sub-partner
+                                {% endblocktrans %}
+                        </p>
+                    </div>
+                    <div class="small-12 large-5 columns text-right multilevel-scheme-wrapper">
+                        <div class="multilevel-partner-image"></div>
+                        <div class="reward">
+                            <div>
+                                <p>{% trans "Grand Capital partner" %}</p>
+                                <p>{% trans "Standard reward" %}</p>
+                            </div>
+                            <div>
+                                <p>{% trans "Level" %} 1</p>
+                                <p>10%</p>
+                            </div>
+                            <div>
+                                <p>{% trans "Level" %} 2</p>
+                                <p>7%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- <<< multilevel -->
+
+                <!-- support -->
+                <p class="h2 offset-bottom-30">{% trans "Our support" %}</p>
+                <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-6 text-center benefits offset-bottom-60">
+                    <li>
+                        <span class="advantages-icon advantages-statistic"></span>
+                        <p>{% trans "Transparent partners statistics in the Personal cabinet" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-megaphone"></span>
+                        <p>{% trans "Advertising<br>materials" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-strategy"></span>
+                        <p>{% trans "Ready strategy<br>to attract clients" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-chat"></span>
+                        <p>{% trans "Partners department<br>specialists consultation" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-quality"></span>
+                        <p>{% trans "Representative<br>Certificate" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-hat"></span>
+                        <p>{% trans "Free education" %}</p>
+                    </li>
+                </ul><!-- <<< support panel 1-->
+
+                <!-- reward panel 1-->
+                {% include "referral/_partnership_reward.html" %}
+                <!-- <<< reward panel 1-->
+
+                <div class="row offset-top-40 offset-bottom-40 text-center">
+                    <a data-reveal-href="{% url 'mt4_process_create_account' 'real_ib' %}" data-reveal-form="" class="button big second">
+                        {% trans "Become a web partner" %}
+                    </a>
+                </div>
+
+            </div>
+            <!-- panel 1 end -->
+
+        {% if LANGUAGE_CODE != 'ru' %}
+            <!-- panel cpa-->
+            <div class="content" id="cpa" role="tabpanel">
+                <p class="h2 offset-bottom-40 hide-for-small-down">{% trans "CPA (cost per action)" %}</p>
+
+                <!-- info panel cpa -->
+                <div class="program-info offset-bottom-60">
+                    <div class="partnership-info-img cpa"></div>
+                    <p class="small-12 medium-6 large-8">
+                        {% blocktrans trimmed with commission=50 %}
+                            CPA is a simple program that allows you to earn ${{ commission }} for every attracted client. The program is suitable for those who want to earn on the financial market but do not want to dive into its depths. At the same time, it is quite easy to attract clients to trade binary options as they are on the peak of their popularity now.
+                        {% endblocktrans %}
+                    </p>
+                    <a class="button third-black medium" data-reveal-href="{% url 'mt4_process_create_account' 'real_ib' %}" data-reveal-form>
+                        {% trans "Become a CPA partner" %}
+                    </a>
+                </div><!-- <<< info panel cpa -->
+
+                <!-- how it works panel cpa-->
+                <p class="h2 offset-bottom-30">{% trans "How it works" %}</p>
+
+                <div class="clearfix partnership-scheme offset-bottom-60 text-center">
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img add-client"></span>
+                        <p>{% trans "You attract clients" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img computer"></span>
+                        <p>{% trans "Clients from your site, blog, groups in social networks" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img logo"></span>
+                        <p>{% trans "Clients make trades on our company accounts" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns">
+                        <span class="partnership-scheme-img money"></span>
+                        <p>{% trans "You get fixed commission for each client" %}</p>
+                    </div>
+                </div><!-- <<< how it works panel cpa-->
+
+                <!-- advantages panel cpa -->
+                <div class="row advantage-partner gc-grid">
+                    <div class="small-12 large-6 columns offset-bottom-60">
+                        <p class="h2 offset-bottom-30">{% trans "Advantages of CPA at Grand Capital" %}</p>
+                        <ul class="check-list">
+                            <li class="fs-16">{% blocktrans trimmed with amount="$50" %}Commission fixed at {{ amount }} for each client attracted{% endblocktrans %}</li>
+                            <li class="fs-16">{% trans "You can easily calculate your commission as it is based on the number of clients you’ve attracted" %}</li>
+                            <li class="fs-16">{% trans "No risks or initial investments" %}</li>
+                            <li class="fs-16">{% trans "You can attract unlimited number of clients" %}</li>
+                            <li class="fs-16">{% trans "No hidden conditions" %}</li>
+                            <li class="fs-16">{% trans "Your statistics are available in your personal account" %}</li>
+                        </ul>
+                    </div>
+                    <div class="small-12 large-6 columns offset-bottom-60">
+                        <div class="ya-box">
+                            <p class="header">{% trans "Fixed commission" %} —<br><strong>$50</strong> {% trans "for each client" %}</p>
+                            <p class="fs-16 offset-top-15">{% blocktrans trimmed with starting_deposit="$50" trades=5 %}The commission is deposited to your account right after the client has made a deposit of {{ starting_deposit }} and at least {{ trades }} trades have been placed.{% endblocktrans %}</p>
+                        </div>
+                    </div>
+                </div><!-- <<< advantages panel cpa -->
+
+                <!-- support -->
+                <p class="h2 offset-bottom-30">{% trans "Advantages of trading binary options at Grand Capital" %}</p>
+                <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-6 text-center benefits offset-bottom-60">
+                    <li>
+                        <span class="advantages-icon advantages-86"></span>
+                        <p>{% blocktrans %}Profit up to 86% per transaction{% endblocktrans %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-timer"></span>
+                        <p>{% trans "Early closure" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-calc"></span>
+                        <p>{% trans "Over 40 trading instruments" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-percent"></span>
+                        <p>{% trans "Easy to get clients interested with great promotions and bonuses" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-traders"></span>
+                        <p>{% trans "Binary options in MetaTrader4 and Web-Terminal" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-profit"></span>
+                        <p>{% trans "Most convenient payment options" %} – Skrill, Fasapay, Neteller, Webmoney, Mastercard, Visa.</p>
+                    </li>
+                </ul><!-- <<< support panel cpa-->
+                <!-- what you get -->
+                <p class="h2 offset-bottom-30">{% trans "What you get" %}</p>
+                <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-6 text-center benefits offset-bottom-60">
+                    <li>
+                        <span class="advantages-icon advantages-statistic"></span>
+                        <p>{% trans "Transparent statistics in your Private Office" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-megaphone"></span>
+                        <p>{% trans "Promo materials" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-strategy"></span>
+                        <p>{% trans "Ready-to-go strategies to attract more clients" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-chat"></span>
+                        <p>{% trans "Assistance of our partnership department" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-quality"></span>
+                        <p>{% trans "Partner certificate" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-hat"></span>
+                        <p>{% trans "Free education" %}</p>
+                    </li>
+                </ul><!-- <<< what you get panel cpa-->
+                <div class="text-center">
+                    <a class="button second medium" data-reveal-href="{% url 'mt4_process_create_account' 'real_ib' %}" data-reveal-form>
+                        {% trans "Become a CPA partner" %}
+                    </a>
+                </div>
+
+            </div>
+            <!-- panel cpa -->
+        {% endif %}
+            <!-- panel 2-->
+            <div class="content" id="regional" role="tabpanel">
+                <p class="h2 offset-bottom-40 hide-for-small-down">{% trans "Regional  representative" %}</p>
+
+                <!-- info panel 2 -->
+                <div class="program-info offset-bottom-60">
+                    <div class="partnership-info-img regional"></div>
+                    <p class="small-12 medium-6 large-8">
+                           {% blocktrans %}
+                               Regional representative program give the possibility for any company to expand their
+                               business at the expense of the Grand Capital company's services. The regional
+                               representative status allows you to work on behalf of company's name
+                               in your city and get an increased partnership reward
+                           {% endblocktrans %}
+                    </p>
+                    <a class="button third-black medium" href="" data-reveal-id="region">
+                        {% trans "Become a regional representative" %}
+                    </a>
+                </div><!-- <<< info panel 2 -->
+
+                <!-- how it works panel 2-->
+                <p class="h2 offset-bottom-30">{% trans "How it works" %}</p>
+
+                <div class="clearfix partnership-scheme offset-bottom-60 text-center">
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img clients"></span>
+                        <p>{% trans "You attract clients" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img town"></span>
+                        <p>{% trans "Your office" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img logo"></span>
+                        <p>{% trans "Clients make trades on our company accounts" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns">
+                        <span class="partnership-scheme-img money"></span>
+                        <p>{% trans "You receive a reward for the trades or operations that they make" %}</p>
+                    </div>
+                </div><!-- <<< how it works panel 2-->
+
+                <!-- advantages panel 2 -->
+                <div class="row advantage-partner">
+                    <div class="small-12 large-6 columns offset-bottom-60">
+                        <p class="h2 offset-bottom-30">{% trans "Benefits" %}</p>
+                        <ul>
+                            <li>{% trans "Increased commissions - discussed individually" %}</li>
+                            <li>{% trans "The status of the regional representative of a major company implies a higher level of client confidence" %}</li>
+                            <li>{% trans "You can use all of the company's  licenses" %}</li>
+                            <li>{% trans "Easy to interest the client – Grand Capital's investment products and services are in high demand on the market" %}</li>
+                            <li>{% trans "Individual page of the representative on the Grand Capital's web site" %}</li>
+                            <li>{% trans "There are no limits on profit made" %}</li>
+                            <li>{% trans "Access to all of the Grand Capital Services" %}</li>
+                            <li>{% trans "Ability to conduct training in your office regarding the Grand Capital programs" %}</li>
+                        </ul>
+                    </div>
+                    <div class="small-12 large-6 columns offset-bottom-60">
+                        <p class="h2 offset-bottom-30">{% trans "Requirements for the representative" %}</p>
+                        <ul>
+                            <li>{% trans "Having your own office" %}</li>
+                            <li>{% trans "Be a legal entity" %}</li>
+                            <li>{% trans "Knowledge of the specifics of the financial markets" %}</li>
+                            <li>{% trans "High-quality consulting and training of the clients" %}</li>
+                            <li>{% trans "Grand Capital's Approval of your marketing activities" %}</li>
+                        </ul>
+                        <div class="callout">
+                            <h3 class="offset-bottom-20">{% trans "Example of results" %}</h3>
+                            <div class="example-img"></div>
+                            <p>
+                                <strong>{% trans "The expenses for opening the office:" %}</strong> {% trans "from" %} $2000 {% trans "till" %} $10000<br>
+                                <strong>{% trans "Monthly expenses:" %}</strong> {% trans "from" %} $700<br>
+                                <strong>{% trans "Office staff:" %} </strong> {% trans "from" %} 1 {% trans "till" %} 10 {% trans "employees" %}<br>
+                                <strong>{% trans "Average monthly income:" %} </strong> {% trans "from" %} $5000
+                            </p>
+                        </div>
+                    </div>
+                </div><!-- <<< advantages panel 2-->
+
+                <!-- support panel 2-->
+                <p class="h2 offset-bottom-30">{% trans "Our support" %}</p>
+                <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-6 text-center benefits">
+                    <li>
+                        <span class="advantages-icon advantages-rocket"></span>
+                        <p>{% trans "Ready-to launch and development model for your business" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-profit"></span>
+                        <p>{% trans 'Working and proven techniques to attract new customers' %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-support"></span>
+                        <p>{% trans "Ongoing technical support for your office and clients" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-pig"></span>
+                        <p>{% trans "No need to buy software" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-logo"></span>
+                        <p>{% trans "Work under a well-known brand with the right to use all licenses" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-manager"></span>
+                        <p>{% trans "Individual conditions of cooperation" %}</p>
+                    </li>
+                </ul><!-- <<< support panel 2-->
+
+                <!-- reward panel 2-->
+                {% include "referral/_partnership_reward.html" %}
+                <!-- <<< reward panel 2-->
+
+                <div class="row offset-top-40 offset-bottom-40 text-center">
+                    <a href="#" data-reveal-id="region" class="button big second">
+                        {% trans "Become a regional representative" %}
+                    </a>
+                </div>
+
+                <!-- modal panel 2-->
+                <div class="reveal-modal small" data-reveal id="region">
+                    <a class="close-reveal-modal icon cross"></a>
+                    <p class="h1 text-center">{% trans 'Application for collaboration on the "Regional representative" program' %}</p>
+                    <form method="post" action="{% url 'partnership_frontpage' %}">
+                        <div class="reveal-form inverted-checkbox">
+                            {% for field in form %}
+                                {% if field.field != form.partnership_type.field %}
+                                <div class="form-item">
+                                    <div class="small-12 medium-4 large-4 columns">
+                                        <label>{{ field.label }}</label>
+                                        {% if field.help_text %}<p class="description">{{ field.help_text }}</p>{% endif %}
+                                    </div>
+                                    <div class="small-12 medium-8 large-8 columns">
+                                        {% if field.name == "phone" %}
+                                            <div class="phone-wrapper">
+                                        {% endif %}
+                                            {{ field }}
+                                        {% if field.name == "phone" %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% csrf_token %}
+                        <input type="hidden" name="partnership_type" value="regional partner"/>
+                        <div class="offset-top-30 text-center">
+                            <input class="button third medium" type="submit" value="{% trans 'Send application' %}">
+                        </div>
+                    </form>
+                </div><!-- <<< modal panel 2 -->
+            </div>
+            <!-- panel 2 end -->
+
+
+            <!-- panel 3-->
+            <div class="content" id="franchise" role="tabpanel">
+                <p class="h2 offset-bottom-40 hide-for-small-down">{% trans "Franchising" %}</p>
+
+                <!-- info panel 3 -->
+                <div class="program-info offset-bottom-60">
+                    <div class="partnership-info-img franchise"></div>
+                    <p class="small-12 medium-6 large-8">
+                            {% blocktrans %}
+                                Participate in the development of Grand Capital company by franchising and
+                                get a high monthly income. Franchising – it's a form of running a business,
+                                in which one company (franchisor) gives the other company (franchisees)
+                                the right to use the company's business model and brand for a fee (royalty).
+                                Grand Capital gives the possibility for the investors to grow expand their business
+                                with a franchise without royalty. At the same time Grand Capital provides a working
+                                business model, own brand, advertising and technical support, consultancy and others.
+                                All this allows us to avoid many of the mistakes and build a proper
+                                successful business with the support of a major company
+                            {% endblocktrans %}
+                    </p>
+                    <a href="#" class="button third-black medium" data-reveal-id="franch">
+                        {% trans "Begin Partnership" %}
+                    </a>
+                </div><!-- <<< info panel 3 -->
+
+                <!-- how it works panel 3 -->
+                <p class="h2 offset-bottom-30">{% trans "How it works" %}</p>
+
+                <div class="clearfix partnership-scheme text-center">
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img clients"></span>
+                        <p>{% trans "You attract clients" %}</p>
+                    </div>
+                    <div class="small-12 columns square-arrow-right franchise-block-adaptive">
+                        <span class="partnership-scheme-img dollar"></span>
+                        <p class="franchise-profit offset-bottom-10">{% trans "Your independent income" %}</p>
+                        <p>{% trans "Income from<br>consulting services" %}</p>
+                        <p>{% trans "Income from<br>client training" %}</p>
+                        <p>{% trans "Other income" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img town-logo"></span>
+                        <p>{% trans "Your office" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img logo"></span>
+                        <p>{% trans "Clients make trades on our company accounts" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns">
+                        <span class="partnership-scheme-img money"></span>
+                        <p>{% trans "You receive a reward for the trades or operations that they make" %}</p>
+                    </div>
+                </div>
+                <div class="clearfix partnership-scheme franchise-block offset-bottom-60 text-center">
+                    <div class="medium-7 large-5 large-offset-2 medium-offset-1 columns">
+                        <div class="small-12 medium-4 large-4 columns square-arrow-right">
+                            <span class="partnership-scheme-img dollar"></span>
+                            <p>{% trans "Income from<br>consulting services" %}</p>
+                        </div>
+                        <div class="small-12 medium-4 large-4 columns square-arrow-right">
+                            <span class="partnership-scheme-img dollar"></span>
+                            <p>{% trans "Income from<br>client training" %}</p>
+                        </div>
+                        <div class="small-12 medium-4 large-4 columns square-arrow-right">
+                            <span class="partnership-scheme-img dollar"></span>
+                            <p>{% trans "Other income" %}</p>
+                        </div>
+                        <div class="large-12 columns">
+                            <p class="franchise-profit">{% trans "Your independent income" %}</p>
+                        </div>
+                    </div>
+
+                </div><!-- <<< how it works panel 3 -->
+
+                    <!-- advantages panel 3-->
+                <div class="row advantage-partner">
+                    <div class="small-12 large-6 columns offset-bottom-60">
+                        <p class="h2 offset-bottom-30">{% trans "Benefits" %}</p>
+                        <ul>
+                            <li>{% trans "High brand recognition - franchise of a known company Grand Capital" %}</li>
+                            <li>{% trans "Large market potential - stable demand for trading services" %}</li>
+                            <li>{% trans "Complete services package: training, advertising, software, support, a personal page on the Grand Capital web site" %}</li>
+                            <li>{% trans "Unconditional Franchise" %}</li>
+                            <li>{% trans "No royalty" %}</li>
+                            <li>{% trans "Several sources of income: from clients trades, training, consulting and others" %}</li>
+                        </ul>
+                    </div>
+                    <div class="small-12 large-6 columns offset-bottom-60">
+                        <p class="h2 offset-bottom-30">{% trans "Requirements for franchisees" %}</p>
+                        <ul>
+                            <li>{% trans "Franchisee shall comply with the internal regulations of the company" %}</li>
+                            <li>{% trans "Office of the franchisee must be branded in accordance with the requirements of Grand Capital" %}</li>
+                            <li>{% trans "Attracting and customer service should be carried out only by the scheme, which will be provided on training" %}</li>
+                            <li>{% trans "Franchisee shall ensure the normal operation of the office and finance office operating expenses" %}</li>
+                            <li>{% trans "Proposal for a franchise is not a public offer" %}</li>
+                        </ul>
+                    </div>
+                 </div><!-- <<< advantages panel 3-->
+
+                <!-- support panel 3 -->
+                <p class="h2 offset-bottom-30">{% trans "Our Support" %}</p>
+                <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-6 text-center benefits">
+                    <li>
+                        <span class="advantages-icon advantages-rocket"></span>
+                        <p>{% trans "Ready promotional<br>materials" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-strategy"></span>
+                        <p>{% trans "Attracting customers<br>through own<br>representatives" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-pig"></span>
+                        <p>{% trans "We provide<br>all the software" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-support"></span>
+                        <p>{% trans "Technical support<br>of your clients" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-hat"></span>
+                        <p>{% trans "You get access to<br>all of the Grand Capital<br>training materials" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-manager"></span>
+                        <p>{% trans "Individual counseling and<br>training of the franchisees" %}</p>
+                    </li>
+                </ul><!-- <<< support panel 3-->
+
+                <div class="row offset-top-40 offset-bottom-40 text-center">
+                    <a href="#"  data-reveal-id="franch" class="button big second">
+                        {% trans "Begin Partnership" %}
+                    </a>
+                </div>
+
+                <!-- <<< modal panel 3-->
+                <div class="reveal-modal small" data-reveal="" id="franch">
+                    <a class="close-reveal-modal icon cross"></a>
+                    <p class="h1 text-center">
+                    {% trans 'Application for collaboration on the "Franchising" program' %}
+                    </p>
+                    <form method="post" action="{% url 'partnership_frontpage' %}">
+                        <div class="reveal-form inverted-checkbox">
+                            {% for field in form %}
+                                {% if field.field != form.partnership_type.field %}
+                                    <div class="form-item">
+                                        <div class="small-12 medium-4 large-4 columns">
+                                            <label>{{ field.label }}</label>
+                                            {% if field.help_text %}<p class="description">{{ field.help_text }}</p>{% endif %}
+                                        </div>
+                                        <div class="small-12 medium-8 large-8 columns">
+                                            {% if field.name == "phone" %}
+                                                <div class="phone-wrapper">
+                                            {% endif %}
+                                                {{ field }}
+                                            {% if field.name == "phone" %}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% csrf_token %}
+                        <input type="hidden" name="partnership_type" value="franchising"/>
+                        <div class="offset-top-30 text-center">
+                            <input class="button third medium" type="submit" value="{% trans 'Send application' %}">
+                        </div>
+                    </form>
+                </div><!-- <<< support panel 3-->
+
+            </div>
+            <!-- panel 3 end -->
+
+            <!-- panel 4 -->
+            <div class="content" id="white-label" role="tabpanel">
+                <p class="h2 offset-bottom-40 hide-for-small-down">White Label</p>
+
+                <!-- info panel 4 -->
+                <div class="program-info offset-bottom-60">
+                    <div class="partnership-info-img whitelabel"></div>
+                    <p class="small-12 medium-6 large-8">
+                            {% blocktrans %}
+                                White Label partners program was developed for companies that are already working
+                                on the market and have their own client base. White Label partner gets the possibility
+                                to expand their company's range of services by providing the services of Internet trading.
+                                In this case White Label attracts and services the clients under their own brand.
+                                And Grand Capital provides software products and own intellectual developments
+                                in the use of White Label
+                            {% endblocktrans %}
+                    </p>
+                    <a class="button third-black medium" href="" data-reveal-id="whitelabel">
+                        {% trans "Begin Partnership" %}
+                    </a>
+                </div>
+
+                <!-- how it works panel 4-->
+                <p class="h2 offset-bottom-30">{% trans "How it works" %}</p>
+
+                <div class="clearfix partnership-scheme offset-bottom-60 text-center">
+                    <div class="small-12 medium-3 large-3 columns square-arrow-right">
+                        <span class="partnership-scheme-img clients"></span>
+                        <p>{% trans "Your clients. Your income depends only on your activity - the income is not limited in any way" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns square-arrow-left">
+                        <span class="partnership-scheme-img white-label"></span>
+                        <p>{% trans "Your legal entity<br>under your own brand" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns square-arrow-left">
+                        <span class="partnership-scheme-img terminal"></span>
+                        <p>{% trans "Trading Platform" %}</p>
+                    </div>
+                    <div class="small-12 medium-3 large-3 columns">
+                        <span class="partnership-scheme-img bank"></span>
+                        <p>{% trans "Clients make trades on<br>your company accounts" %}</p>
+                    </div>
+                </div><!-- <<< how it works panel 4-->
+
+                <!-- advantages panel 4 -->
+                <div class="row advantage-partner">
+                    <div class="small-12 large-6 columns offset-bottom-60">
+                        <p class="h2 offset-bottom-30">{% trans "Benefits" %}</p>
+                        <ul>
+                            <li>{% trans "You can position yourself as an independent broker, without spending the money to buy the MetaTrader 4 terminal" %}</li>
+                            <li>{% trans "Large market potential - strong demand for online trading services" %}</li>
+                            <li>{% trans "Increased customer base by attracting new clients" %}</li>
+                            <li>{% trans "Huge selection of tools - more than 330 financial instruments (CFD, Futures, Stocks, Indices, Options, Forex)" %}</li>
+                            <li>{% trans "Profitable spreads and commissions" %}</li>
+                            <li>{% trans "Full financial and legal independence" %}</li>
+                            <li>{% trans "Individual conditions for each White Label" %}</li>
+                        </ul>
+                    </div>
+                    <div class="small-12 large-6 columns offset-bottom-60">
+                        <p class="h2 offset-bottom-30">{% trans "Requirements" %}</p>
+                        <ul>
+                            <li>{% trans "Initial capital to start up the business" %}</li>
+                            <li>{% trans "Database of live clients" %}</li>
+                            <li>{% trans "Knowledge of the financial services market" %}</li>
+                            <li>{% trans "Registered legal entity" %}</li>
+                        </ul>
+                    </div>
+                </div><!-- <<< advantages panel 4 -->
+
+                <!-- support panel 4 -->
+                <p class="h2 offset-bottom-30">{% trans "Our support" %}</p>
+                <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-5 text-center benefits">
+                    <li>
+                        <span class="advantages-icon advantages-megaphone"></span>
+                        <p>{% trans "The use of Grand Capitals trading resources" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-support"></span>
+                        <p>{% trans "Consultation with technical support specialists" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-pig"></span>
+                        <p>{% trans "Software updates" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-hat"></span>
+                        <p>{% trans "Free training<br>for your staff" %}</p>
+                    </li>
+                    <li>
+                        <span class="advantages-icon advantages-strategy"></span>
+                        <p>{% trans "Joint development of<br>strategies to promote" %}</p>
+                    </li>
+                </ul><!-- <<< support panel 4-->
+
+                <div class="row offset-top-40 offset-bottom-40 text-center">
+                    <a href="#"  data-reveal-id="whitelabel" class="button big second">
+                        {% trans "Begin Partnership" %}
+                    </a>
+                </div>
+
+                <!-- modal panel 4-->
+                <div class="reveal-modal small" data-reveal="" id="whitelabel">
+                    <a class="close-reveal-modal icon cross"></a>
+                    <p class="h1 text-center">{% trans 'Application for collaboration on the "White Label" program' %}</p>
+                    <form method="post" action="{% url 'partnership_frontpage' %}">
+                        <div class="reveal-form inverted-checkbox">
+                            {% for field in form %}
+                                {% if field.field != form.partnership_type.field %}
+                                    <div class="form-item">
+                                        <div class="small-12 medium-4 large-4 columns">
+                                            <label>{{ field.label }}</label>
+                                            {% if field.help_text %}<p class="description">{{ field.help_text }}</p>{% endif %}
+                                        </div>
+                                        <div class="small-12 medium-8 large-8 columns">
+                                            {% if field.name == "phone" %}
+                                                <div class="phone-wrapper">
+                                            {% endif %}
+                                                {{ field }}
+                                            {% if field.name == "phone" %}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% csrf_token %}
+                        <input type="hidden" name="partnership_type" value="white label"/>
+                        <div class="offset-top-30 text-center">
+                            <input class="button third medium" type="submit" value="{% trans 'Send application' %}">
+                        </div>
+                    </form>
+                </div><!-- <<< modal panel 4-->
+
+            </div><!-- panel 4 -->
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

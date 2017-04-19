@@ -1,0 +1,391 @@
+- extends 'crm/lovely_base.haml'
+
+- load i18n app_tags shared_tags
+
+- block title
+    {% trans "Withdrawal requests for account" %} {{group.account}}
+
+- block css
+    :plain
+        .wrgroup-summary td {
+            padding-right: 22px;
+        }
+        .wrgroup-summary {
+            margin: 15px;
+        }
+        ul.problems {
+            margin-left: 15px;
+        }
+        .text-strong {
+            font-weight: bold;
+        }
+
+        table.wrgroup-summary tr td:first-child {
+            font-weight: bold;
+        }
+        .tab-content {
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+        .nav-tabs {
+            margin-bottom: 0;
+        }
+
+- block js
+    $(".consideration-result input").change(function() {
+        if($(this).val() == 'declined')
+            $('.decline-reason').show();
+        else
+            $('.decline-reason').hide();
+    });
+
+    var winopen = function(name, url) {
+        return window.open(url, name, "resizable,scrollbars,status");
+    };
+
+    /* Make modal div reusable */
+    $('body').on('hidden.bs.modal', '.modal', function () {
+        $(this).removeData('bs.modal');
+    });
+
+    /* Reload admin page with groups */
+    window.onunload = function(){
+        window.opener.location.reload();
+    };
+
+    $('.btn-group.processing-stages button').on('click', function(a, b, c){
+        if(!$($(this).data('dep')).is(":visible")) {
+            $('.department-info').hide();
+            $($(this).data('dep')).show();
+        } else {
+            $('.department-info').hide();
+        }
+    });
+
+    $('.department-info .close').on('click', function(a, b, c){
+        $('.department-info').hide();
+    });
+
+- block header
+
+
+- block content
+    .container
+        .row
+            .col-sm-offset-2.col-sm-8
+                - if hours_left
+                    %h3.text-danger.pull-right{title:"{% trans 'Time left. Date of the first request:' %} {{group.start_time}}"}
+                        %span.glyphicon.glyphicon-time
+                        = hours_left|floatformat:"0"
+                        {% trans "h" %}
+                        = minutes_left|floatformat:"0"
+                        {% trans "m" %}
+                %h3.pull-left
+                    %span{title:"{% trans 'Requests group' %} #{{group.id}}"}
+                        {% trans "Withdrawal requests for account" %} {{group.account}}
+
+                .clearfix
+
+                - if all_requirements
+                    .btn-group.processing-stages
+                        %button.btn.disabled.btn-default {% trans "Processing" %}
+                        - for slug, info in all_requirements
+                            - if info.is_approved
+                                %button.btn.btn-success{title:'{% trans "Approved" %}', data-dep:'#={slug}'}= info.name
+                            - elif info.priority == current_level
+                                %button.btn.btn-warning{title:'{% trans "Waiting" %}', data-dep:'#={slug}'}= info.name
+                            - else
+                                %button.btn{title:'{% trans "In queue" %}', data-dep:'#={slug}'}= info.name
+                    %ul.list-unstyled
+                        - for approval in group.approvals.all
+                            - if approval.comment
+                                %li
+                                    %strong
+                                        = approval.user.get_full_name
+                                        :
+                                    = approval.comment
+                    - for slug, info in all_requirements
+                        .panel.panel-default.department-info{id:'={slug}', style:'display:none'}
+                            .panel-body
+                                %button.close.pull-right{type:"button", aria-hidden:"true"}&times;
+                                %p
+                                    %strong
+                                        = info.name
+                                        :
+                                    - for u in info.users
+                                        - if request.user.is_superuser or perms.payments.can_edit_approvals
+                                            %a{href:"{%url 'payments_account_withdraw_requests_group' group.id%}?user={{u.id}}"}= u.get_full_name
+                                        - else
+                                            = u.get_full_name
+                                        - if not forloop.last
+                                            ,
+                                %ul.list-unstyled
+                                    - for task in info.tasks
+                                        %li
+                                            - if task.level == 'info'
+                                                %span.label.label-info= forloop.counter
+                                            - elif task.level == 'warning'
+                                                %span.label.label-warning= forloop.counter
+                                            - elif task.level == 'danger'
+                                                %span.label.label-danger= forloop.counter
+                                            = task.text
+                                - for approval in info.approvals
+                                        %p
+                                            %strong
+                                                - if request.user.is_superuser or perms.payments.can_edit_approvals
+                                                    %a{href:"{%url 'payments_account_withdraw_requests_group' group.id%}?user={{approval.user.id}}"}= approval.user.get_full_name
+                                                - else
+                                                    = approval.user.get_full_name
+                                            &nbsp;
+                                            - if approval.user == approval.updated_by and approval.is_accepted
+                                                %span.text-success
+                                                    %span.glyphicon.glyphicon-ok
+                                                    {% trans "Approved" %}
+                                            - elif approval.is_accepted
+                                                %span.text-warning
+                                                    %span.glyphicon.glyphicon-ok
+                                                    {% trans "Approved" %}
+                                                %strong.text-muted= approval.updated_by.get_full_name
+                                            - else
+                                                %span.text-info
+                                                    %span.glyphicon.glyphicon-refresh
+                                                    {% trans "Resolving" %}
+                                                - if approval.user != approval.updated_by
+                                                    %strong.text-muted= approval.updated_by.get_full_name
+                                            &nbsp;
+                                            &nbsp;
+                                            %span.text-muted.pull-right
+                                                = approval.updated_at
+                                        - if approval.comment
+                                            %p= approval.comment
+                - elif group.approvals
+                    - for approval in group.approvals.all
+                        - if approval.is_accepted
+                            %p
+                                %strong= approval.user.get_full_name
+                                %small= approval.departments_names|join:', '
+                                &nbsp;
+                                - if approval.user == approval.updated_by
+                                    %span.text-success
+                                        %span.glyphicon.glyphicon-ok
+                                        {% trans "Approved" %}
+                                - else
+                                    %span.text-warning
+                                        %span.glyphicon.glyphicon-ok
+                                        {% trans "Approved" %}
+                                    %strong.text-muted= approval.updated_by.get_full_name
+                                &nbsp;
+                                &nbsp;
+                                %span.text-muted.pull-right
+                                    = approval.updated_at
+                            - if approval.comment
+                                %p= approval.comment
+                %article
+                    %table.wrgroup-summary
+                        %tbody
+                            %tr
+                                %td.lead {% trans "Withdrawal sum" %}
+                                %td
+                                    %b.text-success.lead= group.requests_sum_total
+                                    %ul.list-unstyled
+                                        - for curr, info in group.requests_sum_stats.items
+                                            %li
+                                                %small
+                                                    %b= curr
+                                                    :
+                                                    = info.money
+
+                            %tr
+                                %td {% trans "Balance at the time of request" %}
+                                %td= active_balance_money
+                            %tr
+                                %td {% trans "Current balance" %}
+                                %td= current_balance
+                    %table.wrgroup-summary
+                        %tbody
+                            %tr
+                                %td {% trans "Client" %}
+                                %td
+                                    = group.account.user.get_full_name|default:group.account.user
+                                    %a{href:"{{group.account.user.gcrm_contact.get_absolute_url}}", target:"_blank"}
+                                        %b CRM
+                            %tr
+                                %td {% trans "Manager" %}
+                                %td
+                                     = group.account.user.profile.manager.get_full_name
+                            %tr
+                                %td Account
+                                %td
+                                    %a{href:"{% url 'mt4_account_history' group.account.mt4_id %}", target:"_blank", title:"{% trans 'View account history' %}"}= group.account
+                                    - if group.profit > 0
+                                        %strong.text-success.glyphicon.glyphicon-arrow-up{title:"{% trans 'Profit' %}: {{group.profit}}", style:"font-size: 16px;"}
+                                    - else
+                                        %strong.text-warning.glyphicon.glyphicon-arrow-down{title:"{% trans 'Profit' %}: {{group.profit}}", style:"font-size: 16px;"}
+                    %ul.nav.nav-tabs
+                        %li.active
+                            %a{href:"#depo-stat", data-toggle:"tab"}
+                                {% trans "Deposit stats" %}
+                        %li
+                            %a{href:"#bonuses", data-toggle:"tab"}
+                                {% trans "Bonuses" %} ({{bonuses|length}})
+
+                    .tab-content
+                        #depo-stat.tab-pane.active
+                            %table.table.table-condensed
+                                %thead
+                                    %tr
+                                        %th {% trans "System" %}
+                                        %th {% trans "Sum" %}
+                                        %th {% trans "Percent" %}
+                                %tbody
+                                    - for stat in drequests_stats
+                                        %tr
+                                            %td= stat.0
+                                            %td= stat.1
+                                            %td= stat.2
+                        #bonuses.tab-pane
+                            %table.table.table-condensed
+                                %thead
+                                    %tr
+                                        %th {% trans "Type" %}
+                                        %th {% trans "Sum" %}
+                                %tbody
+                                    - for bonus in bonuses.iteritems
+                                        %tr
+                                            %td= bonus.0
+                                            %td= bonus.1
+                    %br
+
+                - if approval.tasks
+                    %hr
+                    %h3.lead
+                        {% trans "Tasks for" %}
+                        = approval.user.get_full_name
+                        - if approval.user == request.user
+                            ({% trans "You" %})
+                        - else
+                            %a{href:"{%url 'payments_account_withdraw_requests_group' group.id%}"}
+                                ({% trans "Return to your acc" %})
+                    %ul.list-unstyled
+                        - for task in approval.tasks
+                            %li
+                                - if task.level == 'info'
+                                    %span.label.label-info= forloop.counter
+                                - elif task.level == 'warning'
+                                    %span.label.label-warning= forloop.counter
+                                - elif task.level == 'danger'
+                                    %span.label.label-danger= forloop.counter
+                                = task.text
+
+                    %form{method:"post"}
+                        - csrf_token
+                        %p
+                            .checkbox
+                                %label
+                                    - if form.is_accepted.value
+                                        %input{type:"checkbox", name:"{{form.is_accepted.name}}", checked:None}
+                                            {% trans "Approved" %}
+                                    - else
+                                        %input{type:"checkbox", name:"{{form.is_accepted.name}}"}
+                                            {% trans "Approved" %}
+                        %p
+                            %textarea.form-control{rows:"3", name:"{{form.comment.name}}", placeholder:"{% trans 'Your comment, if needed' %}"}= form.comment.value|default:""
+                        %button.btn.btn-primary{type:"submit"}
+                            {% trans "Save" %}
+
+                #modal.modal.fade
+
+                %hr
+                %h3.lead {% trans "Requests list" %}
+
+                - for wr in all_requests
+                    .panel{class:"panel-{%if wr.is_committed%}success{%elif wr.is_committed == None and wr.is_payed == False%}warning{%elif wr.is_payed == False%}danger{%else%}default{%endif%}"}
+                        .panel-heading
+                            %h3.panel-title.text-center
+                                %span.pull-left
+                                    {% trans "Request" %} #
+                                    %span
+                                        %a{onclick:'winopen("{% trans "Request" %} # {{wr.id}}", "{% url "admin:payments_withdrawrequest_change" wr.id %}"); return false;', href:"{% url 'admin:payments_withdrawrequest_change' wr.id %}"}= wr.id
+                                    %span.text-muted= wr.creation_ts
+                                %span
+                                    %span.glyphicon.glyphicon-circle-arrow-down{class:"text-{{wr.is_payed|yesno:'success,danger,muted'}}", title:"{% trans 'Withdrawn from acc' %}"}
+                                    %span.glyphicon.glyphicon-arrow-right{class:"text-{{wr.is_ready_for_payment|yesno:'success,danger,muted'}}", title:"{% trans 'Ready for payout' %}"}
+                                    %span.glyphicon.glyphicon-send{class:"text-{{wr.is_committed|yesno:'success,danger,muted'}}", title:"{% trans 'Paid out' %}"}
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                %span.pull-right
+                                    %small
+                                        %a{data-toggle:"modal", href:"{% url 'payments_withdraw_request_decline_modal' wr.id %}", data-target:"#modal"}
+                                            {% trans "Decline" %}
+                        .panel-body
+                            %ul.list-unstyled.problems.pull-right{style:'max-width: 270px'}
+                            %table
+                                %tbody
+                                    - if wr.reason
+                                        %tr
+                                            %td
+                                                %b {% trans "Reason" %}
+                                            %td= wr.get_reason_display
+                                    %tr
+                                        %td
+                                            %b {% trans "Sum" %}
+                                        %td= wr.amount_money
+                                    %tr
+                                        %td
+                                            %b {% trans "Details" %}
+                                        %td
+                                            %a{data-toggle:"modal", href:"{% url 'payments_requisit_view_modal' wr.id %}", data-target:"#modal"}
+                                                = wr.payment_system
+                                                — {{wr.params.purse}}
+                                    - if wr.public_comment
+                                        %tr
+                                            %td
+                                                %b
+                                                    %abbr{title:"{% trans 'Public comment' %}"}
+                                                        {% trans "Status" %}
+                                            %td= wr.public_comment
+                                    - if wr.private_comment
+                                        %tr
+                                            %td
+                                                %b
+                                                    %abbr{title:"{% trans 'Internal comment' %}"}
+                                                        {% trans "Comment" %}
+                                            %td= wr.private_comment
+                                    - if wr.closed_by
+                                        %tr
+                                            %td
+                                                %b
+                                                    {% trans "Closed" %}
+                                            %td= wr.closed_by.get_full_name
+
+                .text-muted
+                    %hr
+                    %h3.lead {% trans "Additional info" %}
+                    %table.table.table-condensed
+                        %thead
+                            %tr
+                                %th {% trans "Date" %}
+                                %th {% trans "Who (IP)" %}
+                                %th ID
+                                %th {% trans "What" %}
+                        %tbody
+                            - for log in logs
+                                %tr
+                                    %td= log.at
+                                    %td
+                                        %abbr{title:"{{log.ip}}"}= log.user
+                                    %td= log.content_object.id
+                                    %td= log.get_event_display|default:log.event
+                    %p
+                        {% trans "Group level" %}:
+                        = group.processing_level
+                    %p
+                        {% trans "Needs attention" %}:
+                        = group.attention_list.all
+                    %p
+                        {% trans "Needs attention" %}:
+                        = group.processing_departments
+                    %p
+                        {% trans "Closed" %}:
+                        = group.is_closed

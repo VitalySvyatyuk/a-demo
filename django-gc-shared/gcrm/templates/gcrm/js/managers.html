@@ -1,0 +1,52 @@
+{% load i18n %}
+
+<div class="row">
+  <div class="col-sm-16">
+    <div ui-view="create"></div>
+    <div class="field">
+      <a ng-click="addManager()" class="btn btn-primary-outline pull-right"><span class="icon fa fa-plus"></span> {% trans "Add manager" %}</a>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-16">
+    <table class="table table-bordered table-hover table-sm table-fixed">
+      <thead class="thead-default">
+        <tr>
+          <th class="text-md-center">{% trans "Manager contact" %}</th>
+          <th class="text-md-center">{% trans "Actions" %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="text-md-center text-md-center table-active"
+            ng-repeat-start="(office, data) in objects"
+            ng-if="data.is_managable && data.managers.length">
+          <th colspan="12" class="text-md-center">[[::data.managers[0].data.office.name]]</th>
+        </tr>
+        <tr ng-repeat-end
+            ng-repeat="manager in data.managers|orderBy:manager.data.name.full"
+            ng-if="data.is_managable && data.managers.length">
+          <td>
+            <span ng-switch="manager.isEditing">
+              <a ng-switch-default ng-click="manager.startEdit()" class="btn btn-sm">[[manager.data.name.full]] &nbsp;<i class="fa fa-pencil"></i></a>
+              <form ng-switch-when="true" class="form-inline" ng-submit="saveName(manager)">
+                <input class="form-control form-control-sm" type="text" ng-model="manager.data.name.last" required>
+                <input class="form-control form-control-sm" type="text" ng-model="manager.data.name.first" required>
+                <input class="form-control form-control-sm" type="text" ng-model="manager.data.name.middle">
+                <button type="submit" class="btn btn-link"><i class="fa fa-check"></i></button>
+                <button type="button" ng-click="manager.cancelEdit()" class="btn btn-link"><i class="fa fa-times"></i></button>
+              </form>
+            </span>
+          </td>
+          <td>
+            <div class="btn-group btn-group-sm" role="group">
+              <button type="button" class="btn btn-info-outline" ng-click="setPass(manager)"><i class="fa fa-key"></i> {% trans "Change password" %}</button>
+              <button type="button" class="btn btn-danger-outline" ng-click="revoke(manager)"><i class="fa fa-trash"></i> {% trans "Revoke user" %}</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

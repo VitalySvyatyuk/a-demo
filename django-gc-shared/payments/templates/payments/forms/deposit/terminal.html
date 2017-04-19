@@ -1,0 +1,18 @@
+{% extends "payments/forms/deposit/base.html" %}
+
+{% block header %}
+    <div class="small-5 medium-5 large-5 columns instruction">
+        <p class="offset-bottom-15">Введите средства на счет через систему:</p>
+        {% include form.instructions %}
+    </div>
+{% endblock %}
+
+{% block ps %}
+    <div class="small-12 medium-12 large-12 columns">
+        <div class="left small-7 medium-7 large-7 columns">
+            {% with field=form.name %}
+                {% include "payments/includes/field.html" %}
+            {% endwith %}
+        </div>
+    </div>
+{% endblock %}

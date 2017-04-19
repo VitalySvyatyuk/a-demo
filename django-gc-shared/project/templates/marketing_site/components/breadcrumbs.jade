@@ -1,0 +1,17 @@
+- load i18n
+
+if items
+  .breadcrumbs
+    ul.breadcrumbs__list
+      li.breadcrumbs__item
+        a.breadcrumbs__text.link(href="/")
+          - trans 'Main'
+      for item in items
+        if item.get_url
+          li.breadcrumbs__item
+            | /&nbsp;
+            a.breadcrumbs__text.link(href="{{ item.get_url }}")
+              | {{ item.caption }}
+      li.breadcrumbs__item
+        span.breadcrumbs__text
+          | / 

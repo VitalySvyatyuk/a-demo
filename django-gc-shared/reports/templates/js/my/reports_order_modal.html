@@ -1,0 +1,154 @@
+{% load i18n app_tags profiles_tags staticfiles %}
+<h2 class="modal-title offset-bottom-40">{% trans "New report" %}</h2>
+<a class="close-reveal-modal icon cross" ng-click="cancel()"></a>
+
+<form ng-submit="orderReport()">
+    <div class="form-item row">
+        <div class="small-4 large-4 column">
+            <label ng-class="{required: formData.report_type.required}" ng-bind="formData.report_type.label|capitalize"></label>
+            <div class="description" ng-bind="formData.report_type.help_text|capitalize"></div>
+        </div>
+        <div class="small-8 large-8 column">
+            <select
+              ng-disabled="isLoading"
+              ng-model="form.report_type"
+              ng-options="r.value as r.display_name for r in formData.report_type.choices">
+            </select>
+            <div
+                ng-if="errors.report_type"
+                ng-repeat="err in errors.report_type"
+                ng-bind="err"
+                class="error">
+            </div>
+        </div>
+    </div>
+    <div class="form-item row"
+         ng-if="form.report_type && formData.report_type.no_account_reports.indexOf(form.report_type) == -1
+         && formData.report_type.group_reports.indexOf(form.report_type) == -1">
+        <div class="small-4 large-4 column">
+            <label ng-class="{required: formData.account.required}" ng-bind="formData.account.label|capitalize"></label>
+            <div class="description" ng-bind="formData.account.help_text|capitalize"></div>
+        </div>
+        <div class="small-8 large-8 column">
+            <input ng-if="formData.account.type=='integer'" ng-model="form.account" type="tel">
+            <select
+              ng-disabled="isLoading"
+              ng-if="formData.account.type=='choice'"
+              ng-model="form.account"
+              ng-options="r.value as r.display_name for r in formData.account.choices">
+            </select>
+            <div
+                ng-if="errors.account"
+                ng-repeat="err in errors.account"
+                ng-bind="err"
+                class="error">
+            </div>
+        </div>
+      </div>
+    <div class="form-item row"
+         ng-if="form.report_type && formData.report_type.private_office_reports.indexOf(form.report_type) > -1
+         && formData.user">
+        <div class="small-4 large-4 column">
+            <label ng-bind="formData.user.label|capitalize"></label>
+            <div class="description" ng-bind="formData.user.help_text|capitalize"></div>
+        </div>
+        <div class="small-8 large-8 column">
+            <select
+              ng-disabled="isLoading"
+              ng-model="form.user"
+              ng-options="r.value as r.display_name for r in formData.user.choices">
+            </select>
+            <div
+                ng-if="errors.user"
+                ng-repeat="err in errors.user"
+                ng-bind="err"
+                class="error">
+            </div>
+        </div>
+      </div>
+    <div class="form-item row">
+        <div class="small-4 large-4 column">
+            <label ng-class="{required: formData.start.required}" ng-bind="formData.start.label|capitalize"></label>
+            <div class="description" ng-bind="formData.start.help_text|capitalize"></div>
+        </div>
+        <div class="small-8 large-8 column">
+            <input gc-datepicker ng-disabled="isLoading" ng-model="form.start" type="text">
+            <div
+                ng-if="errors.start"
+                ng-repeat="err in errors.start"
+                ng-bind="err"
+                class="error">
+            </div>
+        </div>
+    </div>
+    <div class="form-item row">
+         <div class="small-4 large-4 column">
+            <label ng-class="{required: formData.end.required}" ng-bind="formData.end.label|capitalize"></label>
+            <div class="description" ng-bind="formData.end.help_text|capitalize"></div>
+        </div>
+        <div class="small-8 large-8 column">
+            <input gc-datepicker ng-disabled="isLoading" ng-model="form.end" type="text">
+            <div
+                ng-if="errors.end"
+                ng-repeat="err in errors.end"
+                ng-bind="err"
+                class="error">
+            </div>
+        </div>
+    </div>
+    <div class="form-item big row" ng-if="formData.account_group_include &&
+          form.report_type && formData.report_type.group_reports.indexOf(form.report_type) > -1">
+        <div class="small-4 large-4 column">
+            <label ng-class="{required: formData.account_group_include.required}" ng-bind="formData.account_group_include.label|capitalize"></label>
+            <div class="description" ng-bind="formData.account_group_include.help_text|capitalize"></div>
+        </div>
+        <div class="small-8 large-8 column">
+            <select
+              multiple
+              ng-disabled="isLoading"
+              ng-model="form.account_group_include"
+              ng-options="r.value as r.display_name for r in formData.account_group_include.choices">
+            </select>
+            <div
+                ng-if="errors.account_group_include"
+                ng-repeat="err in errors.account_group_include"
+                ng-bind="err"
+                class="error">
+            </div>
+        </div>
+    </div>
+    <div class="form-item big row" ng-if="formData.account_group_exclude &&
+          form.report_type && formData.report_type.group_reports.indexOf(form.report_type) > -1">
+        <div class="small-4 large-4 column">
+            <label ng-class="{required: formData.account_group_exclude.required}" ng-bind="formData.account_group_exclude.label|capitalize"></label>
+            <div class="description" ng-bind="formData.account_group_exclude.help_text|capitalize"></div>
+        </div>
+        <div class="small-8 large-8 column">
+            <select
+              multiple
+              ng-disabled="isLoading"
+              ng-model="form.account_group_exclude"
+              ng-options="r.value as r.display_name for r in formData.account_group_exclude.choices">
+            </select>
+            <div
+                ng-if="errors.account_group_exclude"
+                ng-repeat="err in errors.account_group_exclude"
+                ng-bind="err"
+                class="error">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-item row" ng-if="formData.report_type.length">
+        <div class="description">
+            {% trans "These account groups will always be excluded:" %}
+            <ul>
+                    <li ng-repeat="gr in formData.report_type.excluded_for_user"
+                            ng-bind="gr"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="text-center offset-top-30">
+        <button class="medium third-black to-white" ng-disabled="isLoading">{% trans "Order report" %}</button>
+    </div>
+</form>

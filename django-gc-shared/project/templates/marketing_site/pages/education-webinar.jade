@@ -1,0 +1,259 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | About | Arum Capital
+block content
+  .page_head(style="background-image: url({% static 'img/marketing-site/bg/bg-education-webinar.jpg' %})")
+    .container
+      .row
+        .col-xs-12.white-bc
+          - breadcrumbs
+          h1.page_head__title.page_head__title--white
+            | Учебный центр
+      .row
+        .col-md-12
+          div.header-tabs-row
+            a.header-tabs.link(href="#")
+              | что такое forex
+            a.header-tabs.link(href="#")
+              | Словарь терминов
+            a.header-tabs.active-header-tabs.link(href="#")
+              | Обучающие вебинары
+
+
+  .education-webinar
+    .container
+      .row
+        .col-md-12
+          .pagination
+            a.pagination__button.pagination__arrow_button.pagination__arrow_button--left.link(href="#")
+              | май
+            a.pagination__number_button.link(href="#")
+              span.pagination__button
+                | Июнь
+            a.pagination__button.pagination__arrow_button.pagination__arrow_button--right.link(href="#")
+              | июль
+          .education-webinar-schedule
+            table
+              thead
+                tr
+                  th
+                    | Понедельник
+                  th
+                    | Вторник
+                  th
+                    | Среда
+                  th
+                    | Четверг
+                  th
+                    | Пятница
+              tbody
+                tr
+                  td
+                    p.subtitle.subtitle--red
+                      | 2 июня
+                    a.link(href="#")
+                      | Инструменты компьютерного анализа
+                    p.time
+                      | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                    a.link(href="#")
+                      | Бинарные опционы драйвер рынка
+                    p.time
+                      | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                      | 3  июня
+                    a.link(href="#")
+                      | Текущая ситуация на валютном рынке
+                    p.time
+                      | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                      | 4 июня
+                    a.link(href="#")
+                      | Обзор рынка. Важные события предстоящей недели
+                    p.time
+                      | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                      | 5 июня
+                  td
+                    p.subtitle.subtitle--red
+                      | 7 июня
+                    a.link(href="#")
+                      | Инструменты компьютерного анализа
+                    p.time
+                      | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                tr
+                  td
+                    p.subtitle.subtitle--red
+                        | 9 июня
+                    a.link(href="#")
+                        | Обзор рынка. Важные события предстоящей недели
+                    p.time
+                        | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                        | 10 июня
+                    a.link(href="#")
+                        | Текущая ситуация на валютном рынке
+                    p.time
+                        | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                        | 11 июня
+                    a.link(href="#")
+                        | Обзор рынка. Важные события предстоящей недели
+                    p.time
+                        | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                        | 12 июня
+                  td
+                    p.subtitle.subtitle--red
+                        | 13 июня
+                    a.link(href="#")
+                        | Текущая ситуация на валютном рынке
+                    p.time
+                        | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                tr
+                  td
+                    p.subtitle.subtitle--red
+                        | 16 июня
+                    a.link(href="#")
+                        | Обзор рынка. Важные события предстоящей недели
+                    p.time
+                        | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                        | 17 июня
+                    a.link(href="#")
+                        | Психология  ошибки профессионалов и новичков
+                    p.time
+                        | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                        | 18 июня
+                    a.link(href="#")
+                        | Обзор рынка. Важные события предстоящей недели
+                    p.time
+                        | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                        | 19 июня
+                    a.link(href="#")
+                        | Психология трейдинга - профессионалов и новичков
+                    p.time
+                        | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                        | 20 июня
+                tr
+                  td
+                    p.subtitle.subtitle--red
+                        | 21 июня
+                    a.link(href="#")
+                        | Обзор рынка. Важные события предстоящей недели
+                    p.time
+                        | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                        | 22 июня
+                  td
+                    p.subtitle.subtitle--red
+                        | 23 июня
+                    a.link(href="#")
+                        | Обзор рынка. Важные события предстоящей недели
+                    p.time
+                        | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                        | 24 июня
+                  td
+                    p.subtitle.subtitle--red
+                        | 25 июня
+                tr
+                  td
+                    p.subtitle.subtitle--red
+                      | 26 июня
+                    a.link(href="#")
+                      | Обзор рынка. Важные события предстоящей недели
+                    p.time
+                      | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                      | 27 июня
+                    a.link(href="#")
+                      | Текущая ситуация на валютном рынке
+                    p.time
+                      | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                      | 28 июня
+                    a.link(href="#")
+                      | Обзор рынка. Важные события предстоящей недели
+                    p.time
+                      | 10:00
+                    a.button.button--outline
+                      span.button__text
+                        | Записаться
+                  td
+                    p.subtitle.subtitle--red
+                      | 29 июня
+                  td
+                    p.subtitle.subtitle--red
+                      | 30 июня
+

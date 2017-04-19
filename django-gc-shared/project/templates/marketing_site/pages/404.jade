@@ -1,0 +1,14 @@
+extends marketing_site/layout
+
+- load staticfiles i18n app_tags
+
+block title
+  | {% trans "Contacts" %} {{ block.super }}
+
+block content
+  .page_404
+    .container
+      p
+        | 404
+      p
+        - trans "This is not the web page you are looking for."

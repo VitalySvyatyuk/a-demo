@@ -1,0 +1,144 @@
+{% load staticfiles inbox i18n %}
+<!--Header-->
+<header class="row offset-bottom-35">
+
+<div class="left-pan">
+  <div class="block-wrapper main-block">
+    <div class="profile-avatar">
+      <img src="{% static "img/arum-capital/logo.png" %}" alt="Arum Capital"/>
+    </div>
+    <h3 class="user-name offset-top-25 offset-bottom-5">
+          <a href="{{ lk_link|default:"[[::BASE_URL]]" }}" title="{% trans 'Private office main page' %}">
+            {% if no_js %}
+                <span>{{ request.user.first_name }}</span><span>{{ request.user.last_name }}</span>
+            {% else %}
+                <span>[[user.first_name]]</span><span>[[user.last_name]]</span>
+            {% endif %}
+          </a>
+    </h3>
+    <div class="user-status-wrap">
+      <a
+        ng-href="[[ registrationCompleteLink() ]]"
+        class="user-status offset-bottom-10 [[ 'user-status-'+user.profile.status_info.code ]]"
+        ng-bind="user.profile.status_info.display"></a>
+    </div>
+
+    <ul class="profile-menu">
+    {% comment %}
+      {% if not no_js %}
+          <li>
+              <a ng-click="friendInvitationModal()" class="icon-invite-before">
+                 <span>{% trans "Refer a friend" %}</span>
+              </a>
+          </li>
+      {% endif %}
+    {% endcomment %}
+      <li>
+          <a href="{{ lk_link|default:"[[::BASE_URL]]" }}profile/info" class="icon-settings-before">
+             <span>{% trans "Settings" %}</span>
+          </a>
+      </li>
+      <li>
+          <a href="{% url "auth_logout"  %}" class="icon-exit-before">
+            <span>{% trans "Logout" %}</span>
+          </a>
+      </li>
+
+        {% if request.session.was_another_user %}
+         <li class="icon-exit-before">
+             <a href="{% url "login_as_user_id" request.session.was_another_user %}">
+                 <span>{% trans "Previous login" %}</span>
+             </a>
+         </li>
+         {% endif %}
+      {% comment %}
+
+
+         <li class="">
+           {{user.id}}
+         </li>
+       {% endcomment %}
+
+    </ul>
+
+  </div>
+</div>
+
+<div class="mid-pan">
+    <div class="my-banners arum-menu offset-top-20 offset-bottom-20">
+      <div class="columns small-4">
+        <a class="arum-menu-link document" href="{% url 'education_frontpage' %}">
+          <span>{% trans "Educational center" %}</span>
+        </a>
+      </div>
+      <div class="columns small-4">
+        <a class="arum-menu-link calendar" href="{% url 'economic_calendar' %}">
+          <span>{% trans "Economic calendar" %}</span>
+        </a>
+      </div>
+      <div class="columns small-4">
+        <a class="arum-menu-link calculator" href="{% url 'trading_calculator' %}">
+          <span>{% trans "Trader's calculator" %}</span>
+        </a>
+      </div>
+    </div>
+    <div class="row parts">
+        <div class="small-3 column trading">
+          <a href="{{ lk_link|default:"[[::BASE_URL]]" }}trading" class="global-nav" ng-class="{active: openPage == 'trading'}">{% trans "My accounts" %}</a>
+        </div>
+        <div class="small-3 column" ng-show="checkAvailableModules('partnership')">
+          <a href="{{ lk_link|default:"[[::BASE_URL]]" }}referral" class="global-nav" ng-class="{active: openPage == 'referral'}">{% trans "Partnership" %}</a>
+        </div>
+        <div class="small-3 column">
+          <a href="{{ lk_link|default:"[[::BASE_URL]]" }}downloads" class="global-nav" ng-class="{active: openPage == 'downloads'}">{% trans "Downloads centre" %}</a>
+        </div>
+        <div class="small-3 column create-button" ng-show="checkAvailableModules('partnership')">
+          <a href="{{ lk_link|default:"[[::BASE_URL]]" }}create" class="button medium right">
+            {% trans "Open an account" %}
+          </a>
+        </div>
+    </div>
+</div>
+
+{% if not no_js %}
+<div class="right-pan">
+  <div class="block-wrapper">
+    <ul class="my-local-nav" ng-if="pageCategory != 'partnership' ">
+        <li><a href="http://ramm.arumcapital.eu/" class="case" target="_blank"><span>{% trans "Log into ARUM.INVEST" %} </span></a></li>
+        {% if LANGUAGE_CODE == 'ru' %}
+        <li><a href="#" class="chart not-ready-platform-ru"><span>{% trans "Log into ARUM WEB" %}</span></a></li>
+        {% else %}
+        <li><a href="#" class="chart not-ready-platform-en"><span>{% trans "Log into ARUM WEB" %}</span></a></li>
+        {% endif %}
+        <li><a ng-click="financeSummaryModal()" class="inout-arrows"><span>{% trans "Deposit and Withdrawal history" %}</span></a></li>
+        <li><a href="{{ lk_link|default:"[[::BASE_URL]]" }}webinars" class="hat"><span>{% trans "Webinars" %}</span></a></li>
+        <li><a href="[[::BASE_URL]]archive" class="archive"><span>{% trans "Accounts archive" %}</span></a></li>
+        <li><a ng-href="{{ lk_link|default:"[[::BASE_URL]]" }}agreements" class="document"><span>{% trans "Documents and Agreements" %}</span></a></li>
+    </ul>
+    <ul class="my-local-nav" ng-if="pageCategory == 'partnership'">
+        <li><a href="http://ramm.arumcapital.eu/" class="case"><span>{% trans "Log into ARUM.INVEST" %} </span></a></li>
+        {% if LANGUAGE_CODE == 'ru' %}
+        <li><a href="#" class="chart not-ready-platform-ru"><span>{% trans "Log into ARUM WEB" %}</span></a></li>
+        {% else %}
+        <li><a href="#" class="chart not-ready-platform-en"><span>{% trans "Log into ARUM WEB" %}</span></a></li>
+        {% endif %}
+        <li><a ng-href="{{ lk_link|default:"[[::BASE_URL]]" }}reports" class="inout-arrows"><span>{% trans "Reports" %}</span></a></li>
+        <li><a href="{{ lk_link|default:"[[::BASE_URL]]" }}partnership" class="chart"><span>{% trans "Referral accounts" %}</span></a></li>
+        <li><a href="{% url 'referral_partner_documents' %}" class="list"><span>{% trans "Documents" %}</span></a></li>
+        <li><a ng-href="{{ lk_link|default:"[[::BASE_URL]]" }}agreements" class="document"><span>{% trans "Documents and Agreements" %}</span></a></li>
+
+        {% comment %}
+        <li><a href="{% url 'rebate_service' %}" class="sale"><span>{% trans "Rebate service" %}</span></a></li>
+        {% endcomment %}
+    </ul>
+  </div>
+</div>
+
+  {% comment %}
+    <div class="friend-invitation-button right" ng-class="{active: inviteActive}">
+     <a href="#" ng-click="friendInvitationPopup()" class="button medium">{% trans "Refer a friend" %}</a>
+    </div>
+  {% endcomment %}
+{% endif %}
+
+</header>

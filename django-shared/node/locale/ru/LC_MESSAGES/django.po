@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-01 17:25+0400\n"
+"PO-Revision-Date: 2012-10-04 19:08\n"
+"Last-Translator: asda asda <a@a.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.6.8\n"
+
+msgid "Stripped HTML"
+msgstr "Урезанный HTML"
+
+msgid "Full HTML"
+msgstr "Полный HTML"
+
+#, fuzzy
+msgid "Language"
+msgstr "язык"
+
+msgid "Title"
+msgstr "Название"
+
+#, fuzzy
+msgid "URL alias"
+msgstr "Короткая ссылка"
+
+msgid "Body"
+msgstr "Текст"
+
+msgid "Body format"
+msgstr "Формат"
+
+msgid "Published"
+msgstr "Опубликовано"
+
+msgid "Sitemapped"
+msgstr ""
+
+msgid "Creation timestamp"
+msgstr "Время создания"
+
+msgid "Update timestamp"
+msgstr "Время обновления"
+
+msgid "Author"
+msgstr "Автор"
+
+msgid "Node"
+msgstr "Объект"
+
+msgid "Nodes"
+msgstr "Все объекты"
+
+msgid "Header"
+msgstr ""
+
+msgid "Meta keywords"
+msgstr ""
+
+#, fuzzy
+msgid "Meta description"
+msgstr "Описание файла"
+
+msgid "Page"
+msgstr ""
+
+msgid "Pages"
+msgstr ""
+
+msgid "SocialSidebarPage"
+msgstr ""
+
+msgid "SocialSidebarPages"
+msgstr ""
+
+msgid "LoggedInUserPage"
+msgstr ""
+
+msgid "LoggedInUserPages"
+msgstr ""
+
+msgid "Прочитавшие новость пользователи"
+msgstr ""
+
+msgid "InternalNews"
+msgstr ""

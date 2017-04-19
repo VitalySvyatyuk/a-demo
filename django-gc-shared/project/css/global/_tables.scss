@@ -1,0 +1,234 @@
+/*Yellow table (default table)*/
+$table-even-row-bg: $gc-inverted-color;
+$table-head-bg: $gc-inverted-color;
+$table-head-font-size: rem-calc(14);
+$table-head-font-color: #989898;
+$table-head-font-weight: normal;
+$table-head-padding: 12px 0;
+$table-row-padding: rem-calc(12 4);
+$table-row-font-size: rem-calc(16);
+$table-row-font-color: $basic-color;
+$table-line-height: rem-calc(18);
+$table-bg: $gc-inverted-color;
+$table-margin-bottom: 0;
+$table-border-style: solid;
+$table-border-size: 0;
+$table-border-color: $gc-inverted-color;
+table{
+  border-collapse: collapse;
+  table-layout: fixed !important;
+  width: 100%;
+  @include table;
+  thead{
+    font-family: $font-reg;
+    font-size: rem-calc(14);
+    border-top: rem-calc(1) solid #d0d0d0;
+    border-bottom: rem-calc(1) solid #d0d0d0;
+    color: #989898;
+    // tr {background: $gc-third-color;}
+    tr td, tr th{
+      text-align: center;
+    }
+  }
+  tbody{
+    font-family: $font-light;
+    tr {
+      border-bottom: rem-calc(1) solid #d0d0d0;
+    }
+    td{
+      text-align: center;
+    }
+  }
+}
+
+/*--------------------------------------------------Green tables------------------------------------------------------*/
+/*example of markup in frontpage*/
+// table.table-green {
+// 	border: none;
+// 	background: $gc-inverted-color;
+// 	tr td {
+// 		border: none;
+// 		font: 1rem/1rem $font-reg;
+// 	}
+// 	thead tr td {
+// 		background: $gc-first-color;
+// 		color: $gc-inverted-color;
+// 		padding: 0.75rem 0;
+// 	}
+// 	tbody tr {
+// 		&:nth-of-type(even) {
+// 			background: transparent;
+// 		}
+// 		td {
+// 			border-top: 1px $bg-color solid;
+// 			font-style: normal;
+// 			padding: 0.4375rem 0;
+// 		}
+// 		&:first-child td {
+// 			padding-top: 1.125rem;
+// 			border: 0;
+// 		}
+// 	}
+// }
+
+/*example of markup in private office frontpage - in accordion*/
+// .table-big-green{
+//   background: $gc-inverted-color;
+//   border: none;
+//   table-layout: fixed !important;
+//   thead tr td {
+//     background: $gc-inverted-color;
+//     color: $basic-color;
+//     font: 1rem/1rem $font-reg;
+//     padding: .5rem 0;
+//   }
+//   tbody tr {
+//     background-color: $gc-inverted-color;
+//     td {
+//       padding: .6rem;
+//     }
+//   }
+// }
+
+/*example of markup in private office frontpage - in accordion*/
+body table.table-light-green{
+  background: lighten($gc-first-color, 10%);
+  border: none;
+  table-layout: fixed !important;
+  .long-word {
+    word-wrap: break-word;
+  }
+  tr td {
+    border: none;
+    border-right: 1px solid $gc-first-color;
+    &:last-child{border-right: none;}
+
+  }
+  thead tr td {
+    background: $gc-first-color;
+    color: $gc-inverted-color;
+    font: 1rem/1rem $font-reg;
+    padding: .5rem 0;
+  }
+  tbody tr {
+    background: lighten($gc-first-color, 10%);
+    &:nth-of-type(even) {
+      background: lighten($gc-first-color, 10%);
+    }
+    td {
+      padding: .6rem;
+      &:first-child {
+        color: lighten($basic-color, 15%);
+        font: 1rem/1.3 $font-reg;
+        text-align: left;
+      }
+    }
+  }
+}
+
+/*----------------------------------------------------Red table--------------------------------------------------------*/
+/*example of markup in frontpage*/
+table.table-red {
+	border: none;
+	background: $gc-inverted-color;
+	tr td {
+		border: none;
+		font: 1rem/1rem $font-reg;
+	}
+	thead tr td {
+		background: $gc-second-color;
+		color: $gc-inverted-color;
+		padding: 0.75rem 0;
+        font-family: $font-reg;
+	}
+	tbody tr {
+		&:nth-of-type(even) {
+			background: transparent;
+		}
+		td {
+			border-top: 1px #f6dcdb solid;
+			padding: 0.4375rem 0;
+		}
+	}
+}
+
+/*----------------------------------------------table body with scroll-----------------------------------------------*/
+/*example of markup in private office frontpage - in modals*/
+.table-vscroll-body{
+ border-width: 4px;
+  tr{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  tbody{
+    display: block;
+    height: auto !important;
+    width: 100%;
+    .third-vscroller-bar, .third-vscroller-track{display: inline-block;}
+    .third-vscroller-bar{
+      border-right: none;
+      left: 0;
+      padding: 0;
+      width: 100% !important;
+    }
+    .third-vscroller-track{
+      bottom: 4px;
+      width: 12px !important;
+		}
+	}
+}
+
+/*-------------------------------------------adaptive rotated table------------------------------------------------*/
+table.adaptive-rotated-table.without-thead{
+  tr{
+    &:first-child{
+      border-top: 5px solid $gc-third-color;
+    }
+  }
+  @include respond-to(gc-medium-down){
+    background: $gc-third-color;
+    tr{
+      background: none;
+      border: none;
+      border-right: 1px solid $gc-third-color;
+      display: table;
+      float: left;
+      width: 50%;
+      &:first-child{
+        border-top: none;
+      }
+      &:last-child{
+        border-right: 0;
+        float: right;
+      }
+      td{
+        background: $gc-inverted-color;
+        border: none;
+        display: table-row;
+        height: 50px;
+        &:nth-of-type(odd){
+          background: #e7dfd3;
+        }
+        @include valign-before;
+        span{
+          @include align-middle;
+        }
+        &:first-child{
+          background: $gc-third-color;
+          font-family: $font-med;
+        }
+      }
+    }
+  }
+}
+/*-------------------------------------------adaptive table------------------------------------------------*/
+table.adaptive-table {
+  @include respond-to(gc-medium-down) {
+    td:first-child {
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

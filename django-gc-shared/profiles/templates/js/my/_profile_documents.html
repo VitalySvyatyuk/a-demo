@@ -1,0 +1,95 @@
+{% load static i18n app_tags profiles_tags %}
+
+<div class="row">
+    <div class="small-5 columns">
+        <div class="third-light-wrapper">
+            <h4 class="h4">{% trans "Upload a copy of the document confirming your personal information" %}</h4>
+            {% if LANGUAGE_CODE != 'ru' %}{% trans "Please upload documents which contain your name in Latin- or Cyrillic-based script." %}{% endif %}
+            <form class="offset-top-40" ng-submit="create()">
+                <div class="form-item">
+                    <div class="labels">
+                        <label ng-bind="::formFields.name.label"></label>
+                    </div>
+                    <div class="inputs">
+                        <div class="select-wrapper">
+                            <select ng-model="newDocument.name" ng-options="type.value as type.display_name for type in formFields.name.choices"></select>
+                            <div
+                                ng-if="errors.name"
+                                ng-repeat="err in errors.name"
+                                ng-bind="err"
+                                class="error">
+                            </div>
+                        </div>
+                        <div class="descriptions">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-item" ng-if="false">
+                    <div class="labels">
+                        <label ng-bind="::formFields.number.label"></label>
+                    </div>
+                    <div class="inputs">
+                        <input type="text" ng-model="newDocument.number" placeholder="40 08 567234"/>
+                        <div
+                            ng-if="errors.number"
+                            ng-repeat="err in errors.number"
+                            ng-bind="err"
+                            class="error">
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="parameters">
+                    <div class="form-item" ng-repeat="field in parameters">
+                        <div class="labels">
+                            <label class="required">[[field]]</label>
+                        </div>
+                        <div class="inputs">
+                            <input required type="text" ng-model="documentFieldsVals[$index]">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="labels with-description">
+                        <label class="required" ng-bind="::formFields.file.label"></label>
+                        <p class="description" ng-bind="::formFields.file.help_text"></p>
+                    </div>
+                    <div class="inputs">
+                        <upload-button files="files[newDocument.name]">
+                            {% trans "Choose file" %}
+                        </upload-button>
+                        <div
+                            ng-if="errors.file"
+                            ng-repeat="err in errors.file"
+                            ng-bind="err"
+                            class="error">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="button medium offset-top-25">{% trans "Upload document" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="small-6 columns">
+        <div class="check-list-wrapper third-light-wrapper">
+      <div class="offset-bottom-5" ng-show="user.profile.status_info.verified">
+
+                <p style="padding-left: 98px"><img src="{% static 'img/arum-capital/check-list-image.png' %}">
+                 {% trans 'Identity confirmed' %}</p>
+            </div>
+            <h4 class="h4">{% trans "You have uploaded" %}</h4>
+            <ul class="uploads-list offset-top-40">
+                <li ng-repeat="doc in documents">
+                    <span ng-bind="doc.name_display"></span>
+                    <time ng-bind="doc.creation_ts|momentFromNow"></time>
+                    {# <a class="icon cross" ng-click="remove($index)"></a> #}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

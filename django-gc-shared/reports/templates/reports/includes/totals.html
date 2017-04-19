@@ -1,0 +1,88 @@
+<table class='gctable report'>
+    <thead>
+    <tr>
+        <th>Доп.инфо</th>
+        {% if report.totals.internal_deposit or report.totals.internal_withdraw %}
+            <th>Внутр.переводы</th>
+        {% endif %}
+        {% if report.totals.edu %}
+            <th>Стажировки</th>
+        {% endif %}
+        {% if report.totals.compensation %}
+            <th>Компенсации</th>
+        {% endif %}
+        {% if report.totals.competition %}
+            <th>Конкурсные</th>
+        {% endif %}
+        {% if report.totals.help %}
+            <th>За помошь</th>
+        {% endif %}
+        {% if report.totals.babyforex %}
+            <th>Партнер babyforex</th>
+        {% endif %}
+        {% if report.totals.bonus %}
+            <th>Бонусы</th>
+        {% endif %}
+        {% if report.totals.fifty %}
+            <th>Подарки клиентам</th>
+        {% endif %}
+        {% if report.totals.test %}
+            <th>Тестовые вводы/выводы</th>
+        {% endif %}
+        {% if report.totals.pamm_reward or report.totals.pamm_commission %}
+            <th>Комиссия по ПАММ</th>
+        {% endif %}
+        {% if report.totals.rebate_deposit or report.totals.rebate_withdraw %}
+            <th>Партнёрский ребейт</th>
+        {% endif %}
+        {% if report.totals.ib_transfers_withdraw or report.totals.ib_transfers_deposit %}
+            <th>In/Out через IB</th>
+        {% endif %}
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>&nbsp;</td>
+        {% if report.totals.internal_deposit or report.totals.internal_withdraw %}
+            <td title='Ввод/Вывод'>{{ report.totals.internal_deposit|floatformat:2 }} /
+                {{ report.totals.internal_withdraw|floatformat:2 }}</td>
+        {% endif %}
+        {% if report.totals.edu %}
+            <td>{{ report.totals.edu|floatformat:2 }}</td>
+        {% endif %}
+        {% if report.totals.compensation %}
+            <td>{{ report.totals.compensation|floatformat:2 }}</td>
+        {% endif %}
+        {% if report.totals.competition %}
+            <td>{{ report.totals.competition|floatformat:2 }}</td>
+        {% endif %}
+        {% if report.totals.help %}
+            <td>{{ report.totals.help|floatformat:2 }}</td>
+        {% endif %}
+        {% if report.totals.babyforex %}
+            <td>{{ report.totals.babyforex|floatformat:2 }}</td>
+        {% endif %}
+        {% if report.totals.bonus %}
+            <td>{{ report.totals.bonus|floatformat:2 }}</td>
+        {% endif %}
+        {% if report.totals.fifty %}
+            <td>{{ report.totals.fifty|floatformat:2 }}</td>
+        {% endif %}
+        {% if report.totals.test %}
+            <td>{{ report.totals.test|floatformat:2 }}</td>
+        {% endif %}
+        {% if report.totals.pamm_reward or report.totals.pamm_commission %}
+            <td title='Вознаграждение/Комиссия'>{{ report.totals.pamm_reward|floatformat:2 }} /
+                {{ report.totals.pamm_commission|floatformat:2 }}</td>
+        {% endif %}
+        {% if report.totals.rebate_deposit or report.totals.rebate_withdraw %}
+            <td title='Ввод/Вывод'>{{ report.totals.rebate_deposit|floatformat:2 }} /
+                {{ report.totals.rebate_withdraw|floatformat:2 }}</td>
+        {% endif %}
+        {% if report.totals.ib_transfers_deposit or report.totals.ib_transfers_withdraw %}
+            <td title='Ввод/Вывод'>{{ report.totals.ib_transfers_deposit|floatformat:2 }} /
+                {{ report.totals.ib_transfers_withdraw|floatformat:2 }}</td>
+        {% endif %}
+    </tr>
+    </tbody>
+</table>

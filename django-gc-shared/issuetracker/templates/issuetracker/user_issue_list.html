@@ -1,0 +1,79 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n app_tags %}
+
+{% block title %}{{ block.super }} - {% trans "Support" %}{% endblock %}
+
+{% block extrahead %}{{ block.super }}
+
+    {{ filter.media.css }}
+
+    <style>
+        #issues-list {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px auto;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 class="green">{% trans "Support tickets" %}</h1>
+    <div class="container">
+        <div class="note">
+            {# FIXME: add english version! #}
+            {% trans "You can create a support request here" %}
+        </div>
+
+        <form action="." id="filter-form" method="POST">
+            <fieldset>
+                <legend>{% trans "Tickets filter" %}</legend>
+
+                <div class="form-item">
+                    <div class="label fleft">{% trans "By creation date" %}</div>
+                    <div class="clear">
+                        {% trans "from" %}: {{ filter.from_date }} {% trans "to" %}: {{ filter.to_date }}
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="label fleft">{% trans "By status" %}</div>
+                    <div class="clear">{{ filter.status }}</div>
+                </div>
+                {% csrf_token %}
+                {% gcbutton "submit" _("Filter") "black" %} {% trans "or" %}
+                <a id="reset" href="" title="{% trans "reset filter" %}">{% trans "reset filter" %}</a>?
+            </fieldset>
+        </form>
+
+        {% include "issuetracker/includes/issue_list.html" %}
+        {% url "issuetracker_issue_create" as clink %}
+        {% morelink clink _("Create new issue") "black" %}
+        {% if LANGUAGE_CODE == 'ru' %}
+            <p>{% trans "Probably there is an answer in" %} <a href="/faq/">{% trans "FAQ" %}</a></p>
+        {% endif %}
+
+    </div>
+{% endblock %}
+
+{% block scripts %}{{ block.super }}
+    {{ filter.media.js }}
+
+    <script type="text/javascript">
+        $(function () {
+            var form = $("#filter-form");
+            form.submit(function (event) {
+                event.preventDefault();
+
+                $.post(form.attr("action"), form.serialize(), function (response) {
+                    $("table#issues-list").html(response);
+                });
+            }).find("#reset").click(function (event) {
+                event.preventDefault();
+
+                form.find(":text, select").val("");
+                form.submit();
+            });
+        });
+    </script>
+{% endblock %}

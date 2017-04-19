@@ -1,0 +1,516 @@
+.2-bg-wrapper:after, .2-bg-wrapper:before{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.half-a{
+  height: 368px;
+  width: 50%;
+  background-size: cover;
+  z-index: 1;
+  float: left;
+  position: relative;
+}
+
+.half-b{
+  width: 50%;
+  position: relative;
+  height: 368px;
+  background-size: cover;
+  float: left;
+  z-index: 1;
+}
+
+.center-block{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+  padding-top: 55px;
+}
+
+.arumpro-header-text{
+  position: relative;
+  padding-left: 65px;
+  padding-top: 33px;
+  h1{
+    color: #fff;
+    font-size: 52px;
+    font-weight: 300;
+    position: relative;
+    margin: 0;
+  }
+  p{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0;
+    margin-top: 8px;
+  }
+}
+.arumpro-header-text:after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.arumpro-header-text.arumpro-header-left:after{
+  background: url(../img/marketing-site/icons/icon-arunpro-pro-retina.png) no-repeat center / auto 100%;
+  width: 125px;
+  height: 64px;
+}
+
+.arumpro-header-text.arumpro-header-right{
+  margin-top: 113px;
+  margin-left: 35px;
+}
+
+.arumpro-header-text.arumpro-header-right:after{
+  background: url(../img/marketing-site/icons/icon-arunpro-web-retina.png) no-repeat center / auto 100%;
+  width: 124px;
+  height: 63px;
+}
+
+.arumpro{
+  .arumpro-advantages-skin{
+    background-color: #f4f4f4;
+    .arumpro-advantages{
+      padding-top: 50px;
+      padding-bottom: 53px;
+      p{
+        color: #245063;
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+      > div {
+       > div:nth-child(1){
+        img{
+          margin-bottom: 16px;
+          width: 41px;
+          height: 42px;
+        }
+      }
+      > div:nth-child(2){
+        img{
+          margin-bottom: 13px;
+          width: 44px;
+          height: 44px;
+        }
+      }
+      > div:nth-child(3){
+        img{
+          margin-bottom: 7px;
+          width: 50px;
+          height: 50px;
+        }
+      }
+      > div:nth-child(4){
+        img{
+          margin-top: 13px;
+          margin-bottom: 11px;
+          width: 56px;
+          height: 33px;
+        }
+      }
+      > div:nth-child(5){
+        img{
+          margin-bottom: 9px;
+          width: 44px;
+          height: 48px;
+        }
+      }
+      > div:nth-child(6){
+        img{
+          margin-bottom: 15px;
+          width: 47px;
+          height: 42px;
+        }
+      }
+    }
+  }
+}
+.arumpro-windows{
+  margin-top: 78px;
+  margin-bottom: 117px;
+  > div:first-child{
+    margin-bottom: 170px;
+    > div{
+      p:nth-of-type(2){
+        margin-bottom: 30px;
+      }
+    }
+  }
+  > div:last-child{
+    .apps__slider_box.apps__slider_box--windows{
+      margin-top: -40px;
+    }
+  }
+  h2{
+    margin-bottom: 33px;
+    margin-top: 0;
+  }
+  ul{
+    padding-left: 0;
+    list-style: none;
+    li{
+      position: relative;
+      margin-bottom: 10px;
+      margin-left: 27px;
+    }
+    li:after{
+      content: "";
+      display: block;
+      background-image: url(../img/marketing-site/icons/icon-vps-list.svg);
+      width: 19px;
+      height: 2px;
+      position: absolute;
+      top: 6px;
+      left: -26px;
+    }
+  }
+  ul.arumpro-dropdown{margin-left: 0;display: inline-block; vertical-align: middle;}
+  ul.arumpro-dropdown li { position: relative; margin-left: 0;}
+  ul.arumpro-dropdown li:after { display: none; }
+  ul.arumpro-dropdown li a:after { display: none; }
+  ul.arumpro-dropdown,
+  ul.arumpro-dropdown-inside {
+    list-style-type: none;
+    padding: 0;
+  }
+  ul.arumpro-dropdown-inside {
+    position: absolute;
+    left: -9999px;
+    top: 49px;
+    width: 231px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    li{
+      padding: 20px 0;
+      padding-left: 14px;
+      margin: 0;
+    }
+    li:first-child{
+      padding-top: 26px;
+    }
+  }
+  ul.arumpro-dropdown li.arumpro-dropdown-top{
+    background: #e8072a;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+  }
+  ul.arumpro-dropdown li.arumpro-dropdown-top:after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 237px;
+    top: 21px;
+    background-image: url(../img/marketing-site/icons/icon-arumpro-arrow.svg);
+    width: 13px;
+    height: 8px;
+  }
+  ul.arumpro-dropdown li.arumpro-dropdown-top a {
+    margin: 0;
+    display: block;
+    padding: 18px 51px 14px 26px;
+  }
+  ul.arumpro-dropdown a.arumpro-dropdown-top {color: #fff;text-transform: uppercase;text-decoration: none;font-size: 14px;}
+  ul.arumpro-dropdown li.arumpro-dropdown-top:hover .arumpro-dropdown-inside {
+    display: block;
+    left: 0;
+  }
+  ul.arumpro-dropdown ul.arumpro-dropdown-inside li:hover{
+    background-color: #ECECEC;
+    a{
+      color: #E70D2E;
+    }
+  }
+
+  ul.arumpro-dropdown ul.arumpro-dropdown-inside { background: #fff; }
+  ul.arumpro-dropdown ul.arumpro-dropdown-inside a{color: #292929;font-size: 14px;font-weight: 500;text-transform: uppercase;text-decoration: none;padding: 0;}
+
+
+  a{
+    position: relative;
+    color: #1f5060;
+    margin-left: 56px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  a:after{
+    content: "";
+    display: block;
+    width: 15px;
+    height: 18px;
+    background: url(../img/marketing-site/icons/icon-vip-download-retina.png) no-repeat center / auto 100%;
+    position: absolute;
+    top: -3px;
+    left: -27px;
+  }
+  .arumpro-windows-links{
+    margin-top: 50px;
+    a{
+      margin-left: 0;
+    }
+    a.button{
+      color: #fff;
+      display: inline-block;
+      vertical-align: middle;
+      width: 49%;
+      margin-right: 10%;
+    }
+    a.button:after{
+      display: none;
+    }
+    .link-div{
+      display: inline-block;
+      vertical-align: top;
+      width: 39%;
+    }
+    a.link{
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+}
+.arumpro-become-client{
+  background-image: url(../img/marketing-site/bg/bg-arumpro-become-client.jpg);
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding-top: 102px;
+  padding-bottom: 96px;
+  h2{
+    color: #fff;
+    margin: 0;
+  }
+  .risk-hidden-ru:first-child, .risk-hidden-en:first-child{
+    a.button:nth-of-type(1){
+      border-color: #fff;
+      color: #fff;
+      margin-right: 19px;
+    }
+    a.button:nth-of-type(1):hover{
+      border-color: #C31037;
+    }
+  }
+  > div{
+    > div{
+      > div:last-child{
+        text-align: right;
+      }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .half-a{
+    height: 368px;
+    width: 50%;
+    background-size: cover;
+    z-index: 1;
+    float: none;
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+
+  .half-b{
+    width: 50%;
+    position: relative;
+    height: 250px;
+    background-size: cover;
+    float: none;
+    display: block;
+    width: 100%;
+    z-index: 1;
+  }
+  .arumpro-header-text.arumpro-header-right{
+    margin-top: 60px;
+    margin-left: 0;
+  }
+  .arumpro-header-text{
+    h1{
+      font-size: 35px;
+    }
+  }
+  .arumpro{
+    margin-top: 230px;
+    .arumpro-advantages{
+      margin-bottom: 0;
+      > div{
+        > div{
+          text-align: center;
+          margin-bottom: 40px;
+        }
+        > div:nth-child(1){
+          margin-bottom: 10px;
+        }
+        > div:nth-child(4){
+          margin-bottom: 73px;
+        }
+      }
+      img{
+        margin-bottom: 0;
+      }
+      p{
+        margin-top: 0;
+      }
+    }
+    .arumpro-windows{
+      margin-bottom: 20px;
+      select{
+        margin-bottom: 15px;
+        .arumpro-windows-links{
+          margin-left: 20px;
+        }
+      }
+      h2{
+        margin-top: 65px;
+      }
+      .arumpro-windows-links{
+        > div{
+          > div:first-child{
+            margin-bottom: 30px;
+          }
+        }
+        a.link{
+          margin-left: 27px;
+        }
+      }
+      .apps__slider_box.apps__slider_box--windows{
+        li{
+          position: static;
+          margin: 0;
+          margin-right: 8px;
+        }
+        li:last-child{
+          margin-right: 0;
+        }
+        li:after{
+          content: none;
+        }
+      }
+      > div:first-child{
+        margin-bottom: 80px;
+      }
+    }
+  }
+  .arumpro-become-client{
+    text-align: center;
+    h2.page_title{
+      margin-bottom: 20px;
+    }
+    > div{
+      > div{
+        > div:last-child{
+          text-align: left;
+        }
+      }
+    }
+    a.strategies__buttons_box__button{
+      width: 100%;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    a.button{
+      width: 100%;
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px){
+  .arumpro-header-text.arumpro-header-right{
+    margin-left: 0;
+  }
+  .arumpro{
+    .arumpro-windows{
+      margin-bottom: 20px;
+      a{
+        margin-left: 27px;
+      }
+      >div:first-child{
+        margin-bottom: 50px;
+      }
+    }
+  }
+  .arumpro-become-client{
+    a.button:nth-of-type(1){
+      margin-bottom: 20px;
+    }
+    > div{
+      > div{
+        > div:last-child{
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px){
+  .arumpro{
+    .arumpro-windows{
+      .arumpro-windows-links{
+        a.button{
+          width: 100%;
+          display: block;
+        }
+        .link-div{
+          margin-top: 30px;
+          width: 100%;
+          display: block;
+          a.link{
+            margin-left: 27px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 992px) and (max-width: 1199px){
+  .arumpro{
+    .arumpro-windows{
+      a{
+        margin-left: 27px;
+      }
+    }
+  }
+  .arumpro-become-client{
+    a.button:nth-of-type(1){
+      margin-right: 18px;
+    }
+  }
+}
+
+@media(max-width: 532px){
+  .arumpro{
+    .arumpro-windows{
+      a{
+        display: block;
+        margin-left: 27px;
+      }
+    }
+  }
+}
+
+@media(max-width: 500px){
+  .arumpro{
+    .arumpro-windows{
+      a{
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+

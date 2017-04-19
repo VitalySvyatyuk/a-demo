@@ -1,0 +1,4 @@
+{% extends 'notification/issue/full.txt' %}{% load i18n %}
+{% block staff_open %}
+Пользователь {{ issue.author }} создал заявку на создание сертификата представительства.
+{% endblock %}

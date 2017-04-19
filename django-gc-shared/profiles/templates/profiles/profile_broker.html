@@ -1,0 +1,53 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n profiles_tags thumbnail mt4_tags app_tags%}
+
+{% block title %}{{ block.super }} - {% trans "My manager" %}{% endblock %}
+
+{% block content %}
+  <h1 class="green">{% trans 'My personal broker' %}</h1>
+  {% if profile %}
+  <div class="profile container">
+    <div class="clear"></div>
+    <div class="photo-wrapper">
+      {% if profile.avatar %}
+        {% thumbnail profile.avatar "200" as image %}
+        <img class="photo" src="{{image.url}}" alt="avatar"/>
+        {% endthumbnail %}
+      {% else %}
+        <div class="nophoto">
+          <p>{% trans "No photo available" %}</p>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="data">
+      <h4>{{ profile }}</h4>
+      {% if request.user|has_balance:100 %}
+      <table class="profile-data">
+        <tbody>
+          <tr><td class="key">{% trans "ICQ" %}</td><td class="value">{{ profile.icq|default:"" }}</td></tr>
+          <tr><td class="key">{% trans "Skype" %}</td><td class="value">{{ profile.skype|default:"" }}</td></tr>
+          <tr><td class="key">{% trans "E-mail" %}</td><td class="value">{{ profile.user.email|urlize }}</td></tr>
+          <tr><td class="key">{% trans "Work Phone" %}</td><td class="value">{{ profile.phone_work|default:"" }}</td></tr>
+        </tbody>
+      </table>
+      {% else %}
+          {% trans "You can get contacts of the manager after you deposit at least $100 to your account." %}
+      {% endif %}
+    </div>
+    <div class="clear"></div>
+    <hr/>
+      {% url "issuetracker_issue_create" as clink%}
+      <p>{% morelink clink _("Ask a question") "green" %}</p>
+  </div>
+  {% else %}
+  <div class="profile container">
+    <p style="font-weight: bold;">{% trans "Our contact information:" %}</p>
+    <p>{% trans "Phone: 8-800-333-1003 (free accross Russia)" %}</p>
+    <p>{% trans "E-mail: eng@grandcapital.net" %}</p>
+    <p>{% trans "Skype:  gc_clients" %}</p>
+    <p>{% trans "ICQ:  629301132" %}</p>
+  </div>
+  {% endif %}
+{% endblock %}

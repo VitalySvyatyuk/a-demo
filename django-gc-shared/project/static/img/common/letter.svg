@@ -1,0 +1,20 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.57 64.86">
+    <defs>
+        <style>
+        .cls-1 {
+            fill: #fff;
+        }
+        
+        .cls-2 {
+            fill: #fff;
+            stroke: #fff;
+            stroke-linecap: square;
+            stroke-miterlimit: 10;
+            stroke-width: 4px
+        }
+        </style>
+    </defs>
+    <title>letter</title>
+    <path class="cls-1" d="M93.24 70.69H6.69a2 2 0 0 1-2-2V7.83a2 2 0 0 1 2-2h86.54a2 2 0 0 1 2 2v60.86a2 2 0 0 1-1.99 2zm-84.55-4h82.55V9.84H8.68v56.83z" transform="translate(-4.68 -5.83)" id="_Группа_" data-name="&lt;Группа&gt;" />
+    <path class="cls-1" d="M50 40.26a2 2 0 0 1-1.15-.36L5.53 9.46a2 2 0 0 1 2.3-3.27L50 35.81 92.08 6.2a2 2 0 0 1 2.3 3.27L51.11 39.89a2 2 0 0 1-1.11.37z" transform="translate(-4.68 -5.83)" id="_Группа_2" data-name="&lt;Группа&gt;" />
+</svg>

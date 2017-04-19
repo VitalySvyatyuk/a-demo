@@ -1,0 +1,17 @@
+- load i18n app_tags staticfiles
+#loadingdiv
+    .text-center
+        %div.throbber
+        %br
+        %br
+        {% trans "Press the button to go to the payment system" %}
+        %br
+        %br
+        %form#form_redirect{action: "={form.action}", method: "={form.method}", target: "_top"}
+            %div{style: "display: none;"}
+                - for field in form
+                    ={field}
+            {% trans "Payment system" as msg context "redirect_button" %}
+            - gcbutton "submit" msg "black"
+    :javascript
+        $("#form_redirect").submit();
