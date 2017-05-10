@@ -46,7 +46,7 @@ PAYMENT_SYSTEM_TYPES = {
         #     "order": 40
         # },
         "electronic": {
-            "systems": ['ecommpay'],
+            "systems": ['ecommpay', "neteller", "moneybookers"],
             "title": _("Electronic payment systems"),
             "order": 60
         },

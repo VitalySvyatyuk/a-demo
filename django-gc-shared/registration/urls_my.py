@@ -19,12 +19,6 @@ urlpatterns = patterns(
             'template': 'registration/iframe_registration.html',
             'next': '/my/accounts/register_iframe/',
         }),
-    url(r'^register_cn/$', 'registration.views.register_csrf_exempt',
-        kwargs={
-            'form_class': ShortLandingProfileRegistrationForm,
-            'next': '/account/',  # Circular dependency doesn't let me use reverse
-        },
-        name='registration_register_cn_landing'),
     url(r'^login/$', 'registration.views.login',
         {'authentication_form': EmailAuthenticationForm},
         name='auth_login'),

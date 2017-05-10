@@ -43,10 +43,17 @@
             </li>
 
             <li class="right logo text-right">
-                <a href="{% url "frontpage" %}" class="with-icon" title="{% trans "return to" %} GrandCapital.ru">
+                {% if LANGUAGE_CODE == "en" %}
+                <a href="{% url "frontpage" %}" class="with-icon" title="Return to arumcapital.eu">
                     <span></span>
                     <span>{% blocktrans %}Back to website{% endblocktrans %}</span>
                 </a>
+                {% else %}
+                <a href="{% url "frontpage" %}" class="with-icon" title="Вернуться на ru.arumcapital.eu">
+                    <span></span>
+                    <span>{% blocktrans %}Back to website{% endblocktrans %}</span>
+                </a>
+                {% endif %}
             </li>
         </ul>
     </nav>

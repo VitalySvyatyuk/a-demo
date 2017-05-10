@@ -224,6 +224,15 @@ class InternalTransferForm(forms.ModelForm):
                                   'sender': sender, 'recipient': recipient,
                                   'amount': amount, 'issue': result,
                               })
+            send_mail(
+                "New issue for internal transfer created",
+                'sneder: {}, recipient: {}\namount: {}, issuetracker: {}'
+                    .format(sender, recipient, amount, 
+                            'arumcapital.eu' + reverse("admin:issuetracker_internaltransferissue_changelist")
+),
+                settings.SERVER_EMAIL,
+                settings.BACKOFFICE
+            )
             return result
 
         withdraw_done = False

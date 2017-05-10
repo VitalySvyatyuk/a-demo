@@ -13,10 +13,12 @@
     });
   </script>
 {% endblock %}
-
+{% if perms.profiles.change_userdatavalidation %}
 {% block object-tools-items %}
     <li>
         <a href="{%  url 'watch_document' object_id %}" target="_blank" class="historylink">{% trans "Client information" %}</a>
     </li>
     {{ block.super }}
+
 {% endblock %}
+{% endif %}

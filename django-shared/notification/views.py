@@ -7,4 +7,8 @@ import notification
 
 def view_notification(request, notification_id):
 	noti = get_object_or_404(notification.models.Notification, pk=notification_id)
+	return HttpResponse(noti.preview())
+
+def view_messagetemplate(request, notification_id):
+	noti = get_object_or_404(notification.models.Notification, pk=notification_id)
 	return HttpResponse(noti.preview(parent=notification_id))

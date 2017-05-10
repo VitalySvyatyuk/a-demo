@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 13:13+0300\n"
+"POT-Creation-Date: 2017-04-26 17:30+0300\n"
 "PO-Revision-Date: 2017-01-24 18:37+0230\n"
 "Last-Translator: Vasily Alexeev <va@uptrader.us>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -498,6 +498,9 @@ msgstr "Преимущества"
 
 msgid "Why ARUM CAPITAL"
 msgstr "Преимущества наших клиентов"
+
+msgid "ARUM Capital is regulated by the Cyprus Securities and Exchange Commission (CySEC) under license number 323/17.<br>ARUM Capital is fully compliant with the European Markets in Financial Instruments Directives (MiFID)."
+msgstr "ARUM Capital обладает лицензией CySEC - комиссии по ценным бумагам и биржам Республики Кипр, которая является частью Европейского регулирования MiFID."
 
 msgid "Safeguarding Arrangements"
 msgstr "Гарантия защиты средств"

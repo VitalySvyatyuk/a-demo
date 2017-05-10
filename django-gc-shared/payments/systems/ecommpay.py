@@ -10,7 +10,7 @@ from payments.systems.base import CommissionCalculationResult
 name = u"Online banks"
 slug = __name__.rsplit(".", 1)[-1]
 mt4_payment_slug = "ACCPAY"
-logo = "ecommpay.png"
+logo = "visa_mastercard.png"
 languages = ('en', 'ru')
 currencies = ['USD']
 

@@ -20,7 +20,7 @@ from django.template import RequestContext
 from django.utils.http import is_safe_url
 from django.utils.importlib import import_module
 from django.utils.translation import ugettext_lazy as _
-from django.views.decorators.csrf import csrf_exempt, csrf_protect
+from django.views.decorators.csrf import csrf_exempt
 from social.actions import do_complete
 from social.apps.django_app.utils import psa
 from social.apps.django_app.views import _do_login
@@ -36,13 +36,6 @@ from registration.signals import user_activated
 from logging import getLogger
 log = getLogger(__name__)
 
-@csrf_exempt
-def register_csrf_exempt(request, *args, **kwargs):
-    referrer_host = urlparse.urlparse(request.META.get('HTTP_REFERER', '')).netloc
-    if referrer_host in ("goldforexpartner.info", "grandbroker.info", "grandbroker.ee"):
-        return csrf_exempt(register)(request, *args, **kwargs)
-    return csrf_protect(register)(request, *args, **kwargs)
-
 
 def get_private_office_from_next(next_url):
     try:
@@ -55,6 +48,7 @@ def get_private_office_from_next(next_url):
     return ''
 
 
+@csrf_exempt
 @maybe_ajax()
 def register(request, extra_context=None, next=None, form_class=ProfileRegistrationForm,
              template='registration/register.html', *args, **kwargs):

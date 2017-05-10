@@ -702,7 +702,7 @@
                     <span class="radio_box__label">{% trans "No" %}</span>
                 </label>
               </span>
-            <div id='Block1' style='display: none;'>
+            <div id='Block1' ng-show="user.profile.forex_instruments == 'Open';">
               <div class="inputs">
               <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
                 <div class="select-wrapper">
@@ -764,7 +764,7 @@
                     <span class="radio_box__label">{% trans "No" %}</span>
                 </label>
               </span>
-            <div id='Block2' style='display: none;'>
+            <div id='Block2' ng-show="user.profile.derivative_instruments == 'Open';">
               <div class="inputs">
               <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
                 <div class="select-wrapper">
@@ -826,7 +826,7 @@
                     <span class="radio_box__label">{% trans "No" %}</span>
                 </label>
               </span>
-            <div id='Block3' style='display: none;'>
+            <div id='Block3' ng-show="user.profile.transferable_securities == 'Open';">
               <div class="inputs">
               <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
                 <div class="select-wrapper">
@@ -882,13 +882,13 @@
                 </label>
               </span>
               <span>
-                <input class="radio_box__input" id="units-of-collective-investment-undertaking_no" type="radio" ng-model="user.profile.investment_undertaking" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" required="required" name="units-of-collective-investment-undertaking" value="None" aria-required="true" onclick="SelectedD(this)" >
+                <input class="radio_box__input" id="units-of-collective-investment-undertaking_no" type="radio" ng-model="user.profile.investment_undertaking" ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" required="required" name="units-of-collective-investment-undertaking" value="None" aria-required="true" onclick="SelectedD(this)">
                 <label for="units-of-collective-investment-undertaking_no">
                     <span class="radio_box__tick"></span>
                     <span class="radio_box__label">{% trans "No" %}</span>
                 </label>
               </span>
-            <div id='Block4' style='display: none;'>
+            <div id='Block4' ng-show="user.profile.investment_undertaking == 'Open';">
               <div class="inputs">
               <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
                 <div class="select-wrapper">
@@ -944,13 +944,11 @@
                 function SelectedA(a) {
                 var label = a.value;
                 if (label=="Open") {
-                   document.getElementById("Block1").style.display='block';
                    document.getElementById('Block11').value = 'choose';
                    document.getElementById('Block12').value = 'choose';
                    document.getElementById('Block13').value = 'choose';
                    document.getElementById('Block14').value = 'choose';
                 } else {
-                   document.getElementById("Block1").style.display='none';
                    document.getElementById('Block11').value = 'less-one-year';
                    document.getElementById('Block12').value = 'Less than $10 000';
                    document.getElementById('Block13').value = 'daily';
@@ -962,13 +960,11 @@
                 function SelectedB(a) {
                 var label = a.value;
                 if (label=="Open") {
-                   document.getElementById("Block2").style.display='block';
                    document.getElementById('Block21').value = 'choose';
                    document.getElementById('Block22').value = 'choose';
                    document.getElementById('Block23').value = 'choose';
                    document.getElementById('Block24').value = 'choose';
                 } else {
-                   document.getElementById("Block2").style.display='none';
                    document.getElementById('Block21').value = 'less-one-year';
                    document.getElementById('Block22').value = 'Less than $10 000';
                    document.getElementById('Block23').value = 'daily';
@@ -980,13 +976,11 @@
                 function SelectedC(a) {
                 var label = a.value;
                 if (label=="Open") {
-                   document.getElementById("Block3").style.display='block';
                    document.getElementById('Block31').value = 'choose';
                    document.getElementById('Block32').value = 'choose';
                    document.getElementById('Block33').value = 'choose';
                    document.getElementById('Block34').value = 'choose';
                 } else {
-                   document.getElementById("Block3").style.display='none';
                    document.getElementById('Block31').value = 'less-one-year';
                    document.getElementById('Block32').value = 'Less than $10 000';
                    document.getElementById('Block33').value = 'daily';
@@ -998,13 +992,11 @@
                 function SelectedD(a) {
                 var label = a.value;
                 if (label=="Open") {
-                   document.getElementById("Block4").style.display='block';
                    document.getElementById('Block41').value = 'choose';
                    document.getElementById('Block42').value = 'choose';
                    document.getElementById('Block43').value = 'choose';
                    document.getElementById('Block44').value = 'choose';
                 } else {
-                   document.getElementById("Block4").style.display='none';
                    document.getElementById('Block41').value = 'less-one-year';
                    document.getElementById('Block42').value = 'Less than $10 000';
                    document.getElementById('Block43').value = 'daily';
