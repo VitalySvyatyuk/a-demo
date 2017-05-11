@@ -44,8 +44,8 @@ class DepositForm(base.DepositForm):
                                         "associated with their NETELLER account"))
     secure_id = forms.IntegerField(label=_("Secure ID"), help_text=_("Your Neteller's 6-digit Secure ID"))
 
-    bill_address = "https://api.neteller.com/v1/transferIn"
-    get_token_url = "https://api.neteller.com/v1/oauth2/token?grant_type=client_credentials"
+    bill_address = "https://test.api.neteller.com/v1/transferIn"
+    get_token_url = "https://test.api.neteller.com/v1/oauth2/token?grant_type=client_credentials"
     commission_rate = Decimal("0.04")
 
     @classmethod
@@ -62,6 +62,7 @@ class DepositForm(base.DepositForm):
                    'Cache-Control': 'no-cache',
                    'Authorization': 'Basic ' + base64.b64encode(
                        settings.NETELLER_MERCHANT_ID + ':' + settings.NETELLER_SECRET_KEY)}
+
 
         result = requests.post(self.get_token_url, headers = headers)
 
@@ -105,6 +106,7 @@ class DepositForm(base.DepositForm):
         request = requests.post(self.bill_address, data=json.dumps(data), headers=headers)
 
         request = request.json()
+
         if request.get("transaction") and request.get("transaction").get("status") == "accepted":
             self.instance.refresh_state()
             self.instance.is_payed = True

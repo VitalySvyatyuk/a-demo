@@ -22,7 +22,7 @@ from payments.utils import build_absolute_uri
 
 name = _("Skrill")
 slug = __name__.rsplit(".", 1)[-1]
-logo = "skrill.png"
+logo = "moneybookers.png"
 mt4_payment_slug = "Skrill"
 purse_regex = email_re
 purse_example = "mb.customer@grandcapital.net"
