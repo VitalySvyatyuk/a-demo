@@ -13,6 +13,9 @@
         <a easy-slide-block default="true"><span>{% trans "Deposit" %}</span></a>
         <ul content-block>
           <li><a href="[[::BASE_URL]]payments/deposit?s=bankusd&account=[[account.mt4_id]]">{% trans "Bank transfer" %}</a></li>
+          <li><a href="[[::BASE_URL]]payments/deposit?s=ecommpay&account=[[account.mt4_id]]">{% trans "Visa/mastercard" %}</a></li>
+          <li><a href="[[::BASE_URL]]payments/deposit?s=moneybookers&account=[[account.mt4_id]]">{% trans "Skrill" %}</a></li>
+          <li><a href="[[::BASE_URL]]payments/deposit?s=neteller&account=[[account.mt4_id]]">{% trans "Neteller" %}</a></li>
         </ul>
       </li>
     </ul>
@@ -78,6 +81,8 @@
         <a easy-slide-block default="true"><span>{% trans "Withdraw" %}</span></a>
         <ul content-block>
           <li><a href="[[::BASE_URL]]payments/withdraw?s=bankusd&account=[[account.mt4_id]]">{% trans "Bank transfer" %}</a></li>
+          <li><a href="[[::BASE_URL]]payments/withdraw?s=moneybookers&account=[[account.mt4_id]]">{% trans "Skrill" %}</a></li>
+          <li><a href="[[::BASE_URL]]payments/withdraw?s=neteller&account=[[account.mt4_id]]">{% trans "Neteller" %}</a></li>
         </ul>
       </li>
       <li ng-switch-default><a href="[[::BASE_URL]]payments/transfer?account=[[account.mt4_id]]"><strong>{% trans "Internal transfer" %}</strong></a></li>

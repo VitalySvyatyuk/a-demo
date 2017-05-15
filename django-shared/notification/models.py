@@ -326,7 +326,7 @@ def get_from_email(site_version):
     return settings.EMAILS.get(site_version, settings.DEFAULT_FROM_EMAIL)
 
 
-def send(users, label, extra_context=None, display_subject_prefix=True, no_django_message=False):
+def send(users, label, extra_context=None, display_subject_prefix=False, no_django_message=False):
     if extra_context is None:
         extra_context = {}
 

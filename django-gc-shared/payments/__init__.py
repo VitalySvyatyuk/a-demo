@@ -73,11 +73,11 @@ PAYMENT_SYSTEM_TYPES = {
             "title": _("Bank transfer"),
             "order": 10
         },
-        # "electronic": {
-        #     "systems": ["accentpay_comepay", "accentpay_yandex", "accentpay_qiwi"],
-        #     "title": _("Electronic payment systems"),
-        #     "order": 20
-        # },
+        "electronic": {
+            "systems": ["neteller", "moneybookers"],
+            "title": _("Electronic payment systems"),
+            "order": 20
+        },
         # "transfer": {
         #     "systems": ["forsazh"],
         #     "title": _("Money order"),

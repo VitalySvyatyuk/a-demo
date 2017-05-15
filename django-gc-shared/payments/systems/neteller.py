@@ -156,14 +156,12 @@ class WithdrawForm(base.WithdrawForm):
 
     @classmethod
     def _calculate_commission(cls, request):
-        from mt4.converter import convert_currency
+        from platforms.converter import convert_currency
         from profiles.models import UserProfile
 
-        if request.account.user.profile.payback_status == UserProfile.PAYBACK_STATUS.GOLD:
-            c = 0
-        else:
-            minimal_commission = Decimal("%.2f" % convert_currency(1, "USD", request.currency)[0])
-            c = max((request.amount * 2) / 100, minimal_commission)
+
+        minimal_commission = Decimal("%.2f" % convert_currency(1, "USD", request.currency)[0])
+        c = max((request.amount * 2) / 100, minimal_commission)
         return CommissionCalculationResult(
             amount=request.amount,
             commission=c,
