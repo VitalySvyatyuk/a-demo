@@ -72,7 +72,9 @@ def operation_status(request, operation, object_id=None, status=None):
 
 @csrf_exempt
 def operation_result(request, object_id=None):
-    log.debug("Processing incoming request from %s: %s", request.META["REMOTE_ADDR"], request.REQUEST or request.body)
+    log.info("Processing incoming payment request from %s", request.META["REMOTE_ADDR"])
+    log.debug("Request method: {}".format(request.method))
+    log.debug("Request data: {}".format(request.GET or request.POST))
 
     # HACK: because Robokassa, RBKMoney, mixplat, Yandex.Money and payeer don't allow custom result
     # urls, so we can't specify object_id via a URL string.
@@ -90,8 +92,10 @@ def operation_result(request, object_id=None):
         request.POST.get("orderRef", "grand_")[6:] or  # paymentasia
         request.POST.get("external_id")  # accentpay
     )
+    log.info("Payment object id is %s" % object_id)
 
     if not object_id:
+        log.warn("Object id not found, looking for it in other places")
         if 'orderXML' in request.POST:  # CardPay
             data_xml = base64.b64decode(request.POST['orderXML'])
             soup = BeautifulSoup(data_xml)
@@ -103,14 +107,20 @@ def operation_result(request, object_id=None):
             data = json.loads(request.body)
             object_id = data['data']['transaction']['reference_id']
         else:
-            return HttpResponse()
+            return HttpResponseBadRequest()
+        log.info("So now object id is {}".format(object_id))
 
     try:
         instance = DepositRequest.objects.get(pk=object_id)
     except DepositRequest.DoesNotExist:
-        return HttpResponse()
+        return Http404()
 
-    form = instance.payment_system.get_form("deposit")
+    log.info("Payment System is {}".format(instance.payment_system))
+    try:
+        form = instance.payment_system.get_form("deposit")
+    except AttrubuteError:
+        log.error("Payment System with no deposit form!")
+        return HttpResponse(status=501) # Not implemented
 
     # noinspection PyBroadException
     try:
@@ -119,17 +129,17 @@ def operation_result(request, object_id=None):
         verification_result = False
 
     if not verification_result:
-        log.critical("Validation failed!")
+        log.error("Validation failed!")
         return HttpResponseBadRequest()
 
-    log.debug("Validation OK!")
+    log.info("Deposit Validation OK!")
 
     if not hasattr(form, "execute"):
         log.critical("execute() not implemented for %s method",
                      instance.payment_system)
         return HttpResponse(status=501)  # Not implemented.
 
-    log.debug("Calling 'execute' method...")
+    log.info("Executing payment form")
 
     return form.execute(request, instance)
 

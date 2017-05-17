@@ -77,10 +77,12 @@ class DepositForm(base.DepositForm):
             "currency": "RUB" if self.cleaned_data['currency'] == "RUR" else self.cleaned_data['currency'],
             "amount": unicode(int(self.instance.amount*100)),
             "description": "Payment to account %s" % self.instance.account,
-            "language": "ru",
+            "language": settings.LANGUAGE_CODE.casefold(),
             "success_url": success_url,
             "decline_url": fail_url,
             "callback_method": "2",  # GET
+            "followup": "1",
+            "payment_group_id": "1"
         }
 
         data.update(self.get_additional_params())

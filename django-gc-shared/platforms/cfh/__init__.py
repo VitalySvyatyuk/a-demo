@@ -290,7 +290,6 @@ class ApiFacade(object):
         """
         try:
             resp = self.client1.service.GetInstruments()['InstrumentInfo']
-            log.debug("resp=%s" % resp)
             self.instruments = dict((i['InstrumentId'], i['InstrumentSymbol']) for i in resp)
             log.debug("# of instruments=%d" % len(self.instruments))
         except Error as e:
