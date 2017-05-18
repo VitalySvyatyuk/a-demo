@@ -25,6 +25,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.http import require_GET
 from djcelery.backends.cache import CacheBackend
 
+from notification import models as notification
 from currencies import currencies
 from issuetracker.models import RestoreFromArchiveIssue, ApproveOpenECNIssue
 from log.models import Logger, Events
@@ -98,6 +99,7 @@ def agent_list(request, account_id=None):
 def verify_docs(request):
     user_verified = request.user.profile.status == request.user.profile.VERIFIED
     if not ApproveOpenECNIssue.objects.filter(author=request.user).exists() and user_verified:
+        notification.send([request.user], 'apllication_for_invest_created')
         ApproveOpenECNIssue.objects.create(author=request.user)
 
     return {'user_verified': user_verified,

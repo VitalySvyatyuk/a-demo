@@ -77,7 +77,7 @@ class DepositForm(base.DepositForm):
             "currency": "RUB" if self.cleaned_data['currency'] == "RUR" else self.cleaned_data['currency'],
             "amount": unicode(int(self.instance.amount*100)),
             "description": "Payment to account %s" % self.instance.account,
-            "language": settings.LANGUAGE_CODE.casefold(),
+            "language": settings.LANGUAGE_CODE.lower(),
             "success_url": success_url,
             "decline_url": fail_url,
             "callback_method": "2",  # GET

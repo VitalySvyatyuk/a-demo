@@ -17,6 +17,7 @@ class PlatformsConfig(AppConfig):
         NotificationTypesRegister.register_notification('demo_pro_account_created', u'demo ECN.PRO account created')
         NotificationTypesRegister.register_notification('demo_MT_account_created', u'demo MT4 account created')
         NotificationTypesRegister.register_notification('demo_invest_account_created', u'demo ECN.Invest account created')
+        NotificationTypesRegister.register_notification('apllication_for_invest_created', u'Application for open ECN.Invest account')
 
 
         import platforms.signals
