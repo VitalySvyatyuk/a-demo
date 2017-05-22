@@ -19,6 +19,8 @@ from payments.systems import base
 from payments.systems.base import CommissionCalculationResult
 from payments.utils import build_absolute_uri
 
+from logging import getLogger
+log = getLogger(__name__)
 
 name = _("Skrill")
 slug = __name__.rsplit(".", 1)[-1]
@@ -64,6 +66,7 @@ class DepositForm(base.DepositForm):
 
     def __init__(self, *args, **kwargs):
         super(DepositForm, self).__init__(*args, **kwargs)
+        log.debug("Deposit Form init")
 
         # Forcing a minimum of 10 currency units for withdrawal.
         self.fields["amount"].validators = [MinValueValidator(10)]
@@ -73,7 +76,7 @@ class DepositForm(base.DepositForm):
 
     @classmethod
     def _calculate_commission(cls, request, full_commission):
-        from profiles.models import UserProfile
+        log.debug("Calculating commission")
         if not full_commission:  # and (request.account.user.profile.payback_status == UserProfile.PAYBACK_STATUS.GOLD or
                                  #    request.amount >= convert_currency(300, "USD", request.currency)[0]):
             commission = 0
@@ -86,6 +89,7 @@ class DepositForm(base.DepositForm):
         )
 
     def mutate(self):
+        log.debug("Mutating form")
         assert hasattr(self, "instance")
 
         # Getting current active language, and falling back to
@@ -96,6 +100,7 @@ class DepositForm(base.DepositForm):
         if language not in \
            "EN DE ES FR IT PL GR RO RU TR CN CZ NL DA SV FI".split():
             language = "EN"
+        log.info("Language: {}".format(language))
 
         data = {"pay_to_email": settings.MONEYBOOKERS_TO[self.cleaned_data['currency']],
                 "account": self.cleaned_data["account"].mt4_id,
@@ -114,6 +119,7 @@ class DepositForm(base.DepositForm):
                 "detail1_text": self.cleaned_data["account"]}
 
         data.update(self.additional_parameters)
+        log.debug("Data is {}".format(data))
 
         for field, value in data.iteritems():
             self.fields[field] = base.make_hidden(value)
@@ -123,19 +129,21 @@ class DepositForm(base.DepositForm):
     @staticmethod
     def verify(request):
         """
-        Returns True if a given request object is a valid Moneybookers
+        Returns True if a given request object is a valid Skrill
         request and False othewise.
-
-        See Anex III in Moneybookers Gateway Manual
-        http://moneybookers.com/merchant/en/moneybookers_gateway_manual.pdf
         """
+        log.info("Verifying Skrill callback form")
         secret = md5(settings.MONEYBOOKERS_SECRET).hexdigest().upper()
         data = dict(request.POST.iteritems(), secret=secret)
-
-        return md5(u"".join(data.get(k) for k in (
+        log.debug("Data: {}".format(data))
+        calc_md5 = md5(u"".join(data.get(k) for k in (
             "merchant_id", "transaction_id", "secret", "mb_amount",
             "mb_currency", "status"
-            ))).hexdigest() == data["md5sig"].lower()
+            ))).hexdigest()
+        recv_md5 = data["md5sig"].lower()
+        log.debug("Calc: {} Recv: {}".format(calc_md5, recv_md5))
+
+        return calc_md5 == recv_md5
 
     @staticmethod
     def execute(request, instance):
@@ -143,6 +151,7 @@ class DepositForm(base.DepositForm):
         Proxies incoming Moneybookers request to the MetaTrader server,
         updating DepositRequest instance with operation result.
         """
+        log.info("Deposit form execution")
         data = request.POST
         # Status codes:
         # | code | reason    |
@@ -152,7 +161,8 @@ class DepositForm(base.DepositForm):
         # |    0 | pending   |
         # |    2 | processed |
         if int(data["status"]) < 0:
-            return HttpResponse()  # Payment failed, but that's allright.
+            log.warn("Payment failed/cancelled")
+            return HttpResponse()
 
         data = {"ip": gethostbyname(request.META["SERVER_NAME"]),
                 "account": instance.account.mt4_id,
@@ -164,6 +174,7 @@ class DepositForm(base.DepositForm):
                 "currency": data["mb_currency"],
                 "status": data["status"],
                 "md5": data["md5sig"]}
+        log.debug("Data: {}".format(data))
 
         if instance.amount == Decimal(data["amount"]) and data["currency"] == instance.currency:
             instance.is_payed = True
@@ -175,6 +186,7 @@ class DepositForm(base.DepositForm):
         instance.params['transaction_id'] = unicode(data["transaction"])
 
         if "cc_last_4digits" in request.POST:
+            log.info("Has last 4 CC digits: {}".format(request.POST["cc_last_4digits"]))
             instance.params["cardnumber"] = request.POST["cc_last_4digits"]
 
         instance.save()

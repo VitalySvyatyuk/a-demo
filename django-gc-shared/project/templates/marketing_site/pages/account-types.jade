@@ -139,8 +139,13 @@ block content
                   td
                     - trans "30 major instruments"
                     br
-                    a(href="{% url 'specifications' %}").link
+                    {% if LANGUAGE_CODE == "en" %}
+                    a(href="https://ramm.arumcapital.eu/en/spec/contracts", target="_blank").link
                       - trans "Contract specification"
+                    {% else %}
+                    a(href="https://ramm.arumcapital.eu/ru/spec/contracts", target="_blank").link
+                      - trans "Contract specification"
+                    {% endif %}
                 tr
                   td: span.tooltip.js-tooltip(title="{% trans 'Leverage is the proportion of the borrowed funds against the own funds. For instance, a leverage of 1:1000 gives the chance to open positions up to 100 times the deposit.' %}")
                     - trans "Leverage"
@@ -149,8 +154,13 @@ block content
                   td
                     - trans "Special leverage calculation"
                     br
-                    a(href="#").link
+                    {% if LANGUAGE_CODE == "en" %}
+                    a(href="https://ramm.arumcapital.eu/en/help/article/margin-and-leverage", target="_blank").link
                       - trans "More"
+                    {% else %}
+                    a(href="https://ramm.arumcapital.eu/ru/help/article/margin-and-leverage", target="_blank").link
+                      - trans "More"
+                    {% endif %}
                 tr
                   td: span.tooltip.js-tooltip(title="{% trans 'Spread is a difference between the Bid and the Ask price.' %}")
                     - trans "Spread"
@@ -182,7 +192,7 @@ block content
                   td: span.tooltip.js-tooltip(title="{% trans 'Margin Call – is a level where a warning is made of insufficient margin for further support of the positions. Stop Out is a level of mandatory closing of a position because the marginal level is too low to sustain an open position.' %}")
                     - trans "Margin call / Stop out"
                   td(colspan="3").text-center
-                    | 150% / 100%
+                    | 100% / 80%
                 tr.bordered-row
                   td
                     - trans "Partial fills"

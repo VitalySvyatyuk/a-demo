@@ -12,7 +12,7 @@ block content
 				.col-xs-12
 					- breadcrumbs
 					h1.page_head__title
-						- trans "Deposits / withdrawals"
+						- trans "Deposits / Withdrawals"
 	.inout__tabs_box
 		.container
 			.tabs__box
@@ -167,7 +167,7 @@ block content
 						th.strategies__cell.strategies__cell_header
 							span.strategies__cell__title
 								| &nbsp;
-												
+
 					- regroup withdraw_systems|dictsortreversed:"category.priority" by category as deposit_groups
 					for group in deposit_groups
 						tr.strategies__row.strategies__title_row

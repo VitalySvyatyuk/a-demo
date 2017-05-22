@@ -10,7 +10,7 @@ from datetime import datetime, date
 from BeautifulSoup import BeautifulSoup
 
 from django.contrib.contenttypes.models import ContentType
-
+from django.conf import settings
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import User
 from django.core.exceptions import ImproperlyConfigured
@@ -74,7 +74,7 @@ def operation_status(request, operation, object_id=None, status=None):
 def operation_result(request, object_id=None):
     log.info("Processing incoming payment request from %s", request.META["REMOTE_ADDR"])
     log.debug("Request method: {}".format(request.method))
-    log.debug("Request data: {}".format(request.GET or request.POST))
+    log.debug("Request POST data: {}".format(request.POST))
 
     # HACK: because Robokassa, RBKMoney, mixplat, Yandex.Money and payeer don't allow custom result
     # urls, so we can't specify object_id via a URL string.
@@ -118,7 +118,7 @@ def operation_result(request, object_id=None):
     log.info("Payment System is {}".format(instance.payment_system))
     try:
         form = instance.payment_system.get_form("deposit")
-    except AttrubuteError:
+    except AttributeError:
         log.error("Payment System with no deposit form!")
         return HttpResponse(status=501) # Not implemented
 
@@ -452,6 +452,40 @@ def export_card_withdrawals(request):
     writer = csv.writer(Echo())
     response = StreamingHttpResponse(get_results(writer), content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="card_withdrawals{}.csv"'.format(
+        datetime.now().strftime("%d%m%y")
+    )
+    return response
+
+
+@login_required
+@staff_member_required
+@permission_required("payments.withdrawrequest_full_access")
+def export_ecommpay_withdrawals(request):
+    result = ["payment_group_id; site_id; external_id; customer_purse; amount; currency; comment"]
+    for wr in WithdrawRequest.objects.filter(payment_system="ecommpay",
+                                             is_payed=True, is_committed=None):
+        purse_request = DepositRequest.objects.filter(payment_system="ecommpay", is_committed=True,
+                                                      account__user=wr.account.user,
+                                                      params__contains="transaction").order_by('-creation_ts').first()
+        if purse_request:
+            purse = purse_request.details["transaction"]
+        else:
+            purse = "ERROR! Transaction_id not found!"
+
+        result.append('; '.join((
+            "1",  # Bank cards payment group
+            str(settings.ACCENTPAY_ACCOUNT),
+            str(wr.id),
+            str(purse),
+            str(int(wr.amount * 100)),
+            str(wr.currency),
+            "Withdrawal from trading account #%s" % wr.account.mt4_id,
+        )))
+
+    result = '\n\r'.join(*result)
+
+    response = HttpResponse(result, content_type="text/csv")
+    response['Content-Disposition'] = 'attachment; filename="ecommpay_withdrawals{}.csv"'.format(
         datetime.now().strftime("%d%m%y")
     )
     return response

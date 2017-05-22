@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 import payments.systems.accentpay
 import payments.systems.bankbase
 from payments.systems.base import CommissionCalculationResult
+from payments.systems import base
 
 name = u"Online banks"
 slug = __name__.rsplit(".", 1)[-1]
@@ -47,3 +48,14 @@ class DepositForm(payments.systems.accentpay.DepositForm):
             commission=commission,
             currency=request.currency
         )
+
+
+class DetailsForm(base.DetailsForm):
+
+    def __init__(self, *args, **kwargs):
+        super(DetailsForm, self).__init__(*args, **kwargs)
+        del self.fields["purse"]
+
+
+class WithdrawForm(base.WithdrawForm):
+    pass

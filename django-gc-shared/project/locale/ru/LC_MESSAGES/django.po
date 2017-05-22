@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-26 17:30+0300\n"
+"POT-Creation-Date: 2017-05-19 14:08+0300\n"
 "PO-Revision-Date: 2017-01-24 18:37+0230\n"
 "Last-Translator: Vasily Alexeev <va@uptrader.us>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,29 +55,11 @@ msgstr "Отметить как непроверенный"
 msgid "Clear marks"
 msgstr "Очистить отметки"
 
-msgid "About the service"
-msgstr "О сервисе"
-
-msgid "Plans"
-msgstr "Тарифы"
-
-msgid "Terms"
-msgstr "Условия"
-
-msgid "Security"
-msgstr "Безопасность"
-
-msgid "Platforms"
-msgstr "Платформы"
-
-msgid "Risks"
-msgstr "Риски"
+msgid "Main"
+msgstr "Главная"
 
 msgid "Log in"
 msgstr "Вход"
-
-msgid "Main"
-msgstr "Главная"
 
 msgid "Registration"
 msgstr "Регистрация"
@@ -244,20 +226,17 @@ msgstr "от мировых банков и крупнейших<br>PRIME-бро
 msgid "Regulation by CySEC (MIFID)"
 msgstr "Регулирование CySEC (MIFID)"
 
-msgid "ARUM Capital is the holder of a license of the Cyprus Securities and Exchange Commission of the Republic of Cyprus that is part of the EU regulation of MiFID."
-msgstr "ARUM Capital обладает лицензией CySEC - комиссии по ценным бумагам и биржам Республики Кипр, которая является частью Европейского регулирования MiFID."
+msgid "ARUM Capital is regulated by the Cyprus Securities and Exchange Commission (CySEC) under license number 323/17.<br>ARUM Capital is fully compliant with the European Markets in Financial Instruments Directives (MiFID)."
+msgstr "ARUM Capital регулируемая компания Комиссией по ценным бумагам Республики Кипр (CySEC) с лицензией номер 323/17.<br>ARUM Capital полностью соответствует стандартнам Европейского регулирования (MiFID)."
 
 msgid "Transaction quality guarantee"
 msgstr "Гарантия качества сделок"
 
-msgid "Client support rules and procedures"
-msgstr "Правила взаимодействия с клиентам"
+msgid "Corporate governance"
+msgstr "Корпоративный кодекс поведения"
 
 msgid "Audit and risk management"
 msgstr "Аудит и контроль за рисками"
-
-msgid "Corporate governance"
-msgstr "Корпоративный кодекс поведения"
 
 msgid "Fund security guarantee"
 msgstr "Гарантия защиты средств"
@@ -324,6 +303,9 @@ msgstr "Параметры"
 
 msgid "Min. deposit"
 msgstr "Мин. депозит"
+
+msgid "Platforms"
+msgstr "Платформы"
 
 msgid "Market Depth is a tool of ARUM.PRO platform due to which one can track the volume of applications against the price. The spread level is directly dependent on the position volume."
 msgstr "Стакан ликвидности – Инструмент торговой платформы ARUM.PRO, благодаря которому отслеживать поставляемую объем заявок относительно цены. Прямая зависимость уровня спреда от выставляемого объема позиции."
@@ -498,9 +480,6 @@ msgstr "Преимущества"
 
 msgid "Why ARUM CAPITAL"
 msgstr "Преимущества наших клиентов"
-
-msgid "ARUM Capital is regulated by the Cyprus Securities and Exchange Commission (CySEC) under license number 323/17.<br>ARUM Capital is fully compliant with the European Markets in Financial Instruments Directives (MiFID)."
-msgstr "ARUM Capital обладает лицензией CySEC - комиссии по ценным бумагам и биржам Республики Кипр, которая является частью Европейского регулирования MiFID."
 
 msgid "Safeguarding Arrangements"
 msgstr "Гарантия защиты средств"
@@ -1064,7 +1043,7 @@ msgid "Open API FIX-protocol for trading robots"
 msgstr "Открытый API FIX-протокола для торговых роботов"
 
 msgid "We offer our clients an opportunity to link their trading robots directly to the international liquidity providers under FIX-protocol."
-msgstr "Мы предоставляем нашим клиентам возможность подключать свои торговые роботы напрямую к мировой ликвидность по FIX-протоколу."
+msgstr "Мы предоставляем нашим клиентам возможность подключать свои торговые роботы напрямую к мировой ликвидности по FIX-протоколу."
 
 msgid "API-interface for the connection of trading robots"
 msgstr "API-интерфейс для подключения торговых роботов"
@@ -1089,6 +1068,9 @@ msgstr "Испытайте возможности нашей ECN-ликвидн�
 
 msgid "Deposits / withdrawals"
 msgstr "Ввод/вывод средств"
+
+msgid "Deposits / Withdrawals"
+msgstr "Ввод / Вывод средств"
 
 msgid "Deposit funds"
 msgstr "Ввод средств"
@@ -1259,10 +1241,10 @@ msgid "Seek a higher amount of weekly payments from your investors by showing ef
 msgstr "Добивайтесь повышения еженедельных выплат от ваших инвесторов, демонстрируя эффективную работу на рынке и привлекая к себе новых инвесторов."
 
 msgid "RAMM combines the best features of signal services and PAMM:"
-msgstr "Только лучшее от сервисов сигналов и RAMM:"
+msgstr "Только лучшее от сервисов сигналов и PAMM:"
 
-msgid "RAMM"
-msgstr "RAMM"
+msgid "PAMM"
+msgstr ""
 
 msgid "Signal services"
 msgstr "Сигнальные сервисы\t"
@@ -1735,6 +1717,30 @@ msgstr "Файл слишком большого размера."
 
 msgid "Unsupported file extension"
 msgstr "Расширение файла не поддерживается"
+
+#~ msgid "RAMM"
+#~ msgstr "RAMM"
+
+#~ msgid "About the service"
+#~ msgstr "О сервисе"
+
+#~ msgid "Plans"
+#~ msgstr "Тарифы"
+
+#~ msgid "Terms"
+#~ msgstr "Условия"
+
+#~ msgid "Security"
+#~ msgstr "Безопасность"
+
+#~ msgid "Risks"
+#~ msgstr "Риски"
+
+#~ msgid "ARUM Capital is the holder of a license of the Cyprus Securities and Exchange Commission of the Republic of Cyprus that is part of the EU regulation of MiFID."
+#~ msgstr "ARUM Capital обладает лицензией CySEC - комиссии по ценным бумагам и биржам Республики Кипр, которая является частью Европейского регулирования MiFID."
+
+#~ msgid "Client support rules and procedures"
+#~ msgstr "Правила взаимодействия с клиентам"
 
 #~ msgid "Name"
 #~ msgstr "Название"

@@ -45,7 +45,7 @@ LANGUAGE_SETTINGS = {
         "urls": (),
     },
     "en": {
-        "hosts": ('arumcapital.eu', 'arum_eng.uptrader.us', 'eng.localhost:8000', 'eng.localhost:8001'),
+        "hosts": ('arumcapital.eu', 'arum_eng.uptrader.us', 'en.localhost:8081', 'en.localhost:8001'),
         "redirect_to": "https://arumcapital.eu",
         "urls": ("eng",),
     },
@@ -496,7 +496,7 @@ ACCENTPAY_ACCOUNT = "3515"
 ACCENTPAY_SECRET = "317d724a2b7dc16d33a377cd17f55563b91ced6d"
 
 # The secret word MUST be any  lowercase string, submitted in the 'Merchant Tools' section.
-MONEYBOOKERS_SECRET = r"secret_key" # seems will get only if we have buisness account
+MONEYBOOKERS_SECRET = "secret" # seems will get only if we have buisness account
 # Payee email address (this is where all the deposited funds will go eventually).
 MONEYBOOKERS_TO = {
     "USD": " rv@uptrader.us",

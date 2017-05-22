@@ -49,5 +49,7 @@ urlpatterns = patterns("payments.views",
         "make_any_transaction",
         name="payments_any_transaction"),
 
-    url(r'^export_card_withdrawals$', "export_card_withdrawals", name="payments_export_card_withdrawals")
+    url(r'^export_card_withdrawals$', "export_card_withdrawals", name="payments_export_card_withdrawals"),
+
+    url(r'^export_ecommpay_withdrawals$', "export_ecommpay_withdrawals", name="payments_export_ecommpay_withdrawals"),
 )

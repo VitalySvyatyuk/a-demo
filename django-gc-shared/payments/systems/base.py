@@ -437,6 +437,14 @@ class WithdrawForm(BaseForm):
         if account.is_disabled:
             self._errors["account"] = [_("You can't withdraw funds from this account")]
 
+        # Allow withdrawals only to systems which had successful deposits or to bank
+        if not (self.payment_system.slug in ("bankusd", "bankeur", "bankrur") or
+                DepositRequest.objects.filter(payment_system=self.payment_system,
+                                              account__user=account.user,
+                                              is_committed=True).exists()):
+            self._errors["account"] = [_("Please withdraw funds using the system which you used for deposit, or "
+                                         "using wire transfer")]
+
         # для вебмани все конвертируем в валюту счета,
         # для остальных валюта выбирается в форме
         if self.payment_system.slug == "webmoney":
