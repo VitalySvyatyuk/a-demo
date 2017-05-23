@@ -11,6 +11,7 @@ from platforms.factories import TradingAccountFactory
 
 GROUP_NAME = forms.GROUP_NAME
 
+
 class TestAccountSS(TestCase):
     @classmethod
     def setUpTestData(cls):

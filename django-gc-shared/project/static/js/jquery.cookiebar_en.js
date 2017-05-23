@@ -23,7 +23,7 @@
       var doReturn = false;
     }
     var defaults = {
-      message: gettext('We use cookies to help give you the best experience on our website. By continuing without changing your cookie settings, we assume you agree to this. Please read our <a href="/uploads/uploads/legal_documents/1fdbdbfee85e11e6acf9525400a10119.pdf" target="_blank">cookie policy</a> to find out more.'), //Message displayed on bar
+      message: gettext('We use cookies to help give you the best experience on our website. By continuing without changing your cookie settings, we assume you agree to this. Please read our <a href="/static/agreements/ARUM_-_Cookie_policy_en.pdf" target="_blank">cookie policy</a> to find out more.'), //Message displayed on bar
       acceptButton: true, //Set to true to show accept/enable button
       acceptText: gettext('Ok'), //Text on accept/enable button
       acceptFunction: function(cookieValue){if(cookieValue!='enabled' && cookieValue!='accepted') window.location = window.location.href;}, //Function to run after accept

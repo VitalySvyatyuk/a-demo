@@ -24,7 +24,7 @@
 		}
 		var defaults = {
 
-			message: gettext('Мы используем куки, чтобы оптимизировать вашу работу на нашем сайте. Продолжая работу на нашем сайте, мы предполагаем, что вы согласны с этим. Пожалуйста, прочитайте нашу политику <a href="/uploads/uploads/legal_documents/2f4720b2e85e11e68fdc525400a10119.pdf" target="_blank">Cookies</a>, чтобы узнать больше.'), //Message displayed on bar
+			message: gettext('Мы используем куки, чтобы оптимизировать вашу работу на нашем сайте. Продолжая работу на нашем сайте, мы предполагаем, что вы согласны с этим. Пожалуйста, прочитайте нашу политику <a href="/static/agreements/ARUM_-_Cookie_policy_russian_-_final_13_01_2017.pdf" target="_blank">Cookies</a>, чтобы узнать больше.'), //Message displayed on bar
 
 			acceptButton: true, //Set to true to show accept/enable button
 			acceptText: gettext('Ок'), //Text on accept/enable button

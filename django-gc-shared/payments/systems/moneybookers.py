@@ -77,8 +77,7 @@ class DepositForm(base.DepositForm):
     @classmethod
     def _calculate_commission(cls, request, full_commission):
         log.debug("Calculating commission")
-        if not full_commission:  # and (request.account.user.profile.payback_status == UserProfile.PAYBACK_STATUS.GOLD or
-                                 #    request.amount >= convert_currency(300, "USD", request.currency)[0]):
+        if not full_commission:
             commission = 0
         else:
             commission = (request.amount * Decimal("0.019")) + Decimal(convert_currency(0.33, "USD", request.currency)[0])
@@ -224,11 +223,7 @@ class WithdrawForm(base.WithdrawForm):
 
     @classmethod
     def _calculate_commission(cls, request):
-        from profiles.models import UserProfile
-        if request.account.user.profile.payback_status == UserProfile.PAYBACK_STATUS.GOLD:
-            c = 0
-        else:
-            c = min(Decimal("0.68"), request.amount/100)
+        c = min(Decimal("0.68"), request.amount/100)
         return CommissionCalculationResult(
             amount=request.amount,
             commission=c,
