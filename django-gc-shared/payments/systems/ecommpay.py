@@ -30,7 +30,7 @@ transfer_details = {
 
 templates = {
     "deposit": "payments/forms/deposit/ecommpay.html",
-    "withdraw": "payments/forms/withdraw/bankeur_usd.html"
+    "withdraw": "payments/forms/withdraw/base.html"
 }
 
 
