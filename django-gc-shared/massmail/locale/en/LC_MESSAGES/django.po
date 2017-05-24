@@ -1,0 +1,355 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-27 19:16+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Add subscribers"
+msgstr ""
+
+msgid "Format: email<space>name"
+msgstr ""
+
+msgid "Please choose either delayed campaign or periodical"
+msgstr ""
+
+msgid "Campaign can't be active and scheduled at the same time"
+msgstr ""
+
+msgid "Please choose time for delayed campaign"
+msgstr ""
+
+msgid "Please specify schedule for the campaign"
+msgstr ""
+
+msgid "This date has already passed"
+msgstr ""
+
+msgid "Mailing lists"
+msgstr ""
+
+msgid "Email and Account page"
+msgstr ""
+
+msgid "Schedule"
+msgstr ""
+
+msgid "Footer"
+msgstr ""
+
+msgid "Views"
+msgstr ""
+
+msgid "Clicks"
+msgstr ""
+
+msgid "Emails sent"
+msgstr ""
+
+msgid "Message length exceeds the maximum length"
+msgstr ""
+
+msgid "Messages sent"
+msgstr ""
+
+msgid "Template name"
+msgstr ""
+
+msgid "Subject"
+msgstr ""
+
+msgid "The default subject if a campaign doesn't specify it"
+msgstr ""
+
+msgid "Plaintext message"
+msgstr ""
+
+msgid "HTML message"
+msgstr ""
+
+msgid "Message template"
+msgstr ""
+
+msgid "Message templates"
+msgstr ""
+
+msgid "Number of subscribers"
+msgstr ""
+
+#, python-format
+msgid "%s (%s emails)"
+msgstr ""
+
+msgid "Mailing list"
+msgstr ""
+
+msgid "Unsubscribed"
+msgstr ""
+
+msgid "Campaign name"
+msgstr ""
+
+msgid "Force send"
+msgstr ""
+
+msgid "Forcefully sent to unsubscribed clients"
+msgstr ""
+
+msgid "Template"
+msgstr ""
+
+msgid "Exclusion lists"
+msgstr ""
+
+msgid "These emails will be excluded from the campaign"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Set campaign to Active to send it immediately"
+msgstr ""
+
+msgid "Is sent"
+msgstr ""
+
+msgid "Delayed campaign"
+msgstr ""
+
+msgid "Date of mailing"
+msgstr ""
+
+msgid "Send periodicaly"
+msgstr ""
+
+msgid "Schedule (in cron format)"
+msgstr ""
+
+msgid "Personal greeting"
+msgstr ""
+
+msgid "Send email"
+msgstr ""
+
+msgid "Send to internal messages"
+msgstr ""
+
+msgid "Send to MT4"
+msgstr ""
+
+msgid "Name in GA"
+msgstr ""
+
+msgid "Name in Google Analytics"
+msgstr ""
+
+msgid "Message subject"
+msgstr ""
+
+msgid "Sender's email"
+msgstr ""
+
+msgid "name@example.com Leave empty to use default address"
+msgstr ""
+
+msgid "Sender's name"
+msgstr ""
+
+msgid "Leave empty to use default name"
+msgstr ""
+
+msgid "Lock is active when campaign is being sent"
+msgstr ""
+
+msgid "Creation date"
+msgstr ""
+
+msgid "Automatical"
+msgstr ""
+
+msgid "Campaign type"
+msgstr ""
+
+msgid "Date of delivery to MT4"
+msgstr ""
+
+msgid "Send to those who are online"
+msgstr ""
+
+msgid "WARNING: In this case ANYONE who is online will receive the campaign!"
+msgstr ""
+
+msgid "Bonuses and promotions"
+msgstr ""
+
+msgid "Webinars"
+msgstr ""
+
+msgid "News"
+msgstr ""
+
+msgid "Campaign"
+msgstr ""
+
+msgid "Campaigns"
+msgstr ""
+
+msgid "Key"
+msgstr ""
+
+msgid "Name of the block in the template, for example main_content"
+msgstr ""
+
+msgid "Content block"
+msgstr ""
+
+msgid "Content blocks"
+msgstr ""
+
+msgid "View manual"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Next event"
+msgstr ""
+
+msgid "Promotions"
+msgstr ""
+
+msgid "Nearest webinars"
+msgstr ""
+
+msgid "Company news"
+msgstr ""
+
+msgid "You have received this message because you subscribed to Grand Capital news"
+msgstr ""
+
+msgid "If you want to unsubscribe, please follow this link"
+msgstr ""
+
+msgid "If this message is displayed incorrectly, please click"
+msgstr ""
+
+msgid "here"
+msgstr ""
+
+msgid "to open it in a browser"
+msgstr ""
+
+msgid "years on the"
+msgstr ""
+
+msgid "market"
+msgstr ""
+
+msgid "Private office"
+msgstr ""
+
+msgid "All news"
+msgstr ""
+
+msgid "All webinars"
+msgstr ""
+
+msgid "All promotions"
+msgstr ""
+
+msgid "Got questions?"
+msgstr ""
+
+msgid "Our client support specialists will be glad to answer them"
+msgstr ""
+
+msgid "Use Live Chat or email to"
+msgstr ""
+
+msgid "to contact a manager."
+msgstr ""
+
+msgid "Yours truly"
+msgstr ""
+
+msgid "Grand Capital team"
+msgstr ""
+
+msgid "Open an account"
+msgstr ""
+
+msgid "Deposit"
+msgstr ""
+
+msgid "Get a bonus"
+msgstr ""
+
+msgid "Invest"
+msgstr ""
+
+msgid "Participage in a contest"
+msgstr ""
+
+msgid "Become a partner"
+msgstr ""
+
+msgid "If you want to unsubscribe, please follow"
+msgstr ""
+
+msgid "this link"
+msgstr ""
+
+msgid "Email unsubscribe"
+msgstr ""
+
+msgid "If you don't want to get latest and useful information from Grand Capital, click the button"
+msgstr ""
+
+msgid "Unsubscribe"
+msgstr ""
+
+msgid "You successfully unsubscribed"
+msgstr ""
+
+msgid "You successfully resubscribed"
+msgstr ""
+
+msgid ""
+"\n"
+"                You successfully unsubscribed from Grand Capital mailing list.\n"
+"                You can change your mind at any time via the button below\n"
+"            "
+msgstr ""
+
+msgid "Resubscribe"
+msgstr ""
+
+msgid "Probably you are interested in other means of communication with us?"
+msgstr ""
+
+msgid ""
+"\n"
+"                    <p>You are now subscribed to Grand Capital mailing lists again.</p>\n"
+"                    <p>Thanks!</p>\n"
+"                    <p>Maybe there are other means of communication more convenient for you?</p>\n"
+"                "
+msgstr ""
+
+msgid "You have already unsubscribed"
+msgstr ""
+
+msgid "Copy of this message has been sent to your email"
+msgstr ""

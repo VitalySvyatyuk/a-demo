@@ -1,0 +1,17 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans "Email unsubscribe" %}</h1>
+    <div class="container">
+        <p>
+            {% trans "If you don't want to get our latest and useful information, click the button" %}
+        </p>
+        <form action="" method="POST">
+            <input type="hidden" value="{{campaign_id}}" name="campaign_id">
+            {% csrf_token %}
+        	<input type="submit" value="{% trans 'Unsubscribe' %}">
+        </form>
+    </div>
+{% endblock %}

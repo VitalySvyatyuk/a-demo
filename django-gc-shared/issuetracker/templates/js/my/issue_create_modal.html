@@ -54,13 +54,13 @@
                 <textarea required ng-model="additional_info.description" ng-disabled="isLoading" rows="3"></textarea>
             </div>
         </div>
-        
+
         <div class="form-item row">
             <div class="small-3 large-3 column">
                 <label>{% trans "Select files" %}</label>
                 <p class="description" ng-bind="formData.files.help_text"></p>
             </div>
-            <div class="small-9 large-9 column">
+            <div class="small-9 large-9 column" style="margin-top:10px;">
                 <div class="button white offset-bottom-10" ng-file-select="selectCommentFiles($files)" data-multiple="true">{% trans "Select files" %}</div>
                 <p ng-repeat="file in files">
                     [[file.name]] <span class="icon-cancel-inverted small" ng-click="unselectCommentFile(file)"></span>

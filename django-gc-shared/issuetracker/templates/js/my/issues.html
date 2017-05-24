@@ -12,7 +12,7 @@
 
             <div class="gc-accordion-item active" ng-repeat="issue in issues" slide-block="selected === issue" ng-class="issue.status">
                 <div class="title-wrapper" ng-click="select(issue)">
-                    <span class="title" ng-bind="::issue.title"></span>
+                    <span class="title" ng-bind="::issue.title" style="padding-top: 3px;"></span>
                     <p class="request-message" ng-bind-html="::issue.text | nl2br"></p>
                     <time ng-bind="::issue.creation_ts|momentFromNow"></time>
                     <p class="request-status" ng-bind="issue.status_display"></p>

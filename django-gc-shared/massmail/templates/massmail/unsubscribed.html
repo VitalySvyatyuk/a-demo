@@ -1,0 +1,42 @@
+{% extends "design_2014/private_office/base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+    {% if unsubscribed %}
+        <h1>{% trans "You successfully unsubscribed" %}</h1>
+    {% else %}
+        <h1>{% trans "You successfully resubscribed" %}</h1>
+    {% endif %}
+    <div class="container">
+        {% if unsubscribed %}
+            {% blocktrans %}
+                You successfully unsubscribed from our mailing lists.
+                You can change your mind at any time via the button below
+            {% endblocktrans %}
+            {% if campaign_id %}
+                <form action="/massmail/resubscribe/{{ email }}/{{ campaign_id }}/" name="resubscribe">
+            {% else %}
+                <form action="/massmail/resubscribe/{{ email }}/" name="resubscribe">
+            {% endif %}
+        <input type="submit" value="{% trans 'Resubscribe' %}">
+        </form>
+        {% endif %}
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        {% if unsubscribed %}
+            <div>{% trans "Probably you are interested in other means of communication with us?" %}</div>
+        {% else %}
+            <div>
+                {% blocktrans %}
+                    <p>You are now subscribed to our mailing lists again.</p>
+                    <p>Thanks!</p>
+                    <p>Maybe there are other means of communication more convenient for you?</p>
+                {% endblocktrans %}
+            </div>
+        {% endif %}
+        <div>&nbsp;</div>
+        <p>
+            &nbsp;</p>
+    </div>
+{% endblock %}

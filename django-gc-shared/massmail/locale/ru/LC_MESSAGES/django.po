@@ -1,0 +1,413 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-28 13:32+0300\n"
+"PO-Revision-Date: 2016-12-28 14:45+0230\n"
+"Last-Translator:   <asharukov@localhost>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Translated-Using: django-rosetta 0.7.12\n"
+
+#, fuzzy
+#| msgid "Unsubscribe"
+msgid "Add subscribers"
+msgstr "Отписаться"
+
+msgid "Format: email<space>name"
+msgstr ""
+
+msgid "Please choose either delayed campaign or periodical"
+msgstr ""
+
+msgid "Campaign can't be active and scheduled at the same time"
+msgstr ""
+
+msgid "Please choose time for delayed campaign"
+msgstr ""
+
+msgid "Please specify schedule for the campaign"
+msgstr ""
+
+msgid "This date has already passed"
+msgstr ""
+
+msgid "Mailing lists"
+msgstr ""
+
+msgid "Email and Account page"
+msgstr ""
+
+msgid "Schedule"
+msgstr ""
+
+msgid "Footer"
+msgstr ""
+
+msgid "Views"
+msgstr ""
+
+msgid "Clicks"
+msgstr ""
+
+msgid "Emails sent"
+msgstr ""
+
+msgid "Message length exceeds the maximum length"
+msgstr ""
+
+msgid "Messages sent"
+msgstr ""
+
+msgid "Template name"
+msgstr ""
+
+msgid "Subject"
+msgstr ""
+
+msgid "The default subject if a campaign doesn't specify it"
+msgstr ""
+
+msgid "Plaintext message"
+msgstr ""
+
+msgid "HTML message"
+msgstr ""
+
+msgid "Message template"
+msgstr ""
+
+msgid "Message templates"
+msgstr ""
+
+#, fuzzy
+#| msgid "Resubscribe"
+msgid "Number of subscribers"
+msgstr "Подписаться"
+
+#, python-format
+msgid "%s (%s emails)"
+msgstr ""
+
+msgid "Mailing list"
+msgstr ""
+
+#, fuzzy
+#| msgid "Unsubscribe"
+msgid "Unsubscribed"
+msgstr "Отписаться"
+
+msgid "Campaign name"
+msgstr ""
+
+msgid "Force send"
+msgstr ""
+
+#, fuzzy
+#| msgid "If you really want to unsubscribe, click the button"
+msgid "Forcefully sent to unsubscribed clients"
+msgstr ""
+"Если вы уверены, что хотите отписаться от всех рассылок Grand Capital, "
+"нажмите кнопку"
+
+msgid "Template"
+msgstr ""
+
+msgid "Exclusion lists"
+msgstr ""
+
+msgid "These emails will be excluded from the campaign"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Set campaign to Active to send it immediately"
+msgstr ""
+
+msgid "Is sent"
+msgstr ""
+
+msgid "Delayed campaign"
+msgstr ""
+
+msgid "Date of mailing"
+msgstr ""
+
+msgid "Send periodicaly"
+msgstr ""
+
+msgid "Schedule (in cron format)"
+msgstr ""
+
+msgid "Personal greeting"
+msgstr ""
+
+#, fuzzy
+#| msgid "email"
+msgid "Send email"
+msgstr "по email"
+
+msgid "Send to internal messages"
+msgstr ""
+
+msgid "Send to MT4"
+msgstr ""
+
+msgid "Name in GA"
+msgstr ""
+
+msgid "Name in Google Analytics"
+msgstr ""
+
+msgid "Message subject"
+msgstr ""
+
+msgid "Sender's email"
+msgstr ""
+
+msgid "name@example.com Leave empty to use default address"
+msgstr ""
+
+msgid "Sender's name"
+msgstr ""
+
+msgid "Leave empty to use default name"
+msgstr ""
+
+msgid "Lock is active when campaign is being sent"
+msgstr ""
+
+msgid "Creation date"
+msgstr ""
+
+msgid "Automatical"
+msgstr ""
+
+msgid "Campaign type"
+msgstr ""
+
+msgid "Date of delivery to MT4"
+msgstr ""
+
+msgid "Send to those who are online"
+msgstr ""
+
+msgid "WARNING: In this case ANYONE who is online will receive the campaign!"
+msgstr ""
+
+msgid "Bonuses and promotions"
+msgstr ""
+
+msgid "Webinars"
+msgstr ""
+
+msgid "News"
+msgstr ""
+
+msgid "Campaign"
+msgstr ""
+
+msgid "Campaigns"
+msgstr ""
+
+msgid "Key"
+msgstr ""
+
+msgid "Name of the block in the template, for example main_content"
+msgstr ""
+
+msgid "Content block"
+msgstr ""
+
+msgid "Content blocks"
+msgstr ""
+
+msgid "View manual"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Next event"
+msgstr ""
+
+msgid "If this message is displayed incorrectly, please click"
+msgstr "Письмо отображается некорректно? Пожалуйста, нажмите"
+
+msgid "here"
+msgstr "здесь"
+
+msgid "to open it in a browser"
+msgstr "чтобы просмотреть его в браузере"
+
+msgid "years on the"
+msgstr "лет"
+
+msgid "market"
+msgstr "на рынке"
+
+msgid "Private office"
+msgstr "Личный кабинет"
+
+msgid "Company news"
+msgstr "Новости компании"
+
+msgid "All news"
+msgstr "Все новости"
+
+msgid "Nearest webinars"
+msgstr "Ближайшие вебинары"
+
+msgid "All webinars"
+msgstr "Все вебинары"
+
+msgid "Promotions"
+msgstr "Акции компании"
+
+msgid "All promotions"
+msgstr "Все акции"
+
+msgid "Got questions?"
+msgstr "Появились вопросы?"
+
+msgid "Our client support specialists will be glad to answer them"
+msgstr "Отдел по работе с клиентами будет рад ответить"
+
+msgid "Use Live Chat or email to"
+msgstr "Используйте онлайн-чат или email"
+
+#, fuzzy
+#| msgid "Your personal manager"
+msgid "to contact a manager."
+msgstr "Ваш персональный менеджер"
+
+msgid "Yours truly"
+msgstr "C уважением"
+
+msgid "Grand Capital team"
+msgstr "Команда Grand Capital"
+
+msgid "Open an account"
+msgstr "Открыть счет"
+
+msgid "Deposit"
+msgstr "Пополнить счет"
+
+msgid "Get a bonus"
+msgstr "Получить бонус"
+
+msgid "Invest"
+msgstr "Инвестировать"
+
+msgid "Participage in a contest"
+msgstr "Участвовать в конкурсе"
+
+msgid "Become a partner"
+msgstr "Стать партнером"
+
+msgid ""
+"You have received this message because you subscribed to Grand Capital news"
+msgstr ""
+"Вы получили это письмо, потому что подписаны на рассылку новостей компании "
+"Grand Capital"
+
+msgid "If you want to unsubscribe, please follow"
+msgstr "Если вы хотите отписаться от информационных рассылок, то"
+
+msgid "this link"
+msgstr "перейдите по ссылке"
+
+#| msgid "years on the"
+msgid "Years on the"
+msgstr "лет"
+
+msgid "Email unsubscribe"
+msgstr "Отписаться от рассылки"
+
+msgid ""
+"If you don't want to get latest and useful information from Grand Capital, "
+"click the button"
+msgstr ""
+"Если Вы больше не хотите получать актуальную и полезную информацию от Grand "
+"Capital, нажмите кнопку"
+
+msgid "Unsubscribe"
+msgstr "Отписаться"
+
+msgid "You successfully unsubscribed"
+msgstr "Вы отписались от рассылки Grand Capital"
+
+msgid "You successfully resubscribed"
+msgstr "Вы подписались на рассылки Grand Capital"
+
+msgid ""
+"\n"
+"                You successfully unsubscribed from Grand Capital mailing list.\n"
+"                You can change your mind at any time via the button below\n"
+"            "
+msgstr ""
+"\n"
+"Вы отписались от рассылки Grand Capital. Вы в любой момент можете изменить решение, нажав кнопку"
+
+msgid "Resubscribe"
+msgstr "Подписаться"
+
+msgid "Probably you are interested in other means of communication with us?"
+msgstr "Возможно, Вам удобны другие способы связи?"
+
+msgid ""
+"\n"
+"                    <p>You are now subscribed to Grand Capital mailing lists again.</p>\n"
+"                    <p>Thanks!</p>\n"
+"                    <p>Maybe there are other means of communication more convenient for you?</p>\n"
+"                "
+msgstr ""
+"\n"
+"<p>Вы вновь подписались на рассылку полезной информации от Grand Capital.</p>\n"
+"<p>Спасибо!</p>\n"
+"<p>Возможно, Вам удобны другие способы связи?</p>"
+
+msgid "You have already unsubscribed"
+msgstr "Вы отписались от рассылки Grand Capital."
+
+msgid "Copy of this message has been sent to your email"
+msgstr "Копия этого сообщения отправлена на Ваш email"
+
+#~ msgid "If you want to unsubscribe, please follow this link"
+#~ msgstr ""
+#~ "Если вы хотите отписаться от информационных рассылок, то перейдите по ссылке"
+
+#~ msgid "If you have any questions, don't hesitate to contact us"
+#~ msgstr "Если у Вас есть вопросы - обращайтесь"
+
+#~ msgid "skype"
+#~ msgstr "по skype"
+
+#~ msgid "phones"
+#~ msgstr "по телефонам"
+
+#~ msgid "free across Russia"
+#~ msgstr "бесплатный по России"
+
+#~ msgid "for Saint-Petersburg residents"
+#~ msgstr "по Санкт-Петербургу"
+
+#~ msgid "mobile"
+#~ msgstr "моб."
+
+#~ msgid "Best regards"
+#~ msgstr "С уважением"
+
+#~ msgid "If you have any questions"
+#~ msgstr "Если у Вас есть вопросы"

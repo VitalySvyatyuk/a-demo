@@ -475,18 +475,18 @@ class WithdrawForm(BaseForm):
 
         try:
             withdraw_limit, bonuses = WithdrawForm.get_withdraw_limit_data(account)
+
+            bonuses = bonuses.to(to_currency)
+
+            if amount > withdraw_limit.amount:
+                self._errors["amount"] = [_(
+                    "Maximal amount of money you can withdraw for a chosen "
+                    "account is %(limit_value)s%(currency)s ") % \
+                                         {"limit_value": withdraw_limit.amount,
+                                              "currency": withdraw_limit.currency.slug}]
         except:
             self._errors["account"] = [_('Cannot determine the account balance. Try again later or contact support')]
 
-        withdraw_limit = withdraw_limit.to(to_currency)
-        bonuses = bonuses.to(to_currency)
-
-        if amount > withdraw_limit.amount:
-            self._errors["amount"] = [_(
-                "Maximal amount of money you can withdraw for a chosen "
-                "account is %(limit_value)s%(currency)s ") % \
-                                     {"limit_value": withdraw_limit.amount,
-                                      "currency": withdraw_limit.currency.slug}]
         return self.cleaned_data
 
     @classmethod

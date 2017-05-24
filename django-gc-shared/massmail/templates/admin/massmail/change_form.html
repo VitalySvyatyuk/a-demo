@@ -1,0 +1,25 @@
+{% extends "admin/change_form.html" %}
+
+{% load staticfiles i18n %}
+
+{% block extrahead %}
+    <script src="{% static 'js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'js/later.1.1.6.min.js' %}"></script>
+    <script src="{% static 'js/moment-with-langs.2.5.1.min.js' %}"></script>
+    <script src="{% static 'js/prettycron.js' %}"></script>
+
+    <script>
+        $(function(){
+            $("#id_cron").keypress(function() {
+                var that = $(this);
+                var msg = "<a href='http://www.nncron.ru/nncronlt/help/RU/working/cron-format.htm'>{% trans "View manual" %}</a>";
+                if (that.val() != "") {
+                    msg += "<br>{% trans "Description" %}: " + prettyCron.toString(that.val()) +
+                           "<br>{% trans "Next event" %}: " + prettyCron.getNext(that.val());
+                }
+                that.parent().find(".help").html(msg);
+            }).keypress()
+        })
+    </script>
+    {{ block.super }}
+{% endblock %}

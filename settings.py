@@ -330,6 +330,7 @@ INSTALLED_APPS = (
     'video',
     'faq',
     'callback_request',
+    'massmail',
 
     'referral',
     'requisits',

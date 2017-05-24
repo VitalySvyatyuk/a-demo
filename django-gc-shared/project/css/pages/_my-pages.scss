@@ -373,7 +373,7 @@
       }
       img, .manager-avatar{
         border-radius: 50%;
-        height: 100px;
+        height: 48px;
         width: 100px;
         @include align-middle;
       }
@@ -382,8 +382,8 @@
       }
       .manager-avatar{
         background: url(../img/arum_avatar.png) no-repeat 0 -240px #ffffff;
-        background-position: 11px -210px;
-        background-size: 80%;
+        background-position: bottom;
+        background-size: 47%;
       }
       .message{
         background: lighten($gc-third-color, 20%);

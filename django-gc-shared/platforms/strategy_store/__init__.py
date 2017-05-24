@@ -74,7 +74,7 @@ class ApiFacade(object):
                                   'ID': account.mt4_id, 'FirstName': account.user.first_name,
                                   'LastName': account.user.last_name,
                                   'Mobile': account.user.profile.phone_mobile or account.user.profile.phone_work})
-        log.debug("resp=%s" % (resp.status_code, resp.text))
+        log.debug("resp=%s %s" % (resp.status_code, resp.text))
         if not resp.ok:
             raise SSError(resp.status_code, 'HTTP code not OK (%d)' % resp.status_code)
 
@@ -90,7 +90,7 @@ class ApiFacade(object):
         log.debug("Changing SS account password")
         resp = self.make_request(requests.post, 'api/v1/clients/{id}/resetPassword'.format(id=account.mt4_id),
                                  {'Password': password})
-        log.debug("resp=%s" % (resp.status_code, resp.text))
+        log.debug("resp=%s %s" % (resp.status_code, resp.text))
         json = resp.json()
         if not resp.ok:
             log.error('HTTP code: %d', resp.status_code)
@@ -123,7 +123,7 @@ class ApiFacade(object):
         """
         resp = self.make_request(requests.post, 'api/v1/clients/{id}/checkPassword'.format(id=account.mt4_id),
                                  {'Password': password})
-        log.debug("resp=%s" % (resp.status_code, resp.text))
+        log.debug("resp=%s %s" % (resp.status_code, resp.text))
         if not resp.ok:
             raise SSError(resp.status_code, 'HTTP code not OK (%d)' % resp.status_code)
         return resp.json()['PasswordValid']
@@ -131,7 +131,7 @@ class ApiFacade(object):
     @cached_func(CACHE_TIMEOUT)
     def account_balance(self, account):
         resp = self.make_request(requests.get, 'api/v1/clients/{id}'.format(id=account.mt4_id), {})
-        log.debug("resp=%s" % (resp.status_code, resp.text))
+        log.debug("resp=%s %s" % (resp.status_code, resp.text))
         if not resp.ok:
             raise SSError(resp.status_code, 'HTTP code not OK (%d)' % resp.status_code)
         return resp.json()['Accounts'][0]['NotInvested']
@@ -139,7 +139,7 @@ class ApiFacade(object):
     @cached_func(CACHE_TIMEOUT)
     def account_equity(self, account):
         resp = self.make_request(requests.get, 'api/v1/clients/{id}'.format(id=account.mt4_id), {})
-        log.debug("resp=%s" % (resp.status_code, resp.text))
+        log.debug("resp=%s %s" % (resp.status_code, resp.text))
         if not resp.ok:
             raise SSError(resp.status_code, 'HTTP code not OK (%d)' % resp.status_code)
         return resp.json()['Accounts'][0]['Balance']
@@ -167,7 +167,7 @@ class ApiFacade(object):
         """
         params = {'MinDT': str(from_date.date()), 'MaxDT': str(to_date.date())}
         resp = self.make_request(requests.get, 'api/v3/accounts/{id}/get-open-positions'.format(id=account.mt4_id), params)
-        log.debug("resp=%s" % (resp.status_code, resp.text))
+        log.debug("resp=%s %s" % (resp.status_code, resp.text))
         if not resp.ok:
             raise SSError(resp.status_code, 'HTTP code not OK (%d)' % resp.status_code)
         return queryset_like(AbstractTrade, [self._convert_trade(t) for t in resp.json()['Positions']])
@@ -179,7 +179,7 @@ class ApiFacade(object):
         """
         params = {'MinDT': str(from_date.date()), 'MaxDT': str(to_date.date())}
         resp = self.make_request(requests.get, 'api/v3/accounts/{id}/get-closed-positions'.format(id=account.mt4_id), params)
-        log.debug("resp=%s" % (resp.status_code, resp.text))
+        log.debug("resp=%s %s" % (resp.status_code, resp.text))
         if not resp.ok:
             raise SSError(resp.status_code, 'HTTP code not OK (%d)' % resp.status_code)
         return queryset_like(AbstractTrade, [self._convert_trade(t) for t in resp.json()['Positions']])
@@ -208,7 +208,7 @@ class ApiFacade(object):
                                   'Mobile': account.user.profile.phone_mobile or account.user.profile.phone_work,
                                   'Email': account.user.email,
                                   })
-        log.debug("resp=%s" % (resp.status_code, resp.text))
+        log.debug("resp=%s %s" % (resp.status_code, resp.text))
         if not resp.ok:
             raise SSError(resp.status_code, 'HTTP code not OK (%d)' % resp.status_code)
         json = resp.json()
@@ -224,7 +224,7 @@ class ApiFacade(object):
         log.debug("Depositing %d with %f" % (account.mt4_id, amount))
         resp = self.make_request(requests.post, 'api/v1/clients/{id}/fundAccount'.format(id=account.mt4_id),
                                  {'IDAccount': account.mt4_id, 'Money': amount, 'Comment': comment, 'IsCredit': 0})
-        log.debug("resp=%s" % (resp.status_code, resp.text))
+        log.debug("resp=%s %s" % (resp.status_code, resp.text))
         if not resp.ok:
             raise SSError(resp.status_code, 'HTTP code not OK (%d)' % resp.status_code)
         json = resp.json()
@@ -238,7 +238,7 @@ class ApiFacade(object):
         log.debug("Withdrawing %d with %f" % (account.mt4_id, amount))
         resp = self.make_request(requests.post, 'api/v1/clients/{id}/withdrawAccount'.format(id=account.mt4_id),
                                  {'IDAccount': account.mt4_id, 'Money': amount, 'Comment': comment, 'IsCredit': 0})
-        log.debug("resp=%s" % (resp.status_code, resp.text))
+        log.debug("resp=%s %s" % (resp.status_code, resp.text))
         if not resp.ok:
             raise SSError(resp.status_code, 'HTTP code not OK (%d)' % resp.status_code)
         json = resp.json()

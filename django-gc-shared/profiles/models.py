@@ -122,17 +122,17 @@ class UserProfileManager(models.Manager):
 
 class UserProfile(StateSavingModel):
     NET_CAPITAL_CHOICES = ANNUAL_INCOME_CHOICES = (
-        ("over 100 000 USD", _("over 100 000")),
-        ("50 000 USD", "50 000 - 100 000"),
-        ("10 000 USD", "10 000 - 50 000"),
-        ("below 10 000 USD", _("below 10 000")),
+        ("> 100000", _("over 100 000")),
+        ("50000 - 100000", "50 000 - 100 000"),
+        ("10000 - 50000", "10 000 - 50 000"),
+        ("< 10000", _("below 10 000")),
     )
     FINANCIAL_COMMITMENTS =(
-        ("Less than 20%", _("Less than 20%")),
+        ("< 20%", _("Less than 20%")),
         ("21% - 40%", "21% - 40%"),
         ("41% - 60%", "41% - 60%"),
         ("61% - 80%", "61% - 80%"),
-        ("Over 80%", _("Over 80%")),
+        ("> 80%", _("Over 80%")),
     )
 
     FR_TRANSACTIONS = (
@@ -143,11 +143,11 @@ class UserProfile(StateSavingModel):
     )
 
     AV_TRANSACTIONS = (
-        ("Less than 10 000", _("Less than 10 000")),
-        ("10 000 - 50 000", "10 000 - 50 000"),
-        ("50 001 - 100 000", "50 001 - 100 000"),
-        ("100 001 - 200 000", "100 001 - 200 000"),
-        ("Over 250 000", _("Over 250 000")),
+        ("< 10000", _("Less than 10 000")),
+        ("10000 - 50000", "10 000 - 50 000"),
+        ("50001 - 100000", "50 001 - 100 000"),
+        ("100001 - 200000", "100 001 - 200 000"),
+        ("> 250000", _("Over 250 000")),
     )
 
     EMPLOYMENT_STATUS = (

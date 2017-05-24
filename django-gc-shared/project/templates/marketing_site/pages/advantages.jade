@@ -70,12 +70,13 @@ block content
 					| 04
 				h2.page_title.page_title--red.advantages__item__title
 					- trans "Trusted liquidity provider"
-				p
-					- trans "Our liquidity provider is the largest British institutional broker CFH Clearing. The company operates from 2008 in FOREX liquidity market and has proved to be one of the most trusted and technologically advanced in the field. "
-				p
-					- trans "The partners of the company are such liquidity providers as Citi, Barclays, Deutsche Bank and others."
-				p
-					- trans "Thanks to the strategic partnership with CFH we provide our clients with Tier 1 Market Depth."
+				ul.dashed_list
+					li.dashed_list__item
+						- trans "Our liquidity provider is the largest British institutional broker CFH Clearing. The company operates from 2008 in FOREX liquidity market and has proved to be one of the most trusted and technologically advanced in the field"
+					li.dashed_list__item
+						- trans "The partners of the company are such liquidity providers as Citi, Barclays, Deutsche Bank and others"
+					li.dashed_list__item
+						- trans "Thanks to the strategic partnership with CFH we provide our clients with Tier 1 Market Depth"
 				img.advantages__item__logo(src="{% static 'img/marketing-site/etc/logo--cfh-clearing.png' %}")
 
 
@@ -85,8 +86,9 @@ block content
 					| 05
 				h2.page_title.page_title--red.advantages__item__title
 					- trans "Direct execution of all the transactions via FIX-protocol*"
-				p
-					- trans "Market Execution and direct execution of all transactions via FIX-protocol enable us to open positions in a split of a second and give us an opportunity for multiple trading techniques depending on the execution speed."
+				ul.dashed_list
+					li.dashed_list__item
+						- trans "Market Execution and direct execution of all transactions via FIX-protocol enable us to open positions in a split of a second and give us an opportunity for multiple trading techniques depending on the execution speed"
 				p
 					- trans "*Financial Information eXchange (FIX) protocol is a messaging standard developed specifically for the real-time electronic exchange of securities transactions."
 				img.advantages__item__logo(src="{% static 'img/marketing-site/etc/logo--fix-protocol.png' %}")

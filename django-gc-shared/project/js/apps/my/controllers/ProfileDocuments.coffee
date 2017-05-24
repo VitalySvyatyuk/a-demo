@@ -65,6 +65,9 @@ app.controller "ProfileDocumentsController", ($location, $q, $scope, $upload, Us
         url: "/api/user_document/bulk_upload"
         data: data
       .success (data, status, headers, config) ->
+        if Object.keys(data).length == 0
+          alert('Choose atleast 1 document to be uploaded')
+          resolve()
         console.log("Docs Bulk Uploaded!")
         $scope.setGlobalLoading false
         if Object.keys($scope.errors).length == 0
