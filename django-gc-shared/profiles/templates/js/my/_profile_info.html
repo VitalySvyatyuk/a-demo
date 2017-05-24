@@ -374,10 +374,12 @@
               <div class="inputs">
                 <div class="select-wrapper">
                   <select
-                    required
+
                     ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
                     ng-model="user.profile.net_capital"
-                    ng-options="c.value as c.display_name for c in ::formData.profile.children.net_capital.choices">
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.net_capital.choices"
+                    required>
+
                   </select>
                 </div>
                 <div
@@ -396,10 +398,11 @@
               <div class="inputs">
                 <div class="select-wrapper">
                   <select
-                    required
+
                     ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
                     ng-model="user.profile.annual_income"
-                    ng-options="c.value as c.display_name for c in ::formData.profile.children.annual_income.choices">
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.annual_income.choices"
+                    required>
                   </select>
                 </div>
                 <div
@@ -420,10 +423,11 @@
               <div class="inputs">
                 <div class="select-wrapper">
                   <select
-                    required
+
                     ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
                     ng-model="user.profile.financial_commitments"
-                    ng-options="c.value as c.display_name for c in ::formData.profile.children.financial_commitments.choices">
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.financial_commitments.choices"
+                    required>
                   </select>
                 </div>
                 <div
@@ -459,10 +463,12 @@
             <div class="inputs">
               <div class="select-wrapper">
                   <select
-                    required
+                    ng-required="true"
+
                     ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
                     ng-model="user.profile.purpose"
-                    ng-options="c.value as c.display_name for c in ::formData.profile.children.purpose.choices">
+                    ng-options="c.value as c.display_name for c in ::formData.profile.children.purpose.choices"
+                    >
                   </select>
                 </div>
               <div
@@ -528,7 +534,7 @@
                     ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
                     ng-model="user.profile.source_of_funds">
 
-                    <option value="Income from professional activity">{% trans "Income from professional activity" %}</option>
+                    <option value="Income from professional activity" ng-selected="true">{% trans "Income from professional activity" %}</option>
 
                     <option value="Savings">{% trans "Savings" %}</option>
 
@@ -560,7 +566,7 @@
                     <label class="required" for="funds_spec">{% trans "Specify" %} </label>
                 </div>
                 <div class="inputs">
-                 <input id="funds_spec" ng-required="true" ng-model="user.profile.source_of_funds_spec">
+                 <input id="funds_spec" ng-required="true" ng-model="user.profile.source_of_funds_spec" required>
                 </div>
             </div>
 
@@ -572,11 +578,11 @@
               <div class="inputs">
                 <div class="select-wrapper">
                   <select
-                    required
+                    ng-required="true"
                     ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
                     ng-model="user.profile.nature_of_biz">
 
-                    <option value="Accountancy">{% trans "Accountancy" %}</option>
+                    <option value="Accountancy" ng-selected="true">{% trans "Accountancy" %}</option>
 
                     <option value="Admin/ secretarial">{% trans "Admin/ secretarial" %}</option>
 
@@ -649,10 +655,10 @@
               <div class="inputs">
                 <div class="select-wrapper">
                   <select
-                    required
+                    ng-required="true"
                     ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified"
                     ng-model="user.profile.education_level">
-                    <option value="High school">{% trans "High school" %}</option>
+                    <option value="High school" ng-selected="true">{% trans "High school" %}</option>
                     <option value="College">{% trans "College" %}</option>
                     <option value="University">{% trans "University" %}</option>
                     <option value="Other">{% trans "Other" %}</option>

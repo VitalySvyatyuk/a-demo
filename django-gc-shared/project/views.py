@@ -203,18 +203,19 @@ def inout(request):
 
 @maybe_ajax('marketing_site/pages/partnership.jade')
 def partnership(request):
+
     from callback_request.models import CallbackRequest
     if request.method == 'POST':
         form = CallbackRequest(phone_number=request.POST.get('phone'),
                                email=request.POST.get('email'),
                                name=request.POST.get('first_name'),
-                               internal_comment='User from site: {},\ncompany: {},\ncountry: {}\nwanna be official agent'
+                               internal_comment=u'User from site: {},\ncompany: {},\ncountry: {}\nwanna be official agent'
                                .format(request.POST.get('site'), request.POST.get('company'), request.POST.get('country'),)
                                )
         form.save()
         send_mail(
-            "Application for becoming official agent",
-            'User: {} from site: {},\ncompany: {},\ncountry: {}\nwant to become official agent\nEmail: {}\nPhone: {}'.
+            u"Application for becoming official agent",
+            u'User: {} from site: {},\ncompany: {},\ncountry: {}\nwant to become official agent\nEmail: {}\nPhone: {}'.
                 format(request.POST.get('first_name'), request.POST.get('site'),
                        request.POST.get('company'), request.POST.get('country'),
                        request.POST.get('email'), request.POST.get('phone')),

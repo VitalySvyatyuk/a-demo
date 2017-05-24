@@ -3,6 +3,8 @@ from datetime import timedelta
 from decimal import Decimal
 from socket import gethostbyname
 from hashlib import md5
+
+from payments.systems.bankusd import display_amount_usd
 from platforms.converter import convert_currency
 
 from shared.validators import email_re
@@ -16,7 +18,6 @@ from django.utils.translation import ugettext_lazy as _, get_language, string_co
 from currencies.currencies import USD
 from platforms.types import RealMicroAccountType
 from payments.systems import base
-from payments.systems.base import CommissionCalculationResult
 from payments.utils import build_absolute_uri
 
 from logging import getLogger
@@ -30,24 +31,23 @@ purse_regex = email_re
 purse_example = "mb.customer@grandcapital.net"
 currencies = ["USD"]
 
-# Password for the account above is: k02LVey6Ibv1ZmrU
-# Birth date: 11.05.1988
-
 display_amount = lazy(USD.display_amount, unicode)
 
 # https://www.moneybookers.com/app/help.pl?s=fees&fee_currency=USD
 transfer_details = {
     "deposit": {
-        "fee": "1.9% + $0.33",
-        "time": _("15 minutes"),
+        "fee": u"3.5% min $1",
+        "min_amount": display_amount_usd(10),
+        "time": _("Within day"),
         "max_sum_one_time": 1000,
         "currency": USD,
         "video_youtube_id" : "627vnG_jVFw",
     },
     "withdraw": {
-        "time": _("up to 3 days"),
+        "time": _("Within day"),
         "min_amount": display_amount(10),
-        "fee": u"1%",
+        "fee": u"1.5% max $35",
+        "currency": USD,
     }
 }
 
@@ -61,6 +61,7 @@ templates = {
 
 class DepositForm(base.DepositForm):
     action, auto = "https://www.moneybookers.com/app/payment.pl", True
+    MIN_AMOUNT = (10, 'USD')
 
     additional_parameters = {}
 
@@ -73,19 +74,6 @@ class DepositForm(base.DepositForm):
         self.fields["amount"].help_text = _("Amount of money to deposit in "
                                             "USD (at least 10 currency units)")
         del self.fields["purse"]
-
-    @classmethod
-    def _calculate_commission(cls, request, full_commission):
-        log.debug("Calculating commission")
-        if not full_commission:
-            commission = 0
-        else:
-            commission = (request.amount * Decimal("0.019")) + Decimal(convert_currency(0.33, "USD", request.currency)[0])
-        return CommissionCalculationResult(
-            amount=request.amount,
-            commission=commission,
-            currency=request.currency
-        )
 
     def mutate(self):
         log.debug("Mutating form")
@@ -213,6 +201,7 @@ class WithdrawForm(base.WithdrawForm):
         "\n\n",
         _("Please fill out the form to request withdrawal of funds")
     )
+    MIN_AMOUNT = (10, 'USD')
 
     def __init__(self, *args, **kwargs):
         super(WithdrawForm, self).__init__(*args, **kwargs)
@@ -221,11 +210,3 @@ class WithdrawForm(base.WithdrawForm):
         # only one withdraw currency allowed (web-development-2759)
         return 1 if account.group == RealMicroAccountType else 10, 'USD'
 
-    @classmethod
-    def _calculate_commission(cls, request):
-        c = min(Decimal("0.68"), request.amount/100)
-        return CommissionCalculationResult(
-            amount=request.amount,
-            commission=c,
-            currency=request.currency
-        )

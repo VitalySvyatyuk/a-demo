@@ -21,9 +21,9 @@ def callback_request(request):
         time_of_day = form.cleaned_data.get('time_of_day')
 
         send_mail(
-            "Application for callback recieved",
-            'Name: {} requestes callback\nQuestion category: {},\nSuit time: {} - {} ({})\n'
-            'Phone: {}\nUser comment: {}'.
+            u"Application for callback recieved",
+            u'Name: {} requestes callback\nQuestion category: {},\nSuit time: {} - {} ({})\n'
+            u'Phone: {}\nUser comment: {}'.
                 format(name, category, time_start, time_end, time_of_day, phone_number, comment),
             settings.SERVER_EMAIL,
             settings.MANAGERS[0]  # Which means support email

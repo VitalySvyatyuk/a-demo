@@ -10,6 +10,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from currencies.currencies import decimal_round
 from payments.systems import base
+from payments.systems.bankusd import display_amount_usd
 from payments.systems.base import CommissionCalculationResult
 
 name = _("Neteller")
@@ -20,12 +21,14 @@ mt4_payment_slug = "NETELLER"
 
 transfer_details = {
     "deposit": {
-        "fee": "4%",
-        "time": _("15 minutes"),
+        "fee": "3.5% min $1",
+        "time": _("Within day"),
+        "min_amount": display_amount_usd(10),
     },
     "withdraw": {
         "time": _("up to 3 days"),
-        "fee": _("2%, but not less than $1"),
+        "fee": _("Within day"),
+        "min_amount": display_amount_usd(10),
     }
 }
 
@@ -47,6 +50,7 @@ class DepositForm(base.DepositForm):
     bill_address = "https://test.api.neteller.com/v1/transferIn"
     get_token_url = "https://test.api.neteller.com/v1/oauth2/token?grant_type=client_credentials"
     commission_rate = Decimal("0.04")
+    MIN_AMOUNT = (10, 'USD')
 
     @classmethod
     def is_automatic(cls, instance):
@@ -152,18 +156,5 @@ class DetailsForm(base.DetailsForm):
 
 
 class WithdrawForm(base.WithdrawForm):
-    MIN_AMOUNT = (1, 'USD')
+    MIN_AMOUNT = (10, 'USD')
 
-    @classmethod
-    def _calculate_commission(cls, request):
-        from platforms.converter import convert_currency
-        from profiles.models import UserProfile
-
-
-        minimal_commission = Decimal("%.2f" % convert_currency(1, "USD", request.currency)[0])
-        c = max((request.amount * 2) / 100, minimal_commission)
-        return CommissionCalculationResult(
-            amount=request.amount,
-            commission=c,
-            currency=request.currency
-        )

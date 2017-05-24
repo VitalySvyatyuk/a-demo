@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 import payments.systems.accentpay
 import payments.systems.bankbase
+from payments.systems.bankusd import display_amount_usd
 from payments.systems.base import CommissionCalculationResult
 from payments.systems import base
 
@@ -17,14 +18,16 @@ currencies = ['USD']
 
 transfer_details = {
     "deposit": {
-        "fee": u"3%",
+        "fee": u"3.5% min $0.53",
         "fee_large_deposit": u"3%",
-        "time": _("15 minutes"),
+        "min_amount": display_amount_usd(10),
+        "time": _("Within day"),
     },
     "withdraw": {
-        "fee": u"3%",
+        "fee": u"2.5%",
         "fee_large_deposit": u"3%",
-        "time": _("15 minutes"),
+        "min_amount": display_amount_usd(10),
+        "time": _("Within day"),
     }
 }
 
@@ -36,19 +39,10 @@ templates = {
 
 class DepositForm(payments.systems.accentpay.DepositForm):
     action, auto = "https://terminal-sandbox.ecommpay.com/", True
-    commission_rate = Decimal("0.03")
+    commission_rate = Decimal("0.035")
+    MIN_AMOUNT = (10, 'USD')
     payment_group_id = "16"
     with_phone = False
-
-    @classmethod
-    def _calculate_commission(cls, request, full_commission):
-        commission = request.amount * cls.commission_rate
-        return CommissionCalculationResult(
-            amount=request.amount,
-            commission=commission,
-            currency=request.currency
-        )
-
 
 class DetailsForm(base.DetailsForm):
 
@@ -58,4 +52,5 @@ class DetailsForm(base.DetailsForm):
 
 
 class WithdrawForm(base.WithdrawForm):
-    pass
+    MIN_AMOUNT = (10, 'USD')
+

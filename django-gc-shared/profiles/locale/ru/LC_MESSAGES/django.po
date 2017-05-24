@@ -388,7 +388,7 @@ msgid "Can open ECN.Invest accounts"
 msgstr "Может открывать ECN.Invest аккаунты"
 
 msgid "Email is verified"
-msgstr ""
+msgstr "Email подтвержден"
 
 msgid "User profile"
 msgstr "Профиль пользователя"

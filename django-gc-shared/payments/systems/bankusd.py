@@ -20,12 +20,13 @@ display_amount_usd = lazy(USD.display_amount, unicode)
 transfer_details = {
     "deposit": {
         "fee": _("depends on the originating bank"),
+        "min_amount": display_amount_usd(500),
         "time": _("3 to 5 days"),
         "video_youtube_id": "fMnV1iT2Z30",
     },
     "withdraw": {
         "time": _("3 to 5 days"),
-        "min_amount": display_amount_usd(200),
+        "min_amount": display_amount_usd(100),
         "fee": display_amount_usd(40),
         "video_youtube_id": "_bLe5C3KNtY",
     }
@@ -47,6 +48,8 @@ class DepositForm(bankbase.DepositForm, FormWithTranslitedName):
         "\n\n",
         _("Please fill out the form to request deposit of funds")
     )
+
+    MIN_AMOUNT = (500, 'USD')
 
     def __init__(self, *args, **kwargs):
         super(DepositForm, self).__init__(*args, **kwargs)
@@ -102,20 +105,4 @@ class WithdrawForm(bankbase.WithdrawForm):
     )
 
     MIN_AMOUNT = (100, 'USD')
-
-    @classmethod
-    def _calculate_commission(cls, request):
-        from decimal import Decimal
-        from platforms.converter import convert_currency
-
-        commission = 40
-
-        commission = Decimal(convert_currency(commission, from_currency=USD, to_currency=request.currency,
-                                              for_date=request.creation_ts)[0])
-
-        return CommissionCalculationResult(
-            amount=request.amount,
-            commission=commission,
-            currency=request.currency
-        )
 
