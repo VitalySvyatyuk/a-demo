@@ -92,6 +92,9 @@ def operation_result(request, object_id=None):
         request.POST.get("orderRef", "grand_")[6:] or  # paymentasia
         request.POST.get("external_id")  # accentpay
     )
+
+
+
     log.info("Payment object id is %s" % object_id)
 
     if not object_id:
@@ -138,6 +141,13 @@ def operation_result(request, object_id=None):
         log.critical("execute() not implemented for %s method",
                      instance.payment_system)
         return HttpResponse(status=501)  # Not implemented.
+
+    transaction_id = request.POST.get('transaction_id')
+
+
+    if transaction_id is not None:
+        log.info("transaction_id  is {}".format(transaction_id))
+        instance.transaction_id = transaction_id
 
     log.info("Executing payment form")
 

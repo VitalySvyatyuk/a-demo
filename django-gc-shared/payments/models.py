@@ -260,6 +260,8 @@ class DepositRequest(BaseRequest):
     account = models.ForeignKey(TradingAccount, verbose_name=_("Account"), related_name="depositrequest",
                                 help_text=_("Select one of your accounts"), null=True)
 
+    transaction_id = models.CharField(_("Transaction id"), max_length=50, blank=True, null=True)
+
     objects = DepositRequestQueryset.as_manager()
 
     class Meta:
@@ -726,6 +728,8 @@ class WithdrawRequest(BaseRequest):
     reason = models.CharField(_("Reason of withdrawal"), choices=REASONS_TO_WITHDRAWAL.iteritems(),
                               help_text=_("Choose the reason of withdrawal"), blank=True, null=True,
                               max_length=50)
+    last_transaction_id = models.CharField(_("Last transaction id on this account"),
+                               blank=True, null=True, max_length=127)
 
     group = models.ForeignKey(WithdrawRequestsGroup, verbose_name=_("Withdraw Requests Group"), related_name="requests", null=True)
     is_ready_for_payment = models.BooleanField(_("Is ready for payout"), default=False)

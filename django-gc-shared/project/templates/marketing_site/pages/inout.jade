@@ -43,6 +43,9 @@ block content
 								- trans "Minimum deposit"
 						th.strategies__cell.strategies__cell_header
 							span.strategies__cell__title
+								- trans "Commission on deposit"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
 								- trans "Minimum commission"
 						th.strategies__cell.strategies__cell_header
 							span.strategies__cell__title
@@ -54,7 +57,7 @@ block content
 					- regroup deposit_systems|dictsortreversed:"category.priority" by category as deposit_groups
 					for group in deposit_groups
 						tr.strategies__row.strategies__title_row
-							td.strategies__cell.strategies__big_cell(colspan="7")
+							td.strategies__cell.strategies__big_cell(colspan="8")
 								span.strategies__big_cell_title= group.grouper
 						for system in group.list
 							tr.strategies__row.strategies__content_row.js-pseudolink(data-href="/account/trading")
@@ -69,6 +72,9 @@ block content
 									span.strategies__cell__text= system.processing_times|default:""
 								td.strategies__cell
 									span.strategies__cell__text= system.min_amount|default:"0"
+
+								td.strategies__cell
+									span.strategies__cell__text= system.commission|default:"0"
 
 								td.strategies__cell
 									span.strategies__cell__text= system.min_commission|default:"No"

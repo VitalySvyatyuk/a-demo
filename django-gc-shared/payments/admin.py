@@ -85,7 +85,7 @@ class DepositRequestAdmin(BaseAdmin):
     fieldsets = (
         (_("General"), {
            "fields": ( "account_with_link", "purse", "payment_system",
-                       "amount_with_currency", "creation_ts")
+                       "amount_with_currency", "creation_ts", 'transaction_id')
         }),
         (_("Details"), {
             "fields": ("get_params", )
@@ -164,7 +164,7 @@ class WithdrawRequestAdmin(BaseAdmin):
              ]
 
     actions = [mark_success]
-    list_display = ("id", "account_with_link", "payment_system_clickable",
+    list_display = ("id", "account_with_link", "payment_system_clickable", 'last_transaction_id',
                     "amount_with_currency", "creation_ts", "is_payed", "is_committed",
                     "public_comment", "private_comment")
 
@@ -176,14 +176,14 @@ class WithdrawRequestAdmin(BaseAdmin):
     search_fields = ('id', 'old_id', 'creation_ts', 'account__mt4_id', 'params',
                      'account__user__email', 'account__user__first_name',
                      'account__user__last_name')
-    readonly_fields = ("id", "account_with_link", "trade_with_link", "amount_with_currency",
+    readonly_fields = ("id", "account_with_link", "trade_with_link", "amount_with_currency", 'last_transaction_id',
                        "creation_ts",
                        "payment_system", "get_params", "reason")
 
     fieldsets = (
         (_("General"), {
             "fields": ("account_with_link", "payment_system",
-                       "amount_with_currency", "creation_ts", "reason")
+                       "amount_with_currency", "creation_ts", 'last_transaction_id', "reason")
         }),
         (_("Details"), {
             "fields": ("get_params", )

@@ -502,7 +502,7 @@ class WithdrawForm(BaseForm):
                                               "currency": withdraw_limit.currency.slug}]
         except:
             self._errors["account"] = [_('Cannot determine the account balance. Try again later or contact support')]
-
+        # self.cleaned_data['last_transaction_id'] = 'sadfdsafsf'
         return self.cleaned_data
 
     @classmethod
@@ -524,7 +524,10 @@ class WithdrawForm(BaseForm):
         return cls._calculate_commission(request)
 
     def save(self, *args, **kwargs):
+
         res = super(WithdrawForm, self).save(*args, **kwargs)
+        last_deposit = DepositRequest.objects.filter(account=res.account).order_by('-creation_ts', )[0]
+        res.last_transaction_id = last_deposit.transaction_id
 
         Logger(user=self.request.user, ip=self.request.META["REMOTE_ADDR"],
                event=Events.WITHDRAW_REQUEST_CREATED, content_object=res).save()
