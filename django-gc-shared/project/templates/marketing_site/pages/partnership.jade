@@ -20,37 +20,37 @@ block content
 					- breadcrumbs
 					h1.page_head__title.page_head__title--white
 						- trans "Partnership programmes"
-			.tabs__box.partnership_ib_tabs__box
-				button.tabs__button.js-tab.state-active-tab(type="button", data-tab-index="01_partnership_info", data-tab-category="partnership_info")
-					.tabs__button__text_box
-						span.tabs__button__text
-							- trans "IB (Introducing broker)"
-				button.tabs__button.js-tab(type="button", data-tab-index="02_partnership_info", data-tab-category="partnership_info")
-					.tabs__button__text_box
-						span.tabs__button__text
-							- trans "Official agent"
+			//- .tabs__box.partnership_ib_tabs__box
+				//- button.tabs__button.js-tab.state-active-tab(type="button", data-tab-index="01_partnership_info", data-tab-category="partnership_info")
+				//- 	.tabs__button__text_box
+				//- 		span.tabs__button__text
+				//- 			- trans "IB (Introducing broker)"
+				//- button.tabs__button.js-tab(type="button", data-tab-index="02_partnership_info", data-tab-category="partnership_info")
+				//- 	.tabs__button__text_box
+				//- 		span.tabs__button__text
+				//- 			- trans "Official agent"
 
 
 	.partnership-page
-		.container.cover.js-tab-content.state-visible(style="background-image: url({% static 'img/marketing-site/bg/bg--young-man.jpg' %})", data-tab-index="01_partnership_info", data-tab-category="partnership_info")
-			.row
-				.col-xs-12.col-md-6.cover__col
-					h2.cover__title.page_title.page_title--red
-						- trans "IB (Introducing broker)"
-					p
-						- trans "The programme suits website owners, bloggers, analysts, opinion leaders and other persons interested in attracting clients with no investment and receive agent commission."
-					ul.dashed_list
-						li.dashed_list__item
-							- trans "Quick start (1 day)"
-						li.dashed_list__item
-							- trans "No investment required"
-						li.dashed_list__item
-							- trans "Information support from the company"
-					a.cover__button.button.button--big-on-mobiles.button--outline(href=if_partner_link,  data-popup-target=if_data, class=if_class)
-						span.button__text
-							- trans "Become an IB"
+		//- .container.cover.js-tab-content.state-visible(style="background-image: url({% static 'img/marketing-site/bg/bg--young-man.jpg' %})", data-tab-index="01_partnership_info", data-tab-category="partnership_info")
+		//- 	.row
+		//- 		.col-xs-12.col-md-6.cover__col
+		//- 			h2.cover__title.page_title.page_title--red
+		//- 				- trans "IB (Introducing broker)"
+		//- 			p
+		//- 				- trans "The programme suits website owners, bloggers, analysts, opinion leaders and other persons interested in attracting clients with no investment and receive agent commission."
+		//- 			ul.dashed_list
+		//- 				li.dashed_list__item
+		//- 					- trans "Quick start (1 day)"
+		//- 				li.dashed_list__item
+		//- 					- trans "No investment required"
+		//- 				li.dashed_list__item
+		//- 					- trans "Information support from the company"
+		//- 			a.cover__button.button.button--big-on-mobiles.button--outline(href=if_partner_link,  data-popup-target=if_data, class=if_class)
+		//- 				span.button__text
+		//- 					- trans "Become an IB"
 
-		.container.cover.js-tab-content(style="background-image: url({% static 'img/marketing-site/bg/bg--partner-official.png' %})", data-tab-index="02_partnership_info", data-tab-category="partnership_info")
+		.container.cover.js-tab-content(style="display:block;background-image: url({% static 'img/marketing-site/bg/bg--partner-official.png' %})", data-tab-index="02_partnership_info", data-tab-category="partnership_info")
 			.row
 				.col-xs-12.col-md-6.cover__col
 					h2.cover__title.page_title.page_title--red
@@ -69,32 +69,32 @@ block content
 							- trans "Become an official agent"
 
 
-		.partnership_ib_info_box.container.js-tab-content.state-visible(data-tab-index="01_partnership_info", data-tab-category="partnership_info")
-			h2.page_title.page_title--red
-				- trans "Remuneration conditions for an IB"
-			.row
-				.col-xs-12.col-lg-6
-					h3.subtitle.subtitle--red
-						- trans "Standard" context "partnership-title"
-					p
-						- trans "40&#37; from ECN-fees on ECN.MT and ECN.PRO accounts"
-					p.partnership_ib_info_mid_paragraph
-						- trans "25&#37; from the spread on ECN.Invest accounts"
-					h3.subtitle.subtitle--red
-						- trans "Personal" context "partnership-title"
-					p.partnership_ib_info_last_paragraph
-						- trans "If you have a chance to attract a large number of clients we can offer individual remuneration conditions. Please make an application below."
-				.col-xs-12.col-lg-6
-					p
-					ul.dashed_list
-						li.dashed_list__item
-							- trans "Attract at least 5 clients per quarter"
-						li.dashed_list__item
-							- trans "Provide prospective clients with verified and true information"
-						li.dashed_list__item
-							- trans "SPAM and other unacceptable methods of attraction are prohibited"
+		//- .partnership_ib_info_box.container.js-tab-content.state-visible(data-tab-index="01_partnership_info", data-tab-category="partnership_info")
+		//- 	h2.page_title.page_title--red
+		//- 		- trans "Remuneration conditions for an IB"
+		//- 	.row
+		//- 		.col-xs-12.col-lg-6
+		//- 			h3.subtitle.subtitle--red
+		//- 				- trans "Standard" context "partnership-title"
+		//- 			p
+		//- 				- trans "40&#37; from ECN-fees on ECN.MT and ECN.PRO accounts"
+		//- 			p.partnership_ib_info_mid_paragraph
+		//- 				- trans "25&#37; from the spread on ECN.Invest accounts"
+		//- 			h3.subtitle.subtitle--red
+		//- 				- trans "Personal" context "partnership-title"
+		//- 			p.partnership_ib_info_last_paragraph
+		//- 				- trans "If you have a chance to attract a large number of clients we can offer individual remuneration conditions. Please make an application below."
+		//- 		.col-xs-12.col-lg-6
+		//- 			p
+		//- 			ul.dashed_list
+		//- 				li.dashed_list__item
+		//- 					- trans "Attract at least 5 clients per quarter"
+		//- 				li.dashed_list__item
+		//- 					- trans "Provide prospective clients with verified and true information"
+		//- 				li.dashed_list__item
+		//- 					- trans "SPAM and other unacceptable methods of attraction are prohibited"
 
-		.partnership_ib_info_box.container.js-tab-content(data-tab-index="02_partnership_info", data-tab-category="partnership_info")
+		.partnership_ib_info_box.container.js-tab-content(data-tab-index="02_partnership_info", data-tab-category="partnership_info", style="display:block;")
 			h2.page_title.page_title--red
 				- trans "Personal" context 'ib_conditions'
 			.row
@@ -112,43 +112,43 @@ block content
 							- trans "Permanent cooperation basis"
 
 
-		.call_to_action_pageblock.howto.js-tab-content.state-visible(data-tab-index="01_partnership_info", data-tab-category="partnership_info", style="background-image: url({% static 'img/marketing-site/bg/bg--partnership.jpg' %})")
-			.container.call_to_action__container.cancel-position-for-btn
-				span.howto-header
-					- trans "How to be an IB"
-				ul.numbered-steps
-					li.col-md-3.step
-						span.number 01
-						span.text
-						- trans "Sign up for your Account"
-					li.col-md-3.step
-						span.number 02
-						span.text
-						- trans "Get a reference link to a partner’s office "
-					li.col-md-3.step
-						span.number 03
-						span.text
-						- trans "Start attracting clients"
-					li.col-md-3.step
-						span.number 04
-						span.text
-							- trans "Your remuneration will be paid to the Partner account. Withdrawal of funds from the partner account shall be activated upon attraction of at least 5 clients with real deposits"
-				.apps__links_box
-					{% if LANGUAGE_CODE == 'ru' %}
-					div.risk-hidden-ru
-						a.apps__link.button(href=if_link,  data-popup-target=if_data, class=if_class)
-							span.button__text
-								- trans "Fast registration button"
-					{% else %}
-					div.risk-hidden-en
-						a.apps__link.button(href=if_link,  data-popup-target=if_data, class=if_class)
-							span.button__text
-								- trans "Fast registration button"
-					{% endif %}
+		//- .call_to_action_pageblock.howto.js-tab-content.state-visible(data-tab-index="01_partnership_info", data-tab-category="partnership_info", style="background-image: url({% static 'img/marketing-site/bg/bg--partnership.jpg' %})")
+		//- 	.container.call_to_action__container.cancel-position-for-btn
+		//- 		span.howto-header
+		//- 			- trans "How to be an IB"
+		//- 		ul.numbered-steps
+		//- 			li.col-md-3.step
+		//- 				span.number 01
+		//- 				span.text
+		//- 				- trans "Sign up for your Account"
+		//- 			li.col-md-3.step
+		//- 				span.number 02
+		//- 				span.text
+		//- 				- trans "Get a reference link to a partner’s office "
+		//- 			li.col-md-3.step
+		//- 				span.number 03
+		//- 				span.text
+		//- 				- trans "Start attracting clients"
+		//- 			li.col-md-3.step
+		//- 				span.number 04
+		//- 				span.text
+		//- 					- trans "Your remuneration will be paid to the Partner account. Withdrawal of funds from the partner account shall be activated upon attraction of at least 5 clients with real deposits"
+		//- 		.apps__links_box
+		//- 			{% if LANGUAGE_CODE == 'ru' %}
+		//- 			div.risk-hidden-ru
+		//- 				a.apps__link.button(href=if_link,  data-popup-target=if_data, class=if_class)
+		//- 					span.button__text
+		//- 						- trans "Fast registration button"
+		//- 			{% else %}
+		//- 			div.risk-hidden-en
+		//- 				a.apps__link.button(href=if_link,  data-popup-target=if_data, class=if_class)
+		//- 					span.button__text
+		//- 						- trans "Fast registration button"
+		//- 			{% endif %}
 					//- a.apps__link.download-icon(href="{% url 'legal_documentation' %}"): span
 					//- 	- trans "Partnership programme regulations (pdf)"
 
-		#partnership-form-scroll-to.call_to_action_pageblock.howto.js-tab-content(data-tab-index="02_partnership_info", data-tab-category="partnership_info", style="background-image: url({% static 'img/marketing-site/bg/bg--partnership.jpg' %})")
+		#partnership-form-scroll-to.call_to_action_pageblock.howto.js-tab-content(data-tab-index="02_partnership_info", data-tab-category="partnership_info", style="display:block;background-image: url({% static 'img/marketing-site/bg/bg--partnership.jpg' %})")
 			.container.call_to_action__container
 				span.howto-header
 					- trans "How to be an official agent"

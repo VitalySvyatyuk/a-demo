@@ -2,15 +2,17 @@
 from collections import OrderedDict
 from datetime import date
 from itertools import imap
+from datetime import datetime
 
 import pytz
 from django.conf import settings
+from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils.html import format_html
 from django.utils.translation import ugettext_lazy as _
-from django_hstore.hstore import DictionaryField as HStoreField
 from jsonfield import JSONField
+from django_hstore.hstore import DictionaryField as HStoreField
 
 from geobase.models import Country
 from geobase.phone_code_widget import CountryPhoneCodeField
@@ -21,6 +23,7 @@ from platforms.models import AbstractTrade, TradingAccount
 from project.validators import allow_file_extensions, allow_file_size
 from shared.models import StateSavingModel
 from shared.utils import upload_to
+
 
 GROUPS = (
     (1, "Portfolio management"),
@@ -640,7 +643,7 @@ DOCUMENTS = OrderedDict([
     (DOCUMENT_TYPES.CREDIT_CARD_BACK, _('Credit card back side')),
     (DOCUMENT_TYPES.CREDIT_CARD_FRONT, _('Credit card front side')),
     (DOCUMENT_TYPES.IB_AGREEMENT, _('Real IB agreement')),
-    (DOCUMENT_TYPES.PM_AGREEMENT, _('PM Agreement')),
+    (DOCUMENT_TYPES.PM_AGREEMENT, _('PM agreement')),
     (DOCUMENT_TYPES.OTHER, _(u'Other document')),
 ])
 

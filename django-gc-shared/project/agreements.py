@@ -24,6 +24,12 @@ AGREEMENTS = {
         "default": '/static/agreements/Regulation_of_Trades.pdf',
         "order": 60,
     },
+    'pm_agreement': {
+        "label": _('PM Agreement'),
+
+        "default": '/static/agreements/PM_Agreement.pdf',
+        "order": 60,
+    },
 
     ###
     # REAL IB
