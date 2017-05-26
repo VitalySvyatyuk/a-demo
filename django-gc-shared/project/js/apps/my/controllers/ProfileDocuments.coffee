@@ -54,6 +54,7 @@ app.controller "ProfileDocumentsController", ($location, $q, $scope, $upload, Us
 
   $scope.bulk_upload = ->
     $scope.setGlobalLoading true
+    $scope.errors = {}
     data = {}
     Object.keys($scope.files).forEach((name) -> 
       data[name] = $scope.files[name][0]
@@ -66,8 +67,9 @@ app.controller "ProfileDocumentsController", ($location, $q, $scope, $upload, Us
         data: data
       .success (data, status, headers, config) ->
         if Object.keys(data).length == 0
-          alert('Choose atleast 1 document to be uploaded')
-          resolve()
+          $scope.errors["all"] = 'Upload at least 1 document'
+          $scope.setGlobalLoading false
+          return
         console.log("Docs Bulk Uploaded!")
         $scope.setGlobalLoading false
         if Object.keys($scope.errors).length == 0

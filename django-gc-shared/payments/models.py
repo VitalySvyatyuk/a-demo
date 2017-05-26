@@ -963,6 +963,11 @@ class PaymentMethod(models.Model):
                                   max_length=150,
                                   blank=True,
                                   default="")
+
+    max_commission = models.CharField(_("Max commision"), max_length=150, blank=True, default="")
+
+    min_commission = models.CharField(_("Min commision"), max_length=150, blank=True, default="")
+
     processing_times = models.CharField(_("Processing times"),
                                         max_length=150,
                                         blank=True,

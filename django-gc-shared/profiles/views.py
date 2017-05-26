@@ -340,8 +340,6 @@ def verify_document(request, issue_id):
                 issue.save()
                 log_change(request, issue, u"Документы ожидающие проверку ОТКЛОНЕНЫ (в совокупности)")
             notification.send([issue.author], 'documen_rejected', extra_context={'reject_message' : comment})
-            # This magnificent hack means we drop user status to 0 which means Questionnaire didnt fill enough
-            UserProfile.objects.filter(user=issue.author).update(nationality=None)
             issue.author.profile.make_documents_invalid()
         return redirect("admin:issuetracker_checkdocumentissue_changelist")
 
@@ -401,16 +399,11 @@ def switch_documents_status(request, profile_id):
             messages.add_message(request, messages.ERROR, u"{} must upload atleast 1 document to mark it's as verified".format(profile))
             return redirect('admin:profiles_userprofile_change', profile.id)
         if profile.status == UserProfile.VERIFIED:
-            # This magnificent hack means we drop user status to 0 which means Questionnaire didnt fill enough
-            UserProfile.objects.filter(user=profile.user.id).update(nationality=None)
+
             profile.make_documents_invalid()
             notification.send([profile.user], 'documen_rejected', extra_context={'reject_message': reject_commentary})
             messages.add_message(request, messages.SUCCESS, format_html(u"{} is <b>un</b>verified now".format(profile)))
         else:
-            # again magnificent hack we must fill questinary which dropped when we rejected documents
-            # otherwise if nationality field is empty user will have status 0 which means questinary didnt fill enough
-            if not profile.nationality:
-                UserProfile.objects.filter(user=profile.user.id).update(nationality_id=profile.country_id)
             profile.make_documents_valid()
             notification.send([profile.user], 'document_verified')
             messages.add_message(request, messages.SUCCESS, format_html(u"{} is <b>verified</b> now".format(profile)))

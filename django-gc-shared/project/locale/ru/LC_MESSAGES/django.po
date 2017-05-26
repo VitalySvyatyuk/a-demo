@@ -19,6 +19,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
+
+msgid "Minimum commission"
+msgstr "Минимальная комисия"
+
+msgid "Maximum commission"
+msgstr "Максимальная комисия"
+
 msgid "Client agreement"
 msgstr "Клиентское соглашение"
 
@@ -376,7 +383,7 @@ msgid "Only for closing"
 msgstr "Только закрытие"
 
 msgid "No"
-msgstr ""
+msgstr "Нет"
 
 msgid "Trading Times"
 msgstr "Время проведения торгов"

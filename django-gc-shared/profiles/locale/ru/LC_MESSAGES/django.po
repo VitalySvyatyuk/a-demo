@@ -19,6 +19,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
+msgid "Upload at least 1 document"
+msgstr "Загрузите по крайней мере 1 документ"
+
 msgid "Personal"
 msgstr "Личные данные"
 

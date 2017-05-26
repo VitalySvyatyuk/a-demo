@@ -1,26 +1,24 @@
 # -*- coding: utf-8 -*-
 from datetime import timedelta
 from decimal import Decimal
-from socket import gethostbyname
 from hashlib import md5
+from logging import getLogger
+from socket import gethostbyname
 
-from payments.systems.bankusd import display_amount_usd
-from platforms.converter import convert_currency
-
-from shared.validators import email_re
-from django.core.validators import MinValueValidator
-from django.core.urlresolvers import reverse
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.utils.functional import lazy
 from django.utils.translation import ugettext_lazy as _, get_language, string_concat
 
 from currencies.currencies import USD
-from platforms.types import RealMicroAccountType
 from payments.systems import base
+from payments.systems.bankusd import display_amount_usd
+from payments.systems.base import CommissionCalculationResult
 from payments.utils import build_absolute_uri
+from platforms.types import RealMicroAccountType
+from shared.validators import email_re
 
-from logging import getLogger
 log = getLogger(__name__)
 
 name = _("Skrill")
@@ -62,6 +60,7 @@ templates = {
 class DepositForm(base.DepositForm):
     action, auto = "https://www.moneybookers.com/app/payment.pl", True
     MIN_AMOUNT = (10, 'USD')
+    commission_rate = Decimal("0.035")
 
     additional_parameters = {}
 
@@ -69,11 +68,19 @@ class DepositForm(base.DepositForm):
         super(DepositForm, self).__init__(*args, **kwargs)
         log.debug("Deposit Form init")
 
-        # Forcing a minimum of 10 currency units for withdrawal.
-        self.fields["amount"].validators = [MinValueValidator(10)]
-        self.fields["amount"].help_text = _("Amount of money to deposit in "
-                                            "USD (at least 10 currency units)")
+        self.fields["amount"].help_text = _("Amount of money to deposit in ")
         del self.fields["purse"]
+
+    @classmethod
+    def _calculate_commission(cls, request, full_commission=False):
+        commission = request.amount * cls.commission_rate
+        min_comm = Decimal("1")
+        commission = max(min_comm, commission)
+        return CommissionCalculationResult(
+            amount=request.amount,
+            commission=commission,
+            currency=request.currency
+        )
 
     def mutate(self):
         log.debug("Mutating form")
@@ -202,6 +209,7 @@ class WithdrawForm(base.WithdrawForm):
         _("Please fill out the form to request withdrawal of funds")
     )
     MIN_AMOUNT = (10, 'USD')
+    commission_rate = Decimal("0.015")
 
     def __init__(self, *args, **kwargs):
         super(WithdrawForm, self).__init__(*args, **kwargs)
@@ -210,3 +218,13 @@ class WithdrawForm(base.WithdrawForm):
         # only one withdraw currency allowed (web-development-2759)
         return 1 if account.group == RealMicroAccountType else 10, 'USD'
 
+    @classmethod
+    def _calculate_commission(cls, request, full_commission=False):
+        commission = request.amount * cls.commission_rate
+        max_comm = Decimal("35")
+        commission = min(max_comm, commission)
+        return CommissionCalculationResult(
+            amount=request.amount,
+            commission=commission,
+            currency=request.currency
+        )

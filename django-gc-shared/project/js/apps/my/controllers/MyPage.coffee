@@ -8,8 +8,13 @@ app.controller "MyPageController",
 
   $rootScope.registrationCompleteLink = () ->
       if $rootScope.user.profile
+        if $rootScope.user.profile.status_info.sended_docs && $rootScope.user.profile.status_info.code !=3
+          index = 1
+        else
+          index = $rootScope.user.profile.status_info.code
+
         ['registration/info',
-         'registration/documents'][$rootScope.user.profile.status_info.code]
+         'registration/documents'][index]
 
   $rootScope.registrationRedirectDone = false
   $rootScope.redirectUser = () ->

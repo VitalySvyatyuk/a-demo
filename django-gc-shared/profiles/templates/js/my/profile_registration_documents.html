@@ -57,6 +57,11 @@
             </form>
           <!--<a class="button medium offset-top-40" ng-href="[[::BASE_URL]]create">{% trans "Go to account opening" %}</a>-->
             <br><br>
+            <div
+                  ng-if="errors.all"
+                  class="error">
+                {% trans 'Upload at least 1 document' %}
+                </div>
 
         <span ng-if="!user.profile.status_info.verified" class="form-error reg-error">
             {% trans "You will be able to open a real accounts after your documents are verified. Now you can <a href='[[::BASE_URL]]create'>open Demo accounts only.</a>" %}

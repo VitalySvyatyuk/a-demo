@@ -332,6 +332,11 @@ class UserProfile(StateSavingModel):
                            'net_capital', 'annual_income']
         complete_profile = all(getattr(self, f) for f in required_fields) and self.email_verified
 
+        user_documents = UserDocument.objects.filter(user=self.user).values_list('is_rejected')
+
+    
+        if user_documents and all([i[0] for i in user_documents]):
+            return self.INCOMPLETE
         if complete_profile:
             if self.has_valid_documents():
                 return self.VERIFIED
@@ -367,6 +372,8 @@ class UserProfile(StateSavingModel):
         '''
         self.make_valid('first_name')
         self.make_valid('last_name')
+        # # Make all documents sent by user not rejected
+        # UserDocument.objects.filter(user=self.user).update(is_rejected=False)
 
     def make_documents_invalid(self, *document_types):
         '''

@@ -37,7 +37,9 @@ class UserProfileSerializer(serializers.ModelSerializer):
     @staticmethod
     def can_change_profile_data(obj):
         """ Return true if we allowing user to change his personal data"""
-        return True if obj.status >= UserProfile.NO_DOCUMENTS else False
+
+        return obj.status < UserProfile.NO_DOCUMENTS and not UserDocument.objects.filter(user=obj.user).exists()
+
 
     def get_otp_type(self, obj):
         if obj.otp_device:
@@ -46,7 +48,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     def get_status_info(self, obj):
         return {"code": obj.status, "display": obj.STATUSES[obj.status],
                 "verified": True if obj.status == UserProfile.VERIFIED else False,
-                "sended_docs": UserProfileSerializer.can_change_profile_data(obj)
+                "sended_docs": not UserProfileSerializer.can_change_profile_data(obj)
                 }
 
     def validate_phone_mobile(self, value):
@@ -190,7 +192,7 @@ class UserSerializer(serializers.ModelSerializer):
         # req = self.context['request']
         profile = UserProfile.objects.get(user__username=self.instance.username)
 
-        if UserProfileSerializer.can_change_profile_data(profile):
+        if not UserProfileSerializer.can_change_profile_data(profile):
             raise serializers.ValidationError('Sorry we cant let you change your personal data now, '
                                               'complete the regitration process or contact with support')
         for f, v in attrs.iteritems():

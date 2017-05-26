@@ -24,10 +24,10 @@ from currencies import currencies
 from geobase.models import Country
 from geobase.phone_code_widget import CountryPhoneCodeFormField
 from log.models import Logger, Events
-from platforms.converter import convert_currency
-from platforms.models import TradingAccount
 from payments.models import UserRequisit, DepositRequest, WithdrawRequest, WithdrawRequestsGroup
 from payments.utils import PaymentSystemProxy, load_payment_system
+from platforms.converter import convert_currency
+from platforms.models import TradingAccount
 from shared.translify import translify
 from shared.werkzeug_utils import cached_property
 
@@ -187,6 +187,7 @@ class DepositForm(BaseForm):
 
     # Override this and set (AMOUNT, CURRENCY) if needed
     MAX_AMOUNT = None
+    MIN_AMOUNT = None
 
     templates = ["payments/_form_with_errors.html"]
 
@@ -242,18 +243,33 @@ class DepositForm(BaseForm):
         Validate deposit request.
         """
 
-        if self.MAX_AMOUNT and "amount" in self.cleaned_data and "currency" in self.cleaned_data:
-            amount = self.cleaned_data["amount"]
-            currency = self.cleaned_data["currency"]
-            max_amount, max_amount_currency = self.MAX_AMOUNT
-            converted_max_amount = convert_currency(max_amount, max_amount_currency, currency)
-            if converted_max_amount[0] < amount:
-                self._errors["amount"] = [
-                    _("You cant deposit more than %(amount)s with %(system)s") % {
-                        "amount": converted_max_amount[1].display_amount(converted_max_amount[0]),
-                        "system": self.payment_system.name
-                    }
-                ]
+        account = (self.cleaned_data["account"])
+        if not DepositRequest.objects.filter(account=account, is_committed=True).exists():
+            if self.MAX_AMOUNT and "amount" in self.cleaned_data and "currency" in self.cleaned_data:
+                amount = self.cleaned_data["amount"]
+                currency = self.cleaned_data["currency"]
+                max_amount, max_amount_currency = self.MAX_AMOUNT
+                converted_max_amount = convert_currency(max_amount, max_amount_currency, currency)
+                if converted_max_amount[0] < amount:
+                    self._errors["amount"] = [
+                        _("You cant deposit more than %(amount)s with %(system)s") % {
+                            "amount": converted_max_amount[1].display_amount(converted_max_amount[0]),
+                            "system": self.payment_system.name
+                        }
+                    ]
+
+            if self.MIN_AMOUNT and "amount" in self.cleaned_data and "currency" in self.cleaned_data:
+                amount = self.cleaned_data["amount"]
+                currency = self.cleaned_data["currency"]
+                min_amount, min_amount_currency = self.MIN_AMOUNT
+                converted_min_amount = convert_currency(min_amount, min_amount_currency, currency)
+                if converted_min_amount[0] > amount:
+                    self._errors["amount"] = [
+                        _("You cant deposit less than %(amount)s with %(system)s") % {
+                            "amount": converted_min_amount[1].display_amount(converted_min_amount[0]),
+                            "system": self.payment_system.name
+                        }
+                    ]
 
         cleaned_amount = self.cleaned_data.get("amount")
         cleaned_account = self.cleaned_data.get("account")
@@ -284,7 +300,7 @@ class DepositForm(BaseForm):
         return super(DepositForm, self).clean()
 
     @classmethod
-    def _calculate_commission(cls, request, full_commission):
+    def _calculate_commission(cls, request, full_commission=False):
         commission = request.amount * cls.commission_rate
         return CommissionCalculationResult(
             amount=request.amount,
@@ -294,7 +310,7 @@ class DepositForm(BaseForm):
 
     @classmethod
     def calculate_commission(cls, request, full_commission=False):
-        return cls._calculate_commission(request, full_commission)
+        return cls._calculate_commission(request)
 
     def save(self, **kwargs):
         res = super(DepositForm, self).save(**kwargs)

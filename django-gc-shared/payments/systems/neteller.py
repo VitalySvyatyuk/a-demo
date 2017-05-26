@@ -26,8 +26,8 @@ transfer_details = {
         "min_amount": display_amount_usd(10),
     },
     "withdraw": {
-        "time": _("up to 3 days"),
-        "fee": _("Within day"),
+        "fee": _("2.5% min $1 max $30"),
+        "time": _("Within day"),
         "min_amount": display_amount_usd(10),
     }
 }
@@ -49,7 +49,7 @@ class DepositForm(base.DepositForm):
 
     bill_address = "https://test.api.neteller.com/v1/transferIn"
     get_token_url = "https://test.api.neteller.com/v1/oauth2/token?grant_type=client_credentials"
-    commission_rate = Decimal("0.04")
+    commission_rate = Decimal("0.035")
     MIN_AMOUNT = (10, 'USD')
 
     @classmethod
@@ -145,6 +145,16 @@ class DepositForm(base.DepositForm):
         else:
             return {"success": True}, None
 
+    @classmethod
+    def _calculate_commission(cls, request, full_commission=False):
+        commission = request.amount * cls.commission_rate
+        min_comm = Decimal("1")
+        commission = max(min_comm, commission)
+        return CommissionCalculationResult(
+            amount=request.amount,
+            commission=commission,
+            currency=request.currency
+        )
 
 class DetailsForm(base.DetailsForm):
 
@@ -157,4 +167,16 @@ class DetailsForm(base.DetailsForm):
 
 class WithdrawForm(base.WithdrawForm):
     MIN_AMOUNT = (10, 'USD')
+    commission_rate = Decimal("0.025")
 
+    @classmethod
+    def _calculate_commission(cls, request, full_commission=False):
+        commission = request.amount * cls.commission_rate
+        min_comm = Decimal("1")
+        max_comm = Decimal("30")
+        commission = min(max_comm, max(min_comm, commission))
+        return CommissionCalculationResult(
+            amount=request.amount,
+            commission=commission,
+            currency=request.currency
+        )

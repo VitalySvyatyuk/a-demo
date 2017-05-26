@@ -41,10 +41,12 @@ block content
 						th.strategies__cell.strategies__cell_header
 							span.strategies__cell__title
 								- trans "Minimum deposit"
-						//-
-							th.strategies__cell.strategies__cell_header
-								span.strategies__cell__title
-									- trans "Commission on deposit over $300"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Minimum commission"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Maximum commission"
 						th.strategies__cell.strategies__cell_header
 							span.strategies__cell__title
 								| &nbsp;
@@ -52,7 +54,7 @@ block content
 					- regroup deposit_systems|dictsortreversed:"category.priority" by category as deposit_groups
 					for group in deposit_groups
 						tr.strategies__row.strategies__title_row
-							td.strategies__cell.strategies__big_cell(colspan="5")
+							td.strategies__cell.strategies__big_cell(colspan="7")
 								span.strategies__big_cell_title= group.grouper
 						for system in group.list
 							tr.strategies__row.strategies__content_row.js-pseudolink(data-href="/account/trading")
@@ -67,9 +69,11 @@ block content
 									span.strategies__cell__text= system.processing_times|default:""
 								td.strategies__cell
 									span.strategies__cell__text= system.min_amount|default:"0"
-								//-
-									td.strategies__cell
-										span.strategies__cell__text= system.commission|default:"0"
+
+								td.strategies__cell
+									span.strategies__cell__text= system.min_commission|default:"No"
+								td.strategies__cell
+									span.strategies__cell__text= system.max_commission|default:"No"
 								td.strategies__cell
 									span.strategies__cell__call_to_action.desktop
 										- trans "Deposit to account"
@@ -166,12 +170,18 @@ block content
 								- trans "Commission on withdraw"
 						th.strategies__cell.strategies__cell_header
 							span.strategies__cell__title
+								- trans "Minimum commission"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
+								- trans "Maximum commission"
+						th.strategies__cell.strategies__cell_header
+							span.strategies__cell__title
 								| &nbsp;
 
 					- regroup withdraw_systems|dictsortreversed:"category.priority" by category as deposit_groups
 					for group in deposit_groups
 						tr.strategies__row.strategies__title_row
-							td.strategies__cell.strategies__big_cell(colspan="6")
+							td.strategies__cell.strategies__big_cell(colspan="8")
 								span.strategies__big_cell_title= group.grouper
 						for system in group.list
 							tr.strategies__row.strategies__content_row.js-pseudolink(data-href="/account/trading")
@@ -188,6 +198,10 @@ block content
 									span.strategies__cell__text= system.min_amount|default:"0"
 								td.strategies__cell
 										span.strategies__cell__text= system.commission|default:"0"
+								td.strategies__cell
+									span.strategies__cell__text= system.min_commission|default:"No"
+								td.strategies__cell
+									span.strategies__cell__text= system.max_commission|default:"No"
 								td.strategies__cell
 									span.strategies__cell__call_to_action.desktop
 										- trans "Withdraw from account"
