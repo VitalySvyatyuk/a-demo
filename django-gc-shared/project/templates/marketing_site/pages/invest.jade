@@ -6,8 +6,9 @@ block title
   | ARUM.Invest {{ block.super }}
 
 block scripts
-  script(src='https://ramm.arumcapital.eu/scripts/lib/highstock-improved.js')
-  script(src='https://ramm.arumcapital.eu/scripts/promo/arum/widget.js')
+  script(src='https://ramm.arumcapital.eu/scripts/widgets/rammstrategieswidget.js')
+  script.
+    var widget = new RAMMStrategiesWidget("https://ramm.arumcapital.eu", 50, 10, 0, true, { strategyTemplateSelector: '#ramm-strategy-table-row-template', parentElementSelector: '#strategies_table' });
 
 block content
   .page_head(style="background-image: url({% static 'img/marketing-site/bg/bg-invest-header.jpg' %})")
@@ -23,7 +24,7 @@ block content
     .container
       h2.page_title
         - trans "Top 5 strategies:"
-      div.strategies#ramm-top_five_strategies-widget
+      div.strategies#strategies_table
       .invest-page-under-table
         .row
           .col-md-3

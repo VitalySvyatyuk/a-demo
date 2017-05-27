@@ -46,22 +46,12 @@ html
 					button
 					p
 						-trans "Choose your language"
-					//- p.col-md-6
-					//- 	a.eng-lang(href="https://arumcapital.eu/")
-					//- 		|	English
-					//- p.col-md-6
-					//- 	a.ru-lang(href="https://ru.arumcapital.eu/")
-					//- 		|	Русский
-					.col-lg-6
-						a.eng-lang.current-lang(href='')
-							span
-								| {{ LANGUAGE_CODE|language_name_local }}
-					for key, value in LANGUAGE_SETTINGS.items|order_items
-						if LANGUAGE_CODE != key
-							.col-lg-6
-								a.ru-lang(href="{{ value.redirect_to }}{{ request.path }}")
-									span
-										| {{ key|language_name_local }}
+					p.col-md-6
+						a.eng-lang(href="https://arumcapital.eu/")
+							|	English
+					p.col-md-6
+						a.ru-lang(href="https://ru.arumcapital.eu/")
+							|	Русский
 		main.page_wrapper
 			header.header.js-header
 				.container.header__container

@@ -712,7 +712,8 @@
               <div class="inputs">
               <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.forex_instruments_exp" id="Block11" ng-required="true">
+                  <select  ng-model="user.profile.forex_instruments_exp" id="Block11" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="less-one-year">{% trans "Less than 1 year" %}</option>
                     <option value="one--five-years">{% trans "1 to 5 years" %}</option>
@@ -721,7 +722,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Average volume of transaction per year (USD) select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.forex_instruments_aver" id="Block12" ng-required="true">
+                  <select  ng-model="user.profile.forex_instruments_aver" id="Block12" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="Less than $10 000">{% trans "Less than $10 000" %}</option>
                     <option value="$10 000 - $50 000">$10 000 - $50 000</option>
@@ -732,7 +734,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Frequency of transactions select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.forex_instruments_freq" id="Block13" ng-required="true">
+                  <select  ng-model="user.profile.forex_instruments_freq" id="Block13" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="daily">{% trans "Daily" %}</option>
                     <option value="weekly">{% trans "Weekly" %}</option>
@@ -742,7 +745,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Training received" context "for Trading experience select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.forex_instruments_train" id="Block14" ng-required="true">
+                  <select  ng-model="user.profile.forex_instruments_train" id="Block14" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="seminar">{% trans "Seminar" %}</option>
                     <option value="course">{% trans "Course" %}</option>
@@ -774,7 +778,8 @@
               <div class="inputs">
               <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.derivative_instruments_exp" id="Block21" ng-required="true">
+                  <select  ng-model="user.profile.derivative_instruments_exp" id="Block21" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="less-one-year">{% trans "Less than 1 year" %}</option>
                     <option value="one--five-years">{% trans "1 to 5 years" %}</option>
@@ -783,7 +788,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Average volume of transaction per year (USD) select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.derivative_instruments_aver" id="Block22" ng-required="true">
+                  <select  ng-model="user.profile.derivative_instruments_aver" id="Block22" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="Less than $10 000">{% trans "Less than $10 000" %}</option>
                     <option value="$10 000 - $50 000">$10 000 - $50 000</option>
@@ -794,7 +800,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Frequency of transactions select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.derivative_instruments_freq" id="Block23" ng-required="true">
+                  <select  ng-model="user.profile.derivative_instruments_freq" id="Block23" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="daily">{% trans "Daily" %}</option>
                     <option value="weekly">{% trans "Weekly" %}</option>
@@ -804,7 +811,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Training received" context "for Trading experience select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.derivative_instruments_train" id="Block24" ng-required="true">
+                  <select  ng-model="user.profile.derivative_instruments_train" id="Block24" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="seminar">{% trans "Seminar" %}</option>
                     <option value="course">{% trans "Course" %}</option>
@@ -836,7 +844,8 @@
               <div class="inputs">
               <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.transferable_securities_exp" id="Block31" ng-required="true">
+                  <select  ng-model="user.profile.transferable_securities_exp" id="Block31" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="less-one-year">{% trans "Less than 1 year" %}</option>
                     <option value="one--five-years">{% trans "1 to 5 years" %}</option>
@@ -845,7 +854,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Average volume of transaction per year (USD) select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.transferable_securities_aver" id="Block32" ng-required="true">
+                  <select  ng-model="user.profile.transferable_securities_aver" id="Block32" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="Less than $10 000">{% trans "Less than $10 000" %}</option>
                     <option value="$10 000 - $50 000">$10 000 - $50 000</option>
@@ -856,7 +866,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Frequency of transactions select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.transferable_securities_freq" id="Block33" ng-required="true">
+                  <select  ng-model="user.profile.transferable_securities_freq" id="Block33" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="daily">{% trans "Daily" %}</option>
                     <option value="weekly">{% trans "Weekly" %}</option>
@@ -866,7 +877,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Training received" context "for Trading experience select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.transferable_securities_train" id="Block34" ng-required="true">
+                  <select  ng-model="user.profile.transferable_securities_train" id="Block34" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="seminar">{% trans "Seminar" %}</option>
                     <option value="course">{% trans "Course" %}</option>
@@ -898,7 +910,8 @@
               <div class="inputs">
               <p class="offset-bottom-5 offset-top-15">{% trans "Years of experience" context "for Trading experience xp" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.investment_undertaking_exp" id="Block41" ng-required="true">
+                  <select  ng-model="user.profile.investment_undertaking_exp" id="Block41" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="less-one-year">{% trans "Less than 1 year" %}</option>
                     <option value="one--five-years">{% trans "1 to 5 years" %}</option>
@@ -907,7 +920,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Average volume of transaction per year (USD) select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.investment_undertaking_aver" id="Block42" ng-required="true">
+                  <select  ng-model="user.profile.investment_undertaking_aver" id="Block42" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="Less than $10 000">{% trans "Less than $10 000" %}</option>
                     <option value="$10 000 - $50 000">$10 000 - $50 000</option>
@@ -918,7 +932,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Frequency of transactions select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.investment_undertaking_freq" id="Block43" ng-required="true">
+                  <select  ng-model="user.profile.investment_undertaking_freq" id="Block43" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="daily">{% trans "Daily" %}</option>
                     <option value="weekly">{% trans "Weekly" %}</option>
@@ -928,7 +943,8 @@
                 </div>
                 <p class="offset-bottom-5 offset-top-15">{% trans "Training received" context "for Trading experience select" %}</p>
                 <div class="select-wrapper">
-                  <select  ng-model="user.profile.investment_undertaking_train" id="Block44" ng-required="true">
+                  <select  ng-model="user.profile.investment_undertaking_train" id="Block44" ng-required="true"
+                  ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified">
                     <option value="choose" selected disabled>{% trans "Choose" %}</option>
                     <option value="seminar">{% trans "Seminar" %}</option>
                     <option value="course">{% trans "Course" %}</option>

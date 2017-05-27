@@ -106,3 +106,11 @@ class WithdrawForm(bankbase.WithdrawForm):
 
     MIN_AMOUNT = (100, 'USD')
 
+    @classmethod
+    def _calculate_commission(cls, request, full_commission=False):
+        commission = 40
+        return CommissionCalculationResult(
+            amount=request.amount,
+            commission=commission,
+            currency=request.currency
+        )

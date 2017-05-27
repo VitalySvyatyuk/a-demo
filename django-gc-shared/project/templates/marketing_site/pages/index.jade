@@ -3,604 +3,605 @@ extends marketing_site/layout
 - load staticfiles i18n
 
 block title
-	| {% trans "Main" %} {{ block.super }}
+    | {% trans "Main" %} {{ block.super }}
 
 block scripts
-	script(src="{% static 'angular/angular.min.js' %}")
-	script(src="{% static 'js/frontpage_apps.js' %}")
-	script(src='https://ramm.arumcapital.eu/scripts/lib/highstock-improved.js')
-	script(src='https://ramm.arumcapital.eu/scripts/promo/arum/widget.js')
+    script(src="{% static 'angular/angular.min.js' %}")
+    script(src="{% static 'js/frontpage_apps.js' %}")
+    script(src='https://ramm.arumcapital.eu/scripts/widgets/rammstrategieswidget.js')
+    script.
+        var widget = new RAMMStrategiesWidget("https://ramm.arumcapital.eu", 50, 10, 0, true, { strategyTemplateSelector: '#ramm-strategy-table-row-template', parentElementSelector: '#strategies_table' });
 
 block content
-	#frontpage-main-slider-content.slider_jumbotron
-		.container.slider_jumbotron__arrows_box
-			button.slider_arrow.slider_arrow--left.slider_jumbotron__arrow.slider_jumbotron__arrow--left.js-slider-prev-arrow(type="button")
-			button.slider_arrow.slider_arrow--right.slider_jumbotron__arrow.slider_jumbotron__arrow--right.js-slider-next-arrow(type="button")
-		#frontpage-main-slider.slider_jumbotron__content
-			.slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--mac.jpg' %})")
-				.container
-					.slider_jumbotron__text_box
-						h2.slider_jumbotron__item__title
-							- trans "New generation FOREX broker"
-						p.slider_jumbotron__item__text
-							- trans "We offer our clients a true ECN, a direct link of all transactions to the liquidity providers through a FIX-protocol and an access to trading innovations."
-						{% if LANGUAGE_CODE == 'ru' %}
-						div.risk-hidden-ru
-							a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-								span.button__text
-									- trans "Start trading"
-						{% else %}
-						div.risk-hidden-en
-							a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-								span.button__text
-									- trans "Start trading"
-						{% endif %}
-			.slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--flag.jpg' %});")
-				.container
-					.slider_jumbotron__text_box
-						h2.slider_jumbotron__item__title
-							- trans "Quality Level"
-						p.slider_jumbotron__item__text
-							- trans "European regulation (MiFID) and the quality standards are integrated into our services."
-						{% if LANGUAGE_CODE == 'ru' %}
-						div.risk-hidden-ru
-							a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-								span.button__text
-									- trans "Start trading"
-						{% else %}
-						div.risk-hidden-en
-							a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-								span.button__text
-									- trans "Start trading"
-						{% endif %}
-			.slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--hands.jpg' %});")
-				.container
-					.slider_jumbotron__text_box
-						h2.slider_jumbotron__item__title
-							- trans "Trading innovations"
-						p.slider_jumbotron__item__text
-							- trans "Access to the Market Depth, a wide range of trading platforms and tools enable our clients to have potential high returns. Trading carries out substantial risk of loss of invested capital."
-						{% if LANGUAGE_CODE == 'ru' %}
-						div.risk-hidden-ru
-							a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-								span.button__text
-									- trans "Start trading"
-						{% else %}
-						div.risk-hidden-en
-							a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-								span.button__text
-									- trans "Start trading"
-						{% endif %}
-			.slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--ipad.jpg' %});")
-				.container
-					.slider_jumbotron__text_box
-						h2.slider_jumbotron__item__title.slider_jumbotron__item__title--white
-							- trans "Investment under control"
-						p.slider_jumbotron__item__text.slider_jumbotron__item__text--white
-							- trans "Track and copy sophisticated traders and enjoy certain return vs risk. Risk management takes the side of the investor."
-						{% if LANGUAGE_CODE == 'ru' %}
-						div.risk-hidden-ru
-							a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-								span.button__text
-									- trans "Start trading"
-						{% else %}
-						div.risk-hidden-en
-							a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-								span.button__text
-									- trans "Start trading"
-						{% endif %}
-		a.slider_jumbotron__mobiles_button.button(href=if_link,  data-popup-target=if_data, class=if_class)
-			span.button__text
-				- trans "Start trading"
-		.slider_jumbotron__features
-			.slider_jumbotron__container
-				.slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-desktop
-					span.slider_jumbotron__features__number
-						| 1:100
-					span.slider_jumbotron__features__item_text
-						| {% blocktrans %}leverage
-						br
-						| {% endblocktrans %}
-				.slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
-					span.slider_jumbotron__features__item_text
-						| {% blocktrans %}EU
-						br
-						| regulation{% endblocktrans %}
-				.slider_jumbotron__features__item
-					span.slider_jumbotron__features__number
-						| 0.1
-					span.slider_jumbotron__features__item_text
-						| {% blocktrans %}Narrow&nbsp;
-						span.slider_jumbotron__features__item_text--hide-mobiles
-							| market
-						br
-						| spreads{% endblocktrans %}
-				.slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
-					span.slider_jumbotron__features__item_text
-						| {% blocktrans %}Market
-						br
-						| Depth{% endblocktrans %}
-				.slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
-					span.slider_jumbotron__features__number
-						| 1:100
-					span.slider_jumbotron__features__item_text
-						{% blocktrans %}leverage
-						br
-						| {% endblocktrans %}
-				.slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
-					span.slider_jumbotron__features__item_text
-						| {% blocktrans %}True
-						br
-						| ECN{% endblocktrans %}
-				.slider_jumbotron__features__item
-					span.slider_jumbotron__features__number
-						| 110+
-					span.slider_jumbotron__features__item_text
-						| {% blocktrans %}Trading
-						br
-						| instruments{% endblocktrans %}
-		button.slider_jumbotron__down_button.js-scroll-intro(type="button")
+    #frontpage-main-slider-content.slider_jumbotron
+        .container.slider_jumbotron__arrows_box
+            button.slider_arrow.slider_arrow--left.slider_jumbotron__arrow.slider_jumbotron__arrow--left.js-slider-prev-arrow(type="button")
+            button.slider_arrow.slider_arrow--right.slider_jumbotron__arrow.slider_jumbotron__arrow--right.js-slider-next-arrow(type="button")
+        #frontpage-main-slider.slider_jumbotron__content
+            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--mac.jpg' %})")
+                .container
+                    .slider_jumbotron__text_box
+                        h2.slider_jumbotron__item__title
+                            - trans "New generation FOREX broker"
+                        p.slider_jumbotron__item__text
+                            - trans "We offer our clients a true ECN, a direct link of all transactions to the liquidity providers through a FIX-protocol and an access to trading innovations."
+                        {% if LANGUAGE_CODE == 'ru' %}
+                        div.risk-hidden-ru
+                            a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                                span.button__text
+                                    - trans "Start trading"
+                        {% else %}
+                        div.risk-hidden-en
+                            a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                                span.button__text
+                                    - trans "Start trading"
+                        {% endif %}
+            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--flag.jpg' %});")
+                .container
+                    .slider_jumbotron__text_box
+                        h2.slider_jumbotron__item__title
+                            - trans "Quality Level"
+                        p.slider_jumbotron__item__text
+                            - trans "European regulation (MiFID) and the quality standards are integrated into our services."
+                        {% if LANGUAGE_CODE == 'ru' %}
+                        div.risk-hidden-ru
+                            a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                                span.button__text
+                                    - trans "Start trading"
+                        {% else %}
+                        div.risk-hidden-en
+                            a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                                span.button__text
+                                    - trans "Start trading"
+                        {% endif %}
+            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--hands.jpg' %});")
+                .container
+                    .slider_jumbotron__text_box
+                        h2.slider_jumbotron__item__title
+                            - trans "Trading innovations"
+                        p.slider_jumbotron__item__text
+                            - trans "Access to the Market Depth, a wide range of trading platforms and tools enable our clients to have potential high returns. Trading carries out substantial risk of loss of invested capital."
+                        {% if LANGUAGE_CODE == 'ru' %}
+                        div.risk-hidden-ru
+                            a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                                span.button__text
+                                    - trans "Start trading"
+                        {% else %}
+                        div.risk-hidden-en
+                            a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                                span.button__text
+                                    - trans "Start trading"
+                        {% endif %}
+            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--ipad.jpg' %});")
+                .container
+                    .slider_jumbotron__text_box
+                        h2.slider_jumbotron__item__title.slider_jumbotron__item__title--white
+                            - trans "Investment under control"
+                        p.slider_jumbotron__item__text.slider_jumbotron__item__text--white
+                            - trans "Track and copy sophisticated traders and enjoy certain return vs risk. Risk management takes the side of the investor."
+                        {% if LANGUAGE_CODE == 'ru' %}
+                        div.risk-hidden-ru
+                            a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                                span.button__text
+                                    - trans "Start trading"
+                        {% else %}
+                        div.risk-hidden-en
+                            a.slider_jumbotron__button.button(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                                span.button__text
+                                    - trans "Start trading"
+                        {% endif %}
+        a.slider_jumbotron__mobiles_button.button(href=if_link,  data-popup-target=if_data, class=if_class)
+            span.button__text
+                - trans "Start trading"
+        .slider_jumbotron__features
+            .slider_jumbotron__container
+                .slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-desktop
+                    span.slider_jumbotron__features__number
+                        | 1:100
+                    span.slider_jumbotron__features__item_text
+                        | {% blocktrans %}leverage
+                        br
+                        | {% endblocktrans %}
+                .slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
+                    span.slider_jumbotron__features__item_text
+                        | {% blocktrans %}EU
+                        br
+                        | regulation{% endblocktrans %}
+                .slider_jumbotron__features__item
+                    span.slider_jumbotron__features__number
+                        | 0.1
+                    span.slider_jumbotron__features__item_text
+                        | {% blocktrans %}Narrow&nbsp;
+                        span.slider_jumbotron__features__item_text--hide-mobiles
+                            | market
+                        br
+                        | spreads{% endblocktrans %}
+                .slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
+                    span.slider_jumbotron__features__item_text
+                        | {% blocktrans %}Market
+                        br
+                        | Depth{% endblocktrans %}
+                .slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
+                    span.slider_jumbotron__features__number
+                        | 1:100
+                    span.slider_jumbotron__features__item_text
+                        {% blocktrans %}leverage
+                        br
+                        | {% endblocktrans %}
+                .slider_jumbotron__features__item.slider_jumbotron__features__item--hidden-tablets
+                    span.slider_jumbotron__features__item_text
+                        | {% blocktrans %}True
+                        br
+                        | ECN{% endblocktrans %}
+                .slider_jumbotron__features__item
+                    span.slider_jumbotron__features__number
+                        | 110+
+                    span.slider_jumbotron__features__item_text
+                        | {% blocktrans %}Trading
+                        br
+                        | instruments{% endblocktrans %}
+        button.slider_jumbotron__down_button.js-scroll-intro(type="button")
 
-	.working_presentation_pageblock
-		.container
-			.row
-				.col-lg-6.col-xs-12.working_presentation_pageblock__steps
-					h2.page_title
-						- trans "How we work"
-					.working_process
-						.working_process__item.working_process__item--icon-magnifier
-							h3.working_process__title
-								- trans "Trading transparency"
-							span.working_process__text
-								- trans "All client transactions are directly linked to the liquidity providers. The conditions of our license and that of our provider oblige us to link every transaction to an independent service provider."
-						.working_process__item.working_process__item--icon-arrows
-							h3.working_process__title
-								- trans "No market manipulation"
-							span.working_process__text
-								- trans "We do not use the tools of betting and filtering of exchange rates. Our clients receive real ECN/STP under FIX-protocol at each specific moment."
-						.working_process__item.working_process__item--icon-bid-ask
-							h3.working_process__title
-								- trans "Best order execution"
-							span.working_process__text
-								- trans "Thanks to cooperation with a leading liquidity provider our clients get the best prices in the market."
-						a.arrow_link(href="{% url 'ecn' %}")
-							| {% blocktrans %}More details&nbsp;
-							br.arrow_link__break--visible-mobiles
-							| about our liquidity{% endblocktrans %}
-				.col-lg-6.col-xs-12
-					h2.page_title
-						- trans "Quotes Online"
-					- include 'marketing_site/components/quotes_tabs.html'
+    .working_presentation_pageblock
+        .container
+            .row
+                .col-lg-6.col-xs-12.working_presentation_pageblock__steps
+                    h2.page_title
+                        - trans "How we work"
+                    .working_process
+                        .working_process__item.working_process__item--icon-magnifier
+                            h3.working_process__title
+                                - trans "Trading transparency"
+                            span.working_process__text
+                                - trans "All client transactions are directly linked to the liquidity providers. The conditions of our license and that of our provider oblige us to link every transaction to an independent service provider."
+                        .working_process__item.working_process__item--icon-arrows
+                            h3.working_process__title
+                                - trans "No market manipulation"
+                            span.working_process__text
+                                - trans "We do not use the tools of betting and filtering of exchange rates. Our clients receive real ECN/STP under FIX-protocol at each specific moment."
+                        .working_process__item.working_process__item--icon-bid-ask
+                            h3.working_process__title
+                                - trans "Best order execution"
+                            span.working_process__text
+                                - trans "Thanks to cooperation with a leading liquidity provider our clients get the best prices in the market."
+                        a.arrow_link(href="{% url 'ecn' %}")
+                            | {% blocktrans %}More details&nbsp;
+                            br.arrow_link__break--visible-mobiles
+                            | about our liquidity{% endblocktrans %}
+                .col-lg-6.col-xs-12
+                    h2.page_title
+                        - trans "Quotes Online"
+                    - include 'marketing_site/components/quotes_tabs.html'
 
-	.liquidity
-		.container.liquidity__container
-			.liquidity__item
-				img.liquidity__img(src="{% static 'img/marketing-site/etc/logo-arum--word.png' %}")
-				.liquidity__item__title
-					a.link(href="{% url 'ecn' %}")
-						- trans "Market Depth"
-			img.liquidity__arrow.liquidity__arrow--laptop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray.png' %}")
-			img.liquidity__arrow.liquidity__arrow--desktop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--small.png' %}")
-			img.liquidity__arrow.liquidity__arrow--tablet-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--vertical.png' %}")
-			.liquidity__item
-				img.liquidity__img(src="{% static 'img/marketing-site/etc/logo-fix.jpg' %}")
-				.liquidity__item__title
-					a.link(href="{% url 'ecn' %}")
-						- trans "FIX-protocol"
-			img.liquidity__arrow.liquidity__arrow--laptop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray.png' %}")
-			img.liquidity__arrow.liquidity__arrow--desktop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--small.png' %}")
-			img.liquidity__arrow.liquidity__arrow--tablet-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--vertical.png' %}")
-			.liquidity__item
-				img.liquidity__img.liquidity__img--laptop-hidden(src="{% static 'img/marketing-site/etc/logo-liquidity_suppliers.png' %}")
-				img.liquidity__img.liquidity__img--desktop-hidden(src="{% static 'img/marketing-site/etc/logo-liquidity_suppliers--small.png' %}")
-				img.liquidity__img.liquidity__img--tablet-hidden(src="{% static 'img/marketing-site/etc/logo-liquidity_suppliers.png' %}")
-				.liquidity__item__title
-					a.link(href="{% url 'ecn' %}")
-						- trans "Liquidity providers"
-	.platforms
-		.platforms__variants_box
-			.platforms__variant.platforms__variant--right(style="background-image: url({% static 'img/marketing-site/bg/bg--imac-01.png' %})")
-				.platforms__variant_content
-					.platforms__variant__logo_box
-						img.platforms__variant__logo(src="{% static 'img/marketing-site/etc/logo-mt4.png' %}", alt="M4 logo")
-					h3.page_title.platforms__variant__title
-						- trans "MetaTrader4 platform"
-					span.platforms__variant__info
-						- trans "MetaTrader4 platform is in high demand due to its simple and convenient operation"
-					{% if LANGUAGE_CODE == 'ru' %}
-					div.not-ready-platform-ru
-						a.platforms__variant__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-							span.button__text
-								- trans "Open an account"
-					{% else %}
-					div.not-ready-platform-en
-						a.platforms__variant__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-							span.button__text
-								- trans "Open an account"
-					{% endif %}
-				.platforms__variant__description
-					.platforms__variant__description__content
-						a.platforms__variant__description__title(href="{% url 'mt4' %}")
-							- trans "MetaTrader4 platform"
-						p.platforms__variant__description__text.platforms__variant__description__text--narrow
-							- trans "MetaTrader4 platform is in high demand due to its simple and convenient operation"
-						ul.platforms__variant__description__logos
-							li.platforms__variant__description__logo_item
-								img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--android.png' %}")
-							li.platforms__variant__description__logo_item
-								img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--apple.png' %}")
-							li.platforms__variant__description__logo_item
-								img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--windows-8.png' %}")
-						//-
-							p.platforms__variant__description__text
-								- trans "Professional trading platform with a powerful analytical and trading engine"
-						p.platforms__variant__description__text
-							- trans "A user-friendly interface and feature-rich tools, the provision of indicators, quotes, graphic tools, and the like"
-						p.platforms__variant__description__text
-							- trans "Automated trading support and adviser testing, a built-in MQL programming language"
-						p.platforms__variant__description__text
-							- trans "4 types of pending orders, one-click trading, hedging of positions"
+    .liquidity
+        .container.liquidity__container
+            .liquidity__item
+                img.liquidity__img(src="{% static 'img/marketing-site/etc/logo-arum--word.png' %}")
+                .liquidity__item__title
+                    a.link(href="{% url 'ecn' %}")
+                        - trans "Market Depth"
+            img.liquidity__arrow.liquidity__arrow--laptop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray.png' %}")
+            img.liquidity__arrow.liquidity__arrow--desktop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--small.png' %}")
+            img.liquidity__arrow.liquidity__arrow--tablet-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--vertical.png' %}")
+            .liquidity__item
+                img.liquidity__img(src="{% static 'img/marketing-site/etc/logo-fix.jpg' %}")
+                .liquidity__item__title
+                    a.link(href="{% url 'ecn' %}")
+                        - trans "FIX-protocol"
+            img.liquidity__arrow.liquidity__arrow--laptop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray.png' %}")
+            img.liquidity__arrow.liquidity__arrow--desktop-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--small.png' %}")
+            img.liquidity__arrow.liquidity__arrow--tablet-hidden(src="{% static 'img/marketing-site/etc/two-side-arrow--gray--vertical.png' %}")
+            .liquidity__item
+                img.liquidity__img.liquidity__img--laptop-hidden(src="{% static 'img/marketing-site/etc/logo-liquidity_suppliers.png' %}")
+                img.liquidity__img.liquidity__img--desktop-hidden(src="{% static 'img/marketing-site/etc/logo-liquidity_suppliers--small.png' %}")
+                img.liquidity__img.liquidity__img--tablet-hidden(src="{% static 'img/marketing-site/etc/logo-liquidity_suppliers.png' %}")
+                .liquidity__item__title
+                    a.link(href="{% url 'ecn' %}")
+                        - trans "Liquidity providers"
+    .platforms
+        .platforms__variants_box
+            .platforms__variant.platforms__variant--right(style="background-image: url({% static 'img/marketing-site/bg/bg--imac-01.png' %})")
+                .platforms__variant_content
+                    .platforms__variant__logo_box
+                        img.platforms__variant__logo(src="{% static 'img/marketing-site/etc/logo-mt4.png' %}", alt="M4 logo")
+                    h3.page_title.platforms__variant__title
+                        - trans "MetaTrader4 platform"
+                    span.platforms__variant__info
+                        - trans "MetaTrader4 platform is in high demand due to its simple and convenient operation"
+                    {% if LANGUAGE_CODE == 'ru' %}
+                    div.not-ready-platform-ru
+                        a.platforms__variant__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                            span.button__text
+                                - trans "Open an account"
+                    {% else %}
+                    div.not-ready-platform-en
+                        a.platforms__variant__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                            span.button__text
+                                - trans "Open an account"
+                    {% endif %}
+                .platforms__variant__description
+                    .platforms__variant__description__content
+                        a.platforms__variant__description__title(href="{% url 'mt4' %}")
+                            - trans "MetaTrader4 platform"
+                        p.platforms__variant__description__text.platforms__variant__description__text--narrow
+                            - trans "MetaTrader4 platform is in high demand due to its simple and convenient operation"
+                        ul.platforms__variant__description__logos
+                            li.platforms__variant__description__logo_item
+                                img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--android.png' %}")
+                            li.platforms__variant__description__logo_item
+                                img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--apple.png' %}")
+                            li.platforms__variant__description__logo_item
+                                img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--windows-8.png' %}")
+                        //-
+                            p.platforms__variant__description__text
+                                - trans "Professional trading platform with a powerful analytical and trading engine"
+                        p.platforms__variant__description__text
+                            - trans "A user-friendly interface and feature-rich tools, the provision of indicators, quotes, graphic tools, and the like"
+                        p.platforms__variant__description__text
+                            - trans "Automated trading support and adviser testing, a built-in MQL programming language"
+                        p.platforms__variant__description__text
+                            - trans "4 types of pending orders, one-click trading, hedging of positions"
 
-			.platforms__variant.platforms__variant--left(style="background-image: url({% static 'img/marketing-site/bg/bg--macbook-01.png' %})")
-				.platforms__variant_content
-					.platforms__variant__logo_box
-						img.platforms__variant__logo(src="{% static 'img/marketing-site/etc/logo-pro.png' %}", alt="Pro logo")
-					h3.page_title.platforms__variant__title
-						- trans "ARUM.PRO platform"
-					span.platforms__variant__info
-						- trans "Professional trading platform with a powerful analytical and trading engine"
-					{% if LANGUAGE_CODE == 'ru' %}
-					div.not-ready-platform-ru
-						a.platforms__variant__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-							span.button__text
-								- trans "Open an account"
-					{% else %}
-					div.not-ready-platform-en
-						a.platforms__variant__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-							span.button__text
-								- trans "Open an account"
-					{% endif %}
-				.platforms__variant__description
-					.platforms__variant__description__content
-						a.platforms__variant__description__title(href="{% url 'arumpro' %}")
-							- trans "ARUM.PRO platform"
-						p.platforms__variant__description__text.platforms__variant__description__text--narrow
-							- trans "Professional trading platform with a powerful analytical and trading engine"
-						ul.platforms__variant__description__logos
-							li.platforms__variant__description__logo_item
-								img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--windows-8.png' %}")
-							li.platforms__variant__description__logo_item
-								img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--dashboard.png' %}")
-						p.platforms__variant__description__text
-							- trans "Customisable platform desktops, module interface, a comprehensive  analytical package"
-						p.platforms__variant__description__text
-							- trans "Tier 1 Market Depth, true historical ECN-volumes"
-						//-
-							p.platforms__variant__description__text
-								- trans "Automated trading support and adviser testing, a built-in MQL programming language"
-						p.platforms__variant__description__text
-							- trans "Tick traffic, one-click trading, API FIX-protocol interface"
+            .platforms__variant.platforms__variant--left(style="background-image: url({% static 'img/marketing-site/bg/bg--macbook-01.png' %})")
+                .platforms__variant_content
+                    .platforms__variant__logo_box
+                        img.platforms__variant__logo(src="{% static 'img/marketing-site/etc/logo-pro.png' %}", alt="Pro logo")
+                    h3.page_title.platforms__variant__title
+                        - trans "ARUM.PRO platform"
+                    span.platforms__variant__info
+                        - trans "Professional trading platform with a powerful analytical and trading engine"
+                    {% if LANGUAGE_CODE == 'ru' %}
+                    div.not-ready-platform-ru
+                        a.platforms__variant__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                            span.button__text
+                                - trans "Open an account"
+                    {% else %}
+                    div.not-ready-platform-en
+                        a.platforms__variant__button.button.button--outline.button--outline-white(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                            span.button__text
+                                - trans "Open an account"
+                    {% endif %}
+                .platforms__variant__description
+                    .platforms__variant__description__content
+                        a.platforms__variant__description__title(href="{% url 'arumpro' %}")
+                            - trans "ARUM.PRO platform"
+                        p.platforms__variant__description__text.platforms__variant__description__text--narrow
+                            - trans "Professional trading platform with a powerful analytical and trading engine"
+                        ul.platforms__variant__description__logos
+                            li.platforms__variant__description__logo_item
+                                img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--windows-8.png' %}")
+                            li.platforms__variant__description__logo_item
+                                img.platforms__variant__description__logo_img(src="{% static 'img/marketing-site/icons/i--dashboard.png' %}")
+                        p.platforms__variant__description__text
+                            - trans "Customisable platform desktops, module interface, a comprehensive  analytical package"
+                        p.platforms__variant__description__text
+                            - trans "Tier 1 Market Depth, true historical ECN-volumes"
+                        //-
+                            p.platforms__variant__description__text
+                                - trans "Automated trading support and adviser testing, a built-in MQL programming language"
+                        p.platforms__variant__description__text
+                            - trans "Tick traffic, one-click trading, API FIX-protocol interface"
 
-		a.platforms__jumbotron(href="{% url 'comparison' %}")
-			.platforms__jumbotron__text
-				- trans "Not sure about the choice of platform? – go to Compare platforms" context "compare"
+        a.platforms__jumbotron(href="{% url 'comparison' %}")
+            .platforms__jumbotron__text
+                - trans "Not sure about the choice of platform? – go to Compare platforms" context "compare"
 
-	.invest_data_pageblock
-		.container
-			.row
-				.col-lg-6.col-xs-12.invest_data_pageblock__table
-					h2.page_title
-						- trans "Market Depth"
-					table.invest(ng-app="FrontPage", ng-controller="MarketDepthController")
-						tr
-							th.invest__cell.invest__cell--center(colspan="4")
-								span.invest__title
-									| EURUSD
-						tr.invest__row
-							td.invest__big_cell.invest__bordered_right_cell(colspan="2")(ng-class="{'red-type': bid < previousBid, 'green-type': bid >= previousBid}")
-								.invest__big_cell__left_box
-									span.invest__big_cell__left_box__title
-										- trans "Bid"
-									br
-									span.invest__big_cell__left_box__value(ng-bind="bid.slice(0, 4)")
-										| 1,23
-								.invest__big_cell__right_box
-									span.invest__big_cell__right_box__value
-										span(ng-bind="bid.slice(4, 6)")) 23
-										sup(ng-bind="bid.slice(6, 7)")) 7
-							td.invest__big_cell(colspan="2")(ng-class="{'red-type': ask < previousAsk, 'green-type': ask >= previousAsk}")
-								.invest__big_cell__left_box
-									span.invest__big_cell__left_box__title
-										- trans "Ask"
-									br
-									span.invest__big_cell__left_box__value(ng-bind="ask.slice(0, 4)")
-										| 1,23
-								.invest__big_cell__right_box
-									span.invest__big_cell__right_box__value
-										span(ng-bind="ask.slice(4, 6)")) 23
-										sup(ng-bind="ask.slice(6, 7)")) 7
-						tr.invest__row
-							td.invest__cell.invest__cell--center.invest__bordered_right_cell.invest__bordered_bottom_cell(colspan="2")
-								span.invest__header
-									| Bid
-							td.invest__cell.invest__cell--center.invest__bordered_bottom_cell(colspan="2")
-								span.invest__header
-									| Ask
-						tr.wrapper-row
-							td(colspan="2"):.deal-table-wrapper
-								table.deal-table
-									tr.invest__row(ng-repeat="d in bidDeals", ng-if="!d.hide")
-										td.invest__cell
-											span.invest__cell_value(ng-bind="d.deal + 'M'")
-												| 1M
-										td.invest__cell.invest__cell--gray.invest__cell--center.invest__bordered_right_cell
-											span.invest__cell_value
-												span(ng-bind="d.price.slice(4, 6)")) 23
-												sup(ng-bind="d.price.slice(6, 7)")) 7
-							td(colspan="2"):.deal-table-wrapper
-								table.deal-table
-									tr.invest__row(ng-repeat="d in askDeals", ng-if="!d.hide")
-										td.invest__cell.invest__cell--gray.invest__cell--center
-											span.invest__cell_value
-												span(ng-bind="d.price.slice(4, 6)")) 23
-												sup(ng-bind="d.price.slice(6, 7)")) 7
-										td.invest__cell
-											span.invest__cell_value(ng-bind="d.deal + 'M'")
-												| 1M
-				.col-lg-5.col-lg-offset-1.col-xs-12
-					h2.page_title
-						- trans "Details of the true ECN-volume"
-					img.chart__index_pageblock(src="{% static 'img/marketing-site/etc/graphic.png' %}")
-					ul.features_list
-						li.features_list__item
-							span.features_list__item__text
-							- trans "Volume analysis by Instrument"
-						li.features_list__item
-							span.features_list__item__text
-								- trans "Historical charts on the volume"
-						li.features_list__item
-							span.features_list__item__text
-								- trans "Multiple timeframes on the volume"
+    .invest_data_pageblock
+        .container
+            .row
+                .col-lg-6.col-xs-12.invest_data_pageblock__table
+                    h2.page_title
+                        - trans "Market Depth"
+                    table.invest(ng-app="FrontPage", ng-controller="MarketDepthController")
+                        tr
+                            th.invest__cell.invest__cell--center(colspan="4")
+                                span.invest__title
+                                    | EURUSD
+                        tr.invest__row
+                            td.invest__big_cell.invest__bordered_right_cell(colspan="2")(ng-class="{'red-type': bid < previousBid, 'green-type': bid >= previousBid}")
+                                .invest__big_cell__left_box
+                                    span.invest__big_cell__left_box__title
+                                        - trans "Bid"
+                                    br
+                                    span.invest__big_cell__left_box__value(ng-bind="bid.slice(0, 4)")
+                                        | 1,23
+                                .invest__big_cell__right_box
+                                    span.invest__big_cell__right_box__value
+                                        span(ng-bind="bid.slice(4, 6)")) 23
+                                        sup(ng-bind="bid.slice(6, 7)")) 7
+                            td.invest__big_cell(colspan="2")(ng-class="{'red-type': ask < previousAsk, 'green-type': ask >= previousAsk}")
+                                .invest__big_cell__left_box
+                                    span.invest__big_cell__left_box__title
+                                        - trans "Ask"
+                                    br
+                                    span.invest__big_cell__left_box__value(ng-bind="ask.slice(0, 4)")
+                                        | 1,23
+                                .invest__big_cell__right_box
+                                    span.invest__big_cell__right_box__value
+                                        span(ng-bind="ask.slice(4, 6)")) 23
+                                        sup(ng-bind="ask.slice(6, 7)")) 7
+                        tr.invest__row
+                            td.invest__cell.invest__cell--center.invest__bordered_right_cell.invest__bordered_bottom_cell(colspan="2")
+                                span.invest__header
+                                    | Bid
+                            td.invest__cell.invest__cell--center.invest__bordered_bottom_cell(colspan="2")
+                                span.invest__header
+                                    | Ask
+                        tr.wrapper-row
+                            td(colspan="2"):.deal-table-wrapper
+                                table.deal-table
+                                    tr.invest__row(ng-repeat="d in bidDeals", ng-if="!d.hide")
+                                        td.invest__cell
+                                            span.invest__cell_value(ng-bind="d.deal + 'M'")
+                                                | 1M
+                                        td.invest__cell.invest__cell--gray.invest__cell--center.invest__bordered_right_cell
+                                            span.invest__cell_value
+                                                span(ng-bind="d.price.slice(4, 6)")) 23
+                                                sup(ng-bind="d.price.slice(6, 7)")) 7
+                            td(colspan="2"):.deal-table-wrapper
+                                table.deal-table
+                                    tr.invest__row(ng-repeat="d in askDeals", ng-if="!d.hide")
+                                        td.invest__cell.invest__cell--gray.invest__cell--center
+                                            span.invest__cell_value
+                                                span(ng-bind="d.price.slice(4, 6)")) 23
+                                                sup(ng-bind="d.price.slice(6, 7)")) 7
+                                        td.invest__cell
+                                            span.invest__cell_value(ng-bind="d.deal + 'M'")
+                                                | 1M
+                .col-lg-5.col-lg-offset-1.col-xs-12
+                    h2.page_title
+                        - trans "Details of the true ECN-volume"
+                    img.chart__index_pageblock(src="{% static 'img/marketing-site/etc/graphic.png' %}")
+                    ul.features_list
+                        li.features_list__item
+                            span.features_list__item__text
+                            - trans "Volume analysis by Instrument"
+                        li.features_list__item
+                            span.features_list__item__text
+                                - trans "Historical charts on the volume"
+                        li.features_list__item
+                            span.features_list__item__text
+                                - trans "Multiple timeframes on the volume"
 
-					a.chart_link__index_pageblock.arrow_link(href="{% url 'innovation' %}")
-						- trans "More about the platform"
+                    a.chart_link__index_pageblock.arrow_link(href="{% url 'innovation' %}")
+                        - trans "More about the platform"
 
-	.features_jumbotron(style="background-image: url({% static 'img/marketing-site/bg/bg--red-grid.jpg' %})")
-		.container
-			.row
-				.col-xs-12.col-sm-4.features_jumbotron__item_box
-					a.borders_box.features_jumbotron__item.features_jumbotron__item--grow-icon(href="{% url 'innovation' %}")
-						.borders.borders--top-bottom
-						.borders.borders--sides
-						span.features_jumbotron__item__text
-							| {% blocktrans %}Operation via
-							br
-							| FIX-protocol{% endblocktrans %}
-				.col-xs-12.col-sm-4.features_jumbotron__item_box
-					a.borders_box.features_jumbotron__item.features_jumbotron__item--trend-icon(href="{% url 'innovation' %}")
-						.borders.borders--top-bottom
-						.borders.borders--sides
-						span.features_jumbotron__item__text
-							| {% blocktrans %}Tick charts
-							br
-							| of all the financial instruments{% endblocktrans %}
-				.col-xs-12.col-sm-4.features_jumbotron__item_box
-					a.borders_box.features_jumbotron__item.features_jumbotron__item--view-icon(href="{% url 'innovation' %}")
-						.borders.borders--top-bottom
-						.borders.borders--sides
-						span.features_jumbotron__item__text
-							| {% blocktrans %}Open API FIX-protocol
-							br
-							| for trading robots{% endblocktrans %}
+    .features_jumbotron(style="background-image: url({% static 'img/marketing-site/bg/bg--red-grid.jpg' %})")
+        .container
+            .row
+                .col-xs-12.col-sm-4.features_jumbotron__item_box
+                    a.borders_box.features_jumbotron__item.features_jumbotron__item--grow-icon(href="{% url 'innovation' %}")
+                        .borders.borders--top-bottom
+                        .borders.borders--sides
+                        span.features_jumbotron__item__text
+                            | {% blocktrans %}Operation via
+                            br
+                            | FIX-protocol{% endblocktrans %}
+                .col-xs-12.col-sm-4.features_jumbotron__item_box
+                    a.borders_box.features_jumbotron__item.features_jumbotron__item--trend-icon(href="{% url 'innovation' %}")
+                        .borders.borders--top-bottom
+                        .borders.borders--sides
+                        span.features_jumbotron__item__text
+                            | {% blocktrans %}Tick charts
+                            br
+                            | of all the financial instruments{% endblocktrans %}
+                .col-xs-12.col-sm-4.features_jumbotron__item_box
+                    a.borders_box.features_jumbotron__item.features_jumbotron__item--view-icon(href="{% url 'innovation' %}")
+                        .borders.borders--top-bottom
+                        .borders.borders--sides
+                        span.features_jumbotron__item__text
+                            | {% blocktrans %}Open API FIX-protocol
+                            br
+                            | for trading robots{% endblocktrans %}
 
-	.strategies_pageblock(style="background-image: url({% static 'img/marketing-site/bg/bg--charts.jpg' %})")
-		.container
-			.row
-				.col-lg-6.col-xs-12.strategies_pageblock__info
-					h2.page_title
-						img.page_title_img(src="{% static 'img/marketing-site/etc/logo-invest.png' %}")
-						//| Invest
-					.benefits
-						//-
-							.tabs__box.benefits__tabs_box
-								div.benefits__tabs_box__button.tabs__button.js-tab.state-active-tab(data-tab-index="01_benefits", data-tab-category="benefits")
-									.tabs__button__text_box
-										span.tabs__button__text
-											- trans "Investors"
-								div.benefits__tabs_box__button.tabs__button.js-tab(data-tab-index="02_benefits", data-tab-category="benefits")
-									.tabs__button__text_box
-										span.tabs__button__text
-											- trans "Traders"
+    .strategies_pageblock(style="background-image: url({% static 'img/marketing-site/bg/bg--charts.jpg' %})")
+        .container
+            .row
+                .col-lg-6.col-xs-12.strategies_pageblock__info
+                    h2.page_title
+                        img.page_title_img(src="{% static 'img/marketing-site/etc/logo-invest.png' %}")
+                        //| Invest
+                    .benefits
+                        //-
+                            .tabs__box.benefits__tabs_box
+                                div.benefits__tabs_box__button.tabs__button.js-tab.state-active-tab(data-tab-index="01_benefits", data-tab-category="benefits")
+                                    .tabs__button__text_box
+                                        span.tabs__button__text
+                                            - trans "Investors"
+                                div.benefits__tabs_box__button.tabs__button.js-tab(data-tab-index="02_benefits", data-tab-category="benefits")
+                                    .tabs__button__text_box
+                                        span.tabs__button__text
+                                            - trans "Traders"
 
-						span.benefits__info.js-tab-content.state-visible(data-tab-index="01_benefits", data-tab-category="benefits")
-							- trans "Make money by copying professional traders"
-						ul.benefits__featurs_list.features_list.js-tab-content.state-visible(data-tab-index="01_benefits", data-tab-category="benefits")
-							li.features_list__item.features_list__item--large-margin
-								h3.features_list__item__title
-									- trans "Overall control"
-								span.features_list__item__text
-									- trans "The funds remain on your account under your full control. You can close a position and withdraw the funds from the strategy immediately."
-							li.features_list__item.features_list__item--large-margin
-								h3.features_list__item__title
-									- trans "Stop loss"
-								span.features_list__item__text
-									- trans "You choose the risk you invest into strategies with. A trader cannot lose more than the weekly stop loss limit you have selected."
-							li.features_list__item.features_list__item--large-margin
-								h3.features_list__item__title
-									- trans "Identical prices"
-								span.features_list__item__text
-									- trans "Due to aggregation of trading volumes the order execution prices are the same as the trader order prices."
-					//-
-						span.benefits__info.js-tab-content(data-tab-index="02_benefits", data-tab-category="benefits")
-							| Lanistas volare, tanquam dexter lamia.
-						ul.benefits__featurs_list.features_list.js-tab-content(data-tab-index="02_benefits", data-tab-category="benefits")
-							li.features_list__item.features_list__item--large-margin
-								h3.features_list__item__title
-									| Monss credere
-								span.features_list__item__text
-									| Eras velum in fortis hamburgum! Sunt tataes examinare mirabilis, bi-color torquises. Cum clabulare experimentum, omnes exemplares visum teres, bi-color sagaes.
-							li.features_list__item.features_list__item--large-margin
-								h3.features_list__item__title
-									| Abactuss potus
-								span.features_list__item__text
-									| Sunt calceuses anhelare camerarius, fatalis dominaes. Toruss resistere! Cum orexis accelerare, omnes cottaes resuscitabo teres, secundus quadraes.
-							li.features_list__item.features_list__item--large-margin
-								h3.features_list__item__title
-									| Hippotoxotas cadunt
-								span.features_list__item__text
-									| Ubi est talis extum? Bassus, fatalis hydras cito demitto de azureus, barbatus racana.
-				.col-lg-6.col-xs-12
-					h2.page_title
-						- trans "Best strategies"
-					div.strategies#ramm-top_five_strategies-widget
-					span.strategies__ps
-						- trans "Past performance does not guarantee future results"
-					a.strategies_pageblock__link.arrow_link(href="https://ramm.arumcapital.eu/rating" target="_blank")
-						- trans "Full rating"
-			.strategies__buttons_box
-				{% if LANGUAGE_CODE == 'ru' %}
-			div.risk-hidden-ru.mobile-view_bottom-indent
-				a.button.button--big-on-mobiles.strategies__buttons_box__button.strategies__buttons_box__left_button(href="https://ramm.arumcapital.eu/ru/help/article/to-start-with", target="_blank")
-					span.button__text
-						- trans 'Invest funds'
-			div.risk-hidden-ru.mobile-view_bottom-indent
-				a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href="https://ramm.arumcapital.eu/help/article/creating-strategies", target="_blank")
-					span.button__text
-						- trans 'Create strategy'
-				{% else %}
-			div.risk-hidden-en.mobile-view_bottom-indent
-				a.button.button--big-on-mobiles.strategies__buttons_box__button.strategies__buttons_box__left_button(href="https://ramm.arumcapital.eu/en/help/article/to-start-with", target="_blank")
-					span.button__text
-						- trans 'Invest funds'
-			div.risk-hidden-en.mobile-view_bottom-indent
-				a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href="https://ramm.arumcapital.eu/help/article/creating-strategies", target="_blank")
-					span.button__text
-						- trans 'Create strategy'
-				{% endif %}
-	.call_to_action(style="background-image: url({% static 'img/marketing-site/bg/bg--tocuher.jpg' %})")
-		.container.call_to_action__container
-			span.call_to_action__text
-				- trans "Attend a free webinar by the platform developer"
-			{% if LANGUAGE_CODE == 'ru' %}
-			div.risk-hidden-ru
-				a.call_to_action__button.call_to_action__button--blue.button.button--outline-night(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-					span.button__text
-						- trans "Register"
-			{% else %}
-			div.risk-hidden-en
-				a.call_to_action__button.call_to_action__button--blue.button.button--outline-night(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
-					span.button__text
-						- trans "Register"
-			{% endif %}
-	.trust_pageblock
-		.container
-			.row
-				.col-lg-8.col-xs-12
-					h2.page_title
-						- trans "10 reasons to start trading with us today"
-					.strong_points
-						ul.strong_points__list
-							li.strong_points__list__item
-								span.strong_points__list__item__number
-									| 01
-								a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
-									- trans "EU regulation"
-							li.strong_points__list__item
-								span.strong_points__list__item__number
-									| 02
-								a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
-									- trans "Secured client funds"
-							li.strong_points__list__item
-								span.strong_points__list__item__number
-									| 03
-								a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
-									- trans "Safe liquidity providers"
-							li.strong_points__list__item
-								span.strong_points__list__item__number
-									| 04
-								a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
-									- trans "Direct link of all transactions via FIX-protocol"
-							li.strong_points__list__item
-								span.strong_points__list__item__number
-									| 05
-								a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
-									- trans "3 professional trading<br>platforms"
+                        span.benefits__info.js-tab-content.state-visible(data-tab-index="01_benefits", data-tab-category="benefits")
+                            - trans "Make money by copying professional traders"
+                        ul.benefits__featurs_list.features_list.js-tab-content.state-visible(data-tab-index="01_benefits", data-tab-category="benefits")
+                            li.features_list__item.features_list__item--large-margin
+                                h3.features_list__item__title
+                                    - trans "Overall control"
+                                span.features_list__item__text
+                                    - trans "The funds remain on your account under your full control. You can close a position and withdraw the funds from the strategy immediately."
+                            li.features_list__item.features_list__item--large-margin
+                                h3.features_list__item__title
+                                    - trans "Stop loss"
+                                span.features_list__item__text
+                                    - trans "You choose the risk you invest into strategies with. A trader cannot lose more than the weekly stop loss limit you have selected."
+                            li.features_list__item.features_list__item--large-margin
+                                h3.features_list__item__title
+                                    - trans "Identical prices"
+                                span.features_list__item__text
+                                    - trans "Due to aggregation of trading volumes the order execution prices are the same as the trader order prices."
+                    //-
+                        span.benefits__info.js-tab-content(data-tab-index="02_benefits", data-tab-category="benefits")
+                            | Lanistas volare, tanquam dexter lamia.
+                        ul.benefits__featurs_list.features_list.js-tab-content(data-tab-index="02_benefits", data-tab-category="benefits")
+                            li.features_list__item.features_list__item--large-margin
+                                h3.features_list__item__title
+                                    | Monss credere
+                                span.features_list__item__text
+                                    | Eras velum in fortis hamburgum! Sunt tataes examinare mirabilis, bi-color torquises. Cum clabulare experimentum, omnes exemplares visum teres, bi-color sagaes.
+                            li.features_list__item.features_list__item--large-margin
+                                h3.features_list__item__title
+                                    | Abactuss potus
+                                span.features_list__item__text
+                                    | Sunt calceuses anhelare camerarius, fatalis dominaes. Toruss resistere! Cum orexis accelerare, omnes cottaes resuscitabo teres, secundus quadraes.
+                            li.features_list__item.features_list__item--large-margin
+                                h3.features_list__item__title
+                                    | Hippotoxotas cadunt
+                                span.features_list__item__text
+                                    | Ubi est talis extum? Bassus, fatalis hydras cito demitto de azureus, barbatus racana.
+                .col-lg-6.col-xs-12
+                    h2.page_title
+                        - trans "Best strategies"
+                    div.strategies#strategies_table
+                    span.strategies__ps
+                        - trans "Past performance does not guarantee future results"
+                    a.strategies_pageblock__link.arrow_link(href="https://ramm.arumcapital.eu/rating" target="_blank")
+                        - trans "Full rating"
+            .strategies__buttons_box
+                {% if LANGUAGE_CODE == 'ru' %}
+            div.risk-hidden-ru.mobile-view_bottom-indent
+                a.button.button--big-on-mobiles.strategies__buttons_box__button.strategies__buttons_box__left_button(href="https://ramm.arumcapital.eu/ru/help/article/to-start-with", target="_blank")
+                    span.button__text
+                        - trans 'Invest funds'
+            div.risk-hidden-ru.mobile-view_bottom-indent
+                a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href="https://ramm.arumcapital.eu/help/article/creating-strategies", target="_blank")
+                    span.button__text
+                        - trans 'Create strategy'
+                {% else %}
+            div.risk-hidden-en.mobile-view_bottom-indent
+                a.button.button--big-on-mobiles.strategies__buttons_box__button.strategies__buttons_box__left_button(href="https://ramm.arumcapital.eu/en/help/article/to-start-with", target="_blank")
+                    span.button__text
+                        - trans 'Invest funds'
+            div.risk-hidden-en.mobile-view_bottom-indent
+                a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href="https://ramm.arumcapital.eu/help/article/creating-strategies", target="_blank")
+                    span.button__text
+                        - trans 'Create strategy'
+                {% endif %}
+    .call_to_action(style="background-image: url({% static 'img/marketing-site/bg/bg--tocuher.jpg' %})")
+        .container.call_to_action__container
+            span.call_to_action__text
+                - trans "Attend a free webinar by the platform developer"
+            {% if LANGUAGE_CODE == 'ru' %}
+            div.risk-hidden-ru
+                a.call_to_action__button.call_to_action__button--blue.button.button--outline-night(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                    span.button__text
+                        - trans "Register"
+            {% else %}
+            div.risk-hidden-en
+                a.call_to_action__button.call_to_action__button--blue.button.button--outline-night(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
+                    span.button__text
+                        - trans "Register"
+            {% endif %}
+    .trust_pageblock
+        .container
+            .row
+                .col-lg-8.col-xs-12
+                    h2.page_title
+                        - trans "10 reasons to start trading with us today"
+                    .strong_points
+                        ul.strong_points__list
+                            li.strong_points__list__item
+                                span.strong_points__list__item__number
+                                    | 01
+                                a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
+                                    - trans "EU regulation"
+                            li.strong_points__list__item
+                                span.strong_points__list__item__number
+                                    | 02
+                                a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
+                                    - trans "Secured client funds"
+                            li.strong_points__list__item
+                                span.strong_points__list__item__number
+                                    | 03
+                                a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
+                                    - trans "Safe liquidity providers"
+                            li.strong_points__list__item
+                                span.strong_points__list__item__number
+                                    | 04
+                                a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
+                                    - trans "Direct link of all transactions via FIX-protocol"
+                            li.strong_points__list__item
+                                span.strong_points__list__item__number
+                                    | 05
+                                a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
+                                    - trans "3 professional trading<br>platforms"
 
-						ul.strong_points__list
-							li.strong_points__list__item
-								span.strong_points__list__item__number
-									| 06
-								a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
-									- trans "Favourable trading conditions"
-							li.strong_points__list__item
-								span.strong_points__list__item__number
-									| 07
-								a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
-									- trans "Ideal conditions for all types of trading robots"
-							li.strong_points__list__item
-								span.strong_points__list__item__number
-									| 08
-								a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
-									- trans "Over 110 trading financial instruments"
-							li.strong_points__list__item
-								span.strong_points__list__item__number
-									| 09
-								a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
-									- trans "Unique investment service"
-							li.strong_points__list__item
-								span.strong_points__list__item__number
-									| 10
-								a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
-									- trans "Qualified support"
-					a.arrow_link(href="{% url 'advantages' %}")
-						- trans "All advantages"
-				.col-lg-4.col-xs-12
-					if company_news
-						.card.trust_pageblock__card
-							h2.page_title.card__title
-								- trans "Company News"
-							for news in company_news
-								a.card__link(href="{% url 'company_news_by_slug' news.slug %}")
-									span.card__text= news.title
-									span.card__date= news.event_date|date:"d E Y"
-							a.arrow_link(href="{% url 'company_news_list' %}")
-								- trans "All news"
-		.trust_pageblock__button_box
-			{% if LANGUAGE_CODE == 'ru' %}
-			div.risk-hidden-ru
-				a.button(href=if_accounts_link, data-popup-target=if_data, class=if_class)
-					span.button__text
-						- trans "Register"
-			{% else %}
-			div.risk-hidden-en
-				a.button(href=if_accounts_link, data-popup-target=if_data, class=if_class)
-					span.button__text
-						- trans "Register"
-			{% endif %}
-	.features_jumbotron(style="background-image: url({% static 'img/marketing-site/bg/bg--gray.png' %})")
-		.container
-			.row
-				.col-xs-12.col-sm-4.features_jumbotron__item_box
-					a.borders_box.features_jumbotron__item.features_jumbotron__item--desk-icon(href="{% url 'education_frontpage' %}")
-						.borders.borders--top-bottom
-						.borders.borders--sides
-						span.features_jumbotron__item__text
-							| {% blocktrans %}More about
-							br
-							| FOREX{% endblocktrans %}
-				.col-xs-12.col-sm-4.features_jumbotron__item_box
-					a.borders_box.features_jumbotron__item.features_jumbotron__item--io-icon(href="{% url 'inout' %}")
-						.borders.borders--top-bottom
-						.borders.borders--sides
-						span.features_jumbotron__item__text
-							| {% blocktrans %}Methods of
-							br
-							| Deposits/Withdrawals{% endblocktrans %}
-				.col-xs-12.col-sm-4.features_jumbotron__item_box
-					a.borders_box.features_jumbotron__item.features_jumbotron__item--phone-icon.js-open-popup(href="#", data-popup-target="callback_request")
-						.borders.borders--top-bottom
-						.borders.borders--sides
-						span.features_jumbotron__item__text
-							| {% blocktrans %}Request
-							br
-							| a call back{% endblocktrans %}
+                        ul.strong_points__list
+                            li.strong_points__list__item
+                                span.strong_points__list__item__number
+                                    | 06
+                                a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
+                                    - trans "Favourable trading conditions"
+                            li.strong_points__list__item
+                                span.strong_points__list__item__number
+                                    | 07
+                                a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
+                                    - trans "Ideal conditions for all types of trading robots"
+                            li.strong_points__list__item
+                                span.strong_points__list__item__number
+                                    | 08
+                                a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
+                                    - trans "Over 110 trading financial instruments"
+                            li.strong_points__list__item
+                                span.strong_points__list__item__number
+                                    | 09
+                                a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
+                                    - trans "Unique investment service"
+                            li.strong_points__list__item
+                                span.strong_points__list__item__number
+                                    | 10
+                                a.link.strong_points__list__item__text(href="{% url 'advantages' %}")
+                                    - trans "Qualified support"
+                    a.arrow_link(href="{% url 'advantages' %}")
+                        - trans "All advantages"
+                .col-lg-4.col-xs-12
+                    if company_news
+                        .card.trust_pageblock__card
+                            h2.page_title.card__title
+                                - trans "Company News"
+                            for news in company_news
+                                a.card__link(href="{% url 'company_news_by_slug' news.slug %}")
+                                    span.card__text= news.title
+                                    span.card__date= news.event_date|date:"d E Y"
+                            a.arrow_link(href="{% url 'company_news_list' %}")
+                                - trans "All news"
+        .trust_pageblock__button_box
+            {% if LANGUAGE_CODE == 'ru' %}
+            div.risk-hidden-ru
+                a.button(href=if_accounts_link, data-popup-target=if_data, class=if_class)
+                    span.button__text
+                        - trans "Register"
+            {% else %}
+            div.risk-hidden-en
+                a.button(href=if_accounts_link, data-popup-target=if_data, class=if_class)
+                    span.button__text
+                        - trans "Register"
+            {% endif %}
+    .features_jumbotron(style="background-image: url({% static 'img/marketing-site/bg/bg--gray.png' %})")
+        .container
+            .row
+                .col-xs-12.col-sm-4.features_jumbotron__item_box
+                    a.borders_box.features_jumbotron__item.features_jumbotron__item--desk-icon(href="{% url 'education_frontpage' %}")
+                        .borders.borders--top-bottom
+                        .borders.borders--sides
+                        span.features_jumbotron__item__text
+                            | {% blocktrans %}More about
+                            br
+                            | FOREX{% endblocktrans %}
+                .col-xs-12.col-sm-4.features_jumbotron__item_box
+                    a.borders_box.features_jumbotron__item.features_jumbotron__item--io-icon(href="{% url 'inout' %}")
+                        .borders.borders--top-bottom
+                        .borders.borders--sides
+                        span.features_jumbotron__item__text
+                            | {% blocktrans %}Methods of
+                            br
+                            | Deposits/Withdrawals{% endblocktrans %}
+                .col-xs-12.col-sm-4.features_jumbotron__item_box
+                    a.borders_box.features_jumbotron__item.features_jumbotron__item--phone-icon.js-open-popup(href="#", data-popup-target="callback_request")
+                        .borders.borders--top-bottom
+                        .borders.borders--sides
+                        span.features_jumbotron__item__text
+                            | {% blocktrans %}Request
+                            br
+                            | a call back{% endblocktrans %}
