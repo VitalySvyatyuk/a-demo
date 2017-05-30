@@ -49,6 +49,8 @@ APIRouterV1.register(r'crm/customer', CustomerViewSet, base_name="customer")
 APIRouterV1.register(r'crm/info', InfoViewSet, base_name="info")
 APIRouterV1.register(r'crm/manager', ManagersViewSet, base_name='manager')
 
+from massmail.rest_api import CampaignTypeViewSet
+APIRouterV1.register(r'massmail/type', CampaignTypeViewSet, base_name='type')
 
 from gcrm.rest.viewsets import ContactViewSet, ManagerViewSet, ManagerReassignRequestViewSet, \
     TaskViewSet, NoteViewSet, AccountViewSet, CallViewSet, CountryViewSet, RegionViewSet
