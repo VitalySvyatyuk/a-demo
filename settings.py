@@ -503,7 +503,7 @@ PAYMENTS_UNAVAILABLE = False
 ###
 
 ACCENTPAY_ACCOUNT = "3515"
-ACCENTPAY_SECRET = "317d724a2b7dc16d33a377cd17f55563b91ced6d"
+ACCENTPAY_SECRET = "JXFSsySEgY2G68a/4MxQ65qdAQA="
 
 # The secret word MUST be any  lowercase string, submitted in the 'Merchant Tools' section.
 MONEYBOOKERS_SECRET = "arumarum"
