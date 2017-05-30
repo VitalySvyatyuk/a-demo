@@ -49,6 +49,7 @@ class Message(models.Model):
     """
     subject = models.CharField(_("Subject"), max_length=3000, default="")
     body = models.TextField(_("Body"), default="")
+    campaign = models.ForeignKey("massmail.Campaign", blank=True, null=True)
     sender = models.ForeignKey(User, related_name='sent_messages', verbose_name=_("Sender"), blank=True, null=True)
     recipient = models.ForeignKey(User, related_name='received_messages', null=True, blank=True, verbose_name=_("Recipient"))
     parent_msg = models.ForeignKey('self', related_name='next_messages', null=True, blank=True, verbose_name=_("Parent message"))

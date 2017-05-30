@@ -10,11 +10,11 @@ from shared.utils import define
 define('BANKS', {
     "Verso": (
         (_("Beneficiary"), "ARUMPRO CAPITAL LIMITED"),  # Получатель
-        (_("Beneficiary Bank"), "VERSOBANK AS"),  # Банк получателя
-        (_("Beneficiary Bank's Code"), "SBMBEE22"),  # Код банка получателя
-        (_("Beneficiary Bank's Address"), "Hallivanamehe 4, 11317 Tallinn, Estonia"),  # Адрес банка получателя
-        (_("Beneficiaries Account Number"), "EE405500000551225541"),  # Номер счета получателя
-        (_("Payment Reference"), "Top UP of the trading AC"), # Назначение платежа
+        (_("Beneficiary Bank"), "RCB Bank Ltd"),  # Банк получателя
+        (_("Beneficiary Bank's Code"), "RCBLCY21"),  # Код банка получателя
+        (_("Beneficiary Bank's Address"), _("2, Amathountos street, P.O. Box 56868, 3310, Limassol, Cyprus")),  # Адрес банка получателя
+        (_("Beneficiaries Account Number"), "CY29126000000000000036574004"),  # Номер счета получателя
+        (_("Payment Reference"), _("Top UP of the trading AC")), # Назначение платежа
     ),
 })
 

@@ -25,14 +25,11 @@
                 <span>{% trans "Security" %}</span>
             </a>
         </dd>
-        {% comment %}
-            
         <dd {% if category == 'subscriptions' %}class="active"{% endif %}>
             <a ng-href="[[::BASE_URL]]profile/subscriptions">
                 <span>{% trans "Subscriptions" %}</span>
             </a>
         </dd>
-        {% endcomment %}
         {% endblock %}
     </dl>
 

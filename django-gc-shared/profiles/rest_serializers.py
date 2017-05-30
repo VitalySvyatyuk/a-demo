@@ -98,7 +98,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
         if value:
             try:
                 TradingAccount.objects.real_ib().get(mt4_id=value)
-            except (Mt4Account.DoesNotExist, ValueError):
+            except (TradingAccount.DoesNotExist, ValueError):
                 raise serializers.ValidationError(_("Wrong partner code"))
             except TradingAccount.MultipleObjectsReturned:
                 pass
@@ -149,6 +149,9 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'agent_code',
             'lost_otp',
             'otp_type',
+
+            'subscription',
+
             'has_valid_documents',
             'status_info',
             'email_verified',

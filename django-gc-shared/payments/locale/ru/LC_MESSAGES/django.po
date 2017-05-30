@@ -18,6 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.11\n"
 
+msgid "2, Amathountos street, P.O. Box 56868, 3310, Limassol, Cyprus"
+msgstr "Кипр, Лимассол, ул. Аматунтос д.2, п/я 56868, индекс 3310, Limassol, Cyprus"
+
+msgid "Account no.: 036574004"
+msgstr "Номер счета: 036574004"
+
 msgid "Beneficiary"
 msgstr "Получатель"
 

@@ -637,6 +637,7 @@ CKEDITOR_CONFIGS = {
         'basicEntities': False,
     },
 }
+CKEDITOR_CONFIGS['massmail'] = CKEDITOR_CONFIGS['default']
 
 
 # Django 1.3 logging

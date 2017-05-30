@@ -205,6 +205,9 @@ class UserProfile(StateSavingModel):
     lost_otp = models.BooleanField(_("Did user lose his OTP"), default=False)
     auth_scheme = models.CharField(max_length=10, verbose_name="Auth scheme", choices=AUTH_SCHEMES, null=True)
     params = JSONField(_("Details"), blank=True, null=True, default={})
+    subscription = models.ManyToManyField('massmail.CampaignType',
+                                          verbose_name=u'Тип рассылки',
+                                          blank=True, null=True)
     user_from = JSONField(_("Source"), blank=True, null=True, default={})
     registered_from = models.CharField(
         max_length=255,
@@ -294,6 +297,20 @@ class UserProfile(StateSavingModel):
         return self.user.groups.filter(name__in=groups).exists()
 
     has_group = has_groups  # Would work perfectly fine for one group.
+
+    def update_subscription(self):
+        # Common massmail campaigns
+        from massmail.models import Unsubscribed, CampaignType
+
+        if not self.subscription.all():
+            Unsubscribed.objects.get_or_create(email=self.user.email)
+        else:
+            try:
+                obj = Unsubscribed.objects.get(email=self.user.email)
+            except Unsubscribed.DoesNotExist:
+                pass
+            else:
+                obj.delete()
 
     ###
     # Validations section

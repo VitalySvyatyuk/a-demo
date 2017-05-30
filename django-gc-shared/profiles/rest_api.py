@@ -107,6 +107,8 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet, mixins.UpdateModelMixin):
 
         instance = serializer.save()
 
+        instance.profile.update_subscription()
+
         # try to assign new manager if not taken
         if instance.profile.changes.get('agent_code') and not instance.profile.manager:
             instance.profile.autoassign_manager()

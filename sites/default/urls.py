@@ -46,6 +46,7 @@ urlpatterns = patterns("",
     url(r"^rosetta/", include("rosetta.urls")),
     url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^ajax-lookups/', include('ajax_select.urls')),
+    url(r'^massmail/', include('massmail.urls')),
 
     url(r"^jsi18n/$", "django.views.i18n.javascript_catalog",
         {"packages": ("payments", "transfers", "profiles", "templates", "otp"),
