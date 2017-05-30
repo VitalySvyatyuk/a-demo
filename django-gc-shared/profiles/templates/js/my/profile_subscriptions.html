@@ -25,13 +25,13 @@
               <label for="ctype_[[::ctype.id]]"></label>
               <label for="ctype_[[::ctype.id]]">[[::ctype.title]]</label>
             </li>
-            <li>
+{% comment %}            <li>
               <input type="checkbox" id="send_account_statements"
                 ng-click="toggleAccountStatements()"
                 ng-checked="isAccountStatementsEnabled()"/>
               <label for="send_account_statements"></label>
               <label for="send_account_statements">{% trans 'Account statements' %}</label>
-            </li>
+            </li>{% endcomment %}
           </ul>
 
         </div>
