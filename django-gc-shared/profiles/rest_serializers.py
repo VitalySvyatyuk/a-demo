@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.postgres.fields import HStoreField
 
 from profiles.models import UserProfile, UserDocument
-from profiles.validators import latin_chars_name
+from profiles.validators import latin_chars_name, latin_chars_name_with_numbers
 
 from platforms.models import TradingAccount
 from geobase.rest_fields import PhoneField
@@ -69,6 +69,16 @@ class UserProfileSerializer(serializers.ModelSerializer):
     def validate_middle_name(self, value):
         if value:
             latin_chars_name(value)
+        return value
+
+    def validate_city(self, value):
+        if value:
+            latin_chars_name(value)
+        return value
+
+    def validate_address(self, value):
+        if value:
+            latin_chars_name_with_numbers(value)
         return value
 
 

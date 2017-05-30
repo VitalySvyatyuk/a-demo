@@ -36,7 +36,7 @@ templates = {
 
 
 class DepositForm(payments.systems.accentpay.DepositForm):
-    action, auto = "https://terminal-sandbox.ecommpay.com/", True
+    action, auto = "https://terminal.ecommpay.com/", True
     commission_rate = Decimal("0.035")
     MIN_AMOUNT = (10, 'USD')
     payment_group_id = "16"

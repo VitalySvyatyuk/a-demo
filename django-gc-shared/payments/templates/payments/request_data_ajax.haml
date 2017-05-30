@@ -40,6 +40,10 @@
         %tr
             %td {% trans "Payment system" %}
             %td {{ object.payment_system }}
+        - if is_visa
+            %tr
+                %td {% trans "Last transaction id" %}
+                %td {{ object.last_transaction_id }}
         %tr
             %td {% trans "Purse (account)" %}
             %td

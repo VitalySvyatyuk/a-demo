@@ -497,17 +497,17 @@ ACCENTPAY_ACCOUNT = "3515"
 ACCENTPAY_SECRET = "317d724a2b7dc16d33a377cd17f55563b91ced6d"
 
 # The secret word MUST be any  lowercase string, submitted in the 'Merchant Tools' section.
-MONEYBOOKERS_SECRET = "secret" # seems will get only if we have buisness account
+MONEYBOOKERS_SECRET = "arumarum"
 # Payee email address (this is where all the deposited funds will go eventually).
 MONEYBOOKERS_TO = {
-    "USD": " rv@uptrader.us",
+    "USD": "ceo@arumcapital.eu",
 }
 
 NETELLER_TEST_MERCHANT_ID = "33935"
 NETELLER_TEST_MERCHANT_KEY = "542462"
 
-NETELLER_MERCHANT_ID = "AAABW_K9ASVtfutP"
-NETELLER_SECRET_KEY = "0.QaiNLM1R_AXoVLt4zupT-JjTv9oVH97GJavarOKb5iY.oDrMbt2_v2rzsnnAgKtv4XaxiTc"
+NETELLER_MERCHANT_ID = "ceo@arumcapital.eu"
+NETELLER_SECRET_KEY = "Arum999"
 
 ###
 # Western Union, Migom, FastPost settings

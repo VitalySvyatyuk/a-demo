@@ -223,6 +223,8 @@ def request_data(request, operation):
         context["profitability_deposit"] = params["profitability_deposit"]
         context["last_updated"] = datetime.strptime(params["last_updated"], "%Y-%m-%dT%H:%M:%S").strftime("%d.%m.%Y")
 
+    context['is_visa'] = str(obj.payment_system) == 'Visa/Mastercard'
+
     if operation == "withdraw":
         update_profit(obj)
 

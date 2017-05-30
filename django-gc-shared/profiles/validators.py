@@ -19,6 +19,11 @@ def is_partner_account(value):
 
 
 latin_chars_name = RegexValidator(
-    regex=r'^[a-zA-Z ,.\'-]*$',
+    regex=r'^[a-zA-Z ,.\'\-]*$',
+    message=_("Please use latin-based characters only"),
+    code='invalid_name')
+
+latin_chars_name_with_numbers = RegexValidator(
+    regex=r'^[a-zA-Z ,.\'\-#№0-9&\(\)\"]*$',
     message=_("Please use latin-based characters only"),
     code='invalid_name')

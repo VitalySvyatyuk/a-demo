@@ -20,7 +20,7 @@ block content
         .benefits
             .tabs__box.benefits__tabs_box
               for cat in categories
-                a.benefits__tabs_box__button.tabs__button(href="{% url 'specifications' cat.slug %}", class=('state-active-tab' if cat == category else ''))
+                a.benefits__tabs_box__button.tabs__button(href="{% url 'margin_requirements' cat.slug %}", class=('state-active-tab' if cat == category else ''))
                   .tabs__button__text_box
                     span.tabs__button__text= cat.name
 
