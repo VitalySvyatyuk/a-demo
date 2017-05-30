@@ -480,6 +480,15 @@ PLIVO_SENDER = "+12093171507"
 
 UPLOAD_PATH = os.path.join(MEDIA_ROOT, 'uploads')
 
+###########
+# Massmail
+###########
+
+MASSMAIL_DEFAULT_FROM_EMAIL = "Arum News <news@arumcapital.eu>"
+MASSMAIL_DEFAULT_REPLY_TO = "info@arumcapital.eu"
+MASSMAIL_UNSUBSCRIBE_EMAIL = "list-unsubscribe@arumcapital.eu"
+MASSMAIL_UNSUBSCRIBE_MAILBOX_PASSWORD = ""
+MASSMAIL_UNSUBSCRIBE_MAILBOX_POP_SERVER = "localhost"
 
 #####################################################################
 ############# PAYMENTS
@@ -507,7 +516,7 @@ NETELLER_TEST_MERCHANT_ID = "33935"
 NETELLER_TEST_MERCHANT_KEY = "542462"
 
 NETELLER_MERCHANT_ID = "ceo@arumcapital.eu"
-NETELLER_SECRET_KEY = "Arum999"
+NETELLER_SECRET_KEY = "0.BK2GLLgoicN9YBbrXCPw-fwhdS8NfFmgUnHX-UA6vjE.EAAQrysNthlgV66dxbf8fKhYsqUFGxE"
 
 ###
 # Western Union, Migom, FastPost settings
