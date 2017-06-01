@@ -791,10 +791,15 @@ SS_API_TOKEN = "eFBxR84qJK9nBAWj"
 
 # CFH settings
 # Auth settings
-CFH_API_BROKER = "https://demows.cfhclearing.com:8090/BrokerDataAccess?wsdl"
-CFH_API_CLIENTADMIN = "https://demows.cfhclearing.com:8083/DemoClientAdmin?wsdl"
-CFH_API_LOGIN = "UpTraderAdmin"
-CFH_API_PASSWORD = "UpTraderAdmin1"
+DEMO_CFH_API_BROKER = "https://demows.cfhclearing.com:8090/BrokerDataAccess?wsdl"
+DEMO_CFH_API_CLIENTADMIN = "https://demows.cfhclearing.com:8083/DemoClientAdmin?wsdl"
+DEMO_CFH_API_LOGIN = "UpTraderAdmin"
+DEMO_CFH_API_PASSWORD = "UpTraderAdmlin1"
+CFH_API_BROKER = "https://ws.cfhclearing.com:8090/BrokerDataAccess?wsdl"
+CFH_API_CLIENTADMIN = "https://ws.cfhclearing.com:8091/BrokerDataAccess?wsdl"
+CFH_API_LOGIN = "ArumProAdmin"
+CFH_API_PASSWORD = "ArumProAdmin2017"
+
 # New account creation settings
 CFH_BROKER_ID = 140807
 # Accounts for money transfers

@@ -175,10 +175,14 @@
 	max-width: 100%;
 }
 .payment-image-cell, .payment-text-cell {
-	display: table-cell;
-	float: left;
+	// display: table-cell;
+	// float: left;
+	display: inline-block;
+	vertical-align: middle;
 	width: 30%;
 }
 .payment-text-cell {
 	width: auto;
+	display: inline-block;
+	vertical-align: middle;
 }

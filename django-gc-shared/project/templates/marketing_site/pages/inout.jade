@@ -65,7 +65,8 @@ block content
 									.strategies__cell__inout_method_box.payment-image-cell
 										if system.image
 											img.strategies__cell__inout_method(src=system.image.url, alt=system.name)
-									span.strategies__cell__text.payment-text-cell= system.name
+										else
+											span.strategies__cell__text.payment-text-cell= system.name
 								td.strategies__cell
 									span.strategies__cell__text= system.currency
 								td.strategies__cell
@@ -195,7 +196,8 @@ block content
 									.strategies__cell__inout_method_box.payment-image-cell
 										if system.image
 											img.strategies__cell__inout_method(src=system.image.url, alt=system.name)
-									span.strategies__cell__text.payment-text-cell= system.name
+										else
+											span.strategies__cell__text.payment-text-cell= system.name
 								td.strategies__cell
 									span.strategies__cell__text= system.currency
 								td.strategies__cell

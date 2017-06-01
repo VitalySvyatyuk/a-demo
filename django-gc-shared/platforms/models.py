@@ -293,7 +293,19 @@ class TradingAccount(models.Model):
             return ApiFacade(settings.SS_API_HOST, settings.SS_API_LOGIN, settings.SS_API_TOKEN)
         elif self.platform_type == "cfh":
             from cfh import ApiFacade  # type: ignore
-            return ApiFacade(settings.CFH_API_BROKER, settings.CFH_API_CLIENTADMIN, settings.CFH_API_LOGIN, settings.CFH_API_PASSWORD)
+            # TODO: store servers inside accounts, because it may be random in general
+            if self.is_demo:
+                broker_api = settings.DEMO_CFH_API_BROKER
+                clientadmin_api = settings.DEMO_CFH_CLIENTADMIN
+                api_login = settings.DEMO_CFH_API_LOGIN
+                api_passwd = settings.DEMO_CFH_API_PASSWORD
+            else:
+                broker_api = settings.CFH_API_BROKER
+                clientadmin_api = settings.CFH_CLIENTADMIN
+                api_login = settings.CFH_API_LOGIN
+                api_passwd = settings.CFH_API_PASSWORD
+
+            return ApiFacade(broker_api, clientadmin_api, api_login, api_passwd)
 
     def save(self, **kwargs):
         # type: (**object) -> None

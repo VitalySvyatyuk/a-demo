@@ -494,7 +494,7 @@ def export_ecommpay_withdrawals(request):
             "Withdrawal from trading account #%s" % wr.account.mt4_id,
         )))
 
-    result = '\n\r'.join(*result)
+    result = '\n\r'.join(result)
 
     response = HttpResponse(result, content_type="text/csv")
     response['Content-Disposition'] = 'attachment; filename="ecommpay_withdrawals{}.csv"'.format(

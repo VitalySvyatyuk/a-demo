@@ -19,12 +19,13 @@ from shared.decorators import cached_func
 from .exceptions import CFHError
 
 import logging
+
 log = logging.getLogger(__name__)
-CACHE_TIMEOUT = 3*60
+CACHE_TIMEOUT = 3 * 60
+
 
 # noinspection PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic
 class ApiFacade(object):
-
     def __init__(self, broker_endpoint, clientadmin_endpoint, login, password):
         """
         Api facade constructor:
@@ -147,7 +148,7 @@ class ApiFacade(object):
         """
         # cfh leverage supposed to be 100 by default
         # but can't be sure (no api method)
-        return [100,75,50,33,25,20,10,5,1]
+        return [100, 75, 50, 33, 25, 20, 10, 5, 1]
 
     @cached_func(CACHE_TIMEOUT)
     def account_trades(self, account, from_date=datetime(2000, 1, 1), to_date=datetime.now(), max_num=10000):
@@ -192,13 +193,13 @@ class ApiFacade(object):
             resp = self.client2.service.CreateClientFromTemplate(TemplateID=client_temp,
                                                                  BrokerID=settings.CFH_BROKER_ID,
                                                                  ClientDisplayName=account.user.get_full_name(),
-                                                                 LoginName=login+str(num),
+                                                                 LoginName=login + str(num),
                                                                  LoginPassword=password)
             log.debug("resp=%s" % resp)
             new_id = resp['ClientAccountID']
             log.debug("new_id=%d" % new_id)
             account.mt4_id = new_id
-            account._login = login+str(num)
+            account._login = login + str(num)
             if initial_balance:
                 self.account_deposit(account, initial_balance, "Initial balance")
             return password

@@ -152,6 +152,19 @@
 	}
 }
 
+.footer__payments-icons{
+	p{
+		margin: 0;
+		a{
+			vertical-align: middle;
+			display: inline-block;
+			width: 50%;
+			img{
+				width: 80%;
+			}
+		}
+	}
+}
 .footer__legals{
 	color: $steel;
 	font-size: (13em/16);
