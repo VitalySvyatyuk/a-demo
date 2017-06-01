@@ -272,6 +272,7 @@ MIDDLEWARE_CLASSES = (
     'visitor_analytics.middleware.UtmMiddleware',
     'log.middleware.LogMiddleware',
     'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
+    'massmail.middleware.MassMailMiddleware',
     'crm.middleware.CorsMiddleware',
 )
 

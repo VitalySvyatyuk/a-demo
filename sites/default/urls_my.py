@@ -30,6 +30,7 @@ urlpatterns = patterns("",
     url(r"^referral/", include("referral.urls_my")),
     url(r'^messages/', include('private_messages.urls_my')),
     url(r'^friend_recommed/', include('friend_recommend.urls_my')),
+    url(r'^massmail/', include('massmail.urls_my')),
 )
 
 # Static files are usually served by web server, but the built-in
