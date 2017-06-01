@@ -301,7 +301,7 @@ class TradingAccount(models.Model):
                 api_passwd = settings.DEMO_CFH_API_PASSWORD
             else:
                 broker_api = settings.CFH_API_BROKER
-                clientadmin_api = settings.CFH_CLIENTADMIN
+                clientadmin_api = settings.CFH_API_CLIENTADMIN
                 api_login = settings.CFH_API_LOGIN
                 api_passwd = settings.CFH_API_PASSWORD
 

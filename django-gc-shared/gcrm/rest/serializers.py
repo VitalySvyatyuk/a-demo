@@ -8,6 +8,7 @@ from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 from rest_framework import serializers
 
+from platforms.cfh.exceptions import CFHError
 from crm.models import PersonalManager
 from currencies.rest_fields import MoneyField
 from gcrm.models import Contact, ManagerReassignRequest, Task, Note
@@ -742,11 +743,19 @@ class FeedDepositRequestSerializer(serializers.ModelSerializer):
         return 'deposit' if obj.is_deposit else 'withdraw'
 
     def get_account(self, obj):
-        return {
-            'mt4_id': obj.account.mt4_id,
-            'group': obj.account.group.slug if obj.account.group else "None",
-            'group_name': obj.account.group.name if obj.account.group else "None",
-        }
+        try:
+            return {
+                'mt4_id': obj.account.mt4_id,
+                'group': obj.account.group.slug if obj.account.group else "None",
+                'group_name': obj.account.group.name if obj.account.group else "None",
+            }
+        except CFHError:
+            return {
+                'mt4_id': '---',
+                'group': '---',
+                'group_name': '---',
+            }
+
 
     def get_amount_USD(self, obj):
         return MoneyField().to_representation(obj.amount_money.to_USD())

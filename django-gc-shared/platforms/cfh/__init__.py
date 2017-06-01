@@ -8,6 +8,7 @@ import sys
 from random import randint
 
 from django.conf import settings
+from requests import ConnectionError
 from zeep import Client
 from zeep.transports import Transport
 from zeep.exceptions import Error
@@ -24,6 +25,7 @@ log = logging.getLogger(__name__)
 CACHE_TIMEOUT = 3 * 60
 
 
+
 # noinspection PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic
 class ApiFacade(object):
     def __init__(self, broker_endpoint, clientadmin_endpoint, login, password):
@@ -36,10 +38,17 @@ class ApiFacade(object):
         """
         log.debug("Creating CFH facade for login %s" % login)
         log.debug("Enpoints: %s, %s" % (broker_endpoint, clientadmin_endpoint))
-        self.client1 = Client(broker_endpoint,
-                              transport=Transport(http_auth=(login, password)))
-        self.client2 = Client(clientadmin_endpoint,
-                              transport=Transport(http_auth=(login, password)))
+        try:
+            self.client1 = Client(broker_endpoint,
+                                  transport=Transport(http_auth=(login, password)))
+            self.client2 = Client(clientadmin_endpoint,
+                                  transport=Transport(http_auth=(login, password)))
+        except ConnectionError:
+            raise CFHError(500, 'Cant connect to endpoint broker_endpoint: {}, client_admin_endpoint: {}'.format(
+                broker_endpoint, clientadmin_endpoint )
+                           )
+
+
 
         if not self.client1.service.ValidateService():
             log.error("CFH validation failed, check credentdials!")

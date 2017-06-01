@@ -480,7 +480,7 @@ def export_ecommpay_withdrawals(request):
                                                       account__user=wr.account.user,
                                                       params__contains="transaction").order_by('-creation_ts').first()
         if purse_request:
-            purse = purse_request.details["transaction"]
+            purse = purse_request.params["transaction"]
         else:
             purse = "ERROR! Transaction_id not found!"
 
@@ -494,7 +494,7 @@ def export_ecommpay_withdrawals(request):
             "Withdrawal from trading account #%s" % wr.account.mt4_id,
         )))
 
-    result = '\n\r'.join(result)
+    result = '\r\n'.join(result)
 
     response = HttpResponse(result, content_type="text/csv")
     response['Content-Disposition'] = 'attachment; filename="ecommpay_withdrawals{}.csv"'.format(
