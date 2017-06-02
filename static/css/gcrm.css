@@ -374,6 +374,9 @@ th {
 label {
   display: inline-block;
   margin-bottom: .5rem; }
+.label-success {
+  background-color: #5cb85c;
+}
 
 button:focus {
   outline: 1px dotted;

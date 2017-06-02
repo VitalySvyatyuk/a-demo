@@ -9,6 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 from rest_framework import serializers
 
 from platforms.cfh.exceptions import CFHError
+from platforms.strategy_store.exceptions import SSError
 from crm.models import PersonalManager
 from currencies.rest_fields import MoneyField
 from gcrm.models import Contact, ManagerReassignRequest, Task, Note
@@ -749,7 +750,7 @@ class FeedDepositRequestSerializer(serializers.ModelSerializer):
                 'group': obj.account.group.slug if obj.account.group else "None",
                 'group_name': obj.account.group.name if obj.account.group else "None",
             }
-        except CFHError:
+        except (CFHError, SSError):
             return {
                 'mt4_id': '---',
                 'group': '---',

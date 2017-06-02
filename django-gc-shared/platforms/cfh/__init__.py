@@ -11,7 +11,7 @@ from django.conf import settings
 from requests import ConnectionError
 from zeep import Client
 from zeep.transports import Transport
-from zeep.exceptions import Error
+from zeep.exceptions import Error, TransportError
 
 from platforms.models import AbstractTrade, TradingAccount
 from platforms.utils import create_password
@@ -49,13 +49,15 @@ class ApiFacade(object):
                            )
 
 
-
-        if not self.client1.service.ValidateService():
-            log.error("CFH validation failed, check credentdials!")
-            raise CFHError(0, "CFH broker service validation failed!")
-        if not self.client2.service.ValidateService():
-            log.error("CFH validation failed, check credentdials!")
-            raise CFHError(0, "CFH client admin service validation failed!")
+        try:
+            if not self.client1.service.ValidateService():
+                log.error("CFH validation failed, check credentdials!")
+                raise CFHError(0, "CFH broker service validation failed!")
+            if not self.client2.service.ValidateService():
+                log.error("CFH validation failed, check credentdials!")
+                raise CFHError(0, "CFH client admin service validation failed!")
+        except TransportError:
+            raise CFHError(500, 'Transport error CFH service validation failed!')
 
         self._load_instruments()
 

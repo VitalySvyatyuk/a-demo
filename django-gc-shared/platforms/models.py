@@ -275,7 +275,12 @@ class TradingAccount(models.Model):
         Account type (despite naming).
         Returns AccountType object, not string!
         """
-        return get_account_type(self.api.account_group(self))
+        from platforms.cfh.exceptions import CFHError
+        from platforms.strategy_store.exceptions import SSError
+        try:
+            return get_account_type(self.api.account_group(self))
+        except (CFHError, SSError):
+            return None
 
     @cached_property
     def api(self):
@@ -296,7 +301,7 @@ class TradingAccount(models.Model):
             # TODO: store servers inside accounts, because it may be random in general
             if self.is_demo:
                 broker_api = settings.DEMO_CFH_API_BROKER
-                clientadmin_api = settings.DEMO_CFH_CLIENTADMIN
+                clientadmin_api = settings.DEMO_CFH_API_CLIENTADMIN
                 api_login = settings.DEMO_CFH_API_LOGIN
                 api_passwd = settings.DEMO_CFH_API_PASSWORD
             else:
@@ -322,7 +327,12 @@ class TradingAccount(models.Model):
         """
         Credit leverage of an account.
         """
-        return self.api.account_leverage(self)
+        from platforms.cfh.exceptions import CFHError
+        from platforms.strategy_store.exceptions import SSError
+        try:
+            return self.api.account_leverage(self)
+        except (CFHError, SSError):
+            return '---'
 
     @property
     def is_disabled(self):
@@ -343,13 +353,17 @@ class TradingAccount(models.Model):
 
     @property
     def equity_money(self):
+        from platforms.cfh.exceptions import CFHError
+        from platforms.strategy_store.exceptions import SSError
         # type: () -> Money
         """
         Return account equity (value of open positions + balance)
         Returns Money object.
         """
-        return Money(self.api.account_equity(self), self.currency)
-
+        try:
+            return Money(self.api.account_equity(self), self.currency)
+        except (CFHError, SSError):
+            return NoneMoney()
     def check_password(self, password):
         # type: (str) -> bool
         """
@@ -488,8 +502,13 @@ class TradingAccount(models.Model):
         return convert_currency(balance, self.currency, currency)
 
     def get_balance_money(self, with_bonus=False):
+        from platforms.cfh.exceptions import CFHError
+        from platforms.strategy_store.exceptions import SSError
         # type: (bool) -> Money
-        return Money(*self.get_balance(with_bonus=with_bonus))
+        try:
+            return Money(*self.get_balance(with_bonus=with_bonus))
+        except (CFHError, SSError):
+            return NoneMoney()
 
 
 class AbstractTrade(models.Model):

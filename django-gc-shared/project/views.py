@@ -135,7 +135,7 @@ def private_offices(request, slug):
     return cfg
 
 
-@render_to('marketing_site/pages/index.jade')
+# @render_to('marketing_site/pages/index.jade')
 def frontpage(request):
     # QUOTES NEEDED LOOKS LIKE:
     # quotes_needed = OrderedDict(
@@ -143,6 +143,13 @@ def frontpage(request):
     #      (_('Metals'), ('GC', 'HG', 'PA', 'PL', 'SI', 'CT', 'ES', 'DX')),
     #      (_('Indices'), ('FDAX', 'AEX', 'DX', 'ES', 'FCE', 'FTSE', 'YM', 'NQ')))
     # )
+
+    show_language_choice_modal = request.GET.get('show')
+    if show_language_choice_modal and show_language_choice_modal.lower() != "true":
+        show_language_choice_modal = False
+    else:
+        show_language_choice_modal = True
+
 
     quotes_needed = OrderedDict()
     for quotes_tab_needed in ChangeQuote.objects.all():
@@ -182,10 +189,18 @@ def frontpage(request):
     except Exception as e:
         # too broad exception because MySQL exceptions are not proxied by Django's DatabaseError :(
         log.warn(e)
-    return {
+
+
+    context = {
         "company_news": CompanyNews.objects.published().filter(language=request.LANGUAGE_CODE)[:3],
         "quotes": result
     }
+
+    responce = render(request, 'marketing_site/pages/index.jade', context=context)
+    if not show_language_choice_modal:
+        responce.set_cookie('show', 'false')
+
+    return responce
 
 
 @render_to('marketing_site/pages/inout.jade')
