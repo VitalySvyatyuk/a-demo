@@ -796,27 +796,41 @@ DEMO_CFH_API_BROKER = "https://demows.cfhclearing.com:8090/BrokerDataAccess?wsdl
 DEMO_CFH_API_CLIENTADMIN = "https://demows.cfhclearing.com:8083/DemoClientAdmin?wsdl"
 DEMO_CFH_API_LOGIN = "UpTraderAdmin"
 DEMO_CFH_API_PASSWORD = "UpTraderAdmin1"
-CFH_API_BROKER = "https://ws.cfhclearing.com:8090/BrokerDataAccess?wsdl"
-CFH_API_CLIENTADMIN = "https://ws.cfhclearing.com:8091/BrokerDataAccess?wsdl"
+CFH_API_BROKER = "https://ws.cfhclearing.com:8091/BrokerDataAccess?wsdl"
+CFH_API_CLIENTADMIN = "https://ws.cfhclearing.com:8084/LiveClientAdmin?wsdl"
 CFH_API_LOGIN = "ArumProAdmin"
 CFH_API_PASSWORD = "ArumProAdmin2017"
 
 # New account creation settings
-CFH_BROKER_ID = 140807
+CFH_BROKER_ID = 11244
+DEMO_CFH_BROKER_ID = 173056
 # Accounts for money transfers
-CFH_DEPOSIT_ACCOUNT_ID = 120043
-CFH_WITHDRAW_ACCOUNT_ID = 120041
+CFH_DEPOSIT_ACCOUNT_ID = 24999
+CFH_WITHDRAW_ACCOUNT_ID = 24997
+DEMO_CFH_DEPOSIT_ACCOUNT_ID = 153640
+DEMO_CFH_WITHDRAW_ACCOUNT_ID = 153640
 # Margin requirements objects, dict in form leverage:obj_id
 CFH_CLIENT_TEMPLATES = {
-    '100': 1180,
-    '50': 1165,
-    '33': 1181,
-    '75': 1182,
-    '25': 1183,
-    '20': 1184,
-    '10': 1185,
-    '5': 1186,
-    '1': 1187,
+    '100': 361,
+    '75': 362,
+    '50': 363,
+    '33': 364,
+    '25': 365,
+    '20': 366,
+    '10': 367,
+    '5': 368,
+    '1': 369,
+}
+DEMO_CFH_CLIENT_TEMPLATES = {
+    '100': 572,
+    '50': 571,
+    '33': 573,
+    '75': 579,
+    '25': 574,
+    '20': 575,
+    '10': 576,
+    '5': 577,
+    '1': 578,
 }
 
 # CRM settings

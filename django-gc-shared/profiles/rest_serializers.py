@@ -104,6 +104,21 @@ class UserProfileSerializer(serializers.ModelSerializer):
                 pass
         return value
 
+    def validate_education_level(self, value):
+        if not value:
+            raise serializers.ValidationError(_("Please fill this field"))
+        return value
+
+    def validate_nature_of_biz(self, value):
+        if not value:
+            raise serializers.ValidationError(_("Please fill this field"))
+        return value
+
+    def validate_source_of_funds(self, value):
+        if not value:
+            raise serializers.ValidationError(_("Please fill this field"))
+        return value
+
     def validate(self, data):
         for f, v in data.iteritems():
             if isinstance(v, (str, unicode)) and not is_valid_in_encoding('cp1251', v):

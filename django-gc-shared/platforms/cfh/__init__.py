@@ -25,10 +25,11 @@ log = logging.getLogger(__name__)
 CACHE_TIMEOUT = 3 * 60
 
 
-
-# noinspection PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic
+# noinspection PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,
+# PyMethodMayBeStatic
 class ApiFacade(object):
-    def __init__(self, broker_endpoint, clientadmin_endpoint, login, password):
+    def __init__(self, broker_endpoint, clientadmin_endpoint, client_login, client_password, broker_login,
+                 broker_password):
         """
         Api facade constructor:
         broker_endpoint - URL of CFH Broker Data WebService,
@@ -36,27 +37,26 @@ class ApiFacade(object):
         login - CFH login,
         password - CFH password.
         """
-        log.debug("Creating CFH facade for login %s" % login)
+        log.debug("Creating CFH facade for login")
         log.debug("Enpoints: %s, %s" % (broker_endpoint, clientadmin_endpoint))
         try:
             self.client1 = Client(broker_endpoint,
-                                  transport=Transport(http_auth=(login, password)))
+                                  transport=Transport(http_auth=(broker_login, broker_password)))
             self.client2 = Client(clientadmin_endpoint,
-                                  transport=Transport(http_auth=(login, password)))
+                                  transport=Transport(http_auth=(client_login, client_password)))
         except ConnectionError:
             raise CFHError(500, 'Cant connect to endpoint broker_endpoint: {}, client_admin_endpoint: {}'.format(
-                broker_endpoint, clientadmin_endpoint )
+                broker_endpoint, clientadmin_endpoint)
                            )
-
 
         try:
             if not self.client1.service.ValidateService():
-                log.error("CFH validation failed, check credentdials!")
+                log.error("CFH validation failed, check credentials!")
                 raise CFHError(0, "CFH broker service validation failed!")
             if not self.client2.service.ValidateService():
-                log.error("CFH validation failed, check credentdials!")
+                log.error("CFH validation failed, check credentials!")
                 raise CFHError(0, "CFH client admin service validation failed!")
-        except TransportError:
+        except TransportError as e:
             raise CFHError(500, 'Transport error CFH service validation failed!')
 
         self._load_instruments()
@@ -197,12 +197,14 @@ class ApiFacade(object):
         password = create_password()
         num = randint(0, sys.maxint)
         log.debug("Creating cfh account for {0} with {1} {2}".format(login, initial_balance, account.currency.symbol))
+        client_templates = settings.DEMO_CFH_CLIENT_TEMPLATES if account.is_demo else settings.CFH_CLIENT_TEMPLATES
+        broker_id = settings.DEMO_CFH_BROKER_ID if account.is_demo else settings.CFH_BROKER_ID
         try:
             log.debug('leverage=%s' % account._leverage)
-            client_temp = settings.CFH_CLIENT_TEMPLATES[account._leverage]
+            client_temp = client_templates[account._leverage]
             log.debug('cl_templ=%s' % client_temp)
             resp = self.client2.service.CreateClientFromTemplate(TemplateID=client_temp,
-                                                                 BrokerID=settings.CFH_BROKER_ID,
+                                                                 BrokerID=broker_id,
                                                                  ClientDisplayName=account.user.get_full_name(),
                                                                  LoginName=login + str(num),
                                                                  LoginPassword=password)
@@ -221,9 +223,10 @@ class ApiFacade(object):
         """
         Transfer amount to account with comment.
         """
+        contra = settings.DEMO_CFH_DEPOSIT_ACCOUNT_ID if account.is_demo else settings.CFH_DEPOSIT_ACCOUNT_ID
         try:
             resp = self.client2.service.DepositFundsTransaction(AccountID=account.mt4_id,
-                                                                ContraAccountID=settings.CFH_DEPOSIT_ACCOUNT_ID,
+                                                                ContraAccountID=contra,
                                                                 Amount=amount,
                                                                 Currency=account.currency.slug,
                                                                 Comment=comment)
@@ -235,9 +238,10 @@ class ApiFacade(object):
         """
         withdraw amount from account with comment.
         """
+        contra = settings.DEMO_CFH_WITHDRAW_ACCOUNT_ID if account.is_demo else settings.CFH_WITHDRAW_ACCOUNT_ID
         try:
             resp = self.client2.service.WithdrawFundsTransaction(AccountID=account.mt4_id,
-                                                                 ContraAccountID=settings.CFH_DEPOSIT_ACCOUNT_ID,
+                                                                 ContraAccountID=contra,
                                                                  Amount=-amount,
                                                                  Currency=account.currency.slug,
                                                                  Comment=comment)

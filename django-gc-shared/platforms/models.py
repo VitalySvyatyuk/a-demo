@@ -302,15 +302,22 @@ class TradingAccount(models.Model):
             if self.is_demo:
                 broker_api = settings.DEMO_CFH_API_BROKER
                 clientadmin_api = settings.DEMO_CFH_API_CLIENTADMIN
-                api_login = settings.DEMO_CFH_API_LOGIN
-                api_passwd = settings.DEMO_CFH_API_PASSWORD
+                clientadmin_api_login = settings.DEMO_CFH_API_LOGIN
+                clientadmin_api_passwd = settings.DEMO_CFH_API_PASSWORD
+                broker_api_login = settings.DEMO_CFH_API_LOGIN
+                broker_api_passwd = settings.DEMO_CFH_API_PASSWORD
             else:
                 broker_api = settings.CFH_API_BROKER
                 clientadmin_api = settings.CFH_API_CLIENTADMIN
-                api_login = settings.CFH_API_LOGIN
-                api_passwd = settings.CFH_API_PASSWORD
+                clientadmin_api_login = settings.CFH_API_LOGIN
+                clientadmin_api_passwd = settings.CFH_API_PASSWORD
+                broker_api_login = settings.CFH_API_LOGIN
+                broker_api_passwd = settings.CFH_API_PASSWORD
 
-            return ApiFacade(broker_api, clientadmin_api, api_login, api_passwd)
+            return ApiFacade(broker_api, clientadmin_api,
+                             clientadmin_api_login, clientadmin_api_passwd,
+                             broker_api_login, broker_api_passwd
+                             )
 
     def save(self, **kwargs):
         # type: (**object) -> None
