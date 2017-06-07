@@ -132,7 +132,7 @@ class VoiceMailCDRAdmin(admin.ModelAdmin):
     list_display = ('call_date', 'source_str', 'is_manual', 'comment')
     fieldsets = (
         (None, {
-            'fields': ('cdr_link', 'call_date', 'source_str', 'is_manual', 'record')
+            'fields': ('cdr_link', 'call_date', 'source_str', 'is_manual', 'record',)
         }),
 
         (u'Информация', {

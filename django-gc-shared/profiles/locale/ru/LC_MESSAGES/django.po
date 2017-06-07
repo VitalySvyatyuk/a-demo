@@ -19,6 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
+msgid "Is partner"
+msgstr "Является партнером"
+
+msgid "User can browse partner section"
+msgstr "Юзер может просматривать раздел для партнеров"
+
 msgid "Please fill this field"
 msgstr "Пожалуйста заполните это поле"
 

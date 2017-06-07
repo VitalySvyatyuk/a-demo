@@ -28,7 +28,7 @@ class UserProfileAdmin(ViewLoggingAdmin):
                      "user__accounts__mt4_id", "user__requisits__purse", )
     fieldsets = (
         (_("Personal"), {
-            "fields": ('full_name', "user", ("last_name", "first_name", "middle_name"), "email_verified", "birthday")
+            "fields": ('full_name', "user", ("last_name", "first_name", "middle_name"), "is_partner", "email_verified", "birthday")
         }),
         (_("Contacts"), {
             "fields": (

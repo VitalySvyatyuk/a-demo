@@ -86,7 +86,7 @@
         <div class="small-3 column trading">
           <a href="{{ lk_link|default:"[[::BASE_URL]]" }}trading" class="global-nav" ng-class="{active: openPage == 'trading'}">{% trans "My accounts" %}</a>
         </div>
-        <div class="small-3 column" ng-show="checkAvailableModules('partnership')">
+        <div class="small-3 column" ng-show="checkAvailableModules('partnership')  && user.profile.is_partner">
           <a href="{{ lk_link|default:"[[::BASE_URL]]" }}referral" class="global-nav" ng-class="{active: openPage == 'referral'}">{% trans "Partnership" %}</a>
         </div>
         <div class="small-3 column">

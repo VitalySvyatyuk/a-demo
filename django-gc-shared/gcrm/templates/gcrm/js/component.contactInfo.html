@@ -12,7 +12,6 @@
             <span ng-switch-when="address">{% trans "Address" %}</span>
             <i class="fa fa-fw fa-caret-down"></i>
           </div>
-            <script>var open = false</script>
           <div class="dropdown-menu" ng-if="open">
             <a class="dropdown-item" ng-click="info.type = 'phone'; open = false">{% trans "Phone" %}</a>
             <a class="dropdown-item" ng-click="info.type = 'email'; open = false">Email</a>

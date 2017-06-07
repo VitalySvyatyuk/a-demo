@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from django.core.management import BaseCommand
-from telephony.models import ExternalAsteriskCDR, CallDetailRecord
+from telephony.models import ExternalAsteriskCDR, CallDetailRecord, VoiceMailCDR
 from django.db.models import Max
 from django.core.paginator import Paginator
+import requests
 import gc
 
 class Command(BaseCommand):
@@ -31,4 +32,11 @@ class Command(BaseCommand):
                         external_cdr_id=external_cdr.id, defaults=data)
                     if created:
                         cdr.save()
+
+                        voice_mail = VoiceMailCDR(cdr=cdr, call_date=cdr.call_date)
+                        if voice_mail.get_record_path() is not None:
+                            have_voice_mail = requests.head(voice_mail.get_record_path()).status_code == 200
+                            if have_voice_mail:
+                                voice_mail.recording_file = voice_mail.get_record_path()
+                                voice_mail.save()
             gc.collect()

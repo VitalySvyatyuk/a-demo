@@ -254,6 +254,8 @@ class UserProfile(StateSavingModel):
 
     forex_instruments = HStoreField(default={"Trading experience FOREX/CFDs": "No"})
 
+    is_partner = models.BooleanField(_("Is partner"), help_text=_("User can browse partner section"), default=False)
+
     objects = UserProfileManager()
 
     email_verified = models.BooleanField(_('Email is verified'), default=False)

@@ -170,6 +170,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'has_valid_documents',
             'status_info',
             'email_verified',
+            "is_partner",
         )
         read_only_fields = (
             'avatar',
