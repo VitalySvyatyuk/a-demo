@@ -359,7 +359,7 @@ def as_timestamp(value):
 
 @register.filter
 def agreement_url(name):
-    if settings.LANGUAGE_CODE == "ru":
+    if get_language() == "ru":
         if not name.endswith("_ru"):
             name += "_ru"
     agreement_info = get_agreements()[name]
