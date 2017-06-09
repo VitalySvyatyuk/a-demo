@@ -47,8 +47,8 @@ class DepositForm(base.DepositForm):
                                         "associated with their NETELLER account"))
     secure_id = forms.IntegerField(label=_("Secure ID"), help_text=_("Your Neteller's 6-digit Secure ID"))
 
-    bill_address = "https://test.api.neteller.com/v1/transferIn"
-    get_token_url = "https://test.api.neteller.com/v1/oauth2/token?grant_type=client_credentials"
+    bill_address = "https://api.neteller.com/v1/transferIn"
+    get_token_url = "https://api.neteller.com/v1/oauth2/token?grant_type=client_credentials"
     commission_rate = Decimal("0.035")
     MIN_AMOUNT = (10, 'USD')
 

@@ -228,8 +228,8 @@ html
 					.row
 						p
 							- trans "Risk Warning: Trading leveraged products such as Forex and CFDs carries a high risk. You can lose all your invested capital. Please consider our"
-							a(href="{% static 'agreements/Risk_Disclosure.pdf' %}", target='_blank')
-								- trans "Risk Disclosure." context 'warning popup'
+							a.form_link(href="{{'risk_disclosure' | agreement_url}}", target="_blank")
+								- trans 'Risk Disclosure' context 'warning popup'
 						//- button.cookies_risk-warning_btn.col-lg-2
 						//- 	-trans "Ok"
 
@@ -367,12 +367,13 @@ html
 				.footer__risks_box
 					.container
 						span.footer__risks_text
-							a.link(href="{% url 'legal_documentation' %}")
+							a.form_link(href="{{'risk_disclosure' | agreement_url}}", target="_blank")
 								- trans 'Risk Disclosure'
 							|:
 							- trans "Currency pairs (FOREX) and CFD, being marginal products, are of high risk level and may result in the loss of all of invested capital. Hence, Currency pairs and CFDs may not be suitable for all investors. You should not risk more than you can afford to lose. Before you start trading please ensure you understand the risks involved and that you have sufficient level of expertise and experience."
 							br
 							- trans "We do not offer services to countries such as USA, Canada, Japan, Brazil, North Korea, Belgium, France and the non-cooperative countries under FATF."
+
 
 		.js-overlay.js-close-navigation.js-close-menu.overlay
 		if not user.is_authenticated
@@ -389,6 +390,14 @@ html
 		script(src="{% versioned 'js/jquery.cookiebar_en.js' %}")
 		script(src="{% versioned 'js/not-ready-platform-en.js' %}")
 		{% endif %}
+		#cookie_href(style="display: none;")
+			|{{'cookie_policy' | agreement_url}}
+		script.
+			var cookieHref = window.document.getElementById("cookie_href").innerHTML;
+			document.body.addEventListener("load", addCookieBar(jQuery, cookieHref));
+
+
+
 		//- script(src="{% versioned 'js/risk_popup.js' %}")
 		//- script(src="{% versioned 'js/jquery.cookie.js' %}")
 

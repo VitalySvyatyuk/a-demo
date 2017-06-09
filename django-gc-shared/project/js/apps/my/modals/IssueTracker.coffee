@@ -27,6 +27,10 @@ app.factory "IssueCreateModal", (newModal) -> newModal
       $scope.issue.text = ''
       for key, value of $scope.additional_info
         $scope.issue.text += $scope.labels[key] + ': ' + value + '\n' if value?
+      
+      # remove last "_(number)" part of string which need to set unique values for angular model
+      $scope.issue.department = $scope.issue.department.substring(0, $scope.issue.department.lastIndexOf("_"))
+
       Issue.createWithFile $scope.issue, $scope.files
       .success (data) ->
         $modalInstance.close new Issue(data)

@@ -644,6 +644,10 @@ msgstr "Неверный номер кошелька %s"
 msgid "You cant deposit more than %(amount)s with %(system)s"
 msgstr "Нельзя ввести больше %(amount)s через %(system)s"
 
+#, python-format
+msgid "You cant deposit less than %(amount)s with %(system)s"
+msgstr "Нельзя ввести меньше %(amount)s через %(system)s"
+
 msgid "Wrong amount"
 msgstr "Пожалуйста, введите корректную сумму"
 

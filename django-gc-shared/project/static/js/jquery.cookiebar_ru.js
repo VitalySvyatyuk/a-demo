@@ -13,7 +13,7 @@
  * no responsibility for any damage caused by using this plugin
  * or the documentation provided.
  */
-(function($){
+function addCookieBar($, doc_href){
 	$.cookieBar = function(options,val){
 		if(options=='cookies'){
 			var doReturn = 'cookies';
@@ -24,7 +24,7 @@
 		}
 		var defaults = {
 
-			message: gettext('Мы используем куки, чтобы оптимизировать вашу работу на нашем сайте. Продолжая работу на нашем сайте, мы предполагаем, что вы согласны с этим. Пожалуйста, прочитайте нашу политику <a href="/static/agreements/ARUM_-_Cookie_policy_russian_-_final_13_01_2017.pdf" target="_blank">Cookies</a>, чтобы узнать больше.'), //Message displayed on bar
+			message: gettext('Мы используем куки, чтобы оптимизировать вашу работу на нашем сайте. Продолжая работу на нашем сайте, мы предполагаем, что вы согласны с этим. Пожалуйста, прочитайте нашу политику <a href="{policy_url}" target="_blank">Cookies</a>, чтобы узнать больше.'), //Message displayed on bar
 
 			acceptButton: true, //Set to true to show accept/enable button
 			acceptText: gettext('Ок'), //Text on accept/enable button
@@ -98,7 +98,7 @@
 			}
 		}else{
 			//Sets up enable/accept button if required
-			var message = options.message.replace('{policy_url}',options.policyURL);
+			var message = options.message.replace('{policy_url}',doc_href);
 
 			if(options.acceptButton){
 				var acceptButton = '<a href="" class="cb-enable">'+options.acceptText+'</a>';
@@ -197,4 +197,4 @@
 			}
 		}
 	};
-})(jQuery);
+};

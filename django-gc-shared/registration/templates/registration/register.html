@@ -18,9 +18,10 @@
                     <input autocomplete="off" required="required" id="signup_19" type="checkbox"><label for="signup_19"></label>
                     <label class="required" for="signup_19">
                         {% trans "I agree with the" %}
-                        <a class="form_link" href="/static/agreements/ARUM_privacy_policy_13.01_en.pdf" target="_blank">
+                        <a class="form_link" href="{{'privacy_policy' | agreement_url}}" target="_blank">
                         {% trans "Privacy Policy" context "login popup" %}
                         </a>
+
                     </label>
                 </div>
                 <div class="checkbox-wrapper">

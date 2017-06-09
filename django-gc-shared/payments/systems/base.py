@@ -244,32 +244,32 @@ class DepositForm(BaseForm):
         """
 
         account = (self.cleaned_data["account"])
-        if not DepositRequest.objects.filter(account=account, is_committed=True).exists():
-            if self.MAX_AMOUNT and "amount" in self.cleaned_data and "currency" in self.cleaned_data:
-                amount = self.cleaned_data["amount"]
-                currency = self.cleaned_data["currency"]
-                max_amount, max_amount_currency = self.MAX_AMOUNT
-                converted_max_amount = convert_currency(max_amount, max_amount_currency, currency)
-                if converted_max_amount[0] < amount:
-                    self._errors["amount"] = [
-                        _("You cant deposit more than %(amount)s with %(system)s") % {
-                            "amount": converted_max_amount[1].display_amount(converted_max_amount[0]),
-                            "system": self.payment_system.name
-                        }
-                    ]
+        # if not DepositRequest.objects.filter(account=account, is_committed=True).exists():
+        if self.MAX_AMOUNT and "amount" in self.cleaned_data and "currency" in self.cleaned_data:
+            amount = self.cleaned_data["amount"]
+            currency = self.cleaned_data["currency"]
+            max_amount, max_amount_currency = self.MAX_AMOUNT
+            converted_max_amount = convert_currency(max_amount, max_amount_currency, currency)
+            if converted_max_amount[0] < amount:
+                self._errors["amount"] = [
+                    _("You cant deposit more than %(amount)s with %(system)s") % {
+                        "amount": converted_max_amount[1].display_amount(converted_max_amount[0]),
+                        "system": self.payment_system.name
+                    }
+                ]
 
-            if self.MIN_AMOUNT and "amount" in self.cleaned_data and "currency" in self.cleaned_data:
-                amount = self.cleaned_data["amount"]
-                currency = self.cleaned_data["currency"]
-                min_amount, min_amount_currency = self.MIN_AMOUNT
-                converted_min_amount = convert_currency(min_amount, min_amount_currency, currency)
-                if converted_min_amount[0] > amount:
-                    self._errors["amount"] = [
-                        _("You cant deposit less than %(amount)s with %(system)s") % {
-                            "amount": converted_min_amount[1].display_amount(converted_min_amount[0]),
-                            "system": self.payment_system.name
-                        }
-                    ]
+        if self.MIN_AMOUNT and "amount" in self.cleaned_data and "currency" in self.cleaned_data:
+            amount = self.cleaned_data["amount"]
+            currency = self.cleaned_data["currency"]
+            min_amount, min_amount_currency = self.MIN_AMOUNT
+            converted_min_amount = convert_currency(min_amount, min_amount_currency, currency)
+            if converted_min_amount[0] > amount:
+                self._errors["amount"] = [
+                    _("You cant deposit less than %(amount)s with %(system)s") % {
+                        "amount": converted_min_amount[1].display_amount(converted_min_amount[0]),
+                        "system": self.payment_system.name
+                    }
+                ]
 
         cleaned_amount = self.cleaned_data.get("amount")
         cleaned_account = self.cleaned_data.get("account")

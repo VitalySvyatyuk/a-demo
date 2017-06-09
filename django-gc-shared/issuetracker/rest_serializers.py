@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 import imghdr
+import settings
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import Group
+
+from django.core.mail import send_mail
 
 from rest_framework import serializers
 
@@ -10,11 +13,11 @@ from project.rest_fields import ExtraMetadataSlugRelatedField
 from project.models import GROUP_NAMES
 
 ALLOWED_GROUPS = (
-    GROUP_NAMES[0],  # Portfolio management  (common question)
-    GROUP_NAMES[1],  # Dealing room (technical question)
-    GROUP_NAMES[2],  # Back office (financial question)
+    ('Back office_1', _("Common question")),  # Back office  (common question)
+    ('Dealing room_1', _("Technical question"),),  # Dealing room (technical question)
+    ('Back office_2', _("Financial question")),  # Back office (financial question)
 )
-ALLOWED_GROUPS_NAMES = dict(ALLOWED_GROUPS).keys()
+ALLOWED_GROUPS_NAMES = ('Dealing room', 'Back office')
 
 
 class IssueAttachmentSerializer(serializers.ModelSerializer):
@@ -84,6 +87,14 @@ class UserIssueSerializer(serializers.ModelSerializer):
             attach.issue = issue
             attach.file = file
             attach.save()
+
+        send_mail(
+            u"User {} created issue".format(validated_data['author']),
+            u'link: https://arumcapital.eu/my/admin/issuetracker/genericissue/{}/'.format(issue.id),
+            settings.SERVER_EMAIL,
+            settings.MANAGERS[0]  # Which means support email
+        )
+
         return issue
 
     class Meta:

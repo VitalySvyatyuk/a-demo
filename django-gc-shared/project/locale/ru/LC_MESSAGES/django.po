@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-26 14:21+0300\n"
+"POT-Creation-Date: 2017-06-07 17:46+0300\n"
 "PO-Revision-Date: 2017-01-24 18:37+0230\n"
 "Last-Translator: Vasily Alexeev <va@uptrader.us>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,15 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
-msgid "Commission on deposit"
-msgstr "Комисия на депозит"
-
-msgid "Minimum commission"
-msgstr "Минимальная комисия"
-
-msgid "Maximum commission"
-msgstr "Максимальная комисия"
-
 msgid "Client agreement"
 msgstr "Клиентское соглашение"
 
@@ -36,6 +27,11 @@ msgstr "Предупреждение о рисках"
 
 msgid "Regulation of trades"
 msgstr "Регламент торгов"
+
+#, fuzzy
+#| msgid "Partner agreement"
+msgid "PM Agreement"
+msgstr "Партнёрское соглашение"
 
 msgid "Partner agreement"
 msgstr "Партнёрское соглашение"
@@ -1099,6 +1095,15 @@ msgstr "Сроки перевода"
 msgid "Minimum deposit"
 msgstr "Минимальная сумма"
 
+msgid "Commission on deposit"
+msgstr "Комисия на депозит"
+
+msgid "Minimum commission"
+msgstr "Минимальная комисия"
+
+msgid "Maximum commission"
+msgstr "Максимальная комисия"
+
 msgid "Deposit to account"
 msgstr "Пополнить счет"
 
@@ -1372,26 +1377,8 @@ msgstr "Ваша заявка отправлена!"
 msgid "OK"
 msgstr ""
 
-msgid "IB (Introducing broker)"
-msgstr "IB (представляющий брокера)"
-
 msgid "Official agent"
 msgstr "Официальный агент"
-
-msgid "The programme suits website owners, bloggers, analysts, opinion leaders and other persons interested in attracting clients with no investment and receive agent commission."
-msgstr "Программа подойдет владельцам сайтов, блогерам, аналитикам, лидерам мнений и всем, кто заинтересован привлекать клиентов без вложений и получать вознаграждение в виде % комиссий."
-
-msgid "Quick start (1 day)"
-msgstr "Быстрый старт (за 1 день)"
-
-msgid "No investment required"
-msgstr "Не требует вложений"
-
-msgid "Information support from the company"
-msgstr "Информационная поддержка компании"
-
-msgid "Become an IB"
-msgstr "Стать представляющим брокера"
 
 msgid "The programme is tailored for regional partners interested in strategic relationship with us. "
 msgstr "Программа рассчитана на региональных партнеров, заинтересованных в выстраивании стратегических отношений с  нашей компанией."
@@ -1408,38 +1395,6 @@ msgstr "Размещение на информации на нашем сайт�
 msgid "Become an official agent"
 msgstr "Cтать официальным агентом"
 
-msgid "Remuneration conditions for an IB"
-msgstr "Условия вознаграждения IB (представляющего брокера)."
-
-msgctxt "partnership-title"
-msgid "Standard"
-msgstr "Стандарт"
-
-msgid "40&#37; from ECN-fees on ECN.MT and ECN.PRO accounts"
-msgstr "40&#37; от ECN-комиссии на счетах ECN.MT и ECN.PRO"
-
-msgid "25&#37; from the spread on ECN.Invest accounts"
-msgstr "25&#37; от спреда на счетах ECN.Invest"
-
-msgctxt "partnership-title"
-msgid "Personal"
-msgstr "Индивидуальные"
-
-msgid "If you have a chance to attract a large number of clients we can offer individual remuneration conditions. Please make an application below."
-msgstr ""
-"Если Вы обладаете возможностью привлекать большое количество клиентов, то мы можем рассмотреть индивидуальные условия вознаграждения. Для этого\n"
-"перейдите на вкладку Официальный агент\n"
-"и оставьте контактные данные."
-
-msgid "Attract at least 5 clients per quarter"
-msgstr "Привлечение не менее 5 клиентов за квартал"
-
-msgid "Provide prospective clients with verified and true information"
-msgstr "Предоставление потенциальным клиентам проверенной и достоверной информации"
-
-msgid "SPAM and other unacceptable methods of attraction are prohibited"
-msgstr "Запрет на СПАМ и иные не допустимые способы привлечения"
-
 msgctxt "ib_conditions"
 msgid "Personal"
 msgstr "Индивидуальные условия"
@@ -1455,24 +1410,6 @@ msgstr "Всестороння поддержка компании"
 
 msgid "Permanent cooperation basis"
 msgstr "Постоянный характер партнерства"
-
-msgid "How to be an IB"
-msgstr "Как стать IB (представляющим брокером)"
-
-msgid "Sign up for your Account"
-msgstr "Пройдите регистрацию Личного кабинета "
-
-msgid "Get a reference link to a partner’s office "
-msgstr "Получите реферальную ссылку в кабинете партнера"
-
-msgid "Start attracting clients"
-msgstr "Начинайте осуществлять привлечение клиентов"
-
-msgid "Your remuneration will be paid to the Partner account. Withdrawal of funds from the partner account shall be activated upon attraction of at least 5 clients with real deposits"
-msgstr "Вознаграждение будет начисляться на Партнерский счет. Возможность вывода вознаграждения активируется при привлечении не менее 5 клиентов с реальными депозитами"
-
-msgid "Fast registration button"
-msgstr "Быстрая регистрация"
 
 msgid "How to be an official agent"
 msgstr "Как стать официальным агентом"
@@ -1571,8 +1508,8 @@ msgstr "Юридическая поддержка"
 msgid "Upgraded terms and conditions for deposits and withdrawals "
 msgstr "Улучшенные условия ввода-вывода средств"
 
-msgid "Refund of charges for deposits and withdrawals"
-msgstr "Компенсация комиссий на ввод-вывод средств"
+msgid "Refund of charges for deposits"
+msgstr "Компенсация комиссий на ввод средств"
 
 msgid "Priority assistance with deposits and withdrawals applications"
 msgstr "Приоритетное исполнение заявок на ввод-вывод средств"
@@ -1723,6 +1660,74 @@ msgstr "Файл слишком большого размера."
 
 msgid "Unsupported file extension"
 msgstr "Расширение файла не поддерживается"
+
+#~ msgid "IB (Introducing broker)"
+#~ msgstr "IB (представляющий брокера)"
+
+#~ msgid "The programme suits website owners, bloggers, analysts, opinion leaders and other persons interested in attracting clients with no investment and receive agent commission."
+#~ msgstr "Программа подойдет владельцам сайтов, блогерам, аналитикам, лидерам мнений и всем, кто заинтересован привлекать клиентов без вложений и получать вознаграждение в виде % комиссий."
+
+#~ msgid "Quick start (1 day)"
+#~ msgstr "Быстрый старт (за 1 день)"
+
+#~ msgid "No investment required"
+#~ msgstr "Не требует вложений"
+
+#~ msgid "Information support from the company"
+#~ msgstr "Информационная поддержка компании"
+
+#~ msgid "Become an IB"
+#~ msgstr "Стать представляющим брокера"
+
+#~ msgid "Remuneration conditions for an IB"
+#~ msgstr "Условия вознаграждения IB (представляющего брокера)."
+
+#~ msgctxt "partnership-title"
+#~ msgid "Standard"
+#~ msgstr "Стандарт"
+
+#~ msgid "40&#37; from ECN-fees on ECN.MT and ECN.PRO accounts"
+#~ msgstr "40&#37; от ECN-комиссии на счетах ECN.MT и ECN.PRO"
+
+#~ msgid "25&#37; from the spread on ECN.Invest accounts"
+#~ msgstr "25&#37; от спреда на счетах ECN.Invest"
+
+#~ msgctxt "partnership-title"
+#~ msgid "Personal"
+#~ msgstr "Индивидуальные"
+
+#~ msgid "If you have a chance to attract a large number of clients we can offer individual remuneration conditions. Please make an application below."
+#~ msgstr ""
+#~ "Если Вы обладаете возможностью привлекать большое количество клиентов, то мы можем рассмотреть индивидуальные условия вознаграждения. Для этого\n"
+#~ "перейдите на вкладку Официальный агент\n"
+#~ "и оставьте контактные данные."
+
+#~ msgid "Attract at least 5 clients per quarter"
+#~ msgstr "Привлечение не менее 5 клиентов за квартал"
+
+#~ msgid "Provide prospective clients with verified and true information"
+#~ msgstr "Предоставление потенциальным клиентам проверенной и достоверной информации"
+
+#~ msgid "SPAM and other unacceptable methods of attraction are prohibited"
+#~ msgstr "Запрет на СПАМ и иные не допустимые способы привлечения"
+
+#~ msgid "How to be an IB"
+#~ msgstr "Как стать IB (представляющим брокером)"
+
+#~ msgid "Sign up for your Account"
+#~ msgstr "Пройдите регистрацию Личного кабинета "
+
+#~ msgid "Get a reference link to a partner’s office "
+#~ msgstr "Получите реферальную ссылку в кабинете партнера"
+
+#~ msgid "Start attracting clients"
+#~ msgstr "Начинайте осуществлять привлечение клиентов"
+
+#~ msgid "Your remuneration will be paid to the Partner account. Withdrawal of funds from the partner account shall be activated upon attraction of at least 5 clients with real deposits"
+#~ msgstr "Вознаграждение будет начисляться на Партнерский счет. Возможность вывода вознаграждения активируется при привлечении не менее 5 клиентов с реальными депозитами"
+
+#~ msgid "Fast registration button"
+#~ msgstr "Быстрая регистрация"
 
 #~ msgid "Deposit of an advance payment prior to the arrival of the funds"
 #~ msgstr "Зачисление авансового платежа до прихода средств"

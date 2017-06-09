@@ -1,4 +1,4 @@
-- load cache i18n
+- load cache i18n app_tags
 
 .popup.popup--sign.js-popup.ie-popup(data-popup-name="login_01")
 	.popup__close_btn.js-close-all-popups
@@ -60,7 +60,7 @@
 									.checkbox_box__tick
 									span.checkbox_box__label.popup__sign_form_box__checkbox_label
 										- trans "I agree with the"
-									a.form_link(href="/static/agreements/ARUM_privacy_policy_13.01_en.pdf", target="_blank")
+									a.form_link(href="{{'privacy_policy' | agreement_url}}", target="_blank")
 										- trans "Privacy Policy" context "login popup"
 				.popup__sign_form_box__submit_form_box
 					button.popup__sign_form__button.popup__sign_form__button--desktop.button(type="submit")
@@ -181,7 +181,7 @@
 									.checkbox_box__tick
 									span.checkbox_box__label.popup__sign_form_box__checkbox_label
 										- trans "I agree with the"
-									a.form_link(href="/static/agreements/ARUM_privacy_policy_13.01_en.pdf", target="_blank")
+									a.form_link(href="{{'privacy_policy' | agreement_url}}", target="_blank")
 										- trans "Privacy Policy" context "login popup"
 				.popup__sign_form_box__submit_form_box
 					button.popup__sign_form__button.popup__sign_form__button--desktop.button(type="submit")

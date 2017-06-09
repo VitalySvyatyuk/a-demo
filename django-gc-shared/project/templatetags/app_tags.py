@@ -17,7 +17,7 @@ from django.conf import settings
 
 from uptrader_cms.models import LegalDocument
 from treemenus.models import MenuItem
-from project.agreements import AGREEMENTS
+from project.agreements import get_agreements
 from shared.utils import get_admin_url
 from shared.utils import sanitize_html
 
@@ -359,14 +359,17 @@ def as_timestamp(value):
 
 @register.filter
 def agreement_url(name):
-    agreement_info = AGREEMENTS[name]
+    if settings.LANGUAGE_CODE == "ru":
+        if not name.endswith("_ru"):
+            name += "_ru"
+    agreement_info = get_agreements()[name]
     agreement = agreement_info.get(get_language()) or agreement_info.get("default")
     return agreement
 
 
 @register.filter
 def agreement_label(name):
-    agreement_info = AGREEMENTS[name]
+    agreement_info = get_agreements()[name]
     return agreement_info["label"]
 
 

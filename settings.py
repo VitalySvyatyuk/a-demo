@@ -516,7 +516,7 @@ MONEYBOOKERS_TO = {
 NETELLER_TEST_MERCHANT_ID = "33935"
 NETELLER_TEST_MERCHANT_KEY = "542462"
 
-NETELLER_MERCHANT_ID = "ceo@arumcapital.eu"
+NETELLER_MERCHANT_ID = "AAABW8S3jAUGCQKV"
 NETELLER_SECRET_KEY = "0.BK2GLLgoicN9YBbrXCPw-fwhdS8NfFmgUnHX-UA6vjE.EAAQrysNthlgV66dxbf8fKhYsqUFGxE"
 
 ###
@@ -794,8 +794,8 @@ SS_API_TOKEN = "eFBxR84qJK9nBAWj"
 # Auth settings
 DEMO_CFH_API_BROKER = "https://demows.cfhclearing.com:8090/BrokerDataAccess?wsdl"
 DEMO_CFH_API_CLIENTADMIN = "https://demows.cfhclearing.com:8083/DemoClientAdmin?wsdl"
-DEMO_CFH_API_LOGIN = "UpTraderAdmin"
-DEMO_CFH_API_PASSWORD = "UpTraderAdmin1"
+DEMO_CFH_API_LOGIN = "ArumProAdminDemo"
+DEMO_CFH_API_PASSWORD = "ArumProAdmin2017"
 CFH_API_BROKER = "https://ws.cfhclearing.com:8091/BrokerDataAccess?wsdl"
 CFH_API_CLIENTADMIN = "https://ws.cfhclearing.com:8084/LiveClientAdmin?wsdl"
 CFH_API_LOGIN = "ArumProAdmin"
@@ -822,15 +822,15 @@ CFH_CLIENT_TEMPLATES = {
     '1': 369,
 }
 DEMO_CFH_CLIENT_TEMPLATES = {
-    '100': 572,
-    '50': 571,
-    '33': 573,
-    '75': 579,
-    '25': 574,
-    '20': 575,
-    '10': 576,
-    '5': 577,
-    '1': 578,
+    '100': 1188,
+    '50': 1189,
+    '33': 1190,
+    '75': 1191,
+    '25': 1192,
+    '20': 1193,
+    '10': 1194,
+    '5': 1195,
+    '1': 1196,
 }
 
 # CRM settings
