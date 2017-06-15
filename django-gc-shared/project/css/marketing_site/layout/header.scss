@@ -109,7 +109,7 @@
 	padding-right: 20px;
 
 	cursor: pointer;
-	
+
 	&:before{
 		content: "";
 		position: absolute;
@@ -222,7 +222,7 @@
 		}
 	}
 	&--point-icon{
-		padding-left: 22px;
+		padding-left: 26px;
 
 		position: relative;
 
@@ -492,7 +492,7 @@
 
 	font-size: 14px;
 	font-weight: 500;
-	
+
 	&:after{
 		color: $steel;
 	}
@@ -503,7 +503,7 @@
 	float: left;
 
 	padding: 20px $container_side_margin 24px;
-	
+
 	background-color: #262626;
 
 	@media (#{$min_ipad}){

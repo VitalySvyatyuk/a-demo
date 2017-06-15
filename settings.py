@@ -805,21 +805,21 @@ CFH_API_PASSWORD = "ArumProAdmin2017"
 CFH_BROKER_ID = 11244
 DEMO_CFH_BROKER_ID = 173056
 # Accounts for money transfers
-CFH_DEPOSIT_ACCOUNT_ID = 24999
-CFH_WITHDRAW_ACCOUNT_ID = 24997
-DEMO_CFH_DEPOSIT_ACCOUNT_ID = 153640
-DEMO_CFH_WITHDRAW_ACCOUNT_ID = 153640
+CFH_DEPOSIT_ACCOUNT_ID = 25000
+CFH_WITHDRAW_ACCOUNT_ID = 25000
+DEMO_CFH_DEPOSIT_ACCOUNT_ID = 153641
+DEMO_CFH_WITHDRAW_ACCOUNT_ID = 153641
 # Margin requirements objects, dict in form leverage:obj_id
 CFH_CLIENT_TEMPLATES = {
-    '100': 361,
-    '75': 362,
-    '50': 363,
-    '33': 364,
-    '25': 365,
-    '20': 366,
-    '10': 367,
-    '5': 368,
-    '1': 369,
+    '100': 115,
+    '75': 117,
+    '50': 116,
+    '33': 120,
+    '25': 121,
+    '20': 122,
+    '10': 123,
+    '5': 124,
+    '1': 126,
 }
 DEMO_CFH_CLIENT_TEMPLATES = {
     '100': 1188,

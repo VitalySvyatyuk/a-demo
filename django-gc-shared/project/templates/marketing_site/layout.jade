@@ -95,15 +95,15 @@ html
 								span.header__text_item__content
 									| 8 800 350 77 10
 							a.header__menu_item.header__text_item.header__text_item--point-icon.header__text_item--point-icon--red(href="#")
-								span.header__text_item__content
-									| Консультант&nbsp;оффлайн
+								span.header__text_item__content(href="#", data-livechat)
+									- trans "Live chat"
 							{% else %}
 							a.header__menu_item.header__text_item.header__text_item--phone-icon-on-mobiles.header__text_item--medium(href="tel:35725123291")
 								span.header__text_item__content
 									| +357 251 232 91
 							a.header__menu_item.header__text_item.header__text_item--point-icon.header__text_item--point-icon--red(href="#")
-								span.header__text_item__content
-									| Консультант&nbsp;оффлайн
+								span.header__text_item__content(href="#", data-livechat)
+									- trans "Live chat"
 							{% endif %}
 							button.header__menu_item.header__location_dropdown_opener.js-dropdown-opener(data-dropdown-target="location_2", type="button")
 								.header__location_dropdown__img_box
@@ -126,10 +126,10 @@ html
 							.header__info_box__button_box
 								a.header__info_box__button.button(href=if_create_link,  data-popup-target=if_data, class=if_class)
 									span.button__text
-										| Открыть счет
+										- trans "Open an account"
 								a.header__info_box__button.button.button--outline(href=if_create_link,  data-popup-target=if_data, class=if_class)
 									span.button__text
-										| Открыть демо-счет
+										- trans "Open a demo account"
 					{% if LANGUAGE_CODE == 'ru' %}
 					a.hidden_on_phones.header__menu_item.header__text_item.header__text_item--phone-icon-on-mobiles.header__text_item--medium(href="tel:88003507710")
 						span.header__text_item__content
@@ -273,7 +273,7 @@ html
 									| +357 251 232 91
 							{% endif %}
 							.col-xs-12.col-lg-3
-								span.footer__payments-icons
+								div.footer__payments-icons
 									{% if LANGUAGE_CODE == 'ru' %}
 									p
 										a(href="https://www.neteller.com/ru", target="_blank")
@@ -352,7 +352,6 @@ html
 									| 8-800-350-77-10
 								a.footer__phone.footer__phone--last(href="tel:74952408133")
 									| +7 (495) 240 81 33
-							.col-xs-12.col-md-3.col-md-offset-1.footer__box__item--hidden-mobiles
 								h3.footer__title
 									- trans "Company Office:"
 								a.footer__phone(href="tel:35725123291")
@@ -364,6 +363,30 @@ html
 								a.footer__phone(href="tel:35725123291")
 									| +357 251 232 91
 							{% endif %}
+							.col-xs-12.col-md-3.footer__box--hidden-desktop.footer__payments-icons
+								{% if LANGUAGE_CODE == 'ru' %}
+								p
+									a(href="https://www.neteller.com/ru", target="_blank")
+										img(src="http://mrc.neteller.com/neteller.image/325.jpg", border="0", alt="Neteller")
+									a(href="https://www.skrill.com/ru/", target="_blank")
+										img(src="https://www.skrill.com/fileadmin/templates/images/skrill-logo.png?v=1", border="0", alt="Skrill")
+								p
+									a(href="https://www.visa.com", target="_blank")
+										img(src="http://www.visa.com.ru/ru/ru-ru/images/logo-header.png", border="0", alt="Visa")
+									a(href="https://www.mastercard.ru", target="_blank")
+										img(src="https://www.mastercard.ru/etc/designs/mccom/ru-ru/jcr:content/global/logo.img.png/1472566371487.png", border="0", alt="MasterCard")
+								{% else %}
+								p
+									a(href="https://www.neteller.com/en", target="_blank")
+										img(src="http://mrc.neteller.com/neteller.image/325.jpg", border="0", alt="Neteller")
+									a(href="https://www.skrill.com/en", target="_blank")
+										img(src="https://www.skrill.com/fileadmin/templates/images/skrill-logo.png?v=1", border="0", alt="Skrill")
+								p
+									a(href="https://www.visa.com", target="_blank")
+										img(src="http://www.visa.com.ru/ru/ru-ru/images/logo-header.png", border="0", alt="Visa")
+									a(href="https://www.mastercard.com", target="_blank")
+										img(src="https://www.mastercard.ru/etc/designs/mccom/ru-ru/jcr:content/global/logo.img.png/1472566371487.png", border="0", alt="MasterCard")
+								{% endif %}
 				.footer__risks_box
 					.container
 						span.footer__risks_text
@@ -373,6 +396,7 @@ html
 							- trans "Currency pairs (FOREX) and CFD, being marginal products, are of high risk level and may result in the loss of all of invested capital. Hence, Currency pairs and CFDs may not be suitable for all investors. You should not risk more than you can afford to lose. Before you start trading please ensure you understand the risks involved and that you have sufficient level of expertise and experience."
 							br
 							- trans "We do not offer services to countries such as USA, Canada, Japan, Brazil, North Korea, Belgium, France and the non-cooperative countries under FATF."
+
 
 
 		.js-overlay.js-close-navigation.js-close-menu.overlay

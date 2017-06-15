@@ -134,8 +134,6 @@ class DepositForm(base.DepositForm):
         from platforms.converter import convert_currency
         amount = self.cleaned_data["amount"]
         currency = self.cleaned_data["currency"]
-        if convert_currency(amount, currency, "USD")[0] < 30:
-            self._errors["amount"] = [_("You can't deposit less than $30")]
         return super(DepositForm, self).clean()
 
     def confirmed_response_data(self, request):
