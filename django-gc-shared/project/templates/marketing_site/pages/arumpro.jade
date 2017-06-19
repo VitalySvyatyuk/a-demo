@@ -68,34 +68,20 @@ block content
               - trans "ARUM.PRO platform has an adaptive interface enabling to customize desktops due to chart modules, news feeds, quotes, Market Depth and the like. "
             p
               - trans "The platform provides a Market Depth of ECN-liquidity online and contains real historical volume of trading on each financial instrument. The platform also provides tick chart tools, indicator base and other tools for technical analysis. "
-            //- ul.arumpro-dropdown
-            //-   li.arumpro-dropdown-top
-            //-     a.arumpro-dropdown-top(href="#")
-            //-       - trans "Download the platform"
-            //-     ul.arumpro-dropdown-inside
-            //-       li
-            //-         a(href="#")
-            //-           - trans "For real account"
-            //-       li
-            //-         a(href="#")
-            //-           - trans "For demo account"
-            {% if LANGUAGE_CODE == 'ru' %}
-            ul.arumpro-dropdown.not-ready-platform-ru
+            ul.arumpro-dropdown
               li.arumpro-dropdown-top
                 a.arumpro-dropdown-top(href="#")
                   - trans "Download the platform"
+                ul.arumpro-dropdown-inside
+                  //- li
+                  //-   a(href="#")
+                  //-     - trans "For real account"
+                  li
+                    a(href="http://download.arumcapital.eu/demo/application/ArumProTraderDemoSetup.exe", target="_blank")
+                      - trans "For demo account"
             a.link(href="#")
               - trans "User guide"
               |  (pdf)
-            {% else %}
-            ul.arumpro-dropdown.not-ready-platform-en
-              li.arumpro-dropdown-top
-                a.arumpro-dropdown-top(href="#")
-                  - trans "Download the platform"
-            a.link(href="#")
-              - trans "User guide"
-              |  (pdf)
-            {% endif %}
           .col-md-6
              .apps__slider_box.apps__slider_box--windows
               .apps__slider_arrow_box
@@ -131,17 +117,17 @@ block content
               li
                   - trans "5 types of trading reports, logging  "
             .arumpro-windows-links
-              {% if LANGUAGE_CODE == 'ru' %}
-              div.not-ready-platform-ru
-                a.button(href="#")
-                  span.button__text
+              ul.arumpro-dropdown
+                li.arumpro-dropdown-top
+                  a.arumpro-dropdown-top(href="#")
                     - trans "Go to the platform"
-              {% else %}
-              div.not-ready-platform-en
-                a.button(href="#")
-                  span.button__text
-                    - trans "Go to the platform"
-              {% endif %}
+                  ul.arumpro-dropdown-inside
+                    li
+                      a(href="https://trade.arumcapital.eu/", target="_blank")
+                        - trans "For real account"
+                    li
+                      a(href="https://demo.arumcapital.eu/", target="_blank")
+                        - trans "For demo account"
               a.link(href="#")
                 - trans "User guide"
                 |  (pdf)

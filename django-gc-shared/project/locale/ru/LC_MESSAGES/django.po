@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-07 17:46+0300\n"
+"POT-Creation-Date: 2017-06-19 14:12+0300\n"
 "PO-Revision-Date: 2017-01-24 18:37+0230\n"
 "Last-Translator: Vasily Alexeev <va@uptrader.us>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,6 +32,20 @@ msgstr "Регламент торгов"
 #| msgid "Partner agreement"
 msgid "PM Agreement"
 msgstr "Партнёрское соглашение"
+
+#, fuzzy
+#| msgctxt "login popup"
+#| msgid "Privacy Policy"
+msgid "Privacy Policy"
+msgstr "Политикой Конфиденциальности"
+
+msgid "Instruction mac"
+msgstr ""
+
+#, fuzzy
+#| msgid "VIP services"
+msgid "VIP service"
+msgstr "VIP-условия"
 
 msgid "Partner agreement"
 msgstr "Партнёрское соглашение"
@@ -124,30 +138,32 @@ msgstr "Посмотреть другие инструменты"
 msgid "Choose your language"
 msgstr "Выберите язык"
 
-msgid "Choose language"
-msgstr "Выберите язык "
-
-msgid "Request a call back"
-msgstr "Заказать обратный звонок"
-
 msgid "Live chat"
 msgstr "Онлайн чат"
 
-msgid "Authorization"
-msgstr "Авторизация"
-
-msgid "Open a demo account"
-msgstr "Открыть демо счет"
+msgid "Choose language"
+msgstr "Выберите язык "
 
 msgid "Open an account"
 msgstr "Открыть счет"
 
+msgid "Open a demo account"
+msgstr "Открыть демо счет"
+
+msgid "Request a call back"
+msgstr "Заказать обратный звонок"
+
+msgid "Authorization"
+msgstr "Авторизация"
+
 msgid "Risk Warning: Trading leveraged products such as Forex and CFDs carries a high risk. You can lose all your invested capital. Please consider our"
 msgstr "Предупреждение о рисках: Торговля маржинальными продуктами, такими как Forex и CFDs, несет высокий риск. Вы можете потерять инвестированные средства. Пожалуйста, ознакомьтесь с"
 
+#, fuzzy
+#| msgid "Risk Disclosure"
 msgctxt "warning popup"
-msgid "Risk Disclosure."
-msgstr "Предупреждением о рисках."
+msgid "Risk Disclosure"
+msgstr "Уведомление о рисках"
 
 msgid "Company’s Agent in the Russian Federation:"
 msgstr "Русскоязычная поддержка:"
@@ -656,6 +672,12 @@ msgstr "5 вариантов торговых отчетов, логирован
 
 msgid "Go to the platform"
 msgstr "Перейти в платформу"
+
+msgid "For real account"
+msgstr "Для реального счета"
+
+msgid "For demo account"
+msgstr "Для демо-счета"
 
 msgid "Compare trading platforms"
 msgstr "Сравнение торговых платформ"
@@ -1661,6 +1683,10 @@ msgstr "Файл слишком большого размера."
 msgid "Unsupported file extension"
 msgstr "Расширение файла не поддерживается"
 
+#~ msgctxt "warning popup"
+#~ msgid "Risk Disclosure."
+#~ msgstr "Предупреждением о рисках."
+
 #~ msgid "IB (Introducing broker)"
 #~ msgstr "IB (представляющий брокера)"
 
@@ -1801,12 +1827,6 @@ msgstr "Расширение файла не поддерживается"
 
 #~ msgid "A pledge at the weekend and from 20:00 UTC on Friday"
 #~ msgstr "Залог в выходные дни и с 20:00 UTC пятницы "
-
-#~ msgid "For real account"
-#~ msgstr "Для реального счета"
-
-#~ msgid "For demo account"
-#~ msgstr "Для демо-счета"
 
 #~ msgid "Weekly profitability"
 #~ msgstr "Недельная доходность"

@@ -58,17 +58,9 @@ block content
 						p.apps__item__text
 							- trans "The platform enables one to work with any number of open charts, use customized indicators and automated trading systems."
 						.apps__links_box.for-true-border
-							{% if LANGUAGE_CODE == 'ru' %}
-							div.not-ready-platform-ru
-								a.apps__link.button(href="#")
-									span.button__text
-										- trans "Download the platform"
-							{% else %}
-							div.not-ready-platform-en
-								a.apps__link.button(href="#")
-									span.button__text
-										- trans "Download the platform"
-							{% endif %}
+							a.apps__link.button(href="https://download.mql5.com/cdn/web/9639/mt4/arumcapital4setup.exe", target="_blank")
+								span.button__text
+									- trans "Download the platform"
 							{% if LANGUAGE_CODE == 'ru' %}
 							a.apps__link.link.link--icon.link--icon-download(href="/static/agreements/instruction_MAC_ru.pdf", target='_blank')
 								- trans "User manual Mac"

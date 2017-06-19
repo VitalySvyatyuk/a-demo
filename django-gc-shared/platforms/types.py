@@ -132,15 +132,8 @@ class AccountType(object):
 
 # Real trading account - mt4 by default
 StandardAccountType = AccountType(
-    slug='realstandard',
+    slug='ARM_MT4_Live',
     name=u'ECN.MT',
-    regex=r'^jbrealstd_.*$',
-    group_choices={
-        MARKET_EXECUTION: {
-            currencies.USD: 58,
-        },
-    },
-    available_options=HAS_CURRENCY_OPTIONS | HAS_EXECUTION_OPTIONS,
     can_change_leverage=True,
     leverage_default=50,
     min_deposit=500,
@@ -149,16 +142,8 @@ StandardAccountType = AccountType(
 )
 
 DemoStandardAccountType = AccountType(
-    slug='demostandard',
+    slug='demoARM',
     name=u'ECN.MT',
-    regex=r'^(demostd_.*|demoforex|demostandard|demo_.*)$',
-    can_be_used_as_pamm_investor=True,
-    group_choices={
-        MARKET_EXECUTION: {
-            currencies.USD: 1,
-        },
-    },
-    available_options=HAS_CURRENCY_OPTIONS | HAS_EXECUTION_OPTIONS,
     leverage_default=50,
     deposit=10000,
     engine='demo',
@@ -174,9 +159,8 @@ RealMicroAccountType = AccountType(
 
 
 RealIBAccountType = AccountType(
-    slug='real_ib',
+    slug='ARM_MT4_Agents',
     name='Partner',
-    # group=0,
     leverage_default=1,
     leverage_choices=(1, ),
     is_ib_account=True,

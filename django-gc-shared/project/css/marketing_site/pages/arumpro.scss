@@ -176,7 +176,7 @@
       left: -26px;
     }
   }
-  ul.arumpro-dropdown{margin-left: 0;display: inline-block; vertical-align: middle;}
+  ul.arumpro-dropdown{margin-left: 0;margin-right:30px;display: inline-block; vertical-align: middle;}
   ul.arumpro-dropdown li { position: relative; margin-left: 0;}
   ul.arumpro-dropdown li:after { display: none; }
   ul.arumpro-dropdown li a:after { display: none; }
@@ -211,7 +211,7 @@
     content: "";
     display: block;
     position: absolute;
-    left: 237px;
+    left: 90%;
     top: 21px;
     background-image: url(../img/marketing-site/icons/icon-arumpro-arrow.svg);
     width: 13px;
@@ -258,7 +258,7 @@
   .arumpro-windows-links{
     margin-top: 50px;
     a{
-      margin-left: 0;
+      margin-left: 56px;
     }
     a.button{
       color: #fff;
@@ -436,7 +436,7 @@
     .arumpro-windows{
       margin-bottom: 20px;
       a{
-        margin-left: 27px;
+        margin-left: 27px!important;
       }
       >div:first-child{
         margin-bottom: 50px;
@@ -482,7 +482,7 @@
   .arumpro{
     .arumpro-windows{
       a{
-        margin-left: 27px;
+        margin-left: 27px!important;
       }
     }
   }
@@ -497,8 +497,8 @@
   .arumpro{
     .arumpro-windows{
       a{
-        display: block;
-        margin-left: 27px;
+        display: block!important;
+        margin-left: 27px!important;
       }
     }
   }
@@ -509,6 +509,16 @@
     .arumpro-windows{
       a{
         margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media(min-width: 533px) and (max-width: 768px){
+  .arumpro{
+    .arumpro-windows{
+      a.link{
+        margin-left: 56px!important;
       }
     }
   }

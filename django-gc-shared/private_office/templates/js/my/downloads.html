@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 {% if LANGUAGE_CODE == 'ru' %}
-                <a href="#" class="download-link icon windows not-ready-platform-ru"><span>{% trans "For Windows" %}</span></a>
+                <a href="https://download.mql5.com/cdn/web/9639/mt4/arumcapital4setup.exe" target="_blank" class="download-link icon windows"><span>{% trans "For Windows" %}</span></a>
                 <a href="#" class="download-link icon apple not-ready-platform-ru"><span>{% trans "For iPhone" %}</span></a>
                 <a href="#" class="download-link icon android not-ready-platform-ru"><span>{% trans "For Android" %}</span></a>
                 <a href="#" class="download-link icon ipad not-ready-platform-ru"><span>{% trans "For IPad/Tablet" %}</span></a>
@@ -21,7 +21,7 @@
                     <a href="#" class="download-link not-ready-platform-ru"><span>{% trans "User's manual (pdf)" %}</span></a>
                 </div>
                 {% else %}
-                <a href="#" class="download-link icon windows not-ready-platform-en"><span>{% trans "For Windows" %}</span></a>
+                <a href="https://download.mql5.com/cdn/web/9639/mt4/arumcapital4setup.exe" target="_blank" class="download-link icon windows"><span>{% trans "For Windows" %}</span></a>
                 <a href="#" class="download-link icon apple not-ready-platform-en"><span>{% trans "For iPhone" %}</span></a>
                 <a href="#" class="download-link icon android not-ready-platform-en"><span>{% trans "For Android" %}</span></a>
                 <a href="#" class="download-link icon ipad not-ready-platform-en"><span>{% trans "For IPad/Tablet" %}</span></a>
@@ -41,14 +41,14 @@
                 </div>
                 {% if LANGUAGE_CODE == 'ru' %}
                 <a href="#" class="download-link icon windows not-ready-platform-ru"><span>{% trans "For real accounts" %}</span></a>
-                <a href="#" class="download-link icon windows not-ready-platform-ru"><span>{% trans "For demo accounts" %}</span></a>
+                <a href="http://download.arumcapital.eu/demo/application/ArumProTraderDemoSetup.exe" target="_blank" class="download-link icon windows"><span>{% trans "For demo accounts" %}</span></a>
                 <div class="footer-block">
                     <a href="#" class="download-link not-ready-platform-ru"><span>{% trans "User's manual (pdf)" %}</span></a>
                     <a href="#" class="download-link not-ready-platform-ru"><span>{% trans "API description for the FIX protocol (pdf)" %}</span></a>
                 </div>
                 {% else %}
                 <a href="#" class="download-link icon windows not-ready-platform-en"><span>{% trans "For real accounts" %}</span></a>
-                <a href="#" class="download-link icon windows not-ready-platform-en"><span>{% trans "For demo accounts" %}</span></a>
+                <a href="http://download.arumcapital.eu/demo/application/ArumProTraderDemoSetup.exe" target="_blank" class="download-link icon windows"><span>{% trans "For demo accounts" %}</span></a>
                 <div class="footer-block">
                     <a href="#" class="download-link not-ready-platform-en"><span>{% trans "User's manual (pdf)" %}</span></a>
                     <a href="#" class="download-link not-ready-platform-en"><span>{% trans "API description for the FIX protocol (pdf)" %}</span></a>
@@ -69,6 +69,8 @@
                 {% else %}
                 <a href="#" class="download-link not-ready-platform-en"><span>{% trans "Manual (pdf)" %}</span></a>
                 {% endif %}
+                <a href="https://demo.arumcapital.eu/" target="_blank" class="download-link"><span>{% trans "Go to Demo" %}</span></a>
+                <a href="https://trade.arumcapital.eu/" target="_blank" class="download-link"><span>{% trans "Go to Real" %}</span></a>
             </div>
         </div>
         <div class="columns small-3">

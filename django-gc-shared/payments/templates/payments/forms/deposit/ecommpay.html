@@ -5,6 +5,7 @@
             {% include "payments/includes/field.html" %}
         {% endwith %}
     </div>
+
 {% block header %}{% endblock %}
 {% block ps %}{% endblock %}
 
@@ -13,11 +14,15 @@
             {% include "payments/includes/field.html" %}
         {% endwith %}
     </div>
+
     <div class="small-2 medium-2 large-2 columns{% if withdraw_form.payment_system == "handybank" %} offset-bottom-60{% endif %}">
         {% with field=form.currency %}
             {% include "payments/includes/field.html" %}
         {% endwith %}
     </div>
+<div class=" large-3 columns">
+    {% include "payments/includes/commision_field.html" %}
+</div>
 <input type="submit" class="button medium" value="{% trans 'Continue' context 'button' %}"/>
 
 {% csrf_token %}

@@ -5,7 +5,6 @@ import logging
 from django.core.cache import cache
 
 from currencies import currencies
-from platforms.mt4.api import SocketAPI, MT4Error
 
 log = logging.getLogger(__name__)
 
@@ -71,27 +70,7 @@ def convert_currency(amount, from_currency, to_currency, silent=True, for_date=N
     if for_date is not None and type(for_date) is datetime:
         for_date = for_date.date()
 
-    if cache_key is None and (for_date is None):
-        try:
-            mt4_converted = convert_currency_mt4(amount, from_currency, to_currency)
-        except MT4Error:
-            # Ok, it failed like this, but, we'll try it via for_date
-            for_date = datetime.now()
-        else:
-            return mt4_converted
-
-    cache_key = cache_key or _get_cache_key(for_date=for_date)
-    rates = cache.get(cache_key)
-
-    # Nothing in cache
-    if not rates:
-        update_mt4_rates(for_date or datetime.now().date(), cache_key)
-        rates = cache.get(cache_key)
-
-    result = rates[to_currency.instrument_name]/rates[from_currency.instrument_name] * amount
-
-    return result, to_currency
-
+    return convert_currency_mt4(amount, from_currency, to_currency)
 
 # эта функция не должна вызываться из внешнего кода. следует использовать convert_currency
 def convert_currency_mt4(amount, from_currency, to_currency='USD'):

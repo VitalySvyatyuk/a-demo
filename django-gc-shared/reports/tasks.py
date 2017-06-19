@@ -12,7 +12,6 @@ from django.template import loader
 from django.utils import translation
 from djcelery.backends.database import DatabaseBackend
 
-from platforms.mt4.api.database import DatabaseAPI
 from platforms.models import TradingAccount
 from notification import models as notification
 

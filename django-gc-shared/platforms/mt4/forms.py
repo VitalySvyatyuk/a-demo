@@ -24,8 +24,6 @@ from private_messages.forms import notification
 from project.utils import get_accept_fields
 from registration.models import RegistrationProfile
 
-from .api.commands import *
-
 
 class Mt4AccountForm(forms.Form):
     leverage = forms.ChoiceField(label=_("Leverage"))
@@ -128,8 +126,10 @@ class Mt4AccountForm(forms.Form):
         elif self.account_type.available_options & HAS_BINARY_OPTIONS_TYPE_OPTIONS:
             self.cleaned_data["group"] = self.account_type. \
                 group_choices[self.cleaned_data.get("binary_options_type")]
-        else:
+        elif self.account_type.group:
             self.cleaned_data["group"] = self.account_type.group
+        else:
+            self.cleaned_data["group"] = self.account_type.slug
 
         return self.cleaned_data
 
@@ -159,32 +159,33 @@ class Mt4AccountForm(forms.Form):
                 tags=Func(F('tags'), Value('real'), function='array_append'))
 
         details = dict(
-            ip=get_ip(self.request),
+            # ip=get_ip(self.request),
             # ip='148.251.147.241',
             group=self.cleaned_data["group"],
-            agent=profile.agent_code,
-            leverage=self.cleaned_data["leverage"],
+            agent_account=profile.agent_code or 0,
+            leverage=int(self.cleaned_data["leverage"]),
             password=password,
-            investor=create_password(),
+            # investor=create_password(),
             name="%s %s" % (user.first_name, user.last_name),
             email=user.email,
-            deposit=self.cleaned_data.get('deposit', ''),
+            # deposit=self.cleaned_data.get('deposit', ''),
             country=force_unicode(profile.country or ""),
             state=force_unicode(profile.state or ""),
             city=profile.city,
             address=profile.address,
-            id=user.pk,
+            # id=user.pk,
             phone="",
-            phone_password=create_password(size=6, only_digits=True),
-            send_reports=1,
-            read_only=0,
-            zipcode="perm_D1",  # Used by some custom GrandCapital mt4 system
-            master=settings.MT4_MASTER_PASSWORD)
-        if self.account_type.slug in read_only_slugs_oncreate():
+            password_phone=create_password(size=6, only_digits=True),
+            # send_reports=1,
+            # read_only=0,
+            # zipcode="perm_D1",  # Used by some custom GrandCapital mt4 system
+            #master=settings.MT4_MASTER_PASSWORD
+        )
+        # if self.account_type.slug in read_only_slugs_oncreate():
             # pamm.types.LammMasterAccountType.slug  - realPAMM_1
             # pamm.types.LammInvestorAccountType.slug  - realPAMM_inv
             # mt4.types.RealOptionsAccountType.slug  - real_options_us
-            details['read_only'] = 1
+            # details['read_only'] = 1
 
         account_type_details = {
             'slug': self.cleaned_data.get("slug") or self.account_type.slug,
@@ -194,6 +195,7 @@ class Mt4AccountForm(forms.Form):
             'engine': self.account_type.engine,
             'cookies': self.request.COOKIES,
             'host': self.request.get_host(),
+            'ip': self.request.META['REMOTE_ADDR'],
         }
 
         with override('en'):
@@ -207,7 +209,10 @@ class Mt4AccountForm(forms.Form):
         else:
             account_info = register_mt4account(details, user, account_type_details, self.__class__, partner_api_id,
                                                additional_fields)
-            login = TradingAccount.objects.get(pk=account_info['account_pk']).mt4_id
+            trading_acc = TradingAccount.objects.get(pk=account_info['account_pk'])
+            login = trading_acc.mt4_id
+            if self.cleaned_data.get('deposit'):
+                trading_acc.change_balance(self.cleaned_data['deposit'], "Initial deposit")
             notification.send([user],
                               'demo_MT_account_created' if self.account_type.is_demo else 'real_MT_account_created',
                               {"password": password,

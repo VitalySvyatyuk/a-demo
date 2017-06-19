@@ -149,15 +149,25 @@ html
 					//-   | Консультант&nbsp;
 					//-     span.hidden_on_mobiles
 					//-       | онлайн
-					a.hidden_on_phones.header__menu_item.header__menu_item--zero-margin.header__text_item.hidden_on_desktop(href="#")
-						span.header__text_item__content
-							| ARUM.WEB
+					div.hidden_on_phones.header__menu_item.header__menu_item--zero-margin.header__text_item.hidden_on_desktop.arum-web-show-list ARUM.WEB
+						ul.arum-web-hidden-list
+								li
+									a(href="https://demo.arumcapital.eu/", target="_blank")
+										- trans "Demo"
+								li
+									a(href="https://trade.arumcapital.eu/", target="_blank")
+										- trans "Real"
 					a.hidden_on_phones.header__menu_item.header__text_item.header__text_item--point-icon.header__text_item--point-icon#live-chat-link.red(href="#", data-livechat)
 						span.header__text_item__content
 							- trans "Live chat"
-					a.hidden_on_phones.header__menu_item.header__menu_item--zero-margin.header__text_item.hidden_on_mobiles(href="#")
-						span.header__text_item__content
-							| ARUM.WEB
+					div.hidden_on_phones.header__menu_item.header__menu_item--zero-margin.header__text_item.hidden_on_mobiles.arum-web-show-list ARUM.WEB
+						ul.arum-web-hidden-list
+							li
+								a(href="https://demo.arumcapital.eu/", target="_blank")
+									- trans "Demo"
+							li
+								a(href="https://trade.arumcapital.eu/", target="_blank")
+									- trans "Real"
 					button.header__menu_item.header__menu_item--float-right.header__burger.js-open-menu.hidden_on_mobiles(type="button", title="Открыть меню")
 
 					if not user.is_authenticated

@@ -1,0 +1,50 @@
+import re
+import xmlrpclib
+
+from django.conf import settings
+
+
+class MT4Exception(Exception):
+    pass
+
+
+class RemoteMT4Manager(object):
+    def __init__(self, engine):
+        server, port = settings.ENGINES[engine]['pymt4']
+        self.engine = xmlrpclib.ServerProxy("http://%s:%s/" % (server, port), allow_none=True)
+
+    def _check_password_requirement(self, password):
+        if len(password) < 6 or not re.search("[a-zA-Z]", password) or not re.search("[0-9]", password):
+            raise ValueError("Password should be at least 6 characters long and contain at least 1 digit and 1 letter")
+
+    def _handle_fault(self, method, *args):
+        try:
+            return getattr(self.engine, method)(*args)
+        except xmlrpclib.Fault as e:
+            if 'mt4_api.MT4Exception' in e.faultString.split(':', 1)[0]:
+                raise MT4Exception(e.faultString.split(':', 1)[1])
+            elif 'exceptions.ValueError' in e.faultString.split(':', 1)[0]:
+                raise ValueError(e.faultString.split(':', 1)[1])
+            raise
+
+    def change_balance(self, login, amount, comment, credit=False):
+        if not comment:
+            comment = "Balance/credit operation"  # MT4 requires us to have a comment
+        self._handle_fault('change_balance', login, amount, comment, credit)
+
+    # -1 means "do not modify"
+    def change_user_data(self, login, leverage=-1, agent_account=-1, enable=-1, read_only=-1, send_reports=-1):
+        self._handle_fault('change_user_data', login, leverage, agent_account, enable, read_only, send_reports)
+
+    def change_password(self, login, password, investor=False, clean_pubkey=False):
+        self._check_password_requirement(password)
+        self._handle_fault('change_password', login, password, investor, clean_pubkey)
+
+    def check_password(self, login, password):
+        return self._handle_fault('check_password', login, password)
+
+    def create_account(self, group, password, leverage, name, login=0, agent_account=0, password_phone="", enable=True,
+                       read_only=False, country="", state="", city="", address="", email="", phone=""):
+        self._check_password_requirement(password)
+        return self._handle_fault('create_account', group, password, leverage, name, login, agent_account,
+                                  password_phone, enable, read_only, country, state, city, address, email, phone)

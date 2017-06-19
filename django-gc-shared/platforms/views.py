@@ -33,7 +33,6 @@ from otp.views import security_check, security
 from platforms.converter import convert_currency
 from platforms.forms import ChangeLeverageForm, PasswordRecoveryForm
 from platforms.models import TradingAccount
-from platforms.mt4.api.exceptions import InvalidAccount
 from platforms.mt4.external.models_other import Mt4Quote
 from platforms.types import get_account_type
 from project.views import LoginRequiredMixin, AjaxFormView

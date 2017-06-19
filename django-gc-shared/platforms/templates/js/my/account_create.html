@@ -19,12 +19,12 @@
                 <div class="footer-block">
                     <div>
                     {% if LANGUAGE_CODE == 'ru' %}
-                        <a href="{% url 'mt4_process_create_account' 'demostandard' %}" class="button medium inverted not-ready-platform-ru" data-reveal-form>
+                        <a href="{% url 'mt4_process_create_account' 'demoARM' %}" class="button medium inverted not-ready-platform-ru" data-reveal-form>
                             {% trans "Demo account" %}
                             <span class="desc">{% trans "No investments" %}</span>
                         </a>
                     {% else %}
-                        <a href="{% url 'mt4_process_create_account' 'demostandard' %}" class="button medium inverted not-ready-platform-en" data-reveal-form>
+                        <a href="{% url 'mt4_process_create_account' 'demoARM' %}" class="button medium inverted not-ready-platform-en" data-reveal-form>
                             {% trans "Demo account" %}
                             <span class="desc">{% trans "No investments" %}</span>
                         </a>
@@ -32,13 +32,13 @@
                     </div>
                     <div>
                     {% if LANGUAGE_CODE == 'ru' %}
-                        <a href="{% url 'mt4_process_create_account' 'realstandard' %}" class="button medium not-ready-platform-ru" data-reveal-form>
+                        <a href="{% url 'mt4_process_create_account' 'ARM_MT4_Live' %}" class="button medium not-ready-platform-ru" data-reveal-form>
                             {% trans "Live account" %}
                             <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "" %}
                             </span>
                         </a>
                     {% else %}
-                        <a href="{% url 'mt4_process_create_account' 'realstandard' %}" class="button medium not-ready-platform-en" data-reveal-form>
+                        <a href="{% url 'mt4_process_create_account' 'ARM_MT4_Live' %}" class="button medium not-ready-platform-en" data-reveal-form>
                             {% trans "Live account" %}
                             <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "" %}
                             </span>

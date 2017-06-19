@@ -5,7 +5,7 @@
 	left: 0;
 	width: 100%;
 	height: $header_height;
-  transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 	background-color: rgba(black, 0.85);
 
 	@media (#{$max_ipad}){
@@ -25,6 +25,40 @@
 
 	&:after{
 		content: none; //kills Bootstrap grid clearfix
+	}
+	.arum-web-show-list{
+		position: relative;
+		.arum-web-hidden-list{
+			background-color: #fff;
+			display: none;
+			list-style: none;
+			padding-left: 0;
+			position: absolute;
+			left: 50%;
+			top: 110%;
+			padding: 0 20px;
+			border: 1px solid #000;
+			text-align: center;
+			-webkit-transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);
+			transform: translate(-50%,-50%);
+			li{
+				line-height: 26px;
+				a{
+					color: #000;
+					text-transform: uppercase;
+					text-decoration: none;
+					&:hover{
+						border-bottom: 1px solid  #000;
+					}
+				}
+			}
+		}
+		&:hover{
+			.arum-web-hidden-list{
+				display: block;
+			}
+		}
 	}
 }
 .header__menu_item{

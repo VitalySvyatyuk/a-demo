@@ -184,14 +184,15 @@ class TradingAccount(models.Model):
         ordering = ["mt4_id", "group_name"]
         unique_together = [("user", "mt4_id")]
 
-    @cached_property
-    def currency(self):
-        # type: () -> Currency
-        """
-        Currency of this account.
-        """
-        cur = get_by_group(self.group_name)
-        return cur or USD
+    # @cached_property
+    # def currency(self):
+    #     # type: () -> Currency
+    #     """
+    #     Currency of this account.
+    #     """
+    #     cur = get_by_group(self.group_name)
+    #     return cur or USD
+    currency = USD
 
     @property
     def trades(self):

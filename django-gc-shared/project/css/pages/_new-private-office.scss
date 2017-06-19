@@ -16,6 +16,40 @@
       .block-wrapper {
         padding-right: 0;
       }
+      .show-private-office-hidden-list{
+        position: relative;
+        .private-office-hidden-list{
+          display: none;
+          position: absolute;
+          top: 20px;
+          left: 35px;
+          border: 1px solid #000;
+          padding: 8px;
+          background-color: #fff;
+          z-index: 10;
+          width: 90%;
+          li{
+            margin-bottom: 0;
+            height: auto;
+            a{
+              padding-left: 0;
+              border-bottom: 1px solid  transparent;
+              display: inline;
+              &:hover{
+                border-bottom: 1px solid  #000;
+              }
+            }
+            &:first-child{
+              margin-bottom: 5px;
+            }
+          }
+        }
+        &:hover{
+          .private-office-hidden-list{
+            display: block;
+          }
+        }
+      }
     }
     .mid-pan {
       width: 65.65%;

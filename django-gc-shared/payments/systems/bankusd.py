@@ -50,6 +50,7 @@ class DepositForm(bankbase.DepositForm, FormWithTranslitedName):
     )
 
     MIN_AMOUNT = (500, 'USD')
+    fixed_commision = 0
 
     def __init__(self, *args, **kwargs):
         super(DepositForm, self).__init__(*args, **kwargs)
@@ -94,6 +95,7 @@ class DetailsForm(bankbase.DetailsForm, FormWithTranslitedName):
 
 
 class WithdrawForm(bankbase.WithdrawForm):
+    fixed_commision = 40
     info = string_concat(
         _("Withdrawal of funds from the account - %(time)s"),
         "\n",

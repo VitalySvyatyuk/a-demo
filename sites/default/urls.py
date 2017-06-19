@@ -8,13 +8,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.shortcuts import redirect
 
-import platforms.mt4.api
 import issuetracker
 
 
 admin.autodiscover()
 admin.site.login = lambda req: redirect("auth_login")
-platforms.mt4.api.autodiscover()
 issuetracker.autodiscover()
 
 from shared.generic_views import TemplateView

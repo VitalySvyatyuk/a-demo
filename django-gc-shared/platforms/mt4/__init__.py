@@ -8,8 +8,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db import OperationalError as DjangoOperationalError
 
 from platforms.converter import convert_currency
-from platforms.mt4.api import MT4Error, InvalidAccount, DatabaseAPI, SocketAPI, CustomAPI
-from platforms.mt4.api.utils import get_engine_name
 from platforms.mt4.external.models import ChangeIssue, mt4_user, RealUser, DemoUser, ArchiveUser
 from platforms.mt4.external.models_trade import RealTrade, ArchiveTrade, DemoTrade
 
@@ -18,8 +16,7 @@ NEVER = datetime(1970, 1, 1, 0, 0)
 import logging
 log = logging.getLogger(__name__)
 
-# Register commands
-import api.commands
+import mt4api
 
 # noinspection PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic
 class ApiFacade(object):
@@ -30,29 +27,15 @@ class ApiFacade(object):
         """
         Update date of creation from mt4 db.
         """
-        # If an account doesn't yet have creation_ts we fetch account
-        # info using DatabaseAPI and check if regdate is set (which
-        # is when it aint equal to the unixtime zero). If so, we then
-        # update creation_ts with its value, else datetime.now() is
-        # used.
-        # 1/1/2000 seems to be mt4 default
         log.debug("Saving mt4 account %d" % account.mt4_id)
-        if not account.creation_ts or account.creation_ts == datetime(2000, 1, 1):
-            try:
-                info = self._get_info("db")
-            except (InvalidAccount, MT4Error):
-                log.error("Invalid account!")
-            else:
-                if info:
-                    if info.regdate > datetime(1970, 1, 1):
-                        account.creation_ts = info.regdate
-                    else:
-                        account.creation_ts = datetime.now()
+        if not account.creation_ts:
+            info = self._get_mt4user(account)
+            if info:
+                if info.regdate > datetime(1970, 1, 1):
+                    account.creation_ts = info.regdate
 
-                        # Some accounts still get no creation_ts, I'm too lazy to debug why, maybe this will help
         if not account.creation_ts:
             account.creation_ts = datetime.now()
-        account.save
         log.debug("creation_ts=%s" % account.creation_ts)
 
     def account_group(self, account):
@@ -60,6 +43,8 @@ class ApiFacade(object):
         Account group.
         Mt4-specific, should be used only to get .group for Mt4 Accs.
         """
+        if not account.group_name:  # We should have at least some old account group to get engine name
+            return None
         mt4user = self._get_mt4user(account)
         log.debug("mt4user=%s" % mt4user)
         if account.pk and account.user and mt4user is not None \
@@ -68,97 +53,49 @@ class ApiFacade(object):
             account.save(update_fields=['group_name'])
         return mt4user.group if mt4user else account.group_name
 
-    @staticmethod
-    def _change_mt4_field(account, field, value, get_or_create=False):
-        log.debug("Change mt4 field %s=%s on %d" % (field, value, account.mt4_id))
-        if get_or_create:
-            method = ChangeIssue.objects.get_or_create
-        else:
-            method = ChangeIssue.objects.create
-        return method(login=account.mt4_id, field=field, value=value)
-
     def account_change_password(self, account, password):
         log.debug("Changing password for mt4 account %d" % account.mt4_id)
-        self._change_mt4_field(account, 'PASSWORD', password)
+        self.get_mt4api(account).change_password(account.mt4_id, password)
         return password
 
     def account_change_leverage(self, account, leverage_value):
         log.debug("Changing leverage for mt4 account %d" % account.mt4_id)
-        return self._change_mt4_field(account, 'LEVERAGE', leverage_value)
+        return self.get_mt4api(account).change_user_data(account.mt4_id, leverage=leverage_value)
 
     def account_block(self, account):
         log.debug("Blocking mt4 account %d" % account.mt4_id)
-        return self._change_mt4_field(account, 'BLOCK', 'block')
+        return self.get_mt4api(account).change_user_data(account.mt4_id, enable=0)
 
     def account_unblock(self, account):
         log.debug("UnBlocking mt4 account %d" % account.mt4_id)
-        return self._change_mt4_field(account, 'BLOCK', 'unblock')
+        return self.get_mt4api(account).change_user_data(account.mt4_id, enable=1)
 
     def account_agents(self, account, demo=False):
         # Should be removed, see .agents
-        api = self._get_mt4api(account, 'db', demo)
-        log.debug("api=%s" % api)
-        return mt4_user[api.db_name].objects.filter(agent_account=account.mt4_id).order_by('login')
+        engine = self.get_engine(account)
+        log.debug("engine=%s" % engine)
+        return mt4_user[engine].objects.filter(agent_account=account.mt4_id).order_by('login')
 
     @staticmethod
-    def _get_mt4api(account, mode=None, get_demo=False):
-        """
-        Returns Mt4 API object, based on a given mode: 'db' yields
-        `DatabaseAPI` instance, and 'socket' — `SocketAPI`.
-        """
-        log.debug("mode=%s" % mode)
-        if mode == "db":
-            if get_demo:
-                server = DatabaseAPI(account.mt4_id, db='demo')
-            else:
-                server = DatabaseAPI(account.mt4_id)
-        elif mode == "db_archive":
-            server = DatabaseAPI(account.mt4_id, db="db_archive")
-        elif mode == "socket":
-            server = SocketAPI()
-        else:
-            log.warn("Unknown mode!")
-            raise ValueError(
-                "`mode` argument should be either 'db' or 'socket'")
+    def get_engine(account):
+        return "demo" if account.is_demo else "default"
 
-        return server
+    @classmethod
+    def get_mt4api(cls, account):
+        return mt4api.RemoteMT4Manager(engine=cls.get_engine(account))
 
     def account_leverage(self, account):
         return int(self._get_mt4user(account).leverage)
 
     def account_check_password(self, account, password):
-        api = self._get_mt4api(account, "socket")
-        log.debug("Checking pass for %d" % account.mt4_id)
-        log.debug("api=%s" % api)
-        try:
-            api.login(account.mt4_id, password)
-        except (InvalidAccount, ValueError):
-            log.warn("Invalid password!" )
-            return False
-        return True
+        return self.get_mt4api(account).change_password(account.mt4_id, password)
 
-    def _get_info(self, account, mode='db', need_normalize=False, **kwargs):
-        from ..models import normalize
-        # noinspection PyUnresolvedReferences
-        info = self._get_mt4api(account, mode).info(**kwargs)
-        log.debug("info=%s", info)
-
-        if need_normalize:
-            log.debug("Normalization")
-            for attr in ('balance', 'equity', 'margin', 'credit',
-                         'free', 'deposit', 'withdraw', 'profit'):
-                if not hasattr(info, attr):
-                    continue
-                value = getattr(info, attr)
-                setattr(info, attr, normalize(account, value))
-        return info
-
-    @staticmethod
-    def _get_mt4user(account):
+    @classmethod
+    def _get_mt4user(cls, account):
         """
         Return Mt4 User object.
         """
-        engine = get_engine_name(account.mt4_id, get_demo=account.is_demo)
+        engine = cls.get_engine(account)
         log.debug("engine=%s" % engine)
         try:
             return mt4_user[engine].objects.get(login=account.mt4_id)
@@ -186,7 +123,7 @@ class ApiFacade(object):
         """
         group = account.group
         log.debug("group=%s" % group)
-        user = (DemoUser if account.is_demo else ArchiveUser if account.is_archived else RealUser).\
+        user = (DemoUser if account.is_demo else RealUser).\
             objects.filter(login=account.mt4_id).first()
         log.debug("user=%s" % user)
         return calculate_available_leverages(group, user)
@@ -195,8 +132,6 @@ class ApiFacade(object):
         log.debug("Loading trades for %d" % account.mt4_id)
         if account.is_demo:
             cls = DemoTrade
-        elif account.is_archived:
-            cls = ArchiveTrade
         else:
             cls = RealTrade
         log.debug("cls=%s" % cls)
@@ -223,27 +158,23 @@ class ApiFacade(object):
         log.debug("Withdrawing %.2f%s from mt4 account %d" % (amount, account.currency.symbol, account.mt4_id))
         return self._mt4_change_balance(account, -amount, **kwargs)
 
-    @staticmethod
-    def _mt4_change_balance(account, amount, **kwargs):
+    @classmethod
+    def _mt4_change_balance(cls, account, amount, **kwargs):
         """
         Change balance on mt4 account through CustomAPI.
         """
         log.debug("Changing mt4 balance on %d by %s" % (account.mt4_id, amount))
         request_id = getattr(kwargs, 'request_id', 0)
         transaction_type = getattr(kwargs, 'transaction_type', '')
-        credit = getattr(kwargs, 'credit', None)
+        credit = bool(getattr(kwargs, 'credit', False))
         comment = getattr(kwargs, 'comment', '')
-        amount_currency = account.currency
-        if amount_currency:
-            amount = convert_currency(amount, from_currency=amount_currency,
-                                      to_currency=account.currency)[0]
 
-        api = CustomAPI(engine=get_engine_name(account.mt4_id, get_demo=account.is_demo))
+        # api = CustomAPI(engine=get_engine_name(account.mt4_id, get_demo=account.is_demo))
+        api = cls.get_mt4api(account)
         log.debug("custom api=%s" % api)
         round_function = math.floor if amount > 0 else math.ceil
         amount = round_function(amount * 100) / 100
-        return api.change_account_balance(login=account.mt4_id, amount=amount, comment=comment, request_id=request_id,
-                                          transaction_type=transaction_type, credit=credit)
+        return api.change_balance(login=account.mt4_id, amount=amount, comment=comment, credit=credit)
 
 
 def calculate_available_leverages(group, user, limit=None):

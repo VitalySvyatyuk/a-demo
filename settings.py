@@ -114,58 +114,18 @@ DATABASES = {
     },
     'real': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gcmtsrv_real',
-        'USER': 'webuser',
-        'PASSWORD': 'V3fb^23J609G4$1',
-        'HOST': '144.76.27.6',
+        'NAME': 'arummtsrv_real',
+        'USER': 'reportuser',
+        'PASSWORD': 'aVKnWc',
+        'HOST': '138.201.61.157',
         'CONN_MAX_AGE': 600,
     },
     'demo': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gcmtsrv_demo',
-        'USER': 'webuser',
-        'PASSWORD': 'V3fb^23J609G4$1',
-        'HOST': '144.76.27.6',
-        'CONN_MAX_AGE': 600,
-    },
-    'db_archive': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gcmtsrv_arch',
-        'USER': 'webuser',
-        'PASSWORD': 'V3fb^23J609G4$1',
-        'HOST': '144.76.27.6',
-        'CONN_MAX_AGE': 600,
-    },
-    'specifications': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'specifications',
-        'USER': 'webuser',
-        'PASSWORD': 'V3fb^23J609G4$1',
-        'HOST': '144.76.27.6',
-        'CONN_MAX_AGE': 600,
-    },
-    'config': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'config',
-        'USER': 'webuser',
-        'PASSWORD': 'V3fb^23J609G4$1',
-        'HOST': '144.76.27.6',
-        'CONN_MAX_AGE': 600,
-    },
-    'options': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'options',
-        'USER': 'webuser',
-        'PASSWORD': 'V3fb^23J609G4$1',
-        'HOST': '144.76.27.6',
-        'CONN_MAX_AGE': 600,
-    },
-    'mt4_externaldb': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gcwebsrv',
-        'USER': 'webuser',
-        'PASSWORD': 'V3fb^23J609G4$1',
-        'HOST': '144.76.27.6',
+        'NAME': 'arummtsrv_demo',
+        'USER': 'reportuser',
+        'PASSWORD': 'aVKnWc',
+        'HOST': '138.201.61.157',
         'CONN_MAX_AGE': 600,
     },
     'asterisk': {
@@ -560,49 +520,13 @@ SESSION_COOKIE_AGE = 2592000  # 30 days
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
-MT4_ACCOUNT_ENGINES_NAMES = ['default', 'db_archive', 'demo']
+MT4_ACCOUNT_ENGINES_NAMES = ['default', 'demo']
 ENGINES = {
-    #'default': {
-    #    'sock': ('188.138.56.20', 443),
-    #    'reporter_restart_url': 'http://95.215.1.135:8135/',
-    #    'test_integrity': True,
-    #},
     'default': {
-        'db': 'mysql://webuser:V3fb^23J609G4$1@144.76.27.6/gcmtsrv_real?charset=utf8',
-        'sock': ('88.198.194.84', 443),
-        'test_integrity': False,
-        'custom': ("88.198.194.84", 3001),  # основной мт4
-        'custom2': ("88.198.194.84", 3002),  # зеркало мт4
-        'custom3': ("88.198.194.84", 12345),  # mt4 trades info to websocket server
-        'webtrading': ('88.198.194.84', 5444),
-    },
-    'db_archive': {
-        'db': 'mysql://webuser:V3fb^23J609G4$1@144.76.27.6/gcmtsrv_arch?charset=utf8',
-        'test_integrity': False,
+        'pymt4': ("127.0.0.1", 8444),
     },
     'demo': {
-        'db': 'mysql://webuser:V3fb^23J609G4$1@144.76.27.6/gcmtsrv_demo?charset=utf8',
-        'sock': ('46.101.174.193', 7543),
-        'test_integrity': False,
-        'webtrading': ('88.198.194.84', 5444),
-        'custom': ('46.101.174.193', 7101),
-        'custom3': ("88.198.194.84", 12345),  # mt4 trades info to websocket server
-    },
-    'gtmarkets': {
-        'sock': ('144.76.71.42', 2443),
-        'custom2': ('144.76.71.42', 3002),
-        'custom3': ('144.76.71.42', 12345),
-        'webtrading': ('144.76.71.42', 5443),
-    },
-    'specifications': {
-        'db': 'mysql://webuser:V3fb^23J609G4$1@144.76.27.6/specifications?charset=utf8',
-        'sock': ('88.198.194.84', 443),
-        'test_integrity': False,
-    },
-    'config': {
-        'db': 'mysql://webuser:V3fb^23J609G4$1@144.76.27.6/config?charset=utf8',
-        'sock': ('88.198.194.84', 443),
-        'test_integrity': False,
+        'pymt4': ("127.0.0.1", 8443),
     },
 }
 
@@ -697,11 +621,6 @@ LOGGING = {
         'django': {
             'handlers': ['null'],
             'level': 'ERROR',
-            'propagate': True,
-        },
-        'mt4.api.DatabaseAPI.integrity': {
-            'handlers': ['mail_admins'],
-            'level': 'WARNING',
             'propagate': True,
         },
         'amqplib': {

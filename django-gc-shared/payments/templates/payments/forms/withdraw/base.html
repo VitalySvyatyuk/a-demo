@@ -12,6 +12,8 @@
         {% include "payments/includes/field.html" %}
     {% endwith %}
 </div>
+
+
 {% if withdraw_form.payment_system != "webmoney" %}
     <div class="small-2 medium-2 large-2 columns">
         {% with field=withdraw_form.currency %}
@@ -19,6 +21,13 @@
         {% endwith %}
     </div>
 {% endif %}
+{% with form=withdraw_form %}
+<div class=" large-3 columns">
+
+    {% include "payments/includes/commision_field.html" %}
+
+</div>
+{% endwith %}
 
 <input type="submit" class="button medium" value="{% trans 'Continue' context 'button' %}"/>
 

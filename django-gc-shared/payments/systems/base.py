@@ -198,7 +198,12 @@ class DepositForm(BaseForm):
         _("Attention! Specify amount on your account after deduction of the system's charge"))
     )
 
+    commision = forms.CharField(label="Comission", required=False)
+    credited = forms.CharField(label="Will be credited", required=False)
+
     commission_rate = Decimal(0)
+    fixed_commision = 0
+
 
     class Meta:
         model = DepositRequest
@@ -250,7 +255,7 @@ class DepositForm(BaseForm):
             currency = self.cleaned_data["currency"]
             max_amount, max_amount_currency = self.MAX_AMOUNT
             converted_max_amount = convert_currency(max_amount, max_amount_currency, currency)
-            if converted_max_amount[0] < amount:
+            if converted_max_amount[0] < Decimal(amount) - self.total_commision().commission:
                 self._errors["amount"] = [
                     _("You cant deposit more than %(amount)s with %(system)s") % {
                         "amount": converted_max_amount[1].display_amount(converted_max_amount[0]),
@@ -263,7 +268,7 @@ class DepositForm(BaseForm):
             currency = self.cleaned_data["currency"]
             min_amount, min_amount_currency = self.MIN_AMOUNT
             converted_min_amount = convert_currency(min_amount, min_amount_currency, currency)
-            if converted_min_amount[0] > amount:
+            if converted_min_amount[0] > Decimal(amount) - self.total_commision().commission:
                 self._errors["amount"] = [
                     _("You cant deposit less than %(amount)s with %(system)s") % {
                         "amount": converted_min_amount[1].display_amount(converted_min_amount[0]),
@@ -274,6 +279,8 @@ class DepositForm(BaseForm):
         cleaned_amount = self.cleaned_data.get("amount")
         cleaned_account = self.cleaned_data.get("account")
         cleaned_currency = self.cleaned_data.get("currency")
+
+        is_first_deposit = not DepositRequest.objects.filter(account=account, is_committed=True).exists()
 
         if cleaned_amount is not None and cleaned_account and cleaned_currency:
             cleaned_amount = float(cleaned_amount)
@@ -287,9 +294,9 @@ class DepositForm(BaseForm):
                 if account_balance is not None:
                     min_deposit = convert_currency(cleaned_account.group.min_deposit, 'USD', to_currency)[0]
 
-                    if not self.request.user.is_superuser and account_balance < min_deposit:
+                    if not self.request.user.is_superuser and (account_balance < min_deposit or not is_first_deposit):
                         min_deposit_amount = min_deposit - account_balance
-                        if cleaned_amount < min_deposit_amount:
+                        if Decimal(cleaned_amount) - self.total_commision().commission < min_deposit_amount:
                             self._errors["amount"] = [_('Minimum deposit amount is %(amount)s %(currency)s') %
                                                       {'amount': str(round(min_deposit_amount)),
                                                        'currency': str(to_currency)}]
@@ -298,6 +305,17 @@ class DepositForm(BaseForm):
                     self._errors["account"] = [_('Cannot determine the account balance. Try again later or contact support')]
 
         return super(DepositForm, self).clean()
+
+    def total_commision(self):
+        """ method to calculate commision for local class needs
+
+        :param: self (DepositForm instance)
+        :return: CommissionCalculationResult
+        """
+        amount = self.cleaned_data["amount"]
+        commission = amount * self.commission_rate + self.fixed_commision
+        currency = self.cleaned_data["currency"]
+        return CommissionCalculationResult(amount=amount, commission=commission, currency=currency)
 
     @classmethod
     def _calculate_commission(cls, request, full_commission=False):
@@ -331,7 +349,9 @@ class DepositForm(BaseForm):
                 'form': self,
                 "ps": self.payment_system,
                 "details": self.payment_system.transfer_details['deposit'],
-                "PAYMENTS_RECEIVER": settings.PAYMENTS_RECEIVER
+                "PAYMENTS_RECEIVER": settings.PAYMENTS_RECEIVER,
+                "commision": self.commission_rate,
+                "fixed_commision": self.fixed_commision,
             }))
 
 
@@ -391,7 +411,11 @@ class WithdrawForm(BaseForm):
     # Override this and set (AMOUNT, CURRENCY) if needed
     MIN_AMOUNT = None
 
+    commision = forms.CharField(label="Comission", required=False)
+    credited = forms.CharField(label="Will be credited", required=False)
+
     commission_rate = Decimal(0)
+    fixed_commision = 0
 
     class Meta:
         model = WithdrawRequest
@@ -509,6 +533,17 @@ class WithdrawForm(BaseForm):
     def is_automatic(cls, instance):
         return cls.auto
 
+    def total_commision(self):
+        """ method to calculate commision for local class needs
+
+        :param: self (DepositForm instance)
+        :return: CommissionCalculationResult
+        """
+        amount = self.cleaned_data["amount"]
+        commission = amount * self.commission_rate + self.fixed_commision
+        currency = self.cleaned_data["currency"]
+        return CommissionCalculationResult(amount=amount, commission=commission, currency=currency)
+
     @classmethod
     def _calculate_commission(cls, request):
         commission = request.amount * cls.commission_rate
@@ -542,7 +577,9 @@ class WithdrawForm(BaseForm):
                 'details_form': details_form,
                 "ps": self.payment_system,
                 "details": self.payment_system.transfer_details['withdraw'],
-                "PAYMENTS_RECEIVER": settings.PAYMENTS_RECEIVER
+                "PAYMENTS_RECEIVER": settings.PAYMENTS_RECEIVER,
+                "commision": self.commission_rate,
+                "fixed_commision": self.fixed_commision,
             }))
 
 

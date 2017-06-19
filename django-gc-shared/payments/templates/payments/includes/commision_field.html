@@ -1,0 +1,45 @@
+{% load app_tags %}
+
+    <label>{{ form.commision.label }}</label>
+    {{ form.commision }}
+    <p class="description">{{ form.commision.help_text|safe }}</p>
+    {% if form.commision.errors %}
+        <p id="{{ form.commision.auto_id }}" class="error">{{ form.commision.errors|join:"<br/>" }}</p>
+    {% endif %}
+
+
+
+     <label>{{ form.credited.label }}</label>
+    {{ form.credited }}
+    <p class="description">{{ form.credited.help_text|safe }}</p>
+    {% if form.credited.errors %}
+        <p id="{{ form.credited.auto_id }}" class="error">{{ form.credited.errors|join:"<br/>" }}</p>
+    {% endif %}
+
+
+<div id="commision_rate" style="display: none">{{ commision }}</div>
+<div id="fixed_commision" style="display: none">{{ fixed_commision }}</div>
+
+<script>
+    var comm_field = document.getElementById("id_commision");
+    var credit_field = document.getElementById("id_credited");
+    var amount_field = document.getElementById("id_amount");
+    var commision_rate = parseFloat(document.getElementById("commision_rate").innerHTML.replace(',', '.'));
+    var fixed_commision = parseFloat(document.getElementById("fixed_commision").innerHTML.replace(',', '.'));
+
+    comm_field.readOnly = true;
+    credit_field.readOnly = true;
+
+    amount_field.onkeyup = OnChange;
+    amount_field.onblur = OnChange;
+
+    function OnChange() {
+        comm_field.value = (parseFloat(amount_field.value) * commision_rate + fixed_commision).toFixed(2) ;
+        credit_field.value = (parseFloat(amount_field.value) - parseFloat(comm_field.value)).toFixed(2);
+
+    }
+</script>
+
+
+
+
