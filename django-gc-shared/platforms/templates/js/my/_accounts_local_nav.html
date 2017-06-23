@@ -28,7 +28,7 @@
           <li ng-if="!account.is_options && !account.group.endsWith('_ss')">
             <a ng-click="accountActions.changeLeverage()">{% trans "Leverage" %}</a>
           </li>
-          <li ng-if="!account.group.endsWith('_cfh')">
+          <li>
             <a ng-click="accountActions.recoverPassword()">{% trans "Password recovery" %}</a>
           </li>
           <li ng-if="account.is_options && !account.is_demo">

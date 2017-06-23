@@ -66,7 +66,7 @@ class DepositForm(bankbase.DepositForm, FormWithTranslitedName):
         return settings.BANKS['Verso']
 
     def clean(self):
-        bankbase.clean_translify(self)
+        #bankbase.clean_translify(self)
 
         return super(DepositForm, self).clean()
 
@@ -89,7 +89,7 @@ class DetailsForm(bankbase.DetailsForm, FormWithTranslitedName):
 
 
     def clean(self):
-        bankbase.clean_translify(self)
+        #bankbase.clean_translify(self)
 
         return super(DetailsForm, self).clean()
 

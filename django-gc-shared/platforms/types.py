@@ -55,7 +55,7 @@ class AccountType(object):
         defaults = {"login_required": False,
                     "_account_form": "platforms.mt4.forms.Mt4AccountForm",
                     "_profile_form": "profiles.forms.BriefProfileForm",
-                    "agreements": ['client_agreement', 'risk_disclosure', 'regulation_of_trades'],
+                    "agreements": ['client_agreement', 'risk_disclosure', 'order_execution_policy'],
                     "notification_name": "account_created",
                     "group_choices": {},
                     "available_options": HAS_NO_OPTIONS,

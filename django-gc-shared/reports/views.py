@@ -248,6 +248,7 @@ def marketing_inout_report(request):
                 is_committed=True,
                 creation_ts__gte=start,
                 creation_ts__lt=end + timedelta(days=1),
+                account__user__is_staff=False,
         ).select_related(*select_related).order_by('creation_ts'):
             dr = dr.as_leaf_class()
             result = generate_result_data(user=dr.account.user, payment_request=dr, account=dr.account)
@@ -257,6 +258,7 @@ def marketing_inout_report(request):
         for user in User.objects.filter(
                 date_joined__gte=start,
                 date_joined__lt=end + timedelta(days=1),
+                is_staff=False,
         ).select_related('profile', 'profile__country', 'profile__state', 'profile__manager').order_by('date_joined'):
             result = generate_result_data(user=user)
             yield csv_writer.writerow([item.encode('utf-8') for item in result])
@@ -265,6 +267,7 @@ def marketing_inout_report(request):
         for account in TradingAccount.objects.filter(
                 creation_ts__gte=start,
                 creation_ts__lt=end + timedelta(days=1),
+                user__is_staff=False,
         ).select_related('user__profile', 'user__profile__country', 'user__profile__state',
                          'user__profile__manager').order_by('creation_ts'):
             result = generate_result_data(user=account.user, account=account)

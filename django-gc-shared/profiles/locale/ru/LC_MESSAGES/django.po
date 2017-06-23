@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-15 17:40+0300\n"
+"POT-Creation-Date: 2017-06-21 20:05+0300\n"
 "PO-Revision-Date: 2017-01-18 15:55+0230\n"
 "Last-Translator: Vasily Alexeev <va@uptrader.us>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,29 +19,17 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
-msgid "Is partner"
-msgstr "Является партнером"
-
-msgid "User can browse partner section"
-msgstr "Юзер может просматривать раздел для партнеров"
-
-msgid "Please fill this field"
-msgstr "Пожалуйста заполните это поле"
-
-msgid "Upload at least 1 document"
-msgstr "Загрузите по крайней мере 1 документ"
-
 msgid "Personal"
 msgstr "Личные данные"
+
+msgid "Contacts"
+msgstr "Контакты"
 
 msgid "Location"
 msgstr "Местоположение"
 
 msgid "Other"
 msgstr "Другое"
-
-msgid "Contacts"
-msgstr "Контакты"
 
 msgid "ARUM financial information"
 msgstr "Финансовая информаци для ARUM'a"
@@ -183,90 +171,6 @@ msgstr "Пенсионер"
 msgid "Student"
 msgstr "Студент"
 
-msgid "Income from professional activity"
-msgstr "Доход от деятельности"
-
-msgid "Savings"
-msgstr "Накопления"
-
-msgid "Partner/ parent/ family"
-msgstr "Средства партнера/ родителей/ семьи"
-
-msgid "Investments/ Dividends"
-msgstr "Инвестиции/ Дивиденды"
-
-msgid "Borrowing"
-msgstr "Заемные средства"
-
-msgid "Pension"
-msgstr "Пенсия"
-
-msgid "Accountancy"
-msgstr "Финансы"
-
-msgid "Admin/ secretarial"
-msgstr "Административная"
-
-msgid "Specify"
-msgstr "Укажите"
-
-msgid "Agricultural"
-msgstr "Сельское хозяйство"
-
-msgid "Art"
-msgstr "Искусство"
-
-msgid "Financial/Banking"
-msgstr "Инвестиции/ Банки"
-
-msgid "Catering/Hospitality"
-msgstr "Питание / ресторация"
-
-msgid "Creative/Media"
-msgstr "Медиа"
-
-msgid "Educational"
-msgstr "Образование"
-
-msgid "Emergency"
-msgstr "Экстренные службы"
-
-msgid "Engineering"
-msgstr "Техника"
-
-msgid "Health/Medicine"
-msgstr "Медицина"
-
-msgid "IT"
-msgstr "Информационные технологии"
-
-msgid "Legal"
-msgstr "Право"
-
-msgid "Leisure/ Entertainment/ Tourism"
-msgstr "Туризм"
-
-msgid "Manufacturing"
-msgstr "Производство"
-
-msgid "Marketing/ Advertising/ PR"
-msgstr "Маркетинг/ реклама"
-
-msgid "Property"
-msgstr "Недвижимость"
-
-msgid "Sales"
-msgstr "Продажи"
-
-msgid "Social"
-msgstr "Социальные услуги"
-
-msgid "Telecom"
-msgstr "Телекоммуникации"
-
-msgid "Transport/ Logistics"
-msgstr "Транспорт/ Логистика"
-
 msgid "Investment"
 msgstr "Инвестирование"
 
@@ -275,15 +179,6 @@ msgstr "Хеджирование"
 
 msgid "Speculative trading"
 msgstr "Спекулятивная торговля"
-
-msgid "High school"
-msgstr "Среднее (полное) общее образование"
-
-msgid "College"
-msgstr "Среднее специальное образование"
-
-msgid "University"
-msgstr "Высшее образование"
 
 msgid "Example: Russia"
 msgstr "Например: Россия"
@@ -387,8 +282,8 @@ msgstr "Сфера деятельности"
 msgid "Monthly financial commitments"
 msgstr "Ежемесячные обязательства"
 
-msgid "Anticipated account turnover (USD)"
-msgstr "Предполагаемый оборот по счету (USD)"
+msgid "Approximate volume of investments per annum (USD)"
+msgstr "Предполагаемый объем инвестиций в год (USD)"
 
 msgid "Purpose to open an Arum capital account"
 msgstr "Ваша цель открытия счета в Arum Capital"
@@ -398,6 +293,12 @@ msgstr "Образование"
 
 msgid "Can open ECN.Invest accounts"
 msgstr "Может открывать ECN.Invest аккаунты"
+
+msgid "Is partner"
+msgstr "Является партнером"
+
+msgid "User can browse partner section"
+msgstr "Юзер может просматривать раздел для партнеров"
 
 msgid "Email is verified"
 msgstr "Email подтвержден"
@@ -443,9 +344,6 @@ msgstr "Подтверждение адреса проживания"
 msgid "Driver license"
 msgstr "Водительское удостоверение"
 
-msgid "Certificate of birth"
-msgstr "Свидетельство о рождении"
-
 msgid "Credit card back side"
 msgstr "Обратная сторона кредитной карты"
 
@@ -454,6 +352,11 @@ msgstr "Лицевая сторона кредитной карты"
 
 msgid "Real IB agreement"
 msgstr "Партнерское соглашение"
+
+#, fuzzy
+#| msgid "FX+ agreement"
+msgid "PM agreement"
+msgstr "Скан соглашения FX+"
 
 msgid "Other document"
 msgstr "Другой документ"
@@ -505,6 +408,9 @@ msgstr "Невозможно изменить код агента"
 
 msgid "Wrong partner code"
 msgstr "Неверный код агента"
+
+msgid "Please fill this field"
+msgstr "Пожалуйста заполните это поле"
 
 msgid "Only english letters, numbers or underscores allowed"
 msgstr "Используйте только английские буквы, цифры или подчеркивание"
@@ -613,6 +519,99 @@ msgstr "От нас, как от регулируемого брокера, тр
 msgid "The details you have provided are encrypted in 256-bit technology and shall not be disclosed to any third party under no circumstances."
 msgstr "Предоставленная вами информация шифруется по 256-битной технологии и не предоставляется третьим лицам ни при каких обстоятельствах."
 
+msgid "Income from professional activity"
+msgstr "Доход от деятельности"
+
+msgid "Savings"
+msgstr "Накопления"
+
+msgid "Partner/ parent/ family"
+msgstr "Средства партнера/ родителей/ семьи"
+
+msgid "Investments/ Dividends"
+msgstr "Инвестиции/ Дивиденды"
+
+msgid "Borrowing"
+msgstr "Заемные средства"
+
+msgid "Pension"
+msgstr "Пенсия"
+
+msgid "Specify"
+msgstr "Укажите"
+
+msgid "Accountancy"
+msgstr "Финансы"
+
+msgid "Admin/ secretarial"
+msgstr "Административная"
+
+msgid "Agricultural"
+msgstr "Сельское хозяйство"
+
+msgid "Art"
+msgstr "Искусство"
+
+msgid "Financial/Banking"
+msgstr "Инвестиции/ Банки"
+
+msgid "Catering/Hospitality"
+msgstr "Питание / ресторация"
+
+msgid "Creative/Media"
+msgstr "Медиа"
+
+msgid "Educational"
+msgstr "Образование"
+
+msgid "Emergency"
+msgstr "Экстренные службы"
+
+msgid "Engineering"
+msgstr "Техника"
+
+msgid "Health/Medicine"
+msgstr "Медицина"
+
+msgid "IT"
+msgstr "Информационные технологии"
+
+msgid "Legal"
+msgstr "Право"
+
+msgid "Leisure/ Entertainment/ Tourism"
+msgstr "Туризм"
+
+msgid "Manufacturing"
+msgstr "Производство"
+
+msgid "Marketing/ Advertising/ PR"
+msgstr "Маркетинг/ реклама"
+
+msgid "Property"
+msgstr "Недвижимость"
+
+msgid "Sales"
+msgstr "Продажи"
+
+msgid "Social"
+msgstr "Социальные услуги"
+
+msgid "Telecom"
+msgstr "Телекоммуникации"
+
+msgid "Transport/ Logistics"
+msgstr "Транспорт/ Логистика"
+
+msgid "High school"
+msgstr "Среднее (полное) общее образование"
+
+msgid "College"
+msgstr "Среднее специальное образование"
+
+msgid "University"
+msgstr "Высшее образование"
+
 msgid "Indicate your knowledge and trading experience"
 msgstr "Укажите данные о Вашем опыте"
 
@@ -693,6 +692,9 @@ msgstr "Документы"
 msgid "Security"
 msgstr "Безопасность"
 
+msgid "Subscriptions"
+msgstr "Подписки"
+
 msgid "Save"
 msgstr "Сохранить"
 
@@ -716,6 +718,9 @@ msgstr "Отправить документы на проверку"
 
 msgid "Go to account opening"
 msgstr "Перейти к открытию счета"
+
+msgid "Upload at least 1 document"
+msgstr "Загрузите по крайней мере 1 документ"
 
 msgid "You will be able to open a real accounts after your documents are verified. Now you can <a href='[[::BASE_URL]]create'>open Demo accounts only.</a>"
 msgstr "Вы сможете открыть и пополнить реальные счета после проверки Ваших документов, в данный момент Вы можете <a href='[[::BASE_URL]]create'>открывать только Демонстрационные счета</a>"
@@ -837,9 +842,6 @@ msgstr "на реальных счетах"
 
 msgid "Select active subscriptions:"
 msgstr "Выберите активные подписки"
-
-msgid "Account statements"
-msgstr "Стейтменты по торговым счетам"
 
 msgid "Your password has been changed successfully"
 msgstr "Ваш пароль успешно изменен!"
@@ -1087,6 +1089,11 @@ msgstr "Коментарий менеджера"
 msgid "Reject"
 msgstr ""
 
+#, fuzzy
+#| msgid "Can open ECN.Invest accounts"
+msgid "Make user able to open Invest accounts"
+msgstr "Может открывать ECN.Invest аккаунты"
+
 msgid "Please use latin-based characters only"
 msgstr "Только на английском, используйте латиницу"
 
@@ -1105,6 +1112,15 @@ msgstr "Адрес электронной почты, который вы ука
 
 msgid "Your e-mail successfully updated"
 msgstr "Ваш адрес электронной почты был успешно изменён"
+
+#~ msgid "Anticipated account turnover (USD)"
+#~ msgstr "Предполагаемый оборот по счету (USD)"
+
+#~ msgid "Certificate of birth"
+#~ msgstr "Свидетельство о рождении"
+
+#~ msgid "Account statements"
+#~ msgstr "Стейтменты по торговым счетам"
 
 #~ msgid "Trading experience FOREX/CFDs"
 #~ msgstr "Опыт торговли на FOREX/CFDs"
@@ -1278,12 +1294,6 @@ msgstr "Ваш адрес электронной почты был успешн�
 
 #~ msgid "Client's documents didn't go through ({}) {}"
 #~ msgstr "Документы клиента не прошли проверку ({}) {}"
-
-#~ msgid "FX+ agreement"
-#~ msgstr "Скан соглашения FX+"
-
-#~ msgid "Subscriptions"
-#~ msgstr "Подписки"
 
 #~ msgid ""
 #~ "\n"

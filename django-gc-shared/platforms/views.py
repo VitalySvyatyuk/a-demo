@@ -603,7 +603,7 @@ class CreateAccountView(LoginRequiredMixin, AjaxFormView):
                 "mt4_id": account.mt4_id,
                 "mt4_password": form_result["password"],
                 "platform": account.platform_type,
-                "login": request.user.email,
+                "login": account._login,
                 "redirect": reverse("mt4_account_welcome", args=[account_type.slug, account.mt4_id]),
             })
 

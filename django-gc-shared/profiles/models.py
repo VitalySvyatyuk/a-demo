@@ -237,7 +237,7 @@ class UserProfile(StateSavingModel):
     financial_commitments = models.CharField(_('Monthly financial commitments'), max_length=90,
                                              choices=FINANCIAL_COMMITMENTS, blank=True, null=True)
 
-    account_turnover = models.IntegerField(_('Anticipated account turnover (USD)'),
+    account_turnover = models.IntegerField(_('Approximate volume of investments per annum (USD)'),
                                            null=True, blank=True)
     purpose = models.CharField(_('Purpose to open an Arum capital account'), choices=PURPOSES,
                                max_length=50, blank=True, null=True)
@@ -335,7 +335,7 @@ class UserProfile(StateSavingModel):
         '''
         Returns user status from STATUSES:
         VERIFIED if all satisfied:
-            a) profile form is complete (all required fields not null && verified email) 
+            a) profile form is complete (all required fields not null && verified email)
             b) there is no rejected docs (is_rejected in UserDocument)
             c) and user is marked validated (first_name & last_name in user)
         UNVERIFIED if all satisfied:
@@ -353,7 +353,7 @@ class UserProfile(StateSavingModel):
 
         user_documents = UserDocument.objects.filter(user=self.user).values_list('is_rejected')
 
-    
+
         if user_documents and all([i[0] for i in user_documents]):
             return self.INCOMPLETE
         if complete_profile:

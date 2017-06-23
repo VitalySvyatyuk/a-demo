@@ -113,7 +113,7 @@ class CFHAccountForm(forms.Form):
                               {"password": password,
                                'type': self.account_type,
                                "account": account.mt4_id,
-                               "login": user.email})
+                               "login": account._login})
         else:
             Contact.objects.filter(user=user).exclude(tags__contains=['real']).update(
                 tags=Func(F('tags'), Value('real'), function='array_append'))
@@ -121,7 +121,7 @@ class CFHAccountForm(forms.Form):
                               {"password": password,
                                'type': self.account_type,
                                "account": account.mt4_id,
-                               "login": user.email})
+                               "login": account._login})
 
         return {"account": account, "password": password}
 

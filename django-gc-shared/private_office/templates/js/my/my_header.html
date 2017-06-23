@@ -5,7 +5,9 @@
   <div class="left-pan">
     <div class="block-wrapper main-block">
       <div class="profile-avatar">
+          <a href={% if LANGUAGE_CODE == 'ru' %}"https://ru.arumcapital.eu/account"{% else %}"https://arumcapital.eu/account"{% endif %}>
         <img src="{% static "img/arum-capital/logo.png" %}" alt="Arum Capital"/>
+          </a>
       </div>
       <h3 class="user-name offset-top-25 offset-bottom-5">
         <a href="{{ lk_link|default:"[[::BASE_URL]]" }}" title="{% trans 'Private office main page' %}">
@@ -107,8 +109,8 @@
       <li><a href="http://ramm.arumcapital.eu/" class="case" target="_blank"><span>{% trans "Log into ARUM.INVEST" %} </span></a></li>
       <li class="show-private-office-hidden-list"><a href="#" class="chart"><span>{% trans "Log into ARUM WEB" %}</span></a>
         <ul class="private-office-hidden-list">
-          <li><a href="https://demo.arumcapital.eu/" target="_blank">{% trans "Go to Demo" %}</a></li>
-          <li><a href="https://trade.arumcapital.eu/" target="_blank">{% trans "Go to Real" %}</a></li>
+          <li><a href="https://demo.arumcapital.eu/" target="_blank">{% trans "ARUM.WEB (Demo)" %}</a></li>
+          <li><a href="https://trade.arumcapital.eu/" target="_blank">{% trans "ARUM.WEB (Real)" %}</a></li>
         </ul>
       </li>
       <li><a ng-click="financeSummaryModal()" class="inout-arrows"><span>{% trans "Deposit and Withdrawal history" %}</span></a></li>
@@ -120,8 +122,8 @@
       <li><a href="http://ramm.arumcapital.eu/" class="case"><span>{% trans "Log into ARUM.INVEST" %} </span></a></li>
       <li class="show-private-office-hidden-list"><a href="#" class="chart"><span>{% trans "Log into ARUM WEB" %}</span></a>
         <ul class="private-office-hidden-list">
-          <li><a href="https://demo.arumcapital.eu/" target="_blank">{% trans "Go to Demo" %}</a></li>
-          <li><a href="https://trade.arumcapital.eu/" target="_blank">{% trans "Go to Real" %}</a></li>
+          <li><a href="https://demo.arumcapital.eu/" target="_blank">{% trans "ARUM.WEB (Demo)" %}</a></li>
+          <li><a href="https://trade.arumcapital.eu/" target="_blank">{% trans "ARUM.WEB (Real)" %}</a></li>
         </ul>
       </li>
       <li><a ng-href="{{ lk_link|default:"[[::BASE_URL]]" }}reports" class="inout-arrows"><span>{% trans "Reports" %}</span></a></li>

@@ -97,6 +97,7 @@ class SSAccountForm(forms.Form):
         account = TradingAccount(platform_type='strategy_store', user=user, mt4_id=user.pk,
                                  group_name=GROUP_NAME_DEMO if self.account_type.is_demo else GROUP_NAME_REAL)
         password = account.api.account_create(account, initial_balance=self.cleaned_data.get('deposit', 0))
+        account._login = user.email
         if password:
             account.save()
         Contact.objects.filter(user=user).exclude(tags__contains=['StrategyStore']).update(

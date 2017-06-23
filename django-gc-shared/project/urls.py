@@ -7,6 +7,8 @@ from shared.generic_views import TemplateView
 urlpatterns = patterns(
     "project.views",
     url(r"^$", 'frontpage', name="frontpage"),
+    url(r"^widget/$", TemplateView.as_view(
+        template_name="marketing_site/pages/test.html"), name="about",),
     url(r"^about/$", TemplateView.as_view(
         template_name="marketing_site/pages/about.jade"), name="about",),
     url(r"^advantages/$", TemplateView.as_view(
