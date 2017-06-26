@@ -1,3 +1,6 @@
+thead.strategies{
+	box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.15);
+}
 .strategies{
 	width: 100%;
 	overflow: hidden;
@@ -42,11 +45,25 @@
 			display: none;
 		}
 	}
+	a{
+		text-decoration: none;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+
+.strategies__cell.profitable{
+	color: darkgreen;
+}
+.strategies__cell.lossy{
+	color: darkred;
 }
 
 .strategies__cell_header{
 	padding-top: 5px;
 	padding-bottom: 5px;
+
 
 	@media (#{$max_tablets}){
 		padding-top: 15px;
@@ -60,11 +77,17 @@
 .strategies__cell__title{
 	color: $anger;
 	font-size: (14em/16);
+	width: 25%;
+	text-align: left;
+	padding: 13px 21px;
+	&:last-child{
+		width: 50%;
+	}
 }
 .strategies__cell__name{
-	display: inline-block;
 
 	margin-bottom: 3px;
+
 
 	color: $groom;
 	font-size: (15em/16);
@@ -72,6 +95,8 @@
 .strategies__cell__currency{
 	color: #8d8d8d;
 	font-size: (13em/16);
+	white-space: nowrap;
+	padding: 0;
 }
 .strategies__cell__value{
 	position: relative;

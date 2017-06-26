@@ -138,11 +138,13 @@ class ApiFacade(object):
 
     @cached_func(CACHE_TIMEOUT)
     def account_equity(self, account):
-        resp = self.make_request(requests.get, 'api/v1/clients/{id}'.format(id=account.mt4_id), {})
-        log.debug("resp=%s %s" % (resp.status_code, resp.text))
-        if not resp.ok:
-            raise SSError(resp.status_code, 'HTTP code not OK (%d)' % resp.status_code)
-        return resp.json()['Accounts'][0]['Balance']
+        # Since Strategy store have not implement account equity return main balance
+        return self.account_balance(account)
+        # resp = self.make_request(requests.get, 'api/v1/clients/{id}'.format(id=account.mt4_id), {})
+        # log.debug("resp=%s %s" % (resp.status_code, resp.text))
+        # if not resp.ok:
+        #     raise SSError(resp.status_code, 'HTTP code not OK (%d)' % resp.status_code)
+        # return resp.json()['Accounts'][0]['Balance']
 
     def account_disabled(self, account):
         # SS can only stop transfers to account

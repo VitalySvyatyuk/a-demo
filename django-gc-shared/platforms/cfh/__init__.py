@@ -139,8 +139,11 @@ class ApiFacade(object):
         """
         Get account equity, returns float.
         """
-        # raise NotImplementedError("Not supported in this platform")
-        return None
+        # Since CFH have not implement account equity return main balance
+        return self.account_balance(account)
+
+        # # raise NotImplementedError("Not supported in this platform")
+        # return None
 
     def account_disabled(self, account):
         """
@@ -195,7 +198,7 @@ class ApiFacade(object):
         mail = account.user.email
         login = account.user.username
         password = create_password()
-        num = randint(0, sys.maxint)
+        num = randint(0, 99999)
         log.debug("Creating cfh account for {0} with {1} {2}".format(login, initial_balance, account.currency.symbol))
         client_templates = settings.DEMO_CFH_CLIENT_TEMPLATES if account.is_demo else settings.CFH_CLIENT_TEMPLATES
         broker_id = settings.DEMO_CFH_BROKER_ID if account.is_demo else settings.CFH_BROKER_ID

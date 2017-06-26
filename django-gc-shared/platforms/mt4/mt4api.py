@@ -10,8 +10,9 @@ class MT4Exception(Exception):
 
 class RemoteMT4Manager(object):
     def __init__(self, engine):
-        server, port = settings.ENGINES[engine]['pymt4']
+        server, port = settings.MT4_MANAGER_SERVER_ADDRESS
         self.engine = xmlrpclib.ServerProxy("http://%s:%s/" % (server, port), allow_none=True)
+        self.mt4_connection_details = settings.MT4_API_ENGINES[engine]
 
     def _check_password_requirement(self, password):
         if len(password) < 6 or not re.search("[a-zA-Z]", password) or not re.search("[0-9]", password):
@@ -19,7 +20,7 @@ class RemoteMT4Manager(object):
 
     def _handle_fault(self, method, *args):
         try:
-            return getattr(self.engine, method)(*args)
+            return self.engine.call_mt4_method(self.mt4_connection_details, method, *args)
         except xmlrpclib.Fault as e:
             if 'mt4_api.MT4Exception' in e.faultString.split(':', 1)[0]:
                 raise MT4Exception(e.faultString.split(':', 1)[1])

@@ -23,7 +23,7 @@ class Mt4ExternalRouter(object):
                 return 'db_archive'
             elif model.__name__ in ['Instruments']:
                 return 'specifications'
-            return 'mt4_externaldb'
+            return 'real'
         return None
 
     def db_for_write(self, model, **hints):

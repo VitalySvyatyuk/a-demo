@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-19 14:12+0300\n"
+"POT-Creation-Date: 2017-06-24 14:34+0300\n"
 "PO-Revision-Date: 2017-01-24 18:37+0230\n"
 "Last-Translator: Vasily Alexeev <va@uptrader.us>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,17 +19,14 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
-msgid "Order execution policy"
-msgstr "Политика исполнения заказов"
-
 msgid "Client agreement"
 msgstr "Клиентское соглашение"
 
 msgid "Risk disclosure"
 msgstr "Предупреждение о рисках"
 
-msgid "Regulation of trades"
-msgstr "Регламент торгов"
+msgid "Order execution policy"
+msgstr "Политика исполнения заказов"
 
 #, fuzzy
 #| msgid "Partner agreement"
@@ -155,6 +152,12 @@ msgstr "Открыть демо счет"
 
 msgid "Request a call back"
 msgstr "Заказать обратный звонок"
+
+msgid "Demo"
+msgstr ""
+
+msgid "Real"
+msgstr ""
 
 msgid "Authorization"
 msgstr "Авторизация"
@@ -649,6 +652,9 @@ msgstr "Программа предоставляет стакан ECN-ликв�
 msgid "Download the platform"
 msgstr "Скачать платформу"
 
+msgid "For demo account"
+msgstr "Для демо-счета"
+
 msgid "User guide"
 msgstr "Инструкция пользователя"
 
@@ -678,9 +684,6 @@ msgstr "Перейти в платформу"
 
 msgid "For real account"
 msgstr "Для реального счета"
-
-msgid "For demo account"
-msgstr "Для демо-счета"
 
 msgid "Compare trading platforms"
 msgstr "Сравнение торговых платформ"
@@ -817,6 +820,12 @@ msgstr "Близость к поставщикам"
 msgid "CFH Clearing has established relationships with Tier 1 Banks and carefully selected Institutional Market Makers that make up a comprehensive, yet flexible, liquidity solution."
 msgstr "Оборудование размещено в Tier 1 Bank в Лондоне.  Хостинг от LD4 в Слау, Лондон - максимально близко  к  крупнейшим поставщикам ликвидности."
 
+msgid "Thanks for subscription! We sent you a verification email to confirm your e-mail."
+msgstr "Спасибо за подписку! Пожалуйста, проверьте свою почту и подтвердите свой email-адрес."
+
+msgid "Ok"
+msgstr "Ок"
+
 msgid "New generation FOREX broker"
 msgstr "FOREX-брокер нового поколения"
 
@@ -887,6 +896,24 @@ msgstr "FIX-протокол"
 
 msgid "Liquidity providers"
 msgstr "Провайдеры ликвидности"
+
+msgid "Training article for trading"
+msgstr "Обучающие статьи для трейдинга"
+
+msgid "Just started to master the market? Leave your e-mail address and we will send you a chain of letters about trading and investing at FOREX."
+msgstr "Только начинаете осваивать рынок? Оставьте свой email-адрес и мы пришлем Вам серию обучающих статей по основам торговли и инвестирования на рынке FOREX."
+
+msgid "For traders"
+msgstr "Для трейдера"
+
+msgid "For investors"
+msgstr "Для инвестора"
+
+#, fuzzy
+#| msgctxt "partnership-btn"
+#| msgid "Send"
+msgid "Send"
+msgstr "Отправить заявку"
 
 msgid "MetaTrader4 platform"
 msgstr "Платформа MetaTrader 4"
@@ -975,6 +1002,15 @@ msgstr "Благодаря агрегации торговых объемов, �
 
 msgid "Best strategies"
 msgstr "Лучшие стратегии"
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Monthly yield"
+msgstr "Месячная доходность"
+
+msgid "Yield"
+msgstr "Доходность"
 
 msgid "Past performance does not guarantee future results"
 msgstr "Результаты инвестирования в прошлом не определяют доходы в будущем"
@@ -1227,6 +1263,24 @@ msgstr "Средства списываются с торгового счета
 
 msgid "Top 5 strategies:"
 msgstr "Топ 5 стратегий:"
+
+msgid "ID"
+msgstr ""
+
+msgid "Investors count"
+msgstr "Число инвесторов"
+
+msgid "Investors count change"
+msgstr "Изменения количества инвесторов"
+
+msgid "Investors equity"
+msgstr "Капитал инвесторов"
+
+msgid "Age in days"
+msgstr "Возраст в днях"
+
+msgid "Age in weeks"
+msgstr "Возраст в неделях"
 
 msgid "All Strategies"
 msgstr "Все стратегии"
@@ -1686,6 +1740,12 @@ msgstr "Файл слишком большого размера."
 msgid "Unsupported file extension"
 msgstr "Расширение файла не поддерживается"
 
+#~ msgid "Popular instruments"
+#~ msgstr "Популярные инструменты"
+
+#~ msgid "Regulation of trades"
+#~ msgstr "Регламент торгов"
+
 #~ msgctxt "warning popup"
 #~ msgid "Risk Disclosure."
 #~ msgstr "Предупреждением о рисках."
@@ -1791,14 +1851,8 @@ msgstr "Расширение файла не поддерживается"
 #~ msgid "Client support rules and procedures"
 #~ msgstr "Правила взаимодействия с клиентам"
 
-#~ msgid "Name"
-#~ msgstr "Название"
-
 #~ msgid "Average Weekly Yield"
 #~ msgstr "Средняя недельная доходность"
-
-#~ msgid "Yield"
-#~ msgstr "Доходность"
 
 #~ msgid "Age"
 #~ msgstr "Возраст"
@@ -1854,9 +1908,6 @@ msgstr "Расширение файла не поддерживается"
 
 #~ msgid "*if the total funds in the company is less than 500 USD, you can withdraw any balance transfer amount is less than USD 500"
 #~ msgstr "*если совокупные средства в компании составляют менее 500 USD, то Вы можете вывесты весь остаток средств переводим суммы меньше 500 USD"
-
-#~ msgid "Ok"
-#~ msgstr "Ок"
 
 #~ msgid "Go to Personal Account and select Deposit/Withdrawals."
 #~ msgstr "В Личном кабинете выберите Ввод-Вывод средств."
@@ -2321,9 +2372,6 @@ msgstr "Расширение файла не поддерживается"
 
 #~ msgid "For beginners"
 #~ msgstr "Учебный счет"
-
-#~ msgid "For experts"
-#~ msgstr "Торговый счет"
 
 #~ msgid "Suitable for beginners"
 #~ msgstr "Подходит начинающим"

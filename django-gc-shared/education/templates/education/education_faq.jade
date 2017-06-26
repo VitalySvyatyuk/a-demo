@@ -12,7 +12,27 @@ block title
 
 block tabs_content
     - regroup questions by categories.first.name as questions_list
+    #success-subscribe-overlay
+        #success-subscribe-send
+            p
+                - trans "Thanks for subscription! We sent you a verification email to confirm your e-mail."
+            button.button.button--outline
+                span.button__text
+                    - trans "Ok"
     div.benefits__info.js-tab-content.state-visible
+      .subscribe-form
+        .container
+            .row
+                h2.page_title
+                    - trans "Training article for trading"
+                p
+                    - trans "Just started to master the market? Leave your e-mail address and we will send you a chain of letters about trading and investing at FOREX."
+                form
+                    div
+                        input(type="email", placeholder="Email", required)
+                        button.button
+                            span.button__text
+                                - trans 'Send'
       .education-terms
         for question_group in questions_list
             .education-terms-questions

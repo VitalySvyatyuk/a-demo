@@ -8,11 +8,20 @@ block title
 block scripts
     script(src="{% static 'angular/angular.min.js' %}")
     script(src="{% static 'js/frontpage_apps.js' %}")
-    script(src='https://ramm.arumcapital.eu/scripts/widgets/rammstrategieswidget.js')
+    script(src='https://ramm.arumcapital.eu/scripts/widgets/RAMMStrategiesWidget.min.js')
+    script(src='https://ramm.arumcapital.eu/scripts/lib/highstock-improved.js')
     script.
-        var widget = new RAMMStrategiesWidget("https://ramm.arumcapital.eu", 50, 10, 0, true, { strategyTemplateSelector: '#ramm-strategy-table-row-template', parentElementSelector: '#strategies_table' });
-
+        $(function (document) {
+            var tableWidget = new RAMMStrategiesWidget("https://ramm.arumcapital.eu", 50, 5, 0, false, { strategyTemplateSelector: '#ramm-strategy-table-row-template', parentElementSelector: '#strategies-table', loadCharts: true });
+        });
 block content
+    #success-subscribe-overlay
+        #success-subscribe-send
+            p
+                - trans "Thanks for subscription! We sent you a verification email to confirm your e-mail."
+            button.button.button--outline
+                span.button__text
+                    - trans "Ok"
     #frontpage-main-slider-content.slider_jumbotron
         .container.slider_jumbotron__arrows_box
             button.slider_arrow.slider_arrow--left.slider_jumbotron__arrow.slider_jumbotron__arrow--left.js-slider-prev-arrow(type="button")
@@ -198,6 +207,29 @@ block content
                 .liquidity__item__title
                     a.link(href="{% url 'ecn' %}")
                         - trans "Liquidity providers"
+    .subscribe-form
+        .container
+            .row
+                h2.page_title
+                    - trans "Training article for trading"
+                p
+                    - trans "Just started to master the market? Leave your e-mail address and we will send you a chain of letters about trading and investing at FOREX."
+                form
+                    label
+                        input(type="radio", class="subscribe-form-radio", name="subscribe-form-radio", required, checked)
+                        span(class="radio-custom")
+                        span(class="label")
+                        - trans "For traders"
+                    label
+                        input(type="radio", class="subscribe-form-radio", name="subscribe-form-radio", required)
+                        span(class="radio-custom")
+                        span(class="label")
+                            - trans "For investors"
+                    div
+                        input(type="email", placeholder="Email", required)
+                        button.button
+                            span.button__text
+                                - trans 'Send'
     .platforms
         .platforms__variants_box
             .platforms__variant.platforms__variant--right(style="background-image: url({% static 'img/marketing-site/bg/bg--imac-01.png' %})")
@@ -431,31 +463,28 @@ block content
                                     - trans "Identical prices"
                                 span.features_list__item__text
                                     - trans "Due to aggregation of trading volumes the order execution prices are the same as the trader order prices."
-                    //-
-                        span.benefits__info.js-tab-content(data-tab-index="02_benefits", data-tab-category="benefits")
-                            | Lanistas volare, tanquam dexter lamia.
-                        ul.benefits__featurs_list.features_list.js-tab-content(data-tab-index="02_benefits", data-tab-category="benefits")
-                            li.features_list__item.features_list__item--large-margin
-                                h3.features_list__item__title
-                                    | Monss credere
-                                span.features_list__item__text
-                                    | Eras velum in fortis hamburgum! Sunt tataes examinare mirabilis, bi-color torquises. Cum clabulare experimentum, omnes exemplares visum teres, bi-color sagaes.
-                            li.features_list__item.features_list__item--large-margin
-                                h3.features_list__item__title
-                                    | Abactuss potus
-                                span.features_list__item__text
-                                    | Sunt calceuses anhelare camerarius, fatalis dominaes. Toruss resistere! Cum orexis accelerare, omnes cottaes resuscitabo teres, secundus quadraes.
-                            li.features_list__item.features_list__item--large-margin
-                                h3.features_list__item__title
-                                    | Hippotoxotas cadunt
-                                span.features_list__item__text
-                                    | Ubi est talis extum? Bassus, fatalis hydras cito demitto de azureus, barbatus racana.
+
                 .col-lg-6.col-xs-12
                     h2.page_title
                         - trans "Best strategies"
-                    div.strategies#strategies_table
+
+                    table
+                        thead.strategies
+                            tr
+                                th.strategies__cell__title
+                                    - trans "Name"
+                                th.strategies__cell__title
+                                    - trans "Monthly yield"
+                                th.strategies__cell__title
+                                    - trans "Yield"
+                        {% verbatim %}
+                        tbody.strategies#strategies-table
+
+
+                        {% endverbatim %}
                     span.strategies__ps
                         - trans "Past performance does not guarantee future results"
+
                     a.strategies_pageblock__link.arrow_link(href="https://ramm.arumcapital.eu/rating" target="_blank")
                         - trans "Full rating"
             .strategies__buttons_box
@@ -605,3 +634,14 @@ block content
                             | {% blocktrans %}Request
                             br
                             | a call back{% endblocktrans %}
+    {% verbatim %}
+    script#ramm-strategy-table-row-template(type='text/html').
+
+        <tr class="strategies__row">
+
+                <td class="strategies__cell strategies__cell__name"><a href="{{ href }}" target="_blank">{{ name }}</a><br>
+        <span class="strategies__cell__currency">{{ popularInstruments }}</span></td>
+        <td class="{{ plClass }} strategies__cell ">{{ monthlyYield }}%</td>
+        <td class="ramm-strategy-chart strategies__cell__graph"></td>
+        </tr>
+    {% endverbatim %}

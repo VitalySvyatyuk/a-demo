@@ -573,27 +573,39 @@ $(document).ready(function(){
 
 // Callback request popup
 $(document).ready(function() {
-    $('#callback_request-form').submit(function(e) {
-      $.post('/callback_request/', $(this).serialize(), function() {
-        $('#success-callbackForm-send_overlay').show();
-      });
-      e.preventDefault();
-    })
-    $( "#success-callbackForm-send button" ).click(function() {
-      $('#success-callbackForm-send_overlay').fadeOut();
-      $(".js-overlay.js-close-navigation.js-close-menu.overlay").fadeOut();
-      $(".popup.popup--callback.js-popup").fadeOut();
-      $("#callback_request-form")[0].reset();
+  $('#callback_request-form').submit(function(e) {
+    $.post('/callback_request/', $(this).serialize(), function() {
+      $('#success-callbackForm-send_overlay').show();
     });
+    e.preventDefault();
+  })
+  $( "#success-callbackForm-send button" ).click(function() {
+    $('#success-callbackForm-send_overlay').fadeOut();
+    $(".js-overlay.js-close-navigation.js-close-menu.overlay").fadeOut();
+    $(".popup.popup--callback.js-popup").fadeOut();
+    $("#callback_request-form")[0].reset();
+  });
 });
 
 // Profile info show/hide div on checkbox choice
 
 function Selected(a) {
   var label = a.value;
-    if (label=="Open") {
-       document.getElementById("Block1").style.display='block';
-   } else {
-       document.getElementById("Block1").style.display='none';
-   }
+  if (label=="Open") {
+   document.getElementById("Block1").style.display='block';
+ } else {
+   document.getElementById("Block1").style.display='none';
+ }
 }
+
+// Requset form on partnership page
+$(document).ready(function(){
+  $('.subscribe-form form').submit(function(e) {
+      $('#success-subscribe-overlay').show();
+    e.preventDefault();
+  });
+  $( "#success-subscribe-send button" ).click(function() {
+    $('#success-subscribe-overlay').fadeOut();
+    $('.subscribe-form form')[0].reset();
+  });
+});

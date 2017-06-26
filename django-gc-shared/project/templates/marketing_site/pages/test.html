@@ -1,3 +1,38 @@
+{#<!DOCTYPE HTML>#}
+{#<html lang="en">#}
+{#<head>#}
+{#<script src="https://ramm.arumcapital.eu/scripts/lib/highstock-improved.js"></script>#}
+{#<script src="https://ramm.arumcapital.eu/scripts/widgets/RAMMStrategiesWidget.min.js"></script>#}
+{#<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>#}
+{##}
+{#</head>#}
+{#{% verbatim %}#}
+{#<body>#}
+{#        <script type="text/html" id="ramm-strategy-card-template">#}
+{#            <div class="ramm-strategy-card">#}
+{#                <div class="ramm-strategy-chart" style="width: 300px; height: 200px;"></div>#}
+{#                <h3><a href="{{ href }}" target="_blank">{{ name }}</a></h3>#}
+{#                <h3 class="{{ plClass }}">{{ monthlyYield }}% per month</h3>#}
+{#                <span>{{ popularInstruments }}</span>#}
+{#                <p>Number of investors: {{ investorsCount }}</p>#}
+{#                <button onclick="alert('You selected strategy {{ name }}');">Select strategy</button>#}
+{#            </div>#}
+{#        </script>#}
+{##}
+{##}
+{#<div id="rating-container"><div></div></div>#}
+{#{% endverbatim %}#}
+{#<script> #}
+{##}
+{##}
+{#        $(function (document) {#}
+{#            var cardsWidget = new RAMMStrategiesWidget("https://ramm.arumcapital.eu", 10, 5, 0, false, { strategyTemplateSelector: '#ramm-strategy-card-template', parentElementSelector: '#rating-container' });#}
+{#        });#}
+{##}
+{#</script>#}
+{##}
+{#</body>#}
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -8,28 +43,33 @@
 </head>
 {% verbatim %}
 <body>
-        <script type="text/html" id="ramm-strategy-card-template">
-            <div class="ramm-strategy-card">
-                <div class="ramm-strategy-chart" style="width: 300px; height: 200px;"></div>
-                <h3><a href="{{ href }}" target="_blank">{{ name }}</a></h3>
-                <h3 class="{{ plClass }}">{{ monthlyYield }}% per month</h3>
-                <span>{{ popularInstruments }}</span>
-                <p>Number of investors: {{ investorsCount }}</p>
-                <button onclick="alert('You selected strategy {{ name }}');">Select strategy</button>
-            </div>
+
+        <script type="text/html" id="ramm-strategy-table-row-template">
+            <tr>
+                <td class="align-center">{{ id }}</td>
+                <td><a href="{{ href }}" target="_blank">{{ name }}</a></td>
+                <td>{{ popularInstruments }}</td>
+                <td class="{{ plClass }} align-center">{{ monthlyYield }}%</td>
+                <td class="align-center">{{ yield }}%</td>
+                <td class="align-center">{{ investorsCount }}</td>
+                <td class="align-center">{{ investorsCountWeeklyChange }}</td>
+                <td class="align-center">{{ investorsEquityGross }}</td>
+                <td class="align-center">{{ ageDays }}</td>
+                <td class="align-center">{{ ageWeeks }}</td>
+            </tr>
         </script>
 
 
-<div id="rating-container"><div></div></div>
+<div id="rating-container"></div>
+<table id="strategies-table"></table>
 {% endverbatim %}
-<script> 
+<script>
 
 
         $(function (document) {
-            var cardsWidget = new RAMMStrategiesWidget("https://ramm.arumcapital.eu", 10, 5, 0, false, { strategyTemplateSelector: '#ramm-strategy-card-template', parentElementSelector: '#rating-container' });
+            var tableWidget = new RAMMStrategiesWidget("https://ramm.arumcapital.eu", 50, 10, 0, false, { strategyTemplateSelector: '#ramm-strategy-table-row-template', parentElementSelector: '#strategies-table', loadCharts: true });
         });
 
 </script>
 
 </body>
-

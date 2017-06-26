@@ -520,13 +520,20 @@ SESSION_COOKIE_AGE = 2592000  # 30 days
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
+MT4_MANAGER_SERVER_ADDRESS = ("127.0.0.1", 8443)
 MT4_ACCOUNT_ENGINES_NAMES = ['default', 'demo']
-ENGINES = {
+MT4_API_ENGINES = {
     'default': {
-        'pymt4': ("127.0.0.1", 8444),
+        'server': 'Lm5.cfhclearing.com',
+        'port': 443,
+        'login': 1064,
+        'password': 'London2017',
     },
     'demo': {
-        'pymt4': ("127.0.0.1", 8443),
+        'server': 'dm1.cfhclearing.com',
+        'port': 443,
+        'login': 8072,
+        'password': 'Arumpro2017',
     },
 }
 

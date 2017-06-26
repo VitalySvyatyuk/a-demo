@@ -6,10 +6,12 @@ block title
   | ARUM.Invest {{ block.super }}
 
 block scripts
-  script(src='https://ramm.arumcapital.eu/scripts/widgets/rammstrategieswidget.js')
+  script(src='https://ramm.arumcapital.eu/scripts/widgets/RAMMStrategiesWidget.min.js')
+  script(src='https://ramm.arumcapital.eu/scripts/lib/highstock-improved.js')
   script.
-    var widget = new RAMMStrategiesWidget("https://ramm.arumcapital.eu", 50, 10, 0, true, { strategyTemplateSelector: '#ramm-strategy-table-row-template', parentElementSelector: '#strategies_table' });
-
+        $(function (document) {
+            var tableWidget = new RAMMStrategiesWidget("https://ramm.arumcapital.eu", 50, 5, 0, true, { strategyTemplateSelector: '#ramm-strategy-table-row-template', parentElementSelector: '#strategies-table', loadCharts: true });
+        });
 block content
   .page_head(style="background-image: url({% static 'img/marketing-site/bg/bg-invest-header.jpg' %})")
     .container
@@ -24,7 +26,32 @@ block content
     .container
       h2.page_title
         - trans "Top 5 strategies:"
-      div.strategies#strategies_table
+      table
+        thead.strategies
+          tr
+            th.strategies__cell__title
+              - trans "ID"
+            th.strategies__cell__title
+              - trans "Name"
+            th.strategies__cell__title
+              - trans "Monthly yield"
+            th.strategies__cell__title
+              - trans "Yield"
+            th.strategies__cell__title
+              - trans "Investors count"
+            th.strategies__cell__title
+              - trans "Investors count change"
+            th.strategies__cell__title
+              - trans "Investors equity"
+            th.strategies__cell__title
+              - trans "Age in days"
+            th.strategies__cell__title
+              - trans "Age in weeks"
+        {% verbatim %}
+        tbody.strategies#strategies-table
+
+
+        {% endverbatim %}
       .invest-page-under-table
         .row
           .col-md-3
@@ -184,3 +211,18 @@ block content
             span.button__text
               - trans 'Create strategy'
         {% endif %}
+    {% verbatim %}
+    script#ramm-strategy-table-row-template(type='text/html').
+        <tr class="strategies__row">
+        <td class="strategies__cell strategies__cell__value">{{ id }}</td>
+        <td class="strategies__cell strategies__cell__name"><a href="{{ href }}" target="_blank">{{ name }}</a> <br>
+        <span class="strategies__cell strategies__cell__currency">{{ popularInstruments }}</span></td>
+        <td class="{{ plClass }} strategies__cell ">{{ monthlyYield }}%</td>
+        <td class="ramm-strategy-chart"></td>
+        <td class="strategies__cell ">{{ investorsCount }}</td>
+        <td class="strategies__cell ">{{ investorsCountWeeklyChange }}</td>
+        <td class="strategies__cell ">{{ investorsEquityGross }}</td>
+        <td class="strategies__cell ">{{ ageDays }}</td>
+        <td class="strategies__cell ">{{ ageWeeks }}</td>
+        </tr>
+    {% endverbatim %}

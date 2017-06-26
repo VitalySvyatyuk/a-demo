@@ -9,7 +9,12 @@ class MessageSerializer(serializers.ModelSerializer):
     campaign = serializers.SerializerMethodField('get_campaign_info')
 
     def get_campaign_info(self, obj):
-        return None
+        if obj.campaign:
+            return {
+                'id': obj.campaign.id,
+                'name': obj.campaign.email_subject,
+                'url': obj.campaign.get_absolute_url()
+            }
 
     class Meta:
         model = Message
