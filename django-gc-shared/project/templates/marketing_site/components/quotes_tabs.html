@@ -11,15 +11,15 @@
         <th class="quotes__table__cell"><span class="quotes__table__head_text">Bid</span></th>
         <th class="quotes__table__cell"><span class="quotes__table__head_text">Ask</span></th>
         <th class="quotes__table__cell quotes__table__cell--hidden-on-mobiles"><span class="quotes__table__head_text">Spread</span></th>
-        <th class="quotes__table__cell quotes__table__cell--hidden-on-mobiles"><span class="quotes__table__head_text">Percent</span></th>
+{#        <th class="quotes__table__cell quotes__table__cell--hidden-on-mobiles"><span class="quotes__table__head_text">Percent</span></th>#}
       </tr>
     {% for quote in value %}
-        <tr class="quotes__table__row js-pseudolink" data-href="#">
+        <tr class="quotes__table__row js-pseudolink" data-href="{% url 'specifications' %}">
             <td class="quotes__table__cell"><span class="quotes__table__cell_text quotes__table__cell_text--{% if quote.direction %}red{% else %}green{% endif %} quotes__table__cell_text--arrow"> {{ quote.symbol }} </span></td>
             <td class="quotes__table__cell"><span class="quotes__table__cell_text quotes__table__cell_text--{% if quote.direction %}red{% else %}green{% endif %}"> {{ quote.bid|floatformat:quote.digits }} </span></td>
             <td class="quotes__table__cell"><span class="quotes__table__cell_text quotes__table__cell_text--{% if quote.direction %}red{% else %}green{% endif %}"> {{ quote.ask|floatformat:quote.digits }} </span></td>
             <td class="quotes__table__cell quotes__table__cell--hidden-on-mobiles"><span class="quotes__table__cell_text quotes__table__cell_text--{% if quote.direction %}red{% else %}green{% endif %}"> {{ quote.spread }} </span></td>
-            <td class="quotes__table__cell quotes__table__cell--hidden-on-mobiles"><span class="quotes__table__cell_text quotes__table__cell_text--{% if quote.direction %}red{% else %}green{% endif %}"> {{ quote.percents }} </span></td>
+{#            <td class="quotes__table__cell quotes__table__cell--hidden-on-mobiles"><span class="quotes__table__cell_text quotes__table__cell_text--{% if quote.direction %}red{% else %}green{% endif %}"> {{ quote.percents }} </span></td>#}
         {% endfor %}
 
         </tr>

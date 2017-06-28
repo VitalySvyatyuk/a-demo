@@ -15,7 +15,9 @@ from django.template.loader import get_template, render_to_string
 from django.utils.datastructures import SortedDict
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
+from django.shortcuts import redirect
 
+from platforms.models import TradingAccount
 from filterspecs import PaymentSystemFilter
 from geobase.utils import get_country
 from payments.models import DepositRequest, WithdrawRequest, TypicalComment, WithdrawRequestsGroup, \
@@ -24,6 +26,16 @@ from payments.tasks import update_profit
 from profiles.models import UserDocument
 from shared.admin import BaseAdmin, with_link
 from shared.utils import get_admin_url, descr
+from django.contrib import messages
+from django import forms
+
+class DepositForm(forms.ModelForm):
+    account = forms.CharField(label=_('Account'),
+                              widget=forms.TextInput(),
+                              required=True,
+                              help_text=_('Trading Account ID'),
+                              )
+
 
 
 def mark_success(admin, request, queryset):
@@ -50,6 +62,8 @@ class DepositRequestAdmin(BaseAdmin):
 
     change_list_template = "admin/payments/depositrequest/change_list.html"
 
+    list_display_links = None
+
     def changelist_view(self, request, extra_context=None):
         qs = TypicalComment.objects.filter(for_deposit=True)
         extra_context = { 'json_comments': json.dumps({ 'public': list(qs.filter(public=True).values_list('text', flat=True)),
@@ -68,11 +82,12 @@ class DepositRequestAdmin(BaseAdmin):
                ]
              ]
 
+    form = DepositForm
     actions = [mark_success]
     date_hierarchy = "creation_ts"
     list_display = ("id", "account_with_link", "ps_clickable",
                     "amount_with_currency", "creation_ts",
-                    "is_payed", "is_committed", "public_comment", "private_comment")
+                    "is_transfered", "is_deposited", "public_comment", "private_comment")
     list_filter = ("creation_ts", "is_payed", "is_committed", ('payment_system', PaymentSystemFilter), "_is_automatic")
 
     readonly_fields = ("id", "account_with_link", "purse",
@@ -82,18 +97,7 @@ class DepositRequestAdmin(BaseAdmin):
     search_fields = ('id', 'old_id', 'purse', 'creation_ts', 'account__mt4_id',
                      'account__user__email', 'account__user__first_name',
                      'account__user__last_name')
-    fieldsets = (
-        (_("General"), {
-           "fields": ( "account_with_link", "purse", "payment_system",
-                       "amount_with_currency", "creation_ts", 'transaction_id')
-        }),
-        (_("Details"), {
-            "fields": ("get_params", )
-        }),
-        (_("Status"), {
-            "fields": ("is_payed", "is_committed", "trade_with_link", "public_comment", 'comment_visible', "private_comment")
-        }),
-    )
+
 
     def get_readonly_fields(self, request, obj):
         readonly = list(self.readonly_fields)
@@ -105,7 +109,7 @@ class DepositRequestAdmin(BaseAdmin):
 
     @descr(short_description=mark_safe(_("Payment system<br>(clickable)")))
     def ps_clickable(self, obj):
-        return """<a id="cm-%i" class="change-committed">%s</a>""" % (obj.pk, unicode(obj.payment_system))
+        return """<a id="cm-%i" class="change-committed" style="cursor: pointer;">%s</a>""" % (obj.pk, unicode(obj.payment_system))
 
     @descr("amount")
     def amount_with_currency(self, obj):
@@ -135,8 +139,41 @@ class DepositRequestAdmin(BaseAdmin):
         t = get_template("payments/includes/payment_request_params.html")
         return t.render(Context({"params": params}))
 
+    # This field is necessary only to change is_payed column name
+    @descr(short_description=_("Client transferred the money"), boolean=True)
+    def is_transfered(self, obj):
+        return obj.is_payed
+
+    # This field is necessary only to change is_committed column name
+    @descr(short_description=_("Money deposited to trading platform"), boolean=True)
+    def is_deposited(self, obj):
+        return obj.is_committed
+
     def has_add_permission(self, request):
-        return False
+        return True if request.user.has_perm("depositrequest_full_access") else False
+
+    def add_view(self, request, form_url='', extra_context=None):
+
+        self.fields = ("account", "amount", "currency")
+        self.exclude = ()
+        self.readonly_fields = ()
+
+        if request.POST:
+            # custom create deposit request object because of complicated dependancies
+            try:
+                account = TradingAccount.objects.get(mt4_id=int(request.POST['account']))
+            except ObjectDoesNotExist:
+                messages.add_message(request, messages.ERROR, u"MT4 ID has not found")
+                return redirect("/my/admin/payments/depositrequest/add")
+
+            amount = int(request.POST["amount"])
+            currency = request.POST["currency"]
+            obj = DepositRequest(account=account, payment_system="bankusd", amount=amount, currency=currency)
+            obj.save()
+            return redirect("/my/admin/payments/depositrequest")
+        return super(DepositRequestAdmin, self).add_view(request, form_url, extra_context)
+
+
 
 
 class WithdrawRequestAdmin(BaseAdmin):

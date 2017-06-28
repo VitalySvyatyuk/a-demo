@@ -3,8 +3,10 @@ import xmlrpclib
 
 from django.conf import settings
 
+from platforms.exceptions import PlatformError
 
-class MT4Exception(Exception):
+
+class MT4Exception(PlatformError):
     pass
 
 

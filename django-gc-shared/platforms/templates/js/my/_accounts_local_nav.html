@@ -25,7 +25,8 @@
       <li ng-switch-default class="with-list">
         <a easy-slide-block default="true"><span>{% trans "Settings" %}</span></a>
         <ul content-block>
-          <li ng-if="!account.is_options && !account.group.endsWith('_ss')">
+          <li ng-if="!account.is_options && !account.group.endsWith('_ss') &&
+              !account.group.endsWith('_cfh')">
             <a ng-click="accountActions.changeLeverage()">{% trans "Leverage" %}</a>
           </li>
           <li>

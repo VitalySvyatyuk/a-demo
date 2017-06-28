@@ -152,6 +152,7 @@ def frontpage(request):
 
 
     quotes_needed = OrderedDict()
+
     for quotes_tab_needed in ChangeQuote.objects.all():
         quotes_needed[_(quotes_tab_needed.category)] = quotes_tab_needed.quotes.replace(' ', '').split(',')
     result = OrderedDict()
@@ -163,10 +164,11 @@ def frontpage(request):
                 .values('symbol', 'bid', 'ask', 'spread', 'direction', 'digits')
         )
 
-        open_prices = {
-            x.symbol: x
-            for x in Mt4OpenPrice.objects.filter(symbol__in=symbols_list)
-            }
+        # there is no such DB anymore
+        # open_prices = {
+        #     x.symbol: x
+        #     for x in Mt4OpenPrice.objects.filter(symbol__in=symbols_list)
+        #     }
         for key, pairs in quotes_needed.items():
             result[key] = []
 
@@ -175,21 +177,21 @@ def frontpage(request):
                     quote = filter(lambda x: x["symbol"] == pair, quotes)[0]
                     tmp = dict(quote)
 
-                    q = open_prices[pair]
+        #             q = open_prices[pair]
 
-                    tmp["open_price"] = q.open_price
-                    tmp["spread_digits"] = q.spread_digits
-                    tmp["spread"] = "%.1f" % (int(math.ceil((tmp["ask"] - tmp["bid"]) * q.spread_digits)) / 10.0)
-                    tmp["percents"] = "%+.2f" % ((tmp["bid"] - tmp["open_price"]) / tmp["open_price"] * 100)
-
+                    #tmp["open_price"] = q.open_price
+                    tmp["spread_digits"] = quote['digits']
+                    # prob incorrect calculations
+                    tmp["spread"] = "%.1f" % ((tmp["ask"] - tmp["bid"]) * (10 ** (quote['digits']-1)))
+                    #tmp["percents"] = "%+.2f" % ((tmp["bid"] - tmp["open_price"]) / tmp["open_price"] * 100)
+                    tmp["percents"] = "---"
                     result[key].append(tmp)
                 except Exception as e:  # anything can happen here :(
                     log.warn(e)
                     continue
-    except Exception as e:
+    except AttributeError as e:
         # too broad exception because MySQL exceptions are not proxied by Django's DatabaseError :(
         log.warn(e)
-
 
     context = {
         "company_news": CompanyNews.objects.published().filter(language=request.LANGUAGE_CODE)[:3],

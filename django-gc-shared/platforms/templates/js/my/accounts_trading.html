@@ -2,11 +2,7 @@
 <div class="gc-accordion-item" ng-show="checkAvailableModules('trading')" ng-controller="AccountsTradingController" name="trading" accordion-show="selectedCategoryList.indexOf('trading') >= 0" accordion-click="selectCategory('trading')">
   <div class="title-wrapper" title>
     <span class="title">{% trans "ECN.MT" %}</span>
-    {% if LANGUAGE_CODE == 'ru' %}
-    <a href="{% url 'account_app' %}create" class="button second right not-ready-platform-ru">{% trans "Create account" %}</a>
-    {% else %}
-    <a href="{% url 'account_app' %}create" class="button second right not-ready-platform-en">{% trans "Create account" %}</a>
-    {% endif %}
+    <a href="{% url 'account_app' %}create" class="button second right">{% trans "Create account" %}</a>
   </div>
   <div content ng-if="!isDataHidden">
     <div ng-show="selectedCategory === 'trading'">
@@ -81,11 +77,7 @@
 <div class="gc-accordion-item" ng-controller="AccountsTradingController" name="pro" accordion-show="selectedCategoryList.indexOf('pro') >= 0" accordion-click="selectCategory('pro')">
   <div class="title-wrapper" title>
     <span class="title">{% trans "ECN.PRO" %}</span>
-    {% if LANGUAGE_CODE == 'ru' %}
-    <a href="{% url 'account_app' %}create" class="button second right not-ready-platform-ru">{% trans "Create account" %}</a>
-    {% else %}
-    <a href="{% url 'account_app' %}create" class="button second right not-ready-platform-en">{% trans "Create account" %}</a>
-    {% endif %}
+    <a href="{% url 'account_app' %}create" class="button second right">{% trans "Create account" %}</a>
   </div>
   <div content ng-if="!isDataHidden">
     <div ng-show="selectedCategory === 'pro'">
