@@ -70,18 +70,20 @@ block content
               - trans "The platform provides a Market Depth of ECN-liquidity online and contains real historical volume of trading on each financial instrument. The platform also provides tick chart tools, indicator base and other tools for technical analysis. "
             ul.arumpro-dropdown
               li.arumpro-dropdown-top
-                a.arumpro-dropdown-top(href="#")
+                a.arumpro-dropdown-top()
                   - trans "Download the platform"
                 ul.arumpro-dropdown-inside
-                  //- li
-                  //-   a(href="#")
-                  //-     - trans "For real account"
                   li
                     a(href="http://download.arumcapital.eu/demo/application/ArumProTraderDemoSetup.exe", target="_blank")
                       - trans "For demo account"
-            a.link(href="#")
-              - trans "User guide"
-              |  (pdf)
+            if LANGUAGE_CODE == "ru"
+              a.link(href="{% static 'agreements/ArumPRO_manual_-_RUSSIAN.pdf' %}" target="_blank")
+                - trans "User guide"
+                |  (pdf)
+            else
+              a.link(href="{% static 'agreements/ARUMPRO_FIX_API_v._2.5.pdf' %}" target="_blank")
+                - trans "User guide"
+                |  (pdf)
           .col-md-6
              .apps__slider_box.apps__slider_box--windows
               .apps__slider_arrow_box
@@ -119,7 +121,7 @@ block content
             .arumpro-windows-links
               ul.arumpro-dropdown
                 li.arumpro-dropdown-top
-                  a.arumpro-dropdown-top(href="#")
+                  a.arumpro-dropdown-top()
                     - trans "Go to the platform"
                   ul.arumpro-dropdown-inside
                     li
@@ -128,9 +130,15 @@ block content
                     li
                       a(href="https://demo.arumcapital.eu/", target="_blank")
                         - trans "For demo account"
-              a.link(href="#")
-                - trans "User guide"
-                |  (pdf)
+              if LANGUAGE_CODE == "ru"
+                a.link(href="{% static 'agreements/ArumWEB_manual_-_RUSSIAN.pdf' %}" target="_blank")
+                  - trans "User guide"
+                  |  (pdf)
+              else
+                a.link(href="{% static 'agreements/ArumWEB_manual_-_ENGLISH.pdf' %}" target="_blank")
+                  - trans "User guide"
+                  |  (pdf)
+
 
 
   .arumpro-become-client

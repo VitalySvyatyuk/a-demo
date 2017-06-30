@@ -52,7 +52,8 @@ LANGUAGE_SETTINGS = {
 
 }
 
-ALLOWED_HOSTS = ['arum.uptrader.us', 'arum.dev.uptrader', 'arumcapital.eu', 'ru.arumcapital.eu']
+ALLOWED_HOSTS = ['arum.uptrader.us', 'arum.dev.uptrader', 'arumcapital.eu', 'ru.arumcapital.eu', 'www.ru.arumcapital.eu',
+                 'www.arumcapital.eu']
 
 LANGUAGE_NEUTRAL_URLS = (
 )

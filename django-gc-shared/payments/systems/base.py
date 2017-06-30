@@ -516,17 +516,22 @@ class WithdrawForm(BaseForm):
         try:
             withdraw_limit, bonuses = WithdrawForm.get_withdraw_limit_data(account)
 
+            # fix float inaccuracy since money store amount as float
+            withdraw_limit_decimal = Decimal(withdraw_limit.amount)
+            not_accuracy_part = withdraw_limit_decimal % Decimal("0.01")
+            if not_accuracy_part > Decimal("0.009999"):
+                withdraw_limit_decimal = Decimal(str(round(withdraw_limit_decimal, 2)))
+
             bonuses = bonuses.to(to_currency)
 
-            if amount > withdraw_limit.amount:
+            if amount > withdraw_limit_decimal:
                 self._errors["amount"] = [_(
                     "Maximal amount of money you can withdraw for a chosen "
                     "account is %(limit_value)s%(currency)s ") % \
-                                         {"limit_value": withdraw_limit.amount,
+                                         {"limit_value": withdraw_limit_decimal,
                                               "currency": withdraw_limit.currency.slug}]
         except:
             self._errors["account"] = [_('Cannot determine the account balance. Try again later or contact support')]
-        # self.cleaned_data['last_transaction_id'] = 'sadfdsafsf'
         return self.cleaned_data
 
     @classmethod

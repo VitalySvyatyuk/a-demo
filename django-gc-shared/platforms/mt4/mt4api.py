@@ -1,10 +1,12 @@
 import re
 import xmlrpclib
+import logging
 
 from django.conf import settings
 
 from platforms.exceptions import PlatformError
 
+log = logging.getLogger(__name__)
 
 class MT4Exception(PlatformError):
     pass
@@ -22,6 +24,7 @@ class RemoteMT4Manager(object):
 
     def _handle_fault(self, method, *args):
         try:
+            log.debug("XMLRPCserver trying to call mt4 method {} with following parameters {}".format(method, args))
             return self.engine.call_mt4_method(self.mt4_connection_details, method, *args)
         except xmlrpclib.Fault as e:
             if 'mt4_api.MT4Exception' in e.faultString.split(':', 1)[0]:

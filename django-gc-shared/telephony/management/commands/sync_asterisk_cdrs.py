@@ -1,11 +1,19 @@
 # -*- coding: utf-8 -*-
 
 from django.core.management import BaseCommand
+from django.core.urlresolvers import reverse
+
 from telephony.models import ExternalAsteriskCDR, CallDetailRecord, VoiceMailCDR
 from django.db.models import Max
 from django.core.paginator import Paginator
 import requests
 import gc
+from django.conf import settings
+from django.core.mail import send_mail
+
+
+
+
 
 class Command(BaseCommand):
     def execute(self, *args, **options):
@@ -39,4 +47,10 @@ class Command(BaseCommand):
                             if have_voice_mail:
                                 voice_mail.recording_file = voice_mail.get_record_path()
                                 voice_mail.save()
+                                send_mail(
+                                    u"New voice mail recieved",
+                                    u'Check new voice mail at {}'.format(reverse("admin:telephony_voicemailcdr_change", args=(voice_mail.id,))),
+                                    settings.SERVER_EMAIL,
+                                    settings.MANAGERS[0]  # Which means support email
+                                )
             gc.collect()
