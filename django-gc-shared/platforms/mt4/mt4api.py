@@ -23,6 +23,9 @@ class RemoteMT4Manager(object):
             raise ValueError("Password should be at least 6 characters long and contain at least 1 digit and 1 letter")
 
     def _handle_fault(self, method, *args):
+        for i, j in enumerate(args):
+            if i is None:
+                log.critical("MT4 method {} received None arg (arg index: {}), list of args {}".format(method, j, args))
         try:
             log.debug("XMLRPCserver trying to call mt4 method {} with following parameters {}".format(method, args))
             return self.engine.call_mt4_method(self.mt4_connection_details, method, *args)
@@ -52,5 +55,7 @@ class RemoteMT4Manager(object):
     def create_account(self, group, password, leverage, name, login=0, agent_account=0, password_phone="", enable=True,
                        read_only=False, country="", state="", city="", address="", email="", phone=""):
         self._check_password_requirement(password)
-        return self._handle_fault('create_account', group, password, leverage, name, login, agent_account,
-                                  password_phone, enable, read_only, country, state, city, address, email, phone)
+        # Since we need to protect from send None value
+        return self._handle_fault('create_account', group, password, leverage, name, login or 0, agent_account or 0,
+                                  password_phone or "", enable, read_only, country or "", state or "", city or "",
+                                  address or "", email or "", phone or "")
