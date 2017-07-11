@@ -36,5 +36,6 @@ urlpatterns = patterns(
     url(r"^invest/$", TemplateView.as_view(
         template_name="marketing_site/pages/invest.jade"), name="invest",),
     url(r"^404/$", TemplateView.as_view(
-        template_name="marketing_site/pages/404.jade"), name="404",)
+        template_name="marketing_site/pages/404.jade"), name="404",),
+    url(r"^subscribe/$", "send_subscribe_email", name="send_subscribe_email",),
 )

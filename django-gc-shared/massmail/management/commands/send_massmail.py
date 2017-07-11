@@ -27,5 +27,5 @@ class Command(BaseCommand):
                 campaign.is_active = True
                 campaign.save()
 
-        for campaign in Campaign.objects.filter(is_active=True, _lock=False):
+        for campaign in Campaign.objects.filter(is_active=True, _lock=False).order_by("order_weight"):
             campaign.send()

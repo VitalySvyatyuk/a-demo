@@ -44,6 +44,13 @@ app.controller "AccountHistoryController", ($scope, $routeParams, Paginator, Mt4
       closeTrades
     reloadTrades()
 
-  $scope.mt4accountMt4ID = $routeParams.mt4account
+  $scope.accountId = $routeParams.mt4account
+  $scope.accountType = if $routeParams.account_type then $routeParams.account_type else 'mt4'
   $scope.$watch 'trades.isLoading', $scope.setGlobalLoading
   $scope.switchTradesMode 'opened'
+
+  $scope.transVolume = (vol) ->
+    switch $scope.accountType
+      when "mt4" then vol/=100
+      when "cfh" then vol/=100000
+      else vol

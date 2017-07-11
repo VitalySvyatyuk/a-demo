@@ -3,16 +3,52 @@ import urllib
 from annoying.decorators import render_to
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, redirect
 from django.utils.html import escape
 from django.utils.translation import ugettext as _
 from django.views.static import serve
 
-from massmail.models import Campaign, Unsubscribed, OpenedCampaign, CampaignType
+from massmail.models import Campaign, Unsubscribed, OpenedCampaign, CampaignType, MailingList, Subscribed
 from massmail.utils import get_signature
 from notification import models as notification
 from shared.validators import email_re
+
+
+
+def subscribe(request, email, signature, mail_list_id, first_name="", last_name=""):
+
+    if get_signature(email) != signature or not email_re.match(email):
+        raise Http404
+
+    try:
+        ml = MailingList.objects.get(pk=mail_list_id)
+    except (ObjectDoesNotExist, ValueError):
+        raise Http404
+
+    if request.user:
+       first_name = request.user.first_name
+       last_name = request.user.last_name
+
+    elif not first_name or not last_name:
+        usr = User.objects.get(email=email)
+        if usr:
+            last_name = usr.last_name
+            first_name = usr.first_name
+
+    sub = Subscribed(email=email, first_name=first_name, last_name=last_name)
+    ml.subscribers.add(sub)
+    ml.subscribers_count += 1
+    ml.save()
+
+    if request.user:
+        return redirect('/account/profile/subscriptions')
+    else:
+        return redirect('/')
+
+
 
 
 @render_to('massmail/unsubscribe.html')
@@ -25,7 +61,7 @@ def unsubscribe(request, email, signature, campaign_id=None):
         campaign_id = request.GET.get('campaign_id', None)
 
     if Unsubscribed.objects.filter(email=email).exists():
-        messages.success(request, _('You have already unsubscribed'))
+        # messages.success(request, _('You have already unsubscribed'))
         try:
             return redirect('massmail_unsubscribed_id', urllib.quote(email), int(campaign_id))
         except (ValueError, TypeError):
@@ -38,11 +74,11 @@ def unsubscribe(request, email, signature, campaign_id=None):
             campaign = Campaign.objects.get(id=int(campaign_id))
             campaign.unsubscribed += 1
             campaign.save()
-            messages.success(request, _('Copy of this message has been sent to your email'))
+            # messages.success(request, _('Copy of this message has been sent to your email'))
             notification.send([email], 'unsubscribed', {"email":urllib.quote(email), "campaign_id": campaign_id})
             return redirect('massmail_unsubscribed_id', urllib.quote(email), campaign_id)
         except (ValueError, TypeError, Campaign.DoesNotExist):
-            messages.success(request, _('Copy of this message has been sent to your email'))
+            # messages.success(request, _('Copy of this message has been sent to your email'))
             notification.send([email], 'unsubscribed', {"email":urllib.quote(email), "campaign_id": campaign_id})
             return redirect('massmail_unsubscribed', urllib.quote(email))
     return {'campaign_id':campaign_id}
@@ -61,6 +97,7 @@ def unsubscribed(request, email, campaign_id=None):
 def resubscribe(request, email, campaign_id=None):
     # prevent from resubscribing of other users
     email = urllib.unquote(email)
+
     if request.user.email == email:
         Unsubscribed.objects.filter(email=email).delete()
         request.user.profile.subscription = CampaignType.objects.all()

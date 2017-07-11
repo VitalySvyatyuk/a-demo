@@ -8,7 +8,7 @@ from geobase.models import Country, Region
 class CountryViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = CountrySerializer
     filter_backends = (filters.OrderingFilter,)
-    ordering = ('weight',)
+    ordering = ('weight', 'name')
     paginator = None
 
     def get_queryset(self):

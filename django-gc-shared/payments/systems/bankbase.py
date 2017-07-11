@@ -149,19 +149,6 @@ class DetailsForm(base.DetailsForm, FormWithCountry, FormWithCity):
         value_raw = self.cleaned_data.get("bank_account", "").upper()
         value = "".join(re.compile("[\d\w]+").findall(value_raw))
 
-        is_iban = lambda account: account[:2].isalpha()
-
-        # если первых два символа это буквы, то это IBAN и проводится валидация.
-        # иначе это счет в российском банке и номер не проверяется, кроме как на число символов
-        # (к этому моменту уже проверено через min_length)
-        if is_iban(value):
-            country = Country.objects.get(id=self.cleaned_data["country"])
-
-            if not country.code in IBAN_COUNTRIES_CODES:
-                self.errors["bank_account"] = _("Your country is not using IBAN codes")
-            if not validate_iban(value):
-                self.errors["bank_account"] = _("Not valid bank account")
-
         if "bank_account" in self.cleaned_data:
             self.cleaned_data["purse"] = self.cleaned_data["bank_account"]
 

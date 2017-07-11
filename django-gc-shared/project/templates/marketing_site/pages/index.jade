@@ -214,19 +214,20 @@ block content
                     - trans "Training article for trading"
                 p
                     - trans "Just started to master the market? Leave your e-mail address and we will send you a chain of letters about trading and investing at FOREX."
-                form
+                form#subscribe-form
+                    - csrf_token
                     label
-                        input(type="radio", class="subscribe-form-radio", name="subscribe-form-radio", required, checked)
+                        input(type="radio", class="subscribe-form-radio", name="subscribe-form-radio", required, checked, value="trader")
                         span(class="radio-custom")
                         span(class="label")
                         - trans "For traders"
                     label
-                        input(type="radio", class="subscribe-form-radio", name="subscribe-form-radio", required)
+                        input(type="radio", class="subscribe-form-radio", name="subscribe-form-radio", required, value="investor")
                         span(class="radio-custom")
                         span(class="label")
                             - trans "For investors"
                     div
-                        input(type="email", placeholder="Email", required)
+                        input(type="email", name="email", placeholder="Email", required)
                         button.button
                             span.button__text
                                 - trans 'Send'

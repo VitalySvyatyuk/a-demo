@@ -1,6 +1,6 @@
 {% load staticfiles inbox i18n %}
 <div class="history-wrapper">
-    <h1 class="offset-bottom-35 offset-top-35">{% trans "History for account" %} [[ mt4accountMt4ID ]]</h1>
+    <h1 class="offset-bottom-35 offset-top-35">{% trans "History for account" %} [[ accountId ]] ([[ accountType|uppercase ]])</h1>
 
     <div class="row filters-wrapper">
         <ul class="offset-bottom-20 history-filters">
@@ -64,7 +64,7 @@
                         [[ trade.close_time|momentHumanize ]]
                     </td>
                     <td>[[:: trade.open_price|number:5 ]]</td>
-                    <td>[[:: trade.volume ]]</td>
+                    <td>[[:: transVolume(trade.volume) ]]</td>
                     <td>[[:: trade.sl ]]</td>
                     <td>[[:: trade.tp ]]</td>
                     <td>[[:: trade.commission ]]</td>

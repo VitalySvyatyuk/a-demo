@@ -151,7 +151,15 @@ class TradeSerializer(serializers.Serializer):
 
     cmd_name = serializers.CharField(source='get_cmd_display')
     profit = serializers.DecimalField(max_digits=100, decimal_places=2)
-    close_time = serializers.DateTimeField()
+    close_time = serializers.SerializerMethodField()
+
+    # Special case for MT4 close time, where None=01-01-1970
+    @staticmethod
+    def get_close_time(obj):
+        if obj.close_time.year == 1970:
+            return None
+        else:
+            return obj.close_time
 
 
 # noinspection PyAbstractClass

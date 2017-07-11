@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
+from collections import OrderedDict
 from datetime import date
 
 from rest_framework import serializers
@@ -177,6 +178,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'has_valid_documents',
             'manager',
             'lost_otp',
+            'is_partner'
         )
 
 
@@ -217,13 +219,26 @@ class UserSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError(_("Please confirm Email"))
         return value
 
+
     def validate(self, attrs):
         # req = self.context['request']
         profile = UserProfile.objects.get(user__username=self.instance.username)
 
-        if not UserProfileSerializer.can_change_profile_data(profile):
-            raise serializers.ValidationError('Sorry we cant let you change your personal data now, '
+
+        # We dont need to check permission for change profile if user change only subscriptions
+        subscriptions_changed = \
+            set(self.instance.profile.subscription.values_list("pk", flat=True)) != \
+            set([i.pk for i in attrs[u'profile'][u'subscription']])
+        if subscriptions_changed:
+            # Set rest profile fields to database value so it changes only subscription field
+            for i in attrs[u'profile'].iterkeys():
+                if i != u'subscription':
+                    attrs[u'profile'][i] = getattr(self.instance.profile, i)
+        else:
+            if not UserProfileSerializer.can_change_profile_data(profile):
+                raise serializers.ValidationError('Sorry we cant let you change your personal data now, '
                                               'complete the regitration process or contact with support')
+
         for f, v in attrs.iteritems():
             if isinstance(v, (str, unicode)) and not is_valid_in_encoding('cp1251', v):
                 raise serializers.ValidationError({f: _("Illegal symbols")})

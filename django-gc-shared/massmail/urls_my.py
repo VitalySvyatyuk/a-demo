@@ -17,4 +17,6 @@ urlpatterns = patterns('massmail.views',
         name='massmail_resubscribe'),
     url('^resubscribe/(?P<email>[^/]+)/(?P<campaign_id>\d+)/$', 'resubscribe',
         name='massmail_resubscribe_id'),
+    url(r"^subscribe/(?P<signature>\w+)/(?P<email>[^/]+)/(?P<mail_list_id>\d+)/$", "subscribe",
+        name="massmail_subscribe_id")
 )

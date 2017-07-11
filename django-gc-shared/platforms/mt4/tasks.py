@@ -19,7 +19,7 @@ def register_mt4account(details, user, account_type_details, form_class, partner
     mt4_id = mt4api.RemoteMT4Manager(engine).create_account(**details)
     # mt4_id = api.SocketAPI(engine=account_type_details['engine']).create_account(**details)
     account = TradingAccount(user=user,
-                         mt4_id=mt4_id,
+                         mt4_id=mt4_id, _login=str(mt4_id),
                          group_name=account_type_details['slug'],
                          agreement_type=additional_fields.get('agreement_type'))
 

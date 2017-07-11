@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-20 13:33+0300\n"
+"POT-Creation-Date: 2017-07-04 12:53+0300\n"
 "PO-Revision-Date: 2016-10-06 17:43+0230\n"
 "Last-Translator: asdf asdfs <v.rizhenkov@grandcapital.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,11 +44,8 @@ msgstr "Для iPhone"
 msgid "For Android"
 msgstr "Для Android"
 
-msgid "For IPad/Tablet"
-msgstr "Для iPad"
-
-msgid "User's manual (pdf)"
-msgstr "Руководство пользователя"
+msgid "User's manual Mac (pdf)"
+msgstr "Руководство пользователя Mac (pdf)"
 
 msgid "ARUM.PRO"
 msgstr ""
@@ -59,26 +56,32 @@ msgstr "Для реальных счетов"
 msgid "For demo accounts"
 msgstr "Для Демо-счетов"
 
+msgid "User's manual (pdf)"
+msgstr "Руководство пользователя"
+
 msgid "API description for the FIX protocol (pdf)"
 msgstr "Описание API для FIX протокола (pdf)"
 
 msgid "ARUM.WEB"
 msgstr ""
 
-msgid "Manual (pdf)"
-msgstr "Руководство (pdf)"
+msgid "Go to Real"
+msgstr "Войти в REAL-платформу"
 
 msgid "Go to Demo"
 msgstr "Войти в DEMO-платформу"
 
-msgid "Go to Real"
-msgstr "Войти в REAL-платформу"
+msgid "Manual (pdf)"
+msgstr "Руководство (pdf)"
 
 msgid "ARUM.Invest"
 msgstr "Инвестировать"
 
-msgid "MT4 signals copying advisor"
-msgstr "Копирование сигналов МТ4"
+msgid "Go to platform"
+msgstr "В платформу"
+
+msgid "Help"
+msgstr "Помощь"
 
 msgid "Private office"
 msgstr "Личный кабинет"
@@ -331,6 +334,12 @@ msgstr "У меня есть код агента"
 
 msgid "Register using social network account"
 msgstr "Зарегистрироваться, используя аккаунты социальных сетей"
+
+#~ msgid "MT4 signals copying advisor"
+#~ msgstr "Копирование сигналов МТ4"
+
+#~ msgid "For IPad/Tablet"
+#~ msgstr "Для iPad"
 
 #~ msgid "Documents have not been uploaded"
 #~ msgstr "Документы не были отправлены"
@@ -1979,9 +1988,6 @@ msgstr "Зарегистрироваться, используя аккаунт�
 
 #~ msgid "Web-platform"
 #~ msgstr "Web-платформа"
-
-#~ msgid "CQG platform"
-#~ msgstr "Платформа CQG"
 
 #~ msgid "For PC"
 #~ msgstr "Для компьютера"
@@ -4443,9 +4449,6 @@ msgstr "Зарегистрироваться, используя аккаунт�
 
 #~ msgid "Take a part"
 #~ msgstr "Участвовать"
-
-#~ msgid "Help"
-#~ msgstr "Помощь"
 
 #~ msgid "Deposit up to $300 is commission free"
 #~ msgstr "Берем на себя комиссию на ввод"

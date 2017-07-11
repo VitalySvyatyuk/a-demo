@@ -15,7 +15,6 @@ from currencies.money import Money, NoneMoney
 from log.models import Event
 from shared.models import CustomManagerMixin
 from shared.utils import upload_to
-from shared.werkzeug_utils import cached_property
 from project.utils import queryset_like
 
 import re, sys
@@ -184,7 +183,7 @@ class TradingAccount(models.Model):
         ordering = ["mt4_id", "group_name"]
         unique_together = [("user", "mt4_id")]
 
-    # @cached_property
+    # @property
     # def currency(self):
     #     # type: () -> Currency
     #     """
@@ -208,7 +207,8 @@ class TradingAccount(models.Model):
         """
         Still active trades/positions.
         """
-        return self.trades.filter(close_time__isnull=True)
+        from platforms.mt4 import NEVER
+        return self.trades.filter(close_time=NEVER)
 
     @property
     def deferred_trades(self):
@@ -224,7 +224,8 @@ class TradingAccount(models.Model):
         """
         Trades/Positions that already closed.
         """
-        return self.trades.filter(close_time__isnull=False)
+        from platforms.mt4 import NEVER
+        return self.trades.exclude(close_time=NEVER)
 
     def get_available_leverages(self):
         # type: () -> List[int]
@@ -236,21 +237,21 @@ class TradingAccount(models.Model):
 
         return self.api.account_available_leverages(self)
 
-    @cached_property
+    @property
     def is_demo(self):
         # type: () -> bool
         """Returns True if account is a demo and False otherwise."""
         log.debug("demo_regex=%s" % demo_regex())
         return bool(re.compile(demo_regex()).match(self.group_name or ""))
 
-    @cached_property
+    @property
     def is_ib(self):
         # type: () -> bool
         # Should be left as-is, and then refactored into new IB system
         """Returns True if account is an IB (partner) account and False otherwise."""
         return self.group_name and 'real_ib' in self.group_name
 
-    @cached_property
+    @property
     def is_micro(self):
         # type: () -> bool
         """
@@ -283,7 +284,7 @@ class TradingAccount(models.Model):
         except (CFHError, SSError):
             return None
 
-    @cached_property
+    @property
     def api(self):
         # type: () -> object
         """
@@ -372,6 +373,11 @@ class TradingAccount(models.Model):
             return Money(self.api.account_equity(self), self.currency)
         except (CFHError, SSError):
             return NoneMoney()
+
+    def check_connect(self):
+        log.debug("Checking account connection for {}".format(self.mt4_id))
+        return self.api.account_check_connect(self)
+
     def check_password(self, password):
         # type: (str) -> bool
         """
@@ -394,7 +400,7 @@ class TradingAccount(models.Model):
         else:
             return self.api.account_withdraw(self, abs(amount), comment=comment, **kwargs)
 
-    @cached_property
+    @property
     def agent_clients(self):
         # type: () -> List[User]
         """
@@ -421,7 +427,7 @@ class TradingAccount(models.Model):
             trades = trades.filter(close_time__isnull=True)
         return trades[:count_limit or sys.maxint]
 
-    @cached_property
+    @property
     def no_inout(self):
         # type: () -> bool
         """

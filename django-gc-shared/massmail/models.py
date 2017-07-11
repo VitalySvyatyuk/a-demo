@@ -24,6 +24,8 @@ from django.db import models
 from django.db.models import QuerySet
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
+from platforms.models import TradingAccount
+from platforms.mt4.external.models_users import RealUser
 
 # import mt4.models
 # import mt4.types
@@ -36,6 +38,21 @@ from shared.validators import email_re
 from sms import send
 
 log = logging.getLogger(__name__)
+
+def remove_emails_lte_hours(emails, previous_date_emails, hours_after_previous_campaign):
+    """Method removes emails from email list which innapropriate by hours"""
+    for e in emails.keys():
+        if e not in {i[0] for i in previous_date_emails}:  # i[0] means emails
+            del emails[e]
+        else:
+            sent_dates = (i[1] for i in previous_date_emails if i[0] == e)  # i[1] means dates
+            # if atleast one sent message date from each of previous campaigns earlier
+            # then {{hours_after_previous_campaign}} days -> remove mail
+            for sent_date in sent_dates:
+                if sent_date + datetime_module.timedelta(hours=hours_after_previous_campaign) > datetime.now():
+                    del emails[e]
+                    break
+    return emails
 
 
 class MessageTemplate(models.Model):
@@ -220,7 +237,7 @@ class MailingList(models.Model):
         result = {}
         if not self.query:
             return result
-        users = eval(self.query, {}, {'User': User, 'datetime': datetime_module, 'Q': models.Q,
+        users = eval(self.query, {}, {'User': User, 'datetime': datetime_module, 'Q': models.Q, "TradingAccount": TradingAccount, "RealUser":RealUser,
                                       # 'account_types': mt4.types, 'mt4_models': mt4.models,
                                       'massmail_models': sys.modules[__name__]})
         if isinstance(users, QuerySet):
@@ -318,8 +335,14 @@ class Campaign(models.Model):
         help_text=_("These emails will be excluded from the campaign"),
     )
 
-    previous_campaigns = models.ManyToManyField('self', related_name="next_campaigns", blank=True, null=True)
+    order_weight = models.IntegerField(_("Weight of campaign"),
+                                       help_text=_("Lower value means this campaign trying to send first"),
+                                       default = 0)
+    previous_campaigns = models.ManyToManyField('self', related_name="next_campaigns", blank=True, null=True, help_text="Just ctrl+click to previous campaign(s) ")
     previous_campaigns_type = models.CharField(max_length=20, choices=CAMPAIGN_STRATEGY, default='', blank=True)
+
+    hours_after_previous_campaign = models.FloatField(_("Hours from previous campaign"), default=0,
+                                                       help_text=_("Users which received mail from previous campaign earlier than this hours will be ignored"))
 
     languages = ArrayField(models.CharField(max_length=10), default=campaign_languages_default)
     is_active = models.BooleanField(_("Active"), default=False,
@@ -453,6 +476,7 @@ class Campaign(models.Model):
                     if email in emails:
                         del emails[email]
 
+
             if not self.security_notification:
                 #Delete emails of users,which unsubscribed for this type of campaign
                 from profiles.models import UserProfile
@@ -463,18 +487,18 @@ class Campaign(models.Model):
                     if profile.user.email in emails:
                         del emails[profile.user.email]
 
+
             # Do not send message to already sent emails
             for msg in self.sent_messages.all():
                 if msg.email in emails:
                     del(emails[msg.email])
 
             if self.previous_campaigns_type == "all":
-                previous_emails = set()
+                previous_date_emails = []
                 for c in self.previous_campaigns.all():
-                    previous_emails |= set(c.sent_messages.all().values_list('email', flat=True))
-                for e in emails.keys():
-                    if e not in previous_emails:
-                        del emails[e]
+                    previous_date_emails += (c.sent_messages.all().values_list('email', "creation_ts"))
+                emails = remove_emails_lte_hours(emails, previous_date_emails, self.hours_after_previous_campaign)
+
             elif self.previous_campaigns_type == "none":
                 previous_emails = set()
                 for c in self.previous_campaigns.all():
@@ -482,34 +506,44 @@ class Campaign(models.Model):
                 for e in emails.keys():
                     if e in previous_emails:
                         del emails[e]
+
             elif self.previous_campaigns_type == "read":
-                previous_emails = set()
+                previous_date_emails = []
                 for c in self.previous_campaigns.all():
-                    previous_emails |= set(c.clicks.filter(opened=True).values_list('email', flat=True))
-                for e in emails.keys():
-                    if e not in previous_emails:
-                        del emails[e]
+                    previous_date_emails += c.clicks.filter(opened=True).values_list('email', "creation_ts")
+                emails = remove_emails_lte_hours(emails, previous_date_emails, self.hours_after_previous_campaign)
+
             elif self.previous_campaigns_type == "unread":
-                previous_emails = set()
+                previous_date_emails = []
                 for c in self.previous_campaigns.all():
-                    previous_emails |= set(c.clicks.filter(opened=True).values_list('email', flat=True))
-                for e in emails.keys():
-                    if e in previous_emails:
-                        del emails[e]
+                    previous_date_emails += c.clicks.filter(opened=False).values_list('email', "creation_ts")
+                emails = remove_emails_lte_hours(emails, previous_date_emails, self.hours_after_previous_campaign)
             elif self.previous_campaigns_type == "clicked":
-                previous_emails = set()
+                previous_date_emails = []
                 for c in self.previous_campaigns.all():
-                    previous_emails |= set(c.clicks.filter(clicked=True).values_list('email', flat=True))
-                for e in emails.keys():
-                    if e not in previous_emails:
-                        del emails[e]
+                    previous_date_emails += c.clicks.filter(clicked=False).values_list('email', "creation_ts")
+                emails = remove_emails_lte_hours(emails, previous_date_emails, self.hours_after_previous_campaign)
             elif self.previous_campaigns_type == "unclicked":
-                previous_emails = set()
+                previous_date_emails = []
                 for c in self.previous_campaigns.all():
-                    previous_emails |= set(c.clicks.filter(clicked=True).values_list('email', flat=True))
+                    previous_date_emails += c.clicks.filter(clicked=False).values_list('email', "creation_ts")
+                emails = remove_emails_lte_hours(emails, previous_date_emails, self.hours_after_previous_campaign)
+
+            # this branch means if campaign have no previous(type) but has delay days from previous
+            # (than we calculate days after user registration)
+            elif self.hours_after_previous_campaign > 0:
+                previous_emails_registered = dict(User.objects.filter(email__in=emails.keys()).values_list('email', "date_joined"))
+
                 for e in emails.keys():
-                    if e in previous_emails:
-                        del emails[e]
+                    try:
+                        if previous_emails_registered[e] + \
+                                datetime_module.timedelta(hours=self.hours_after_previous_campaign) > datetime.now():
+                            del emails[e]
+                    except IndexError:
+                        log.warning("Trying to send massmail to {} "
+                                    "but failed because user with current email didnt found in user db".format(e))
+
+
 
 
             # Get Django's SMTP connection

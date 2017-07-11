@@ -1,6 +1,7 @@
 # coding=utf-8
 
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.utils.translation import ugettext_lazy as _
@@ -139,9 +140,17 @@ class UserDocumentViewSet(viewsets.ReadOnlyModelViewSet, mixins.CreateModelMixin
         log.info("Bulk upload docs for user %s" % request.user.username)
         log.debug('request data=%s' % request.data)
         resp = []
-        for name, file in request.data.iteritems():
-            doc = UserDocument(user=request.user, file=file, name=name)
-            doc.save()
-            resp.append(doc)
-        notification.send([self.request.user], 'checkdocument_issue')
-        return Response(self.serializer_class(resp, many=True).data)
+        try:
+            for name, file in request.data.iteritems():
+                doc = UserDocument(user=request.user, file=file, name=name)
+                doc.clean_fields()
+                doc.save()
+                resp.append(doc)
+        except ValidationError:
+            raise exceptions.ValidationError(_("Bad file extension or size!"))
+
+        if not resp:
+            raise exceptions.ValidationError(_("No documents uploaded!"))
+        else:
+            notification.send([self.request.user], 'checkdocument_issue')
+            return Response(self.serializer_class(resp, many=True).data)

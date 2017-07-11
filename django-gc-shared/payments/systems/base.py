@@ -516,19 +516,11 @@ class WithdrawForm(BaseForm):
         try:
             withdraw_limit, bonuses = WithdrawForm.get_withdraw_limit_data(account)
 
-            # fix float inaccuracy since money store amount as float
-            withdraw_limit_decimal = Decimal(withdraw_limit.amount)
-            not_accuracy_part = withdraw_limit_decimal % Decimal("0.01")
-            if not_accuracy_part > Decimal("0.009999"):
-                withdraw_limit_decimal = Decimal(str(round(withdraw_limit_decimal, 2)))
-
-            bonuses = bonuses.to(to_currency)
-
-            if amount > withdraw_limit_decimal:
+            if amount > Decimal(withdraw_limit.amount).quantize(Decimal("0.01")):
                 self._errors["amount"] = [_(
                     "Maximal amount of money you can withdraw for a chosen "
                     "account is %(limit_value)s%(currency)s ") % \
-                                         {"limit_value": withdraw_limit_decimal,
+                                         {"limit_value": withdraw_limit.amount,
                                               "currency": withdraw_limit.currency.slug}]
         except:
             self._errors["account"] = [_('Cannot determine the account balance. Try again later or contact support')]
@@ -566,8 +558,15 @@ class WithdrawForm(BaseForm):
     def save(self, *args, **kwargs):
 
         res = super(WithdrawForm, self).save(*args, **kwargs)
-        last_deposit = DepositRequest.objects.filter(account=res.account).order_by('-creation_ts', )[0]
-        res.last_transaction_id = last_deposit.transaction_id
+
+        last_deposit = DepositRequest.objects.filter(
+            account__user=res.account.user,
+            is_committed=True,
+            payment_system="ecommpay",
+        ).order_by('-creation_ts', ).first()
+
+        if last_deposit:
+            res.last_transaction_id = last_deposit.transaction_id
 
         Logger(user=self.request.user, ip=self.request.META["REMOTE_ADDR"],
                event=Events.WITHDRAW_REQUEST_CREATED, content_object=res).save()

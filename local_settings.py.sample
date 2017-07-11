@@ -1,4 +1,5 @@
 # encoding: utf-8
+# Sample file for development
 from settings import DATABASES
 
 DEBUG = True
@@ -17,7 +18,47 @@ ENGINES = {
     },
 }
 
-for db in ('demo', ):
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        }
+    },
+    'formatters': {
+        'verbose': {
+            'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' + 'pathname=%(pathname)s lineno=%(lineno)s '
+                       + 'funcname=%(funcName)s %(message)s '),
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console'],
+            'level': 'WARN',
+        },
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+        'platforms': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+        'transfers': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    }
+}
+
+for db in ('demo', 'real'):
     if db in DATABASES:
         DATABASES[db]['HOST'] = '10.0.0.13'
 

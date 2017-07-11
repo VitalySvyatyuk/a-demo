@@ -19,13 +19,14 @@ def get_unsubscribe_url(email, campaign_id, language=None):
 
     signature = get_signature(email)
     domain = get_current_domain(language=language)
-    args = [signature, campaign_id, urllib.quote(email)]
+    args = [signature, urllib.quote(email)]
     is_our_client = UserProfile.objects.filter(user__email=email).exists()
+    if not is_our_client:
+        return domain + reverse('massmail_unsubscribe_email', args=args)
 
-    return domain + reverse(
-        'profile_unsubscribe' if is_our_client else 'massmail_unsubscribe_email_id',
-        args=args
-    )
+    else:
+        return domain + '/account/profile/subscriptions'
+
 
 
 def get_email_signature(email):

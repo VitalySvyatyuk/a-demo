@@ -1113,6 +1113,12 @@ msgstr "Адрес электронной почты, который вы ука
 msgid "Your e-mail successfully updated"
 msgstr "Ваш адрес электронной почты был успешно изменён"
 
+msgid "Bad file extension or size!"
+msgstr "Неверное расширение файла или его размер!"
+
+msgid "No documents uploaded!"
+msgstr "Не загружен ни один документ!"
+
 #~ msgid "Anticipated account turnover (USD)"
 #~ msgstr "Предполагаемый оборот по счету (USD)"
 

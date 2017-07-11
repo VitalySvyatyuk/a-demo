@@ -66,10 +66,6 @@ app.controller "ProfileDocumentsController", ($location, $q, $scope, $upload, Us
         url: "/api/user_document/bulk_upload"
         data: data
       .success (data, status, headers, config) ->
-        if Object.keys(data).length == 0
-          $scope.errors["all"] = 'Upload at least 1 document'
-          $scope.setGlobalLoading false
-          return
         console.log("Docs Bulk Uploaded!")
         $scope.setGlobalLoading false
         if Object.keys($scope.errors).length == 0
@@ -78,7 +74,8 @@ app.controller "ProfileDocumentsController", ($location, $q, $scope, $upload, Us
           $scope.documents.unshift new UserDocument(doc)
         resolve()
       .error (data, status, headers, config) ->
-        $scope.errors["all"] = data
         console.log("Docs Error #{status}")
+        $scope.setGlobalLoading false
+        $scope.errors["all"] = data
         resolve()
     )

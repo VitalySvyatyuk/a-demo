@@ -2,6 +2,9 @@
 
 import json
 import logging
+
+from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
+
 import settings
 import math
 
@@ -241,3 +244,56 @@ def partnership(request):
         )
         return {'result': 'OK'}
     return {'request': request}
+
+@maybe_ajax()
+def send_subscribe_email(request):
+
+    from massmail.utils import get_signature
+    from massmail.models import MailingList
+    from project.utils import get_current_domain
+
+    FOR_INVESTOR_MAIL_LIST_ID = u"Учебный центр"
+    FOR_TRADER_MAIL_LIST_ID = u"Руководство успешного трейдера"
+    EDUCATION_MAIL_LIST_ID = u"Руководство успешного инвестора"
+
+    if request.method == "POST":
+
+        mail_list_id = request.POST.get("id")
+        if not mail_list_id:
+            # trying to parse index page case
+            if request.POST.get("subscribe-form-radio") == "investor":
+                mail_list_id = FOR_INVESTOR_MAIL_LIST_ID
+            elif request.POST.get("subscribe-form-radio") == "trader":
+                mail_list_id = FOR_TRADER_MAIL_LIST_ID
+            # trying to parse education page
+            elif request.POST.get("subscribe-form-radio") == "education":
+                mail_list_id = EDUCATION_MAIL_LIST_ID
+
+        email = request.POST.get("email")
+        domain = get_current_domain()
+
+        if not email or not mail_list_id:
+            return {'result': 'NO'}
+        else:
+            # since we decide search by mail_list_name
+            try:
+                mail_list_id = MailingList.objects.get(name=mail_list_id).id
+            except (ObjectDoesNotExist, MultipleObjectsReturned):
+                log.error("Cant subscribe user for mail list with name: {}".format(request.POST.get("id")))
+                return {'result': 'NO'}
+
+        signature = get_signature(email)
+        link = domain + reverse("massmail_subscribe_id", args=(signature, email, mail_list_id))
+        email_body = _("To confirm your subscription, please click on the following link") + "\n" + link
+        email_subj = _("Please confirm subscription")
+
+        send_mail(
+            email_subj,
+            email_body,
+            settings.SERVER_EMAIL,
+            [email]
+        )
+
+        return {'result': 'OK'}
+
+

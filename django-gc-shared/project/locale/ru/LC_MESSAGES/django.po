@@ -26,7 +26,7 @@ msgid "Risk disclosure"
 msgstr "Предупреждение о рисках"
 
 msgid "Order execution policy"
-msgstr "Политика исполнения заказов"
+msgstr "Политика исполнения ордеров"
 
 #, fuzzy
 #| msgid "Partner agreement"

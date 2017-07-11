@@ -88,7 +88,7 @@ class PasswordRecoveryForm(forms.Form):
     def send_notification(self, account, password):
         """Send account password recovery email to account user"""
 
-        notification_data = {"user_name": account.user.first_name, "account": account.mt4_id, "password": password}
+        notification_data = {"user_name": account.user.first_name, "login": account._login, "account": account.mt4_id, "password": password}
         notification.send([account.user], self.notification_name, notification_data,
                           no_django_message=True)
 

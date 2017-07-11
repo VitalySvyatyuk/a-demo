@@ -908,3 +908,8 @@ msgstr "Your email is successfully updated"
 msgid "Your subscription successfully updated"
 msgstr "Your subscription is successfully updated"
 
+msgid "Bad file extension or size!"
+msgstr "Bad file extension or size!"
+
+msgid "No documents uploaded!"
+msgstr "No documents uploaded!"

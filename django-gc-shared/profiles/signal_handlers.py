@@ -10,6 +10,7 @@ from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 from friend_recommend.models import Recommendation
 from log.models import Logger, Event
 from profiles.models import UserProfile, UserDocument
+from massmail.models import CampaignType
 
 import logging
 log = logging.getLogger(__name__)
@@ -18,7 +19,13 @@ log = logging.getLogger(__name__)
 @signals.post_save(sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
-        UserProfile.objects.create(user=instance)
+        profile = UserProfile.objects.create(user=instance)
+        default_camp_types = CampaignType.objects.filter(
+            title__in=["Полезные статьи", "Новости компании",  'Обзор рынка', "Вебинары",
+                       "Webinars", "Market review", "Useful articles", "Company's news"])
+        for id in default_camp_types:
+            profile.subscription.add(id)
+        profile.save()
 
 
 @signals.post_save(sender=User)

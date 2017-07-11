@@ -421,6 +421,7 @@ SMS_BACKENDS = (
 SMS_BACKENDS_MASKS = (
 #    (r'79[18]\d+', "sms.backends.WebSMSBackend"),  # 910-919 and 980-989 are all MTS
     (r'\+?79\d+', 'sms.backends.SMSRuBackend'), # Russia through sms.ru
+    (r'\+?380\d+', 'sms.backends.SMSRuBackend'),  # Ukraine via sms.ru
     # (r'\+?[^+7]\d+', "sms.backends.PlivoSMSBackend"),  # Non-Russian numbers
 )
 

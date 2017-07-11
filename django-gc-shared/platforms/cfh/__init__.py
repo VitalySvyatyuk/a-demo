@@ -190,15 +190,17 @@ class ApiFacade(object):
         """
         return queryset_like(AbstractTrade, [])
 
+    def account_check_connect(self, account):
+        return self.client1.service.ValidateService()
+
     def account_create(self, account, initial_balance=0):
         """
         Create new account at CFH with initial_balance.
         Returns None if account already exists, else new account.
         """
         mail = account.user.email
-        login = account.user.username
+        login = account.user.username + str(account.mt4_id)
         password = create_password()
-        num = randint(0, 99999)
         log.debug("Creating cfh account for {0} with {1} {2}".format(login, initial_balance, account.currency.symbol))
         client_templates = settings.DEMO_CFH_CLIENT_TEMPLATES if account.is_demo else settings.CFH_CLIENT_TEMPLATES
         broker_id = settings.DEMO_CFH_BROKER_ID if account.is_demo else settings.CFH_BROKER_ID
@@ -209,13 +211,13 @@ class ApiFacade(object):
             resp = self.client2.service.CreateClientFromTemplate(TemplateID=client_temp,
                                                                  BrokerID=broker_id,
                                                                  ClientDisplayName=account.user.get_full_name(),
-                                                                 LoginName=login + str(num),
+                                                                 LoginName=login,
                                                                  LoginPassword=password)
             log.debug("resp=%s" % resp)
             new_id = resp['ClientAccountID']
             log.debug("new_id=%d" % new_id)
             account.mt4_id = new_id
-            account._login = login + str(num)
+            account._login = login
             if initial_balance:
                 self.account_deposit(account, initial_balance, "Initial balance")
             return password
@@ -267,7 +269,7 @@ class ApiFacade(object):
         symbol = self._symbol_for(t['InstrumentId'])
         digits = None
         cmd = self._cmd_for(t['Side'])
-        open_time = t['ExecutionDate']
+        close_time = t['ExecutionDate']
         open_price = t['Price']
         sl = None
         tp = None
@@ -278,7 +280,7 @@ class ApiFacade(object):
         commission_agent = None
         swaps = None
         close_price = None  # TODO: investigate!
-        close_time = None
+        open_time = None
         profit = None
         taxes = None
         comment = ''

@@ -196,15 +196,14 @@ class InternalTransferIssueAdmin(IssueAdmin):
                 "currency": issue.currency,
                 "mode": "manual",
             })
-            if form.is_valid():
-                form.save()
+            if form.is_valid() and form.save():
                 issue.status = "closed"
                 issue.save()
             else:
                 from itertools import chain
                 messages.error(
                     request,
-                    u"Не удалось провести заявку №%s: %s" % (issue.id, "; ".join(map(unicode, chain(*form.errors.values()))))
+                    u"Failed to process request #%s: %s" % (issue.id, "; ".join(map(unicode, chain(*form.errors.values()))))
                 )
 
 

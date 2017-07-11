@@ -47,7 +47,7 @@ class Command(BaseCommand):
                 country=indicator_country,
                 name_en=event_name_en,
                 name_ru=event_name_ru,
-                name_zh_cn=event_name_zh,
+                # name_zh_cn=event_name_zh,
                 name=event_name_en,
                 fxstreet_id=event_id
             )
@@ -163,13 +163,15 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         calendar_request_url = "http://ec.forexprostools.com/"
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:49.0) "
+                                 "Gecko/20100101 Firefox/49.0"}
 
-        ru_response = requests.get(calendar_request_url,
+        ru_response = requests.get(calendar_request_url, headers=headers,
                                    params=self.get_request_config('ru'))
         # English and chinese data is needed for adding translation to event names
-        en_response = requests.get(calendar_request_url,
+        en_response = requests.get(calendar_request_url, headers=headers,
                                    params=self.get_request_config('en'))
-        zh_response = requests.get(calendar_request_url,
+        zh_response = requests.get(calendar_request_url, headers=headers,
                                    params=self.get_request_config('zh-cn'))
 
         if ru_response.status_code != 200 or en_response.status_code != 200 or zh_response.status_code != 200:

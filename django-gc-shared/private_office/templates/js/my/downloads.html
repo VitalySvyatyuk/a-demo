@@ -13,11 +13,14 @@
                     </div>
                 </div>
                 <a href="https://download.mql5.com/cdn/web/9639/mt4/arumcapital4setup.exe" target="_blank" class="download-link icon windows"><span>{% trans "For Windows" %}</span></a>
-                <a href="#" class="download-link icon apple"><span>{% trans "For iPhone" %}</span></a>
-                <a href="#" class="download-link icon android"><span>{% trans "For Android" %}</span></a>
-                <a href="#" class="download-link icon ipad"><span>{% trans "For IPad/Tablet" %}</span></a>
+                <a href="https://download.mql5.com/cdn/mobile/mt4/ios?server=ArumCapital-Demo,ArumCapital-Live5" class="download-link icon apple" target="_blank"><span>{% trans "For iPhone" %}</span></a>
+                <a href="https://download.mql5.com/cdn/mobile/mt4/android?server=ArumCapital-Demo,ArumCapital-Live5" class="download-link icon android" target="_blank"><span>{% trans "For Android" %}</span></a>
                 <div class="footer-block">
-                    <a href="#" class="download-link"><span>{% trans "User's manual (pdf)" %}</span></a>
+                    {% if LANGUAGE_CODE == 'ru' %}
+                    <a href="/static/agreements/instruction_MAC_ru.pdf" class="download-link" target="_blank"><span>{% trans "User's manual Mac (pdf)" %}</span></a>
+                    {% else %}
+                    <a href="/static/agreements/instruction_MAC_en.pdf" class="download-link" target="_blank"><span>{% trans "User's manual Mac (pdf)" %}</span></a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -45,9 +48,9 @@
                         {% trans "ARUM.WEB" %}
                     </div>
                 </div>
-                <a href="#" class="download-link"><span>{% trans "Manual (pdf)" %}</span></a>
-                <a href="https://demo.arumcapital.eu/" target="_blank" class="download-link"><span>{% trans "Go to Demo" %}</span></a>
                 <a href="https://trade.arumcapital.eu/" target="_blank" class="download-link"><span>{% trans "Go to Real" %}</span></a>
+                <a href="https://demo.arumcapital.eu/" target="_blank" class="download-link"><span>{% trans "Go to Demo" %}</span></a>
+                <a href="#" class="download-link"><span>{% trans "Manual (pdf)" %}</span></a>
             </div>
         </div>
         <div class="columns small-3">
@@ -58,8 +61,8 @@
                         {% trans "ARUM.Invest" %}
                     </div>
                 </div>
-                <a href="#" class="download-link"><span>{% trans "MT4 signals copying advisor" %}</span></a>
-                <a href="#" class="download-link"><span>{% trans "Manual (pdf)" %}</span></a>
+                <a href="https://ramm.arumcapital.eu/account" class="download-link" target="_blank"><span>{% trans "Go to platform" %}</span></a>
+                <a href="https://ramm.arumcapital.eu/help" class="download-link" target="_blank"><span>{% trans "Help" %}</span></a>
             </div>
         </div>
     </div>

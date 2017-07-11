@@ -8,11 +8,9 @@ from django.contrib.auth.decorators import login_required
 
 from shared.generic_views import TemplateView
 
-from platforms.mt4 import api
 import issuetracker
 
 admin.autodiscover()
-api.autodiscover()
 issuetracker.autodiscover()
 
 

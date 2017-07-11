@@ -154,7 +154,7 @@ class CampaignAdminForm(forms.ModelForm):
 class CampaignAdmin(admin.ModelAdmin):
     inlines = [MessageBlockInline]
     save_as = True
-    list_display = ('name', 'sent_count', 'po_sent_count', 'creation_ts', 'is_active', 'is_sent',
+    list_display = ('name', 'sent_count', 'po_sent_count', 'creation_ts', 'is_active', 'is_sent', "hours_after_previous_campaign",
                     'open_count', 'click_count', 'unsubscribed')
     list_filter = ('creation_ts', 'is_sent', 'is_active', 'is_auto', 'send_period', 'send_once')
     readonly_fields = ('po_sent_count', '_lock', 'unsubscribed')
@@ -170,13 +170,13 @@ class CampaignAdmin(admin.ModelAdmin):
         }),
         (_("Mailing lists"), {
             'fields': ("unsubscribed", "languages", ('mailing_list', 'negative_mailing_list'),
-                       ('previous_campaigns', 'previous_campaigns_type')),
+                       ('previous_campaigns', 'previous_campaigns_type'), "hours_after_previous_campaign"),
         }),
         (_("Email and Account page"), {
             "fields": ("send_in_private", "po_sent_count", "send_email")
         }),
         (_("Schedule"), {
-            "fields": ("send_once", "send_once_datetime", "send_period", "cron")
+            "fields": ("order_weight", "send_once", "send_once_datetime", "send_period", "cron")
         }),
         (u"GA", {
             "fields": ("ga_slug",)

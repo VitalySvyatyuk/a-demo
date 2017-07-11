@@ -221,6 +221,9 @@ class queryset_like(object):
         # TODO: later
         return self
 
+    def exclude(self, **kwargs):
+        return self
+
     def __add__(self, other):
         assert isinstance(other, queryset_like)
         return queryset_like(self.model, self.iterable + other.iterable)

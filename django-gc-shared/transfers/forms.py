@@ -239,6 +239,7 @@ class InternalTransferForm(forms.ModelForm):
         bonus_amount = -1
 
         try:
+            sender.check(); recipient.check()
             log.info("Withdrawing {}".format(sender))
             sender.change_balance(-float(amount), amount_currency=currency,
                                   comment="Wdraw IT '%s'" % recipient.mt4_id, request_id=0,

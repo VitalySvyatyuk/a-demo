@@ -571,6 +571,17 @@ $(document).ready(function(){
   });
 });
 
+// Subscribe form block
+
+$(document).ready(function() {
+  $('#subscribe-form').submit(function(e) {
+    $.post('/subscribe/', $(this).serialize(), function() {
+    });
+    e.preventDefault();
+  })
+});
+
+
 // Callback request popup
 $(document).ready(function() {
   $('#callback_request-form').submit(function(e) {

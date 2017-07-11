@@ -27,9 +27,11 @@ block tabs_content
                     - trans "Training article for trading"
                 p
                     - trans "Just started to master the market? Leave your e-mail address and we will send you a chain of letters about trading and investing at FOREX."
-                form
+                form#subscribe-form
+                    - csrf_token
                     div
-                        input(type="email", placeholder="Email", required)
+                        input(type="hidden", name="subscribe-form-radio", value="education")
+                        input(type="email", placeholder="Email", required, name="email")
                         button.button
                             span.button__text
                                 - trans 'Send'

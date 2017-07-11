@@ -63,6 +63,14 @@ class ApiFacade(object):
         except ConnectionError:
             raise SSError(0, 'Connection to StrategyStore failed!')
 
+    def account_check_connect(self):
+        try:
+            resp = requests.head(self.endpoint)
+            if not resp.ok:
+                raise SSError(0, 'Connection to StrategyStore failed!')
+        except ConnectionError:
+            raise SSError(0, 'Connection to StrategyStore failed!')
+
     def account_update(self, account):
         """
         Save changed client to SS.

@@ -53,6 +53,9 @@ class ApiFacade(object):
             account.save(update_fields=['group_name'])
         return mt4user.group if mt4user else account.group_name
 
+    def account_check_connect(self, account):
+        return self.get_mt4api(account).ping()
+
     def account_change_password(self, account, password):
         log.debug("Changing password for mt4 account %d" % account.mt4_id)
         self.get_mt4api(account).change_password(account.mt4_id, password)
