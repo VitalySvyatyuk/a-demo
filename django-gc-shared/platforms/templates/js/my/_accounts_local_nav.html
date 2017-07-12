@@ -92,7 +92,7 @@
     {# Other actions #}
     <ul class="services">
       <li>
-        <a href="[[::BASE_URL]][[account.mt4_id]]/history" ng-if="!account.group.endsWith('_ss')">{% trans "Account history" %}</a>
+        <a href="[[::BASE_URL]][[account.mt4_id]]/history?account_type=[[account.platform_type]]" ng-if="!account.group.endsWith('_ss')">{% trans "Account history" %}</a>
         <a href="https://ramm.arumcapital.eu/investments" target="_blank" ng-if="account.group.endsWith('_ss')">{% trans "Account history" %}</a>
       </li>
     </ul>

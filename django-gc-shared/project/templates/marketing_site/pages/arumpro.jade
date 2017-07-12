@@ -76,12 +76,15 @@ block content
                   li
                     a(href="http://download.arumcapital.eu/demo/application/ArumProTraderDemoSetup.exe", target="_blank")
                       - trans "For demo account"
+                  li
+                    a(href="http://download.arumcapital.eu/live/application/ArumProTraderSetup.exe", target="_blank")
+                      - trans "For real account"
             if LANGUAGE_CODE == "ru"
               a.link(href="{% static 'agreements/ArumPRO_manual_-_RUSSIAN.pdf' %}" target="_blank")
                 - trans "User guide"
                 |  (pdf)
             else
-              a.link(href="{% static 'agreements/ARUMPRO_FIX_API_v._2.5.pdf' %}" target="_blank")
+              a.link(href="{% static 'agreements/ArumPRO_manual_-_ENGLISH.pdf' %}" target="_blank")
                 - trans "User guide"
                 |  (pdf)
           .col-md-6

@@ -32,11 +32,15 @@
                         {% trans "ARUM.PRO" %}
                     </div>
                 </div>
-                <a href="#" class="download-link icon windows"><span>{% trans "For real accounts" %}</span></a>
+                <a href="http://download.arumcapital.eu/live/application/ArumProTraderSetup.exe" class="download-link icon windows"><span>{% trans "For real accounts" %}</span></a>
                 <a href="http://download.arumcapital.eu/demo/application/ArumProTraderDemoSetup.exe" target="_blank" class="download-link icon windows"><span>{% trans "For demo accounts" %}</span></a>
                 <div class="footer-block">
-                    <a href="#" class="download-link"><span>{% trans "User's manual (pdf)" %}</span></a>
-                    <a href="#" class="download-link"><span>{% trans "API description for the FIX protocol (pdf)" %}</span></a>
+                    {% if LANGUAGE_CODE == "ru" %}
+                        <a href="{% static 'agreements/ArumPRO_manual_-_RUSSIAN.pdf' %}" target="_blank" class="download-link"><span>{% trans "User's manual (pdf)" %}</span></a>
+                    {% else %}
+                        <a href="{% static 'agreements/ArumPRO_manual_-_ENGLISH.pdf' %}" target="_blank" class="download-link"><span>{% trans "User's manual (pdf)" %}</span></a>
+                    {% endif %}
+                    <a href="{% static 'agreements/ARUMPRO_FIX_API_v._2.5.pdf' %}" target="_blank" class="download-link"><span>{% trans "API description for the FIX protocol (pdf)" %}</span></a>
                 </div>
             </div>
         </div>
@@ -50,7 +54,12 @@
                 </div>
                 <a href="https://trade.arumcapital.eu/" target="_blank" class="download-link"><span>{% trans "Go to Real" %}</span></a>
                 <a href="https://demo.arumcapital.eu/" target="_blank" class="download-link"><span>{% trans "Go to Demo" %}</span></a>
-                <a href="#" class="download-link"><span>{% trans "Manual (pdf)" %}</span></a>
+                {% if LANGUAGE_CODE == "ru" %}
+                    <a href="{% static 'agreements/ArumWEB_manual_-_RUSSIAN.pdf' %}" target="_blank" class="download-link"><span>{% trans "Manual (pdf)" %}</span></a>
+                {% else %}
+                    <a href="{% static 'agreements/ArumWEB_manual_-_ENGLISH.pdf' %}" target="_blank" class="download-link"><span>{% trans "Manual (pdf)" %}</span></a>
+                {% endif %}
+
             </div>
         </div>
         <div class="columns small-3">

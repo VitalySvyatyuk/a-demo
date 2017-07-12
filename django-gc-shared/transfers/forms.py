@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from decimal import Decimal
 from django import forms
 from django.conf import settings
 from django.core.exceptions import ValidationError
@@ -19,22 +19,20 @@ from platforms.types import RealIBAccountType
 from notification import models as notification
 
 import logging
-
 log = logging.getLogger(__name__)
 
-
 class InternalTransferForm(forms.ModelForm):
+
     MODE_CHOICES = (
         # ('auto', _("Transfer between your accounts")),
-        ('manual', _("Transfer to another customer")),
+       ('manual', _("Transfer to another customer")),
     )
 
     template = "payments/forms/transfer.html"
 
     sender = forms.ModelChoiceField(label=_("Account"), help_text=_("Select one of your accounts."),
                                     queryset=TradingAccount.objects.none())
-    recipient_auto = forms.ModelChoiceField(label=_("Recipient"), queryset=TradingAccount.objects.none(),
-                                            required=False)
+    recipient_auto = forms.ModelChoiceField(label=_("Recipient"), queryset=TradingAccount.objects.none(), required=False)
     recipient_manual = forms.IntegerField(label=_("Recipient"), required=False)
     mode = forms.ChoiceField(label=_("Type of transfer"),
                              widget=forms.HiddenInput, choices=MODE_CHOICES, initial="manual",
@@ -60,8 +58,7 @@ class InternalTransferForm(forms.ModelForm):
         super(InternalTransferForm, self).__init__(*args, **kwargs)
 
         if self.internal:
-            self.fields["sender"] = forms.CharField(label=_("Account"), help_text=_("Select one of your accounts."),
-                                                    max_length=100)
+            self.fields["sender"] = forms.CharField(label=_("Account"), help_text=_("Select one of your accounts."), max_length=100)
         else:
             qs = TradingAccount.objects.alive().non_demo().filter(user=self.request.user, is_deleted=False)
 
@@ -140,7 +137,7 @@ class InternalTransferForm(forms.ModelForm):
             self._errors["sender"] = [_("Error while getting allowed transfer amount for the "
                                         "chosen account. Contact the administrator.")]
             return self.cleaned_data
-        from decimal import Decimal
+
         if amount > Decimal(withdraw_limit.amount).quantize(Decimal("0.01")):
             log.warn("User asked sum greater then available ({}>{})".format(amount, withdraw_limit))
             self._errors["amount"] = [
@@ -163,8 +160,7 @@ class InternalTransferForm(forms.ModelForm):
                 self._errors[recipient_field_name] = [_("This field is required")]
                 return self.cleaned_data
             # ♿ the problem is we sent other data type when we use self.internal through admin panel
-            recipient_id = self.cleaned_data[recipient_field_name] if self.internal else self.cleaned_data[
-                recipient_field_name].mt4_id
+            recipient_id = self.cleaned_data[recipient_field_name] if self.internal else self.cleaned_data[recipient_field_name].mt4_id
             recipients = TradingAccount.objects.filter(mt4_id=recipient_id)
 
             if recipients:
@@ -199,6 +195,7 @@ class InternalTransferForm(forms.ModelForm):
             self._errors[recipient_field_name] = [_("Using the same account for both "
                                                     "recipient and sender is not allowed.")]
 
+
         self.recipient = recipient
         self.cleaned_data["recipient"] = recipient.mt4_id
 
@@ -226,9 +223,8 @@ class InternalTransferForm(forms.ModelForm):
             send_mail(
                 "New issue for internal transfer created",
                 'sender: {}, recipient: {}\namount: {}, issuetracker: {}'
-                    .format(sender, recipient, amount,
-                            'arumcapital.eu' + reverse("admin:issuetracker_internaltransferissue_change",
-                                                       args=(result.id,))),
+                    .format(sender, recipient, amount, 
+                            'arumcapital.eu' + reverse("admin:issuetracker_internaltransferissue_change", args=(result.id,))),
                 settings.SERVER_EMAIL,
                 settings.BACKOFFICE
             )
@@ -239,8 +235,7 @@ class InternalTransferForm(forms.ModelForm):
         bonus_amount = -1
 
         try:
-            sender.check();
-            recipient.check()
+            sender.check(); recipient.check()
             log.info("Withdrawing {}".format(sender))
             sender.change_balance(-float(amount), amount_currency=currency,
                                   comment="Wdraw IT '%s'" % recipient.mt4_id, request_id=0,
@@ -265,8 +260,8 @@ class InternalTransferForm(forms.ModelForm):
             msg = "During funds transfer %(from)s => %(to)s error happened. Exactly:\n\n"
 
             if withdraw_done:
-                msg += "- successful withdrawal of %(from_amount)s from %(from)s\n"
-
+                msg += "- successful withdrawal of %(from_amount)s from %(from)s\n"  
+                
                 if deposit_done:
                     msg += "- successful deposition of %(to_amount)s to %(to)s\n"
                 else:

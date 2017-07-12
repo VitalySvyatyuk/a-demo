@@ -22,8 +22,8 @@ from .exceptions import CFHError
 import logging
 
 log = logging.getLogger(__name__)
-CACHE_TIMEOUT = 3 * 60
-
+CACHE_TIMEOUT = 30
+HTTP_TIMEOUT = 5
 
 # noinspection PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic,
 # PyMethodMayBeStatic
@@ -41,9 +41,9 @@ class ApiFacade(object):
         log.debug("Enpoints: %s, %s" % (broker_endpoint, clientadmin_endpoint))
         try:
             self.client1 = Client(broker_endpoint,
-                                  transport=Transport(http_auth=(broker_login, broker_password)))
+                                  transport=Transport(timeout=HTTP_TIMEOUT, http_auth=(broker_login, broker_password)))
             self.client2 = Client(clientadmin_endpoint,
-                                  transport=Transport(http_auth=(client_login, client_password)))
+                                  transport=Transport(timeout=HTTP_TIMEOUT, http_auth=(client_login, client_password)))
         except ConnectionError:
             raise CFHError(500, 'Cant connect to endpoint broker_endpoint: {}, client_admin_endpoint: {}'.format(
                 broker_endpoint, clientadmin_endpoint)

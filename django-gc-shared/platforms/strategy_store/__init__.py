@@ -18,7 +18,8 @@ from shared.decorators import cached_func
 
 import logging
 log = logging.getLogger(__name__)
-CACHE_TIMEOUT = 3*60
+CACHE_TIMEOUT = 30
+HTTP_TIMEOUT = 5
 
 
 class ApiFacade(object):
@@ -38,7 +39,7 @@ class ApiFacade(object):
         self.endpoint = endpoint
         self.login = login
         self.passwd = password
-        self.timeout = 5
+        self.timeout = HTTP_TIMEOUT
 
     def make_request(self, func, path, params):
         """

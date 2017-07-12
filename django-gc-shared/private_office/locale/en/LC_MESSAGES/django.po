@@ -2650,9 +2650,9 @@ msgid "Wide range of instruments"
 msgstr "Wide range of trading<br>instruments"
 
 msgid ""
-"More than a ninety CFD-contracts on currency, metals, energies, stocks, "
+"More than a hundred CFD-contracts on currency, metals, energies, stocks, "
 "indexes and options."
-msgstr "90+ trading instruments"
+msgstr "100+ trading instruments"
 
 msgid "Broken lots"
 msgstr "Trade with Micro-lots"

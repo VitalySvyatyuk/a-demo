@@ -62,7 +62,7 @@ var app = angular.module('CRMDashboard', ['ngRoute', 'highcharts-ng'])
     return function(date) {
         if(!date || date == '-')
             return '-';
-        return moment(date).format('LLLL');
+        return moment(date).format('LLLL z');
     };
 })
 

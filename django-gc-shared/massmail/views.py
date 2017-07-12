@@ -28,22 +28,27 @@ def subscribe(request, email, signature, mail_list_id, first_name="", last_name=
     except (ObjectDoesNotExist, ValueError):
         raise Http404
 
-    if request.user:
+    if not request.user.is_anonymous():
        first_name = request.user.first_name
        last_name = request.user.last_name
 
     elif not first_name or not last_name:
-        usr = User.objects.get(email=email)
-        if usr:
+        try:
+            usr = User.objects.get(email=email)
             last_name = usr.last_name
             first_name = usr.first_name
+        except ObjectDoesNotExist:
+            # we dont know user last and first name here
+            first_name = " "
+            last_name = " "
+
 
     sub = Subscribed(email=email, first_name=first_name, last_name=last_name)
     ml.subscribers.add(sub)
     ml.subscribers_count += 1
     ml.save()
 
-    if request.user:
+    if not request.user.is_anonymous():
         return redirect('/account/profile/subscriptions')
     else:
         return redirect('/')

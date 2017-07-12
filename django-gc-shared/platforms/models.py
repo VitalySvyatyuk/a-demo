@@ -16,6 +16,7 @@ from log.models import Event
 from shared.models import CustomManagerMixin
 from shared.utils import upload_to
 from project.utils import queryset_like
+from shared.werkzeug_utils import cached_property
 
 import re, sys
 
@@ -237,21 +238,21 @@ class TradingAccount(models.Model):
 
         return self.api.account_available_leverages(self)
 
-    @property
+    @cached_property
     def is_demo(self):
         # type: () -> bool
         """Returns True if account is a demo and False otherwise."""
         log.debug("demo_regex=%s" % demo_regex())
         return bool(re.compile(demo_regex()).match(self.group_name or ""))
 
-    @property
+    @cached_property
     def is_ib(self):
         # type: () -> bool
         # Should be left as-is, and then refactored into new IB system
         """Returns True if account is an IB (partner) account and False otherwise."""
         return self.group_name and 'real_ib' in self.group_name
 
-    @property
+    @cached_property
     def is_micro(self):
         # type: () -> bool
         """
@@ -270,7 +271,7 @@ class TradingAccount(models.Model):
         else:
             return unicode(self.mt4_id)
 
-    @property
+    @cached_property
     def group(self):
         # type: () ->  str
         """
@@ -284,7 +285,7 @@ class TradingAccount(models.Model):
         except (CFHError, SSError):
             return None
 
-    @property
+    @cached_property
     def api(self):
         # type: () -> object
         """
@@ -400,7 +401,7 @@ class TradingAccount(models.Model):
         else:
             return self.api.account_withdraw(self, abs(amount), comment=comment, **kwargs)
 
-    @property
+    @cached_property
     def agent_clients(self):
         # type: () -> List[User]
         """
@@ -427,7 +428,7 @@ class TradingAccount(models.Model):
             trades = trades.filter(close_time__isnull=True)
         return trades[:count_limit or sys.maxint]
 
-    @property
+    @cached_property
     def no_inout(self):
         # type: () -> bool
         """

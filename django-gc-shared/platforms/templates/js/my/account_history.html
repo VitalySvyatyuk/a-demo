@@ -28,7 +28,7 @@
     </div>
 
     <dl class="tabs yellow-tabs">
-        <dd class="opened_tab_lnk" ng-class="{active: tradesMode == 'opened'}">
+        <dd class="opened_tab_lnk" ng-class="{active: tradesMode == 'opened'}" ng-if="accountType != 'cfh'">
             <a ng-click="switchTradesMode('opened')">{% trans "Open orders" %}</a>
         </dd>
         <dd class="closed_tab_lnk" ng-class="{active: tradesMode == 'closed'}">

@@ -110,7 +110,7 @@
               <div class="select-wrapper">
                 <select
                   ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.nationality"
-                  ng-options="c.id as c.name for c in countries | orderBy:'name'">
+                  ng-options="c.id as c.name for c in countries">
                 </select>
               </div>
               <div
@@ -131,7 +131,7 @@
               <div class="select-wrapper">
                 <select required="required"
                   ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.tax_residence"
-                  ng-options="c.id as c.name for c in countries | orderBy:'name'">
+                  ng-options="c.id as c.name for c in countries">
                 </select>
               </div>
               <div
@@ -291,7 +291,7 @@
               <div class="select-wrapper">
                 <select
                   ng-disabled=" user.profile.status_info.sended_docs || !user.profile.email_verified" ng-model="user.profile.country"
-                  ng-options="c.id as c.name for c in countries | orderBy:'name'"
+                  ng-options="c.id as c.name for c in countries"
                   ng-change="selectFirstRegion()">
                 </select>
               </div>
