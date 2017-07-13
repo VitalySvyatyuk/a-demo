@@ -8,7 +8,7 @@ from annoying.decorators import render_to
 from dateutil.relativedelta import relativedelta
 from django.core.cache import cache
 from django.utils.translation import get_language
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 
 from contract_specs.models import (
     InstrumentsByGroup, Instruments, Calculator,
@@ -178,8 +178,10 @@ def specification_details(request, pk):
     }
 
 
-@render_to('contract_specs/trading-calculator.jade')
+# @render_to('contract_specs/trading-calculator.jade')
+# def calculator(request):
+#     data = Calculator.get_data()
+#     context = {'data': json.dumps(data[0]), "exchange_rates": json.dumps(data[1])}
+#     return context
 def calculator(request):
-    data = Calculator.get_data()
-    context = {'data': json.dumps(data[0]), "exchange_rates": json.dumps(data[1])}
-    return context
+    return redirect('/')

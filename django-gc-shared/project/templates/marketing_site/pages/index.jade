@@ -27,7 +27,7 @@ block content
             button.slider_arrow.slider_arrow--left.slider_jumbotron__arrow.slider_jumbotron__arrow--left.js-slider-prev-arrow(type="button")
             button.slider_arrow.slider_arrow--right.slider_jumbotron__arrow.slider_jumbotron__arrow--right.js-slider-next-arrow(type="button")
         #frontpage-main-slider.slider_jumbotron__content
-            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--mac.jpg' %})")
+            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/Carousel_1.jpg' %})")
                 .container
                     .slider_jumbotron__text_box
                         h2.slider_jumbotron__item__title
@@ -45,7 +45,7 @@ block content
                                 span.button__text
                                     - trans "Start trading"
                         {% endif %}
-            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--flag.jpg' %});")
+            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/Carousel_2.jpg' %});")
                 .container
                     .slider_jumbotron__text_box
                         h2.slider_jumbotron__item__title
@@ -63,7 +63,7 @@ block content
                                 span.button__text
                                     - trans "Start trading"
                         {% endif %}
-            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--hands.jpg' %});")
+            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/Carousel_3.jpg' %});")
                 .container
                     .slider_jumbotron__text_box
                         h2.slider_jumbotron__item__title
@@ -81,12 +81,12 @@ block content
                                 span.button__text
                                     - trans "Start trading"
                         {% endif %}
-            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/bg--ipad.jpg' %});")
+            .slider_jumbotron__item(style="background-image: url({% static 'img/marketing-site/bg/Carousel_4.jpg' %});")
                 .container
                     .slider_jumbotron__text_box
-                        h2.slider_jumbotron__item__title.slider_jumbotron__item__title--white
+                        h2.slider_jumbotron__item__title
                             - trans "Investment under control"
-                        p.slider_jumbotron__item__text.slider_jumbotron__item__text--white
+                        p.slider_jumbotron__item__text
                             - trans "Track and copy sophisticated traders and enjoy certain return vs risk. Risk management takes the side of the investor."
                         {% if LANGUAGE_CODE == 'ru' %}
                         div.risk-hidden-ru
@@ -144,7 +144,7 @@ block content
                         | ECN{% endblocktrans %}
                 .slider_jumbotron__features__item
                     span.slider_jumbotron__features__number
-                        | 110+
+                        | 90+
                     span.slider_jumbotron__features__item_text
                         | {% blocktrans %}Trading
                         br
@@ -381,6 +381,8 @@ block content
                                         td.invest__cell
                                             span.invest__cell_value(ng-bind="d.deal + 'M'")
                                                 | 1M
+                    p
+                        - trans "*The present animated image of the Market Depth demonstrates the working principle of the corresponding module of the ARUM.PRO platform and contains non-actual prices"
                 .col-lg-5.col-lg-offset-1.col-xs-12
                     h2.page_title
                         - trans "Details of the true ECN-volume"
