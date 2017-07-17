@@ -198,8 +198,8 @@ class DepositForm(BaseForm):
         _("Attention! Specify amount on your account after deduction of the system's charge"))
     )
 
-    commision = forms.CharField(label="Comission", required=False)
-    credited = forms.CharField(label="Will be credited", required=False)
+    commision = forms.CharField(label=_('Comission'), required=False)
+    credited = forms.CharField(label=_('Will be credited'), required=False)
 
     commission_rate = Decimal(0)
     fixed_commision = 0
@@ -411,8 +411,8 @@ class WithdrawForm(BaseForm):
     # Override this and set (AMOUNT, CURRENCY) if needed
     MIN_AMOUNT = None
 
-    commision = forms.CharField(label="Comission", required=False)
-    credited = forms.CharField(label="Will be credited", required=False)
+    commision = forms.CharField(label=_('Comission'), required=False)
+    credited = forms.CharField(label=_('Will be credited'), required=False)
 
     commission_rate = Decimal(0)
     fixed_commision = 0

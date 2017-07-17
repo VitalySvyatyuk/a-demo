@@ -20,6 +20,7 @@ block tabs_content
                 span.button__text
                     - trans "Ok"
     div.benefits__info.js-tab-content.state-visible
+      {% if not user.is_authenticated %}
       .subscribe-form
         .container
             .row
@@ -35,6 +36,7 @@ block tabs_content
                         button.button
                             span.button__text
                                 - trans 'Send'
+      {% endif %}
       .education-terms
         for question_group in questions_list
             .education-terms-questions

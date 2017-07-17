@@ -207,6 +207,7 @@ block content
                 .liquidity__item__title
                     a.link(href="{% url 'ecn' %}")
                         - trans "Liquidity providers"
+    {% if not user.is_authenticated %}
     .subscribe-form
         .container
             .row
@@ -231,6 +232,7 @@ block content
                         button.button
                             span.button__text
                                 - trans 'Send'
+    {% endif %}
     .platforms
         .platforms__variants_box
             .platforms__variant.platforms__variant--right(style="background-image: url({% static 'img/marketing-site/bg/bg--imac-01.png' %})")

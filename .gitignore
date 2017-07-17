@@ -58,5 +58,4 @@ gc.sublime*
 .codeintel/config
 django-gc-shared/referral/static/banners/
 _version.v
-manage.py
 *.log
