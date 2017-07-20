@@ -51,7 +51,7 @@ def subscribe(request, email, signature, mail_list_id, first_name="", last_name=
     if not request.user.is_anonymous():
         return redirect('/account/profile/subscriptions')
     else:
-        return redirect('/')
+        return redirect('subscribed')
 
 
 

@@ -1,82 +1,105 @@
 {% load staticfiles inbox i18n %}
 {% load mt4_tags %}
+
 <div class="stocks-container">
 
     <h1 class="offset-top-35 offset-bottom-35">{% trans "Create account" %}</h1>
 
-    <div class="row offset-bottom-55" equalize>
-        <div class="columns small-4">
+    <div class="tabs-content">
+        <div class="row offset-bottom-55" equalize>
+            <div class="columns small-4">
+                <div class="create-account-item po-white-block">
+                    <div class="header-block">
+                        <div class="logo mt4"></div>
+                        <div class="header">
+                            ECN.MT
+                        </div>
+                    </div>
+                    <div class="content" equalize-me>
+                        {% trans "Deep ECN liquidity and excellent execution on a popular trading platform MetaTrader4" %}
+                    </div>
+                    <div class="footer-block">
+                        <div>
+                            <a href="{% url 'mt4_process_create_account' 'demoARM' %}" class="button medium inverted" data-reveal-form>
+                                {% trans "Demo account" %}
+                                <span class="desc">{% trans "No investments" %}</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="{% url 'mt4_process_create_account' 'ARM_MT4_Live' %}" class="button medium" data-reveal-form>
+                                {% trans "Live account" %}
+                                <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "" %}
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns small-4">
+                <div class="create-account-item po-white-block">
+                    <div class="header-block">
+                        <div class="logo pro half"></div>
+                        <div class="logo web half"></div>
+                        <div class="header">
+                            ECN.PRO
+                        </div>
+                    </div>
+                    <div class="content" equalize-me>
+                        {% trans "ARUM.PRO professional platform and its browser version ARUM.WEB" %}
+                    </div>
+                    <div class="footer-block">
+                        <div>
+                            <a href="{% url 'mt4_process_create_account' 'demostandard_cfh' %}" class="button medium inverted" data-reveal-form>
+                                {% trans "Demo account" %}
+                                <span class="desc">{% trans "No investments" %}</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="{% url 'mt4_process_create_account' 'realstandard_cfh' %}" class="button medium" data-reveal-form>
+                                {% trans "Live account" %}
+                                <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "cfh" %}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns small-4">
+                <div class="create-account-item po-white-block">
+                    <div class="header-block">
+                        <div class="logo invest"></div>
+                        <div class="header">
+                            ECN.Invest
+                        </div>
+                    </div>
+                    <div class="content" equalize-me>
+                        {% trans "Single account for trading as a trader or as an investor in the investment system ARUM.Invest" %}
+                    </div>
+                    <div class="footer-block">
+                        <div>
+                            <a href="{% url 'mt4_process_create_account' 'realstandard_ss' %}" class="button medium" data-reveal-form>
+                                {% trans "Live account" %}
+                                <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "ss" %}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns small-4" ng-show="user.profile.is_partner">
             <div class="create-account-item po-white-block">
                 <div class="header-block">
                     <div class="logo mt4"></div>
                     <div class="header">
-                        ECN.MT
+                        ECN.Partner
                     </div>
                 </div>
                 <div class="content" equalize-me>
-                    {% trans "Deep ECN liquidity and excellent execution on a popular trading platform MetaTrader4" %}
+                    {% trans "Become our partner NOW! Make money fast!" %}
                 </div>
                 <div class="footer-block">
                     <div>
-                        <a href="{% url 'mt4_process_create_account' 'demoARM' %}" class="button medium inverted" data-reveal-form>
-                            {% trans "Demo account" %}
-                            <span class="desc">{% trans "No investments" %}</span>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="{% url 'mt4_process_create_account' 'ARM_MT4_Live' %}" class="button medium" data-reveal-form>
-                            {% trans "Live account" %}
-                            <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "" %}
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="columns small-4">
-            <div class="create-account-item po-white-block">
-                <div class="header-block">
-                    <div class="logo pro half"></div>
-                    <div class="logo web half"></div>
-                    <div class="header">
-                        ECN.PRO
-                    </div>
-                </div>
-                <div class="content" equalize-me>
-                    {% trans "ARUM.PRO professional platform and its browser version ARUM.WEB" %}
-                </div>
-                <div class="footer-block">
-                    <div>
-                        <a href="{% url 'mt4_process_create_account' 'demostandard_cfh' %}" class="button medium inverted" data-reveal-form>
-                            {% trans "Demo account" %}
-                            <span class="desc">{% trans "No investments" %}</span>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="{% url 'mt4_process_create_account' 'realstandard_cfh' %}" class="button medium" data-reveal-form>
-                            {% trans "Live account" %}
-                            <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "cfh" %}</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="columns small-4">
-            <div class="create-account-item po-white-block">
-                <div class="header-block">
-                    <div class="logo invest"></div>
-                    <div class="header">
-                        ECN.Invest
-                    </div>
-                </div>
-                <div class="content" equalize-me>
-                    {% trans "Single account for trading as a trader or as an investor in the investment system ARUM.Invest" %}
-                </div>
-                <div class="footer-block">
-                    <div>
-                        <a href="{% url 'mt4_process_create_account' 'realstandard_ss' %}" class="button medium" data-reveal-form>
-                            {% trans "Live account" %}
-                            <span class="desc">{% blocktrans %}Min. deposit of ${% endblocktrans%}{% min_deposit "ss" %}</span>
+                        <a href="{% url 'mt4_process_create_account' 'ARM_MT4_Agents' %}" class="button medium" data-reveal-form>
+                            {% trans "Partner account" %}
                         </a>
                     </div>
                 </div>

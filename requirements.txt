@@ -23,6 +23,7 @@ python-social-auth==0.2.19
 sorl-thumbnail==11.12.1b
 hamlpy==0.82.2
 django-polymorphic-tree==1.2.5
+bleach==2.0.0
 
 # DB connectors
 psycopg2==2.6.2

@@ -165,7 +165,7 @@ RealIBAccountType = AccountType(
     leverage_choices=(1, ),
     is_ib_account=True,
     agreements=['real_ib_partner'],
-    _account_form='platforms.forms.RealIBForm',
+    _account_form='platforms.mt4.forms.Mt4RealIBForm',
     max_per_user=1,
 )
 

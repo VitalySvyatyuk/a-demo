@@ -259,7 +259,7 @@ class RestoreFromArchiveIssue(GenericIssue):
 class UserIssue(GenericIssue):
     notifications = {
         'on_create': ('assignee', 'author'),
-        'on_change': ('assignee', 'author'),
+        # 'on_change': ('assignee', 'author'),
         'on_complete': ('author',),
         'on_comment': ('author', 'assignee')
     }

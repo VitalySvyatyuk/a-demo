@@ -264,6 +264,9 @@ class Mt4RealIBForm(Mt4AccountForm):
 
     @transaction.atomic
     def save(self, profile=None, partner_api_id=None):
-        return super(Mt4RealIBForm, self).save(profile, async=False, partner_api_id=partner_api_id)
+        profile = profile or self.request.user.profile
+        if not profile.is_partner:
+            raise ValidationError("User must be partner!")
+        return super(Mt4RealIBForm, self).save(profile, partner_api_id=partner_api_id)
 
     save.async = False
