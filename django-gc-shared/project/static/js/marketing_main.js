@@ -612,11 +612,18 @@ function Selected(a) {
 // Requset form on partnership page
 $(document).ready(function(){
   $('.subscribe-form form').submit(function(e) {
-      $('#success-subscribe-overlay').show();
+    $('#success-subscribe-overlay').show();
     e.preventDefault();
   });
   $( "#success-subscribe-send button" ).click(function() {
     $('#success-subscribe-overlay').fadeOut();
     $('.subscribe-form form')[0].reset();
   });
-});
+  $(".subscribe-form-checkbox").on("change", function () {
+    if (!$(".subscribe-form-checkbox:checked").length)
+      $("button.button").prop("disabled", "disabled");
+    else
+      $("button.button").removeAttr("disabled");
+  });
+})
+

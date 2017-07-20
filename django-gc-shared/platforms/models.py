@@ -65,7 +65,7 @@ class TradingAccountQueryset(models.query.QuerySet):
         ###############################################################################
 
     def trading(self):
-        return self.exclude(group_name__startswith='real_ib')
+        return self.exclude(group_name__startswith='ARM_MT4_Agents')
 
     def real_accounts_for_forex(self):
         return self.filter(group_name__iregex=real_accounts_for_forex_regex())
@@ -74,7 +74,7 @@ class TradingAccountQueryset(models.query.QuerySet):
         return self.filter(group_name__iregex=RealMicroAccountType.regex.pattern)
 
     def real_ib(self):
-        return self.filter(group_name__startswith='real_ib')
+        return self.filter(group_name__startswith='ARM_MT4_Agents')
 
     def realstd(self):
         return self.filter(group_name__iregex=StandardAccountType.regex.pattern)

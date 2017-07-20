@@ -241,22 +241,22 @@
 				margin-right: 60px;
 			}
 		}
-		.subscribe-form-radio {
+		.subscribe-form-checkbox {
 			display: none;
 		}
-		.radio-custom {
+		.checkbox-custom {
 			width: 20px;
 			height: 20px;
 			border: 1px solid #365160;
 			position: relative;
 			margin-right: 10px;
 		}
-		.radio-custom,
+		.checkbox-custom,
 		.label {
 			display: inline-block;
 			vertical-align: middle;
 		}
-		.subscribe-form-radio:checked + .radio-custom::before {
+		.subscribe-form-checkbox:checked + .checkbox-custom::before {
 			content: "";
 			display: block;
 			position: absolute;

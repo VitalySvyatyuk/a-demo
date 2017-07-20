@@ -49,9 +49,10 @@ class ReportViewSet(viewsets.ReadOnlyModelViewSet):
     def get_current_result(self, request):
         dates_range = [date.today().replace(day=1), date.today()]
         ib_acc = request.user.accounts.real_ib().first()
-        if not ib_acc:
+        if not ib_acc or ib_acc.platform_type != 'mt4':
             return Response()
-        reward_this_month = AbstractTrade.objects.filter(login=ib_acc.mt4_id, cmd=6, symbol="IBPayment",
+        from platforms.mt4 import RealTrade
+        reward_this_month = RealTrade.objects.filter(login=ib_acc.mt4_id, cmd=6, symbol="IBPayment",
                                                      close_time__range=dates_range)\
                                     .aggregate(sum=Sum('profit'))['sum'] or 0
         if ib_acc:

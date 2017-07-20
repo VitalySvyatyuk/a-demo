@@ -33,8 +33,6 @@ class ProfileRegistrationForm(forms.Form):
                                     help_text=_('If you don\'t know what it is, leave empty'),
                                     validators=[is_partner_account])
     is_adult = forms.BooleanField(label=_("I am over 18 years old"), required=True)
-    subscribe = forms.BooleanField(label=_(u'Subscribe to get company news (no more than 3 times at week).'),
-                                   required=False, initial=True)
     registered_from = forms.CharField(widget=forms.HiddenInput(), required=False)
 
     def __init__(self, *args, **kwargs):
@@ -104,8 +102,6 @@ class ShortLandingProfileRegistrationForm(forms.Form):
     email = forms.EmailField(label=_("E-mail"),
                              error_messages={"invalid": _(u"Enter a valid Email address")}, )
     is_adult = forms.BooleanField(label=_("I am over 18 years old"), required=True)
-    subscribe = forms.BooleanField(label=_(u'Subscribe to get company news (no more than 3 times at week).'),
-                                   required=False, initial=True)
     registered_from = forms.CharField(widget=forms.HiddenInput(), required=False)
 
     def __init__(self, *args, **kwargs):

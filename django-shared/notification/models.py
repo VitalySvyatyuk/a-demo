@@ -1,6 +1,7 @@
 # coding: utf-8
 from email.header import Header
 from email.mime.image import MIMEImage
+import bleach
 
 from django import template
 from django.conf import settings
@@ -12,6 +13,7 @@ from django.template.base import TemplateDoesNotExist
 from django.template.defaultfilters import linebreaksbr, urlize, striptags
 from django.template.loader import render_to_string
 from django.utils import translation
+from django.utils.safestring import mark_safe
 from django.utils.translation import get_language, activate
 from django.utils.translation import ugettext_lazy as _
 
@@ -368,7 +370,11 @@ def send(users, label, extra_context=None, display_subject_prefix=False, no_djan
             activate(language)
             message_subject = Template(notification.email_subject).render(context)
             message_html = Template(notification.html).render(context)
-            message_text = striptags(message_html)
+
+            # strip all tags exclude bleach.sanitizer.ALLOWED_TAGS
+            # a tags allowed
+            message_text = mark_safe(bleach.clean(message_html, strip=True))
+            
             if notification.duplicate_by_sms and notification.text:
                 sms_text = Template(notification.text).render(context)
         else:

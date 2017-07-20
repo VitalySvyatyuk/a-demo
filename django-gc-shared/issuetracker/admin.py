@@ -12,6 +12,7 @@ from shared.admin import with_link, BaseAdmin, short_descr
 
 from issuetracker.models import *
 from profiles.models import UserProfile
+from notification import models as notification
 
 # Inlines.
 from shared.utils import descr
@@ -205,6 +206,13 @@ class InternalTransferIssueAdmin(IssueAdmin):
                     request,
                     u"Failed to process request #%s: %s" % (issue.id, "; ".join(map(unicode, chain(*form.errors.values()))))
                 )
+
+    @descr(_("Mark select issues as rejected"))
+    def make_rejected(self, request, queryset):
+        super(self.__class__, self).make_rejected(request, queryset)
+        for q in queryset:
+            notification.send([q.sender.user], 'internaltransfer_reject')
+
 
 
 class CheckOnChargebackIssueAdmin(IssueAdmin):

@@ -142,6 +142,13 @@ def get_agreements():
 
             "order": 120,
         },
+        'real_ib_partner_ru': {
+            "label": _(u'Partner agreement'),
+
+            "default": '/static/agreements/Partner_Agreement.pdf',
+
+            "order": 120,
+        },
     }
     return AGREEMENTS
 

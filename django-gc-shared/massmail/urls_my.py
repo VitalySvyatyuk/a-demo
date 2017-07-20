@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.conf.urls import *
-
+from shared.generic_views import TemplateView
 
 urlpatterns = patterns('massmail.views',
     url('^unsubscribe_user/(?P<signature>\w+)/(?P<campaign_id>\d+)/(?P<email>.+)$', 'unsubscribe',
@@ -18,5 +18,6 @@ urlpatterns = patterns('massmail.views',
     url('^resubscribe/(?P<email>[^/]+)/(?P<campaign_id>\d+)/$', 'resubscribe',
         name='massmail_resubscribe_id'),
     url(r"^subscribe/(?P<signature>\w+)/(?P<email>[^/]+)/(?P<mail_list_id>\d+)/$", "subscribe",
-        name="massmail_subscribe_id")
+        name="massmail_subscribe_id"),
+    url(r"subscribed", TemplateView.as_view(template_name='massmail/subscribed.html'), name="subscribed")
 )

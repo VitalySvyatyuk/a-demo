@@ -218,13 +218,13 @@ block content
                 form#subscribe-form
                     - csrf_token
                     label
-                        input(type="radio", class="subscribe-form-radio", name="subscribe-form-radio", required, checked, value="trader")
-                        span(class="radio-custom")
+                        input(type="checkbox", class="subscribe-form-checkbox", name="subscribe-form-checkbox", checked, value="trader")
+                        span(class="checkbox-custom")
                         span(class="label")
                         - trans "For traders"
                     label
-                        input(type="radio", class="subscribe-form-radio", name="subscribe-form-radio", required, value="investor")
-                        span(class="radio-custom")
+                        input(type="checkbox", class="subscribe-form-checkbox", name="subscribe-form-checkbox", value="investor")
+                        span(class="checkbox-custom")
                         span(class="label")
                             - trans "For investors"
                     div

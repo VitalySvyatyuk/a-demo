@@ -1,6 +1,6 @@
 import re
-import xmlrpclib
 import logging
+import xmlrpclib, httplib
 
 from django.conf import settings
 from platforms.exceptions import PlatformError
@@ -9,8 +9,23 @@ from platforms.exceptions import PlatformError
 
 log = logging.getLogger(__name__)
 
+
 class MT4Exception(PlatformError):
     pass
+
+
+# Custom transport, cause xmlrpclib doesn't have timeouts out of the box
+class TimeoutTransport(xmlrpclib.Transport):
+
+    def __init__(self, timeout):
+        xmlrpclib.Transport.__init__(self)
+        self.timeout = timeout
+
+    def make_connection(self, host):
+        h = httplib.HTTPConnection(host, timeout=self.timeout)
+        return h
+
+HTTP_TIMEOUT = 5
 
 
 class RemoteMT4Manager(object):
@@ -19,7 +34,8 @@ class RemoteMT4Manager(object):
         server, port = settings.MT4_MANAGER_SERVER_ADDRESS
         log.info("Server: {}:{}".format(server, port))
         log.debug("Connection details: {}".format(settings.MT4_API_ENGINES[engine]))
-        self.engine = xmlrpclib.ServerProxy("http://%s:%s/" % (server, port), allow_none=True)
+        self.engine = xmlrpclib.ServerProxy("http://%s:%s/" % (server, port), allow_none=True,
+                                            transport=TimeoutTransport(HTTP_TIMEOUT))
         self.mt4_connection_details = settings.MT4_API_ENGINES[engine]
 
     def _check_password_requirement(self, password):
@@ -69,7 +85,7 @@ class RemoteMT4Manager(object):
         return self._handle_fault("ping")
 
     def create_account(self, group, password, leverage, name, login=0,
-        agent_account=0, password_phone="", enable=True,
+                       agent_account=0, password_phone="", enable=True,
                        read_only=False, country="", state="", city="", address="", email="", phone=""):
         log.info("Creating new user in {}".format(group))
         log.debug("Params: {}".format(locals()))

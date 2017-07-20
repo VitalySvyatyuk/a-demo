@@ -770,7 +770,7 @@ class WithdrawRequest(BaseRequest):
     def is_chargable_data(self):
         withdraw_limit, bonuses = self.payment_system.WithdrawForm.get_withdraw_limit_data(self.account, include_pending_requests=False)
         withdraw_limit = withdraw_limit.to(self.currency)
-        return self.amount <= withdraw_limit.amount, withdraw_limit
+        return self.amount <= Decimal(withdraw_limit.amount).quantize(Decimal("0.01")), withdraw_limit
 
     @property
     def status(self):

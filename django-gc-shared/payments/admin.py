@@ -2,6 +2,7 @@
 
 import json
 
+from decimal import Decimal
 from django import forms
 from django.conf import settings
 from django.contrib import admin
@@ -150,7 +151,7 @@ class DepositRequestAdmin(BaseAdmin):
         return obj.is_committed
 
     def has_add_permission(self, request):
-        return True if request.user.has_perm("depositrequest_full_access") else False
+        return True if request.user.has_perm("payments.add_depositrequest") else False
 
     def add_view(self, request, form_url='', extra_context=None):
 
@@ -166,7 +167,7 @@ class DepositRequestAdmin(BaseAdmin):
                 messages.add_message(request, messages.ERROR, u"MT4 ID has not found")
                 return redirect("/my/admin/payments/depositrequest/add")
 
-            amount = int(request.POST["amount"])
+            amount = Decimal(request.POST["amount"].replace(',', '.'))
             currency = request.POST["currency"]
             obj = DepositRequest(account=account, payment_system="bankusd", amount=amount, currency=currency)
             obj.save()

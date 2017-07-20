@@ -19,6 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
+msgid "Confirm subscriptions to articles"
+msgstr "Подтвердите подписку на получение статей"
+
+msgid "Hello! In order to confirm your email, please click here"
+msgstr "Здравствуйте! Для того, чтобы подтвердить свой email, пожалуйста, перейдите по ссылке"
+
 msgid "*The present animated image of the Market Depth demonstrates the working principle of the corresponding module of the ARUM.PRO platform and contains non-actual prices"
 msgstr "*Настоящее анимированное изображение Стакана ликвидности демонстрирует принцип работы соответсвующего модуля платформы ARUM.PRO и не содержит актуальных значений"
 
