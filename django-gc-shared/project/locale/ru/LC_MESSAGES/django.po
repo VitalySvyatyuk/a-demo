@@ -1361,7 +1361,7 @@ msgid "The accuracy of copying does not depend on the amount of investment"
 msgstr "Точность копирования стратегии не зависит от суммы инвестиции"
 
 msgid "Risk control is embedded in the trading and does not allow the trader to exceed the weekly loss limits"
-msgstr "Контроль рисков встраивается в торговлю трейдеров и не даёт им возможности превысить недельные и дневные лимиты потерь"
+msgstr "Контроль рисков встраивается в торговлю трейдеров и не даёт им возможности превысить недельные лимиты потерь"
 
 msgid "Fair commission structure — investors pay only when they get profit"
 msgstr "Справедливая оплата — инвесторы платят, только когда зарабатывают"
