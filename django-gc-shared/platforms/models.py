@@ -250,7 +250,7 @@ class TradingAccount(models.Model):
         # type: () -> bool
         # Should be left as-is, and then refactored into new IB system
         """Returns True if account is an IB (partner) account and False otherwise."""
-        return self.group_name and 'real_ib' in self.group_name
+        return self.group_name and 'ARM_MT4_Agents' in self.group_name
 
     @cached_property
     def is_micro(self):

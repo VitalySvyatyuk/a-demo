@@ -63,17 +63,6 @@ def possible_managers_for(profile):
             # force only partners managers, not ours
             return managers, True
 
-        # if we can't find office, but it is still an office/partner code
-        # attach to partnership head
-
-        # OK I'm too lazy 236027 is Indonesia
-        if profile.agent_code != 236027 and is_office_code(profile.agent_code):
-            # Hall of Fame?
-            # 35161 - usov/gusev
-            # 49083 - shuvalov
-            # 87328 - glezeris
-            usr = User.objects.get(id=87328, is_active=True)
-            return [usr.crm_manager], True
 
     # OUR OFFICE by STATE
     if profile.state:

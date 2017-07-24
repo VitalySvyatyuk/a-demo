@@ -24,6 +24,7 @@ from django.db import models
 from django.db.models import QuerySet
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
+from payments.models import DepositRequest
 from platforms.models import TradingAccount
 from platforms.mt4.external.models_users import RealUser
 
@@ -237,7 +238,9 @@ class MailingList(models.Model):
         result = {}
         if not self.query:
             return result
-        users = eval(self.query, {}, {'User': User, 'datetime': datetime_module, 'Q': models.Q, "TradingAccount": TradingAccount, "RealUser":RealUser,
+        users = eval(self.query, {}, {'User': User, 'datetime': datetime_module, 'Q': models.Q,
+                                      "TradingAccount": TradingAccount, "RealUser":RealUser,
+                                      "DepositRequest": DepositRequest,
                                       # 'account_types': mt4.types, 'mt4_models': mt4.models,
                                       'massmail_models': sys.modules[__name__]})
         if isinstance(users, QuerySet):

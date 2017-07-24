@@ -65,15 +65,15 @@ def by_last_assigned(managers):
 
 
 def get_all_offices_agent_codes():
-    from crm.models import RegionalOffice
-    ag = AccountGroup.objects.get(id=3)
-    ids = set(map(int, ag.account_mt4_ids))
-    offices_codes_str = ','.join(RegionalOffice.objects.values_list('agent_codes', flat=True))
-    ids.update([
-        int(id)
-        for id in offices_codes_str.split(',')
-        if id])
-    return list(ids)
+    # from crm.models import RegionalOffice
+    # ag = AccountGroup.objects.get(id=3)
+    # ids = set(map(int, ag.account_mt4_ids))
+    # offices_codes_str = ','.join(RegionalOffice.objects.values_list('agent_codes', flat=True))
+    # ids.update([
+    #     int(id)
+    #     for id in offices_codes_str.split(',')
+    #     if id])
+    return []
 
 
 def is_office_code(agent_code):

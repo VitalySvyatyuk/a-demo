@@ -132,24 +132,13 @@
       <table class="gctable" id="online-table">
           <thead>
             <th>{% trans 'Balance' %}</th>
-            <th>{% trans 'Credit' %}</th>
-            <th>{% trans 'Assets' %}</th>
-            <th>{% trans 'Margin' %}</th>
-            <th>{% trans 'Margin Free' %}</th>
-            <th>{% trans 'Deposit' %}</th>
-            <th>{% trans 'Withdraw' %}</th>
           </thead>
           <tbody>
-            <td><span id="online-data-balance">{{ account.balance.amount }}</span></td>
-            <td><span id="online-data-credit">{{ info.credit }}</span></td>
-            <td><span id="online-data-equity">{{ info.equity }}</span></td>
-            <td><span id="online-data-margin">{{ info.margin }}</span></td>
-            <td><span id="online-data-margin_free">{{ info.margin_free }}</span> / <span id="online-data-margin_level">{{ info.margin_level|floatformat:2 }}</span>%</td>
-            <td>{{ account.totals.deposit }}</td>
-            <td>{{ account.totals.withdraw }}</td>
+            <td><span id="online-data-balance">{{ account.balance_money }}</span></td>
           </tbody>
       </table>
     {% if history %}
+      {% if account.group_name != "demostandard_cfh" and account.group_name != "realstandard_cfh" %}
         <h4>{% trans 'Open positions at' %} {{ history.timestamp }}</h4>
         <table class="gctable" id="history_table_open">
             {% include "crm/account_info_history_table_header.html" with profit_total=open_operations_profit %}
@@ -161,12 +150,13 @@
             {% endfor %}
             </tbody>
         </table>
+      {% endif %}
       <h4>{% trans 'Closed positions at' %} {{ history.timestamp }}</h4>
       <table class="gctable" id="history_table_closed">
         {% include "crm/account_info_history_table_header.html" with profit_total=total_profit %}
         <tbody>
           {% for operation in history %}
-              {% if operation.close_time and operation.close_time != open_operations_date %}
+              {% if operation.close_time and operation.close_time != open_operations_date or account.group_name == "demostandard_cfh" or account.group_name == "realstandard_cfh"  %}
                   {% include "crm/account_info_history_table_body.html" %}
               {% endif %}
           {% endfor %}

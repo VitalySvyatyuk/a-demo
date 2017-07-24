@@ -8,17 +8,4 @@
     {% else %}
         {% trans "Can't get balance" %}
     {% endif %}
-    </td>
-</tr>
-<tr><td>{% trans "Number of closed trades" %}</td><td>{{ account.totals.trade_count }}</td></tr>
-<tr><td>{% trans "Number of In/Out operations" %}</td><td>{{ account.totals.inout_count }}</td></tr>
-<tr><td>{% trans "Total volume" %}</td><td>{{ account.totals.volume|floatformat:2 }}</td></tr>
-<tr><td>{% trans "Profit per deposit" %}</td><td>{{ account.totals.profitability_deposit|floatformat:2 }} %</td></tr>
-<tr><td>{% trans "In/Out/Inout/Credit" %}</td><td>
-    {% signed_amount account.totals.deposit account.currency %} /
-    {% signed_amount account.totals.withdraw account.currency %} /
-    {% signed_amount account.totals.inout account.currency %} /
-    {% signed_amount account.totals.credit account.currency %}
-</td></tr>
-<tr><td>{% trans "Profit" %}</td><td>{{ account.totals.profit|floatformat:2 }} {{ account.currency.symbol }}</td></tr>
-</table>
+    <</table>

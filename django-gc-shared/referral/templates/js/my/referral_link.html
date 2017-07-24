@@ -25,9 +25,15 @@
         <div class="select-wrapper small-input">
           <select ng-model="selectedProduct">
             <option value="0" disabled>{% trans "Select product" %}</option>
-            <option value="0" disabled> landing 1 </option>
-            <option value="1"> landing 2 </option>
-            <option value="2"> landing 3 </option>
+            <option value="">{% trans "Main page" %}</option>
+            <option value="account-types">{% trans "Account types" %}</option>
+            <option value="comparison">{% trans "Trading platforms comparison" %}</option>
+            <option value="mt4">{% trans "ARUM.MT platform" %}</option>
+            <option value="arumpro">{% trans "ARUM.PRO platform" %}</option>
+            <option value="arumpro">{% trans "ARUM.WEB platform" %}</option>
+            <option value="invest">{% trans "ARUM.Invest platform" %}</option>
+            <option value="cms/economic_calendar">{% trans "Economic calendar" %}</option>
+            <option value="advantages">{% trans "Client Advantages" %}</option>
           </select>
         </div>
       </div>
@@ -37,22 +43,5 @@
     </div>
   </div>
 
-  <div class="row">
-    <label class="small-3 medium-3 large-3 column">{% trans 'Landing page' %}:</label>
-    <div class="small-9 medium-9 large-9 column links">
-      <div class="small-4 medium-4 large-4 column">
-        <div class="select-wrapper small-input">
-          <select ng-model="selectedLanding">
-            <option value="0" disabled> landing 1 </option>
-            <option value="1"> landing 2 </option>
-            <option value="2"> landing 3 </option>
-          </select>
-        </div>
-      </div>
-      <div class="small-8 medium-8 large-8 column">
-        <input type="text" class="small-input" readonly ng-value="landingLink"/>
-      </div>
-    </div>
-  </div>
 
 </div>
