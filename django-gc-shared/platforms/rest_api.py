@@ -93,12 +93,18 @@ class TradingAccountViewSet(viewsets.ReadOnlyModelViewSet):
         Event.ACCOUNT_PASSWORD_RESTORED.log(account)
 
         new_password = account.change_password()
+        login = account._login
+        if not login:
+            if account.group_name in ['demoARM', 'ARM_MT4_Live']:
+                login = account.mt4_id
+            elif account.group_name in ['realstandard_ss']:
+                login = account.user.email
+        notification_data = {"user_name": account.user.first_name,
+                             "login": login, "account": account.mt4_id,
+                             "password": new_password}
+
         if new_password:
-            notification.send([account.user], "password_recovery", {
-                "user_name": account.user.first_name,
-                "account": account.mt4_id,
-                "password": new_password
-            }, no_django_message=True)
+            notification.send([account.user], "password_recovery", notification_data, no_django_message=True)
             return Response({
                 'detail': _('Password recovered and sent on your email')
             }, status=status.HTTP_201_CREATED)
@@ -168,10 +174,7 @@ class TradingAccountViewSet(viewsets.ReadOnlyModelViewSet):
 
         agents = account.agent_clients
 
-        data = TradingAccountAgentSerializer(
-            agents.order_by('-regdate'),
-            many=True
-        ).data
+        data = TradingAccountAgentSerializer(agents, many=True).data
         return Response(data)
 
     @detail_route(

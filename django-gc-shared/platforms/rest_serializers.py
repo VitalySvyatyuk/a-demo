@@ -164,25 +164,25 @@ class TradeSerializer(serializers.Serializer):
 
 # noinspection PyAbstractClass
 class TradingAccountAgentSerializer(serializers.Serializer):
-    mt4_id = serializers.ReadOnlyField(source="login")
-    balance = MoneyField(source="balance_money")
-    regdate = serializers.DateTimeField()
+    # mt4_id = serializers.ReadOnlyField()
+    # balance = MoneyField(source="balance_money")
+    regdate = serializers.DateTimeField(source="date_joined")
     country = serializers.ReadOnlyField()
     city = serializers.ReadOnlyField()
-    phone_mobile = serializers.ReadOnlyField(source="mt4account.user.profile.phone_mobile")
-    email = serializers.ReadOnlyField(source="mt4account.user.email")
+    phone_mobile = serializers.ReadOnlyField(source="profile.phone_mobile")
+    email = serializers.ReadOnlyField()
 
     @staticmethod
     def get_group_display(obj):
-        group = unicode(get_account_type(obj.group))
+        if not obj.accounts.all():
+            return _("User have no accounts")
+        group = '\n'.join(map(str, map(get_account_type, obj.accounts.values_list("group_name", flat=True))))
         return group
     group_display = serializers.SerializerMethodField()
 
     @staticmethod
     def get_name(obj):
-        if not obj.accounts:
-            return obj.name
-        return obj.accounts[0].user.profile.get_full_name()
+        return obj.profile.get_full_name()
     name = serializers.SerializerMethodField()
 
 
