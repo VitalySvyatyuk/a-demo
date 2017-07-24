@@ -9,7 +9,7 @@
   <div class="media-body">
     <small class="pull-right" title="[[::contactMt4Account.object.data.creation_ts|moment:'LLL']]">[[::contactMt4Account.object.data.creation_ts|moment:'calendar']]</small>
 
-    <span class="label label-info">[[::contactMt4Account.object.data.mt4_id]] ([[::contactMt4Account.object.data.group_name]])</span>
+    <span class="label label-info">[[::contactMt4Account.object.data.mt4_id]] ([[::contactMt4Account.object.data.group_name]]) <span ng-hide="::contactMt4Account.object.data.is_demo">(real)</span><span ng-if="::contactMt4Account.object.data.is_demo">(demo)</span></span>
     <br>
     <span>
       {% trans "Balance" %}: [[::contactMt4Account.object.data.balance.display]]

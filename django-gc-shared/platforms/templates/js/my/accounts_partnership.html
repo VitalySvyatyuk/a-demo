@@ -34,12 +34,12 @@
             <table class="table-light-green">
               <thead>
                 <tr>
-                  <td>{% trans "ID" %}</td>
+                  <td>{% trans "Account types" %}</td>
                   <td>{% trans "Date" %}</td>
                   <td>{% trans "Name" context "short" %}</td>
                   <td>{% trans "Phone" context "short" %}</td>
                   <td>{% trans "Email" context "short" %}</td>
-                  <td>{% trans "Balance" %}</td>
+{#                  <td>{% trans "Balance" %}</td>#}
                 </tr>
               </thead>
               <tbody>
@@ -53,22 +53,22 @@
                 </tr>
 
                 <tr ng-repeat="agent in agents">
-                  <td>[[::agent.mt4_id]] ([[::agent.group_display]])</td>
+                  <td>[[::agent.mt4_id]] [[::agent.group_display]]</td>
                   <td>[[::agent.regdate|momentFromNow]]</td>
                   <td>[[::agent.name]]</td>
                   <td>&lrm;[[::agent.phone_mobile]]</td>
                   <td class="long-word">[[::agent.email]]</td>
-                  <td>&lrm;[[::agent.balance.amount|currency:agent.balance.currency.symbol]]</td>
+{#                  <td>&lrm;[[::agent.balance.amount|currency:agent.balance.currency.symbol]]</td>#}
                 </tr>
 
-                <tr ng-repeat="agent in demoAgents">
-                  <td>[[::agent.mt4_id]] {% trans "demo" %}</td>
-                  <td>[[::agent.regdate|momentFromNow]]</td>
-                  <td>[[::agent.name]]</td>
-                  <td>&lrm;[[::agent.phone_mobile]]</td>
-                  <td class="long-word">[[::agent.email]]</td>
-                  <td>&lrm;[[::agent.balance.amount|currency:agent.balance.currency.symbol]]</td>
-                </tr>
+{#                <tr ng-repeat="agent in demoAgents">#}
+{#                  <td>[[::agent.mt4_id]] {% trans "demo" %}</td>#}
+{#                  <td>[[::agent.regdate|momentFromNow]]</td>#}
+{#                  <td>[[::agent.name]]</td>#}
+{#                  <td>&lrm;[[::agent.phone_mobile]]</td>#}
+{#                  <td class="long-word">[[::agent.email]]</td>#}
+{#                  <td>&lrm;[[::agent.balance.amount|currency:agent.balance.currency.symbol]]</td>#}
+{#                </tr>#}
               </tbody>
             </table>
           </td>

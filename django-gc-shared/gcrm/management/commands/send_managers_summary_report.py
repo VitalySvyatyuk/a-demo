@@ -109,9 +109,9 @@ class Command(BaseCommand):
         sent_reports += [37479]
 
         # partnership managers
-        aglezeris = PersonalManager.objects.get(user__id=87328)
-        send_report(aglezeris, date_from, date_to, managers=base_managers.partnership())
-        sent_reports.append(87328)
+        # aglezeris = PersonalManager.objects.get(user__id=87328)
+        # send_report(aglezeris, date_from, date_to, managers=base_managers.partnership())
+        # sent_reports.append(87328)
 
         # offices head managers
         for man in base_managers.filter(is_office_supermanager=True).exclude(office=None):

@@ -149,6 +149,13 @@ def gcbutton(type, title, color, attrs=""):
         "attrs": attrs
     }
 
+@register.filter
+def divide(value, arg):
+    try:
+        return round(float(value / arg), 4)
+    except (ValueError, ZeroDivisionError):
+        return None
+
 
 @register.filter(name='is_checkbox')
 def is_checkbox(value):

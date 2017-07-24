@@ -87,8 +87,15 @@ class PasswordRecoveryForm(forms.Form):
 
     def send_notification(self, account, password):
         """Send account password recovery email to account user"""
+        login = account._login
+        if not login:
+            if account.group_name in ['demoARM', 'ARM_MT4_Live']:
+                login = account.mt4_id
+            elif account.group_name in ['realstandard_ss']:
+                login = account.user.email
 
-        notification_data = {"user_name": account.user.first_name, "login": account._login, "account": account.mt4_id, "password": password}
+
+        notification_data = {"user_name": account.user.first_name, "login": login, "account": account.mt4_id, "password": password}
         notification.send([account.user], self.notification_name, notification_data,
                           no_django_message=True)
 

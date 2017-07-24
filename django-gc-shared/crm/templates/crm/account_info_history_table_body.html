@@ -1,11 +1,15 @@
-{% load i18n %}
+{% load i18n app_tags %}
 <tr>
     <td>{{ operation.ticket }}</td>
     <td class="nowrap" title="{{ operation.open_time|timesince }} {% trans "ago" %}">
         {{ operation.open_time|date:"Y.m.d H:i" }}
     </td>
     <td>{{ operation.type }}</td>
-    <td>{{ operation.volume }}</td>
+    {% if account.group_name == "demostandard_cfh" or account.group_name == "realstandard_cfh" %}
+        <td> {{   operation.volume|divide:100000 }}  </td>
+    {% else %}
+        <td>{{ operation.volume|divide:100 }}</td>
+    {% endif %}
     <td>{{ operation.symbol }}</td>
     <td>{{ operation.open_price }}</td>
     <td>{{ operation.sl }}</td>

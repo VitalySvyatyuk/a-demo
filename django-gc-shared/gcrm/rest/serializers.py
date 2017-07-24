@@ -267,10 +267,11 @@ class ContactSerializer(serializers.ModelSerializer):
         current_user = self.context['request'].user
 
         def from_partner():
-            from reports.models import AccountGroup
-            return obj.user.profile.agent_code and obj.user.profile.agent_code in set(
-                map(int, AccountGroup.objects.get(id=3).account_mt4_ids)
-            )
+            # from reports.models import AccountGroup
+            return obj.user.profile.agent_code \
+            #        and obj.user.profile.agent_code in set(
+            #     map(int, AccountGroup.objects.get(id=3).account_mt4_ids)
+            # )
 
         from push_notifications.models import GCMDevice, APNSDevice
         from django.core.urlresolvers import reverse
@@ -527,12 +528,12 @@ class BatchContactAgentCodeSerializer(serializers.Serializer):
             raise serializers.ValidationError({
                 'code': _('Code must be a number')
             })
-        ag = AccountGroup.objects.get(id=3)
-        ids = set(map(int, ag.account_mt4_ids))
-        if not (code == '0' or code in ids or TradingAccount.objects.real_ib().filter(mt4_id=code)):
-            raise serializers.ValidationError({
-                'code': _('This code does not exists')
-            })
+        # ag = AccountGroup.objects.get(id=3)
+        # ids = set(map(int, ag.account_mt4_ids))
+        # if not (code == '0' or code in ids or TradingAccount.objects.real_ib().filter(mt4_id=code)):
+        #     raise serializers.ValidationError({
+        #         'code': _('This code does not exists')
+        #     })
         return data
 
     def execute(self):
