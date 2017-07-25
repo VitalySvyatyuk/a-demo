@@ -134,9 +134,9 @@ function addCookieBar($, doc_href){
       //Displays the cookie bar if arguments met
       if(options.forceShow || cookieValue=='enabled' || cookieValue==''){
         if(options.append){
-          $(options.element).append('<div id="cookie-bar"'+fixed+zindex+'><p>'+message+acceptButton+declineButton+policyButton+'</p></div>');
+          $(options.element).append('<div id="cookie-bar"'+fixed+zindex+'><p>'+acceptButton+declineButton+message+policyButton+'</p></div>');
         }else{
-          $(options.element).prepend('<div id="cookie-bar"'+fixed+zindex+'><p>'+message+acceptButton+declineButton+policyButton+'</p></div>');
+          $(options.element).prepend('<div id="cookie-bar"'+fixed+zindex+'><p>'+acceptButton+declineButton+message+policyButton+'</p></div>');
         }
       }
 

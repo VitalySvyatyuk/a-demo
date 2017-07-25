@@ -52,7 +52,13 @@ class SelectPhoneCode(Select):
             else:
                 output.append(self.render_option(
                     selected_choices, option_value, option_label, is_secondary, phone_mask))
-        return u'\n'.join(output)
+        # Если язык русский, то :
+        ru_countries_eng_sort = u'\n'.join(output)
+        if True:
+            ru_sort = []
+            return u'\n'.join([c for c in ru_countries_eng_sort])
+        else:
+            return ru_countries_eng_sort
 
 
 class ChoicePhoneField(ChoiceField):

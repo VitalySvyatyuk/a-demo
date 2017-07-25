@@ -250,7 +250,7 @@ msgid "Select landing"
 msgstr "Выберите лэндинг"
 
 msgid "Offline materials"
-msgstr "Оффлайн материалы"
+msgstr "Рекламные материалы"
 
 msgid ""
 "\n"
@@ -283,8 +283,8 @@ msgstr "Ваше вознаграждение"
 #~ msgid "Open account"
 #~ msgstr "Счёт партнёра"
 
-#~ msgid "Clicks"
-#~ msgstr "Клики"
+msgid "Clicks"
+msgstr "Переходы"
 
 #~ msgid "Save"
 #~ msgstr "Сохранить"
@@ -292,11 +292,11 @@ msgstr "Ваше вознаграждение"
 #~ msgid "Cancel"
 #~ msgstr "Отменить"
 
-#~ msgid "Add domain"
-#~ msgstr "Добавить домен"
+msgid "Add domain"
+msgstr "Добавить домен"
 
-#~ msgid "Delete domain"
-#~ msgstr "Удалить домен"
+msgid "Delete domain"
+msgstr "Удалить домен"
 
 #~ msgid "Change rebate"
 #~ msgstr "Изменить возврат спреда"

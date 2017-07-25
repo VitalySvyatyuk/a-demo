@@ -255,6 +255,7 @@
 			background: transparent;
 			text-decoration: none;
 			margin-left: 30px;
+			margin-right: 10px;
 			display: inline-block;
 			font-size: inherit;
 		}
@@ -302,9 +303,10 @@
 			position: relative;
 			padding-right: 60px;
 			a.cb-enable{
-				position: absolute;
+				//position: absolute;
 				top: 0;
 				right: 0;
+				margin-right: 10px;
 			}
 		}
 	}
@@ -316,6 +318,7 @@
 			font-size: 0.85vw;
 			a.cb-enable{
 				padding: 0 5px 0 5px;
+				margin-right: 10px;
 			}
 		}
 	}

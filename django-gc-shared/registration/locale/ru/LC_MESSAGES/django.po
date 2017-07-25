@@ -388,8 +388,8 @@ msgstr "Номер телефона для этой учётной записи 
 #~ msgid "Greetings at %(site_name)s!"
 #~ msgstr "Приветствуем вас на %(site_name)s!"
 
-#~ msgid "Your password was sent via SMS to your phone number"
-#~ msgstr "Ваш пароль будет отправлен по SMS на ваш мобильный телефон"
+msgid "Your password was sent via SMS to your phone number"
+msgstr "Ваш пароль отправлен по SMS на ваш мобильный телефон"
 
 #~ msgid "Grand Capital Limited is not authorised by the FCA to provide services in the United Kingdom so we don't allow registrations from the UK."
 #~ msgstr "Компания Grand Capital Ltd. не имеет лицензии FCA на осуществление деятельности на территории Соединённого Королевства, в связи с этим регистрация для жителей Великобритании невозможна."
