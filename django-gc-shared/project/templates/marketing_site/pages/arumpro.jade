@@ -141,9 +141,22 @@ block content
                 a.link(href="{% static 'agreements/ArumWEB_manual_-_ENGLISH.pdf' %}" target="_blank")
                   - trans "User guide"
                   |  (pdf)
-
-
-
+        if LANGUAGE_CODE == "ru"
+          .row(style="margin-top:15px;")
+            .col-md-6
+              h2.page_title
+                - trans "Торговый терминал ARUM.PRO"
+              p
+                - trans "ARUM.PRO является профессиональным торговым терминалом компании Arum Capital и предназначен для онлайн торговли и анализа рынка."
+              p
+                - trans "Торговая платформа предоставляет в распоряжение трейдеров простой в использовании торговый интерфейс, множество полезных функций, например, стакан ликвидности, тиковые графики цен, а также полностью настраиваемую и редактируемую рабочую страницу."
+            .col-md-6(style="text-align:center;")
+              <object style="height: 225px; width: 400px">
+              <param name="movie" value="http://www.youtube.com/v/5b5Ca2Lsk5U?version=3&rel=0&modestbranding=1">
+              <param name="allowFullScreen" value="true">
+              <param name="allowScriptAccess" value="always">
+              <embed src="http://www.youtube.com/v/5b5Ca2Lsk5U?version=3&rel=0&modestbranding=1" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="400" height="225">
+              </object>
   .arumpro-become-client
     .container
       .row
