@@ -18,7 +18,7 @@ class LoggerAdmin(admin.ModelAdmin):
 
     date_hierarchy = "at"
     list_display = ('id', 'user_with_link', 'at', 'event', 'ip')
-    search_fields = ('user__pk', )
+    search_fields = ('user__pk', 'user__email', 'ip',)
     raw_id_fields = ['user']
     list_filter = ("event",)
     fields = ('user_with_link', 'event', 'object_with_link', 'at', 'ip', 'json_as_table')
