@@ -39,17 +39,16 @@
                   <td>{% trans "Name" context "short" %}</td>
                   <td>{% trans "Phone" context "short" %}</td>
                   <td>{% trans "Email" context "short" %}</td>
-{#                  <td>{% trans "Balance" %}</td>#}
                 </tr>
               </thead>
               <tbody>
 
                 <tr class="notification" ng-if="isAgentsLoading">
-                  <td colspan="6">{% trans "Loading" %}</td>
+                  <td colspan="5">{% trans "Loading" %}</td>
                 </tr>
 
                 <tr class="notification" ng-if="!isAgentsLoading && !agents.length && !demoAgents.length">
-                  <td colspan="6">{% trans "There is no accounts to display" %}</td>
+                  <td colspan="5">{% trans "There is no accounts to display" %}</td>
                 </tr>
 
                 <tr ng-repeat="agent in agents">
@@ -58,7 +57,6 @@
                   <td>[[::agent.name]]</td>
                   <td>&lrm;[[::agent.phone_mobile]]</td>
                   <td class="long-word">[[::agent.email]]</td>
-{#                  <td>&lrm;[[::agent.balance.amount|currency:agent.balance.currency.symbol]]</td>#}
                 </tr>
 
 {#                <tr ng-repeat="agent in demoAgents">#}
@@ -67,7 +65,6 @@
 {#                  <td>[[::agent.name]]</td>#}
 {#                  <td>&lrm;[[::agent.phone_mobile]]</td>#}
 {#                  <td class="long-word">[[::agent.email]]</td>#}
-{#                  <td>&lrm;[[::agent.balance.amount|currency:agent.balance.currency.symbol]]</td>#}
 {#                </tr>#}
               </tbody>
             </table>

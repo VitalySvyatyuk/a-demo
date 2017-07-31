@@ -92,7 +92,6 @@ table{
 
 /*example of markup in private office frontpage - in accordion*/
 body table.table-light-green{
-  background: lighten($gc-first-color, 10%);
   border: none;
   table-layout: fixed !important;
   .long-word {
@@ -111,10 +110,6 @@ body table.table-light-green{
     padding: .5rem 0;
   }
   tbody tr {
-    background: lighten($gc-first-color, 10%);
-    &:nth-of-type(even) {
-      background: lighten($gc-first-color, 10%);
-    }
     td {
       padding: .6rem;
       &:first-child {

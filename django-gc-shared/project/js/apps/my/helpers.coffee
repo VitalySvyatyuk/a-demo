@@ -1,6 +1,8 @@
 @app.filter 'titleize', () -> _.titleize
 @app.filter 'capitalize', () -> _.capitalize
 
+@app.filter 'htmlToText', () ->
+  (text) -> if text then String(text).replace(/<[^>]+>/gm, '') else ''
 
 @app.filter 'momentFromNow', () ->
   (date) ->

@@ -140,7 +140,7 @@
       }
       div{
         a{
-          border-bottom: 1px solid transparent;
+          border-bottom: 1px solid #909090;
           //@include a-visited($basic-color);
           &:hover, &:active, &:focus {
             // border-bottom-color: transparentize($basic-color, .5);

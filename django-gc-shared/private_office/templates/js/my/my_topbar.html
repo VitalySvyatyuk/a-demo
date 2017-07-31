@@ -23,7 +23,7 @@
                 </a>
                 <div class="message-tip" ng-show="displayLastMessage">
                     <a class="close-reveal-modal icon cross" ng-click="displayLastMessage = false"></a>
-                    <span class="message-body">[[ lastUnreadMessage.body | limitTo:80 ]]...</span>
+                    <span class="message-body">[[ lastUnreadMessage.body | htmlToText | limitTo:120 ]]...</span>
                     <a href="[[::BASE_URL]]messages/?openMessage=[[ lastUnreadMessage.id ]]" ng-click="displayLastMessage = false" class="read-all">{% trans "More" %}</a>
                 </div>
             </li>

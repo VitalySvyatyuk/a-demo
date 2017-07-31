@@ -135,6 +135,12 @@
             {% trans "Account details" %} (<a class="collapse-toggle" href="#">{% trans "show" %}</a>)
         - include 'payments/includes/account_data.html'
 
+- with object.account.user.accounts.non_demo as accounts
+    %fieldset.collapse.collapsed
+        %p.title
+            {% trans "All accounts data" %} (<a class="collapse-toggle" href="#">{% trans "show" %}</a>)
+        - include 'payments/includes/all_accounts_data.html'
+
 - with object.account.get_totals.bonus as bonuses
     %fieldset.collapse.collapsed
         %p.title
