@@ -2,7 +2,7 @@
 <div class="my-sidebar left-side" account-desktop-menu ng-hide="isHidden || !account">
   <div class="my-sidebar-content">
     {# DEPOSIT menu #}
-    <ul class="services" ng-switch on="account.is_demo && !account.is_contest" ng-if="!account.no_inout">
+    <ul class="services" ng-switch on="account.is_demo && !account.is_contest" ng-if="!account.no_inout && !account.ib_data">
       <li ng-switch-when="true" class="with-list">
         <a easy-slide-block default="true"><span>{% trans "Deposit" %}</span></a>
         <ul content-block>
@@ -25,7 +25,7 @@
       <li ng-switch-default class="with-list">
         <a easy-slide-block default="true"><span>{% trans "Settings" %}</span></a>
         <ul content-block>
-          <li ng-if="!account.is_options && !account.group.endsWith('_ss') &&
+          <li ng-if="!account.is_options && !account.ib_data && !account.group.endsWith('_ss') &&
               !account.group.endsWith('_cfh')">
             <a ng-click="accountActions.changeLeverage()">{% trans "Leverage" %}</a>
           </li>

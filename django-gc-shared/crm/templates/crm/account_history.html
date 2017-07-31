@@ -138,27 +138,12 @@
           </tbody>
       </table>
     {% if history %}
-      {% if account.group_name != "demostandard_cfh" and account.group_name != "realstandard_cfh" %}
-        <h4>{% trans 'Open positions at' %} {{ history.timestamp }}</h4>
-        <table class="gctable" id="history_table_open">
-            {% include "crm/account_info_history_table_header.html" with profit_total=open_operations_profit %}
-            <tbody>
-            {% for operation in history %}
-                {% if not operation.close_time or operation.close_time == open_operations_date %}
-                    {% include "crm/account_info_history_table_body.html" %}
-                {% endif %}
-            {% endfor %}
-            </tbody>
-        </table>
-      {% endif %}
-      <h4>{% trans 'Closed positions at' %} {{ history.timestamp }}</h4>
-      <table class="gctable" id="history_table_closed">
+      <h4>{% trans 'Positions at' %} {{ history.timestamp }}</h4>
+      <table class="gctable" id="history_table">
         {% include "crm/account_info_history_table_header.html" with profit_total=total_profit %}
         <tbody>
           {% for operation in history %}
-              {% if operation.close_time and operation.close_time != open_operations_date or account.group_name == "demostandard_cfh" or account.group_name == "realstandard_cfh"  %}
-                  {% include "crm/account_info_history_table_body.html" %}
-              {% endif %}
+              {% include "crm/account_info_history_table_body.html" %}
           {% endfor %}
         </tbody>
       </table>

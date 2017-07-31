@@ -401,14 +401,22 @@ class TradingAccount(models.Model):
         else:
             return self.api.account_withdraw(self, abs(amount), comment=comment, **kwargs)
 
-    @cached_property
+    @property
     def agent_clients(self):
         # type: () -> List[User]
         """
         Clients, introduced by agent.
-        Returns list of User objects.
+        :return: list of User objects.
         """
         return User.objects.filter(profile__agent_code=self.mt4_id)
+
+    @property
+    def agent_accounts(self):
+        """
+        Their accounts.
+        :return: list of TradingAccounts.
+        """
+        return TradingAccount.objects.filter(user__in=self.agent_clients)
 
     def open_orders_count(self):
         # type: () -> int
@@ -504,11 +512,11 @@ class TradingAccount(models.Model):
     def get_balance(self, currency=None, with_bonus=False):
         # type: (Currency, bool) -> Tuple[float, Currency]
         from platforms.converter import convert_currency
-        try:
+        if not self.is_ib:
             balance = normalize(self, self.api.account_balance(self))
-        except AttributeError:
-            # catched because mt4user is None :(
-            return None, None
+        else:
+            # Get total balance on referrals
+            balance = sum(map(lambda r: float(r.api.account_balance(r) or 0), self.agent_accounts.non_demo_active()))
 
         #if we should return value as it is, return with original currency
         if not currency:
@@ -524,6 +532,15 @@ class TradingAccount(models.Model):
             return Money(*self.get_balance(with_bonus=with_bonus))
         except (CFHError, SSError):
             return NoneMoney()
+
+    def get_totals(self):
+        from payments.models import DepositRequest, WithdrawRequest
+        return {
+            'deposit': sum(map(lambda r: r['amount'],
+                               DepositRequest.objects.filter(account=self, is_committed=True).values('amount'))),
+            'withdraw': sum(map(lambda r: r['amount'],
+                                WithdrawRequest.objects.filter(account=self, is_committed=True).values('amount'))),
+        }
 
 
 class AbstractTrade(models.Model):

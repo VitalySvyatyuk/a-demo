@@ -14,9 +14,5 @@
             <td>{% trans "Withdrawal" %}</td>
             <td>{{ acc.get_totals.withdraw|default:0 }}</td>
         </tr>
-        <tr>
-            <td>{% trans "Relative profit" %}</td>
-            <td>{{ acc.get_totals.profitability_deposit|default:0 }}</td>
-        </tr>
     </table>
 {% endfor %}

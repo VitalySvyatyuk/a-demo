@@ -199,7 +199,7 @@ class ApiFacade(object):
         Returns None if account already exists, else new account.
         """
         mail = account.user.email
-        login = account.user.username + str(account.mt4_id)
+        login = account.user.username + str(randint(0, 99999))
         password = create_password()
         log.debug("Creating cfh account for {0} with {1} {2}".format(login, initial_balance, account.currency.symbol))
         client_templates = settings.DEMO_CFH_CLIENT_TEMPLATES if account.is_demo else settings.CFH_CLIENT_TEMPLATES

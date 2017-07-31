@@ -635,6 +635,10 @@ LOGGING = {
         'amqplib': {
             'level': 'ERROR',
             'handlers': ['file']
+        },
+        'zeep': {
+            'level': 'INFO',
+            'handlers': ['file']
         }
     }
 }

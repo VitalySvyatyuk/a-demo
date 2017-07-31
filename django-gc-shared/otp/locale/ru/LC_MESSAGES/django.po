@@ -697,7 +697,7 @@ msgstr "Неверный код"
 #~ msgstr "Нет фото"
 
 #~ msgid "E-mail"
-#~ msgstr "Электропочта"
+#~ msgstr "E-mail"
 
 #~ msgid "Work Phone"
 #~ msgstr "Рабочий телефон"

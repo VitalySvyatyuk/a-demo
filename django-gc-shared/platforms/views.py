@@ -39,6 +39,9 @@ from project.views import LoginRequiredMixin, AjaxFormView
 from shared.decorators import as_json
 from shared.forms import AccountChooseForm
 
+from logging import getLogger
+log = getLogger(__name__)
+
 
 @login_required
 @render_to("agent_list.html")
@@ -209,7 +212,9 @@ def balance(request):
 @login_required
 @render_to("account_history.html")
 def account_history(request, account_id):
+    log.debug("Rendering account history for account {}".format(account_id))
     crm_staff = request.user.is_superuser
+    log.debug("User is super: {}".format(crm_staff))
 
     # Managers should be able to see all the history for all the accounts
     if crm_staff:
@@ -222,16 +227,20 @@ def account_history(request, account_id):
     if not accounts:
         raise Http404
     account = accounts[0]
+    log.debug("Found account: {}".format(account))
 
     cache_key = "history.%i" % int(account_id)
-    start = datetime.now() - timedelta(10000) if crm_staff else None
-    history = account.get_history(start=start, opened=crm_staff, count_limit=200)
+    start = None
+    history = account.get_history(start=start, opened=False, count_limit=200)
+    log.debug("History length: {}".format(len(history)))
 
     if not history:
+        log.warn("History not found, trying cache!")
         history_pickled = cache.get(cache_key, None)
         history = cPickle.loads(history_pickled) if history_pickled else []
         messages.error(request, _("Error while loading account data. Using cached data."))
     else:
+        log.debug("History found, updating cache")
         history_pickled = cPickle.dumps(history)
         if getsizeof(history_pickled) < 1024 ** 2:  # If size is smaller than 1 MiB
             cache.set(cache_key, history_pickled)
@@ -255,6 +264,7 @@ def account_history(request, account_id):
             'open_operations_profit': 0,
 
         })
+    log.debug("Final result is: {}".format(result))
     return result
 
 

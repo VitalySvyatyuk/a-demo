@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-08 13:25+0300\n"
+"POT-Creation-Date: 2017-07-25 17:12+0300\n"
 "PO-Revision-Date: 2016-10-10 18:06+0230\n"
 "Last-Translator: asdf asdfs <v.rizhenkov@grandcapital.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,332 +16,475 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.8\n"
 
+#: cfh/forms.py:29 mt4/forms.py:29 strategy_store/forms.py:27
+#: templates/account_list.html:21 templates/js/my/_accounts_local_nav.html:30
+#: templates/js/my/_accounts_local_nav_adaptive.html:14
+#: templates/js/my/accounts_master.html:14
+#: templates/js/my/accounts_pamm_master.html:15
+#: templates/js/my/accounts_trading.html:16
+#: templates/js/my/accounts_trading.html:92
+#: templates/js/my/accounts_trading.html:169
 msgid "Leverage"
 msgstr "Кредитное плечо"
 
+#: cfh/forms.py:30 mt4/forms.py:30 strategy_store/forms.py:28
 msgid "Initial deposit"
 msgstr "Начальный депозит"
 
+#: cfh/forms.py:31 mt4/forms.py:31 strategy_store/forms.py:29
 msgid "Available to demo accounts only."
 msgstr "Доступно только для демо-счетов"
 
+#: cfh/forms.py:58 mt4/forms.py:63 strategy_store/forms.py:55
 msgid "Execution system"
 msgstr "Система исполнения"
 
+#: cfh/forms.py:67 mt4/forms.py:72 strategy_store/forms.py:64
 msgid "Currency"
 msgstr "Валюта"
 
+#: forms.py:36 forms.py:43
 msgid "Market execution"
 msgstr "Market Execution"
 
+#: forms.py:38 forms.py:44
 msgid "Instant execution"
 msgstr "Instant execution"
 
+#: forms.py:48
 msgid "American-style options"
 msgstr "Опционы американского типа"
 
+#: forms.py:49
 msgid "European-style options"
 msgstr "Опционы европейского типа"
 
-msgid "The following leverage settings are available for the current balance of your account:"
+#: forms.py:54 rest_serializers.py:80
+msgid ""
+"The following leverage settings are available for the current balance of "
+"your account:"
 msgstr "При Вашем балансе доступны следующие варианты плеча:"
 
+#: models.py:119
 msgid "Account id"
 msgstr "Номер счета"
 
+#: models.py:120
 msgid "Account ID at the trading platform"
 msgstr ""
 
+#: models.py:122 templates/js/my/accounts_contests.html:13
+#: templates/js/my/accounts_master.html:13
+#: templates/js/my/accounts_pamm_master.html:14
+#: templates/js/my/accounts_partnership.html:14
+#: templates/js/my/accounts_trading.html:15
+#: templates/js/my/accounts_trading.html:91
+#: templates/js/my/accounts_trading.html:168
 msgid "Account type"
 msgstr "Тип счета"
 
+#: models.py:123
 msgid "Creation timestamp"
 msgstr "Дата создания"
 
+#: models.py:124
 #, fuzzy
 #| msgid "Account created"
 msgid "Account deleted"
 msgstr "Счет создан"
 
+#: models.py:125
 #, fuzzy
 #| msgid "Accounts archive"
 msgid "Account is archived"
 msgstr "Архив счетов"
 
+#: models.py:126
 #, fuzzy
 #| msgid "Accounts archive"
 msgid "Account was automatically archived"
 msgstr "Архив счетов"
 
+#: models.py:127
 #, fuzzy
 #| msgid "Replication ratio"
 msgid "Deletion reason"
 msgstr "Коэффициент копирования"
 
+#: models.py:136
 #, fuzzy
 #| msgid "Withdraw"
 msgid "Fully withdrawn"
 msgstr "Вывести средства"
 
+#: models.py:145
 msgid "Last block reason"
 msgstr ""
 
+#: models.py:152
 #, fuzzy
 #| msgid "Investment creation date"
 msgid "Investment agreement accepted"
 msgstr "Дата создания"
 
+#: models.py:177
+#, fuzzy
+#| msgid "Account created"
+msgid "Account leverage"
+msgstr "Счет создан"
+
+#: models.py:179
+msgid "Login"
+msgstr ""
+
+#: models.py:706
 msgid "Category name"
 msgstr "Название категории"
 
+#: models.py:708 models.py:711
 msgid "List of quotes"
 msgstr "Список котировок"
 
+#: models.py:708
 msgid "Example: EURUSD, GBPUSD, AUDCAD"
 msgstr "Пример: EURUSD, GBPUSD, AUDCAD"
 
-msgid "buy"
-msgstr "buy"
-
-msgid "sell"
-msgstr "sell"
-
-msgid "buy limit"
-msgstr ""
-
-msgid "sell limit"
-msgstr ""
-
-msgid "buy stop"
-msgstr ""
-
-msgid "sell stop"
-msgstr "sell stop"
-
-msgid "withdraw/deposit"
-msgstr "ввод/вывод"
-
-msgid "credit"
-msgstr "кредит"
-
+#: mt4/forms.py:80 rest_serializers.py:112
 msgid "Binary options style"
 msgstr "Тип бинарных опционов"
 
-msgid "American-style options can be closed before expiration date, but have much lower reward rate than European-style options"
-msgstr "Опционы американского типа обладают возможностью досрочного закрытия, однако вознаграждение по ним гораздо меньше, чем по опционам европейского типа"
+#: mt4/forms.py:85 rest_serializers.py:114
+msgid ""
+"American-style options can be closed before expiration date, but have much "
+"lower reward rate than European-style options"
+msgstr ""
+"Опционы американского типа обладают возможностью досрочного закрытия, однако "
+"вознаграждение по ним гораздо меньше, чем по опционам европейского типа"
 
+#: rest_api.py:109
 msgid "Password recovered and sent on your email"
 msgstr "Пароль восстановлен и выслан на ваш Email"
 
+#: rest_api.py:131
 msgid "Leverage successfully changed"
 msgstr "Кредитное плечо успешно изменено"
 
+#: rest_api.py:163
 msgid "Request to restore account has be created"
 msgstr "Запрос на восстановление счёта успешно создан"
 
+#: rest_api.py:202
 msgid "Balance successfully changed"
 msgstr "Баланс успешно изменён"
 
+#: rest_serializers.py:91
 msgid "Leverage should be different from current one"
 msgstr "Кредитное плечо должно отличаться от выбранного"
 
+#: rest_serializers.py:134
 msgid "You need to close all trades before changing options style"
 msgstr "Чтобы сменить тип бинарных опционов вы должны закрыть все позиции"
 
+#: rest_serializers.py:178
+msgid "User have no accounts"
+msgstr "У пользователя нет счетов"
+
+#: rest_serializers.py:192
+#: templates/js/my/account_finance_summary_modal.html:68
 msgid "Amount"
 msgstr "Объём"
 
+#: templates/account_history.html:34 templates/account_history.html.py:39
 #, python-format
 msgid "Account history for account %(account)s"
 msgstr "История операций для счета %(account)s"
 
+#: templates/account_history.html:49
 msgid "Status on"
 msgstr "Статус на"
 
+#: templates/account_history.html:52 templates/js/my/account_history.html:42
 msgid "Order ID"
 msgstr "Номер ордера"
 
+#: templates/account_history.html:53 templates/js/my/account_history.html:45
 msgid "Open time"
 msgstr "Дата открытия"
 
+#: templates/account_history.html:54 templates/js/my/account_history.html:44
 msgid "Type"
 msgstr "Тип"
 
+#: templates/account_history.html:55 templates/js/my/account_history.html:48
 msgid "Lots"
 msgstr ""
 
+#: templates/account_history.html:56 templates/js/my/account_history.html:43
 msgid "Symbol"
 msgstr "Инструмент"
 
+#: templates/account_history.html:57 templates/js/my/account_history.html:47
 msgid "Price"
 msgstr "Цена"
 
+#: templates/account_history.html:58 templates/js/my/account_history.html:49
 msgid "S/L"
 msgstr ""
 
+#: templates/account_history.html:59 templates/js/my/account_history.html:50
 msgid "T/P"
 msgstr ""
 
+#: templates/account_history.html:60 templates/js/my/account_history.html:46
 msgid "Close time"
 msgstr "Дата закрытия"
 
+#: templates/account_history.html:61
 msgid "Close price"
 msgstr ""
 
+#: templates/account_history.html:62 templates/js/my/account_history.html:51
 msgid "Commission"
 msgstr "Комиссия"
 
+#: templates/account_history.html:63 templates/js/my/account_history.html:52
 msgid "Swap"
 msgstr "Своп"
 
+#: templates/account_history.html:64 templates/js/my/account_history.html:53
+#: templates/js/my/accounts_investments.html:14
+#: templates/js/my/accounts_investments.html:39
 msgid "Profit"
 msgstr "Доход"
 
+#: templates/account_history.html:71
 msgid "Totals"
 msgstr "Итого"
 
+#: templates/account_history.html:86 templates/account_history.html.py:95
 msgid "ago"
 msgstr "назад"
 
+#: templates/account_history.html:97
 msgid "Open"
 msgstr "Открыта"
 
+#: templates/account_history.html:113
 msgid "No account history available."
 msgstr "Нет истории операций для данного счета."
 
+#: templates/account_list.html:5 templates/account_list.html.py:9
 msgid "My accounts"
 msgstr "Мои счета"
 
+#: templates/account_list.html:15
 msgid "Demo and contest accounts"
 msgstr "Демо и конкурсные счета"
 
+#: templates/account_list.html:16
 msgid "Real accounts"
 msgstr "Реальные счета"
 
+#: templates/account_list.html:19 templates/account_list.html.py:98
+#: templates/agent_list_table.html:8
+#: templates/js/my/account_change_leverage_modal.html:4
+#: templates/js/my/account_change_options_style_modal.html:4
+#: templates/js/my/account_demo_deposit_modal.html:4
+#: templates/js/my/account_finance_summary_modal.html:67
+#: templates/js/my/account_recover_password_modal.html:4
+#: templates/js/my/accounts_archive.html:7
+#: templates/js/my/accounts_pamm_investments.html:17
 msgid "Account"
 msgstr "Счет"
 
+#: templates/account_list.html:20
 msgid "Registraton date"
 msgstr "Дата открытия"
 
+#: templates/account_list.html:22 templates/agent_list_table.html:15
+#: templates/js/my/accounts_contests.html:15
+#: templates/js/my/accounts_investments.html:13
+#: templates/js/my/accounts_investments.html:38
+#: templates/js/my/accounts_master.html:15
+#: templates/js/my/accounts_master.html:46
+#: templates/js/my/accounts_pamm_master.html:16
+#: templates/js/my/accounts_partnership.html:15
+#: templates/js/my/accounts_trading.html:17
+#: templates/js/my/accounts_trading.html:93
+#: templates/js/my/accounts_trading.html:170
 msgid "Balance"
 msgstr "Баланс"
 
+#: templates/account_list.html:25
 msgid "Filled documents"
 msgstr "Заполненные документы"
 
+#: templates/account_list.html:27
+#: templates/js/my/account_finance_summary_modal.html:69
 msgid "Action"
 msgstr "Действие"
 
+#: templates/account_list.html:48 templates/js/my/_accounts_local_nav.html:96
+#: templates/js/my/_accounts_local_nav.html:97
+#: templates/js/my/_accounts_local_nav_adaptive.html:37
 msgid "Account history"
 msgstr "История операций"
 
+#: templates/account_list.html:53
 msgid "Deposit money"
 msgstr "Ввести средства"
 
+#: templates/account_list.html:56
 msgid "Withdraw money"
 msgstr "Вывести средства"
 
+#: templates/account_list.html:59 templates/js/my/_accounts_local_nav.html:91
+#: templates/js/my/_accounts_local_nav_adaptive.html:9
+#: templates/js/my/_accounts_local_nav_adaptive.html:10
 msgid "Internal transfer"
 msgstr "Внутренний перевод"
 
+#: templates/account_list.html:63 templates/change_leverage.html:12
+#: templates/js/my/account_change_leverage_modal.html:3
+#: templates/js/my/account_change_leverage_modal.html:29
 msgid "Change leverage"
 msgstr "Изменить кредитное плечо"
 
+#: templates/account_list.html:68 templates/change_options_style.html:12
+#: templates/js/my/_accounts_local_nav.html:36
+#: templates/js/my/_accounts_local_nav_adaptive.html:17
+#: templates/js/my/account_change_options_style_modal.html:3
 msgid "Change options style"
 msgstr "Изменить тип опционов "
 
+#: templates/account_list.html:74
 msgid "Become PAMM master"
 msgstr "Стать управляющим"
 
+#: templates/account_list.html:78 templates/js/my/_accounts_local_nav.html:33
+#: templates/js/my/_accounts_local_nav.html:64
+#: templates/js/my/_accounts_local_nav_adaptive.html:15
+#: templates/js/my/account_recover_password_modal.html:3
+#: templates/password_recovery.html:8
 msgid "Password recovery"
 msgstr "Восстановление пароля"
 
+#: templates/account_list.html:88
 msgid "You have no accounts associated with your profile"
 msgstr "У вас нет открытых счетов"
 
+#: templates/account_list.html:89
 msgid "If you want to open a new account, then click"
 msgstr "Если вы хотите открыть новый счет, нажмите"
 
+#: templates/account_list.html:91
 msgid "Open account"
 msgstr "Открыть счет"
 
+#: templates/account_list.html:95
 msgid "Archived accounts"
 msgstr "Счета в архиве"
 
+#: templates/account_list.html:99 templates/js/my/accounts_archive.html:12
 msgid "Restore"
 msgstr "Восстановить"
 
+#: templates/account_list.html:107
 msgid "You have already requested to restore this account"
 msgstr "Вы уже оставили заявку на восстановление этого счёта"
 
+#: templates/account_list.html:110
 msgid "Request this account to be restored"
 msgstr "Создать заявку на восстановление счёта"
 
+#: templates/account_list.html:154
 msgid "bonus"
 msgstr "бонус"
 
+#: templates/agent_list.html:11 templates/agent_list.html.py:15
 #, python-format
 msgid "Agent list for account %(account)s"
 msgstr "Список агентов для счета %(account)s"
 
+#: templates/agent_list.html:21
 #, python-format
 msgid "Account %(account)s has no Real clients."
 msgstr "Счет %(account)s не имеет клиентов с реальными счетами."
 
+#: templates/agent_list.html:26
 #, python-format
 msgid "List of demo agents for account %(account)s"
 msgstr "Список демо-агентов для счета %(account)s"
 
+#: templates/agent_list.html:32
 #, python-format
 msgid "Account %(account)s has no Demo clients."
 msgstr "Счет %(account)s не имеет клиентов с демо счетами."
 
+#: templates/agent_list_choose.html:5
 msgid "Choose account"
 msgstr "Выберите счет"
 
+#: templates/agent_list_choose.html:10
 msgid "Choose"
 msgstr "Выберите"
 
+#: templates/agent_list_table.html:9
+#: templates/js/my/accounts_partnership.html:38
 msgid "Date"
 msgstr "Дата"
 
+#: templates/agent_list_table.html:10
+#: templates/js/my/accounts_partnership.html:39
 msgctxt "short"
 msgid "Name"
 msgstr "Имя"
 
+#: templates/agent_list_table.html:11
 msgid "Country"
 msgstr "Страна"
 
+#: templates/agent_list_table.html:12
 msgid "City"
 msgstr "Город"
 
+#: templates/agent_list_table.html:13
+#: templates/js/my/accounts_partnership.html:40
 msgctxt "short"
 msgid "Phone"
 msgstr "Телефон"
 
+#: templates/agent_list_table.html:14
+#: templates/js/my/accounts_partnership.html:41
 msgctxt "short"
 msgid "Email"
-msgstr "Электропочта"
+msgstr "Email"
 
+#: templates/change_leverage.html:5 templates/change_leverage.html.py:8
 msgid "Choose new leverage"
 msgstr "Выберите новое кредитное плечо"
 
+#: templates/change_options_style.html:5 templates/change_options_style.html:8
 msgid "Choose new options style"
 msgstr "Выберите новый тип бинарных опционов"
 
+#: templates/create_account.html:6
 #, python-format
 msgid ""
 "Create %(account_type_name)s\n"
 "    account"
 msgstr "Создать счет %(account_type_name)s"
 
+#: templates/create_account.html:22 templates/create_account.html.py:38
 msgid "Account details"
 msgstr "Параметры счета"
 
+#: templates/create_account.html:24
+#: templates/includes/create_account_form_with_errors.html:13
 #, python-format
 msgid ""
 "\n"
@@ -349,18 +492,23 @@ msgid ""
 "            "
 msgid_plural ""
 "\n"
-"                You can't have more than %(max_number)s %(acc_type)s accounts and\n"
+"                You can't have more than %(max_number)s %(acc_type)s "
+"accounts and\n"
 "            "
 msgstr[0] ""
 "\n"
 "К сожалению, счёт %(acc_type)s может быть только один, а "
 msgstr[1] ""
 "\n"
-"К сожалению, число счетов %(acc_type)s не может быть больше %(max_number)s, а "
+"К сожалению, число счетов %(acc_type)s не может быть больше %(max_number)s, "
+"а "
 msgstr[2] ""
 "\n"
-"К сожалению, число счетов %(acc_type)s не может быть больше %(max_number)s, а "
+"К сожалению, число счетов %(acc_type)s не может быть больше %(max_number)s, "
+"а "
 
+#: templates/create_account.html:29
+#: templates/includes/create_account_form_with_errors.html:18
 #, python-format
 msgid ""
 "\n"
@@ -380,438 +528,729 @@ msgstr[2] ""
 "\n"
 "у вас уже открыто %(current_number)s счетов этого типа."
 
+#: templates/create_account.html:45
 msgid "mt4.sucurity.obligation"
-msgstr "Все полученные данные будут использоваться только внутри компании. Мы никогда не предоставим ваши данные третьим лицам."
+msgstr ""
+"Все полученные данные будут использоваться только внутри компании. Мы "
+"никогда не предоставим ваши данные третьим лицам."
 
+#: templates/create_account.html:48 templates/js/my/account_create.html:6
+#: templates/js/my/accounts_pamm_investments.html:6
+#: templates/js/my/accounts_partnership.html:6
+#: templates/js/my/accounts_trading.html:5
+#: templates/js/my/accounts_trading.html:81
+#: templates/js/my/accounts_trading.html:158
 msgid "Create account"
 msgstr "Создать счёт"
 
+#: templates/includes/create_account_form_with_errors.html:3
 msgid "Account settings"
 msgstr "Настройки счёта"
 
+#: templates/includes/create_account_form_with_errors.html:7
 msgid "Please wait while account is being created"
 msgstr "Ваш счёт в процессе создания"
 
+#: templates/includes/create_account_form_with_errors.html:59
 msgid "Create"
 msgstr "Создать"
 
+#: templates/includes/create_account_form_with_errors.html:62
+#: templates/js/my/account_finance_summary_modal.html:88
 msgid "Cancel"
 msgstr "Отменить"
 
+#: templates/includes/create_account_form_with_errors.html:68
 #, python-format
-msgid "Congratulations! You just opened %(acc_type)s account! Please, save its password in a secure place. You will also receive account's details by email."
-msgstr "Поздравляем, вы открыли счёт %(acc_type)s! Пожалуйста, сохраните пароль от счёта в надёжном месте. Данные счёта были также отправлены Вам по электронной почте."
+msgid ""
+"Congratulations! You just opened %(acc_type)s account! Please, save its "
+"password in a secure place. You will also receive account's details by email."
+msgstr ""
+"Поздравляем, вы открыли счёт %(acc_type)s! Пожалуйста, сохраните пароль от "
+"счёта в надёжном месте. Данные счёта были также отправлены Вам по "
+"электронной почте."
 
+#: templates/includes/create_account_form_with_errors.html:74
 msgid "Account number"
 msgstr "Номер счёта"
 
+#: templates/includes/create_account_form_with_errors.html:78
 msgid "Account login"
 msgstr "Логин счета"
 
+#: templates/includes/create_account_form_with_errors.html:82
 msgid "Password"
 msgstr "Пароль"
 
+#: templates/includes/create_account_form_with_errors.html:89
 msgctxt "button"
 msgid "Continue"
 msgstr "Продолжить"
 
+#: templates/includes/create_account_form_with_errors.html:103
 msgid "Account creation failed, please try again later"
 msgstr "При создании счета произошла ошибка, попробуйте еще раз позже"
 
+#: templates/js/my/_accounts_local_nav.html:7
+#: templates/js/my/_accounts_local_nav.html:13
+#: templates/js/my/_accounts_local_nav_adaptive.html:4
+#: templates/js/my/_accounts_local_nav_adaptive.html:5
+#: templates/js/my/_accounts_local_nav_adaptive.html:6
+#: templates/js/my/account_demo_deposit_modal.html:35
+#: templates/js/my/account_finance_summary_modal.html:83
+#: templates/js/my/accounts_trading.html:60
+#: templates/js/my/accounts_trading.html:136
+#: templates/js/my/accounts_trading.html:213
 msgid "Deposit"
 msgstr "Ввести средства"
 
+#: templates/js/my/_accounts_local_nav.html:9
 msgid "Demo deposit"
 msgstr "Демо депозит"
 
+#: templates/js/my/_accounts_local_nav.html:15
+#: templates/js/my/_accounts_local_nav.html:85
 #, fuzzy
 #| msgid "bank transfer"
 msgid "Bank transfer"
 msgstr "банковский перевод"
 
+#: templates/js/my/_accounts_local_nav.html:16
+#: templates/js/my/_accounts_local_nav.html:86
+msgid "Visa/Mastercard"
+msgstr ""
+
+#: templates/js/my/_accounts_local_nav.html:17
+#: templates/js/my/_accounts_local_nav.html:87
+msgid "Skrill"
+msgstr ""
+
+#: templates/js/my/_accounts_local_nav.html:18
+#: templates/js/my/_accounts_local_nav.html:88
+msgid "Neteller"
+msgstr ""
+
+#: templates/js/my/_accounts_local_nav.html:26
 msgid "Settings"
 msgstr "Настройки"
 
+#: templates/js/my/_accounts_local_nav.html:39
+#: templates/js/my/_accounts_local_nav_adaptive.html:20
 msgid "Become a LAMM manager"
 msgstr "Стать управляющим"
 
+#: templates/js/my/_accounts_local_nav.html:49
+#: templates/js/my/_accounts_local_nav_adaptive.html:31
 msgid "Change comission type"
 msgstr "Изменить тип комиссии"
 
+#: templates/js/my/_accounts_local_nav.html:52
+#: templates/js/my/_accounts_local_nav_adaptive.html:33
 msgid "Accept investors manualy"
 msgstr "Принимать инвесторов вручную"
 
+#: templates/js/my/_accounts_local_nav.html:53
+#: templates/js/my/_accounts_local_nav_adaptive.html:34
 msgid "Auto accept investors"
 msgstr "Автоматически принимать инвесторов"
 
+#: templates/js/my/_accounts_local_nav.html:80
+#: templates/js/my/_accounts_local_nav.html:83
+#: templates/js/my/_accounts_local_nav_adaptive.html:7
+#: templates/js/my/_accounts_local_nav_adaptive.html:8
+#: templates/js/my/account_finance_summary_modal.html:83
 msgid "Withdraw"
 msgstr "Вывести средства"
 
+#: templates/js/my/_accounts_local_nav_adaptive.html:11
 msgid "Other actions"
 msgstr "Другие действия"
 
+#: templates/js/my/account_blocked_info_modal.html:3
 msgid "Account [[acc.mt4_id]] blocked"
 msgstr "Счет [[acc.mt4_id]] заблокирован"
 
+#: templates/js/my/account_blocked_info_modal.html:9
 msgid "Same problem?"
 msgstr ""
 
-msgid "For transactions larger than $800 our payment system requires us to verify the customer's data for security reasons. To pass this verification you need to upload scans or photos of the following documents:"
-msgstr "При транзакциях свыше $800 платёжная система выставляет запрос на подтверждение данных плательщика во избежание мошенничества и махинаций с финансами. Пожалуйста, пройдите процедуру дополнительной верификации. Для этого необходимо загрузить сканы либо фото следующих документов в читаемом виде:"
+#: templates/js/my/account_blocked_info_modal.html:10
+msgid ""
+"For transactions larger than $800 our payment system requires us to verify "
+"the customer's data for security reasons. To pass this verification you need "
+"to upload scans or photos of the following documents:"
+msgstr ""
+"При транзакциях свыше $800 платёжная система выставляет запрос на "
+"подтверждение данных плательщика во избежание мошенничества и махинаций с "
+"финансами. Пожалуйста, пройдите процедуру дополнительной верификации. Для "
+"этого необходимо загрузить сканы либо фото следующих документов в читаемом "
+"виде:"
 
+#: templates/js/my/account_blocked_info_modal.html:13
 msgid "Your ID or passport"
 msgstr "Паспорт"
 
-msgid "Your card which was used to make the payment. The first 4 and the last 4 digits of its number should be visible. Please cover all the other digits."
-msgstr "Карта, с которой были списаны средства (достаточно, чтобы были читаемы 4 первые и последние цифры)"
+#: templates/js/my/account_blocked_info_modal.html:14
+msgid ""
+"Your card which was used to make the payment. The first 4 and the last 4 "
+"digits of its number should be visible. Please cover all the other digits."
+msgstr ""
+"Карта, с которой были списаны средства (достаточно, чтобы были читаемы 4 "
+"первые и последние цифры)"
 
-msgid "A document which can verify your address (not more than 6 months old). For example, utility bill, rental agreement, bank statement, etc."
-msgstr "Документ, подтверждающий адрес проживания,  не старше 6 месяцев (счет на коммунальные платежи, выписка по счету, договор аренды и пр.)"
+#: templates/js/my/account_blocked_info_modal.html:15
+msgid ""
+"A document which can verify your address (not more than 6 months old). For "
+"example, utility bill, rental agreement, bank statement, etc."
+msgstr ""
+"Документ, подтверждающий адрес проживания,  не старше 6 месяцев (счет на "
+"коммунальные платежи, выписка по счету, договор аренды и пр.)"
 
+#: templates/js/my/account_blocked_info_modal.html:16
 msgid " - or - "
 msgstr "- или -"
 
+#: templates/js/my/account_blocked_info_modal.html:17
 msgid "A second document confirming your ID (driving license, etc.)"
-msgstr "Дополнительный документ подтверждающий вашу личность (например водительские права)"
+msgstr ""
+"Дополнительный документ подтверждающий вашу личность (например водительские "
+"права)"
 
-msgid "Request was created, but you can still <a href='/account/profile/documents'>upload more documents</a> if you need."
-msgstr "Заявка на разблокировку создана, но Вы все равно можете <a href='/account/profile/documents'>загрузить дополнительные документы</a>."
+#: templates/js/my/account_blocked_info_modal.html:20
+msgid ""
+"Request was created, but you can still <a href='/account/profile/"
+"documents'>upload more documents</a> if you need."
+msgstr ""
+"Заявка на разблокировку создана, но Вы все равно можете <a href='/account/"
+"profile/documents'>загрузить дополнительные документы</a>."
 
-msgid "You can <a href='/account/profile/documents'>upload documents</a> in your Private Office."
-msgstr "Вы можете <a href='/account/profile/documents'>загрузить документы</a> в Личном Кабинете."
+#: templates/js/my/account_blocked_info_modal.html:21
+msgid ""
+"You can <a href='/account/profile/documents'>upload documents</a> in your "
+"Private Office."
+msgstr ""
+"Вы можете <a href='/account/profile/documents'>загрузить документы</a> в "
+"Личном Кабинете."
 
+#: templates/js/my/account_blocked_info_modal.html:24
 msgid "You haven't uploaded any documents."
 msgstr "У вас нет загруженных документов."
 
+#: templates/js/my/account_blocked_info_modal.html:27
 msgid "Request created "
 msgstr "Заявка создана"
 
+#: templates/js/my/account_blocked_info_modal.html:27
 msgid "Request unlock"
 msgstr "Разблокируйте меня!"
 
+#: templates/js/my/account_change_options_style_modal.html:21
 msgid "Change style"
 msgstr "Изменить тип опционов "
 
-msgid "Deep ECN liquidity and excellent execution on a popular trading platform MetaTrader4"
+#: templates/js/my/account_create.html:19
+msgid ""
+"Deep ECN liquidity and excellent execution on a popular trading platform "
+"MetaTrader4"
 msgstr ""
 "Глубокая ECN ликвидность и отличное исполнение в популярной\n"
 "торговой платформе MetaTrader4"
 
+#: templates/js/my/account_create.html:24
+#: templates/js/my/account_create.html:53
 msgid "Demo account"
 msgstr "Демо счет"
 
+#: templates/js/my/account_create.html:25
+#: templates/js/my/account_create.html:54
 msgid "No investments"
 msgstr "Без вложений"
 
+#: templates/js/my/account_create.html:30
+#: templates/js/my/account_create.html:59
+#: templates/js/my/account_create.html:80
 msgid "Live account"
 msgstr "Реальный счет"
 
+#: templates/js/my/account_create.html:31
+#: templates/js/my/account_create.html:60
+#: templates/js/my/account_create.html:81
 msgid "Min. deposit of $"
 msgstr "Мин. депозит $"
 
+#: templates/js/my/account_create.html:48
 msgid "ARUM.PRO professional platform and its browser version ARUM.WEB"
 msgstr ""
 "Профессиональная платформа ARUM.PRO и ее браузерная версия\n"
 "ARUM.WEB"
 
-msgid "Single account for trading as a trader or as an investor in the investment system ARUM.Invest"
+#: templates/js/my/account_create.html:75
+msgid ""
+"Single account for trading as a trader or as an investor in the investment "
+"system ARUM.Invest"
 msgstr ""
 "Единый счет для работы в качестве трейдера или инвестора в\n"
 "инвестиционной системе ARUM.Invest"
 
+#: templates/js/my/account_create.html:97
+msgid "Become our partner NOW! Make money fast!"
+msgstr ""
+
+#: templates/js/my/account_create.html:102
+#, fuzzy
+#| msgid "Create account"
+msgid "Partner account"
+msgstr "Создать счёт"
+
+#: templates/js/my/account_demo_deposit_modal.html:3
 msgid "Deposit to demo account"
 msgstr "Демо депозит"
 
+#: templates/js/my/account_finance_summary_modal.html:2
 msgid "Deposit and Withdrawal history"
 msgstr "Заявки на ввод и вывод"
 
+#: templates/js/my/account_finance_summary_modal.html:70
 msgid "Created at"
 msgstr "Создано"
 
+#: templates/js/my/account_finance_summary_modal.html:71
+#: templates/js/my/accounts_pamm_investments.html:38
+#: templates/js/my/accounts_pamm_master.html:51
 msgid "Status"
 msgstr "Статус"
 
+#: templates/js/my/account_finance_summary_modal.html:72
 msgid "Comment"
 msgstr "Комментарий"
 
+#: templates/js/my/account_history.html:3
+#: templates/js/my/account_history_modal.html:2
 msgid "History for account"
 msgstr "История операций для счета"
 
+#: templates/js/my/account_history.html:8
 msgid "Today"
 msgstr "Сегодня"
 
+#: templates/js/my/account_history.html:10
 msgid "Yesterday"
 msgstr "Вчера"
 
+#: templates/js/my/account_history.html:12
 msgid "Last week"
 msgstr "Последняя неделя"
 
+#: templates/js/my/account_history.html:14
 msgid "Last month"
 msgstr "Последний месяц"
 
+#: templates/js/my/account_history.html:16
 msgid "All"
 msgstr "Все"
 
+#: templates/js/my/account_history.html:18
 msgid "Choose date range"
 msgstr "Выберите даты"
 
+#: templates/js/my/account_history.html:25
 msgid "Filter"
 msgstr "Фильтровать"
 
+#: templates/js/my/account_history.html:32
 msgid "Open orders"
 msgstr "Открытые ордера"
 
+#: templates/js/my/account_history.html:35
 msgid "Closed orders"
 msgstr "Закрытые ордера"
 
+#: templates/js/my/account_history.html:76
+#: templates/js/my/accounts_partnership.html:47
 msgid "Loading"
 msgstr "Загрузка"
 
+#: templates/js/my/account_history_modal.html:8
 msgid "Сегодня"
 msgstr ""
 
+#: templates/js/my/account_history_modal.html:9
 msgid "Вчера"
 msgstr ""
 
+#: templates/js/my/account_history_modal.html:10
 msgid "Текущая неделя"
 msgstr ""
 
+#: templates/js/my/account_history_modal.html:11
 msgid "Текущий месяц"
 msgstr ""
 
+#: templates/js/my/account_history_modal.html:12
 msgid "Прошлый месяц"
 msgstr ""
 
+#: templates/js/my/account_history_modal.html:13
 msgid "Указать интервал"
 msgstr ""
 
+#: templates/js/my/account_history_modal.html:60
 msgid "Показать"
 msgstr ""
 
-msgid "A new password will be sent within an hour to e-mail address you set when account was created."
-msgstr "В течение часа на эл. адрес, указанный при создании счета, будет выслан новый пароль."
+#: templates/js/my/account_recover_password_modal.html:10
+#: templates/password_recovery.html:10
+msgid ""
+"A new password will be sent within an hour to e-mail address you set when "
+"account was created."
+msgstr ""
+"В течение часа на эл. адрес, указанный при создании счета, будет выслан "
+"новый пароль."
 
+#: templates/js/my/account_recover_password_modal.html:11
+#: templates/password_recovery.html:13
 msgid "Request password recovery"
 msgstr "Создать заявку на восстановление пароля"
 
+#: templates/js/my/accounts_archive.html:3
 msgid "Accounts archive"
 msgstr "Архив счетов"
 
+#: templates/js/my/accounts_archive.html:4
 msgid "Here you can find all your archived accounts"
 msgstr "Здесь вы можете найти все свои архивированные счета"
 
+#: templates/js/my/accounts_archive.html:12
 msgid "In progress"
 msgstr "В процессе"
 
+#: templates/js/my/accounts_bonuses.html:5
 msgid "Бонусы"
 msgstr ""
 
+#: templates/js/my/accounts_bonuses.html:6
 msgid "получить бонус"
 msgstr ""
 
+#: templates/js/my/accounts_contests.html:4
 msgid "Contests"
 msgstr "Конкурсы"
 
+#: templates/js/my/accounts_contests.html:5
 msgid "Participate in a contest"
 msgstr "Участвовать в конкурсе"
 
+#: templates/js/my/accounts_contests.html:12
+#: templates/js/my/accounts_investments.html:12
+#: templates/js/my/accounts_master.html:12
+#: templates/js/my/accounts_master.html:45
+#: templates/js/my/accounts_pamm_master.html:13
+#: templates/js/my/accounts_pamm_master.html:48
+#: templates/js/my/accounts_partnership.html:13
+#: templates/js/my/accounts_trading.html:14
+#: templates/js/my/accounts_trading.html:90
+#: templates/js/my/accounts_trading.html:167
 msgid "ID"
 msgstr "Номер"
 
+#: templates/js/my/accounts_contests.html:14
 msgid "Place"
 msgstr "Место"
 
+#: templates/js/my/accounts_contests.html:16
+#: templates/js/my/accounts_master.html:48
+#: templates/js/my/accounts_trading.html:18
+#: templates/js/my/accounts_trading.html:94
+#: templates/js/my/accounts_trading.html:171
 msgid "Equity"
 msgstr "Средства"
 
+#: templates/js/my/accounts_contests.html:21
+#: templates/js/my/accounts_investments.html:20
+#: templates/js/my/accounts_investments.html:48
+#: templates/js/my/accounts_master.html:21
+#: templates/js/my/accounts_master.html:54
+#: templates/js/my/accounts_pamm_master.html:22
+#: templates/js/my/accounts_pamm_master.html:57
+#: templates/js/my/accounts_partnership.html:20
+#: templates/js/my/accounts_partnership.html:51
+#: templates/js/my/accounts_trading.html:23
+#: templates/js/my/accounts_trading.html:99
+#: templates/js/my/accounts_trading.html:176
 msgid "There is no accounts to display"
 msgstr "Нет счетов для отображения"
 
+#: templates/js/my/accounts_investments.html:4
 msgid "LAMM Investments"
 msgstr "LAMM инвестиции"
 
+#: templates/js/my/accounts_investments.html:5
 msgid "Create portfolio"
 msgstr "Создать портфель"
 
+#: templates/js/my/accounts_investments.html:15
+#: templates/js/my/accounts_investments.html:40
 msgid "Profitability"
 msgstr "Доходность"
 
+#: templates/js/my/accounts_investments.html:24
 msgid "Portfolio"
 msgstr "Портфель"
 
+#: templates/js/my/accounts_investments.html:36
+#: templates/js/my/accounts_pamm_investments.html:32
 msgid "Master"
 msgstr "Управляющий"
 
+#: templates/js/my/accounts_investments.html:37
 msgid "Replication ratio"
 msgstr "Коэффициент копирования"
 
+#: templates/js/my/accounts_investments.html:41
 msgid "Comission"
 msgstr "Комиссия"
 
+#: templates/js/my/accounts_investments.html:42
 msgid "Max Loss"
 msgstr "Макс просадка"
 
+#: templates/js/my/accounts_investments.html:43
+#: templates/js/my/accounts_master.html:49
+#: templates/js/my/accounts_pamm_investments.html:39
+#: templates/js/my/accounts_pamm_master.html:52
 msgid "Actions"
 msgstr "Действия"
 
+#: templates/js/my/accounts_investments.html:58
 msgid "Edit"
 msgstr "Редактировать"
 
+#: templates/js/my/accounts_investments.html:63
 msgid "Disconnect from the manager"
 msgstr "Открепиться от управляющего"
 
+#: templates/js/my/accounts_investments.html:64
 msgid "Cancel investment request"
 msgstr "Отменить заявку на инвестирование"
 
+#: templates/js/my/accounts_master.html:4
 msgid "My LAMM investors"
 msgstr "Мои LAMM инвесторы"
 
+#: templates/js/my/accounts_master.html:16
+#: templates/js/my/accounts_pamm_master.html:17
 msgid "Reward"
 msgstr "Награда"
 
+#: templates/js/my/accounts_master.html:31
+#: templates/js/my/accounts_pamm_master.html:34
+#: templates/js/my/accounts_trading.html:35
+#: templates/js/my/accounts_trading.html:111
+#: templates/js/my/accounts_trading.html:188
 msgid "Demo"
 msgstr "Демо"
 
+#: templates/js/my/accounts_master.html:31
+#: templates/js/my/accounts_pamm_master.html:34
+#: templates/js/my/accounts_trading.html:35
+#: templates/js/my/accounts_trading.html:111
+#: templates/js/my/accounts_trading.html:188
 msgid "Real"
 msgstr "Реальный"
 
+#: templates/js/my/accounts_master.html:47
 msgid "Binding date"
 msgstr "Дата привязки"
 
+#: templates/js/my/accounts_master.html:68
 msgid "Disconnect investor"
 msgstr "Открепить инвестора"
 
+#: templates/js/my/accounts_master.html:70
 msgid "Confirm request"
 msgstr "Подтвердить заявку"
 
+#: templates/js/my/accounts_master.html:71
 msgid "Reject request"
 msgstr "Отклонить заявку"
 
+#: templates/js/my/accounts_pamm_investments.html:4
 msgid "PAMM Investments"
 msgstr "PAMM инвестиции"
 
+#: templates/js/my/accounts_pamm_investments.html:5
 msgid "Invest"
 msgstr "Инвестировать"
 
+#: templates/js/my/accounts_pamm_investments.html:13
 msgid "There is no account to display"
 msgstr "Нет счетов для отображения"
 
+#: templates/js/my/accounts_pamm_investments.html:20
 msgid "Total account balance"
 msgstr "Общий баланс счёта"
 
+#: templates/js/my/accounts_pamm_investments.html:33
 msgid "Invetsments amount"
 msgstr "Объём инвестиций"
 
+#: templates/js/my/accounts_pamm_investments.html:37
 msgid "Rollover time"
 msgstr "Время следующего ролловера"
 
+#: templates/js/my/accounts_pamm_master.html:4
 msgid "My PAMM investors"
 msgstr "Мои PAMM инвесторы"
 
+#: templates/js/my/accounts_pamm_master.html:6
 msgid "Open PAMM account"
 msgstr "Открыть PAMM счет"
 
+#: templates/js/my/accounts_pamm_master.html:49
 msgid "Investments amount"
 msgstr "Объём инвестиций"
 
+#: templates/js/my/accounts_pamm_master.html:50
 msgid "Investment creation date"
 msgstr "Дата создания"
 
+#: templates/js/my/accounts_pamm_master.html:89
 msgid "Total investments"
 msgstr "Итого инвестиций"
 
+#: templates/js/my/accounts_pamm_master.html:92
 msgid "came in"
 msgstr "присоединилось"
 
+#: templates/js/my/accounts_pamm_master.html:93
 msgid "came out"
 msgstr "отсоединилось"
 
+#: templates/js/my/accounts_partnership.html:5
 msgid "Partnership"
 msgstr "Партнёрство"
 
-msgid "demo"
-msgstr "demo"
+#: templates/js/my/accounts_partnership.html:37
+#, fuzzy
+#| msgid "Account type"
+msgid "Account types"
+msgstr "Тип счета"
 
+#: templates/js/my/accounts_total_sum.html:5
 msgid "Total<br> on real accounts"
 msgstr "Всего<br> на реальных счетах"
 
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "                        Total<br> on <a ng-href=\"[[::BASE_URL]]partnership\">referral</a> accounts\n"
-#| "                    "
-msgid ""
-"\n"
-"                        Total<br> on <a ng-href=\"[[::BASE_URL]]partnership\">referral</a> accounts\n"
-"                    "
-msgstr ""
-"\n"
-"Сумма<br> на <a ng-href=\"[[::BASE_URL]]partnership\">партнёрских</a> счетах"
+#: templates/js/my/accounts_total_sum.html:8
+msgid "Total<br> on referral accounts"
+msgstr "Сумма<br> на партнерских счетах"
 
+#: templates/js/my/accounts_total_sum.html:16
 msgid "Hide accounts balance"
 msgstr "Скрыть баланс счетов"
 
+#: templates/js/my/accounts_trading.html:4
 msgid "ECN.MT"
 msgstr ""
 
+#: templates/js/my/accounts_trading.html:53
+#: templates/js/my/accounts_trading.html:129
+#: templates/js/my/accounts_trading.html:206
 msgid "Account was disabled because of"
 msgstr "Счет был заблокирован по причине "
 
+#: templates/js/my/accounts_trading.html:54
+#: templates/js/my/accounts_trading.html:130
+#: templates/js/my/accounts_trading.html:207
 msgid "More"
 msgstr "Подробнее"
 
+#: templates/js/my/accounts_trading.html:57
+#: templates/js/my/accounts_trading.html:133
+#: templates/js/my/accounts_trading.html:210
 #, python-format
 msgid ""
 "\n"
-"                According to <a href=\"%(link)s\">the conditions of Welcome Bonus 500</a>, deposit of the amount of profit made or larger is required in order to unblock funds and continue trading.\n"
+"                According to <a href=\"%(link)s\">the conditions of Welcome "
+"Bonus 500</a>, deposit of the amount of profit made or larger is required in "
+"order to unblock funds and continue trading.\n"
 "              "
 msgstr ""
 "\n"
-"Согласно <a href=\"%(link)s\">условиям акции Велком-бонус 500</a> для разблокировки средств и продолжения торговли необходимо пополнить счет на сумму равную полученной прибыли или большую."
+"Согласно <a href=\"%(link)s\">условиям акции Велком-бонус 500</a> для "
+"разблокировки средств и продолжения торговли необходимо пополнить счет на "
+"сумму равную полученной прибыли или большую."
 
+#: templates/js/my/accounts_trading.html:80
 msgid "ECN.PRO"
 msgstr ""
 
+#: templates/js/my/accounts_trading.html:157
 #, fuzzy
 #| msgid "Invest"
 msgid "ECN Invest"
 msgstr "Инвестировать"
 
+#: templates/js/my/accounts_trading.html:190
 msgid "default"
 msgstr ""
 
+#: templates/password_recovery.html:5
 #, python-format
 msgid "Password recovery for account %(account)s"
 msgstr "Восстановление пароля счета %(account)s"
 
+#: templates/verify_docs.html:11
 msgid "Please wait untill your documens will be aprroved"
 msgstr "Пожалуйста дождитесь пока ваши документы будут подтверждены"
 
-msgid "Your request for an investment account was received, please wait for our employees to contact you"
-msgstr "Ваша заявка на инвестиционный счёт получена, пожалуйста ожидайте, пока с вами свяжутся наши сотрудники"
+#: templates/verify_docs.html:17
+msgid ""
+"Your request for an investment account was received, please wait for our "
+"employees to contact you"
+msgstr ""
+"Ваша заявка на инвестиционный счёт получена, пожалуйста ожидайте, пока с "
+"вами свяжутся наши сотрудники"
 
+#: templates/wait_for_account_creation_ajax.html:6
+#: templates/wait_for_account_creation_ajax.html:40
 msgid "Your account is being created"
 msgstr "Ваш счёт в процессе создания"
 
+#: templates/wait_for_account_creation_ajax.html:40
 msgid ", please wait"
 msgstr ", пожалуйста подождите"
 
-msgid "We're sorry, the account creation seems to have failed. Please <a href='javascript:window.history.back();'>press 'Back'</a> in your browser and try again after 5 minutes. If the problem persists, please contact our support."
-msgstr "Приносим свои извинения, во время создания счёта произошла ошибка. Пожалуйста, <a href='javascript:window.history.back();'>нажмите \"Назад\"</a> в вашем браузере и попробуйте снова через 5 минут. Если проблема будет сохраняться, пожалуйста, обратитесь в нашу службу поддержки."
+#: templates/wait_for_account_creation_ajax.html:43
+msgid ""
+"We're sorry, the account creation seems to have failed. Please <a "
+"href='javascript:window.history.back();'>press 'Back'</a> in your browser "
+"and try again after 5 minutes. If the problem persists, please contact our "
+"support."
+msgstr ""
+"Приносим свои извинения, во время создания счёта произошла ошибка. "
+"Пожалуйста, <a href='javascript:window.history.back();'>нажмите \"Назад\"</"
+"a> в вашем браузере и попробуйте снова через 5 минут. Если проблема будет "
+"сохраняться, пожалуйста, обратитесь в нашу службу поддержки."
 
+#: templates/welcome/base.html:5 templates/welcome/base.html.py:17
+#: templates/welcome/realmicro.html:5
 msgid "Account created"
 msgstr "Счет создан"
 
+#: templates/welcome/base.html:22
 #, python-format
 msgid ""
 "\n"
-"                        Congratulations! You have opened a new %(account_type)s account in Grandcapital LTD!\n"
+"                        Congratulations! You have opened a new "
+"%(account_type)s account in Grandcapital LTD!\n"
 "                        Your account id is %(account_id)s.\n"
 "                    "
 msgstr ""
 "\n"
-"Поздравляем! Вы открыли новый %(account_type)s счет в Grandcapital LTD! Номер Вашего счета %(account_id)s."
+"Поздравляем! Вы открыли новый %(account_type)s счет в Grandcapital LTD! "
+"Номер Вашего счета %(account_id)s."
 
+#: templates/welcome/base.html:31
 #, python-format
 msgid ""
 "\n"
@@ -821,36 +1260,71 @@ msgstr ""
 "\n"
 "Пароль для доступа был отправлен на адрес %(email)s"
 
+#: templates/welcome/base.html:38
 msgid "Go to your account list management"
 msgstr "Перейти к управлению моими счетами"
 
+#: templates/welcome/realmicro.html:9
 #, python-format
 msgid ""
 "\n"
-"            Now you can take part in&nbsp;<a href=\"%(link)s\">\"Micro Trade\"</a>&nbsp;\n"
+"            Now you can take part in&nbsp;<a href=\"%(link)s\">\"Micro Trade"
+"\"</a>&nbsp;\n"
 "            contest and get additional profit\n"
 "        "
 msgstr ""
 "\n"
-"Теперь Вы можете участвовать в&nbsp;<a href=\"%(link)s\">конкурсе на центовых счетах</a>."
+"Теперь Вы можете участвовать в&nbsp;<a href=\"%(link)s\">конкурсе на "
+"центовых счетах</a>."
 
-msgid "You need to set up a secure authentication method before opening a Real account."
-msgstr "Перед открытием реального счёта вам необходимо настроить средство безопасной аутентификации"
+#: views.py:120
+msgid ""
+"You need to set up a secure authentication method before opening a Real "
+"account."
+msgstr ""
+"Перед открытием реального счёта вам необходимо настроить средство безопасной "
+"аутентификации"
 
+#: views.py:233
 msgid "Error while loading account data. Using cached data."
 msgstr "Ошибка при загрузке данных счета. Использованы данные из кэша."
 
+#: views.py:316
 #, python-format
-msgid "Password recovery request for account #%(id)s created successfully. Notification with the account password has been sent to your e-mail."
-msgstr "Запрос на восстановление пароля счета %(id)s принят. Уведомление с паролем счета отправлено на ваш email."
+msgid ""
+"Password recovery request for account #%(id)s created successfully. "
+"Notification with the account password has been sent to your e-mail."
+msgstr ""
+"Запрос на восстановление пароля счета %(id)s принят. Уведомление с паролем "
+"счета отправлено на ваш email."
 
+#: views.py:352
 #, python-format
 msgid "Leverage for account #%(id)s changed successfully."
 msgstr "Кредитное плечо счета номер %(id)s было изменено."
 
+#: views.py:366
 #, python-format
 msgid "Request #%(id)s created successfully."
 msgstr "Запрос номер %(id)s создан."
+
+#~ msgid "buy"
+#~ msgstr "buy"
+
+#~ msgid "sell"
+#~ msgstr "sell"
+
+#~ msgid "sell stop"
+#~ msgstr "sell stop"
+
+#~ msgid "withdraw/deposit"
+#~ msgstr "ввод/вывод"
+
+#~ msgid "credit"
+#~ msgstr "кредит"
+
+#~ msgid "demo"
+#~ msgstr "demo"
 
 #~ msgid "Options style successfully changed"
 #~ msgstr "Тип опционов успешно изменён"
