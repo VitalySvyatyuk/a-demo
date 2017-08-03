@@ -138,8 +138,8 @@ msgstr "Регулирование"
 msgid "Cookie Policy"
 msgstr "Политика cookies"
 
-msgid "Agents and Representatives"
-msgstr "Агенты и представительства"
+msgid "Partners and Representatives"
+msgstr "Партнеры и представительства"
 
 msgid "Document name"
 msgstr ""

@@ -1029,8 +1029,8 @@ msgstr ""
 "\n"
 "Regional representative program gives an opportunity to individuals and existing companies to benefit from representation of GC services. Regional representative status allows you to work on behalf of Grand Capital in your city and receive commission for each client."
 
-msgid "Become a regional representative"
-msgstr "Become a regional representative"
+msgid "Become a regional partner"
+msgstr "Стать региональным партнером"
 
 msgid "Your office"
 msgstr "The clients sign up through your office"

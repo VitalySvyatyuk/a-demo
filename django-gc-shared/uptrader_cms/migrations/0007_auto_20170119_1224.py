@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='legaldocument',
             name='category',
-            field=models.CharField(max_length=100, verbose_name='Category', choices=[(b'docs', 'Documents'), (b'policy', 'Privacy Policy'), (b'risks', 'Risk Disclosure'), (b'regulation', 'Regulation'), (b'cookies', 'Cookie Policy'), (b'agents', 'Agents and Representatives')]),
+            field=models.CharField(max_length=100, verbose_name='Category', choices=[(b'docs', 'Documents'), (b'policy', 'Privacy Policy'), (b'risks', 'Risk Disclosure'), (b'regulation', 'Regulation'), (b'cookies', 'Cookie Policy'), (b'agents', 'Partners and Representatives')]),
         ),
     ]
