@@ -203,21 +203,21 @@ block content
                   td
                   td.button-cell
                     {% if LANGUAGE_CODE == 'ru' %}
-                    div.not-ready-platform-ru
+                    div.risk-hidden-ru
                       a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                         - trans "Open an account"
                     {% else %}
-                    div.not-ready-platform-en
+                    div.risk-hidden-en
                       a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                         - trans "Open an account"
                     {% endif %}
                   td.button-cell
                     {% if LANGUAGE_CODE == 'ru' %}
-                    div.not-ready-platform-ru
+                    div.risk-hidden-ru
                       a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                         - trans "Open an account"
                     {% else %}
-                    div.not-ready-platform-en
+                    div.risk-hidden-en
                       a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                         - trans "Open an account"
                     {% endif %}
@@ -242,12 +242,12 @@ block content
                 - trans "You may try ECN.MT and ECN.PRO accounts in Demo version under terms and conditions identical to the real trading account."
             .col-md-4.action-button-wrapper
               {% if LANGUAGE_CODE == 'ru' %}
-              div.not-ready-platform-ru
+              div.risk-hidden-ru
                 a.button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                   span.button__text
                     - trans "Open a demo account"
               {% else %}
-              div.not-ready-platform-en
+              div.risk-hidden-en
                 a.button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                   span.button__text
                     - trans "Open a demo account"

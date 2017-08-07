@@ -121,21 +121,21 @@ block content
               td
               td
                 {% if LANGUAGE_CODE == 'ru' %}
-                div.not-ready-platform-ru
+                div.risk-hidden-ru
                   a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                     - trans "Open an account"
                 {% else %}
-                div.not-ready-platform-en
+                div.risk-hidden-en
                   a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                     - trans "Open an account"
                 {% endif %}
               td
                 {% if LANGUAGE_CODE == 'ru' %}
-                div.not-ready-platform-ru
+                div.risk-hidden-ru
                   a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                     - trans "Open an account"
                 {% else %}
-                div.not-ready-platform-en
+                div.risk-hidden-en
                   a(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                       - trans "Open an account"
                 {% endif %}
@@ -146,12 +146,12 @@ block content
               - trans "You may try any account type on a Demo Account under terms and conditions identical to the real trading account. "
           .col-md-4
             {% if LANGUAGE_CODE == 'ru' %}
-            div.not-ready-platform-ru
+            div.risk-hidden-ru
               a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                 span.button__text
                   - trans "Open a demo account"
             {% else %}
-            div.not-ready-platform-en
+            div.risk-hidden-en
               a.button.button--big-on-mobiles.strategies__buttons_box__button.button--outline(href=if_accounts_link,  data-popup-target=if_data, class=if_class)
                 span.button__text
                   - trans "Open a demo account"

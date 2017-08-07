@@ -176,7 +176,7 @@ block content
 
 		.techs__slider.js-slider(data-slick="{\"slidesToShow\": 4, \"slidesToScroll\": 1, \"fade\": false, \"arrows\": true, \"dots\": false, \"prevArrow\": \".js-slider-prev-arrow\", \"nextArrow\": \".js-slider-next-arrow\", \"autoplay\": true, \"autoplaySpeed\": 1000099, \"responsive\": [{\"breakpoint\": 1200, \"settings\": {\"slidesToShow\": 3}}, {\"breakpoint\": 1000, \"settings\": {\"slidesToShow\": 2}}, {\"breakpoint\": 780, \"settings\": {\"slidesToShow\": 1}}]}")
 			{% if LANGUAGE_CODE == 'ru' %}
-			a.techs__slider__item.not-ready-platform-ru(href="{% url 'mt4' %}")
+			a.techs__slider__item(href="{% url 'mt4' %}")
 				.techs__slider__item_box.borders_box
 					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--mt4.png' %}")
 					span.techs__slider__text
@@ -184,7 +184,7 @@ block content
 					.borders.borders--top-bottom
 					.borders.borders--sides
 			{% else %}
-			a.techs__slider__item.not-ready-platform-en(href="{% url 'mt4' %}")
+			a.techs__slider__item(href="{% url 'mt4' %}")
 				.techs__slider__item_box.borders_box
 					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--mt4.png' %}")
 					span.techs__slider__text
@@ -194,7 +194,7 @@ block content
 			{% endif %}
 
 			{% if LANGUAGE_CODE == 'ru' %}
-			a.techs__slider__item.not-ready-platform-ru(href="{% url 'arumpro' %}")
+			a.techs__slider__item(href="{% url 'arumpro' %}")
 				.techs__slider__item_box.borders_box
 					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--web.png' %}")
 					span.techs__slider__text
@@ -202,7 +202,7 @@ block content
 					.borders.borders--top-bottom
 					.borders.borders--sides
 			{% else %}
-			a.techs__slider__item.not-ready-platform-en(href="{% url 'arumpro' %}")
+			a.techs__slider__item(href="{% url 'arumpro' %}")
 				.techs__slider__item_box.borders_box
 					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--web.png' %}")
 					span.techs__slider__text
@@ -212,7 +212,7 @@ block content
 			{% endif %}
 
 			{% if LANGUAGE_CODE == 'ru' %}
-			a.techs__slider__item.not-ready-platform-ru(href="{% url 'arumpro' %}")
+			a.techs__slider__item(href="{% url 'arumpro' %}")
 				.techs__slider__item_box.borders_box
 					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--pro.png' %}")
 					span.techs__slider__text
@@ -220,7 +220,7 @@ block content
 					.borders.borders--top-bottom
 					.borders.borders--sides
 			{% else %}
-			a.techs__slider__item.not-ready-platform-en(href="{% url 'arumpro' %}")
+			a.techs__slider__item(href="{% url 'arumpro' %}")
 				.techs__slider__item_box.borders_box
 					img.techs__slider__img.techs__slider__img--texted-img(src="{% static 'img/marketing-site/etc/techs_logos/logo--pro.png' %}")
 					span.techs__slider__text
