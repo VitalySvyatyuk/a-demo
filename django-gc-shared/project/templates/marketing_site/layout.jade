@@ -419,10 +419,10 @@ html
 		script(src="{% versioned 'js/marketing_main.js' %}")
 		{% if LANGUAGE_CODE == 'ru' %}
 		script(src="{% versioned 'js/jquery.cookiebar_ru.js' %}")
-		script(src="{% versioned 'js/not-ready-platform-ru.js' %}")
+		//script(src="{% versioned 'js/not-ready-platform-ru.js' %}")
 		{% else %}
 		script(src="{% versioned 'js/jquery.cookiebar_en.js' %}")
-		script(src="{% versioned 'js/not-ready-platform-en.js' %}")
+		//script(src="{% versioned 'js/not-ready-platform-en.js' %}")
 		{% endif %}
 		#cookie_href(style="display: none;")
 			|{{'cookie_policy' | agreement_url}}
