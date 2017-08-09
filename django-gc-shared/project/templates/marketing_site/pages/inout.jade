@@ -29,29 +29,29 @@ block content
 			.container
 				table.strategies.js-tab-content.state-visible(data-tab-index="", data-tab-category="")
 					tr.strategies__row
-						th.strategies__cell.strategies__cell_header
-							span.strategies__cell__title
+						th.strategies__cell.strategies__cell_header.sc
+							span.strategies__cell__title.sct
 								- trans "Deposit method"
-						th.strategies__cell.strategies__cell_header
-							span.strategies__cell__title
+						th.strategies__cell.strategies__cell_header.sc
+							span.strategies__cell__title.sct
 								- trans "Currency"
-						th.strategies__cell.strategies__cell_header
-							span.strategies__cell__title
+						th.strategies__cell.strategies__cell_header.sc
+							span.strategies__cell__title.sct
 								- trans "Execution time"
-						th.strategies__cell.strategies__cell_header
-							span.strategies__cell__title
+						th.strategies__cell.strategies__cell_header.sc
+							span.strategies__cell__title.sct
 								- trans "Minimum deposit"
-						th.strategies__cell.strategies__cell_header
-							span.strategies__cell__title
+						th.strategies__cell.strategies__cell_header.sc
+							span.strategies__cell__title.sct
 								- trans "Commission on deposit"
-						th.strategies__cell.strategies__cell_header
-							span.strategies__cell__title
+						th.strategies__cell.strategies__cell_header.sc
+							span.strategies__cell__title.sct
 								- trans "Minimum commission"
-						th.strategies__cell.strategies__cell_header
-							span.strategies__cell__title
+						th.strategies__cell.strategies__cell_header.sc
+							span.strategies__cell__title.sct
 								- trans "Maximum commission"
-						th.strategies__cell.strategies__cell_header
-							span.strategies__cell__title
+						th.strategies__cell.strategies__cell_header.sc
+							span.strategies__cell__title.sct
 								| &nbsp;
 
 					- regroup deposit_systems|dictsortreversed:"category.priority" by category as deposit_groups
