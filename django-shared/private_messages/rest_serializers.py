@@ -11,7 +11,7 @@ class MessageSerializer(serializers.ModelSerializer):
     def get_campaign_info(self, obj):
         if obj.campaign:
             return {
-                'id': obj.campaign.id,
+                'id': obj.campaign.pk,
                 'name': obj.campaign.email_subject,
                 'url': obj.campaign.get_absolute_url()
             }

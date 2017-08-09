@@ -44,9 +44,9 @@ def log_profile_changes(sender, instance, created, **kwargs):
     if instance.changes.get('manager'):
         old = instance.changes.get('manager')[0]
         Event.MANAGER_CHANGED.log(instance.user, {
-            "old_id": old.id if old else None,
+            "old_id": old.pk if old else None,
             "old_str": unicode(old),
-            "new_id": instance.manager.id if instance.manager else None,
+            "new_id": instance.manager.pk if instance.manager else None,
             "new_str": unicode(instance.manager),
         })
 
@@ -90,7 +90,7 @@ def on_userdocument(sender, instance, created, *args, **kwargs):
     # Crappy circular dependencies...
     from issuetracker.models import issue, CheckDocumentIssue
     log.info("User doc uploaded")
-    with user_doc_locks[instance.user.id] as lock:
+    with user_doc_locks[instance.user.pk] as lock:
         try:
             profile = UserProfile.objects.get(user=instance.user)
         except (ObjectDoesNotExist, MultipleObjectsReturned):

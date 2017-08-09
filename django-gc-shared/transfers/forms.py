@@ -224,7 +224,7 @@ class InternalTransferForm(forms.ModelForm):
                 "New issue for internal transfer created",
                 'sender: {}, recipient: {}\namount: {}, issuetracker: {}'
                     .format(sender, recipient, amount, 
-                            'arumcapital.eu' + reverse("admin:issuetracker_internaltransferissue_change", args=(result.id,))),
+                            'arumcapital.eu' + reverse("admin:issuetracker_internaltransferissue_change", args=(result.pk,))),
                 settings.SERVER_EMAIL,
                 settings.BACKOFFICE
             )

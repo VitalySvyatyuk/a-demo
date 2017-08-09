@@ -99,7 +99,7 @@ def add_domain(request):
         #create task to review domain on next day
     return redirect('referral_banner_list')
 
-get_regions_data = memoize()(lambda: json.dumps({c.id: [(r.id, unicode(r)) for r in c.regions.all()]
+get_regions_data = memoize()(lambda: json.dumps({c.pk: [(r.pk, unicode(r)) for r in c.regions.all()]
                                                  for c in Country.objects.order_by('name').all()}))
 
 

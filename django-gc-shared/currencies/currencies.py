@@ -108,20 +108,19 @@ USD = Currency(
     verbose_name=_('US Dollar'),
     is_metal=False,
 )
-#
-# RUR = Currency(
-#     slug='RUR',
-#     group_regex='_ru',
-#     symbol=_('RUR symbol'),
-#     instrument_name='RUB',
-#     verbose_name=_('Russian rouble'),
-#     is_metal=False,
-# )
-#
-# # Alias
-# Currency.register['RUB'] = RUR
-# RUB = RUR
-#
+
+RUR = Currency(
+    slug='RUR',
+    group_regex='_ru',
+    instrument_name='RUB',
+    verbose_name=_('Russian rouble'),
+    is_metal=False,
+)
+
+# Alias
+Currency.register['RUB'] = RUR
+RUB = RUR
+
 # EUR = Currency(
 #     slug='EUR',
 #     group_regex='_eu',

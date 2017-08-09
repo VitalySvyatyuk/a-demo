@@ -42,7 +42,7 @@ def check_otp(action, user, input_data, secure_data=None, otp_device=None):
     if not (otp_device or user.profile.has_otp_devices):
         raise NoDevice()
 
-    cache_key = "failed_otp_check_%d" % user.id
+    cache_key = "failed_otp_check_%d" % user.pk
     fails = cache.get(cache_key) or 0
     if fails > 5:
         raise InvalidOTPToken()
@@ -59,7 +59,7 @@ def check_otp(action, user, input_data, secure_data=None, otp_device=None):
         otp_device = otp_device.get_voice_device()
 
     data = {
-        'user_id': user.id,
+        'user_id': user.pk,
         'action': action,
 
         #it is handy to provide just all data, so filter
@@ -149,7 +149,7 @@ def check_otp_old(action, request, otp_device=None, data=None):
         otp_device = otp_device.get_voice_device()
 
     data = {
-        'user_id': request.user.id,
+        'user_id': request.user.pk,
         'path': request.path,
         'qs': request.QUERY_PARAMS,
         'data': data or dict_without(request.data, [

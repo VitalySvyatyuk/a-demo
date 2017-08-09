@@ -128,7 +128,7 @@ class DepositForm(base.DepositForm):
 
     @classmethod
     def generate_mt4_comment(cls, payment_request):
-        return "{NETELLER}[%s]" % payment_request.id
+        return "{NETELLER}[%s]" % payment_request.pk
 
     def clean(self):
         from platforms.converter import convert_currency

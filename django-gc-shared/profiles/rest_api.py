@@ -59,13 +59,13 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet, mixins.UpdateModelMixin):
     def get_object(self):
         lookup_url_kwarg = self.lookup_url_kwarg or self.lookup_field
         if self.kwargs[lookup_url_kwarg] == 'me':
-            self.kwargs[lookup_url_kwarg] = self.request.user.id
+            self.kwargs[lookup_url_kwarg] = self.request.user.pk
         return get_object_or_404(self.get_queryset(), **{
             self.lookup_field: self.kwargs[lookup_url_kwarg]
         })
 
     def get_queryset(self):
-        return User.objects.filter(id=self.request.user.id)
+        return User.objects.filter(id=self.request.user.pk)
 
     def remove_changed_validations(self, instance, new_data):
         for validation in instance.validations.filter(is_valid=True):

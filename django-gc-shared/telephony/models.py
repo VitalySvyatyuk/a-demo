@@ -32,7 +32,7 @@ class ExternalAsteriskCDR(models.Model):
         managed = False
 
     #but anyway we should use https://gist.github.com/iorlas/6219364
-    id = models.IntegerField(primary_key=True, db_column='cdr_id')
+    id = models.IntegerField(primary_key=True, db_column='cdr_id')  # FIXME: зачем переопределять pk?
     calldate = models.DateTimeField(auto_now_add=True)
     clid = models.CharField(default=u'', max_length=80)
     src = models.CharField(default=u'', max_length=80)
@@ -69,7 +69,7 @@ class ExternalAsteriskCDR(models.Model):
     @property
     def local_cdr(self):
         try:
-            return CallDetailRecord.objects.get(external_cdr_id=self.id)
+            return CallDetailRecord.objects.get(external_cdr_id=self.pk)
         except CallDetailRecord.DoesNotExist:
             return None
 

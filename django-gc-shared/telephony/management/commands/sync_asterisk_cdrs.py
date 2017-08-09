@@ -18,7 +18,7 @@ from django.core.mail import send_mail
 class Command(BaseCommand):
     def execute(self, *args, **options):
         max_external_cdr_id = CallDetailRecord.objects.aggregate(max=Max('external_cdr_id')).get('max', 0) or 0
-        new_external_cdrs = ExternalAsteriskCDR.objects.filter(id__gt=max_external_cdr_id)
+        new_external_cdrs = ExternalAsteriskCDR.objects.filter(pk__gt=max_external_cdr_id)
         # Paginator for memory optimization!
         paginator = Paginator(new_external_cdrs, 1000)
         for i in paginator.page_range:
@@ -37,7 +37,7 @@ class Command(BaseCommand):
                     data['number_b'], data['name_b'], data['user_b'] = external_cdr.dest_info()
 
                     cdr, created = CallDetailRecord.objects.get_or_create(
-                        external_cdr_id=external_cdr.id, defaults=data)
+                        external_cdr_id=external_cdr.pk, defaults=data)
                     if created:
                         cdr.save()
 
@@ -49,7 +49,7 @@ class Command(BaseCommand):
                                 voice_mail.save()
                                 send_mail(
                                     u"New voice mail recieved",
-                                    u'Check new voice mail at {}'.format(reverse("admin:telephony_voicemailcdr_change", args=(voice_mail.id,))),
+                                    u'Check new voice mail at {}'.format(reverse("admin:telephony_voicemailcdr_change", args=(voice_mail.pk,))),
                                     settings.SERVER_EMAIL,
                                     settings.MANAGERS[0]  # Which means support email
                                 )

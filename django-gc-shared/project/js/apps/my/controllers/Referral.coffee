@@ -73,12 +73,8 @@ app.controller "ReferralController", ($scope, Mt4Account, $sce, PartnerDomain, d
     }, queryData))
     $scope.refLinkAlt = urlParser.href
 
-    $scope.productLink = base + $scope.selectedProduct + '/' + searchPart
+    $scope.productLink = base + $scope.selectedProduct +  searchPart
     $scope.productLink = '' if $scope.selectedProduct == 0
-    
-    $scope.landingLink = base + $scope.selectedLanding + '/' + searchPart
-    $scope.landingLink = '' if $scope.selectedLanding == 0
-
 
   urlParser = document.createElement 'a'
   $scope.domains = domains

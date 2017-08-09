@@ -5,6 +5,12 @@ app.controller "AccountsController", ($scope, Mt4Account, $interval, accounts, t
       memo + $scope.mt4Data[acc.mt4_id].balance_usd_amount
     , 0
 
+  getReferralUSD = ->
+    _($scope.accounts).reduce (memo, acc) ->
+      return memo unless $scope.mt4Data[acc.mt4_id] and not acc.is_demo
+      memo + $scope.mt4Data[acc.mt4_id].referral_usd_amount
+    , 0
+
   tmpObject = {
     mt4:'trading',
     cfh: 'pro',
@@ -82,26 +88,15 @@ app.controller "AccountsController", ($scope, Mt4Account, $interval, accounts, t
           $scope.account.getMt4Data().then (data)->
             $scope.mt4Data[$scope.account.mt4_id] = data
 
-  $scope.there_are_pamm_masters = () ->
-    for acc in $scope.accounts
-      if acc.is_pamm_master
-        return true
-    return false
-
-  $scope.there_are_lamm_masters = () ->
-    for acc in $scope.accounts
-      if acc.is_lamm_master
-        return true
-    return false
-
   # Init
   $scope.mt4Data = {}
   $scope.accountsPageType = type
   $scope.showMoney = true
   $scope.accounts = accounts
   $scope.totalRealUSD = null
-#  $scope.selectCategory "trading"
+
   if $scope.accounts.length > 0
+    is_partnership = $scope.accounts[0].ib_data != null
     $scope.loadMt4Data _($scope.accounts).pluck('mt4_id')
     .then (res) ->
-      $scope.totalRealUSD = getTotalRealUSD()
+      $scope.totalRealUSD = if is_partnership then getReferralUSD() else getTotalRealUSD()

@@ -13,7 +13,7 @@ cache_key_rate = 'currency.rates.mt4'
 __all__ = ["convert_currency"]
 
 MT4_USD_SYMBOLS = (
-    "EURUSD",
+    "EURUSD", "USDRUB",
 )
 
 
@@ -78,10 +78,12 @@ def convert_currency_mt4(amount, from_currency, to_currency='USD'):
     from platforms.mt4.external.models_other import Mt4Quote
 
     def get_quote(currency):
-        if currency.instrument_name == 'BTC':
-            quote = Mt4Quote.objects.get(symbol='BTCUSD')
-            return Mt4Quote(symbol='USDBTC', ask=1.0 / quote.ask, bid=1.0 / quote.bid)
-        return Mt4Quote.objects.get(symbol="USD{}conv".format(currency.instrument_name))
+        try:
+            return Mt4Quote.objects.get(symbol="USD{}".format(currency.instrument_name))
+        except Mt4Quote.DoesNotExist:
+            pass
+        quote = Mt4Quote.objects.get(symbol="{}USD".format(currency.instrument_name))
+        return Mt4Quote(ask=1.0/quote.bid, bid=1.0/quote.ask)
 
     to_currency = currencies.get_currency(to_currency)
     from_currency = currencies.get_currency(from_currency)

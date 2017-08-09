@@ -128,10 +128,10 @@ class MenuItem(models.Model):
         return visibility
 
     def set_children(self, request):
-        menus = dict([(m.id, m) for m in MenuItem.objects.all() if m.caption])
+        menus = dict([(m.pk, m) for m in MenuItem.objects.all() if m.caption])
 
         def traverse(menu, menus, request):
-            menu.all_children = sorted([m for m in menus.itervalues() if m.parent_id == menu.id],
+            menu.all_children = sorted([m for m in menus.itervalues() if m.parent_id == menu.pk],
                                        key=lambda key: key.rank)
             menu.is_self_selected = menu.is_self_selected(request)
             menu.is_selected = menu.is_selected(request)

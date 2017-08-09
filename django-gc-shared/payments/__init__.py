@@ -19,7 +19,7 @@ define('BANKS', {
 })
 
 PAYMENT_SYSTEMS_FORMS = {
-    "quick": ["accentpay", "accentpay_cards", "accentpay_comepay", "accentpay_sberbank",
+    "quick": ["accentpay", "accentpay_cards", "accentpay_comepay", "accentpay_sberbank", "qiwi",
               "accentpay_terminal", "accentpay_yandex"],
     "phone": ["accentpay_qiwi"],
     "transfer": ["westernunion", "moneygram"],
@@ -46,7 +46,7 @@ PAYMENT_SYSTEM_TYPES = {
         #     "order": 40
         # },
         "electronic": {
-            "systems": ['ecommpay', "neteller", "moneybookers"],
+            "systems": ['ecommpay', "neteller", "moneybookers", "qiwi"],
             "title": _("Electronic payment systems"),
             "order": 60
         },
@@ -74,7 +74,7 @@ PAYMENT_SYSTEM_TYPES = {
             "order": 10
         },
         "electronic": {
-            "systems": ["neteller", "moneybookers", "ecommpay"],
+            "systems": ["neteller", "moneybookers", "ecommpay", "qiwi"],
             "title": _("Electronic payment systems"),
             "order": 20
         },

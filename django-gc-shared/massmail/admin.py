@@ -38,6 +38,10 @@ class MailingListAdminForm(forms.ModelForm):
                                   help_text=_('Format: email<space>name'),
                                   )
 
+    class Meta:
+        model = MailingList
+        fields = ('name', 'query', 'subscribers_count',  'subscribers')
+
 
 class MailingListAdmin(admin.ModelAdmin):
     inlines = [SubscriberInline]
@@ -45,7 +49,7 @@ class MailingListAdmin(admin.ModelAdmin):
     save_as = True
 
     list_display = ('name', 'subscribers_count', 'creation_ts')
-    list_filter = ('creation_ts',)
+    list_filter = ('creation_ts', )
     ordering = ("-creation_ts", )
 
     def get_readonly_fields(self, request, obj=None):
@@ -58,7 +62,8 @@ class MailingListAdmin(admin.ModelAdmin):
         if form.cleaned_data['subscribers'].strip():
             for line in form.cleaned_data['subscribers'].strip().split('\n'):
                 line_splitted = line.strip().split(' ', 1)
-                if len(line_splitted) < 2: line_splitted.append('')
+                if len(line_splitted) < 2:
+                    line_splitted.append('')
                 email, name = line_splitted
                 if not email_re.match(email):
                     continue
@@ -72,10 +77,10 @@ class MailingListAdmin(admin.ModelAdmin):
         obj.save()
 
         # Recount email count in background
-        from massmail.tasks import recount_email_count
+        import massmail.tasks
         # FIXME: is there a case, when there is no pk?
         if obj.pk:
-            recount_email_count.delay(obj.pk)
+            massmail.tasks.recount_email_count.delay(obj.pk)
 
 
 class MessageBlockAdminForm(forms.ModelForm):
@@ -84,6 +89,9 @@ class MessageBlockAdminForm(forms.ModelForm):
         super(MessageBlockAdminForm, self).__init__(*args, **kwargs)
         self.fields['value_html'].widget = CKEditorWidget(config_name="massmail")
 
+    class Meta:
+        model = MessageBlock
+        fields = ('value_html', )
 
 class MessageBlockInline(admin.StackedInline):
     extra = 1
@@ -98,12 +106,21 @@ class CampaignTypeAdmin(admin.ModelAdmin):
 
 class CampaignAdminForm(forms.ModelForm):
     languages = forms.MultipleChoiceField(choices=Country.LANGUAGES,
-                                          widget=admin.widgets.FilteredSelectMultiple(is_stacked=False, verbose_name="languages"))
+                                          widget=admin.widgets.FilteredSelectMultiple(is_stacked=False,
+                                                                                      verbose_name="languages"))
 
     def __init__(self, *args, **kwargs):
         super(CampaignAdminForm, self).__init__(*args, **kwargs)
 
         rel = ManyToManyRel(Campaign, 'id')
+
+        # FIXME: django docs:
+        # The base_fields class attribute is the *class-wide* definition of
+        # fields. Because a particular *instance* of the class might want to
+        # alter self.fields, we create self.fields here by copying base_fields.
+        # Instances should always modify self.fields; they should not modify
+        # self.base_fields.
+        # Don't think using base_fields here is necessary.
         self.base_fields['mailing_list'].widget = admin.widgets.RelatedFieldWidgetWrapper(
             SelectMultiple(attrs={'size': '6'}), rel, admin.site,)
         self.base_fields['negative_mailing_list'].widget = admin.widgets.RelatedFieldWidgetWrapper(
@@ -149,6 +166,11 @@ class CampaignAdminForm(forms.ModelForm):
             self._errors["send_once_datetime"] = self.error_class([_("This date has already passed")])
 
         return cleaned_data
+
+    class Meta:
+        model = Campaign
+        fields = ('mailing_list', 'negative_mailing_list', 'campaign_type', 'previous_campaigns',
+                  'send_once', 'send_once_datetime', 'send_period', 'cron', 'is_active', )
 
 
 class CampaignAdmin(admin.ModelAdmin):
@@ -202,7 +224,19 @@ class UnsubscribedAdmin(admin.ModelAdmin):
     search_fields = ('email',)
 
 
-class SmsCampaignAdminForm(CampaignAdminForm):
+class SmsCampaignAdminForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(SmsCampaignAdminForm, self).__init__(*args, **kwargs)
+
+        rel = ManyToManyRel(Campaign, 'pk')
+        self.base_fields['mailing_list'].widget = admin.widgets.RelatedFieldWidgetWrapper(
+            SelectMultiple(attrs={'size': '6'}), rel, admin.site,)
+        self.base_fields['negative_mailing_list'].widget = admin.widgets.RelatedFieldWidgetWrapper(
+            SelectMultiple(attrs={'size': '6'}), rel, admin.site,)
+        self.base_fields['campaign_type'].widget = admin.widgets.RelatedFieldWidgetWrapper(
+            SelectMultiple(attrs={'size': '6'}), rel, admin.site,)
+
     def clean(self):
         cleaned_data = super(SmsCampaignAdminForm, self).clean()
         try:
@@ -217,6 +251,10 @@ class SmsCampaignAdminForm(CampaignAdminForm):
 
     class Media:
         js = ['sms/js/sms_counter.js',]
+
+    class Meta:
+        model = SmsCampaign
+        fields = ('mailing_list', 'negative_mailing_list', 'campaign_type', 'text')
 
 
 class SmsCampaignAdmin(admin.ModelAdmin):

@@ -217,13 +217,13 @@ class Events(object):
 class LoggerQuerySet(models.QuerySet):
     def by_object(self, object):
         return self.filter(
-            object_id=object.id,
+            object_id=object.pk,
             content_type=ContentType.objects.get_for_model(type(object))
         )
 
     def by_object_ids(self, model, ids):
         return self.filter(
-            object_id__in=set(ids),
+            object_pk__in=set(ids),
             content_type=ContentType.objects.get_for_model(model)
         )
 
@@ -265,8 +265,8 @@ class LoggerQuerySet(models.QuerySet):
 
                 # query it
                 users = {
-                    u.id: u
-                    for u in User.objects.filter(id__in=users_ids)
+                    u.pk: u
+                    for u in User.objects.filter(pk__in=users_ids)
                         .select_related('profile', 'crm_manager', 'crm_manager__office')
                 }
                 users[None] = None
@@ -293,7 +293,7 @@ class LoggerQuerySet(models.QuerySet):
         #         users_ids.add(log.user_id)
         #
         # # query it
-        # users = {u.id: u for u in User.objects.filter(id__in=users_ids)}
+        # users = {u.pk: u for u in User.objects.filter(pk__in=users_ids)}
         # users[None] = None
         #
         # # pack it back

@@ -35,8 +35,10 @@
                 {% endblocktrans %}
             </div>
         {% endif %}
-        <div>&nbsp;</div>
-        <p>
-            &nbsp;</p>
+        <div>
+            {% if request.user.is_authenticated %}
+                <a href="/account/profile/subscriptions">{% trans "Go to subscriptions settings" %}</a>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

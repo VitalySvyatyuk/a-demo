@@ -58,7 +58,7 @@ def update_requisit(request, create=False, commit=True):
 
                         req_changes = {change[0]: {"from": unicode(change[1][0]), "to": unicode(change[1][1])}
                                        for change in changes.items()}
-                        req_changes["new_requisit_id"] = instance.id
+                        req_changes["new_requisit_id"] = instance.pk
                         Logger(user=request.user, ip=request.META["REMOTE_ADDR"],
                                event=Events.REQUISIT_CHANGED, content_object=req,
                                params=req_changes).save()

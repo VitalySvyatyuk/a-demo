@@ -21,7 +21,7 @@ def send_report(to, date_from, date_to, managers=None):
     managers = list(set(list(managers or []) + list(to)))
 
     stats = PersonalManager.manager_stats([m.user for m in managers], date_from, date_to)
-    stats.sort(key=lambda s: s['manager'].crm_manager.office.id if s['manager'].crm_manager.office else None)  # for template groupby
+    stats.sort(key=lambda s: s['manager'].crm_manager.office.pk if s['manager'].crm_manager.office else None)  # for template groupby
 
     lang_slug_to_display = dict(Country.LANGUAGES)
     new_users = sorted([
@@ -102,23 +102,23 @@ class Command(BaseCommand):
         base_managers = PersonalManager.objects.active().our_office_or_local()
 
         # total managers report
-        whoa = PersonalManager.objects.filter(user__id__in=[
+        whoa = PersonalManager.objects.filter(user__pk__in=[
             58, 37479, 140743  # s.kozlovsky and e.solovyova and DTom and tamaz t.volchetckiy
         ])
         send_report(whoa, date_from, date_to, managers=base_managers)
         sent_reports += [37479]
 
         # partnership managers
-        # aglezeris = PersonalManager.objects.get(user__id=87328)
+        # aglezeris = PersonalManager.objects.get(user__pk=87328)
         # send_report(aglezeris, date_from, date_to, managers=base_managers.partnership())
         # sent_reports.append(87328)
 
         # offices head managers
         for man in base_managers.filter(is_office_supermanager=True).exclude(office=None):
             send_report(man, date_from, date_to, base_managers.filter(office=man.office))
-            sent_reports.append(man.user.id)
+            sent_reports.append(man.user.pk)
 
         # each other manager should get personal report
         for man in base_managers:
-            if man.user.id not in sent_reports:
+            if man.user.pk not in sent_reports:
                 send_report(man, date_from, date_to)

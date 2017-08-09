@@ -10,7 +10,7 @@ from django.utils.encoding import force_unicode
 from django.utils.html import conditional_escape, escape
 from django.forms import CharField, ChoiceField
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, get_language
 from django.utils.encoding import smart_unicode
 from django.utils.html import mark_safe
 
@@ -35,14 +35,18 @@ class SelectPhoneCode(Select):
         # Normalize to strings.
         selected_choices = set([force_unicode(v) for v in selected_choices])
         output = []
-        countries_dict = dict((c.pk, mark_safe(
+        countries = Country.objects.filter(pk__in=map(lambda x: x[1], self.choices))
+        country_names_dict = {c.pk: c.name for c in countries}
+        country_codes_dict= dict((c.pk, mark_safe(
             "+%d%s( %s )" % (
                 c.phone_code,
                 '&nbsp;' * (8 + 2 * (3 - len(str(c.phone_code)))),
                 unicode(c))
-        )) for c in Country.objects.filter(pk__in=map(lambda x: x[1], self.choices)))
-        self.humanize_choices = [(code, countries_dict[pk], is_secondary, phone_mask)
-                                 for code, pk, is_secondary, phone_mask in self.choices]
+        )) for c in countries)
+        # Little hack to get ordering done
+        self.humanize_choices = sorted(self.choices, key=lambda c: country_names_dict[c[1]])
+        self.humanize_choices = [(code, country_codes_dict[pk], is_secondary, phone_mask)
+                                 for code, pk, is_secondary, phone_mask in self.humanize_choices]
         for option_value, option_label, is_secondary, phone_mask in self.humanize_choices:
             if isinstance(option_label, (list, tuple)):
                 for option in option_label:

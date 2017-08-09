@@ -102,7 +102,7 @@ class ManagerViewSet(viewsets.ReadOnlyModelViewSet):
             stats_date.start if stats_date else None,
             stats_date.stop if stats_date else None)
         for d in data:
-            d['manager'] = d['manager'] and d['manager'].id
+            d['manager'] = d['manager'] and d['manager'].pk
         return Response(data=data)
 
     @detail_route(methods=['post'], serializer_class=ManagerPasswordSerializer)
@@ -158,7 +158,7 @@ class ManagerViewSet(viewsets.ReadOnlyModelViewSet):
         serializer = self.get_serializer(data=request.query_params)
         serializer.is_valid(raise_exception=True)
         value = serializer.validated_data['value']
-        data = [{'id': item.id,
+        data = [{'id': item.pk,
                  'name': item.profile.get_full_name()}
                 for item in User.objects.filter(crm_manager=None).
                                 filter(Q(email__icontains=value) | Q(profile__phone_mobile__icontains=value))[:5]]
@@ -230,7 +230,7 @@ class ContactViewSet(viewsets.ModelViewSet):
             qs = qs.filter(manager=user)
 
         if params and params.getlist('id'):
-            qs = qs.filter(id__in=params.getlist('id'))
+            qs = qs.filter(pk__in=params.getlist('id'))
         return qs
 
     def get_queryset(self):
@@ -343,7 +343,7 @@ class ContactViewSet(viewsets.ModelViewSet):
         for d, rec in feed:
             instances.setdefault(rec['qs'], []).append(rec['id'])
         instances = {
-            qs.model: {o.id: o for o in qs.filter(id__in=ids)}
+            qs.model: {o.pk: o for o in qs.filter(pk__in=ids)}
             for qs, ids in instances.items()
         }
 
@@ -407,7 +407,7 @@ class ContactViewSet(viewsets.ModelViewSet):
             if not last_call or last_call.call_date < last.assigned_ts:
                 return Response({
                     'detail': _("To get a new client, you need to make a call to the previous one"),
-                    'last_id': last.gcrm_contact.id
+                    'last_id': last.gcrm_contact.pk
                 }, status=status.HTTP_403_FORBIDDEN)
 
         if last and (datetime.now() - last.assigned_ts) < timedelta(seconds=10):
@@ -425,7 +425,7 @@ class ContactViewSet(viewsets.ModelViewSet):
 
         new_contact.add_task(text=_("First contact with the client"))
 
-        return Response({'id': new_contact.id})
+        return Response({'id': new_contact.pk})
 
     @detail_route(methods=['post'])
     def user_reset_otp(self, request, pk=None):
@@ -674,7 +674,7 @@ class AccountFilter(FilterSet):
         searches = Q()
         for word in value.strip().split():
             searches &= (
-                Q(mt4_id__icontains=word) |
+                Q(mt4_pk__icontains=word) |
                 Q(user__gcrm_contact__name__icontains=word)
             )
         return queryset.filter(searches)
@@ -782,7 +782,7 @@ class CountryFilter(FilterSet):
     def filter_ids(self, queryset, value):
         if not value:
             return queryset
-        return queryset.filter(id__in=value)
+        return queryset.filter(pk__in=value)
 
 
 class CountryViewSet(viewsets.ModelViewSet):
@@ -828,7 +828,7 @@ class RegionFilter(FilterSet):
     def filter_ids(self, queryset, value):
         if not value:
             return queryset
-        return queryset.filter(id__in=value)
+        return queryset.filter(pk__in=value)
 
 
 class RegionViewSet(viewsets.ModelViewSet):

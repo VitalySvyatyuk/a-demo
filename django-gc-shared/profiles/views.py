@@ -387,7 +387,7 @@ def reset_otp(request, profile_id):
     profile = get_object_or_404(UserProfile, id=profile_id)
     profile.delete_otp_devices(lost_otp=True)
     messages.add_message(request, messages.SUCCESS, u"OTP for %s successfully reset" % profile)
-    return redirect('admin:profiles_userprofile_change', profile.id)
+    return redirect('admin:profiles_userprofile_change', profile.pk)
 
 
 @permission_required("profiles.change_userdatavalidation")
@@ -395,9 +395,9 @@ def switch_documents_status(request, profile_id):
     reject_commentary = request.POST.get('commentary')
     if request.method == 'POST':
         profile = get_object_or_404(UserProfile, id=profile_id)
-        if not UserDocument.objects.filter(user_id=profile.user.id).exists():
+        if not UserDocument.objects.filter(user_id=profile.user.pk).exists():
             messages.add_message(request, messages.ERROR, u"{} must upload atleast 1 document to mark it's as verified".format(profile))
-            return redirect('admin:profiles_userprofile_change', profile.id)
+            return redirect('admin:profiles_userprofile_change', profile.pk)
         if profile.status == UserProfile.VERIFIED:
 
             profile.make_documents_invalid()
@@ -407,4 +407,4 @@ def switch_documents_status(request, profile_id):
             profile.make_documents_valid()
             notification.send([profile.user], 'document_verified')
             messages.add_message(request, messages.SUCCESS, format_html(u"{} is <b>verified</b> now".format(profile)))
-        return redirect('admin:profiles_userprofile_change', profile.id)
+        return redirect('admin:profiles_userprofile_change', profile.pk)

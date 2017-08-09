@@ -223,7 +223,7 @@ class EmailAuthenticationForm(forms.Form):
 
     def get_user_id(self):
         if self.user_cache:
-            return self.user_cache.id
+            return self.user_cache.pk
         return None
 
     def get_user(self):

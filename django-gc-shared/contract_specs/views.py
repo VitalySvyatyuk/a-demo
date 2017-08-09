@@ -178,8 +178,8 @@ def specification_details(request, pk):
     }
 
 
-@render_to('contract_specs/trading-calculator.jade')
+@render_to('contract_specs/calculator.html')
 def calculator(request):
     data = Calculator.get_data()
-    context = {'data': json.dumps(data[0]), "exchange_rates": json.dumps(data[1])}
+    context = {'data': json.dumps(data)}
     return context

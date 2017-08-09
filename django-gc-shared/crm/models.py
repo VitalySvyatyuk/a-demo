@@ -1166,7 +1166,7 @@ class RegionalOfficeObjectManager(models.QuerySet):
         return PersonalManager.objects.filter(office__in=self)
 
     def by_agent_code(self, agent_code):
-        return self.filter(id__in=[
+        return self.filter(pk__in=[
             ro.id for ro in self
             if agent_code in ro.get_agent_codes()])
 

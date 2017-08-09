@@ -46,7 +46,7 @@ def manager_by_client_num(request, phone):
 def records_by_user(request, uid):
     user = get_object_or_404(User, id=uid)
     return {'data': [{
-        'id': cdr.id,
+        'id': cdr.pk,
         'call_date': formats.date_format(cdr.call_date, "DATETIME_FORMAT"),
         'source': cdr.source_str(),
         'dest': cdr.dest_str(),
@@ -66,7 +66,7 @@ def voicemail_records_by_user(request, uid):
     user = get_object_or_404(User, id=uid)
     qs = VoiceMailCDR.objects.filter(cdr__user_a=user).order_by('-call_date')
     return {'data': [{
-        'id': vmcdr.id,
+        'id': vmcdr.pk,
         'call_date': formats.date_format(vmcdr.call_date, "DATETIME_FORMAT"),
         'source': vmcdr.cdr.source_str(),
         'record': vmcdr.get_record_path(),
@@ -253,7 +253,7 @@ def calls_ajax(request):
         'stats': stats,
         'graph_data': graph_data,
         'data': [{
-            'id': o.id,
+            'id': o.pk,
             'call_date': o.call_date.isoformat() if o.call_date else '-',
             'src': o.source_str(False),
             'src_crm_link': o.user_a.profile.get_amo().get_url() if o.user_a else '',
@@ -262,7 +262,7 @@ def calls_ajax(request):
             'duration': o.duration,
             'disposition': o.disposition,
             'record': o.get_record_path(),
-            'url': reverse('telephony_call', kwargs={'external_id': o.external_cdr_id, 'call_id': o.id}),
+            'url': reverse('telephony_call', kwargs={'external_id': o.external_cdr_id, 'call_id': o.pk}),
         } for o in page.object_list]
     })
     return data
@@ -300,7 +300,7 @@ def calls_by_user_ajax(request, user_id):
         return HttpResponseForbidden(u'Лимит просмотра исчерпан, попробуйте позже')
 
     return [{
-        'id': cdr.id,
+        'id': cdr.pk,
         'call_date': cdr.call_date,
         'source': cdr.source_str(),
         'dest': cdr.dest_str(),
@@ -332,7 +332,7 @@ def vmcalls_by_user_ajax(request, user_id):
 
     qs = VoiceMailCDR.objects.filter(cdr__user_a=user).order_by('-call_date')
     return [{
-        'id': vmcdr.id,
+        'id': vmcdr.pk,
         'call_date': vmcdr.call_date,
         'source': vmcdr.cdr.source_str(),
         'duration': vmcdr.cdr.duration,

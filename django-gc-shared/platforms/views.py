@@ -198,7 +198,7 @@ def balance(request):
 
     currency = currencies.get_currency(request.GET.get("currency", "USD"))
 
-    accounts = TradingAccount.objects.filter(mt4_id__in=accounts, user=request.user).order_by("mt4_id")
+    accounts = TradingAccount.objects.filter(mt4_pk__in=accounts, user=request.user).order_by("mt4_id")
 
     if accounts:
         accounts = {account.mt4_id: {"balance": account.balance_money.amount,
@@ -374,7 +374,7 @@ def restore_from_archive(request, account_id):
     issue.save()
     messages.success(request,
                      _("Request #%(id)s created successfully.") % \
-                     {"id": issue.id})
+                     {"id": issue.pk})
     return redirect("mt4_account_list")
 
 
@@ -586,7 +586,7 @@ class CreateAccountView(LoginRequiredMixin, AjaxFormView):
             return self.json_response({
                 "redirect": redirect("mt4_create_account", args=[slug])
             })
-
+        assert 'OK'
         if not (account_type.is_demo or request.user.profile.has_otp_devices):
             return security(request)
 

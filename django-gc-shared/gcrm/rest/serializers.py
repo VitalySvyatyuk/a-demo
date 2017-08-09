@@ -71,7 +71,7 @@ class AccountSerializer(serializers.ModelSerializer):
         return obj.group.name if obj.group else None
 
     def get_contact(self, obj):
-        return {'id': obj.user.gcrm_contact.id, 'name': obj.user.gcrm_contact.name}
+        return {'id': obj.user.gcrm_contact.pk, 'name': obj.user.gcrm_contact.name}
 
     def get_balance(self, obj):
         from currencies.rest_fields import MoneyField
@@ -144,7 +144,7 @@ class SetAsManagerSerializer(serializers.Serializer):
 
     def save(self):
         obj = PersonalManager.objects.create(allowed_ips='*', daily_limit=200, **self.validated_data)
-        Event.GCRM_NEW_MANAGER_MANUALLY.log(obj.user, {'id': obj.id, 'office': obj.office_id})
+        Event.GCRM_NEW_MANAGER_MANUALLY.log(obj.user, {'id': obj.pk, 'office': obj.office_id})
         return obj
 
 
@@ -162,7 +162,7 @@ class ManagerSerializer(serializers.ModelSerializer):
             return {'name': 'Главный', 'id': None}
         return {
             'name': obj.crm_manager.office.name,
-            'id': obj.crm_manager.office.id
+            'id': obj.crm_manager.office.pk
         }
 
     def get_is_managable(self, obj):
@@ -201,7 +201,7 @@ class ContactMinimalSerializer(serializers.ModelSerializer):
         if not obj.user:
             return None
         return {
-            'id': obj.user.id,
+            'id': obj.user.pk,
             'registration_ts': obj.user.date_joined,
             'last_activity_ts': obj.user.profile.last_activity_ts,
             'last_activities': obj.user.profile.last_activity_translated,
@@ -276,7 +276,7 @@ class ContactSerializer(serializers.ModelSerializer):
         from push_notifications.models import GCMDevice, APNSDevice
         from django.core.urlresolvers import reverse
         return {
-            'id': obj.user.id,
+            'id': obj.user.pk,
             'registration_ts': obj.user.date_joined,
             'last_activity_ts': obj.user.profile.last_activity_ts,
             'last_activities': obj.user.profile.last_activity_translated,
@@ -323,8 +323,8 @@ class ContactSerializer(serializers.ModelSerializer):
                 'utm_campaign': obj.user.utm_analytics.utm_campaign
             } if hasattr(obj.user, 'utm_analytics') else None,
             'links': {
-                'user_admin': reverse('admin:auth_user_change', args=(obj.user.id,)),
-                'user_profile_admin': reverse('admin:profiles_userprofile_change', args=(obj.user.profile.id,)),
+                'user_admin': reverse('admin:auth_user_change', args=(obj.user.pk,)),
+                'user_profile_admin': reverse('admin:profiles_userprofile_change', args=(obj.user.profile.pk,)),
             } if current_user.is_superuser else None,
 
         }
@@ -443,7 +443,7 @@ class BatchManagerReassignSerializer(serializers.Serializer):
     def validate(self, data):
         current_user = self.context['request'].user
         managers_ids = self.instance.distinct('manager').values_list('manager', flat=True)
-        self.managers = list(User.objects.filter(id__in=managers_ids))
+        self.managers = list(User.objects.filter(pk__in=managers_ids))
         if None in managers_ids:
             self.managers.append(None)
         if any(not user_can_manage(current_user, m) for m in self.managers+[data['new_manager']]) and self.instance.count() > 20:
@@ -857,7 +857,7 @@ class CallSerializer(serializers.ModelSerializer):
 
     def get_a(self, obj):
         if obj.user_a:
-            return {"id": obj.user_a.gcrm_contact.id,
+            return {"id": obj.user_a.gcrm_contact.pk,
                     "name": obj.user_a.gcrm_contact.name}
         else:
             return u"{0}({1})".format(
@@ -866,7 +866,7 @@ class CallSerializer(serializers.ModelSerializer):
 
     def get_b(self, obj):
         if obj.user_b:
-            return {"id": obj.user_b.gcrm_contact.id,
+            return {"id": obj.user_b.gcrm_contact.pk,
                     "name": obj.user_b.gcrm_contact.name}
         else:
             return u"{0}({1})".format(

@@ -21,7 +21,7 @@ def create_stale_deposit_requests_tasks():
 
     for req in qs:
         profile = req.account.user.profile
-        text = _(u"According to the deposit request id{r.id}({r.payment_system} {r.amount_money!s}) on account "
+        text = _(u"According to the deposit request id{r.pk}({r.payment_system} {r.amount_money!s}) on account "
                  u"{r.account} from {r.creation_ts:%Y/%m/%d %H:%M:%S} the funds haven't been deposited yet")
         text = text.format(r=req)
         if not profile.manager:

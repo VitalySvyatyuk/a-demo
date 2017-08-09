@@ -199,7 +199,7 @@ class ProfileForm(forms.ModelForm):
         site.
         """
         email = self.cleaned_data['email'].strip()
-        if User.objects.filter(email__iexact=email).exclude(id=self.instance.user.id).exists():
+        if User.objects.filter(email__iexact=email).exclude(pk=self.instance.user.pk).exists():
             raise forms.ValidationError(_("Email you provided is already registered in our system."))
         return email
 

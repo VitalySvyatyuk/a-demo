@@ -122,113 +122,13 @@ class Calculator(object):
 
     @classmethod
     def get_data(cls):
+        import re
+        from collections import OrderedDict
+        data = OrderedDict()
+        from platforms.mt4.external.models import Mt4Quote
+        mt4quotes = Mt4Quote.objects.order_by('symbol').all()
+        for q in mt4quotes:
+            if re.match(r"^[\dA-Z]+$", q.symbol):
+                data[q.symbol] = {'bid': q.bid, 'ask': q.ask, 'spread': q.spread, 'digits': q.digits}
+        return data
 
-        INSTRUMENT_GROUPS = {
-            "Forex": ["FOREX MAJORS", "FOREX EXT 1", "FOREX EXT 2", "FOREX METALS"],
-            "CFD Stock": ["CFD STOCK USA", "Russian STOCK"],
-            "CFD Metals": ["CFD METALS"],
-            "CFD Grains": ["CFD GRAINS"],
-            "CFD Energies": ["CFD ENERGIES"],
-            "CFD Forex": ["CFD CURRENCIES"],
-            "CFD Indices": ["CFD INDICES"],
-            "CFD Softs": ["CFD SOFTS"],
-            "CFD Meats": ["CFD MEATS"],
-            "ECN Forex": ["ECN FOREX"],
-            # "Fx+ Forex": ["FX+"],
-            "Options": ["OPTIONS"],
-        }
-        account_types_data = {
-            "ECN.MT": {
-                "currencies": ["USD", "EUR", "RUR", "GBP", "JPY", "CHF", "GOLD", "SILVER"],
-                "leverages": ["1:1", "1:10", "1:50", "1:100", "1:200", "1:500", "1:2000"],
-                "default_leverage": "1:100",
-                "groups": {"Forex": {}}
-            },
-            "ECN.PRO": {
-                "currencies": ["USD", "EUR", "RUR", "GBP", "JPY", "CHF", "GOLD", "SILVER"],
-                "leverages": ["1:1", "1:10", "1:50", "1:100", "1:200", "1:500", "1:2000"],
-                "default_leverage": "1:100",
-                "groups": {"Forex": {}, "CFD Stock": {}, "CFD Metals": {}, "CFD Grains": {},
-                           "CFD Forex": {}, "CFD Indices": {}, "CFD Energies": {}, "CFD Softs": {},
-                           "CFD Meats": {}, }
-            },
-            "ECN.INVEST": {
-                "currencies": ["USD"],
-                "leverages": ["1:1", "1:10", "1:50", "1:100"],
-                "default_leverage": "1:100",
-                "groups": {"ECN Forex": {}}
-            },
-            # "SwapFree": {
-            #     "currencies": ["USD"],
-            #     "leverages": ["1:1", "1:10", "1:50", "1:100", "1:200", "1:500", "1:2000"],
-            #     "default_leverage": "1:100",
-            #     "groups": {"Forex": {}, "CFD Stock": {}, "CFD Metals": {}, "CFD Grains": {},
-            #                "CFD Forex": {}, "CFD Indices": {}, "CFD Energies": {}, "CFD Softs": {},
-            #                "CFD Meats": {}, }
-            # },
-            # "FX+": {
-            #     "currencies": ["RUR"],
-            #     "leverages": ["1:1", "1:10", "1:50", "1:100"],
-            #     "default_leverage": "1:100",
-            #     "groups": {"Fx+ Forex": {}}
-            # }
-        }
-        db_result = {}
-        sql = (
-            "SELECT "
-            "spec.Symbol, spec.GTYPE, pric.BID, pric.ASK, spec.CONTRACT_SIZE, spec.TICK_SIZE, "
-            "spec.TICK_VALUE, spec.MARGIN_INITAL, spec.CURRENCY, spec.MARGIN_CURRENCY, "
-            "spec.PROFIT_MODE, spec.MARGIN_MODE, spec.MARGIN_DIVIDER, spec.DIGITS "
-            "FROM "
-            "`gcmtsrv_real`.`mt4_symbolconfig` spec JOIN `gcmtsrv_real`.`mt4_prices` pric "
-            "ON "
-            "spec.Symbol = pric.SYMBOL "
-        )
-        engine = connections['specifications'].cursor()
-        engine.execute(sql)
-        instruments = engine.fetchall()
-        exchange_rates = {}
-
-        if instruments:
-            for instrument in instruments:
-                if instrument[0] == "USDRUR":
-                    exchange_rates["USDRUR_ask"] = instrument[3]  # ruble exchange rate
-                elif instrument[0] == "USDXAU":
-                    exchange_rates["USDXAU_ask"] = instrument[3]  # GOLD exchange rate
-                elif instrument[0] == "USDXAG":
-                    exchange_rates["USDXAG_ask"] = instrument[3]  # SILVER exchange rate
-
-                if db_result.get(instrument[1], None):
-                    db_result[instrument[1]].update({instrument[0]: {"bid": instrument[2], "ask": instrument[3],
-                                                                     "contr_size": instrument[4],
-                                                                     "tick_size": 1.0/10**instrument[13] if instrument[10] == 0 or instrument[10] == 1 else instrument[5],  # if profit_mode == 0 or 1 then tick_size = 1.0/10**DIGITS
-                                                                     "tick_price": instrument[6],
-                                                                     "margin_internal": instrument[7],
-                                                                     "currency": instrument[8],
-                                                                     "margin_currency": instrument[9],
-                                                                     "profit_mode": instrument[10],
-                                                                     "margin_mode": instrument[11],
-                                                                     "percentage": 100.0 / instrument[12],
-                                                                     }})
-
-                else:
-                    db_result[instrument[1]] = {instrument[0]: {"bid": instrument[2], "ask": instrument[3],
-                                                                "contr_size": instrument[4],
-                                                                "tick_size": 1.0/10**instrument[13] if instrument[10] == 0 or instrument[10] == 1 else instrument[5],  # if profit_mode == 0 or 1 then tick_size = 1.0/10**DIGITS
-                                                                "tick_price": instrument[6],
-                                                                "margin_internal": instrument[7],
-                                                                "currency": instrument[8],
-                                                                "margin_currency": instrument[9],
-                                                                "profit_mode": instrument[10],
-                                                                "margin_mode": instrument[11],
-                                                                "percentage": 100.0 / instrument[12],
-                                                                }}
-            for group_name in INSTRUMENT_GROUPS:
-                group_data = {}
-                for item in INSTRUMENT_GROUPS[group_name]:
-                    group_data.update(db_result[item])
-                INSTRUMENT_GROUPS[group_name] = group_data
-            for acc_type in account_types_data:
-                for sym_group in account_types_data[acc_type]["groups"]:
-                    account_types_data[acc_type]["groups"][sym_group] = INSTRUMENT_GROUPS[sym_group]
-        return account_types_data, exchange_rates

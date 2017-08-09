@@ -231,7 +231,7 @@ def add_class(value, css_class):
 #                 url, label = d["watch"]
 #             else:
 #                 url, label = d["pay"]
-#             url %= regs[0].id
+#             url %= regs[0].pk
 #         else:
 #             url, label = d["register"]
 #     else:

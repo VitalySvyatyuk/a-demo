@@ -66,7 +66,7 @@ def issue_create(request):
 
     if form.is_valid():
         issue = form.save(author=request.user)
-        messages.success(request, _('Issue #%s created') % issue.id)
+        messages.success(request, _('Issue #%s created') % issue.pk)
         return redirect('issuetracker_issue_list')
     if request.is_ajax():
         response['TEMPLATE'] = 'issuetracker/issue_create_via_ajax.html'

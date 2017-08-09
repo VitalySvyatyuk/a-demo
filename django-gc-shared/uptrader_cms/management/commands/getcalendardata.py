@@ -196,5 +196,5 @@ class Command(BaseCommand):
         IndicatorEvent.objects.filter(
             event_date__range=[min(dates_list), max(dates_list)]
         ).exclude(
-            indicator__fxstreet_id__in=ru_dict.keys()
+            indicator__fxstreet_pk__in=ru_dict.keys()
         ).delete()

@@ -13,6 +13,7 @@ from model_manager import AdvancedManager
 from currencies.currencies import get_by_group, Currency, USD
 from currencies.money import Money, NoneMoney
 from log.models import Event
+from platforms.exceptions import PlatformError
 from shared.models import CustomManagerMixin
 from shared.utils import upload_to
 from project.utils import queryset_like
@@ -61,7 +62,7 @@ class TradingAccountQueryset(models.query.QuerySet):
         return self.filter(is_deleted=True, is_archived=True)
 
         ###############################################################################
-        ################# Functions to get certain type accounts  ######################
+        ################# Functions to get certain type accounts  #####################
         ###############################################################################
 
     def trading(self):
@@ -359,12 +360,14 @@ class TradingAccount(models.Model):
         Return account balance in account currency.
         Returns Money object.
         """
-        return self.get_balance_money(self)
+        return self.get_balance_money()
+
+    @property
+    def referral_money(self):
+        return self.get_referral_money()
 
     @property
     def equity_money(self):
-        from platforms.cfh.exceptions import CFHError
-        from platforms.strategy_store.exceptions import SSError
         # type: () -> Money
         """
         Return account equity (value of open positions + balance)
@@ -372,7 +375,7 @@ class TradingAccount(models.Model):
         """
         try:
             return Money(self.api.account_equity(self), self.currency)
-        except (CFHError, SSError):
+        except PlatformError as e:
             return NoneMoney()
 
     def check_connect(self):
@@ -512,11 +515,7 @@ class TradingAccount(models.Model):
     def get_balance(self, currency=None, with_bonus=False):
         # type: (Currency, bool) -> Tuple[float, Currency]
         from platforms.converter import convert_currency
-        if not self.is_ib:
-            balance = normalize(self, self.api.account_balance(self))
-        else:
-            # Get total balance on referrals
-            balance = sum(map(lambda r: float(r.api.account_balance(r) or 0), self.agent_accounts.non_demo_active()))
+        balance = normalize(self, self.api.account_balance(self))
 
         #if we should return value as it is, return with original currency
         if not currency:
@@ -532,6 +531,10 @@ class TradingAccount(models.Model):
             return Money(*self.get_balance(with_bonus=with_bonus))
         except (CFHError, SSError):
             return NoneMoney()
+
+    def get_referral_money(self):
+        return Money(sum(map(lambda r: float(r.api.account_balance(r) or 0), self.agent_accounts.non_demo_active())) \
+            if self.is_ib else 0, USD)
 
     def get_totals(self):
         from payments.models import DepositRequest, WithdrawRequest

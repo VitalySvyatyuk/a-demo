@@ -205,7 +205,7 @@ class BaseRequest(StateSavingModel):
                           recipient_list=[x[1] for x in settings.ADMINS])
 
                 Logger(user=None, content_object=self, ip=None, event=Events.WITHDRAW_REQUEST_FAILED,
-                       params={'error': unicode(e.args[0])}).save()
+                       params={'error': e.message}).save()
             self.save()
             raise e
         else:
