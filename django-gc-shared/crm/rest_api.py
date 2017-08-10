@@ -49,7 +49,7 @@ class CustomerViewSet(viewsets.ReadOnlyModelViewSet):
         lookup_url_kwarg = self.lookup_url_kwarg or self.lookup_field
         if lookup_url_kwarg in self.kwargs\
                 and self.kwargs.get(lookup_url_kwarg) == 'me':
-            self.kwargs[lookup_url_kwarg] = self.request.user.id
+            self.kwargs[lookup_url_kwarg] = self.request.user.pk
         filter_kwargs = {self.lookup_field: self.kwargs[lookup_url_kwarg]}
         obj = get_object_or_404(queryset, **filter_kwargs)
         self.check_object_permissions(self.request, obj)
@@ -146,7 +146,7 @@ class CustomerViewSet(viewsets.ReadOnlyModelViewSet):
         new_client.gcrm_contact.add_task(text=_(u"First contact with the client"))
 
         Event.HAS_BEEN_TAKEN_BY_MANAGER.log(new_client, {
-            "old_id": old.id if old else None,
+            "old_id": old.pk if old else None,
             "old_str": unicode(old),
         })
 
@@ -262,7 +262,7 @@ class ManagersViewSet(viewsets.ReadOnlyModelViewSet):
         lookup_url_kwarg = self.lookup_url_kwarg or self.lookup_field
         if lookup_url_kwarg in self.kwargs\
                 and self.kwargs.get(lookup_url_kwarg) == 'me':
-            self.kwargs[lookup_url_kwarg] = self.request.user.id
+            self.kwargs[lookup_url_kwarg] = self.request.user.pk
         filter_kwargs = {self.lookup_field: self.kwargs[lookup_url_kwarg]}
         obj = get_object_or_404(queryset, **filter_kwargs)
         self.check_object_permissions(self.request, obj)

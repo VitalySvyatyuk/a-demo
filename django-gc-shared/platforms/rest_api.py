@@ -60,10 +60,10 @@ class TradingAccountViewSet(viewsets.ReadOnlyModelViewSet):
 
         # first of, collect all accounts
         # we have access to
-        accounts = self.get_queryset().filter(mt4_id__in=ids)
+        accounts = self.get_queryset().filter(mt4_pk__in=ids)
         for acc in accounts:
             d = {}
-            for attr in ('leverage', 'equity_money', 'balance_money', 'last_block_reason'):
+            for attr in ('leverage', 'equity_money', 'balance_money', 'last_block_reason', 'referral_money'):
                 try:
                     d[attr] = getattr(acc, attr, None)
                 except:
@@ -80,6 +80,7 @@ class TradingAccountViewSet(viewsets.ReadOnlyModelViewSet):
                 'balance_amount': d['balance_money'].amount,
                 'balance_currency': unicode(d['balance_money'].currency),
                 'balance_usd_amount': d['balance_money'].to_USD().amount,
+                'referral_usd_amount': d['referral_money'].amount,
                 'rebate': None,
                 'last_block_reason': d['last_block_reason']
             }

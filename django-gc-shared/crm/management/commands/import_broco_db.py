@@ -21,7 +21,7 @@ class Command(BaseCommand):
                 else:
                     broco_user.phone = phone
             broco_user.save()
-            acc = BrocoAccount(mt4_id=row['Login'], user=broco_user, group=row['Group'])
+            acc = BrocoAccount(mt4_pk=row['Login'], user=broco_user, group=row['Group'])
             try:
                 creation_ts = datetime.strptime(row['Reg.date'], "%d.%m.%y %H:%M")
             except ValueError:

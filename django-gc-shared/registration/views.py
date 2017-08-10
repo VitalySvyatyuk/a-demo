@@ -137,8 +137,8 @@ def login(request, next=None, *args, **kwargs):
     user_id = request.session.get("user_id")
     if user_id:
         del request.session["user_id"]  # We probably don't need it for more than one pageload
-        if User.objects.filter(id=user_id).exists():
-            user = User.objects.get(id=user_id)
+        if User.objects.filter(pk=user_id).exists():
+            user = User.objects.get(pk=user_id)
 
     if next is None:
         if request.path != reverse('auth_login'):
@@ -379,7 +379,7 @@ def login_as(request, user_id):
     user.backend = "django.contrib.auth.backends.ModelBackend"
 
     # Login the user and set the session key if it was not set before
-    request_user_id = request.user.id
+    request_user_id = request.user.pk
     django_login(request, user)
     if not previous_user_id:
         request.session['was_another_user'] = request_user_id

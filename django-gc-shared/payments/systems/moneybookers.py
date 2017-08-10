@@ -189,7 +189,7 @@ class DepositForm(base.DepositForm):
 
     @classmethod
     def generate_mt4_comment(cls, payment_request):
-        transaction_id = payment_request.params.get('transaction_id', payment_request.id)
+        transaction_id = payment_request.params.get('transaction_id', payment_request.pk)
         return "{Skrill}[%s]" % transaction_id
 
 

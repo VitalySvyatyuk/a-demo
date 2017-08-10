@@ -21,7 +21,7 @@ def check_permissions_log_access(request, user_id):
     elif not request.user.crm_manager.is_ip_allowed(request.META['REMOTE_ADDR']):
         return None, HttpResponseForbidden(u'Доступ с данного IP ограничен')
 
-    user = get_object_or_404(User, id=user_id)
+    user = get_object_or_404(User, pk=user_id)
 
     # check access
     if not can_manager_access_user(request.user, user):
@@ -66,13 +66,13 @@ def by_last_assigned(managers):
 
 def get_all_offices_agent_codes():
     # from crm.models import RegionalOffice
-    # ag = AccountGroup.objects.get(id=3)
+    # ag = AccountGroup.objects.get(pk=3)
     # ids = set(map(int, ag.account_mt4_ids))
     # offices_codes_str = ','.join(RegionalOffice.objects.values_list('agent_codes', flat=True))
     # ids.update([
-    #     int(id)
-    #     for id in offices_codes_str.split(',')
-    #     if id])
+    #     int(pk)
+    #     for pk in offices_codes_str.split(',')
+    #     if pk])
     return []
 
 

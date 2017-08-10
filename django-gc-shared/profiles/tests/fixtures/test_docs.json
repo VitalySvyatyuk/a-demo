@@ -1,0 +1,30 @@
+[
+   {
+      "model" : "profiles.userdocument",
+      "fields" : {
+         "file" : "files/some_doc.png",
+         "fields" : "",
+         "user" : 3,
+         "creation_ts" : "2017-04-06T22:30:05.936",
+         "is_rejected" : false,
+         "name" : "passport_scan",
+         "description" : "Test Document",
+         "is_deleted" : false
+      },
+      "pk" : 2
+   },
+   {
+      "model" : "profiles.userdocument",
+      "fields" : {
+         "file" : "files/some_doc.png",
+         "fields" : "",
+         "user" : 6,
+         "creation_ts" : "2017-04-06T22:30:05.936",
+         "is_rejected" : false,
+         "name" : "passport_scan",
+         "description" : "Test Document",
+         "is_deleted" : false
+      },
+      "pk" : 3
+   }
+]

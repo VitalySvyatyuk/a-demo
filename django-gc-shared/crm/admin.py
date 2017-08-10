@@ -166,7 +166,7 @@ class ManagerReassignRequestAdmin(admin.ModelAdmin):
                        'current_manager', 'new_manager', 'previous_manager',
                        'comment', 'created_at', 'updated_at', 'completed_by')
 
-    search_fields = ('user__id', 'user__username', 'user__email', 'user__accounts__mt4_id')
+    search_fields = ('user__pk', 'user__username', 'user__email', 'user__accounts__mt4_id')
 
     fieldsets = (
         (None, {

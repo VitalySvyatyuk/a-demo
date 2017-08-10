@@ -22,7 +22,7 @@ class OTPDeviceAdmin(admin.ModelAdmin):
     raw_id_fields = ("user", )
 
     radio_fields = {'digits': admin.HORIZONTAL}
-    search_fields = ("user__username", "user__accounts__mt4_id", "user__id")
+    search_fields = ("user__username", "user__accounts__mt4_id", "user__pk")
     list_filter = ("is_deleted",)
     list_display = ('id', 'user_link', 'creation_ts', "is_deleted")
     ordering = ('-creation_ts',)
@@ -39,7 +39,7 @@ class SMSDeviceAdmin(ViewLoggingAdmin):
     ]
     raw_id_fields = ("user", )
     readonly_fields = "phone_number",
-    search_fields = ("user__username", "user__accounts__mt4_id", "user__id")
+    search_fields = ("user__username", "user__accounts__mt4_id", "user__pk")
     list_filter = ("is_deleted",)
     list_display = ('id', 'user_link', 'creation_ts', "is_deleted")
     ordering = ('-creation_ts',)
@@ -56,7 +56,7 @@ class VoiceDeviceAdmin(ViewLoggingAdmin):
     ]
     raw_id_fields = ("user", )
     readonly_fields = "phone_number",
-    search_fields = ("user__username", "user__accounts__mt4_id", "user__id")
+    search_fields = ("user__username", "user__accounts__mt4_id", "user__pk")
     list_filter = ("is_deleted",)
     list_display = ('id', 'user_link', 'creation_ts', "is_deleted")
     ordering = ('-creation_ts',)

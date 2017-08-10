@@ -5,78 +5,78 @@ import poplib
 import urllib
 
 from django.conf import settings
-from django.contrib.auth.models import User
 from django.core.management import BaseCommand
 from notification import models as notification
 from massmail.models import Unsubscribed, Campaign
 from massmail.utils import get_email_signature
 from shared.validators import email_re
 
+from logging import getLogger
+log = getLogger(__name__)
+
 
 class Command(BaseCommand):
+    """
+    This command unsubscribes users wished to unsubscribe from mailing list.
+    """
 
-    def execute(self, *args, **options):
+    def handle(self, *args, **options):
+        """
+        Command execution, no parameters are used.
+        """
+        log.info("Started unsibscribe command")
+        log.debug("Logging to POP3 mailbox")
         mailbox = poplib.POP3_SSL(settings.MASSMAIL_UNSUBSCRIBE_MAILBOX_POP_SERVER)
         mailbox.user(settings.MASSMAIL_UNSUBSCRIBE_EMAIL)
         n = mailbox.pass_(settings.MASSMAIL_UNSUBSCRIBE_MAILBOX_PASSWORD).split(" ")[1]
 
-        print "List-unsubscribe stats:\n"
-        print "%s messages\n" % n
+        log.info("List-unsubscribe stats: {} messages".format(n))
 
+        # Loop over messages
         for i in range(1, int(n)+1):
             raw_message = mailbox.retr(i)[1]
+            log.debug("Raw msg: {}".format(raw_message))
 
             msg = HeaderParser().parsestr("\n".join(raw_message))
 
             email_from = parseaddr(msg["From"])[1]
             email_to = parseaddr(msg["To"])[1]
 
-            print "%s -> %s" % (email_from, email_to)
-
-            if "jobs" in email_to:  # Job emails are sent once per recipient, there's nothing to unsubscribe from,
-                                    # the List-Unsubscribe header is just for compliance with mailing systems
-                print "Jobs campaign, doing nothing"
-                print
-                continue
+            log.debug("{0} -> {1}".format(email_from, email_to))
 
             try:
                 _, signature, campaign_id = (email_to.split("@")[0]).split("+")
             except ValueError:
-                print "wrong 'To' format: '%s'" % email_to
-                print
+                log.error("Wrong 'To' format: '%s'" % email_to)
                 continue
 
             real_signature = get_email_signature(email_from)
             if real_signature != signature or not email_re.match(email_from):
-                print "signature fail: got '%s' instead of '%s'" % (signature, real_signature)
-                print
+                log.error("Signature fail: got '%s' instead of '%s'" % (signature, real_signature))
                 continue
-            print "signature ok"
+            log.debug("Signature OK")
 
-            if campaign_id == "statement":
-                for user in User.objects.filter(email=email_from):
-                    for acc in user.accounts.all():
-                        acc.change_mt4_field('DisableMailSend', 'all', get_or_create=True)
-                    print "statements disabled"
-            else:
-                obj, is_created = Unsubscribed.objects.get_or_create(email=email_from)
+            obj, is_created = Unsubscribed.objects.get_or_create(email=email_from)
 
-                print "unsubscribed from massmail"
+            if is_created:
+                log.debug("Unsubscibed from massmail")
+                try:
+                    campaign = Campaign.objects.get(id=int(campaign_id))
+                except (ValueError, TypeError, Campaign.DoesNotExist):
+                    log.warn("Can't find compaign by id {}".format(campaign_id))
+                    pass
+                else:
+                    log.debug("Incrementing campaign unsubscribed")
+                    campaign.unsubscribed += 1
+                    campaign.save()
 
-                if is_created:
-                    try:
-                        campaign = Campaign.objects.get(id=int(campaign_id))
-                    except (ValueError, TypeError, Campaign.DoesNotExist):
-                        pass
-                    else:
-                        campaign.unsubscribed += 1
-                        campaign.save()
+                    log.debug("User notification about unsubscribe")
+                    notification.send([email_from], 'unsubscribed',
+                                      {"email": urllib.quote(email_from), "campaign_id": campaign_id})
 
-                        notification.send([email_from], 'unsubscribed',
-                                          {"email": urllib.quote(email_from), "campaign_id": campaign_id})
-
+            log.debug("Deleting email")
             mailbox.dele(i)
-            print "message deleted"
-            print
 
+        log.debug("Quiting POP3")
         mailbox.quit()
+        log.info("Command finished")

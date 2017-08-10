@@ -191,7 +191,7 @@ class InternalTransferIssueAdmin(IssueAdmin):
         from transfers.forms import InternalTransferForm
         for issue in qs:
             form = InternalTransferForm(request=request, internal=True, data={
-                "sender": issue.sender.id,
+                "sender": issue.sender.pk,
                 "recipient_manual": issue.recipient,
                 "amount": issue.amount,
                 "currency": issue.currency,
@@ -204,7 +204,7 @@ class InternalTransferIssueAdmin(IssueAdmin):
                 from itertools import chain
                 messages.error(
                     request,
-                    u"Failed to process request #%s: %s" % (issue.id, "; ".join(map(unicode, chain(*form.errors.values()))))
+                    u"Failed to process request #%s: %s" % (issue.pk, "; ".join(map(unicode, chain(*form.errors.values()))))
                 )
 
     @descr(_("Mark select issues as rejected"))

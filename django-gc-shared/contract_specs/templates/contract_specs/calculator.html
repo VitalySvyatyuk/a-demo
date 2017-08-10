@@ -1,0 +1,212 @@
+{% extends "marketing_site/layout.jade" %}
+{% load app_tags staticfiles i18n %}
+
+{% block title %}
+    {% trans "Trader's calculator" %} {{ block.super }}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        // Data from MT4 table, inserted by django
+        //noinspection JSAnnotator
+        const data = {{ data|safe }};
+        // Available leverages (maybe taken from account types, but static for now)
+        const leverages = [100, 75, 50, 33, 25, 20, 10, 5, 1];
+        // Quote value calculation
+        function get_quote(sym) {
+            let quote;
+            let q2 = sym.substr(3,6);
+            let q1 = sym.substr(0,3);
+            let reversed = `${q2}${q1}`;
+            // USDUSD = 1
+            if (q1 == q2) return 1;
+            if (sym in data) {
+                // Simple case
+                quote = data[sym];
+                if (!quote) return null;
+                if (sym.startsWith("USD")) return quote.bid;
+                else return quote.ask;
+            } else if (reversed in data) {
+                quote = data[reversed];
+                if (!quote) return null;
+                if (sym.startsWith("USD")) return 1/quote.bid;
+                else return 1/quote.ask;
+            } else {
+                // Hard case
+                // XXX/YYY pair
+                let r = 1;
+                let q2_usd = `${q2}USD`;
+                let q1_usd = `${q1}USD`;
+                let usd_q2 = `USD${q2}`;
+                let usd_q1 = `USD${q1}`;
+
+                if (q1_usd in data) r *= get_quote(q1_usd);
+                else if (usd_q1 in data) r *= get_quote(usd_q1);
+                else return null;
+
+                if (q2_usd in data) r *= get_quote(q2_usd);
+                else if (usd_q2 in data) r *= get_quote(usd_q2);
+                else return null;
+                return r;
+            }
+        }
+        // 1 pip value calculation
+        function get_pip(sym, vol) {
+            if (sym == 'USDJPY')
+                // USDJPY
+               return 1000 * vol / get_quote(sym);
+            else if (sym == 'XAGUSD')
+                return 0.5;
+            else if (sym == 'USDRUR')
+                // USDRUR
+                return 100 * vol / get_quote(sym);
+            else if (sym.startsWith('USD'))
+                // USD/XXX pair
+                return 10 * vol / get_quote(sym);
+            else if (sym.endsWith('USD'))
+                // XXX/USD pair
+                return 10 * vol;
+            else if (sym == 'H33HKD')
+                // special case?
+                return vol;
+            else if (sym.search(/\d+/)) {
+                // index in non USD
+                let q2 = sym.substr(3,6);
+                return 10 * vol * get_quote(`${q2}USD`);
+            } else {
+                return 10 * vol * get_quote(sym);
+            }
+        }
+        // margin value calculation
+        function get_margin(sym, lev, vol) {
+            let q1 = sym.substr(0,3);
+            let q2 = sym.substr(3,6);
+            let k = 1;
+            if (q1 != 'USD') {
+                k = get_quote(sym);
+                // margin must be in USD
+                if (q2 != 'USD')
+                    k *= get_quote(`${q2}USD`);
+            }
+
+            let lot = get_lot(sym);
+            return vol/lev * lot * k;
+        }
+
+        function get_lot(sym) {
+            // default for indeces/cfds
+            let lot = 1;
+            let q1 = sym.substr(0,3);
+            // std lot=100k if it's really forex!
+            if (q1.search(/\d+/)<0 )
+                lot = 100000;
+            // special case?
+            if (sym == 'XAGUSD') lot=1000;
+            if (sym == 'XAUUSD') lot=100;
+            if (sym == 'UKOUSD') lot=100;
+            if (sym == 'USOUSD') lot=100;
+            if (sym == '225JPY') lot=100;
+            if (sym == 'H33HKD') lot=10;
+            if (sym == 'SPXUSD') lot=10;
+            if (sym == 'NASUSD') lot=1;
+
+            return lot;
+        }
+
+        // global page init
+        $(document).ready(function () {
+            // elements of the page
+            let pair = $("#pair-select");
+            let leverage = $("#leverage-select");
+            let volume = $("#volume-input");
+            let quote = $("#currquote-span");
+            let pip = $("#pip-span");
+            let margin = $("#margin-span");
+            // init pairs
+            for (let k in data) {
+                pair.append(`<option value="${k}">${k}</option>`);
+            }
+            // init leverages
+            for (let i in leverages) {
+                let l = leverages[i];
+                leverage.append(`<option value="${l}">1:${l}</option>`);
+            }
+
+            // table updater
+            function update_table() {
+                let sym = pair.val();
+                let lev = parseInt(leverage.val());
+                let vol = parseFloat(volume.val());
+                quote.text(get_quote(sym).toFixed(4));
+                pip.text(get_pip(sym, vol).toFixed(4));
+                margin.text(get_margin(sym, lev, vol).toFixed(2));
+            }
+            // update table on selects
+            pair.change(update_table);
+            leverage.change(update_table);
+            volume.change(update_table);
+            // set initial calculation
+            update_table(pair.val());
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="page_head inout_page_head">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    {% breadcrumbs%}
+                    <h1 class="page_head__title">{% trans "Trader's calculator" %}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container account-types-page">
+        <div class="table-responsive adaptive-table-wrapper">
+            <table class="table adaptive-table">
+                <thead>
+                    <tr>
+                        <th>{% trans "Pair" %}</th>
+                        <th>{% trans "Leverage" %}</th>
+                        <th>{% trans "Volume" %}</th>
+                        <th>{% trans "Quote" %}</th>
+                        <th>{% trans "Value of pip" %}</th>
+                        <th>{% trans "Margin" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select id="pair-select" title="Currency Pair">
+                            </select>
+                        </td>
+                        <td>
+                            <select id="leverage-select" title="Leverage">
+                            </select>
+                        </td>
+                        <td>
+                            <input type="number" id="volume-input" value="0.1" min="0.01" step="0.01" title="Volume">
+                        </td>
+                        <td>
+                            <span id="currquote-span"></span>
+                        </td>
+                        <td>
+                            <span id="pip-span"></span>
+                        </td>
+                        <td>
+                            <span id="margin-span"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>
+            {% blocktrans %}
+                On this page you can find formula for calculating the value of one pip.<br>
+                The value of a pip is calculated on the basis of the current rate of a given currency pair.<br>
+                Please select parameters to get pip value and margin.
+            {% endblocktrans %}
+        </p>
+    </div>
+{% endblock %}

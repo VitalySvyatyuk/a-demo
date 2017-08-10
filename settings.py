@@ -482,6 +482,18 @@ NETELLER_MERCHANT_ID = "AAABW8S3jAUGCQKV"
 NETELLER_SECRET_KEY = "0.BK2GLLgoicN9YBbrXCPw-fwhdS8NfFmgUnHX-UA6vjE.EAAQrysNthlgV66dxbf8fKhYsqUFGxE"
 
 ###
+# Qiwi settings
+###
+
+QIWI_LOGIN = "60934790"
+QIWI_PASSWORD = "bG5fw9IgM1vZMX3idR9j"
+QIWI_SECRET = "lqSkg5BUKHX5i5hMfb6h"
+QIWI_PROVIDER_ID = "520069"
+
+QIWI_REQUEST_LIFETIME = timedelta(days=3)
+
+
+###
 # Western Union, Migom, FastPost settings
 ###
 

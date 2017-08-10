@@ -73,7 +73,7 @@ class CompanyNews(AnalyticsMixin, Node):
     def get_absolute_url(self):
         if self.slug:
             return reverse('company_news_by_slug', args=[self.slug])
-        return reverse('company_news_by_id', args=[self.id])
+        return reverse('company_news_by_id', args=[self.pk])
 
 
 # ECONOMIC CALENDAR

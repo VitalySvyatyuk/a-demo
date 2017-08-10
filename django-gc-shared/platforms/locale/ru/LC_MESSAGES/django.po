@@ -1142,7 +1142,7 @@ msgstr "Всего<br> на реальных счетах"
 
 #: templates/js/my/accounts_total_sum.html:8
 msgid "Total<br> on referral accounts"
-msgstr "Сумма<br> на партнерских счетах"
+msgstr "Сумма<br> на счетах клиентов"
 
 #: templates/js/my/accounts_total_sum.html:16
 msgid "Hide accounts balance"

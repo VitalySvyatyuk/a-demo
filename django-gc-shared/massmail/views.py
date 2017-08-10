@@ -9,44 +9,44 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, redirect
 from django.utils.html import escape
 from django.utils.translation import ugettext as _
-from django.views.static import serve
 
 from massmail.models import Campaign, Unsubscribed, OpenedCampaign, CampaignType, MailingList, Subscribed
-from massmail.utils import get_signature
+import massmail.utils
 from notification import models as notification
 from shared.validators import email_re
 
 
-
 def subscribe(request, email, signature, mail_list_id, first_name="", last_name=""):
 
-    if get_signature(email) != signature or not email_re.match(email):
+    if massmail.utils.get_signature(email) != signature or not email_re.match(email):
         raise Http404
 
-    try:
-        ml = MailingList.objects.get(pk=mail_list_id)
-    except (ObjectDoesNotExist, ValueError):
-        raise Http404
-
-    if not request.user.is_anonymous():
-       first_name = request.user.first_name
-       last_name = request.user.last_name
-
-    elif not first_name or not last_name:
+    list_id = mail_list_id.split(u'+')
+    for mail_list_id in list_id:
+        mail_list_id = int(mail_list_id)
         try:
-            usr = User.objects.get(email=email)
-            last_name = usr.last_name
-            first_name = usr.first_name
-        except ObjectDoesNotExist:
-            # we dont know user last and first name here
-            first_name = " "
-            last_name = " "
+            ml = MailingList.objects.get(pk=mail_list_id)
+        except (ObjectDoesNotExist, ValueError):
+            raise Http404
 
+        if not request.user.is_anonymous():
+            first_name = request.user.first_name
+            last_name = request.user.last_name
 
-    sub = Subscribed(email=email, first_name=first_name, last_name=last_name)
-    ml.subscribers.add(sub)
-    ml.subscribers_count += 1
-    ml.save()
+        elif not first_name or not last_name:
+            try:
+                usr = User.objects.get(email=email)
+                last_name = usr.last_name
+                first_name = usr.first_name
+            except ObjectDoesNotExist:
+                # we dont know user last and first name here
+                first_name = " "
+                last_name = " "
+
+        sub = Subscribed(email=email, first_name=first_name, last_name=last_name)
+        ml.subscribers.add(sub)
+        ml.subscribers_count += 1
+        ml.save()
 
     if not request.user.is_anonymous():
         return redirect('/account/profile/subscriptions')
@@ -56,10 +56,11 @@ def subscribe(request, email, signature, mail_list_id, first_name="", last_name=
 
 
 
+
 @render_to('massmail/unsubscribe.html')
 def unsubscribe(request, email, signature, campaign_id=None):
     email = urllib.unquote(email)
-    if get_signature(email) != signature or not email_re.match(email):
+    if massmail.utils.get_signature(email) != signature or not email_re.match(email):
         raise Http404
 
     if campaign_id is None:
@@ -108,10 +109,11 @@ def resubscribe(request, email, campaign_id=None):
         request.user.profile.subscription = CampaignType.objects.all()
         request.user.profile.save()
         try:
-            camp = Campaign.objects.get(id=int(campaign_id))
-            camp.unsubscribed -= 1
-            camp.save()
-            return redirect('massmail_unsubscribed_id', urllib.quote(email), campaign_id)
+            camp = Campaign.objects.get(pk=int(campaign_id))
+            if camp.unsubscribed != 0:  # To prevent situations with 0 unsubscribed users conflicts.
+                camp.unsubscribed -= 1
+                camp.save()
+                return redirect('massmail_unsubscribed_id', urllib.quote(email), campaign_id)
         except (ValueError, TypeError, Campaign.DoesNotExist):
             return redirect('massmail_unsubscribed', urllib.quote(email))
     else:
@@ -123,7 +125,7 @@ def _get_massmail_params(request):
     if not (email and email_re.match(email)):
         email = None
     signature = request.GET.get('signature')
-    if signature != get_signature(email):
+    if signature != massmail.utils.get_signature(email):
         email = None
     try:
         campaign = request.GET['campaign_id']
@@ -164,6 +166,14 @@ def serve_static(request, *args, **kwargs):
     Then serve the static image.
     """
     campaign, email = _get_massmail_params(request)
+
+    # An ugly hack so that we can mock serve() in unit test
+    import sys
+    if 'test' in sys.argv:
+        import django.views.static
+        serve = django.views.static.serve
+    else:
+        from django.views.static import serve
 
     # This can raise a Http404 or whatever, so do it first
     response = serve(request, *args, **kwargs)

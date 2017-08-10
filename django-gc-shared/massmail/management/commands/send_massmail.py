@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from croniter import croniter
+import croniter
 from django.core.management import BaseCommand
 from datetime import datetime, timedelta
 from django.db.models import Q
@@ -18,7 +18,7 @@ class Command(BaseCommand):
             if campaign.send_once:
                 send_date = campaign.send_once_datetime
             elif campaign.send_period:
-                send_date = croniter(campaign.cron, now).get_next(datetime)
+                send_date = croniter.croniter(campaign.cron, now).get_next(datetime)
             else:
                 continue
 

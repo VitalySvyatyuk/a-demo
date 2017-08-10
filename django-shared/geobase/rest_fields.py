@@ -10,7 +10,7 @@ class PhoneField(serializers.Field):
     def to_representation(self, obj):
         code, tail, country = split_phone_number(obj)
         return {
-            'country': country.id if country else None,
+            'country': country.pk if country else None,
             'code': code,
             'tail': tail,
             'display': obj

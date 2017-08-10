@@ -90,13 +90,13 @@ def sync_objects(amo, slug, qs):
         obj_data = obj.get_amo_json(amo)
         if obj_data:
             data.append(obj_data)
-            objects_ids.append(obj.id)
+            objects_ids.append(obj.pk)
     amo.clear_cache()
 
     # upload new data
     amo._objects_set(slug, data)
     qs.model.objects.filter(
-        id__in=objects_ids
+        pk__in=objects_ids
     ).update(
         sync_at=None, synced_at=datetime.now()
     )

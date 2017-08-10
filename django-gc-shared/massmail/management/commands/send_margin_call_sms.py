@@ -5,13 +5,15 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.utils.translation import activate, ugettext_lazy as _
 
-from mt4.models import Mt4User, Mt4Account
+# from mt4.models import Mt4User, Mt4Account
+from platforms.mt4.external.models_users import RealUser as Mt4User  # FIXME: incorrect
+from platforms.models import TradingAccount as Mt4Account
 from sms import send_with_check_verification, send
 from sms.models import SMSMessage
 
 
 class Command(BaseCommand):
-    def handle(self, *args, **options):
+    def execute(self, *args, **options):
         margin_call_accs = set(Mt4User.objects.filter(margin_level__range=(80, 100)).values_list('login', flat=True))
 
         for acc_id in margin_call_accs:

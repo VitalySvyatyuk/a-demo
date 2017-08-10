@@ -148,7 +148,7 @@ def otp_check(request, user):
 # нужно явное указание юзера вторым аргументом
 def security_check(request, user, return_form=False):
     scheme = user.profile.auth_scheme
-    cache_key = "otp_check_%s" % user.id
+    cache_key = "otp_check_%s" % user.pk
 
     # нет OTP-привязок
     if not user.profile.has_otp_devices:
@@ -418,7 +418,7 @@ def retries_counter(key=None):
         def inner(request, *args, **kwargs):
             target = request.POST.get("target", "main")
 
-            cache_key = "%s_count_user_%s_%s" % (key, request.user.id, target)
+            cache_key = "%s_count_user_%s_%s" % (key, request.user.pk, target)
             cached = cache.get(cache_key)
 
             retries = None

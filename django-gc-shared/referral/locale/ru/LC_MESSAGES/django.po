@@ -8,41 +8,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-06 19:15+0300\n"
-"PO-Revision-Date: 2017-07-24 16:30+0230\n"
-"Last-Translator:   <goodgame1945@gmail.com>\n"
+"POT-Creation-Date: 2017-08-02 12:20+0300\n"
+"PO-Revision-Date: 2016-05-23 20:10+0230\n"
+"Last-Translator:   <mrboruslee@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.11\n"
 
-msgid "Become our partner NOW! Make money fast!"
-msgstr "На данный счёт поступают партнерские начисления."
-
-msgid "Application for certificate creation"
-msgstr "Заявка на создание сертификата"
-
-msgid "Applications for certificate creation"
-msgstr "Заявки на создание сертификата"
-
-msgid "Size"
-msgstr "Размер"
-
-msgid "Target"
-msgstr "Ссылка"
-
+#: forms.py:21
 msgid "You don't have a RealIB account"
 msgstr "У Вас нет счёта RealIB"
 
+#: forms.py:25
 msgid "You've already made a request for certificate creation"
 msgstr "Вы уже подавали заявку на создание сертификата"
 
+#: forms.py:57 templates/js/my/_referral_domain_select.html:3
+#: templates/referral/partner_api_keys.html:21
 msgid "Domain"
 msgstr "Домен"
 
+#: forms.py:58
 msgid ""
 "API will be valid for the domain and all its subdomains. Example: "
 "grandcapital.ru"
@@ -50,1812 +41,1445 @@ msgstr ""
 "API будет действительно для домена и всех его поддоменов. Пример: "
 "grandcapital.ru"
 
+#: forms.py:65
 msgid "Partner account"
 msgstr "Счёт партнёра"
 
+#: forms.py:66
 msgid ""
 "Referral number of this account will be used for links from this domain."
 msgstr ""
 "Реферальный номер данного счета будет привязан ко всем материалам домена. "
 
-msgid "Please enter a value between $0.01 and $10.00"
-msgstr "Пожалуйста введите значение от $0.01 до $10.00"
-
-msgid "Russian"
-msgstr "Русский"
-
-msgid "English"
-msgstr "Английский"
-
-msgid "Indonesian"
-msgstr "Индонезийский"
-
-msgid "Chinese"
-msgstr "Китайский"
-
-msgid "Name"
-msgstr "Название"
-
-msgid "Type value"
-msgstr "Размер возврата"
-
-msgid "Banner file name on Grandcapital server."
-msgstr "Имя файла на сервере Grandcapital."
-
-msgid "Image"
-msgstr ""
-
-#, fuzzy
-#| msgid "Banner file name on Grandcapital server."
-msgid "File on Grandcapital server."
-msgstr "Имя файла на сервере Grandcapital."
-
-msgid "Which section this banner belongs to."
-msgstr "К какому из разделов принадлежит баннер."
-
-msgid "Set of banners"
-msgstr "Набор баннеров"
-
-msgid "Which section this banner belongs to"
-msgstr "К какому из разделов принадлежит баннер."
-
-msgid "Action"
-msgstr "Ссылка"
-
-msgid "URL this banner point to."
-msgstr "URL на который указывает баннер."
-
-msgid "Width"
-msgstr "Ширина"
-
-msgid "Banner width in pixels."
-msgstr "Ширина баннера в пикселях."
-
-msgid "Height"
-msgstr "Высота"
-
-msgid "Banner height in pixels."
-msgstr "Высота баннера в пикселях."
-
-msgid "Language"
-msgstr "Язык"
-
-msgid "Interactive (clickable) banner"
-msgstr "Интерактивный"
-
-msgid "Target added in admin"
-msgstr ""
-
-msgid "Published"
-msgstr "Опубликовано"
-
-msgid "Banner in rotation"
-msgstr "Баннер в ротации"
-
-msgid "banner"
-msgstr "баннер"
-
-msgid "banners"
-msgstr "баннеры"
-
+#: models.py:27 templates/referral/partner_api_keys.html:22
 msgid "Agent code"
 msgstr "Код агента"
 
+#: models.py:29
 msgid "Click count"
 msgstr "Счетчик кликов"
 
+#: models.py:31
 msgid "Unique click count"
 msgstr "Счетчик уникальных кликов"
 
+#: models.py:39
 msgid "Agent code click"
 msgstr "Переход по партнерской ссылке"
 
+#: models.py:40
 msgid "Agent code clicks"
 msgstr "Переходы по партнерской ссылке"
 
+#: models.py:62
+msgid "Application for certificate creation"
+msgstr "Заявка на создание сертификата"
+
+#: models.py:63
+msgid "Applications for certificate creation"
+msgstr "Заявки на создание сертификата"
+
+#: models.py:69
 msgid "Created"
 msgstr "Создано"
 
+#: models.py:74
 msgid "Partner domain"
 msgstr "Домен"
 
-msgid "Account"
-msgstr "Счет"
-
-msgid "Sum of the rebate"
-msgstr "Сумма возврата"
-
-msgid "In USD, from $0.01 to $10.00"
-msgstr "В долларах США, от $0.01 до $10.00"
-
-msgid "Rebate setting"
-msgstr "Настройка возврата спреда"
-
-msgid "Rebate settings"
-msgstr "Настройки возврата спреда"
-
-msgid "Name of set"
-msgstr "Название набора"
-
+#: models.py:90
 msgid "Your name"
 msgstr "Ваше имя"
 
+#: models.py:91
 msgid "Phone number"
 msgstr "Телефон"
 
+#: models.py:92
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
-#, python-format
-msgid "You have created a request for printed certificate # %i"
-msgstr "Вы создали заявку на создание сертификата, № %i"
+#: templates/js/my/_referral_account_select.html:3
+msgid "Account"
+msgstr "Счет"
 
-msgid "Failed to remove the domain."
-msgstr "Не удалось удалить домен."
+#: templates/js/my/_referral_account_select.html:6
+msgid "Сhoose one of your accounts"
+msgstr "Выберите один из ваших счетов"
 
-msgid "Domain was successfully deleted."
-msgstr "Домен был успешно удален."
+#: templates/js/my/_referral_account_select.html:13
+msgid "Open account"
+msgstr "Счёт партнёра"
 
-#, python-brace-format
-msgid "The partner added a domain in PO. Check the website - {0}"
-msgstr ""
+#: templates/js/my/_referral_account_select.html:15
+msgid "Clicks"
+msgstr "Клики"
 
-#, python-format
-msgid "Successfully uploaded document %s"
-msgstr "Документ \"%s\" был успешно загружен"
+#: templates/js/my/_referral_domain_select.html:8
+msgid "Save"
+msgstr "Сохранить"
 
-msgid "Your partnership application form was succesfully submitted"
-msgstr "Ваша заявка на партнёрство успешно получена"
+#: templates/js/my/_referral_domain_select.html:9
+msgid "Cancel"
+msgstr "Отменить"
 
-msgid "Informers"
-msgstr "Информеры"
+#: templates/js/my/_referral_domain_select.html:26
+msgid "Add domain"
+msgstr "Добавить домен"
 
+#: templates/js/my/_referral_domain_select.html:27
+msgid "Delete domain"
+msgstr "Удалить домен"
+
+#: templates/js/my/referral.html:5
+#: templates/referral/partnership_program.html:35
+msgid "Partnership"
+msgstr "Партнёрство"
+
+#: templates/js/my/referral.html:14
 msgid "Banners"
 msgstr "Баннеры"
 
-msgid "Rotation banners link"
-msgstr "Код для вставки на сайт"
+#: templates/js/my/referral.html:19
+msgid "Informers"
+msgstr "Информеры"
 
-msgid "Informer"
-msgstr "Информер"
-
+#: templates/js/my/referral_link.html:2
 msgid "Referral link"
 msgstr "Реферальная ссылка"
 
+#: templates/js/my/referral_link.html:7
 msgid "Desired page"
 msgstr "Желаемая страница"
 
+#: templates/js/my/referral_link.html:13
 msgid "Your referral link"
 msgstr "Ваша реферальная ссылка"
 
+#: templates/js/my/referral_link.html:16
 msgid "or"
 msgstr "или"
 
+#: templates/js/my/referral_link.html:22
 msgid "Site page"
 msgstr "Страницы сайта"
 
+#: templates/js/my/referral_link.html:27
 msgid "Select product"
 msgstr "Выберите продукт"
 
-msgid "Binary options"
-msgstr "Бинарные опционы"
+#: templates/js/my/referral_link.html:28
+#| msgid "Landing page"
+msgid "Main page"
+msgstr "Главная страница"
 
-msgid "Forex for beginners"
-msgstr "Forex для начинающих"
+#: templates/js/my/referral_link.html:29
+#| msgid "Account"
+msgid "Account types"
+msgstr "Типы счетов"
 
-msgid "Landing page"
-msgstr "Лэндинги"
+#: templates/js/my/referral_link.html:30
+#| msgid "Trading Platform"
+msgid "Trading platforms comparison"
+msgstr "Сравнение торговых платформ"
 
-msgid "Select landing"
-msgstr "Выберите лэндинг"
+#: templates/js/my/referral_link.html:31
+msgid "ARUM.MT platform"
+msgstr "Платформа ARUM.MT"
 
+#: templates/js/my/referral_link.html:32
+msgid "ARUM.PRO platform"
+msgstr "Платформа ARUM.PRO"
+
+#: templates/js/my/referral_link.html:33
+msgid "ARUM.WEB platform"
+msgstr "Платформа ARUM.WEB"
+
+#: templates/js/my/referral_link.html:34
+msgid "ARUM.Invest platform"
+msgstr "Платформа ARUM.Invest"
+
+#: templates/js/my/referral_link.html:35
+msgid "Economic calendar"
+msgstr "Экономический календарь"
+
+#: templates/js/my/referral_link.html:36
+msgid "Client Advantages"
+msgstr "Преимущества для клиентов"
+
+#: templates/js/my/referral_offline.html:2
 msgid "Offline materials"
-msgstr "Рекламные материалы"
+msgstr "Оффлайн материалы"
 
+#: templates/js/my/referral_offline.html:5
 msgid ""
 "\n"
-"        We provide our partners with high quality branded products. These products will help you to attract new clients and enable brand awareness.\n"
+"        We provide our partners with high quality branded products. These "
+"products will help you to attract new clients and enable brand awareness.\n"
 "    "
 msgstr ""
 "\n"
-"Мы заботимся об имиджевой составляющей нашей работы и предоставляем нашим партнерам брендированную продукцию высокого качества. Данная продукция поможет Вам в привлечении клиентов и обеспечит узнаваемость компании в широких масштабах."
+"Мы заботимся об имиджевой составляющей нашей работы и предоставляем нашим "
+"партнерам брендированную продукцию высокого качества. Данная продукция "
+"поможет Вам в привлечении клиентов и обеспечит узнаваемость компании в "
+"широких масштабах."
 
+#: templates/js/my/referral_offline.html:13
 msgid "Guidebook"
 msgstr "Гайдбук"
 
+#: templates/js/my/referral_offline.html:14
 msgid "Corporate style in printed products usage recommendations"
 msgstr ""
 "Рекомендации по использованию корпоративного стиля в полиграфической "
 "продукции"
 
+#: templates/js/my/referral_offline.html:21
 msgid "Guidebook's materials in vector format"
 msgstr "Материалы гайдбука в векторном формате"
 
+#: templates/notification/referral_account_created/full.txt:2
+#, python-format
+msgid ""
+"Dear %(user_fullname)s !\n"
+"We are glad to tell you, that %(date)s in partner group of\n"
+"your partner account %(referral)s registered a new client account "
+"%(new_account)s.\n"
+"You can get more details about this account in your profile on site.\n"
+"\n"
+"We are looking forward to working with you.\n"
+"\n"
+"With regards,\n"
+"partners department of Grand Capital LTD.\n"
+msgstr ""
+"Уважаемый %(user_fullname)s !\n"
+"\n"
+"Мы рады сообщить Вам, что %(date)s года в партнерской группе Вашего "
+"партнерского счета %(referral)s был зарегистрирован новый клиентский счёт "
+"%(new_account)s. Более подробно с информацией по данному счёту можно "
+"ознакомиться в Вашем Личном Кабинете.\n"
+"\n"
+"Надеемся на дальнейшее взаимовыгодное и плодотворное сотрудничество.\n"
+"\n"
+"С уважением,\n"
+"партнерский отдел Grand Capital\n"
+
+#: templates/notification/referral_account_created/short.txt:1
 msgid "Referral account created"
 msgstr "Создан счёт в партнёрской группе"
 
+#: templates/referral/_partnership_reward.html:3
 msgid "Your reward"
 msgstr "Ваше вознаграждение"
 
-#~ msgid "Сhoose one of your accounts"
-#~ msgstr "Выберите один из ваших счетов"
-
-#~ msgid "Open account"
-#~ msgstr "Счёт партнёра"
-
-msgid "Clicks"
-msgstr "Переходы"
-
-#~ msgid "Save"
-#~ msgstr "Сохранить"
-
-#~ msgid "Cancel"
-#~ msgstr "Отменить"
-
-msgid "Add domain"
-msgstr "Добавить домен"
-
-msgid "Delete domain"
-msgstr "Удалить домен"
-
-#~ msgid "Change rebate"
-#~ msgstr "Изменить возврат спреда"
-
-#~ msgid "Updated at"
-#~ msgstr "Обновлено"
-
-#~ msgid ""
-#~ "\n"
-#~ "          <span class=\"total-text\">Number of<br>\n"
-#~ "            <span class=\"annotation\">active customers\n"
-#~ "              <span class=\"third-tip bottom\">Customers which had at least one trading operation during the current month.\n"
-#~ "                  You should have at least 2 such customers to get partner's reward.\n"
-#~ "              </span>\n"
-#~ "            </span>\n"
-#~ "          </span>\n"
-#~ "          "
-#~ msgstr ""
-#~ "\n"
-#~ "<span class=\"total-text\">Количество<br>\n"
-#~ "<span class=\"annotation\">активных клиентов\n"
-#~ "  <span class=\"third-tip bottom\">Клиенты, совершившие хотя бы одну торговую сделку в текущем месяце.\n"
-#~ "      Для получения партнёрского вознаграждения таких клиентов должно быть хотя бы 2.\n"
-#~ "  </span>\n"
-#~ "</span>\n"
-#~ "</span>"
-
-#~ msgid ""
-#~ "\n"
-#~ "          <span class=\"total-text\">Amount of<br>lots</span>\n"
-#~ "          "
-#~ msgstr ""
-#~ "\n"
-#~ "<span class=\"total-text\">Количество<br>лотов</span>"
-
-#~ msgid ""
-#~ "\n"
-#~ "          <span class=\"total-text\">Number of\n"
-#~ "            <span class=\"annotation\">new\n"
-#~ "              <span class=\"third-tip bottom\">Active customers, who registered during the current month.\n"
-#~ "                  You should have at least 1 such customer to get partner's reward.\n"
-#~ "              </span>\n"
-#~ "            </span> <br> active customers\n"
-#~ "          </span>\n"
-#~ "          "
-#~ msgstr ""
-#~ "\n"
-#~ "<span class=\"total-text\">Количество\n"
-#~ "<span class=\"annotation\">новых\n"
-#~ "  <span class=\"third-tip bottom\">Активные клиенты, зарегистрировавшиеся в текущем месяце.\n"
-#~ "      Для получения партнёрского вознаграждения таких клиентов должно быть хотя бы 1.\n"
-#~ "  </span>\n"
-#~ "</span> <br> активных клиентов\n"
-#~ "</span>"
-
-#~ msgid ""
-#~ "\n"
-#~ "          <span class=\"total-text\">Options<br>volume</span>\n"
-#~ "          "
-#~ msgstr ""
-#~ "\n"
-#~ "<span class=\"total-text\">Объём по<br>опционам</span>"
-
-#~ msgid ""
-#~ "\n"
-#~ "          <span class=\"total-text\">\n"
-#~ "            <span class=\"annotation\">Estimated\n"
-#~ "              <span class=\"third-tip bottom\">You will get this reward in the end of the month if you\n"
-#~ "                  meet all the conditions of the partnership program.\n"
-#~ "              </span>\n"
-#~ "            </span>\n"
-#~ "            <br>profit\n"
-#~ "          </span>\n"
-#~ "          "
-#~ msgstr ""
-#~ "\n"
-#~ "<span class=\"total-text\">\n"
-#~ "<span class=\"annotation\">Расчетная\n"
-#~ "  <span class=\"third-tip bottom\">Вы получите данное вознаграждение по результатам текущего месяца\n"
-#~ "      при выполнении всех условий партнёрской программы.\n"
-#~ "  </span>\n"
-#~ "</span>\n"
-#~ "<br>прибыль\n"
-#~ "</span>"
-
-#~ msgid ""
-#~ "\n"
-#~ "          <span class=\"total-text\">\n"
-#~ "            Your<br>\n"
-#~ "            <span class=\"annotation\">profit\n"
-#~ "              <span class=\"third-tip bottom\">The amount which was already deposited to your\n"
-#~ "                  partner account\n"
-#~ "              </span>\n"
-#~ "            </span>\n"
-#~ "          </span>\n"
-#~ "          "
-#~ msgstr ""
-#~ "\n"
-#~ "<span class=\"total-text\">\n"
-#~ "Ваша<br>\n"
-#~ "<span class=\"annotation\">прибыль\n"
-#~ "<span class=\"third-tip bottom\">Сумма, уже начисленная на ваш партнёрский счёт\n"
-#~ "</span>\n"
-#~ "</span>\n"
-#~ "</span>"
-
-#~ msgid "Order<br>detailed report"
-#~ msgstr "Заказать<br>подробный отчет"
-
-#~ msgid "Warning"
-#~ msgstr "Внимание"
-
-#~ msgid "You do not have enough active customers (less than 2)."
-#~ msgstr "У вас недостаточно активных клиентов (меньше 2)."
-
-#~ msgid "You do not have enough new active customer (less than 1)."
-#~ msgstr "У вас недостаточно новых активных клиентов (меньше 1)."
-
-#~ msgid "Forex quotes"
-#~ msgstr "Forex котировки"
-
-#~ msgid "Background color:"
-#~ msgstr "Цвет фона:"
-
-#~ msgid "Text color:"
-#~ msgstr "Цвет текста:"
-
-#~ msgid "Titles color:"
-#~ msgstr "Цвет заголовков:"
-
-#~ msgid "Select instruments:"
-#~ msgstr "Выберите инструменты"
-
-#~ msgid "of"
-#~ msgstr "из"
-
-#~ msgid "Embedding code:"
-#~ msgstr "Код для вставки:"
-
-#~ msgid "$500 bonus"
-#~ msgstr "Бонус $500"
-
-#~ msgid ""
-#~ "Dear %(user_fullname)s !\n"
-#~ "We are glad to tell you, that %(date)s in partner group of\n"
-#~ "your partner account %(referral)s registered a new client account %(new_account)s.\n"
-#~ "You can get more details about this account in your profile on site.\n"
-#~ "\n"
-#~ "We are looking forward to working with you.\n"
-#~ "\n"
-#~ "With regards,\n"
-#~ "partners department of Grand Capital LTD.\n"
-#~ msgstr ""
-#~ "Уважаемый %(user_fullname)s !\n"
-#~ "\n"
-#~ "Мы рады сообщить Вам, что %(date)s года в партнерской группе Вашего партнерского счета %(referral)s был зарегистрирован новый клиентский счёт %(new_account)s. Более подробно с информацией по данному счёту можно ознакомиться в Вашем Личном Кабинете.\n"
-#~ "\n"
-#~ "Надеемся на дальнейшее взаимовыгодное и плодотворное сотрудничество.\n"
-#~ "\n"
-#~ "С уважением,\n"
-#~ "партнерский отдел Grand Capital\n"
-
-#~ msgid ""
-#~ "We do not differentiate between old and new partners. All the partners of Grand&nbsp;Capital\n"
-#~ "get equally profitable partnership terms. You will receive increased commission on all of our instruments, be it\n"
-#~ "Forex, CFD, ECN or Binary Options."
-#~ msgstr ""
-#~ "Мы не разделяем уровни вознаграждений для новых и старых партнеров компании."
-#~ " Все партнеры Grand Capital получают одинаково выгодные условия "
-#~ "сотрудничества. По всем инструментам – Forex, CFD, ECN и бинарные опционы – "
-#~ "партнеры всегда получают повышенные вознаграждения."
-
-#~ msgid ""
-#~ "The sum of the partners reward is formed from the sum of  In / Out, volume "
-#~ "of trade and groups of instruments:"
-#~ msgstr ""
-#~ "Сумма формируется, исходя из суммы In/Out, объема торговли и группы "
-#~ "инструментов:"
-
-#~ msgid "Reward"
-#~ msgstr "Вознаграждение"
-
-#~ msgid "In/Out up to"
-#~ msgstr "In/Out до"
-
-#~ msgid "In/Out over"
-#~ msgstr "In/Out свыше"
-
-#~ msgid "Reward for 1 standard lot"
-#~ msgstr "Вознаграждение за 1 стандартный лот"
-
-#~ msgid "From %(from)s till %(till)s"
-#~ msgstr "От %(from)s до %(till)s"
-
-#~ msgid ""
-#~ "\n"
-#~ "                                    Reward for 1 standard lot as a %% of the company\n"
-#~ "                                    commission for a group of CFD instruments\n"
-#~ "                                "
-#~ msgstr ""
-#~ "\n"
-#~ "Вознаграждение за 1 стандартный лот в виде %% от комиссии компании для группы инструментов CFD"
-
-#~ msgid ""
-#~ "\n"
-#~ "                                    Reward for 1 standard lot as a %% of the company commission for ECN type accounts\n"
-#~ "                                "
-#~ msgstr ""
-#~ "\n"
-#~ "Вознаграждение за 1 стандартный лот в виде %% от комиссии компании для счетов типа ECN"
-
-#~ msgid ""
-#~ "\n"
-#~ "                    Reward for the volume of trade for Options type accounts\n"
-#~ "                "
-#~ msgstr ""
-#~ "\n"
-#~ "Вознаграждение за объем торговли для счетов типа Options"
-
-#~ msgid "From %(from)s"
-#~ msgstr "От %(from)s"
-
-#~ msgid "from"
-#~ msgstr "от"
-
-#~ msgid ""
-#~ "\n"
-#~ "                                    Reward for the volume of trade as a %% of In/Out for Options type accounts\n"
-#~ "                                "
-#~ msgstr ""
-#~ "\n"
-#~ "Вознаграждение за объем торговли в виде %% от In/Out для счетов типа Options"
-
-#~ msgid ""
-#~ "\n"
-#~ "                        Additionally for all account types you will get a bonus for clients that made\n"
-#~ "                        a trading turnover of more than 5 lots for instruments in groups FOREX&nbsp;MAJORS,\n"
-#~ "                        FOREX&nbsp;EXT&nbsp;1, FOREX&nbsp;EXT&nbsp;2 ($1000 for accounts of Options type) during the\n"
-#~ "                        reporting period (paid once for each individual client)\n"
-#~ "                    "
-#~ msgstr ""
-#~ "\n"
-#~ "Дополнительно для всех типов счетов предоставляется премия за клиентов, совершивших совокупный торговый оборот от 5 лотов инструментами в группах FOREX&nbsp;MAJORS,\n"
-#~ "FOREX&nbsp;EXT&nbsp;1, FOREX&nbsp;EXT&nbsp;2 (от $1000 для счетов типа Options) за отчетный период (начисляется единократно в отношении каждого отдельного клиента)"
-
-#~ msgid "Number of clients"
-#~ msgstr "Количество клиентов"
-
-#~ msgid "Till %(till)s"
-#~ msgstr "До %(till)s"
-
-#~ msgid "More than %(from)s"
-#~ msgstr "Свыше %(from)s"
-
-#~ msgid "Bonus for 1 (one) client"
-#~ msgstr "Размер бонуса за 1 (одного) клиента"
-
-#~ msgid "Partner tools"
-#~ msgstr "Инструменты партнера"
-
-#~ msgid "choose one of your accounts"
-#~ msgstr "выберите один из ваших счетов"
-
-#~ msgid "Domains"
-#~ msgstr "Домен"
-
-#~ msgid "My sites"
-#~ msgstr "Мои сайты"
-
-#~ msgid ""
-#~ "\n"
-#~ "                    On this page you can get an API key and HTML code of a registration form that\n"
-#~ "                    will allow you to include it in your site. Using this form,\n"
-#~ "                    users of your site will be able to register Real Standard account directly at GrandCapital.\n"
-#~ "                    All accounts, registered using the form, will be automatically bound to your\n"
-#~ "                    partner code.\n"
-#~ "                "
-#~ msgstr ""
-#~ "\n"
-#~ "На этой странице Вы можете получить ключ API и код формы, которые позволят Вам\n"
-#~ "        встраивать в Ваш сайт форму регистрации счёта Real Standard в компании GrandCapital.\n"
-#~ "        Все зарегистрированные таким образом счета будут привязаны к Вашему\n"
-#~ "        партнёрскому счёту."
-
-#~ msgid "Delete"
-#~ msgstr "Удалить."
-
-#~ msgid "More"
-#~ msgstr "Подробно"
-
-#~ msgid "Choose the banner set"
-#~ msgstr "Выберите набор баннеров"
-
-#~ msgid "You can choose a set with appropriate banners."
-#~ msgstr "Вы можете выбрать набор с необходимыми баннерами"
-
-#~ msgid ""
-#~ "To use this service, register a domain on your account, or select a "
-#~ "different account, please"
-#~ msgstr ""
-#~ "Чтобы воспользоваться данными услугами зарегестрируйте домен на Ваш счет, "
-#~ "или выберите другой аккаунт."
-
-#~ msgid "choose banner set"
-#~ msgstr "Выберите набор баннеров"
-
-#~ msgid "Traffic rate"
-#~ msgstr "Объемы траффика"
-
-#~ msgid "Registration forms"
-#~ msgstr "Форма регистрации"
-
-#~ msgid ""
-#~ "\n"
-#~ "                    On this page you can get an HTML code of a registration form that\n"
-#~ "                    will allow you to include it in your site. Using this form,\n"
-#~ "                    users of your site will be able to register account directly at GrandCapital.\n"
-#~ "                    All accounts, registered using the form, will be automatically bound to your\n"
-#~ "                    partner code.\n"
-#~ "                "
-#~ msgstr ""
-#~ "\n"
-#~ "На этой странице Вы можете получить код формы, который позволит Вам\n"
-#~ "        встраивать в Ваш сайт форму регистрации счёта в компании GrandCapital.\n"
-#~ "        Все зарегистрированные таким образом счета будут привязаны к Вашему\n"
-#~ "        партнёрскому счёту."
-
-#~ msgid "Registration form code"
-#~ msgstr "Код для вставки формы регистрации"
-
-#~ msgid "Contests \"FXTrade5\" registration form code"
-#~ msgstr "Код для вставки формы регистрации на конкурс \"FXTrade 5\""
-
-#~ msgid "Partner registration form code"
-#~ msgstr "Код для вставки формы регистрации партнерского счета"
-
-#~ msgid "Partner \"Welcome Bonus\" registration form code"
-#~ msgstr "Код для вставки формы регистрации \"Welcome бонус\""
-
-#~ msgid "Landings"
-#~ msgstr "Лэндинги"
-
-#~ msgid ""
-#~ "\n"
-#~ "                    You can put a link to main page or landing page. This page is designed to attract customers.\n"
-#~ "                    The conversion rate of our landing pages reaches 10%% or even more. Every tenth user who\n"
-#~ "                    got on the page, registers and became a client. This is very good index, so we recommend\n"
-#~ "                    you to post links to our landing pages.\n"
-#~ "                "
-#~ msgstr ""
-#~ "\n"
-#~ "Вы можете поставить ссылку на главную страницу нашего сайта или на лендинг.  Это страница, которая специально разработана для того, что чтобы привлекать клиентов. Коэффициент конверсии наших лендингов достигает 10%% и более. То есть каждый десятый пользователь, который попал на страницу, регистрируется на сайте и становится клиентом. Это очень хороший показатель, поэтому мы рекомендуем Вам размещать ссылки на наши лендинги."
-
-#~ msgid "Micro"
-#~ msgstr "Счет Micro"
-
-#~ msgid "Bonus for every refill"
-#~ msgstr "Акция «Бонус на каждое пополнение»"
-
-#~ msgid "Welcome bonus"
-#~ msgstr "Бездепозитный бонус"
-
-#~ msgid "Please, choose banner set"
-#~ msgstr "Выберите набор баннеров"
-
-#~ msgid "There were no clicks on your banners."
-#~ msgstr "Переходов по вашим баннерам не было."
-
-#~ msgid "Hide"
-#~ msgstr "Скрыть"
-
-#~ msgid "Partner documents"
-#~ msgstr "Документы партнера"
-
-#~ msgid ""
-#~ "\n"
-#~ "            <p>Upload in Private Office following documents to take full advantage of our partnership program:</p>\n"
-#~ "            <p>1. Scan/photo of your Identity card or driver license</p>\n"
-#~ "            <p>2. Scan/photo of filled and signed \"Appendix to the Partnership Agreement\"</p>\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "<p>Чтобы в полной мере воспользоваться всеми возможностями партнерской программы,пожалуйста, загрузите в Ваш Личный Кабинет следующие документы:</p>\n"
-#~ "    <p>1. Скан/фотографию паспорта (разворот с именем и фотографией и страницу с регистрацией по месту жительства).</p>\n"
-#~ "    <p>2. Скан/фотографию подписанного вами \"Приложения к партнерскому соглашению\"</p>"
-
-#~ msgid "Partnership Agreement"
-#~ msgstr "Партнерское соглашение"
-
-#~ msgid ""
-#~ "\n"
-#~ "                Partnership Agreement determines the Company and Partner rights and obligations, principles of\n"
-#~ "                their cooperation, amount and payment order of partner commission.\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "Определяет права и обязанности компании и партнеров, принцип их взаимодействия, размер и порядок выплаты партнерского вознаграждения, а также определяет принцип взаимодействия партнера с клиентами."
-
-#~ msgid "Download Agreement"
-#~ msgstr "Скачать соглашение"
-
-#~ msgid "Partner Certificate"
-#~ msgstr "Сертификат партнера"
-
-#~ msgid "The Certificate will be created on Your name and sent on Your email"
-#~ msgstr ""
-#~ "Сертификат будет создан на Ваше имя и отправлен Вам по электронной почте"
-
-#~ msgid "Order a sertificate"
-#~ msgstr "Заказать сертификат"
-
-#~ msgid ""
-#~ "\n"
-#~ "                    Grand Capital provides new service for IB partners – various Forex informers.Informers are automatically updated graphic elements, the sours of financial information like news and quotes or interactive trader’s calculators. All informers contain your embedded referral link.For correct traffic attribution make sure, that your domain is added to your partner’s account.\n"
-#~ "                "
-#~ msgstr ""
-#~ "\n"
-#~ "Компания Grand Capital представляет новый вид рекламных материалов для партнерских сайтов – форекс-информеры.\n"
-#~ "Информер (informer) - это автоматически обновляющийся графический элемент, источник непрерывной финансовой информации или интерактивный калькулятор трейдера. Информеры размещаются на партнерских сайтах и содержат реферальные ссылки. \n"
-#~ "Для корректного учета переходов по ссылке необходимо зарегистрировать домен, на котором вы хотите разместить информер, в личном кабинете партнера. Ваша реферальная ссылка встраивается в код информера автоматически."
-
-#~ msgid "Account:"
-#~ msgstr "Счет"
-
-#~ msgid "Domain:"
-#~ msgstr "Домен"
-
-#~ msgid "Option calculator"
-#~ msgstr "Калькулятор опционов"
-
-#~ msgid "Next round of any contest"
-#~ msgstr "Ближайший конкурс"
-
-#~ msgid "Contest:"
-#~ msgstr "Конкурс"
-
-#~ msgid "Any"
-#~ msgstr "Любой"
-
-#~ msgid "Next economic event"
-#~ msgstr "Ближайшее экономическое событие"
-
-#~ msgid "Financial news"
-#~ msgstr "Финансовые новости"
-
-#~ msgid "Manager rating"
-#~ msgstr "Рейтинг управляющих"
-
-#~ msgid "Quotes"
-#~ msgstr "Котировки онлайн"
-
-#~ msgid "Next webinar"
-#~ msgstr "Ближайший вебинар"
-
-#~ msgid "Callback request"
-#~ msgstr "Запрос на консультацию"
-
-#~ msgid ""
-#~ "\n"
-#~ "                    Please, make sure, that your domain is added to your partner’s account.\n"
-#~ "                "
-#~ msgstr ""
-#~ "\n"
-#~ "Пожалуйста, добавьте свой сайт в разделе \"материалы для сайта\""
-
-#~ msgid ""
-#~ "On this page you can get an API key and HTML code of a registration form that\n"
-#~ "                will allow you to include it in your site. Using this form,\n"
-#~ "                users of your site will be able to register Real Standard account directly at GrandCapital.\n"
-#~ "                All accounts, registered using the form, will be automatically bound to your\n"
-#~ "                partner code."
-#~ msgstr ""
-#~ "На этой странице Вы можете получить ключ API и код формы, которые позволят Вам\n"
-#~ "        встраивать в Ваш сайт форму регистрации счёта Real Standard в компании GrandCapital.\n"
-#~ "        Все зарегистрированные таким образом счета будут привязаны к Вашему\n"
-#~ "        партнёрскому счёту."
-
-#~ msgid "Get new key"
-#~ msgstr "Получить новый ключ"
-
-#~ msgid "Get partner's certificate"
-#~ msgstr "Получить сертификат партнера"
-
-#~ msgid ""
-#~ "\n"
-#~ "                Get a Partner's Certificate, proving that you are an official Grand Capital Partner.\n"
-#~ "                We'll be happy to send you the certificate as soon as you upload to your Private Office\n"
-#~ "                these documents:\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "Вы можете заказать Сертификат, подтверждающий, что вы являетесь официальным Партнером Grand Capital LTD. Для выдачи сертификата Партнера нам необходимы ваши паспортные данные. Пожалуйста, загрузите в Личный Кабинет следующие документы:"
-
-#~ msgid "A scan or photo of your ID"
-#~ msgstr ""
-#~ "Скан/фотографию паспорта (разворот с именем и фотографией и страницу с "
-#~ "регистрацией по месту жительства)"
-
-#~ msgid ""
-#~ "\n"
-#~ "                    <a href=\"%(link)s\">Additional Partner's Agreement</a> signed by you\n"
-#~ "                "
-#~ msgstr ""
-#~ "\n"
-#~ "Скан/фотографию подписанного вами <a href=\"%(link)s\">Приложения к партнерскому соглашению</a>"
-
-#~ msgid ""
-#~ "\n"
-#~ "                You can upload the documents <a href=\"%(upload_url)s\">here</a>\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "Загрузить необходимые документы вы можете <a href=\"%(upload_url)s\">здесь</a>"
-
-#~ msgid "Get printed certificate"
-#~ msgstr "Получить"
-
-#~ msgid "Partnership"
-#~ msgstr "Партнёрство"
-
-#~ msgid "Partner Programs"
-#~ msgstr "Партнёрские программы Форекс"
-
+#: templates/referral/_partnership_reward.html:5
+msgid ""
+"We do not differentiate between old and new partners. All the partners of "
+"Grand&nbsp;Capital\n"
+"get equally profitable partnership terms. You will receive increased "
+"commission on all of our instruments, be it\n"
+"Forex, CFD, ECN or Binary Options."
+msgstr ""
+"Мы не разделяем уровни вознаграждений для новых и старых партнеров компании. "
+"Все партнеры Grand Capital получают одинаково выгодные условия "
+"сотрудничества. По всем инструментам – Forex, CFD, ECN и бинарные опционы – "
+"партнеры всегда получают повышенные вознаграждения."
+
+#: templates/referral/_partnership_reward.html:9
+msgid ""
+"The sum of the partners reward is formed from the sum of  In / Out, volume "
+"of trade and groups of instruments:"
+msgstr ""
+"Сумма формируется, исходя из суммы In/Out, объема торговли и группы "
+"инструментов:"
+
+#: templates/referral/_partnership_reward.html:14
+msgid "Reward"
+msgstr "Вознаграждение"
+
+#: templates/referral/_partnership_reward.html:17
+msgid "In/Out up to"
+msgstr "In/Out до"
+
+#: templates/referral/_partnership_reward.html:20
+msgid "In/Out over"
+msgstr "In/Out свыше"
+
+#: templates/referral/_partnership_reward.html:26
+#: templates/referral/_partnership_reward.html:71
+#: templates/referral/_partnership_reward.html:113
+msgid "Reward for 1 standard lot"
+msgstr "Вознаграждение за 1 стандартный лот"
+
+#: templates/referral/_partnership_reward.html:27
+#: templates/referral/_partnership_reward.html:28
+#: templates/referral/_partnership_reward.html:107
+#: templates/referral/_partnership_reward.html:168
+#: templates/referral/_partnership_reward.html:173
+#, python-format
+msgid "From %(from)s till %(till)s"
+msgstr "От %(from)s до %(till)s"
+
+#: templates/referral/_partnership_reward.html:32
+#: templates/referral/_partnership_reward.html:78
+#: templates/referral/_partnership_reward.html:118
+#, python-format
+msgid ""
+"\n"
+"                                    Reward for 1 standard lot as a %% of the "
+"company\n"
+"                                    commission for a group of CFD "
+"instruments\n"
+"                                "
+msgstr ""
+"\n"
+"Вознаграждение за 1 стандартный лот в виде %% от комиссии компании для "
+"группы инструментов CFD"
+
+#: templates/referral/_partnership_reward.html:42
+#: templates/referral/_partnership_reward.html:87
+#: templates/referral/_partnership_reward.html:127
+#, python-format
+msgid ""
+"\n"
+"                                    Reward for 1 standard lot as a %% of the "
+"company commission for ECN type accounts\n"
+"                                "
+msgstr ""
+"\n"
+"Вознаграждение за 1 стандартный лот в виде %% от комиссии компании для "
+"счетов типа ECN"
+
+#: templates/referral/_partnership_reward.html:51
+msgid ""
+"\n"
+"                    Reward for the volume of trade for Options type "
+"accounts\n"
+"                "
+msgstr ""
+"\n"
+"Вознаграждение за объем торговли для счетов типа Options"
+
+#: templates/referral/_partnership_reward.html:65
+#, python-format
+msgid "From %(from)s"
+msgstr "От %(from)s"
+
+#: templates/referral/_partnership_reward.html:73
+#: templates/referral/_partnership_reward.html:114
+#: templates/referral/partnership_program.html:461
+#: templates/referral/partnership_program.html:462
+#: templates/referral/partnership_program.html:463
+#: templates/referral/partnership_program.html:464
+msgid "from"
+msgstr "от"
+
+#: templates/referral/_partnership_reward.html:73
+#: templates/referral/_partnership_reward.html:114
+msgid "to"
+msgstr ""
+
+#: templates/referral/_partnership_reward.html:95
+#: templates/referral/_partnership_reward.html:135
+#, python-format
+msgid ""
+"\n"
+"                                    Reward for the volume of trade as a %% "
+"of In/Out for Options type accounts\n"
+"                                "
+msgstr ""
+"\n"
+"Вознаграждение за объем торговли в виде %% от In/Out для счетов типа Options"
+
+#: templates/referral/_partnership_reward.html:150
+msgid ""
+"\n"
+"                        Additionally for all account types you will get a "
+"bonus for clients that made\n"
+"                        a trading turnover of more than 5 lots for "
+"instruments in groups FOREX&nbsp;MAJORS,\n"
+"                        FOREX&nbsp;EXT&nbsp;1, FOREX&nbsp;EXT&nbsp;2 ($1000 "
+"for accounts of Options type) during the\n"
+"                        reporting period (paid once for each individual "
+"client)\n"
+"                    "
+msgstr ""
+"\n"
+"Дополнительно для всех типов счетов предоставляется премия за клиентов, "
+"совершивших совокупный торговый оборот от 5 лотов инструментами в группах "
+"FOREX&nbsp;MAJORS,\n"
+"FOREX&nbsp;EXT&nbsp;1, FOREX&nbsp;EXT&nbsp;2 (от $1000 для счетов типа "
+"Options) за отчетный период (начисляется единократно в отношении каждого "
+"отдельного клиента)"
+
+#: templates/referral/_partnership_reward.html:160
+msgid "Number of clients"
+msgstr "Количество клиентов"
+
+#: templates/referral/_partnership_reward.html:163
+#, python-format
+msgid "Till %(till)s"
+msgstr "До %(till)s"
+
+#: templates/referral/_partnership_reward.html:178
+#, python-format
+msgid "More than %(from)s"
+msgstr "Свыше %(from)s"
+
+#: templates/referral/_partnership_reward.html:183
+msgid "Bonus for 1 (one) client"
+msgstr "Размер бонуса за 1 (одного) клиента"
+
+#: templates/referral/documents.html:4
+msgid "Partner documents"
+msgstr "Документы партнера"
+
+#: templates/referral/documents.html:6
+msgid ""
+"\n"
+"            <p>Upload in Private Office following documents to take full "
+"advantage of our partnership program:</p>\n"
+"            <p>1. Scan/photo of your Identity card or driver license</p>\n"
+"            <p>2. Scan/photo of filled and signed \"Appendix to the "
+"Partnership Agreement\"</p>\n"
+"        "
+msgstr ""
+"\n"
+"<p>Чтобы в полной мере воспользоваться всеми возможностями партнерской "
+"программы,пожалуйста, загрузите в Ваш Личный Кабинет следующие документы:</"
+"p>\n"
+"    <p>1. Скан/фотографию паспорта (разворот с именем и фотографией и "
+"страницу с регистрацией по месту жительства).</p>\n"
+"    <p>2. Скан/фотографию подписанного вами \"Приложения к партнерскому "
+"соглашению\"</p>"
+
+#: templates/referral/documents.html:12
+msgid "Partnership Agreement"
+msgstr "Партнерское соглашение"
+
+#: templates/referral/documents.html:14
+msgid ""
+"\n"
+"                Partnership Agreement determines the Company and Partner "
+"rights and obligations, principles of\n"
+"                their cooperation, amount and payment order of partner "
+"commission.\n"
+"            "
+msgstr ""
+"\n"
+"Определяет права и обязанности компании и партнеров, принцип их "
+"взаимодействия, размер и порядок выплаты партнерского вознаграждения, а "
+"также определяет принцип взаимодействия партнера с клиентами."
+
+#: templates/referral/documents.html:19
+msgid "Download Agreement"
+msgstr "Скачать соглашение"
+
+#: templates/referral/documents.html:23
+msgid "Partner Certificate"
+msgstr "Сертификат партнера"
+
+#: templates/referral/documents.html:25
+msgid "The Certificate will be created on Your name and sent on Your email"
+msgstr ""
+"Сертификат будет создан на Ваше имя и отправлен Вам по электронной почте"
+
+#: templates/referral/partner_api_keys.html:10
+msgid ""
+"On this page you can get an API key and HTML code of a registration form "
+"that\n"
+"                will allow you to include it in your site. Using this form,\n"
+"                users of your site will be able to register Real Standard "
+"account directly at GrandCapital.\n"
+"                All accounts, registered using the form, will be "
+"automatically bound to your\n"
+"                partner code."
+msgstr ""
+"На этой странице Вы можете получить ключ API и код формы, которые позволят "
+"Вам\n"
+"        встраивать в Ваш сайт форму регистрации счёта Real Standard в "
+"компании GrandCapital.\n"
+"        Все зарегистрированные таким образом счета будут привязаны к Вашему\n"
+"        партнёрскому счёту."
+
+#: templates/referral/partner_api_keys.html:23
+msgid "Action"
+msgstr "Ссылка"
+
+#: templates/referral/partner_api_keys.html:31
+msgid "Delete"
+msgstr "Удалить."
+
+#: templates/referral/partner_api_keys.html:44
+msgid "Get new key"
+msgstr "Получить новый ключ"
+
+#: templates/referral/partner_certificate.html:14
+msgid "Get partner's certificate"
+msgstr "Получить сертификат партнера"
+
+#: templates/referral/partner_certificate.html:17
+msgid ""
+"\n"
+"                Get a Partner's Certificate, proving that you are an "
+"official Grand Capital Partner.\n"
+"                We'll be happy to send you the certificate as soon as you "
+"upload to your Private Office\n"
+"                these documents:\n"
+"            "
+msgstr ""
+"\n"
+"Вы можете заказать Сертификат, подтверждающий, что вы являетесь официальным "
+"Партнером Grand Capital LTD. Для выдачи сертификата Партнера нам необходимы "
+"ваши паспортные данные. Пожалуйста, загрузите в Личный Кабинет следующие "
+"документы:"
+
+#: templates/referral/partner_certificate.html:24
+msgid "A scan or photo of your ID"
+msgstr ""
+"Скан/фотографию паспорта (разворот с именем и фотографией и страницу с "
+"регистрацией по месту жительства)"
+
+#: templates/referral/partner_certificate.html:27
+#, python-format
+msgid ""
+"\n"
+"                    <a href=\"%(link)s\">Additional Partner's Agreement</a> "
+"signed by you\n"
+"                "
+msgstr ""
+"\n"
+"Скан/фотографию подписанного вами <a href=\"%(link)s\">Приложения к "
+"партнерскому соглашению</a>"
+
+#: templates/referral/partner_certificate.html:35
+#, python-format
+msgid ""
+"\n"
+"                You can upload the documents <a href=\"%(upload_url)s"
+"\">here</a>\n"
+"            "
+msgstr ""
+"\n"
+"Загрузить необходимые документы вы можете <a href=\"%(upload_url)s\">здесь</"
+"a>"
+
+#: templates/referral/partner_certificate.html:42
+msgid "Get printed certificate"
+msgstr "Получить"
+
+#: templates/referral/partnership_program.html:47
+msgid "Partner Programs"
+msgstr "Партнёрские программы Форекс"
+
+#: templates/referral/partnership_program.html:51
+#| msgid "Start partnership"
+msgid "Select partnership program"
+msgstr "Начать сотрудничество"
+
+#: templates/referral/partnership_program.html:54
+#: templates/referral/partnership_program.html:72
+msgid "Web partner"
+msgstr "Веб-партнер"
+
+#: templates/referral/partnership_program.html:56
+#: templates/referral/partnership_program.html:79
+msgid "CPA"
+msgstr "CPA"
+
+#: templates/referral/partnership_program.html:58
+msgid "Regional representative"
+msgstr "Региональный представитель"
+
+#: templates/referral/partnership_program.html:59
+#: templates/referral/partnership_program.html:92
+#: templates/referral/partnership_program.html:548
+msgid "Franchising"
+msgstr "Франчайзинг"
+
+#: templates/referral/partnership_program.html:60
+#: templates/referral/partnership_program.html:98
 #, fuzzy
-#~ msgid "Select partnership program"
-#~ msgstr "Начать сотрудничество"
+#| msgid "Site page"
+msgid "White Label"
+msgstr "Страницы сайта"
 
-#~ msgid "Web partner"
-#~ msgstr "Веб-партнер"
+#: templates/referral/partnership_program.html:86
+msgid "Regional</span><br><span>representative"
+msgstr "Региональный</span><br><span>представитель"
 
-#~ msgid "Regional representative"
-#~ msgstr "Региональный представитель"
+#: templates/referral/partnership_program.html:109
+msgid "Web partnership"
+msgstr "Веб-партнерство"
 
-#~ msgid "Franchising"
-#~ msgstr "Франчайзинг"
+#: templates/referral/partnership_program.html:115
+msgid ""
+"\n"
+"                                    Web partnership - it is the possibility "
+"for the active internet users to join\n"
+"                                    a set up business on favorable terms and "
+"without investment. It is the first\n"
+"                                    level of partnership, which doesn't "
+"require special knowledge in financial markets.\n"
+"                                    In order to start collaboration with our "
+"company it is enough to have any internet\n"
+"                                    resource (site, blog, forum, a group in "
+"social networks and others), through\n"
+"                                    which you will attract clients. In this "
+"case, all the promotional material will\n"
+"                                    be provided by the company for you. This "
+"type of partnership is designed so that it\n"
+"                                    lets you obtain a high reward on par "
+"with serious partners of the company\n"
+"                                "
+msgstr ""
+"\n"
+"Веб-партнерство – это возможность для активных интернет-пользователей войти\n"
+"в готовый бизнес на выгодных условиях и без вложений. Это первый уровень "
+"партнерства, который не требует специальных знаний в области финансовых "
+"рынков. Чтобы начать сотрудничество с компанией достаточно иметь любой "
+"интернет-ресурс (сайт, блог, форум, группа в социальных сетях и др.), через "
+"который вы будете привлекать клиентов. "
 
-#~ msgid "Regional</span><br><span>representative"
-#~ msgstr "Региональный</span><br><span>представитель"
+#: templates/referral/partnership_program.html:127
+#: templates/referral/partnership_program.html:258
+msgid "Become a web partner"
+msgstr "Стать веб-партнером"
 
-#~ msgid "Web partnership"
-#~ msgstr "Веб-партнерство"
+#: templates/referral/partnership_program.html:132
+#: templates/referral/partnership_program.html:284
+#: templates/referral/partnership_program.html:412
+#: templates/referral/partnership_program.html:572
+#: templates/referral/partnership_program.html:742
+msgid "How it works"
+msgstr "Как это работает"
 
-#~ msgid ""
-#~ "\n"
-#~ "                                    Web partnership - it is the possibility for the active internet users to join\n"
-#~ "                                    a set up business on favorable terms and without investment. It is the first\n"
-#~ "                                    level of partnership, which doesn't require special knowledge in financial markets.\n"
-#~ "                                    In order to start collaboration with our company it is enough to have any internet\n"
-#~ "                                    resource (site, blog, forum, a group in social networks and others), through\n"
-#~ "                                    which you will attract clients. In this case, all the promotional material will\n"
-#~ "                                    be provided by the company for you. This type of partnership is designed so that it\n"
-#~ "                                    lets you obtain a high reward on par with serious partners of the company\n"
-#~ "                                "
-#~ msgstr ""
-#~ "\n"
-#~ "Веб-партнерство – это возможность для активных интернет-пользователей войти\n"
-#~ "в готовый бизнес на выгодных условиях и без вложений. Это первый уровень партнерства, который не требует специальных знаний в области финансовых рынков. Чтобы начать сотрудничество с компанией достаточно иметь любой интернет-ресурс (сайт, блог, форум, группа в социальных сетях и др.), через который вы будете привлекать клиентов. "
+#: templates/referral/partnership_program.html:137
+#: templates/referral/partnership_program.html:289
+#: templates/referral/partnership_program.html:417
+#: templates/referral/partnership_program.html:577
+msgid "You attract clients"
+msgstr "Вы привлекаете клиентов"
 
-#~ msgid "Become a web partner"
-#~ msgstr "Стать веб-партнером"
+#: templates/referral/partnership_program.html:141
+#: templates/referral/partnership_program.html:293
+msgid "Clients from your site, blog, groups in social networks"
+msgstr "Клиенты с вашего сайта, блога, группы в соц. сети"
 
-#~ msgid "How it works"
-#~ msgstr "Как это работает"
+#: templates/referral/partnership_program.html:145
+#: templates/referral/partnership_program.html:297
+#: templates/referral/partnership_program.html:425
+#: templates/referral/partnership_program.html:592
+msgid "Clients make trades on our company accounts"
+msgstr "Клиенты совершают сделки на счетах, открытых в нашей компании"
 
-#~ msgid "You attract clients"
-#~ msgstr "Вы привлекаете клиентов"
+#: templates/referral/partnership_program.html:149
+#: templates/referral/partnership_program.html:429
+#: templates/referral/partnership_program.html:596
+msgid "You receive a reward for the trades or operations that they make"
+msgstr "Вы получаете вознаграждение за каждую сделку"
 
-#~ msgid "Clients from your site, blog, groups in social networks"
-#~ msgstr "Клиенты с вашего сайта, блога, группы в соц. сети"
+#: templates/referral/partnership_program.html:156
+#: templates/referral/partnership_program.html:436
+#: templates/referral/partnership_program.html:623
+#: templates/referral/partnership_program.html:766
+msgid "Benefits"
+msgstr "Преимущества"
 
-#~ msgid "Clients make trades on our company accounts"
-#~ msgstr "Клиенты совершают сделки на счетах, открытых в нашей компании"
+#: templates/referral/partnership_program.html:158
+msgid ""
+"Grand Capital has the largest partners' commissions in the industry – from "
+"$15 per lot"
+msgstr ""
+"Grand Capital платит самые высокие партнерские вознаграждения на рынке – от "
+"$15 с лота"
 
-#~ msgid "You receive a reward for the trades or operations that they make"
-#~ msgstr "Вы получаете вознаграждение за каждую сделку"
+#: templates/referral/partnership_program.html:159
+msgid "You work with a a major well-known company"
+msgstr "Вы работаете с крупной известной компанией"
 
-#~ msgid "Benefits"
-#~ msgstr "Преимущества"
+#: templates/referral/partnership_program.html:160
+msgid ""
+"Grand Capitals investment products and online-trading services are in high "
+"demand on the market"
+msgstr ""
+"Инвестиционные продукты Grand Capital и сервисы онлайн-трейдинга широко "
+"востребованы на рынке"
 
-#~ msgid ""
-#~ "Grand Capital has the largest partners' commissions in the industry – from "
-#~ "$15 per lot"
-#~ msgstr ""
-#~ "Grand Capital платит самые высокие партнерские вознаграждения на рынке – от "
-#~ "$15 с лота"
+#: templates/referral/partnership_program.html:161
+msgid "No initial investments required"
+msgstr "Без стартовых вложений"
 
-#~ msgid "You work with a a major well-known company"
-#~ msgstr "Вы работаете с крупной известной компанией"
+#: templates/referral/partnership_program.html:162
+#: templates/referral/partnership_program.html:443
+msgid "There are no limits on profit made"
+msgstr "Нет никаких ограничений по прибыли"
 
-#~ msgid ""
-#~ "Grand Capitals investment products and online-trading services are in high "
-#~ "demand on the market"
-#~ msgstr ""
-#~ "Инвестиционные продукты Grand Capital и сервисы онлайн-трейдинга широко "
-#~ "востребованы на рынке"
+#: templates/referral/partnership_program.html:163
+msgid ""
+"You and your clients receive access to all of the Grand Capital services"
+msgstr "Вы и ваши клиенты получают доступ ко всем сервисам Grand Capital"
 
-#~ msgid "No initial investments required"
-#~ msgstr "Без стартовых вложений"
+#: templates/referral/partnership_program.html:164
+msgid "Your clients will be serviced by Grand Capital"
+msgstr "Обслуживанием ваших клиентов занимается Grand Capital"
 
-#~ msgid "There are no limits on profit made"
-#~ msgstr "Нет никаких ограничений по прибыли"
+#: templates/referral/partnership_program.html:165
+msgid "You can expand a partners network  all around the world"
+msgstr "Вы можете развивать партнерскую сеть по всему миру"
 
-#~ msgid ""
-#~ "You and your clients receive access to all of the Grand Capital services"
-#~ msgstr "Вы и ваши клиенты получают доступ ко всем сервисам Grand Capital"
+#: templates/referral/partnership_program.html:170
+msgid "Example of real earnings"
+msgstr "Пример реального заработка"
 
-#~ msgid "Your clients will be serviced by Grand Capital"
-#~ msgstr "Обслуживанием ваших клиентов занимается Grand Capital"
+#: templates/referral/partnership_program.html:172
+msgid "Igor,Moscow"
+msgstr "Игорь, Москва"
 
-#~ msgid "You can expand a partners network  all around the world"
-#~ msgstr "Вы можете развивать партнерскую сеть по всему миру"
+#: templates/referral/partnership_program.html:175
+msgid "5 days"
+msgstr "5 дней"
 
-#~ msgid "Example of real earnings"
-#~ msgstr "Пример реального заработка"
+#: templates/referral/partnership_program.html:175
+msgid "1 client"
+msgstr "1 клиент"
 
-#~ msgid "Igor,Moscow"
-#~ msgstr "Игорь, Москва"
+#: templates/referral/partnership_program.html:176
+msgid "1 month"
+msgstr "1 месяц"
 
-#~ msgid "5 days"
-#~ msgstr "5 дней"
+#: templates/referral/partnership_program.html:176
+msgid "15 clients, 500$"
+msgstr "15 клиентов, 500$"
 
-#~ msgid "1 client"
-#~ msgstr "1 клиент"
+#: templates/referral/partnership_program.html:177
+msgid "3 months"
+msgstr "3 месяца"
 
-#~ msgid "1 month"
-#~ msgstr "1 месяц"
+#: templates/referral/partnership_program.html:177
+msgid "100 clients, 3500$ per month"
+msgstr "100 клиентов, 3500$ в месяц"
 
-#~ msgid "15 clients, 500$"
-#~ msgstr "15 клиентов, 500$"
+#: templates/referral/partnership_program.html:178
+msgid "12 months"
+msgstr "12 месяцев"
 
-#~ msgid "3 months"
-#~ msgstr "3 месяца"
+#: templates/referral/partnership_program.html:178
+msgid "more than 300 clients, 12650$ per month"
+msgstr "больше 300 клиентов, 12650$ в месяц"
 
-#~ msgid "100 clients, 3500$ per month"
-#~ msgstr "100 клиентов, 3500$ в месяц"
+#: templates/referral/partnership_program.html:188
+msgid "Multilevel partnership"
+msgstr "Многоуровневое партнерство"
 
-#~ msgid "12 months"
-#~ msgstr "12 месяцев"
+#: templates/referral/partnership_program.html:190
+msgid ""
+"\n"
+"                                    You can earn revenue from attracting not "
+"only clients but also sub-partners.\n"
+"                                    Grand Capital Partner signed up through "
+"you is your sub-partner,\n"
+"                                    you will also receive income from his "
+"profit\n"
+"                                "
+msgstr ""
+"\n"
+"Вы можете получать доход от привлечения не только клиентов, но и "
+"субпартнеров. Партнер Grand Capital, зарегистрировавшийся через Вас, "
+"становится Вашим субпартнером, от прибыли которого Вы также получаете доход"
 
-#~ msgid "more than 300 clients, 12650$ per month"
-#~ msgstr "больше 300 клиентов, 12650$ в месяц"
+#: templates/referral/partnership_program.html:197
+msgid ""
+"\n"
+"                                    In the diagram on the right you can see "
+"the interest rates for different levels of sub-partners.\n"
+"                                    For your convenience, in the partnership "
+"report, you will receive detailed calculations\n"
+"                                    for each sub-partner\n"
+"                                "
+msgstr ""
+"\n"
+"На схеме справа Вы можете посмотреть процентные ставки для разных уровней "
+"субпартнеров. Для Вашего удобства в партнерском отчете Вы будете получать "
+"детализацию расчетов по каждому субпартнеру"
 
-#~ msgid "Multilevel partnership"
-#~ msgstr "Многоуровневое партнерство"
+#: templates/referral/partnership_program.html:208
+msgid "Grand Capital partner"
+msgstr "Cам партнёр"
 
-#~ msgid ""
-#~ "\n"
-#~ "                                    You can earn revenue from attracting not only clients but also sub-partners.\n"
-#~ "                                    Grand Capital Partner signed up through you is your sub-partner,\n"
-#~ "                                    you will also receive income from his profit\n"
-#~ "                                "
-#~ msgstr ""
-#~ "\n"
-#~ "Вы можете получать доход от привлечения не только клиентов, но и субпартнеров. Партнер Grand Capital, зарегистрировавшийся через Вас, становится Вашим субпартнером, от прибыли которого Вы также получаете доход"
+#: templates/referral/partnership_program.html:209
+msgid "Standard reward"
+msgstr "Cтандартное вознаграждение"
 
-#~ msgid ""
-#~ "\n"
-#~ "                                    In the diagram on the right you can see the interest rates for different levels of sub-partners.\n"
-#~ "                                    For your convenience, in the partnership report, you will receive detailed calculations\n"
-#~ "                                    for each sub-partner\n"
-#~ "                                "
-#~ msgstr ""
-#~ "\n"
-#~ "На схеме справа Вы можете посмотреть процентные ставки для разных уровней субпартнеров. Для Вашего удобства в партнерском отчете Вы будете получать детализацию расчетов по каждому субпартнеру"
+#: templates/referral/partnership_program.html:212
+#: templates/referral/partnership_program.html:216
+msgid "Level"
+msgstr "Уровень"
 
-#~ msgid "Grand Capital partner"
-#~ msgstr "Cам партнёр"
+#: templates/referral/partnership_program.html:224
+#: templates/referral/partnership_program.html:471
+#: templates/referral/partnership_program.html:789
+msgid "Our support"
+msgstr "Наша поддержка"
 
-#~ msgid "Standard reward"
-#~ msgstr "Cтандартное вознаграждение"
+#: templates/referral/partnership_program.html:228
+msgid "Transparent partners statistics in the Personal cabinet"
+msgstr "Прозрачная партнерская статистика в Личном кабинете"
 
-#~ msgid "Level"
-#~ msgstr "Уровень"
+#: templates/referral/partnership_program.html:232
+msgid "Advertising<br>materials"
+msgstr "Рекламные<br>материалы"
 
-#~ msgid "Our support"
-#~ msgstr "Наша поддержка"
+#: templates/referral/partnership_program.html:236
+msgid "Ready strategy<br>to attract clients"
+msgstr "Готовая стратегия<br>привлечения клиентов"
 
-#~ msgid "Transparent partners statistics in the Personal cabinet"
-#~ msgstr "Прозрачная партнерская статистика в Личном кабинете"
+#: templates/referral/partnership_program.html:240
+msgid "Partners department<br>specialists consultation"
+msgstr "Консультации специалистов<br>технической поддержки"
 
-#~ msgid "Advertising<br>materials"
-#~ msgstr "Рекламные<br>материалы"
+#: templates/referral/partnership_program.html:244
+msgid "Representative<br>Certificate"
+msgstr "Сертификат<br>партнера"
 
-#~ msgid "Ready strategy<br>to attract clients"
-#~ msgstr "Готовая стратегия<br>привлечения клиентов"
+#: templates/referral/partnership_program.html:248
+#: templates/referral/partnership_program.html:379
+msgid "Free education"
+msgstr "Бесплатное обучение"
 
-#~ msgid "Partners department<br>specialists consultation"
-#~ msgstr "Консультации специалистов<br>технической поддержки"
+#: templates/referral/partnership_program.html:268
+msgid "CPA (cost per action)"
+msgstr ""
 
-#~ msgid "Representative<br>Certificate"
-#~ msgstr "Сертификат<br>партнера"
+#: templates/referral/partnership_program.html:274
+#, python-format
+msgid ""
+"CPA is a simple program that allows you to earn $%(commission)s for every "
+"attracted client. The program is suitable for those who want to earn on the "
+"financial market but do not want to dive into its depths. At the same time, "
+"it is quite easy to attract clients to trade binary options as they are on "
+"the peak of their popularity now."
+msgstr ""
 
-#~ msgid "Free education"
-#~ msgstr "Бесплатное обучение"
+#: templates/referral/partnership_program.html:279
+#: templates/referral/partnership_program.html:384
+#| msgid "Become a web partner"
+msgid "Become a CPA partner"
+msgstr "Стать веб-партнером"
 
+#: templates/referral/partnership_program.html:301
+msgid "You get fixed commission for each client"
+msgstr ""
+
+#: templates/referral/partnership_program.html:310
+#, python-format
+msgid "Commission fixed at %(amount)s for each client attracted"
+msgstr ""
+
+#: templates/referral/partnership_program.html:311
+msgid ""
+"You can easily calculate your commission as it is based on the number of "
+"clients you’ve attracted"
+msgstr ""
+
+#: templates/referral/partnership_program.html:312
+#| msgid "No initial investments required"
+msgid "No risks or initial investments"
+msgstr "Без стартовых вложений"
+
+#: templates/referral/partnership_program.html:313
+#| msgid "You attract clients"
+msgid "You can attract unlimited number of clients"
+msgstr "Вы привлекаете клиентов"
+
+#: templates/referral/partnership_program.html:314
+#| msgid "Your only trading conditions"
+msgid "No hidden conditions"
+msgstr "Без скрытых условий"
+
+#: templates/referral/partnership_program.html:315
+msgid "Your statistics are available in your personal account"
+msgstr ""
+
+#: templates/referral/partnership_program.html:320
+msgid "Fixed commission"
+msgstr "Ваше вознаграждение"
+
+#: templates/referral/partnership_program.html:320
+msgid "for each client"
+msgstr "для всех клиентов"
+
+#: templates/referral/partnership_program.html:321
+#, python-format
+msgid ""
+"The commission is deposited to your account right after the client has made "
+"a deposit of %(starting_deposit)s and at least %(trades)s trades have been "
+"placed."
+msgstr ""
+
+#: templates/referral/partnership_program.html:331
+#| msgid "You get money for their transactions"
+msgid "Profit up to 86%% per transaction"
+msgstr "Прибыль до 86% с транзакции"
+
+#: templates/referral/partnership_program.html:335
+msgid "Early closure"
+msgstr "Раннее закрытие"
+
+#: templates/referral/partnership_program.html:339
 #, fuzzy
-#~ msgid "Become a CPA partner"
-#~ msgstr "Стать веб-партнером"
-
-#, fuzzy
-#~ msgid "No risks or initial investments"
-#~ msgstr "Без стартовых вложений"
-
-#, fuzzy
-#~ msgid "You can attract unlimited number of clients"
-#~ msgstr "Вы привлекаете клиентов"
-
-#, fuzzy
-#~ msgid "No hidden conditions"
-#~ msgstr "Возможность установки уникальных торговых условий"
-
-#, fuzzy
-#~ msgid "Fixed commission"
-#~ msgstr "Ваше вознаграждение"
-
-#, fuzzy
-#~ msgid "for each client"
-#~ msgstr "Вы привлекаете клиентов"
-
-#, fuzzy
-#~ msgid "Advantages of trading binary options at Grand Capital"
-#~ msgstr "Использование торговых возможностей Grand Capital"
-
-#, fuzzy
-#~ msgid "Profit up to 86%% per transaction"
-#~ msgstr "Вы получаете деньги за совершенные ими операции"
+#| msgid "Select instruments:"
+msgid "Over 40 trading instruments"
+msgstr "Более 40 инструментов"
+
+#: templates/referral/partnership_program.html:343
+msgid "Easy to get clients interested with great promotions and bonuses"
+msgstr ""
+
+#: templates/referral/partnership_program.html:347
+msgid "Binary options in MetaTrader4 and Web-Terminal"
+msgstr ""
+
+#: templates/referral/partnership_program.html:351
+msgid "Most convenient payment options"
+msgstr ""
+
+#: templates/referral/partnership_program.html:355
+msgid "What you get"
+msgstr ""
+
+#: templates/referral/partnership_program.html:359
+#| msgid "Transparent partners statistics in the Personal cabinet"
+msgid "Transparent statistics in your Private Office"
+msgstr "Прозрачная партнерская статистика в Личном кабинете"
+
+#: templates/referral/partnership_program.html:363
+#| msgid "Materials"
+msgid "Promo materials"
+msgstr "Материалы"
+
+#: templates/referral/partnership_program.html:367
+#| msgid "Ready strategy<br>to attract clients"
+msgid "Ready-to-go strategies to attract more clients"
+msgstr "Готовая стратегия привлечения клиентов"
+
+#: templates/referral/partnership_program.html:371
+msgid "Assistance of our partnership department"
+msgstr "Помощь со стороны нашего партнерского отдела"
+
+#: templates/referral/partnership_program.html:375
+#| msgid "Partner Certificate"
+msgid "Partner certificate"
+msgstr "Сертификат партнера"
+
+#: templates/referral/partnership_program.html:393
+msgid "Regional  representative"
+msgstr "Региональный представитель"
+
+#: templates/referral/partnership_program.html:399
+msgid ""
+"\n"
+"                               Regional representative program give the "
+"possibility for any company to expand their\n"
+"                               business at the expense of the Grand Capital "
+"company's services. The regional\n"
+"                               representative status allows you to work on "
+"behalf of company's name\n"
+"                               in your city and get an increased partnership "
+"reward\n"
+"                           "
+msgstr ""
+"\n"
+"Программа «Региональный представитель» дает возможность как физическим, так "
+"и юридическим лицам расширить свой бизнес за счет услуг компании Grand "
+"Capital. Статус регионального представителя позволяет работать от имени "
+"компании в вашем городе и получать повышенное партнерское вознаграждение"
+
+#: templates/referral/partnership_program.html:407
+#: templates/referral/partnership_program.html:505
+msgid "Become a regional representative"
+msgstr "Стать региональным представителем"
+
+#: templates/referral/partnership_program.html:421
+#: templates/referral/partnership_program.html:588
+msgid "Your office"
+msgstr "Ваш офис"
+
+#: templates/referral/partnership_program.html:438
+msgid "Increased commissions - discussed individually"
+msgstr "Повышенные комиссионные – обсуждаются индивидуально"
+
+#: templates/referral/partnership_program.html:439
+msgid ""
+"The status of the regional representative of a major company implies a "
+"higher level of client confidence"
+msgstr ""
+"Статус регионального представителя крупной компании подразумевает более "
+"высокий уровень доверия клиентов"
+
+#: templates/referral/partnership_program.html:440
+msgid "You can use all of the company's  licenses"
+msgstr "Вы можете пользоваться всеми лицензиями компании"
+
+#: templates/referral/partnership_program.html:441
+msgid ""
+"Easy to interest the client – Grand Capital's investment products and "
+"services are in high demand on the market"
+msgstr ""
+"Легко заинтересовать клиента - инвестиционные продукты Grand Capital и "
+"сервисы онлайн-трейдинга широко востребованы на рынке"
+
+#: templates/referral/partnership_program.html:442
+msgid "Individual page of the representative on the Grand Capital's web site"
+msgstr "Индивидуальная страница представительства на сайте Grand Capital"
+
+#: templates/referral/partnership_program.html:444
+msgid "Access to all of the Grand Capital Services"
+msgstr "Доступ ко всем сервисам Grand Capital"
+
+#: templates/referral/partnership_program.html:445
+msgid ""
+"Ability to conduct training in your office regarding the Grand Capital "
+"programs"
+msgstr ""
+"Возможность проводить обучение в своем офисе по программам Grand Capital"
+
+#: templates/referral/partnership_program.html:449
+msgid "Requirements for the representative"
+msgstr "Требования к представителю"
+
+#: templates/referral/partnership_program.html:451
+msgid "Having your own office"
+msgstr "Наличие собственного офиса"
+
+#: templates/referral/partnership_program.html:452
+msgid "Be a legal entity"
+msgstr "Зарегистрированное юридическое лицо"
+
+#: templates/referral/partnership_program.html:453
+msgid "Knowledge of the specifics of the financial markets"
+msgstr "Знание специфики финансовых рынков"
+
+#: templates/referral/partnership_program.html:454
+msgid "High-quality consulting and training of the clients"
+msgstr "Качественное консультирование и обучение клиентов"
+
+#: templates/referral/partnership_program.html:455
+msgid "Grand Capital's Approval of your marketing activities"
+msgstr "Согласование с Grand Capital своей маркетинговой активности"
+
+#: templates/referral/partnership_program.html:458
+msgid "Example of results"
+msgstr "Пример работы офиса"
+
+#: templates/referral/partnership_program.html:461
+msgid "The expenses for opening the office:"
+msgstr "Затраты на открытие офиса:"
+
+#: templates/referral/partnership_program.html:461
+#: templates/referral/partnership_program.html:463
+msgid "till"
+msgstr "до"
+
+#: templates/referral/partnership_program.html:462
+msgid "Monthly expenses:"
+msgstr "Ежемесячные затраты:"
+
+#: templates/referral/partnership_program.html:463
+msgid "Office staff:"
+msgstr "Штат:"
+
+#: templates/referral/partnership_program.html:463
+msgid "employees"
+msgstr "сотрудников"
+
+#: templates/referral/partnership_program.html:464
+msgid "Average monthly income:"
+msgstr "Среднемесячный доход:"
+
+#: templates/referral/partnership_program.html:475
+msgid "Ready-to launch and development model for your business"
+msgstr "Готовая модель по запуску и развитию своего бизнеса"
+
+#: templates/referral/partnership_program.html:479
+msgid "Working and proven techniques to attract new customers"
+msgstr "Отработанные и проверенные методики привлечения клиентов"
+
+#: templates/referral/partnership_program.html:483
+msgid "Ongoing technical support for your office and clients"
+msgstr "Постоянная техническая поддержка офиса и клиентов"
+
+#: templates/referral/partnership_program.html:487
+msgid "No need to buy software"
+msgstr "Отсутствие необходимости<br>в покупке ПО"
+
+#: templates/referral/partnership_program.html:491
+msgid "Work under a well-known brand with the right to use all licenses"
+msgstr "Работа под известным брендом с правом использования всех лицензий"
+
+#: templates/referral/partnership_program.html:495
+msgid "Individual conditions of cooperation"
+msgstr "Индивидуальные условия сотрудничества"
+
+#: templates/referral/partnership_program.html:512
+msgid ""
+"Application for collaboration on the \"Regional representative\" program"
+msgstr "Заявка на сотрудничество по программе \"Региональный представитель\""
+
+#: templates/referral/partnership_program.html:538
+#: templates/referral/partnership_program.html:711
+#: templates/referral/partnership_program.html:848
+msgid "Send application"
+msgstr "Отправить заявку"
+
+#: templates/referral/partnership_program.html:554
+msgid ""
+"\n"
+"                                Participate in the development of Grand "
+"Capital company by franchising and\n"
+"                                get a high monthly income. Franchising – "
+"it's a form of running a business,\n"
+"                                in which one company (franchisor) gives the "
+"other company (franchisees)\n"
+"                                the right to use the company's business "
+"model and brand for a fee (royalty).\n"
+"                                Grand Capital gives the possibility for the "
+"investors to grow expand their business\n"
+"                                with a franchise without royalty. At the "
+"same time Grand Capital provides a working\n"
+"                                business model, own brand, advertising and "
+"technical support, consultancy and others.\n"
+"                                All this allows us to avoid many of the "
+"mistakes and build a proper\n"
+"                                successful business with the support of a "
+"major company\n"
+"                            "
+msgstr ""
+"\n"
+"Участвуйте в развитии компании Grand Capital по франчайзингу и получайте "
+"высокий ежемесячный доход. Grand Capital предоставляет работающую модель "
+"бизнеса, собственный бренд, рекламную и техническую поддержку, консультации "
+"и др.\n"
+"Все это позволяет избежать многих ошибок и построить собственное успешное "
+"дело при поддержке крупной компании"
+
+#: templates/referral/partnership_program.html:567
+#: templates/referral/partnership_program.html:676
+#: templates/referral/partnership_program.html:737
+#: templates/referral/partnership_program.html:815
+msgid "Begin Partnership"
+msgstr "Начать сотрудничество"
+
+#: templates/referral/partnership_program.html:581
+#: templates/referral/partnership_program.html:614
+msgid "Your independent income"
+msgstr "Ваш независимый доход"
+
+#: templates/referral/partnership_program.html:582
+#: templates/referral/partnership_program.html:603
+msgid "Income from<br>consulting services"
+msgstr "Доход от <br>консультационных услуг"
+
+#: templates/referral/partnership_program.html:583
+#: templates/referral/partnership_program.html:607
+msgid "Income from<br>client training"
+msgstr "Доход от<br>обучение клиентов"
+
+#: templates/referral/partnership_program.html:584
+#: templates/referral/partnership_program.html:611
+msgid "Other income"
+msgstr "Прочие доходы"
+
+#: templates/referral/partnership_program.html:625
+msgid "High brand recognition - franchise of a known company Grand Capital"
+msgstr ""
+"Высокая узнаваемость бренда - франшиза известной компании Grand Capital"
+
+#: templates/referral/partnership_program.html:626
+msgid "Large market potential - stable demand for trading services"
+msgstr "Большой потенциал рынка - стабильный спрос на услуги трейдинга"
+
+#: templates/referral/partnership_program.html:627
+msgid ""
+"Complete services package: training, advertising, software, support, a "
+"personal page on the Grand Capital web site"
+msgstr ""
+"Полный пакет услуг: обучение, реклама, программное обеспечение, поддержка, "
+"персональная страница на сайте компании Grand Capital"
+
+#: templates/referral/partnership_program.html:628
+msgid "Unconditional Franchise"
+msgstr "Безусловная франшиза"
+
+#: templates/referral/partnership_program.html:629
+msgid "No royalty"
+msgstr "Отсутствие роялти"
+
+#: templates/referral/partnership_program.html:630
+msgid ""
+"Several sources of income: from clients trades, training, consulting and "
+"others"
+msgstr ""
+"Несколько источников дохода: от сделок клиентов, обучения, консалтинга и пр."
+
+#: templates/referral/partnership_program.html:634
+msgid "Requirements for franchisees"
+msgstr "Требования к франчайзи"
+
+#: templates/referral/partnership_program.html:636
+msgid "Franchisee shall comply with the internal regulations of the company"
+msgstr "Франчайзи обязан соблюдать внутренний регламент компании"
+
+#: templates/referral/partnership_program.html:637
+msgid ""
+"Office of the franchisee must be branded in accordance with the requirements "
+"of Grand Capital"
+msgstr ""
+"Офис франчайзи должен быть брендирован в соответствии с требованиями Grand "
+"Capital"
+
+#: templates/referral/partnership_program.html:638
+msgid ""
+"Attracting and customer service should be carried out only by the scheme, "
+"which will be provided on training"
+msgstr ""
+"Привлечение и обслуживание клиентов должно осуществляться только по схеме, "
+"которая будет предоставлена на обучении"
+
+#: templates/referral/partnership_program.html:639
+msgid ""
+"Franchisee shall ensure the normal operation of the office and finance "
+"office operating expenses"
+msgstr ""
+"Франчайзи обязан обеспечить нормальную работу офиса и финансировать "
+"операционные расходы офиса"
+
+#: templates/referral/partnership_program.html:640
+msgid "Proposal for a franchise is not a public offer"
+msgstr "Предложение по франчайзингу не является публичной офертой"
+
+#: templates/referral/partnership_program.html:646
+msgid "Our Support"
+msgstr "Наша поддержка"
+
+#: templates/referral/partnership_program.html:650
+msgid "Ready promotional<br>materials"
+msgstr "Готовые рекламные<br>материалы"
+
+#: templates/referral/partnership_program.html:654
+msgid "Attracting customers<br>through own<br>representatives"
+msgstr "Привлечение клиентов<br>через систему<br>собственных представительств"
+
+#: templates/referral/partnership_program.html:658
+msgid "We provide<br>all the software"
+msgstr "Предоставляем все<br>программное обеспечение"
+
+#: templates/referral/partnership_program.html:662
+msgid "Technical support<br>of your clients"
+msgstr "Постоянная техническая поддержка офиса<br>и клиентов"
+
+#: templates/referral/partnership_program.html:666
+msgid "You get access to<br>all of the Grand Capital<br>training materials"
+msgstr "Вы получаете доступ<br>ко всем обучающим<br>материалам Grand Capital"
+
+#: templates/referral/partnership_program.html:670
+msgid "Individual counseling and<br>training of the franchisees"
+msgstr "Индивидуальные консультации и<br>обучение франчайзи"
+
+#: templates/referral/partnership_program.html:684
+msgid "Application for collaboration on the \"Franchising\" program"
+msgstr "Заявка на сотрудничество по программе \"Франчайзинг\""
+
+#: templates/referral/partnership_program.html:727
+msgid ""
+"\n"
+"                                White Label partners program was developed "
+"for companies that are already working\n"
+"                                on the market and have their own client "
+"base. White Label partner gets the possibility\n"
+"                                to expand their company's range of services "
+"by providing the services of Internet trading.\n"
+"                                In this case White Label attracts and "
+"services the clients under their own brand.\n"
+"                                And Grand Capital provides software products "
+"and own intellectual developments\n"
+"                                in the use of White Label\n"
+"                            "
+msgstr ""
+"\n"
+"Партнерская программа White Label разработана для компаний, которые уже "
+"работают\n"
+"на рынке и имеют свою клиентскую базу. Партнер White Label получает "
+"возможность расширить спектр услуг своей компании за счет предоставления "
+"сервисов интернет-трейдинга. При этом White Label привлекает и обслуживает "
+"клиентов под собственным брендом"
+
+#: templates/referral/partnership_program.html:747
+msgid ""
+"Your clients. Your income depends only on your activity - the income is not "
+"limited in any way"
+msgstr ""
+"Ваши клиенты. Прибыль зависит только от вашей активности – доходы ничем не "
+"ограничены"
+
+#: templates/referral/partnership_program.html:751
+msgid "Your legal entity<br>under your own brand"
+msgstr "Ваше юридическое лицо под своим брендом"
+
+#: templates/referral/partnership_program.html:755
+msgid "Trading Platform"
+msgstr "Торговая платформа"
+
+#: templates/referral/partnership_program.html:759
+msgid "Clients make trades on<br>your company accounts"
+msgstr "Клиенты совершают сделки на счетах вашей компании"
+
+#: templates/referral/partnership_program.html:768
+msgid ""
+"You can position yourself as an independent broker, without spending the "
+"money to buy the MetaTrader 4 terminal"
+msgstr ""
+"Вы может позиционировать себя как независимый брокер, не тратя при этом "
+"деньги на покупку терминала MetaTrader 4"
+
+#: templates/referral/partnership_program.html:769
+msgid "Large market potential - strong demand for online trading services"
+msgstr ""
+"Большой потенциал рынка - стабильный спрос на услуги интернет-трейдинга"
+
+#: templates/referral/partnership_program.html:770
+msgid "Increased customer base by attracting new clients"
+msgstr "Расширение клиентской базы за счет привлечения новых клиентов"
+
+#: templates/referral/partnership_program.html:771
+msgid ""
+"Huge selection of tools - more than 330 financial instruments (CFD, Futures, "
+"Stocks, Indices, Options, Forex)"
+msgstr ""
+"Огромный выбор инструментов – более 330 финансовых инструментов (CFD, "
+"Futures, Stocks, Indices, Options, Forex)"
+
+#: templates/referral/partnership_program.html:772
+msgid "Profitable spreads and commissions"
+msgstr "Выгодные спреды и комиссии"
+
+#: templates/referral/partnership_program.html:773
+msgid "Full financial and legal independence"
+msgstr "Полная финансовая и юридическая независимость"
+
+#: templates/referral/partnership_program.html:774
+msgid "Individual conditions for each White Label"
+msgstr "Индивидуальные условия для каждого White Label"
+
+#: templates/referral/partnership_program.html:778
+msgid "Requirements"
+msgstr "Требования"
+
+#: templates/referral/partnership_program.html:780
+msgid "Initial capital to start up the business"
+msgstr "Стартовый капитал на создание и раскрутку "
+
+#: templates/referral/partnership_program.html:781
+msgid "Database of live clients"
+msgstr "База живых клиентов"
+
+#: templates/referral/partnership_program.html:782
+msgid "Knowledge of the financial services market"
+msgstr "Знание рынка финансовых услуг"
+
+#: templates/referral/partnership_program.html:783
+msgid "Registered legal entity"
+msgstr "Зарегистрированное юридическое лицо"
+
+#: templates/referral/partnership_program.html:793
+msgid "The use of Grand Capitals trading resources"
+msgstr "Использование торговых возможностей Grand Capital"
+
+#: templates/referral/partnership_program.html:797
+msgid "Consultation with technical support specialists"
+msgstr "Консультации специалистов технической поддержки"
+
+#: templates/referral/partnership_program.html:801
+msgid "Software updates"
+msgstr "Обновления ПО"
+
+#: templates/referral/partnership_program.html:805
+msgid "Free training<br>for your staff"
+msgstr "Бесплатное обучение<br>вашего персонала"
+
+#: templates/referral/partnership_program.html:809
+msgid "Joint development of<br>strategies to promote"
+msgstr "Совместная разработка стратегии продвижения"
+
+#: templates/referral/partnership_program.html:822
+msgid "Application for collaboration on the \"White Label\" program"
+msgstr "Заявка на сотрудничество по программе \"White Label\""
+
+#: templates/referral/redirect_count.html:5
+msgid "Partner tools"
+msgstr "Инструменты партнера"
+
+#: templates/referral/redirect_count.html:8
+msgid "Redirects from referral link"
+msgstr "Переходы по реферальной ссылке"
+
+#: templates/referral/redirect_count.html:19
+msgid "Traffic rate"
+msgstr "Объемы траффика"
+
+#: templates/referral/redirect_count.html:36
+#: templates/referral/redirect_count.html:44
+msgid "No clicks"
+msgstr "Не было переходов по партнерской ссылке"
+
+#: templates/referral/redirect_count.html:50
+msgid "You have no accounts"
+msgstr "У вас нет партнерских счетов"
+
+#: templates/referral/verify_partner.html:12
+#, python-format
+msgid ""
+"\n"
+"            To be able to withdraw funds from your partner account, please, "
+"download and print\n"
+"            <a href=\"%(agreement_link)s\">the partner agreement</a>, sign "
+"its last page, scan it or\n"
+"            take a photo of it and upload it using the form below.\n"
+"            <br/>\n"
+"            We will also need a scan of your ID card or passport, you can "
+"upload it using the same form.\n"
+"        "
+msgstr ""
+"\n"
+"Чтобы получить возможность выводить средства с вашего партнёрского счёта, "
+"пожалуйста,\n"
+"        распечатайте <a href=\"%(agreement_link)s\">партнёрское соглашение</"
+"a>,\n"
+"        подпишите последнюю страницу, отсканируйте (или сфотографируйте) её "
+"и загрузите в форму ниже.\n"
+"<br/>\n"
+"        Кроме того, также потребуется скан вашего паспорта, вы также можете "
+"загрузить его с помощью формы ниже."
+
+#: templates/referral/verify_partner.html:22
+msgid "Upload"
+msgstr "Загрузить"
+
+#: views.py:44
+#, python-format
+msgid "You have created a request for printed certificate # %i"
+msgstr "Вы создали заявку на создание сертификата, № %i"
+
+#: views.py:76
+msgid "Failed to remove the domain."
+msgstr "Не удалось удалить домен."
+
+#: views.py:81
+msgid "Domain was successfully deleted."
+msgstr "Домен был успешно удален."
+
+#: views.py:120
+#, python-format
+msgid "Successfully uploaded document %s"
+msgstr "Документ \"%s\" был успешно загружен"
 
-#, fuzzy
-#~ msgid "Over 40 trading instruments"
-#~ msgstr "Выберите инструменты"
-
-#, fuzzy
-#~ msgid "Transparent statistics in your Private Office"
-#~ msgstr "Прозрачная партнерская статистика в Личном кабинете"
-
-#, fuzzy
-#~ msgid "Promo materials"
-#~ msgstr "Материалы"
-
-#, fuzzy
-#~ msgid "Ready-to-go strategies to attract more clients"
-#~ msgstr "Готовая стратегия<br>привлечения клиентов"
-
-#, fuzzy
-#~ msgid "Partner certificate"
-#~ msgstr "Сертификат партнера"
-
-#~ msgid "Regional  representative"
-#~ msgstr "Региональный представитель"
-
-#~ msgid ""
-#~ "\n"
-#~ "                               Regional representative program give the possibility for any company to expand their\n"
-#~ "                               business at the expense of the Grand Capital company's services. The regional\n"
-#~ "                               representative status allows you to work on behalf of company's name\n"
-#~ "                               in your city and get an increased partnership reward\n"
-#~ "                           "
-#~ msgstr ""
-#~ "\n"
-#~ "Программа «Региональный представитель» дает возможность как физическим, так и юридическим лицам расширить свой бизнес за счет услуг компании Grand Capital. Статус регионального представителя позволяет работать от имени компании в вашем городе и получать повышенное партнерское вознаграждение"
-
-#~ msgid "Become a regional partner"
-#~ msgstr "Стать региональным партнером"
-
-#~ msgid "Your office"
-#~ msgstr "Ваш офис"
-
-#~ msgid "Increased commissions - discussed individually"
-#~ msgstr "Повышенные комиссионные – обсуждаются индивидуально"
-
-#~ msgid ""
-#~ "The status of the regional representative of a major company implies a "
-#~ "higher level of client confidence"
-#~ msgstr ""
-#~ "Статус регионального представителя крупной компании подразумевает более "
-#~ "высокий уровень доверия клиентов"
-
-#~ msgid "You can use all of the company's  licenses"
-#~ msgstr "Вы можете пользоваться всеми лицензиями компании"
-
-#~ msgid ""
-#~ "Easy to interest the client – Grand Capital's investment products and "
-#~ "services are in high demand on the market"
-#~ msgstr ""
-#~ "Легко заинтересовать клиента - инвестиционные продукты Grand Capital и "
-#~ "сервисы онлайн-трейдинга широко востребованы на рынке"
-
-#~ msgid "Individual page of the representative on the Grand Capital's web site"
-#~ msgstr "Индивидуальная страница представительства на сайте Grand Capital"
-
-#~ msgid "Access to all of the Grand Capital Services"
-#~ msgstr "Доступ ко всем сервисам Grand Capital"
-
-#~ msgid ""
-#~ "Ability to conduct training in your office regarding the Grand Capital "
-#~ "programs"
-#~ msgstr ""
-#~ "Возможность проводить обучение в своем офисе по программам Grand Capital"
-
-#~ msgid "Requirements for the representative"
-#~ msgstr "Требования к представителю"
-
-#~ msgid "Having your own office"
-#~ msgstr "Наличие собственного офиса"
-
-#~ msgid "Be a legal entity"
-#~ msgstr "Зарегистрированное юридическое лицо"
-
-#~ msgid "Knowledge of the specifics of the financial markets"
-#~ msgstr "Знание специфики финансовых рынков"
-
-#~ msgid "High-quality consulting and training of the clients"
-#~ msgstr "Качественное консультирование и обучение клиентов"
-
-#~ msgid "Grand Capital's Approval of your marketing activities"
-#~ msgstr "Согласование с Grand Capital своей маркетинговой активности"
-
-#~ msgid "Example of results"
-#~ msgstr "Пример работы офиса"
-
-#~ msgid "The expenses for opening the office:"
-#~ msgstr "Затраты на открытие офиса:"
-
-#~ msgid "till"
-#~ msgstr "до"
-
-#~ msgid "Monthly expenses:"
-#~ msgstr "Ежемесячные затраты:"
-
-#~ msgid "Office staff:"
-#~ msgstr "Штат:"
-
-#~ msgid "employees"
-#~ msgstr "сотрудников"
-
-#~ msgid "Average monthly income:"
-#~ msgstr "Среднемесячный доход:"
-
-#~ msgid "Ready-to launch and development model for your business"
-#~ msgstr "Готовая модель по запуску и развитию своего бизнеса"
-
-#~ msgid "Working and proven techniques to attract new customers"
-#~ msgstr "Отработанные и проверенные методики привлечения клиентов"
-
-#~ msgid "Ongoing technical support for your office and clients"
-#~ msgstr "Постоянная техническая поддержка офиса и клиентов"
-
-#~ msgid "No need to buy software"
-#~ msgstr "Отсутствие необходимости<br>в покупке ПО"
-
-#~ msgid "Work under a well-known brand with the right to use all licenses"
-#~ msgstr "Работа под известным брендом с правом использования всех лицензий"
-
-#~ msgid "Individual conditions of cooperation"
-#~ msgstr "Индивидуальные условия сотрудничества"
-
-#~ msgid "Application for collaboration on the \"Regional representative\" program"
-#~ msgstr "Заявка на сотрудничество по программе \"Региональный представитель\""
-
-#~ msgid "Send application"
-#~ msgstr "Отправить заявку"
-
-#~ msgid ""
-#~ "\n"
-#~ "                                Participate in the development of Grand Capital company by franchising and\n"
-#~ "                                get a high monthly income. Franchising – it's a form of running a business,\n"
-#~ "                                in which one company (franchisor) gives the other company (franchisees)\n"
-#~ "                                the right to use the company's business model and brand for a fee (royalty).\n"
-#~ "                                Grand Capital gives the possibility for the investors to grow expand their business\n"
-#~ "                                with a franchise without royalty. At the same time Grand Capital provides a working\n"
-#~ "                                business model, own brand, advertising and technical support, consultancy and others.\n"
-#~ "                                All this allows us to avoid many of the mistakes and build a proper\n"
-#~ "                                successful business with the support of a major company\n"
-#~ "                            "
-#~ msgstr ""
-#~ "\n"
-#~ "Участвуйте в развитии компании Grand Capital по франчайзингу и получайте высокий ежемесячный доход. Grand Capital предоставляет работающую модель бизнеса, собственный бренд, рекламную и техническую поддержку, консультации и др.\n"
-#~ "Все это позволяет избежать многих ошибок и построить собственное успешное дело при поддержке крупной компании"
-
-#~ msgid "Begin Partnership"
-#~ msgstr "Начать сотрудничество"
-
-#~ msgid "Your independent income"
-#~ msgstr "Ваш независимый доход"
-
-#~ msgid "Income from<br>consulting services"
-#~ msgstr "Доход от <br>консультационных услуг"
-
-#~ msgid "Income from<br>client training"
-#~ msgstr "Доход от<br>обучение клиентов"
-
-#~ msgid "Other income"
-#~ msgstr "Прочие доходы"
-
-#~ msgid "High brand recognition - franchise of a known company Grand Capital"
-#~ msgstr ""
-#~ "Высокая узнаваемость бренда - франшиза известной компании Grand Capital"
-
-#~ msgid "Large market potential - stable demand for trading services"
-#~ msgstr "Большой потенциал рынка - стабильный спрос на услуги трейдинга"
-
-#~ msgid ""
-#~ "Complete services package: training, advertising, software, support, a "
-#~ "personal page on the Grand Capital web site"
-#~ msgstr ""
-#~ "Полный пакет услуг: обучение, реклама, программное обеспечение, поддержка, "
-#~ "персональная страница на сайте компании Grand Capital"
-
-#~ msgid "Unconditional Franchise"
-#~ msgstr "Безусловная франшиза"
-
-#~ msgid "No royalty"
-#~ msgstr "Отсутствие роялти"
-
-#~ msgid ""
-#~ "Several sources of income: from clients trades, training, consulting and "
-#~ "others"
-#~ msgstr ""
-#~ "Несколько источников дохода: от сделок клиентов, обучения, консалтинга и пр."
-
-#~ msgid "Requirements for franchisees"
-#~ msgstr "Требования к франчайзи"
-
-#~ msgid "Franchisee shall comply with the internal regulations of the company"
-#~ msgstr "Франчайзи обязан соблюдать внутренний регламент компании"
-
-#~ msgid ""
-#~ "Office of the franchisee must be branded in accordance with the requirements"
-#~ " of Grand Capital"
-#~ msgstr ""
-#~ "Офис франчайзи должен быть брендирован в соответствии с требованиями Grand "
-#~ "Capital"
-
-#~ msgid ""
-#~ "Attracting and customer service should be carried out only by the scheme, "
-#~ "which will be provided on training"
-#~ msgstr ""
-#~ "Привлечение и обслуживание клиентов должно осуществляться только по схеме, "
-#~ "которая будет предоставлена на обучении"
-
-#~ msgid ""
-#~ "Franchisee shall ensure the normal operation of the office and finance "
-#~ "office operating expenses"
-#~ msgstr ""
-#~ "Франчайзи обязан обеспечить нормальную работу офиса и финансировать "
-#~ "операционные расходы офиса"
-
-#~ msgid "Proposal for a franchise is not a public offer"
-#~ msgstr "Предложение по франчайзингу не является публичной офертой"
-
-#~ msgid "Our Support"
-#~ msgstr "Наша поддержка"
-
-#~ msgid "Ready promotional<br>materials"
-#~ msgstr "Готовые рекламные<br>материалы"
-
-#~ msgid "Attracting customers<br>through own<br>representatives"
-#~ msgstr "Привлечение клиентов<br>через систему<br>собственных представительств"
-
-#~ msgid "We provide<br>all the software"
-#~ msgstr "Предоставляем все<br>программное обеспечение"
-
-#~ msgid "Technical support<br>of your clients"
-#~ msgstr "Постоянная техническая поддержка офиса<br>и клиентов"
-
-#~ msgid "You get access to<br>all of the Grand Capital<br>training materials"
-#~ msgstr "Вы получаете доступ<br>ко всем обучающим<br>материалам Grand Capital"
-
-#~ msgid "Individual counseling and<br>training of the franchisees"
-#~ msgstr "Индивидуальные консультации и<br>обучение франчайзи"
-
-#~ msgid "Application for collaboration on the \"Franchising\" program"
-#~ msgstr "Заявка на сотрудничество по программе \"Франчайзинг\""
-
-#~ msgid ""
-#~ "\n"
-#~ "                                White Label partners program was developed for companies that are already working\n"
-#~ "                                on the market and have their own client base. White Label partner gets the possibility\n"
-#~ "                                to expand their company's range of services by providing the services of Internet trading.\n"
-#~ "                                In this case White Label attracts and services the clients under their own brand.\n"
-#~ "                                And Grand Capital provides software products and own intellectual developments\n"
-#~ "                                in the use of White Label\n"
-#~ "                            "
-#~ msgstr ""
-#~ "\n"
-#~ "Партнерская программа White Label разработана для компаний, которые уже работают\n"
-#~ "на рынке и имеют свою клиентскую базу. Партнер White Label получает возможность расширить спектр услуг своей компании за счет предоставления сервисов интернет-трейдинга. При этом White Label привлекает и обслуживает клиентов под собственным брендом"
-
-#~ msgid ""
-#~ "Your clients. Your income depends only on your activity - the income is not "
-#~ "limited in any way"
-#~ msgstr ""
-#~ "Ваши клиенты. Прибыль зависит только от вашей активности – доходы ничем не "
-#~ "ограничены"
-
-#~ msgid "Your legal entity<br>under your own brand"
-#~ msgstr "Ваше юридическое лицо под своим брендом"
-
-#~ msgid "Trading Platform"
-#~ msgstr "Торговая платформа"
-
-#~ msgid "Clients make trades on<br>your company accounts"
-#~ msgstr "Клиенты совершают сделки на счетах вашей компании"
-
-#~ msgid ""
-#~ "You can position yourself as an independent broker, without spending the "
-#~ "money to buy the MetaTrader 4 terminal"
-#~ msgstr ""
-#~ "Вы может позиционировать себя как независимый брокер, не тратя при этом "
-#~ "деньги на покупку терминала MetaTrader 4"
-
-#~ msgid "Large market potential - strong demand for online trading services"
-#~ msgstr ""
-#~ "Большой потенциал рынка - стабильный спрос на услуги интернет-трейдинга"
-
-#~ msgid "Increased customer base by attracting new clients"
-#~ msgstr "Расширение клиентской базы за счет привлечения новых клиентов"
-
-#~ msgid ""
-#~ "Huge selection of tools - more than 330 financial instruments (CFD, Futures,"
-#~ " Stocks, Indices, Options, Forex)"
-#~ msgstr ""
-#~ "Огромный выбор инструментов – более 330 финансовых инструментов (CFD, "
-#~ "Futures, Stocks, Indices, Options, Forex)"
-
-#~ msgid "Profitable spreads and commissions"
-#~ msgstr "Выгодные спреды и комиссии"
-
-#~ msgid "Full financial and legal independence"
-#~ msgstr "Полная финансовая и юридическая независимость"
-
-#~ msgid "Individual conditions for each White Label"
-#~ msgstr "Индивидуальные условия для каждого White Label"
-
-#~ msgid "Requirements"
-#~ msgstr "Требования"
-
-#~ msgid "Initial capital to start up the business"
-#~ msgstr "Стартовый капитал на создание и раскрутку "
-
-#~ msgid "Database of live clients"
-#~ msgstr "База живых клиентов"
-
-#~ msgid "Knowledge of the financial services market"
-#~ msgstr "Знание рынка финансовых услуг"
-
-#~ msgid "Registered legal entity"
-#~ msgstr "Зарегистрированное юридическое лицо"
-
-#~ msgid "The use of Grand Capitals trading resources"
-#~ msgstr "Использование торговых возможностей Grand Capital"
-
-#~ msgid "Consultation with technical support specialists"
-#~ msgstr "Консультации специалистов технической поддержки"
-
-#~ msgid "Software updates"
-#~ msgstr "Обновления ПО"
-
-#~ msgid "Free training<br>for your staff"
-#~ msgstr "Бесплатное обучение<br>вашего персонала"
-
-#~ msgid "Joint development of<br>strategies to promote"
-#~ msgstr "Совместная разработка стратегии продвижения"
-
-#~ msgid "Application for collaboration on the \"White Label\" program"
-#~ msgstr "Заявка на сотрудничество по программе \"White Label\""
-
-#~ msgid "Disable rebate"
-#~ msgstr "Отключить возврат спреда"
-
-#~ msgid "Yes"
-#~ msgstr "Да"
-
-#~ msgid "No"
-#~ msgstr "Нет"
-
-#~ msgid "Spread rebate for your clients"
-#~ msgstr "Возврат спреда вашим клиентам (Rebate)"
-
-#~ msgid ""
-#~ "\n"
-#~ "        <p>On this page you can set up spread rebate for all your clients:</p>\n"
-#~ "        <ul>\n"
-#~ "            <li>Rebate is automatically transferred to client's account after each trade</li>\n"
-#~ "            <li>The funds for rebate are deducted from the partner's account, thus the partner's balance can go to negative numbers</li>\n"
-#~ "            <li>The rebate is calculated for trades of any volume</li>\n"
-#~ "            <li>The rebate can amount from $1 to $10 per lot</li>\n"
-#~ "        </ul>\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "<p>В этом разделе Вы можете подключить возврат комиссии всем вашим клиентам:</p>\n"
-#~ "<ul>\n"
-#~ "<li>Возврат осуществляется на счет клиента автоматически (моментально) после каждой сделки</li>\n"
-#~ "<li>Средства вычитаются со счета партнера, при нулевом балансе учитываются в минус</li>\n"
-#~ "<li>Возврат рассчитывается из любого объема сделки</li>\n"
-#~ "<li>Возврат возможен в размере от 1$ до 10$ за лот</li>\n"
-#~ "</ul>"
-
-#~ msgid "Set up rebate"
-#~ msgstr "Настроить возврат спреда"
-
-#~ msgid "Your accounts with enabled rebate"
-#~ msgstr "Ваши счета с возвратом спреда"
-
-#~ msgid "Rebate value"
-#~ msgstr "Размер возврата"
-
-#~ msgid "Date of activation"
-#~ msgstr "Дата активации"
-
-#~ msgid "per lot"
-#~ msgstr "за лот"
-
-#~ msgid ""
-#~ "Are you sure you want to turn off spread rebate for the clients of your "
-#~ "partner account"
-#~ msgstr ""
-#~ "Вы уверены что хотите отключить возврат спреда клиентам по партнёрскому "
-#~ "счёту"
-
-#~ msgid "Redirects from referral link"
-#~ msgstr "Переходы по реферальной ссылке"
-
-#~ msgid "No clicks"
-#~ msgstr "Не было переходов по партнерской ссылке"
-
-#~ msgid "You have no accounts"
-#~ msgstr "У вас нет партнерских счетов"
-
-#~ msgid ""
-#~ "On this page you can get an HTML code of a registration form that\n"
-#~ "                will allow you to include it in your site. Using this form,\n"
-#~ "                users of your site will be able to register Real Standard account directly at GrandCapital.\n"
-#~ "                All accounts, registered using the form, will be automatically bound to your\n"
-#~ "                partner code.\n"
-#~ "        "
-#~ msgstr ""
-#~ "На этой странице Вы можете получить код формы, который позволит Вам\n"
-#~ "        встраивать в Ваш сайт форму регистрации счёта Real Standard в компании GrandCapital.\n"
-#~ "        Все зарегистрированные таким образом счета будут привязаны к Вашему\n"
-#~ "        партнёрскому счёту."
-
-#~ msgid ""
-#~ "  Please, get your API key.<br><a href= %(api_key)s>Get my API key</a> "
-#~ msgstr ""
-#~ "Пожалуйста, получите ваш API ключ.<br><a href=\"%(api_key)s/\">Получить мой "
-#~ "ключ API</a> "
-
-#~ msgid "Registration code"
-#~ msgstr "Код для вставки формы регистрации"
-
-#~ msgid ""
-#~ "\n"
-#~ "            To be able to withdraw funds from your partner account, please, download and print\n"
-#~ "            <a href=\"%(agreement_link)s\">the partner agreement</a>, sign its last page, scan it or\n"
-#~ "            take a photo of it and upload it using the form below.\n"
-#~ "            <br/>\n"
-#~ "            We will also need a scan of your ID card or passport, you can upload it using the same form.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "Чтобы получить возможность выводить средства с вашего партнёрского счёта, пожалуйста,\n"
-#~ "        распечатайте <a href=\"%(agreement_link)s\">партнёрское соглашение</a>,\n"
-#~ "        подпишите последнюю страницу, отсканируйте (или сфотографируйте) её и загрузите в форму ниже.\n"
-#~ "<br/>\n"
-#~ "        Кроме того, также потребуется скан вашего паспорта, вы также можете загрузить его с помощью формы ниже."
-
-#~ msgid "Upload"
-#~ msgstr "Загрузить"
-
-#~ msgid ""
-#~ "Become our partner and get increased commission for the first three months.\n"
-#~ "    This offer is valid for all instruments: Forex, CFD, ECN and binary options."
-#~ msgstr ""
-#~ "Став партнером компании получайте повышенное партнерское вознаграждение в "
-#~ "течение первых 3-x месяцев. Предложение действует по всем типам инструментов"
-#~ " Forex, CFD, ECN и бинарных опционов."
-
-#~ msgid ""
-#~ "We offer greatly increased reward to all our new partners according to the "
-#~ "following scheme:"
-#~ msgstr ""
-#~ "Мы предлагаем значительно повышенное вознаграждение всем новым партнерам "
-#~ "согласно следующей схеме:"
-
-#~ msgid "You get a high reward - up to 50%% on each trade of the client"
-#~ msgstr ""
-#~ "Вы получаете высокое вознаграждение - до 50%% от каждой сделки клиента"
-
-#~ msgid "Options welcome bonus"
-#~ msgstr "Бездепозитный бонус"
-
-#~ msgid "From %(from)s<br>till %(till)s"
-#~ msgstr "От %(from)s<br>до %(till)s"
-
-#~ msgid "Unique"
-#~ msgstr "Уникальные"
-
-#~ msgid "with the volume of trade from"
-#~ msgstr "при объеме торговли от"
-
-#~ msgid "All banners"
-#~ msgstr "Все баннеры"
-
-#~ msgid "Contests"
-#~ msgstr "Конкурсы"
-
-#~ msgid "Education"
-#~ msgstr "Обучение"
-
-#~ msgid "Trading"
-#~ msgstr "Торговля"
-
-#~ msgid "Investment"
-#~ msgstr "Инвестиции"
-
-#~ msgid "Other banners"
-#~ msgstr "Прочие баннеры"
-
-#~ msgid ""
-#~ "The sum of the partners reward is formed from the sum of In / Out, volume of"
-#~ " trade and groups of instruments:"
-#~ msgstr ""
-#~ "Сумма вознаграждения партнера формируется, исходя из суммы In / Out, объема "
-#~ "торговли и группы инструментов:"
-
-#~ msgid ""
-#~ "\n"
-#~ "                                    Reward for 1 standard lot as a %% of the company commission for a group of CFD instruments\n"
-#~ "                                "
-#~ msgstr ""
-#~ "\n"
-#~ "Вознаграждение за 1 стандартный лот в виде %% от комиссии компании для группы инструментов CFD"
-
-#~ msgid ""
-#~ "Additionally for the Options type accounts you will get a bonus for clients "
-#~ "that made a trading turnover of more than $1000 during the reporting period "
-#~ "(paid once for each individual client)"
-#~ msgstr ""
-#~ "Дополнительно для счетов типа Options предоставляется премия за клиентов, "
-#~ "совершивших торговый оборот более $1000 за отчетный период (начисляется "
-#~ "единократно в отношении каждого отдельного клиента)"
-
-#~ msgid "Till"
-#~ msgstr "До"
-
-#~ msgid "From"
-#~ msgstr "От"
-
-#~ msgid "Start-up capital for the creation and promotion"
-#~ msgstr "Полная финансовая и юридическая независимость"
-
-#~ msgid "Additional agreement for the Partner agreement"
-#~ msgstr "Дополнительное соглашение к Партнёрскому соглашению"
-
-#~ msgid "Free teaching"
-#~ msgstr "Бесплатное обучение"
-
-#~ msgid "Be an artificial person"
-#~ msgstr "Юридическое лицо"
-
-#~ msgid "Update of the<br>software"
-#~ msgstr "Обновление программного<br>обеспечения"
-
-#~ msgid "Calculate your profit"
-#~ msgstr "Рассчитайте свою прибыль"
-
-#~ msgid "Volume of transactions, lots"
-#~ msgstr "Объем совершенных сделок (лотов)"
-
-#~ msgid "Volume of transactions' commision, USD"
-#~ msgstr "Объем комиссии по сделкам ($)"
-
-#~ msgid "Total size of contracts, USD"
-#~ msgstr "Общий размер контрактов ($)"
-
-#~ msgid "Amount of input funds, USD"
-#~ msgstr "Сумма внесенных средств, USD"
-
-#~ msgid "YOUR PROFIT"
-#~ msgstr "ВАША ПРИБЫЛЬ"
-
-#~ msgid "Amount of withdrawal funds, USD"
-#~ msgstr "Сумма выведенных средств, USD"
-
-#~ msgid ""
-#~ "You are guaranteed to get rewarded for client no matter what group of "
-#~ "instruments he uses"
-#~ msgstr ""
-#~ "Вы гарантированно получите вознаграждение за клиента, вне зависимости от "
-#~ "того, какую группу инструментов он использует"
-
-#~ msgid "<span>Introducing</span><br><span>Agent</span>"
-#~ msgstr "<span>Личный</span><br><span>представитель</span>"
-
-#~ msgid "<span>Franchising</span>"
-#~ msgstr "<span>Франчайзинг</span>"
-
-#~ msgid "Introducing Agent"
-#~ msgstr "Личный представитель"
-
-#~ msgid "For private persons"
-#~ msgstr "Для физического лица"
-
-#~ msgid "Office isn’t needed"
-#~ msgstr "Офис не нужен"
-
-#~ msgid "Reward of up to $18 per lot or up to 50%% of the transaction"
-#~ msgstr "Вознаграждение до 18$ с лота или до 50%% от сделки"
-
-#~ msgid "Works just like a classic affiliate program"
-#~ msgstr "Работает как классическая партнерская программа"
-
-#~ msgid "Become an Introducing Agent"
-#~ msgstr "Стать личным представителем"
-
-#~ msgid "Dmitriy, Saint-Petersburg"
-#~ msgstr "Дмитрий, Санкт-Петербург"
-
-#~ msgid "Advantages of Introducing Agent"
-#~ msgstr "Преимущества личного представителя"
-
-#~ msgid "Your clients make transactions on the accounts of our company"
-#~ msgstr "Клиенты совершают сделки на счетах нашей компании"
-
-#~ msgid "How to become an Introducing Agent"
-#~ msgstr "Как стать личным представителем"
-
-#~ msgid "Introduce the clients"
-#~ msgstr "Привлеките клиентов"
-
-#~ msgid "Get paid!"
-#~ msgstr "Получите вознаграждение!"
-
-#~ msgid "For legal body"
-#~ msgstr "Для юридического лица"
-
-#~ msgid "Start-up investments"
-#~ msgstr "Стартовый капитал"
-
-#~ msgid "Your own office and staff"
-#~ msgstr "Собственный офис с персоналом"
-
-#~ msgid "Advantages of regional representative"
-#~ msgstr "Преимущества регионального представителя"
-
-#~ msgid "Proven methods of introducing the clients"
-#~ msgstr "Отработанные и проверенные методики привлечения клиентов"
-
-#~ msgid "Clients"
-#~ msgstr "Клиенты"
-
-#~ msgid "How to become the regional representative"
-#~ msgstr "С чего начать"
-
-#~ msgid "Open an office"
-#~ msgstr "Открыть офис"
-
-#~ msgid "For partnership within the program Regional representative"
-#~ msgstr "на сотрудничество по программе Региональный представитель"
-
-#~ msgid "Send a request"
-#~ msgstr "Отправить заявку"
-
-#~ msgid "For private persons and legal body"
-#~ msgstr "Для юридических и физических лиц"
-
-#~ msgid "Advantages of program"
-#~ msgstr "Преимущества программы"
-
-#~ msgid "Ready-made model of the successful business"
-#~ msgstr "Готовая модель успешного бизнеса под ключ"
-
-#~ msgid "Work under the famous brand"
-#~ msgstr "Возможность работы под брендом сильной компании"
-
-#~ msgid "Stuff-training"
-#~ msgstr "Обучение персонала"
-
-#~ msgid "How to start partnership"
-#~ msgstr "Как начать сотрудничать"
-
-#~ msgid "Just send a request and we'll contact you in 14 days"
-#~ msgstr ""
-#~ "Просто оставьте заявку, и мы свяжемся с вами. Срок рассмотрения заявки – 14 "
-#~ "дней"
-
-#~ msgid "For partnership within the program Franchising"
-#~ msgstr "на сотрудничество по программе франчайзинга"
-
-#~ msgid ""
-#~ "\n"
-#~ "                        White Label program is for those who want to develop business on the financial markets\n"
-#~ "                        under those own brand. We provide terminal Meta Trader 4 and you can individualize for\n"
-#~ "                        your brand. Clients who have opened accounts in your company contract with you directly.\n"
-#~ "                        You can make your own terms of trading with our opportunities\n"
-#~ "                    "
-#~ msgstr ""
-#~ "\n"
-#~ "Вам будет предоставлен торговый терминал MetaTrader4, который Вы сможете индивидуализировать под собственный бренд, а клиенты, открывшие у Вас счета, будут заключать договор непосредственно с Вашей компанией. Пользуясь предоставляемыми нами возможностями, Вы можете устанавливать собственные условия торговли"
-
-#~ msgid "Start-up investments for buying software"
-#~ msgstr "Необходим стартовый капитал на приобретение программных продуктов"
-
-#~ msgid "Work on the financial markets under your brand"
-#~ msgstr "Работа в сфере интернет-трейдинга под собственным брендом"
-
-#~ msgid "Just send a request and we’ll contact you in 14 days"
-#~ msgstr ""
-#~ "Просто оставьте заявку, и мы свяжемся с вами. Срок рассмотрения заявки – 14 "
-#~ "дней"
-
-#~ msgid "For partnership within the program White Label"
-#~ msgstr "на сотрудничество по программе White Label"
-
-#~ msgid "In order to receive the certificate, please download the documents"
-#~ msgstr "Чтобы получить сертификат, пожалуйста, загрузите документы"
-
-#~ msgid ""
-#~ "For further cooperation it is necessary to fill out the Partnership "
-#~ "Agreement"
-#~ msgstr ""
-#~ "Для дальнейшего сотрудничества необходимо заключить партнерское соглашение"
-
-#~ msgid "Step"
-#~ msgstr "Шаг"
-
-#~ msgid ""
-#~ "\n"
-#~ "                Download <a href=\"%(link)s\">the Partnership agreement</a>\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "Скачайте <a href=\"%(link)s\">Партнерское соглашение</a>"
-
-#~ msgid ""
-#~ "\n"
-#~ "                Print out <a href=\"%(link)s\">the last page</a> and fill it in\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "Распечатайте <a href=\"%(link)s\">последнюю страницу</a> и заполните ее"
-
-#~ msgid ""
-#~ "\n"
-#~ "            Scan or take a picture of the filled out last page and\n"
-#~ "            <a href=\"%(upload_link)s\">upload it</a> into Private Office\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "Отсканируйте или сфотографируйте заполненную страницу и загрузите ее в <a href=\"%(upload_link)s\">личном кабинете</a>"
-
-#~ msgid ""
-#~ "The certificate will be created on your name and sent to your email account"
-#~ msgstr ""
-#~ "Сертификат будет создан на Ваше имя и отправлен Вам по электронной почте"
-
-#~ msgid "Download the Partnership agreement"
-#~ msgstr "Партнерское соглашение"
-
-#~ msgid ""
-#~ "You should complete the verification process before withdrawing from account"
-#~ " %(account)s. <a rel=\"facebox\" href=\"%(url)s\">Read more</a>"
-#~ msgstr ""
-#~ "Вы должны завершить процесс верификации перед тем, как выводить деньги со "
-#~ "счета %(account)s. <a rel=\"facebox\" href=\"%(url)s\">Подробнее</a>"
-
-#~ msgid "Send"
-#~ msgstr "Загрузить"
-
-#~ msgid ""
-#~ "You can put a link to main page or landing page. This page is designed "
-#~ "(developed?) to attract customers.The conversion rate of our landing pages "
-#~ "reaches 10%% or even more. every tenth user who got on the page, registers "
-#~ "and became a client. This is very good index, so we recommend you to post "
-#~ "links to our landing pages."
-#~ msgstr ""
-#~ "Вы можете поставить ссылку на главную страницу нашего сайта или на лендинг."
-#~ "  Это страница, которая специально разработана для того, что чтобы "
-#~ "привлекать клиентов. Коэффициент конверсии наших лендингов достигает 10% и "
-#~ "более процентов. То есть каждый десятый пользователь, который попал на "
-#~ "страницу, регистрируется на сайте и становится клиентом. Это очень хороший "
-#~ "показатель, поэтому мы рекомендуем Вам размещать ссылки на наши лендинги."
-
-#~ msgid "Preview"
-#~ msgstr "Предпросмотр"
-
-#~ msgid "Bonus 40"
-#~ msgstr "Акция «Бонус на каждое пополнение»"
-
-#~ msgid ""
-#~ "\n"
-#~ "                In this section you can get assets to advertise us on your site.\n"
-#~ "                You can add a domain on which you will be able to use the assets.\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "В этом разделе Вы можете получить материалы для продвижения компании на своем сайте. Вы можете добавить домен для  размещения на котором будут доступны материалы."
-
-#~ msgid "Add domains"
-#~ msgstr "Добавить домены"
-
-#~ msgid "Partner \"Summer Forex Bonus\" registration form code"
-#~ msgstr "Код для вставки формы регистрации на \"Летний Бонус\""
-
-#~ msgid "Partner \"Binary Options\" registration form code"
-#~ msgstr "Код для вставки формы регистрации счета Options"
-
-#~ msgid "There are no domains associated with the account you selected"
-#~ msgstr "На выбранный вами счет не зарегестрировано ни одного домена."
-
-#~ msgid "Hide domains"
-#~ msgstr "Скрыть домены"
-
-#~ msgid "Options calculator preview"
-#~ msgstr "Предпросмотр калькулятора опционов"
-
-#~ msgid ""
-#~ "\n"
-#~ "                Please, get your API key.\n"
-#~ "                %%br\n"
-#~ "                %%a{:href => 'url banner_list'}\n"
-#~ "                    Get my API key\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "Пожалуйста, получите свой API ключ\n"
-#~ "<br>\n"
-#~ "<a href = 'url banner_list'>Получить ключ</a>"
-
-#~ msgid "Please, choose set of banner"
-#~ msgstr "Пожалуйста, выберите набор баннеров"
-
-#~ msgid "Type"
-#~ msgstr "Тип"
-
-#~ msgid "show code"
-#~ msgstr "показать код"
-
-#~ msgid "API key"
-#~ msgstr "Ключ API"
-
-#~ msgid "Offers"
-#~ msgstr "Предложения"
-
-#~ msgid "For newbies"
-#~ msgstr "Для новичков"
-
-#~ msgid "partner_certificate_sample_eng.png"
-#~ msgstr "partner_certificate_sample.jpg"
-
-#~ msgid ""
-#~ "You can get by mail our printed certificate, confirming that you are indeed "
-#~ "an official partner of GrandCapital."
-#~ msgstr ""
-#~ "Вы можете получить сертификат, который подтверждает, что Вы являетесь "
-#~ "официальным партнером GrandCapital, в распечатанном и заполненном виде по "
-#~ "почте."
-
-#~ msgid "Получить"
-#~ msgstr "Get printed certificate"

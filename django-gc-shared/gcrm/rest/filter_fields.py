@@ -32,7 +32,7 @@ class CountriesFilter(Filter):
 
     def filter(self, qs, value):
         if value:
-            qs = qs.filter(user__profile__country_id__in=value)
+            qs = qs.filter(user__profile__country_pk__in=value)
         return qs
 
 
@@ -41,7 +41,7 @@ class RegionsFilter(Filter):
 
     def filter(self, qs, value):
         if value:
-            qs = qs.filter(user__profile__state_id__in=value)
+            qs = qs.filter(user__profile__state_pk__in=value)
         return qs
 
 

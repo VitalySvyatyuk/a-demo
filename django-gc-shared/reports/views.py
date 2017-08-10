@@ -133,7 +133,7 @@ def report_list(request):
 
             task = generate_report.delay(form_data, template, decimal_separator, report, language,
                                          request.user)
-            report.celery_task_id = task.id
+            report.celery_task_id = task.pk
             report.save()
             messages.success(request,
                              _("Your report order has been received and is now being processed. \

@@ -62,7 +62,7 @@ class ContactQuerySet(models.QuerySet):
 
         # log it
         params = dict(
-            new_user_id=user.id if user else None,
+            new_user_id=user.pk if user else None,
             **(additional_info or {})
         )
 
@@ -174,7 +174,7 @@ class Contact(StatefullModel):
         If you have special log event type, avoid this method
         In nutshell, it has no magic, just a shortcut
         """
-        return Contact.objects.filter(id=self.id).set_manager(*a, **kwa)
+        return Contact.objects.filter(pk=self.pk).set_manager(*a, **kwa)
 
 
 @receiver(user_registered)
@@ -294,7 +294,7 @@ class ManagerReassignRequest(StatefullModel):
         self.save()
 
         if not child:
-            self.contact.set_manager(self.new_manager, comment=self.comment, additional_info={'request_id': self.id})
+            self.contact.set_manager(self.new_manager, comment=self.comment, additional_info={'request_id': self.pk})
             for req in self.contact.manager_reassign_requests.unresolved().filter(new_manager=self.new_manager):
                 req.accept(closed_by, close_comment, child=True)
 

@@ -90,7 +90,7 @@ class UserIssueSerializer(serializers.ModelSerializer):
 
         send_mail(
             u"User {} created issue".format(validated_data['author']),
-            u'link: https://arumcapital.eu/my/admin/issuetracker/genericissue/{}/'.format(issue.id),
+            u'link: https://arumcapital.eu/my/admin/issuetracker/genericissue/{}/'.format(issue.pk),
             settings.SERVER_EMAIL,
             settings.MANAGERS[0]  # Which means support email
         )

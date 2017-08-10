@@ -51,7 +51,7 @@ class UserProfileQueryset(models.manager.QuerySet):
             order_by=['-latest_account' if desc else "latest_account"],
             where=["EXISTS("
                    "SELECT {accounts_table}.creation_ts "
-                   "FROM {accounts_accounts_table} "
+                   "FROM {accounts_accounts_table} "  # FIXME: a typo?
                    "WHERE {accounts_table}.user_id = {profiles_table}.user_id)".format(accounts_table=TradingAccount._meta.db_table,
                                                   profiles_table=UserProfile._meta.db_table)])
 
@@ -275,7 +275,7 @@ class UserProfile(StateSavingModel):
     ###
 
     def add_last_activity(self, name, check=None, ts=None):
-        UserProfile.objects.filter(id=self.id).add_last_activity(name=name, check=check, ts=ts)
+        UserProfile.objects.filter(pk=self.pk).add_last_activity(name=name, check=check, ts=ts)
         self.refresh_from_db(fields=['last_activities', 'last_activity_ts'])
 
     @property
@@ -453,7 +453,7 @@ class UserProfile(StateSavingModel):
         self.save()
         if similar:
             with Logger.with_tag('set_manager_similar'):
-                with Logger.with_params(set_manager_similar_to=self.id):
+                with Logger.with_params(set_manager_similar_to=self.pk):
                     for sim in self.similar:
                         sim.set_manager(
                             self.manager,
@@ -473,7 +473,7 @@ class UserProfile(StateSavingModel):
         if isinstance(end, date):
             end = datetime.combine(end, datetime.min.time())
         changes = Logger.objects.filter(event=Events.MANAGER_CHANGED, at__range=(start, end),
-                                        object_id=self.user.id).order_by('at')
+                                        object_id=self.user.pk).order_by('at')
         if changes:
             old_manager_id = changes[0].params.get('old_id')
             starting_manager = User.objects.filter(id=old_manager_id).first() if old_manager_id else None
@@ -500,11 +500,11 @@ class UserProfile(StateSavingModel):
     def get_manager_at(self, at):
         """At the time of writing, our managers work for 1-2 weeks and leave, so this method is really indispensable"""
         last_change = Logger.objects.filter(event=Events.MANAGER_CHANGED, at__lte=at,
-                                            object_id=self.user.id).order_by('-at').first()
+                                            object_id=self.user.pk).order_by('-at').first()
         if last_change:
             changed_to_id = last_change.params.get('new_id')
             if changed_to_id:
-                changed_to = User.objects.filter(id=changed_to_id).first()
+                changed_to = User.objects.filter(pk=changed_to_id).first()
                 if changed_to:
                     return changed_to
         return self.manager  # Ok, we couldn't find the historic manager

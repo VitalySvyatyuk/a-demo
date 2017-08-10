@@ -21,6 +21,7 @@ def get_unsubscribe_url(email, campaign_id, language=None):
     domain = get_current_domain(language=language)
     args = [signature, urllib.quote(email)]
     is_our_client = UserProfile.objects.filter(user__email=email).exists()
+
     if not is_our_client:
         return domain + reverse('massmail_unsubscribe_email', args=args)
 

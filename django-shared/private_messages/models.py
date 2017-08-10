@@ -79,11 +79,11 @@ class Message(models.Model):
         return self.subject
 
     def get_absolute_url(self):
-        return ('messages_detail', [self.id])
+        return ('messages_detail', [self.pk])
     get_absolute_url = models.permalink(get_absolute_url)
 
     def save(self, force_insert=False, force_update=False):
-        if not self.id:
+        if not self.pk:
             self.sent_at = datetime.now()
         super(Message, self).save(force_insert, force_update)
 

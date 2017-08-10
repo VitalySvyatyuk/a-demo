@@ -201,11 +201,11 @@ def frontpage(request):
         "quotes": result
     }
 
-    responce = render(request, 'marketing_site/pages/index.jade', context=context)
+    response = render(request, 'marketing_site/pages/index.jade', context=context)
     if not show_language_choice_modal:
-        responce.set_cookie('show', 'false')
+        response.set_cookie('show', 'false')
 
-    return responce
+    return response
 
 
 @render_to('marketing_site/pages/inout.jade')
@@ -273,6 +273,7 @@ def send_subscribe_email(request):
 
         email = request.POST.get("email")
         domain = get_current_domain()
+        mail_ids = []
 
         if not email or not mail_list_id:
             return {'result': 'NO'}
@@ -283,18 +284,21 @@ def send_subscribe_email(request):
 
                 # since we decide search by mail_list_name
                 try:
-                    mail_id = MailingList.objects.get(name=mail_id).id
+                    mail_ids.append(unicode(MailingList.objects.get(name=mail_id).pk))
                 except (ObjectDoesNotExist, MultipleObjectsReturned):
                     log.error("Cant subscribe user for mail list with name: {}".format(request.POST.get("id")))
                     return {'result': 'NO'}
-                link = domain + reverse("massmail_subscribe_id", args=(signature, email, mail_id))
-                email_body = _("Hello! In order to confirm your email, please click here") + "\n" + link
-                send_mail(
-                    email_subj,
-                    email_body,
-                    settings.SERVER_EMAIL,
-                    [email]
-                )
+
+            mail_id = '+'.join(mail_ids)
+
+            link = domain + reverse("massmail_subscribe_id", args=(signature, email, mail_id))
+            email_body = _("Hello! In order to confirm your email, please click here") + "\n" + link
+            send_mail(
+                email_subj,
+                email_body,
+                settings.SERVER_EMAIL,
+                [email]
+            )
         return {'result': 'OK'}
 
 

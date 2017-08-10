@@ -1,0 +1,242 @@
+[
+  {
+    "fields": {
+      "code": "RU",
+      "phone_code_mask": "",
+      "name": "Russia",
+      "weight": 1,
+      "is_primary": true,
+      "phone_code": 7,
+      "language": "ru",
+      "slug": "rus"
+    },
+    "model": "geobase.country",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "code": "AU",
+      "phone_code_mask": "",
+      "name": "Australia",
+      "weight": 100,
+      "is_primary": false,
+      "phone_code": 61,
+      "language": "en",
+      "slug": "aodaliya"
+    },
+    "model": "geobase.country",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "code": "KZ",
+      "phone_code_mask": "(999) 99999999",
+      "name": "Austria",
+      "weight": 100,
+      "is_primary": false,
+      "phone_code": 43,
+      "language": "en",
+      "slug": "austria"
+    },
+    "model": "geobase.country",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "code": "AZ",
+      "phone_code_mask": "99 999-9999",
+      "name": "Azerbaijan",
+      "weight": 100,
+      "is_primary": false,
+      "phone_code": 994,
+      "language": "ru",
+      "slug": "azerbaijan"
+    },
+    "model": "geobase.country",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "code": "AI",
+      "phone_code_mask": "",
+      "name": "Anguilla",
+      "weight": 100,
+      "is_primary": false,
+      "phone_code": 1264,
+      "language": "en",
+      "slug": "anguilla"
+    },
+    "model": "geobase.country",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "code": "AR",
+      "phone_code_mask": "999 9999 9999",
+      "name": "Argentina",
+      "weight": 100,
+      "is_primary": false,
+      "phone_code": 54,
+      "language": "es",
+      "slug": "argentina"
+    },
+    "model": "geobase.country",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "code": "AM",
+      "phone_code_mask": "(99) 999-999",
+      "name": "Armenia",
+      "weight": 100,
+      "is_primary": false,
+      "phone_code": 374,
+      "language": "ru",
+      "slug": "arm"
+    },
+    "model": "geobase.country",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "code": null,
+      "phone_code_mask": "",
+      "name": "Arulco",
+      "weight": 100,
+      "is_primary": false,
+      "phone_code": null,
+      "language": "",
+      "slug": ""
+    },
+    "model": "geobase.country",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "code": "BY",
+      "phone_code_mask": "(99) 999-99999",
+      "name": "Belarus",
+      "weight": 100,
+      "is_primary": false,
+      "phone_code": 375,
+      "language": "ru",
+      "slug": "belarus"
+    },
+    "model": "geobase.country",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "code": "BZ",
+      "phone_code_mask": "",
+      "name": "Belize",
+      "weight": 100,
+      "is_primary": false,
+      "phone_code": 501,
+      "language": "en",
+      "slug": ""
+    },
+    "model": "geobase.country",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "code": "LK",
+      "phone_code_mask": "",
+      "name": "Sri Lanka",
+      "weight": 100,
+      "is_primary": false,
+      "phone_code": 94,
+      "language": "en",
+      "slug": "srilanka"
+    },
+    "model": "geobase.country",
+    "pk": 117
+  },
+  {
+    "fields": {
+      "code": "FR",
+      "phone_code_mask": "",
+      "name": "France",
+      "weight": 100,
+      "is_primary": false,
+      "phone_code": 33,
+      "language": "fr",
+      "slug": ""
+    },
+    "model": "geobase.country",
+    "pk": 94
+  },
+  {
+    "fields": {
+      "country": 117,
+      "code": null,
+      "name": "Central Province"
+    },
+    "model": "geobase.region",
+    "pk": 1075
+  },
+  {
+    "fields": {
+      "country": 1,
+      "code": null,
+      "name": "North Central Province"
+    },
+    "model": "geobase.region",
+    "pk": 1076
+  },
+  {
+    "fields": {
+      "country": 1,
+      "code": null,
+      "name": "North Eastern Province"
+    },
+    "model": "geobase.region",
+    "pk": 1077
+  },
+  {
+    "fields": {
+      "country": 117,
+      "code": null,
+      "name": "North Western Province"
+    },
+    "model": "geobase.region",
+    "pk": 1078
+  },
+  {
+    "fields": {
+      "country": 6,
+      "code": "09",
+      "name": "Formosa"
+    },
+    "model": "geobase.region",
+    "pk": 118
+  },
+  {
+    "fields": {
+      "country": 94,
+      "code": "CVL",
+      "name": "CVL"
+    },
+    "model": "geobase.region",
+    "pk": 119
+  },
+  {
+    "fields": {
+      "country": 6,
+      "code": "04",
+      "name": "Chubut"
+    },
+    "model": "geobase.region",
+    "pk": 120
+  },
+  {
+    "fields": {
+      "country": 117,
+      "code": "08",
+      "name": "Entre Rios"
+    },
+    "model": "geobase.region",
+    "pk": 121
+  }
+]

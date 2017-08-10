@@ -189,7 +189,7 @@ def frontpage(request, manager_username=None, agent_code=None, broco=False):
 
         # accounts_list = _get_account_list_for_ib(agent_code)
         accounts_list = []
-        cl.query_set = cl.query_set.filter(grand_user__accounts__mt4_id__in=accounts_list)
+        cl.query_set = cl.query_set.filter(grand_user__accounts__mt4_pk__in=accounts_list)
 
     if manager_username is not None:
         manager = get_object_or_404(User, username=manager_username)
@@ -222,7 +222,7 @@ def frontpage(request, manager_username=None, agent_code=None, broco=False):
     if only_demo:
         cl.query_set = cl.query_set.extra(
             where=[
-                """NOT EXISTS(SELECT mt4_mt4account.creation_ts FROM mt4_mt4account WHERE user_id = auth_user.id """
+                """NOT EXISTS(SELECT mt4_mt4account.creation_ts FROM mt4_mt4account WHERE user_id = auth_user.pk """
                 """AND "platforms_tradingaccount"."group_name" ~* '%s')""" % real_regex()
             ]
         )
@@ -330,9 +330,9 @@ def broco_frontpage(request, manager_username=None, agent_code=None):
     cl_for_call_date_hierarchy.date_hierarchy = "crm__calls__date"
 
     cl.query_set = cl.query_set.extra(select={'latest_account':
-                                                  "SELECT crm_brocomt4account.creation_ts FROM crm_brocomt4account WHERE user_id = crm_brocouser.id ORDER BY crm_brocomt4account.creation_ts DESC LIMIT 1"},
+                                                  "SELECT crm_brocomt4account.creation_ts FROM crm_brocomt4account WHERE user_id = crm_brocouser.pk ORDER BY crm_brocomt4account.creation_ts DESC LIMIT 1"},
         order_by=['-latest_account'],
-        where=["EXISTS(SELECT crm_brocomt4account.creation_ts FROM crm_brocomt4account WHERE user_id = crm_brocouser.id)"])
+        where=["EXISTS(SELECT crm_brocomt4account.creation_ts FROM crm_brocomt4account WHERE user_id = crm_brocouser.pk)"])
 
     cl.get_results(request)
     users_paginator = cl.paginator
@@ -504,7 +504,7 @@ def save_call(request, new_customer=False):
     call = CallInfo(customer=crm, comment=comment, caller=request.user)
     call.save()
 
-    return {'result': 'ok', 'call': (call.id, call.get_date_string(), call.comment)}
+    return {'result': 'ok', 'call': (call.pk, call.get_date_string(), call.comment)}
 
 
 @can_access_crm
@@ -662,7 +662,7 @@ def load_manager_data(request):
     # except (IndexError, ValueError):
     #     result.update({"show_account_error": True, "manager_name": None, 'internal_phone': None})
     #     return result
-    # user_profile = User.objects.get(id=account.user.id).profile
+    # user_profile = User.objects.get(pk=account.user.pk).profile
     # if user_profile.manager:
     #     manager = user_profile.manager.crm_manager
     # else:
@@ -721,7 +721,7 @@ def uid_by_phone(request, phone):
         Q(phone_work=phone) |
         Q(phone_mobile=phone)
     ).order_by('-id')[:1]
-    return HttpResponse() if not ups else HttpResponse('gcu{0}'.format(ups[0].user.id))
+    return HttpResponse() if not ups else HttpResponse('gcu{0}'.format(ups[0].user.pk))
 
 
 @login_required
@@ -729,7 +729,7 @@ def uid_by_phone(request, phone):
 def change_user_manager(request, user_id):
     if not (request.user.is_superuser or PersonalManager.objects.filter(user=request.user).exists()):
         raise Http404()
-    user = get_object_or_404(User, id=user_id)
+    user = get_object_or_404(User, pk=user_id)
     profile = user.profile
 
     req = ManagerReassignRequest(
@@ -747,7 +747,7 @@ def change_user_manager(request, user_id):
         # it is head manager(like S.Solovyov)
         # it is local reassignment(X office -> X office manager)
         #   and current user is supermanager in X office
-        if (request.user.id != 140743 and  # T. Volchetckiy. Sorry, I do not want to add yet another checkbox to admin
+        if (request.user.pk != 140743 and  # T. Volchetckiy. Sorry, I do not want to add yet another checkbox to admin
                 (req.assign_to and (request.user.crm_manager.is_head_supermanager or request.user.is_superuser)) or
                 (request.user.crm_manager.is_office_supermanager and req.is_local and req.assign_to and
                     req.assign_to.crm_manager.office == request.user.crm_manager.office) or not req.assign_to):
@@ -885,7 +885,7 @@ def search_ajax(request):
         )
     else:
         profile_fields = (
-            "user__id",
+            "user__pk",
             "user__email",
             "user__first_name",
             "user__last_name",
@@ -961,14 +961,14 @@ def search_ajax(request):
         'page': current_page,
 
         'data': [{
-            'id': obj.user.id,
+            'id': obj.user.pk,
             'name': user_fullname(obj),
             'manager': manager_to_str(obj.manager) or '',
             'ib_manager': manager_to_str(obj.ib_manager) or '',
-            'admin_url': reverse('admin:auth_user_change', args=(obj.user.id,)),
-            'profile_admin_url': reverse('admin:profiles_userprofile_change', args=(obj.user.profile.id,)),
+            'admin_url': reverse('admin:auth_user_change', args=(obj.user.pk,)),
+            'profile_admin_url': reverse('admin:profiles_userprofile_change', args=(obj.user.profile.pk,)),
             'amo_url': amo_link(obj),
-            'reassign_url': reverse('crm_change_user_manager', kwargs={'user_id': obj.user.id}),
+            'reassign_url': reverse('crm_change_user_manager', kwargs={'user_id': obj.user.pk}),
             'joined_at': formats.date_format(obj.user.date_joined, "DATETIME_FORMAT"),
         } for obj in page.object_list]
     }
@@ -983,7 +983,7 @@ def user_more_ajax(request):
 
     return {
         'accounts': [{
-            'id': acc.id,
+            'id': acc.pk,
             'mt4_id': acc.mt4_id,
             'group': unicode(acc.group),
             'balance': unicode(acc.balance_money) if not(acc.is_deleted or acc.is_archived) else "0",
@@ -1011,7 +1011,7 @@ def logs_by_user_ajax(request, user_id):
         return error
 
     return [{
-        'id': log.id,
+        'id': log.pk,
         'ip': log.ip,
         'user': log.user.get_full_name() if log.user else '-',
         'at': log.at,
@@ -1029,7 +1029,7 @@ def user_deposit_requests_ajax(request, user_id):
         return error
     drs = DepositRequest.objects.filter(account__in=user.accounts.all()).order_by('-creation_ts')
     return [{
-        'id': dr.id,
+        'id': dr.pk,
         'account': dr.account.mt4_id,
         'amount': unicode(dr.amount_money),
         'payment_system': unicode(dr.payment_system),
@@ -1051,7 +1051,7 @@ def user_withdraw_requests_ajax(request, user_id):
 
     wrs = WithdrawRequest.objects.filter(account__in=user.accounts.all()).order_by('-creation_ts')
     return [{
-        'id': wr.id,
+        'id': wr.pk,
         'account': wr.account.mt4_id,
         'amount': unicode(wr.amount_money),
         'payment_system': unicode(wr.payment_system),
@@ -1059,7 +1059,7 @@ def user_withdraw_requests_ajax(request, user_id):
         'private_comment': wr.private_comment,
         'public_comment': wr.public_comment,
         'reason': wr.get_reason_display(),
-        'group_id': wr.group.id if wr.group else None,
+        'group_id': wr.group.pk if wr.group else None,
         'group_link': wr.group.get_absolute_url() if wr.group else None,
         'closed_by': wr.closed_by.get_full_name() if wr.closed_by else None,
         'creation_ts': wr.creation_ts,
@@ -1096,7 +1096,7 @@ def viewlogs_ajax(request):
         'page': current_page,
 
         'data': [{
-            'id': adv.id,
+            'id': adv.pk,
             'creation_ts': adv.creation_ts,
             'user_name': adv.user.get_full_name(),
             'customer_name': adv.customer.grand_user.get_full_name(),

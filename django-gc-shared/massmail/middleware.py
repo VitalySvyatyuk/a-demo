@@ -21,9 +21,13 @@ class MassMailMiddleware(object):
                                      email=email.lower(),
                                      defaults={'clicked': True,
                                                'opened': True})
+
+        # If campaign was opened but wasn't clicked, we don't
+        # create new OpenedCampaign with same campaign and email,
+        # instead of this we change clicked and opened to True
         if not (obj.clicked and obj.opened):
             obj.clicked = True
-            obj.clicked = True
+            obj.opened = True
             obj.save()
 
         return response

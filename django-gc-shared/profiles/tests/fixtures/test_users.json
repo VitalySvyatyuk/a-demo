@@ -1,0 +1,53 @@
+[
+   {
+      "model" : "auth.user",
+      "pk" : 3,
+      "fields" : {
+         "is_active" : true,
+         "last_login" : "2017-01-30T15:59:03.655",
+         "is_staff" : false,
+         "date_joined" : "2017-01-30T15:58:23.164",
+         "username" : "tester",
+         "is_superuser" : true,
+         "email" : "tester@uptrader.us",
+         "first_name" : "Mr",
+         "last_name" : "Tester",
+         "groups" : [],
+         "password" : "pbkdf2_sha256$20000$i4rCAOz8NAKl$tqzLk/mjxFIo2MRQO8U3uAJi+pHHHvbS1WOcCi+7FEg="
+      }
+   },
+   {
+      "model" : "auth.user",
+      "pk" : 9,
+      "fields" : {
+         "is_active" : false,
+         "last_login" : "2017-01-30T15:59:03.655",
+         "is_staff" : false,
+         "date_joined" : "2017-01-30T15:58:23.164",
+         "username" : "tester2",
+         "is_superuser" : false,
+         "email" : "tester2@uptrader.us",
+         "first_name" : "Mr",
+         "last_name" : "Tester 2",
+         "groups" : [],
+         "password" : "pbkdf2_sha256$20000$i4rCAOz8NAKl$tqzLk/mjxFIo2MRQO8U3uAJi+pHHHvbS1WOcCi+7FEg="
+      }
+   },
+   {
+      "model" : "auth.user",
+      "pk" : 6,
+      "fields" : {
+         "is_active" : true,
+         "last_login" : "2017-01-30T15:59:03.655",
+         "is_staff" : false,
+         "date_joined" : "2017-01-30T15:58:23.164",
+         "username" : "русскиесимволынедопустимы",
+         "is_superuser" : false,
+         "email" : "teste1r@uptrader.us",
+         "first_name" : "Иван",
+         "last_name" : "Дорн",
+         "groups" : [],
+         "password" : "pbkdf2_sha256$20000$i4rCAOz8NAKl$tqzLk/mjxFIo2MRQO8U3uAJi+pHHHvbS1WOcCi+7FEg="
+      }
+   }
+]

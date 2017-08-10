@@ -31,14 +31,14 @@ class MessageViewSet(viewsets.ReadOnlyModelViewSet):
         status = request.data['status']
         assert status in ['deleted', 'read', 'unread']
         if status == 'deleted':
-            for msg in self.get_queryset().filter(id__in=request.data['id']):
+            for msg in self.get_queryset().filter(pk__in=request.data['id']):
                 msg.mark_deleted(request.user)
 
         elif status == 'read':
-            for msg in self.get_queryset().filter(id__in=request.data['id']):
+            for msg in self.get_queryset().filter(pk__in=request.data['id']):
                 msg.mark_read()
 
         elif status == 'unread':
-            for msg in self.get_queryset().filter(id__in=request.data['id']):
+            for msg in self.get_queryset().filter(pk__in=request.data['id']):
                 msg.mark_unread()
         return Response()

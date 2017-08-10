@@ -53,7 +53,7 @@ class Node(models.Model, PublicAccessMixin):
         model = content_type.model_class()
         if model == Node:
             return self
-        return model.objects.get(id=self.id)
+        return model.objects.get(pk=self.pk)
 
     def __unicode__(self):
         return self.title
@@ -66,7 +66,7 @@ class Node(models.Model, PublicAccessMixin):
         try:
             return t.render(Context(self.get_context_values()))
         except:
-            log.exception('Error while rendering node %s' % self.id)
+            log.exception('Error while rendering node %s' % self.pk)
             return self.body
 
     def edit_link(self):
@@ -88,7 +88,7 @@ class Page(Node):
         domain = settings.LANGUAGE_SETTINGS[self.language]["redirect_to"]
         if self.url_alias:
             return '%s/%s' % (domain, self.url_alias)
-        return domain + reverse('node.views.node', args=[self.id])
+        return domain + reverse('node.views.node', args=[self.pk])
 
     class Meta:
         verbose_name = _('Page')
