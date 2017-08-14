@@ -195,7 +195,7 @@ class DepositForm(BaseForm):
 
     amount = forms.DecimalField(label=_("Amount"), help_text=string_concat(
         _("Amount of money to deposit."), " ",
-        _("Attention! Specify amount on your account after deduction of the system's charge"))
+        _("Attention! Specify the amount after deduction of the system's charge on your account"))
     )
 
     commision = forms.CharField(label=_('Comission'), required=False)

@@ -485,11 +485,9 @@ msgid "Amount of money to deposit."
 msgstr "Amount of money to deposit."
 
 msgid ""
-"Attention! Specify amount on your account after deduction of the system's "
-"charge"
+"Attention! Specify the amount after deduction of the system's charge on your account"
 msgstr ""
-"Attention! Specify amount on your account after deduction of the system's "
-"charge"
+"Attention! Specify the amount after deduction of the system's charge on your account"
 
 #, python-format
 msgid "Your %(payment_system)s purse, e.g. %(example)s"

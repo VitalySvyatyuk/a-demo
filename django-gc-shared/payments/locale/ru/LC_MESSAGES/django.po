@@ -635,8 +635,8 @@ msgstr "Будет начислено"
 msgid "Amount of money to deposit."
 msgstr "Определите сумму денег для ввода."
 
-msgid "Attention! Specify amount on your account after deduction of the system's charge"
-msgstr "Внимание! Укажите сумму за вычетом комиссии системы - сумму к получению"
+msgid "Attention! Specify the amount after deduction of the system's charge on your account"
+msgstr "Внимание! Укажите сумму с учетом вычета комиссии системы - сумму к получению"
 
 #, python-format
 msgid "Your %(payment_system)s purse, e.g. %(example)s"
