@@ -674,7 +674,7 @@ class AccountFilter(FilterSet):
         searches = Q()
         for word in value.strip().split():
             searches &= (
-                Q(mt4_pk__icontains=word) |
+                Q(mt4_id__icontains=word) |
                 Q(user__gcrm_contact__name__icontains=word)
             )
         return queryset.filter(searches)
