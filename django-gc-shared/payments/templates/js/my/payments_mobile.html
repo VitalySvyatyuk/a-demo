@@ -96,10 +96,12 @@
                     </div>
                 </div>
 
+                <p class="row text-center offset-bottom-20" style="color: red;">{% trans "Attention! Your money has not been transferred yet! To confirm the funds transfer, press the red button" %}</p>
+
                 <div class="row">
                     <div class="column text-left">
                         <button class="button second medium with-prev" ng-click="showFill()">{% trans "Back" %}</button>
-                        <button class="button medium" ng-click="processPaymentConfirmed()">{% trans "Transfer funds" %}</button>
+                        <button class="flash-button button medium" ng-click="processPaymentConfirmed()">{% trans "Transfer funds" %}</button>
                         <p>
                             <a href="/api/payments/download_bank_requisits[[previewBankDownloadPDFParams]]"
                                class="fright pdf"
