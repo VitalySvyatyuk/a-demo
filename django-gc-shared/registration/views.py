@@ -71,7 +71,7 @@ def register(request, extra_context=None, next=None, form_class=ProfileRegistrat
                 new_user.save()
                 request.session["user_id"] = new_user.pk
                 messages.add_message(request, messages.SUCCESS,
-                                     "Your password was sent via SMS to your phone number")
+                                     _("Your password was sent via SMS to your phone number"))
             if social_auth_pipeline:
                 request.session['partial_pipeline']['user'] = new_user
                 social_auth_redirect_url = reverse('social:complete', args=(social_auth_pipeline.get('backend'),))
