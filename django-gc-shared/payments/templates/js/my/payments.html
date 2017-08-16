@@ -96,12 +96,14 @@
                         </tr>
                     </table>
 
+                    <p class="row text-center offset-bottom-20" style="color: red;">{% trans "Attention! Your money has not been transferred yet! To confirm the funds transfer, press the red button" %}</p>
+
                     <div class="row">
                         <div class="small-6 medium-6 large-6 column text-right">
                             <button class="button second medium with-prev" ng-click="showFill()">{% trans "Back" %}</button>
                         </div>
                         <div class="small-6 medium-6 large-6 column text-left">
-                            <button class="button medium" ng-click="processPaymentConfirmed()">{% trans "Transfer funds" %}</button>
+                            <button class="flash-button button medium" ng-click="processPaymentConfirmed()">{% trans "Transfer funds" %}</button>
                         </div>
                     </div>
 

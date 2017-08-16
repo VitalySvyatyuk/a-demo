@@ -1203,6 +1203,9 @@ msgstr "Автоматический платеж не прошел."
 msgid "No pending requests"
 msgstr "Нет новых заявок"
 
+msgid "Attention! Your money has not been transferred yet! To confirm the funds transfer, press the red button"
+msgstr "Внимание! Ваши средства еще не переведены! Для подтверждения перевода средств нажмите красную кнопку"
+
 #~ msgid "Electronic payment systems"
 #~ msgstr "Электронные платежные системы"
 
