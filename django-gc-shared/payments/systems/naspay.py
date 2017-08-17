@@ -14,14 +14,14 @@ from payments.systems.bankusd import display_amount_usd
 from payments.systems.base import CommissionCalculationResult
 
 name = _("Naspay")
-logo = "Naspay.jpg"
+logo = "naspay.png"
 slug = __name__.rsplit(".", 1)[-1]
 currencies = ["USD"]
 mt4_payment_slug = "NASPAY"
 
 transfer_details = {
     "deposit": {
-        "fee": "2% min $1",
+        "fee": "3% min $1",
         "time": _("Within day"),
         "min_amount": display_amount_usd(10),
     },
@@ -33,8 +33,8 @@ transfer_details = {
 }
 
 templates = {
-    "deposit": "payments/forms/deposit/electronic.html",
-    "withdraw": "payments/forms/withdraw/electronic.html",
+    "deposit": "payments/forms/deposit/naspay.html",
+    "withdraw": "payments/forms/withdraw/naspay.html",
 }
 
 log = logging.getLogger(__name__)
@@ -43,8 +43,8 @@ log = logging.getLogger(__name__)
 class DepositForm(base.DepositForm):
 
     bill_address = "https://demo.naspay.net/api/v1/transactions"
-    get_token_url = "https://demo.naspay.net/auth/token"
-    commission_rate = Decimal("0.035")
+    get_token_url = "https://demo.naspay.net/auth/token?grant_type=client_credentials"
+    commission_rate = Decimal("0.030")
     MIN_AMOUNT = (10, 'USD')
 
     def __init__(self, *args, **kwargs):
@@ -66,16 +66,15 @@ class DepositForm(base.DepositForm):
                    'Authorization': 'Basic ' + base64.b64encode(
                        settings.TERMINAL_KEY + ':' + settings.TERMINAL_SECRET)}
 
-
-        result = requests.post(self.get_token_url, headers = headers)
+        result = requests.get(self.get_token_url, headers=headers,)
 
         if result.status_code == 200:
             result = result.json()
         else:
             return None
 
-        if result.get("accessToken"):
-            return result.get("accessToken"), result.get("tokenType")
+        if result.get('access_token'):
+            return result.get('access_token'), result.get('token_type')
         else:
             return None
 
@@ -104,10 +103,10 @@ class DepositForm(base.DepositForm):
 
         request = request.json()
 
-        if request.get("transaction") and request.get("transaction").get("status") == "accepted":
+        if request.get("created"):
             self.instance.refresh_state()
             self.instance.is_payed = True
-            self.instance.params["transaction"] = request.get("transaction").get("id")
+            self.instance.params["transaction"] = request.get("id")
             self.instance.save()
             return None
         else:
@@ -147,23 +146,22 @@ class DepositForm(base.DepositForm):
             currency=request.currency
         )
 
+
 class DetailsForm(base.DetailsForm):
 
     def __init__(self, *args, **kwargs):
         super(DetailsForm, self).__init__(*args, **kwargs)
         del self.fields["purse"]
-        # self.fields["purse"].label = _("Net account")
-        # self.fields["purse"].help_text = _("Your Neteller's 12-digit Account ID or email address that is "
-        #                                    "associated with their NETELLER account")
 
 
 class WithdrawForm(base.WithdrawForm):
     MIN_AMOUNT = (10, 'USD')
-    commission_rate = Decimal("0.025")
+    commission_rate = Decimal("0.0025")
+    fixed_commision = 3.30
 
     @classmethod
     def _calculate_commission(cls, request, full_commission=False):
-        commission = request.amount * cls.commission_rate
+        commission = request.amount * cls.commission_rate + cls.fixed_commision
         min_comm = Decimal("1")
         max_comm = Decimal("30")
         commission = min(max_comm, max(min_comm, commission))
