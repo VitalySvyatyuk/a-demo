@@ -360,8 +360,8 @@ def send(users, label, extra_context=None, display_subject_prefix=False, no_djan
         try:
             notification = Notification.objects.get_notification_for_user(label, user)
         except Notification.DoesNotExist:
-            log.warn('{0}Notification for user {1} named {2} did not find! current language {3} {0}'
-                     .format('--------------------------------------------------------------\n', user, label, language))
+            log.warn('Notification named {1} did not find! current language {2}'
+                     .format(user, label, language))
             notification = None
 
         sms_text = None

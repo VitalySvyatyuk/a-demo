@@ -60,7 +60,7 @@ class TradingAccountViewSet(viewsets.ReadOnlyModelViewSet):
 
         # first of, collect all accounts
         # we have access to
-        accounts = self.get_queryset().filter(mt4_pk__in=ids)
+        accounts = self.get_queryset().filter(mt4_id__in=ids)
         for acc in accounts:
             d = {}
             for attr in ('leverage', 'equity_money', 'balance_money', 'last_block_reason', 'referral_money'):

@@ -198,7 +198,7 @@ def balance(request):
 
     currency = currencies.get_currency(request.GET.get("currency", "USD"))
 
-    accounts = TradingAccount.objects.filter(mt4_pk__in=accounts, user=request.user).order_by("mt4_id")
+    accounts = TradingAccount.objects.filter(mt4_id__in=accounts, user=request.user).order_by("mt4_id")
 
     if accounts:
         accounts = {account.mt4_id: {"balance": account.balance_money.amount,

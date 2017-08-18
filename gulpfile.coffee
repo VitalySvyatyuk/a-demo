@@ -96,6 +96,8 @@ gulp.task 'bundle', ->
 
 
 gulp.task 'image-variables', ->
+  if !fs.existsSync("static/css/compiled")
+    fs.mkdirSync("static/css/compiled")
   file = fs.createWriteStream "static/css/compiled/image-variables.scss"
   file.once 'open' , () ->
     for block, filePaths of paths.images

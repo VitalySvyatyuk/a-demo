@@ -28,7 +28,7 @@ def get_account_requests_stats(account=None):
 
     if account.is_ib:
         agents = account.agent_clients.values_list("login", flat=True)
-        accounts_list = TradingAccount.objects.filter(mt4_pk__in=list(agents))
+        accounts_list = TradingAccount.objects.filter(mt4_id__in=list(agents))
     else:
         accounts_list = account.user.accounts.all()
 

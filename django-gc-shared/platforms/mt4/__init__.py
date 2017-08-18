@@ -7,16 +7,15 @@ import math
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import OperationalError as DjangoOperationalError
 
-from platforms.converter import convert_currency
-from platforms.mt4.external.models import ChangeIssue, mt4_user, RealUser, DemoUser, ArchiveUser
+from platforms.mt4.external.models import mt4_user, RealUser, DemoUser, ArchiveUser
 from platforms.mt4.external.models_trade import RealTrade, ArchiveTrade, DemoTrade
 
 NEVER = datetime(1970, 1, 1, 0, 0)
 
 import logging
 log = logging.getLogger(__name__)
-
 import mt4api
+
 
 # noinspection PyMethodMayBeStatic,PyMethodMayBeStatic,PyMethodMayBeStatic
 class ApiFacade(object):
@@ -88,7 +87,8 @@ class ApiFacade(object):
         return mt4api.RemoteMT4Manager(engine=cls.get_engine(account))
 
     def account_leverage(self, account):
-        return int(self._get_mt4user(account).leverage)
+        mt4user = self._get_mt4user(account)
+        return mt4user.leverage if mt4user else None
 
     def account_check_password(self, account, password):
         return self.get_mt4api(account).change_password(account.mt4_id, password)

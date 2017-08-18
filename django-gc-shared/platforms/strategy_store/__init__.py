@@ -214,8 +214,8 @@ class ApiFacade(object):
                                   'Password': password,
                                   'FirstName': account.user.first_name,
                                   'LastName': account.user.last_name,
-                                  # 'ClientID': account.user.id,
-                                  # 'Comment': 'DEMO' if account.is_demo else 'REAL',
+                                  'ClientID': account.user.id,
+                                  'Comment': 'DEMO' if account.is_demo else 'REAL',
                                   'Mobile': account.user.profile.phone_mobile or account.user.profile.phone_work,
                                   'Email': account.user.email,
                                   })

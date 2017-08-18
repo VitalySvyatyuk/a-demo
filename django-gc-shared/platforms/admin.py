@@ -77,9 +77,3 @@ admin.site.register(DemoTrade, Mt4TradeAdmin)
 admin.site.register(ArchiveTrade, Mt4TradeAdmin)
 
 
-class ChangeIssueAdmin(admin.ModelAdmin):
-    list_display = ('login', 'field', 'value', 'status', 'creation_ts')
-    readonly_fields = ('login', 'field', 'value', 'status', 'creation_ts')
-    search_fields = ('login', 'status')
-
-#admin.site.register(ChangeIssue, ChangeIssueAdmin)

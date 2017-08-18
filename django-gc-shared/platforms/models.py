@@ -635,16 +635,16 @@ class AbstractTrade(models.Model):
         # type: () -> unicode
         if self.cmd == self.Commands.INOUT:
             if self.profit >= 0:
-                return (u"DEPOSIT order %s at ACC%s at %s on %s"
-                        % (self.comment, self.login, self.close_time, self.profit))
+                return (u"DEPOSIT order %s at %s on %s"
+                        % (self.comment, self.close_time, self.profit))
             else:
-                return (u"WITHDRAW order %s at ACC%s at %s on %s"
-                        % (self.comment, self.login, self.close_time, self.profit))
-        elif self.cmd == self.Commands.CREDIT:
-            return u"CREDIT order %s at ACC%s at %s" % (self.comment, self.login, self.close_time)
+                return (u"WITHDRAW order %s at %s on %s"
+                        % (self.comment, self.close_time, self.profit))
+            
+            return u"CREDIT order %s at %s" % (self.comment, self.close_time)
         else:
-            return u"%s %s order at ACC%s opened at %s" % (self.get_cmd_display(), self.symbol,
-                                                           self.login, self.open_time)
+            return u"%s %s order opened at %s" % (self.get_cmd_display(), self.symbol,
+                                                           self.open_time)
 
     objects = AdvancedManager()
 
