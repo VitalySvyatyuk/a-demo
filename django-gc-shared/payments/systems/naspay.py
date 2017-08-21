@@ -85,8 +85,9 @@ class DepositForm(payments.systems.accentpay.DepositForm):
             return "Can't get the token."
 
         data = {
+            # "paymentMethod": "SKRILL",
             "intent": "SALE",
-            "amount": 4444.00,
+            "amount": amount,
             "currency": currency,
             "merchantTransactionId": unicode(self.instance.pk),
             "description": "ARUM Capital"
@@ -94,7 +95,7 @@ class DepositForm(payments.systems.accentpay.DepositForm):
 
         headers = {'Content-Type': 'application/json', 'Authorization': token_tuple[1] + " " + token_tuple[0]}
 
-        return data, headers, token_tuple
+        # return data, headers, token_tuple
 
         response = requests.post(self.bill_address, data=json.dumps(data), headers=headers)
 
@@ -108,7 +109,8 @@ class DepositForm(payments.systems.accentpay.DepositForm):
         success_url = build_absolute_uri(self.request, reverse("payments_operation_status", args=["deposit", self.instance.pk, "success"]))
         # currency = "USD"
 
-        dat, headers, token_tuple = self.make_request()
+        # dat, headers, token_tuple = self.make_request()
+        response = self.make_request()
 
         # data = {
         #     "intent": dat["intent"],
@@ -131,9 +133,8 @@ class DepositForm(payments.systems.accentpay.DepositForm):
 
         # super(DepositForm, self).mutate()
         self.is_bound = False
-        # checkout_link =
-        # checkout_link = [l for l in response['links'] if l['rel'] == "checkout"][0]['href']
-        self.action += token_tuple[0]
+        checkout_link = [l for l in response['links'] if l['rel'] == "checkout"][0]['href']
+        self.action = checkout_link
         # headers['Authorization'] = headers['Authorization'].encode('ascii')
         # self.fields = []
         self.method = 'GET'
