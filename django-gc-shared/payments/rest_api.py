@@ -300,12 +300,12 @@ class PaymentViewSet(viewsets.ViewSet):
             else:
                 return Response({"success": True})
 
-        elif payment_system == "naspay":
-            error = form.make_request()
-            if error:
-                return Response({'detail': "Error: %s" % error}, status=400)
-            else:
-                return Response({"success": True})
+        # elif payment_system == "naspay":
+        #     error = form.make_request()
+        #     if error:
+        #         return Response({'detail': "Error: %s" % error}, status=400)
+        #     else:
+        #         return Response({"success": True})
 
         elif payment_system == "webmoney" and deposit_request.amount_in_USD >= 0:
             return Response({'html': render_to_string("payments/instructions/webmoney.html")})

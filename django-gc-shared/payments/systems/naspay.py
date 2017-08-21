@@ -1,23 +1,26 @@
 # -*- coding: utf-8 -*-
+from decimal import Decimal
 import base64
 import logging
-from decimal import Decimal
 
-import requests
-from django import forms
-from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-
+from django.conf import settings
+import requests
 from currencies.currencies import decimal_round
+import payments.systems.accentpay
+import payments.systems.bankbase
 from payments.systems import base
 from payments.systems.bankusd import display_amount_usd
 from payments.systems.base import CommissionCalculationResult
+from payments.utils import build_absolute_uri
+from django.core.urlresolvers import reverse
 
-name = _("Naspay")
-logo = "naspay.png"
+name = u"Naspay"
 slug = __name__.rsplit(".", 1)[-1]
-currencies = ["USD"]
 mt4_payment_slug = "NASPAY"
+logo = "naspay.png"
+languages = ('en', 'ru')
+currencies = ['USD']
 
 transfer_details = {
     "deposit": {
@@ -40,20 +43,13 @@ templates = {
 log = logging.getLogger(__name__)
 
 
-class DepositForm(base.DepositForm):
-
+class DepositForm(payments.systems.accentpay.DepositForm):
+    action, auto = "https://naspay.com/payment/", True
     bill_address = "https://demo.naspay.net/api/v1/transactions"
     get_token_url = "https://demo.naspay.net/auth/token?grant_type=client_credentials"
     commission_rate = Decimal("0.030")
     MIN_AMOUNT = (10, 'USD')
-
-    def __init__(self, *args, **kwargs):
-        super(DepositForm, self).__init__(*args, **kwargs)
-        del self.fields["purse"]
-
-    @classmethod
-    def is_automatic(cls, instance):
-        return True
+    with_phone = False
 
     def get_naspay_token(self):
         """
@@ -66,7 +62,7 @@ class DepositForm(base.DepositForm):
                    'Authorization': 'Basic ' + base64.b64encode(
                        settings.TERMINAL_KEY + ':' + settings.TERMINAL_SECRET)}
 
-        result = requests.get(self.get_token_url, headers=headers,)
+        result = requests.get(self.get_token_url, headers=headers, )
 
         if result.status_code == 200:
             result = result.json()
@@ -81,59 +77,67 @@ class DepositForm(base.DepositForm):
     def make_request(self):
         import json
 
-        currency = {
-            "USD": "USD"
-        }.get(self.instance.currency, self.instance.currency)
-        amount = int(decimal_round(self.instance.amount) * 100)
+        currency = "USD"
+        amount = int(decimal_round(self.instance.amount))
         token_tuple = self.get_naspay_token()
 
         if not token_tuple:
             return "Can't get the token."
 
         data = {
-            "merchantTransactionId": unicode(self.instance.pk),
-            "amount": amount,
+            "intent": "SALE",
+            "amount": 4444.00,
             "currency": currency,
-            "description": "Some thing"
+            "merchantTransactionId": unicode(self.instance.pk),
+            "description": "ARUM Capital"
         }
 
         headers = {'Content-Type': 'application/json', 'Authorization': token_tuple[1] + " " + token_tuple[0]}
 
-        request = requests.post(self.bill_address, data=json.dumps(data), headers=headers)
+        return data, headers, token_tuple
 
-        request = request.json()
+        response = requests.post(self.bill_address, data=json.dumps(data), headers=headers)
 
-        if request.get("created"):
-            self.instance.refresh_state()
-            self.instance.is_payed = True
-            self.instance.params["transaction"] = request.get("id")
-            self.instance.save()
-            return None
-        else:
-            error_message = request.get("error").get("message") if request.get("error") else \
-                "Automatic payment failed."
-            self.instance.is_committed = False
-            self.instance.is_payed = False
-            self.instance.public_comment = error_message
-            self.instance.save()
-            return error_message
+        response = response.json()
+        return response
 
-    @classmethod
-    def generate_mt4_comment(cls, payment_request):
-        return "{NASPAY}[%s]" % payment_request.pk
+    def mutate(self):
+        assert hasattr(self, "instance")
 
-    def clean(self):
-        from platforms.converter import convert_currency
-        amount = self.cleaned_data["amount"]
-        currency = self.cleaned_data["currency"]
-        return super(DepositForm, self).clean()
+        fail_url = build_absolute_uri(self.request, reverse("payments_operation_status", args=["deposit", self.instance.pk, "fail"]))
+        success_url = build_absolute_uri(self.request, reverse("payments_operation_status", args=["deposit", self.instance.pk, "success"]))
+        # currency = "USD"
 
-    def confirmed_response_data(self, request):
-        error = self.make_request()
-        if error:
-            return {'detail': "Error: %s" % error}, 400
-        else:
-            return {"success": True}, None
+        dat, headers, token_tuple = self.make_request()
+
+        # data = {
+        #     "intent": dat["intent"],
+        #     "merchantTransactionId": unicode(self.instance.pk),
+        #     "currency": dat["currency"],
+        #     "amount": int(decimal_round(self.instance.amount)),
+        #     "description": "ARUM Capital",
+        #     # "language": "en",
+        #     # "success_url": success_url,
+        #     # "decline_url": fail_url,
+        #     # "callback_method": "2",  # GET
+        #     # "followup": "1",
+        #     # "payment_group_id": "1"
+        # }
+
+        # data["signature"] = self.get_signature(data)
+        # self.fields = {}
+        # for field, value in data.iteritems():
+        #     self.fields[field] = base.make_hidden(value)
+
+        # super(DepositForm, self).mutate()
+        self.is_bound = False
+        # checkout_link =
+        # checkout_link = [l for l in response['links'] if l['rel'] == "checkout"][0]['href']
+        self.action += token_tuple[0]
+        # headers['Authorization'] = headers['Authorization'].encode('ascii')
+        # self.fields = []
+        self.method = 'GET'
+        return self
 
     @classmethod
     def _calculate_commission(cls, request, full_commission=False):
