@@ -176,7 +176,7 @@ class DepositForm(payments.systems.accentpay.DepositForm):
         data = request.POST
         if data == {}:
             data = json.loads(request.body)
-
+        print data
         currency = "USD"
 
         if not (
@@ -184,18 +184,20 @@ class DepositForm(payments.systems.accentpay.DepositForm):
             and float(data["amount"]) == float(instance.amount)
             and data["currency"] == currency
         ):
+            print "FAIL"
             return HttpResponseBadRequest("FAIL")
 
         if data["state"] != "COMPLETED":
             instance.is_payed = False
             instance.is_committed = False
             instance.save()
+            print "CANCELED"
             return HttpResponse("CANCELED")
 
         instance.params["transaction"] = data["merchantTransactionId"]
         instance.is_payed = True
         instance.save()
-
+        print "SUCCESS"
         return HttpResponse("SUCCESS")
 
     @classmethod

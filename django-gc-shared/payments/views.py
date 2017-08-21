@@ -115,7 +115,7 @@ def operation_result(request, object_id=None):
         else:
             return HttpResponseBadRequest()
         log.info("So now object id is {}".format(object_id))
-
+    print "Object ID is: ", object_id
     try:
         instance = DepositRequest.objects.get(pk=object_id)
     except DepositRequest.DoesNotExist:
