@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import hashlib
 from collections import OrderedDict
+import json
 from decimal import Decimal
 import base64
 import logging
@@ -173,12 +174,14 @@ class DepositForm(payments.systems.accentpay.DepositForm):
     def execute(cls, request, instance):
 
         data = request.POST
+        if data == {}:
+            data = json.loads(request.body)
 
         currency = "USD"
 
         if not (
             data["merchantTransactionId"] == unicode(instance.pk)
-            and data["amount"] == unicode(int(instance.amount))
+            and float(data["amount"]) == float(instance.amount)
             and data["currency"] == currency
         ):
             return HttpResponseBadRequest("FAIL")
@@ -189,7 +192,7 @@ class DepositForm(payments.systems.accentpay.DepositForm):
             instance.save()
             return HttpResponse("CANCELED")
 
-        instance.params["transaction"] = request.POST["merchantTransactionId"]
+        instance.params["transaction"] = data["merchantTransactionId"]
         instance.is_payed = True
         instance.save()
 
