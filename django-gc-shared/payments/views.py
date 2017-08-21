@@ -341,7 +341,7 @@ def account_withdraw_requests_group(request, group_id):
 
     #create logs list
     logs = list()
-    logs_for = lambda cls, ids: Logger.objects.filter(object_pk__in=ids, content_type=ContentType.objects.get_for_model(cls))
+    logs_for = lambda cls, ids: Logger.objects.filter(object_id__in=ids, content_type=ContentType.objects.get_for_model(cls))
     logs += logs_for(WithdrawRequestsGroup, [group.id])
     logs += logs_for(WithdrawRequest, group.requests.values_list('id', flat=True))
     logs += logs_for(UserRequisit, group.requests.values_list('requisit_id', flat=True))

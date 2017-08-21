@@ -189,7 +189,7 @@ def frontpage(request, manager_username=None, agent_code=None, broco=False):
 
         # accounts_list = _get_account_list_for_ib(agent_code)
         accounts_list = []
-        cl.query_set = cl.query_set.filter(grand_user__accounts__mt4_pk__in=accounts_list)
+        cl.query_set = cl.query_set.filter(grand_user__accounts__mt4_id__in=accounts_list)
 
     if manager_username is not None:
         manager = get_object_or_404(User, username=manager_username)

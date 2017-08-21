@@ -267,11 +267,7 @@ class ContactSerializer(serializers.ModelSerializer):
         current_user = self.context['request'].user
 
         def from_partner():
-            # from reports.models import AccountGroup
-            return obj.user.profile.agent_code \
-            #        and obj.user.profile.agent_code in set(
-            #     map(int, AccountGroup.objects.get(id=3).account_mt4_ids)
-            # )
+            return obj.user.profile.agent_code is not None
 
         from push_notifications.models import GCMDevice, APNSDevice
         from django.core.urlresolvers import reverse

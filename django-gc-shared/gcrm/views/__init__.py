@@ -14,7 +14,7 @@ from gcrm.models import Task
 def app(request):
     if not (request.user.is_superuser or PersonalManager.objects.filter(user=request.user).exists()):
         raise Http404()
-    if not request.user.crm_manager.is_ip_allowed(request.META['REMOTE_ADDR']):
+    if not request.user.crm_manager or not request.user.crm_manager.is_ip_allowed(request.META['REMOTE_ADDR']):
         raise Http404()
     return {'task_types': Task.TASK_TYPES}
 
@@ -23,6 +23,6 @@ def app(request):
 def render_template(request, name):
     if not (request.user.is_superuser or PersonalManager.objects.filter(user=request.user).exists()):
         raise Http404()
-    if not request.user.crm_manager.is_ip_allowed(request.META['REMOTE_ADDR']):
+    if not request.user.crm_manager or not request.user.crm_manager.is_ip_allowed(request.META['REMOTE_ADDR']):
         raise Http404()
     return render(request, "gcrm/js/{name}.html".format(name=name))

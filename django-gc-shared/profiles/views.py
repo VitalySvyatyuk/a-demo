@@ -263,26 +263,7 @@ def edit_email(request):
 
 @render_to("profiles/unsubscribe_form.html")
 def unsubscribe_form(request, email, signature, campaign_id):
-    email = urllib.unquote(email)
-    # if get_signature(email) != signature or not email_re.match(email):
-    #     raise Http404
-    # profile = User.objects.filter(email=email).first().profile
-    # form = SubscriptionProfileForm(request.POST or None, instance=profile)
-
-    # if form.is_valid():
-    #     data = form.cleaned_data
-    #     if not data['subscription']:
-    #         try:
-    #             campaign = Campaign.objects.get(id=campaign_id)
-    #         except Campaign.DoesNotExist:
-    #             pass
-    #         else:
-    #             campaign.unsubscribed += 1
-    #             campaign.save()
-    #     form.save()
-    #     messages.success(request, _('Your subscription successfully updated'))
-
-    return {"form": form}
+    return {}
 
 
 @login_required

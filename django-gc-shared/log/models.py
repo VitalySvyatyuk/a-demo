@@ -223,7 +223,7 @@ class LoggerQuerySet(models.QuerySet):
 
     def by_object_ids(self, model, ids):
         return self.filter(
-            object_pk__in=set(ids),
+            object_id__in=set(ids),
             content_type=ContentType.objects.get_for_model(model)
         )
 

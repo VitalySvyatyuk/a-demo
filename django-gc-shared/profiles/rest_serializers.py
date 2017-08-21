@@ -85,7 +85,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
     def validate_birthday(self, value):
         today = date.today()
-        if today.year - value.year - ((today.month, today.day) < (value.month, value.day)) < 18:
+        if value and today.year - value.year - ((today.month, today.day) < (value.month, value.day)) < 18:
             raise serializers.ValidationError(_('Only persons of legal age can be the clients of ARUM CAPITAL'))
         return value
 
