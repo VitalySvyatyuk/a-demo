@@ -288,7 +288,7 @@ class DepositForm(BaseForm):
             if cleaned_amount <= 0:
                 self._errors["amount"] = [_('Wrong amount')]
 
-            if cleaned_account.group.min_deposit:  # If minimum deposit is defined for the account
+            if cleaned_account.group.min_deposit and self.payment_system.slug != "qiwi":  # If minimum deposit is defined for the account
                 to_currency = currencies.get_currency(cleaned_currency)
                 account_balance = cleaned_account.get_balance(currency=to_currency, with_bonus=True)[0]
                 if account_balance is not None:
