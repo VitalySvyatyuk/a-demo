@@ -90,7 +90,8 @@ def operation_result(request, object_id=None):
         request.POST.get("bill_id") or  # qiwi
         request.POST.get("MNT_TRANSACTION_ID") or  # moneta ru
         request.POST.get("orderRef", "grand_")[6:] or  # paymentasia
-        request.POST.get("external_id")  # accentpay
+        request.POST.get("external_id") or # accentpay
+        request.POST.get("merchantTransactionId")  # naspay
     )
 
 
