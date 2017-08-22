@@ -92,8 +92,8 @@ msgstr "Любое"
 msgid "Request a call"
 msgstr "Заказать звонок"
 
-msgid "Thank you! Your request has been sent. In the near future you will be contacted by our staff."
-msgstr "Спасибо! Ваш запрос отправлен. В ближайшее время с Вами свяжется наш сотрудник."
+msgid "Thank you! Your request has been sent."
+msgstr "Спасибо! Ваш запрос отправлен."
 
 msgid "OK"
 msgstr "Ок"
