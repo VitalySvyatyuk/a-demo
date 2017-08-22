@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import hashlib
-from collections import OrderedDict
 import json
 from decimal import Decimal
 import base64
@@ -15,8 +13,6 @@ import payments.systems.bankbase
 from payments.systems import base
 from payments.systems.bankusd import display_amount_usd
 from payments.systems.base import CommissionCalculationResult
-from payments.utils import build_absolute_uri
-from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseBadRequest
 
 name = u"Naspay"
@@ -89,88 +85,40 @@ class DepositForm(payments.systems.accentpay.DepositForm):
             return "Can't get the token."
 
         data = {
-            # "paymentMethod": "PAYPAL",
             "intent": "SALE",
             "amount": amount,
             "currency": currency,
             "merchantTransactionId": unicode(self.instance.pk),
-            "description": "ARUM Capital",
-            # "customer": {
-            #     "email": "vetal_sv@bk.ru"
-            # }
+            "description": "Payment for ARUM Capital",
         }
 
         headers = {'Content-Type': 'application/json', 'Authorization': token_tuple[1] + " " + token_tuple[0]}
 
-        # return data, headers, token_tuple
-
         response = requests.post(self.bill_address, data=json.dumps(data), headers=headers)
 
         response = response.json()
-        return response
 
-    # @classmethod
-    # def get_signature(cls, data):
-    #     ordered = OrderedDict(sorted(data.items(), key=lambda t: t[0]))
-    #
-    #     return hashlib.sha1(';'.join(("%s:%s" % (k, v) for k, v in ordered.items() if v)) +
-    #                         ';' + settings.TERMINAL_SECRET).hexdigest()
+        return response
 
     @property
     def mutate(self):
         assert hasattr(self, "instance")
 
-        # fail_url = build_absolute_uri(self.request, reverse("payments_operation_status", args=["deposit", self.instance.pk, "fail"]))
-        # success_url = build_absolute_uri(self.request, reverse("payments_operation_status", args=["deposit", self.instance.pk, "success"]))
-        # currency = "USD"
-
-        # dat, headers, token_tuple = self.make_request()
         response = self.make_request()
 
-        # data = {
-        #     "intent": dat["intent"],
-        #     "merchantTransactionId": unicode(self.instance.pk),
-        #     "currency": dat["currency"],
-        #     "amount": int(decimal_round(self.instance.amount)),
-        #     "description": "ARUM Capital",
-        #     # "language": "en",
-        #     # "success_url": success_url,
-        #     # "decline_url": fail_url,
-        #     # "callback_method": "2",  # GET
-        #     # "followup": "1",
-        #     # "payment_group_id": "1"
-        # }
-
-        # data["signature"] = self.get_signature(data)
-        # self.fields = {}
-        # for field, value in data.iteritems():
-        #     self.fields[field] = base.make_hidden(value)
-
-        # super(DepositForm, self).mutate()
         self.is_bound = False
-        # self.params = {'transaction': response['id']}
 
         checkout_link = [l for l in response['links'] if l['rel'] == "checkout"][0]['href']
-        self.action = checkout_link
 
-        # headers['Authorization'] = headers['Authorization'].encode('ascii')
-        # self.fields = []
+        self.action = checkout_link
         self.method = 'GET'
         self.fields = {}
+
         return self
 
     @classmethod
     def verify(cls, request):
         return True
-        # """Checks if a given object is allowed for execution."""
-        #
-        # if not request.POST:
-        #     return False
-        #
-        # data = request.POST
-        # data_copied = data.dict()
-        # data_copied.pop('signature')
-        # return data["signature"] == cls.get_signature(data_copied)
 
     @classmethod
     def execute(cls, request, instance):
@@ -178,20 +126,20 @@ class DepositForm(payments.systems.accentpay.DepositForm):
         data = json.loads(request.body)['transaction']
 
         if not data["merchantTransactionId"] == unicode(instance.pk):
-            log.debug("Naspay - data[merchantTransactionId] != unicode(instance.pk)")
+            # log.debug("Naspay - data[merchantTransactionId] != unicode(instance.pk)")
             return HttpResponseBadRequest("FAIL")
 
         if data["state"] != "COMPLETED":
             instance.is_payed = False
             instance.is_committed = False
             instance.save()
-            log.debug("Naspay - data[state] != COMPLETED")
+            # log.debug("Naspay - data[state] != COMPLETED")
             return HttpResponse("CANCELED")
 
         instance.params["transaction"] = data["merchantTransactionId"]
         instance.is_payed = True
         instance.save()
-        log.debug("Naspay SUCCESS")
+        # log.debug("Naspay SUCCESS")
         return HttpResponse("SUCCESS")
 
     @classmethod

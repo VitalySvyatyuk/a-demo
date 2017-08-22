@@ -99,7 +99,6 @@ def operation_result(request, object_id=None):
 
     if not object_id:
         log.warn("Object id not found, looking for it in other places")
-        log.warn(request.body['transaction'])
         if 'orderXML' in request.POST:  # CardPay
             data_xml = base64.b64decode(request.POST['orderXML'])
             soup = BeautifulSoup(data_xml)
@@ -113,7 +112,7 @@ def operation_result(request, object_id=None):
         elif 'merchantTransactionId' in request.body:  # Naspay
             data = json.loads(request.body)['transaction']
             object_id = data['merchantTransactionId']
-            log.debug("Naspay Object Id: {}".format(object_id))
+            # log.debug("Naspay Object Id: {}".format(object_id))
         else:
             return HttpResponseBadRequest()
         log.info("So now object id is {}".format(object_id))
