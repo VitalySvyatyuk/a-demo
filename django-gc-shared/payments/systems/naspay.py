@@ -178,20 +178,20 @@ class DepositForm(payments.systems.accentpay.DepositForm):
         data = json.loads(request.body)
 
         if not data["merchantTransactionId"] == unicode(instance.pk):
-            log.debug("data[merchantTransactionId] != unicode(instance.pk)")
+            log.debug("Naspay - data[merchantTransactionId] != unicode(instance.pk)")
             return HttpResponseBadRequest("FAIL")
 
         if data["state"] != "COMPLETED":
             instance.is_payed = False
             instance.is_committed = False
             instance.save()
-            log.debug("data[state] != COMPLETED")
+            log.debug("Naspay - data[state] != COMPLETED")
             return HttpResponse("CANCELED")
 
         instance.params["transaction"] = data["merchantTransactionId"]
         instance.is_payed = True
         instance.save()
-        log.debug("SUCCESS for {}".format(data['amount']))
+        log.debug("Naspay SUCCESS for {}".format(data['amount']))
         return HttpResponse("SUCCESS")
 
     @classmethod
