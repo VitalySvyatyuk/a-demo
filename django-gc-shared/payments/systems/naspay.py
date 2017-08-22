@@ -191,7 +191,7 @@ class DepositForm(payments.systems.accentpay.DepositForm):
         instance.params["transaction"] = data["merchantTransactionId"]
         instance.is_payed = True
         instance.save()
-        log.debug("Naspay SUCCESS for {}".format(data['amount']))
+        log.debug("Naspay SUCCESS")
         return HttpResponse("SUCCESS")
 
     @classmethod
