@@ -44,9 +44,9 @@ log = logging.getLogger(__name__)
 
 
 class DepositForm(payments.systems.accentpay.DepositForm):
-    action, auto = "https://demo.naspay.net/payment/", True
-    bill_address = "https://demo.naspay.net/api/v1/transactions"
-    get_token_url = "https://demo.naspay.net/auth/token?grant_type=client_credentials"
+    action, auto = "https://naspay.com/payment/", True
+    bill_address = "https://naspay.com/api/v1/transactions"
+    get_token_url = "https://naspay.com/auth/token?grant_type=client_credentials"
     commission_rate = Decimal("0.030")
     MIN_AMOUNT = (10, 'USD')
     with_phone = False

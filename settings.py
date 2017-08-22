@@ -496,8 +496,8 @@ QIWI_REQUEST_LIFETIME = timedelta(days=3)
 # Naspay settings
 ###
 
-TERMINAL_KEY = "arumcapital-pp"
-TERMINAL_SECRET = "xp9X3LvR_oghAiq7"
+TERMINAL_KEY = "arumcapital-pp-pNnkBVFo3m"
+TERMINAL_SECRET = "3_U2RrmpdD5oS9Li"
 
 ###
 # Western Union, Migom, FastPost settings
