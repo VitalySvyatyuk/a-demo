@@ -492,6 +492,12 @@ QIWI_PROVIDER_ID = "520069"
 
 QIWI_REQUEST_LIFETIME = timedelta(days=3)
 
+###
+# Naspay settings
+###
+
+TERMINAL_KEY = "arumcapital-pp"
+TERMINAL_SECRET = "xp9X3LvR_oghAiq7"
 
 ###
 # Western Union, Migom, FastPost settings

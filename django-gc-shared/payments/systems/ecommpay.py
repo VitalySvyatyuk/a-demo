@@ -31,7 +31,7 @@ transfer_details = {
 
 templates = {
     "deposit": "payments/forms/deposit/ecommpay.html",
-    "withdraw": "payments/forms/withdraw/base.html"
+    "withdraw": "payments/forms/withdraw/visa-mastercard.html"
 }
 
 

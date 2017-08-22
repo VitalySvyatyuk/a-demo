@@ -90,7 +90,7 @@ def operation_result(request, object_id=None):
         request.POST.get("bill_id") or  # qiwi
         request.POST.get("MNT_TRANSACTION_ID") or  # moneta ru
         request.POST.get("orderRef", "grand_")[6:] or  # paymentasia
-        request.POST.get("external_id")  # accentpay
+        request.POST.get("external_id") # accentpay
     )
 
 
@@ -109,10 +109,13 @@ def operation_result(request, object_id=None):
         elif 'amount_readable' in request.body:  # OrangePay
             data = json.loads(request.body)
             object_id = data['data']['transaction']['reference_id']
+        elif 'merchantTransactionId' in request.body:  # Naspay
+            data = json.loads(request.body)['transaction']
+            object_id = data['merchantTransactionId']
+            # log.debug("Naspay Object Id: {}".format(object_id))
         else:
             return HttpResponseBadRequest()
         log.info("So now object id is {}".format(object_id))
-
     try:
         instance = DepositRequest.objects.get(pk=object_id)
     except DepositRequest.DoesNotExist:

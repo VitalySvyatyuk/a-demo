@@ -178,6 +178,29 @@ msgstr "Необходимый залог"
 msgid "Deposit funds"
 msgstr "Пополнить баланс"
 
+
+
+msgid ""
+"On this page you can find formula for calculating the value of one pip."
+"The value of a pip is calculated on the basis of the current rate of a given currency pair."
+"Please select parameters to get pip value and margin."
+msgstr ""
+
+
+msgid "Pair"
+msgstr ""
+
+msgid "Quote"
+msgstr ""
+
+msgid "Value of pip"
+msgstr ""
+
+msgid "Margin"
+msgstr "Маржа"
+
+
+
 #~ msgid "Currency 1 rate"
 #~ msgstr "Курс валюты 1"
 
