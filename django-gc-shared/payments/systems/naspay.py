@@ -116,6 +116,7 @@ class DepositForm(payments.systems.accentpay.DepositForm):
     #     return hashlib.sha1(';'.join(("%s:%s" % (k, v) for k, v in ordered.items() if v)) +
     #                         ';' + settings.TERMINAL_SECRET).hexdigest()
 
+    @property
     def mutate(self):
         assert hasattr(self, "instance")
 
@@ -147,6 +148,7 @@ class DepositForm(payments.systems.accentpay.DepositForm):
 
         # super(DepositForm, self).mutate()
         self.is_bound = False
+        # self.params = {'transaction': response['id']}
 
         checkout_link = [l for l in response['links'] if l['rel'] == "checkout"][0]['href']
         self.action = checkout_link
@@ -173,31 +175,20 @@ class DepositForm(payments.systems.accentpay.DepositForm):
     @classmethod
     def execute(cls, request, instance):
 
-        data = request.POST
-        if data == {}:
-            data = json.loads(request.body)
-        print data
-        currency = "USD"
+        data = json.loads(request.body)
 
-        if not (
-            data["merchantTransactionId"] == unicode(instance.pk)
-            and float(data["amount"]) == float(instance.amount)
-            and data["currency"] == currency
-        ):
-            print "FAIL"
+        if not data["merchantTransactionId"] == unicode(instance.pk):
             return HttpResponseBadRequest("FAIL")
 
         if data["state"] != "COMPLETED":
             instance.is_payed = False
             instance.is_committed = False
             instance.save()
-            print "CANCELED"
             return HttpResponse("CANCELED")
 
         instance.params["transaction"] = data["merchantTransactionId"]
         instance.is_payed = True
         instance.save()
-        print "SUCCESS"
         return HttpResponse("SUCCESS")
 
     @classmethod
