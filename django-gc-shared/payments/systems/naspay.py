@@ -175,7 +175,7 @@ class DepositForm(payments.systems.accentpay.DepositForm):
     @classmethod
     def execute(cls, request, instance):
 
-        data = json.loads(request.body)
+        data = json.loads(request.body)['transaction']
 
         if not data["merchantTransactionId"] == unicode(instance.pk):
             log.debug("Naspay - data[merchantTransactionId] != unicode(instance.pk)")
