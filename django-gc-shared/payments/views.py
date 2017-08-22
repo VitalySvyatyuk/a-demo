@@ -112,6 +112,7 @@ def operation_result(request, object_id=None):
         elif 'merchantTransactionId' in request.body:  # Naspay
             data = json.loads(request.body)
             object_id = data['merchantTransactionId']
+            log.debug("Object Id: {}".format(object_id))
         else:
             return HttpResponseBadRequest()
         log.info("So now object id is {}".format(object_id))
