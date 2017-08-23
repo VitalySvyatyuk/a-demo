@@ -20,7 +20,7 @@ define('BANKS', {
 
 PAYMENT_SYSTEMS_FORMS = {
     "quick": ["accentpay", "accentpay_cards", "accentpay_comepay", "accentpay_sberbank", "qiwi",
-              "accentpay_terminal", "accentpay_yandex", "naspay"],
+              "accentpay_terminal", "accentpay_yandex"],  # , "naspay"
     "phone": ["accentpay_qiwi"],
     "transfer": ["westernunion", "moneygram"],
     "preview": ["bankrur", "bankeur", "bankusd"],
@@ -46,7 +46,7 @@ PAYMENT_SYSTEM_TYPES = {
         #     "order": 40
         # },
         "electronic": {
-            "systems": ['ecommpay', "neteller", "moneybookers", "qiwi", "naspay"],
+            "systems": ['ecommpay', "neteller", "moneybookers", "qiwi"],  # , "naspay"
             "title": _("Electronic payment systems"),
             "order": 60
         },
@@ -74,7 +74,7 @@ PAYMENT_SYSTEM_TYPES = {
             "order": 10
         },
         "electronic": {
-            "systems": ["neteller", "moneybookers", "ecommpay", "qiwi", "naspay"],
+            "systems": ["neteller", "moneybookers", "ecommpay", "qiwi"],  # , "naspay"
             "title": _("Electronic payment systems"),
             "order": 20
         },
