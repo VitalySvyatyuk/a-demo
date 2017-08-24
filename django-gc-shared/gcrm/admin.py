@@ -7,3 +7,5 @@ from .models import Contact
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     raw_id_fields = ('user', 'manager')
+    list_display = ('id', 'name', 'user', 'slug_tag')
+

@@ -102,6 +102,9 @@ class Contact(StatefullModel):
             ("user_reset_otp", "Can reset OTP of observable contacts"),
         )
 
+    def __str__(self):
+        return '%s' % (self.user)
+
     @classmethod
     def append_search_cache(cls, user, data):
         if not data:
@@ -145,6 +148,7 @@ class Contact(StatefullModel):
         method = Note.objects.get_or_create if get_or_create else Note.objects.create
         return method(contact=self, text=text)
 
+
     @property
     def calls(self):
         from telephony.models import CallDetailRecord
@@ -158,6 +162,11 @@ class Contact(StatefullModel):
 
     def get_absolute_url(self):
         return "/gcrm/contact/%d" % self.pk
+
+    def slug_tag(self):
+        return u', '.join(self.tags)
+    slug_tag.allow_tags = True
+    slug_tag.short_description = "Tags"
 
     @property
     def logs(self):
