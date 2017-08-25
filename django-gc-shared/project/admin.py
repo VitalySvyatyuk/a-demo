@@ -38,5 +38,12 @@ class CustomUserAdmin(UserAdmin):
     def phone_mobile(self, obj):
         return obj.profile.phone_mobile
 
+    def get_search_results(self, request, queryset, search_term):
+
+        queryset, use_distinct = super(CustomUserAdmin, self).get_search_results(request, queryset, search_term)
+        queryset |= self.model.objects.filter(profile__phone_mobile__icontains=search_term)
+
+        return queryset, use_distinct
+
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
