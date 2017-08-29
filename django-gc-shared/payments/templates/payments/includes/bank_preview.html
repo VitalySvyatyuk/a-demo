@@ -1083,13 +1083,13 @@
                 <div class="t m0 x1 h3 y2 ff2 fs0 fc0 sc0 ls0 ws0">2 Gregory Afxentiou Street,</div>
                 <div class="t m0 x1 h3 y3 ff2 fs0 fc0 sc0 ls0 ws0">2nd floor, Office 201, 4003</div>
                 <div class="t m0 x1 h3 y4 ff2 fs0 fc0 sc0 ls0 ws0">Limassol, Cyprus</div>
-                <div class="t m0 x0 h4 y5 ff2 fs1 fc0 sc0 ls0 ws0">{% trans "Invoice" %} {{ object.account.mt4_id }}</div>
+                <div class="t m0 x0 h4 y5 ff2 fs1 fc0 sc0 ls0 ws0">{% trans "Invoice" %} <span style="font-size: 70px;">{% now "Y" %}-{{ object.account.mt4_id }}-{{ object.account.invoice_amount }}</span></div>
                 <div class="t m0 x0 h5 y7 ff2 fs2 fc0 sc0 ls2 ws2">{% trans "Customer" %}</div>
                 <div class="t m0 x0 h3 y9 ff2 fs0 fc0 sc0 ls0 ws0">{% trans "Name" context "invoice-full-name" %}</div>
                 <div class="t m0 x0 h3 ya ff2 fs0 fc0 sc0 ls5 ws5 left-columner">{{ object.params.name }}</div>
                 <div class="t m0 x0 h3 yb ff2 fs0 fc0 sc0 ls6 ws6"></div>
                 <div class="t m0 x0 h3 yc ff2 fs0 fc0 sc0 ls0 ws0">{% trans "Address" %}</div>
-                <div class="t m0 x0 h3 ye ff2 fs0 fc0 sc0 ls8 ws8 left-columner">{{ object.params.country }}, {% if object.params.city %}{{ object.params.city }}, {% endif %}  {{ object.params.address }}</div>
+                <div class="t m0 x0 h3 ye ff2 fs0 fc0 sc0 ls8 ws8 left-columner">{{ country }}, {% if object.params.city %}{{ object.params.city }}, {% endif %}  {{ object.params.address }}</div>
                 <div class="t m0 x0 h3 yf ff2 fs0 fc0 sc0 ls8 ws8"></div>
                 <div class="t m0 x0 h3 y10 ff2 fs0 fc0 sc0 ls8 ws8"></div>
                 <div class="t m0 x0 h3 y11 ff2 fs0 fc0 sc0 ls8 ws8"></div>
@@ -1160,7 +1160,7 @@
                 </div>
                 <div class="t m0 x1 h3 y2c ff2 fs0 fc0 sc0 ls0 ws0">{% trans "Date" %}</div>
                 <div class="t m0 x0 h3 y2d ff2 fs0 fc1 sc0 ls8 ws8">{% trans "Account payment is made by the Client within 5 (ﬁve) business days from the moment it’s posted. For payment, use the full,<br>unabridged payment description indicated for this account." %}</div>
-                <div class="t m0 x8 h3 y31 ff2 fs0 fc0 sc0 ls0 ws0">{% trans "Account ID" %}</div>
+                <div class="t m0 x8 h3 y31 ff2 fs0 fc0 sc0 ls0 ws0">{% trans "Client account" %}</div>
                 <div class="t m0 x8 h3 y26 ff2 fs0 fc0 sc0 ls18 ws18">{{ object.account.mt4_id }}</div>
                 <div class="c x1 y32 w2 h8">
                     <div class="t m0 xa h3 y33 ff2 fs0 fc2 sc0 ls0 ws0">Дата </div>

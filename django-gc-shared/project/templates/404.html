@@ -1,0 +1,14 @@
+{% extends "marketing_site/layout.jade" %}
+
+{% load staticfiles i18n app_tags %}
+
+{% block title %}{% trans "404" %} {{ block.super }}{% endblock %}
+
+{% block content %}
+  <div class="page_404">
+    <div class="container">
+      <p>404</p>
+      <p>{% trans "This is not the web page you are looking for." %}</p>
+    </div>
+  </div>
+{% endblock %}

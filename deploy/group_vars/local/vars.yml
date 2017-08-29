@@ -1,0 +1,9 @@
+---
+# Vars for running QA copy of site
+project_dir: /home/{{ ansible_user_id }}/grandcapital
+venv_dir: /home/{{ ansible_user_id }}/venv
+postgres_ver: 9.5
+django_port: 8000
+maria_ver: 10.0
+server_name: qaserver
+gunicorn_socket: /var/run/gunicorn/{{ server_name }}.sock

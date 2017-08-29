@@ -239,7 +239,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'sites.default.urls'
 
-ROOT_HOSTNAME = "arum.uptrader.us"
+ROOT_HOSTNAME = "arumcapital.eu"
 
 INSTALLED_APPS = (
     # messages apps are here to work around a bug in south - conflicts with django.contrib.messages
@@ -735,7 +735,7 @@ PRIVATE_OFFICES = {
 }
 
 # Strategy Store settings
-SS_API_HOST = "https://148.251.86.217:81/"
+SS_API_HOST = "https://ramm.arumcapital.eu:2053/"
 SS_API_LOGIN = "api"
 SS_API_TOKEN = "eFBxR84qJK9nBAWj"
 

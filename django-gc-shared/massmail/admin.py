@@ -101,7 +101,7 @@ class MessageBlockInline(admin.StackedInline):
 
 class CampaignTypeAdmin(admin.ModelAdmin):
     model = CampaignType
-    list_display = ('title', 'unsubscribed')
+    list_display = ('title', 'unsubscribed', 'subscribed')
 
 
 class CampaignAdminForm(forms.ModelForm):

@@ -422,7 +422,6 @@ msgid "Amount in accounts' currency"
 msgstr "Сумма в валюте счёта"
 
 #, fuzzy
-#| msgid "Amount of money to deposit in RUR"
 msgid "Amount of money to deposit in "
 msgstr "Сумма денег для ввода в RUR, например: 105 или 105.2"
 
@@ -591,7 +590,6 @@ msgid "Can't operate on a demo account."
 msgstr "Невозмножно совершать операции ввода/вывода на демо-счетах"
 
 #, fuzzy
-#| msgid "Canceled"
 msgid "Cancel"
 msgstr "Отменён"
 
@@ -630,6 +628,9 @@ msgstr "Город"
 msgid "Client"
 msgstr "Клиент"
 
+msgid "Client account"
+msgstr "Счет клиента"
+
 msgid "Client data"
 msgstr ""
 
@@ -637,7 +638,6 @@ msgid "Client made payment"
 msgstr "Клиент сделал платёж"
 
 #, fuzzy
-#| msgid "Money transferred to account"
 msgid "Client transferred the money"
 msgstr "Деньги зачислены на счёт"
 
@@ -959,12 +959,10 @@ msgid "It is too late to cancel this request"
 msgstr "Эту заявку отменить уже нельзя"
 
 #, fuzzy
-#| msgid "Make transaction"
 msgid "Last transaction id"
 msgstr "Создать транзакцию"
 
 #, fuzzy
-#| msgid "Insufficient funds on the account"
 msgid "Last transaction id on this account"
 msgstr "Недостаточно средств на счете"
 
@@ -1014,7 +1012,6 @@ msgid "Mark as failed"
 msgstr "Отметить как неудачный"
 
 #, fuzzy
-#| msgid "commission"
 msgid "Max commision"
 msgstr "комиссия"
 
@@ -1046,7 +1043,6 @@ msgid "Maximum amount"
 msgstr ""
 
 #, fuzzy
-#| msgid "commission"
 msgid "Min commision"
 msgstr "комиссия"
 
@@ -1081,7 +1077,6 @@ msgid "Money Transfer Control Number (MTCN)"
 msgstr "Контрольный номер перевода (MTCN)"
 
 #, fuzzy
-#| msgid "Yes (deposit to trading platform)"
 msgid "Money deposited to trading platform"
 msgstr "Да (зачислить на счёт)"
 
@@ -1144,7 +1139,6 @@ msgid "Needs manager's attention"
 msgstr "Требуется внимание менеджера"
 
 #, fuzzy
-#| msgid "Bank account"
 msgid "Net account"
 msgstr "Расчетный счет"
 
@@ -1245,7 +1239,6 @@ msgid "Payment category"
 msgstr "Пластиковые карты"
 
 #, fuzzy
-#| msgid "Payment committed"
 msgid "Payment committed"
 msgstr "Платёж проведён"
 
@@ -1560,7 +1553,7 @@ msgid "Tin"
 msgstr "ИНН"
 
 msgid "Top UP of the trading AC"
-msgstr ""
+msgstr "Пополнение торгового счета"
 
 msgid "Total Amount"
 msgstr "Итого"
@@ -1578,12 +1571,10 @@ msgid "Trade history"
 msgstr "История сделок"
 
 #, fuzzy
-#| msgid "Account ID"
 msgid "Trading Account ID"
 msgstr "№ аккаунта"
 
 #, fuzzy
-#| msgid "Transaction type"
 msgid "Transaction id"
 msgstr "Тип транзакции"
 
@@ -1692,7 +1683,6 @@ msgid "Withdrawn from acc"
 msgstr "Снято со счёта"
 
 #, fuzzy
-#| msgid "Withdrawal"
 msgid "Within day"
 msgstr "Вывод"
 

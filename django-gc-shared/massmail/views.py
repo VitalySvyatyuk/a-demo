@@ -57,7 +57,7 @@ def subscribe(request, email, signature, mail_list_id, first_name="", last_name=
 
 
 
-@render_to('massmail/unsubscribe.html')
+@render_to('massmail/unsubscribed.html')
 def unsubscribe(request, email, signature, campaign_id=None):
     email = urllib.unquote(email)
     if massmail.utils.get_signature(email) != signature or not email_re.match(email):
@@ -66,28 +66,30 @@ def unsubscribe(request, email, signature, campaign_id=None):
     if campaign_id is None:
         campaign_id = request.GET.get('campaign_id', None)
 
-    if Unsubscribed.objects.filter(email=email).exists():
-        # messages.success(request, _('You have already unsubscribed'))
-        try:
-            return redirect('massmail_unsubscribed_id', urllib.quote(email), int(campaign_id))
-        except (ValueError, TypeError):
-            return redirect('massmail_unsubscribed', urllib.quote(email))
-
-    if request.method == 'POST':
-        Unsubscribed.objects.get_or_create(email=email)
-        try:
-            campaign_id = request.POST.get('campaign_id', None)
-            campaign = Campaign.objects.get(id=int(campaign_id))
-            campaign.unsubscribed += 1
-            campaign.save()
-            # messages.success(request, _('Copy of this message has been sent to your email'))
-            notification.send([email], 'unsubscribed', {"email":urllib.quote(email), "campaign_id": campaign_id})
-            return redirect('massmail_unsubscribed_id', urllib.quote(email), campaign_id)
-        except (ValueError, TypeError, Campaign.DoesNotExist):
-            # messages.success(request, _('Copy of this message has been sent to your email'))
-            notification.send([email], 'unsubscribed', {"email":urllib.quote(email), "campaign_id": campaign_id})
-            return redirect('massmail_unsubscribed', urllib.quote(email))
-    return {'campaign_id':campaign_id}
+    # if Unsubscribed.objects.filter(email=email).exists():
+    #     # messages.success(request, _('You have already unsubscribed'))
+    #     try:
+    #         return redirect('massmail_unsubscribed_id', urllib.quote(email), int(campaign_id))
+    #     except (ValueError, TypeError):
+    #         return redirect('massmail_unsubscribed', urllib.quote(email))
+    #
+    # if request.method == 'POST':
+    #     Unsubscribed.objects.get_or_create(email=email)
+    #     try:
+    #         campaign_id = request.POST.get('campaign_id', None)
+    #         campaign = Campaign.objects.get(id=int(campaign_id))
+    #         campaign.unsubscribed += 1
+    #         campaign.save()
+    #         # messages.success(request, _('Copy of this message has been sent to your email'))
+    #         notification.send([email], 'unsubscribed', {"email":urllib.quote(email), "campaign_id": campaign_id})
+    #         return redirect('massmail_unsubscribed_id', urllib.quote(email), campaign_id)
+    #     except (ValueError, TypeError, Campaign.DoesNotExist):
+    #         # messages.success(request, _('Copy of this message has been sent to your email'))
+    #         notification.send([email], 'unsubscribed', {"email":urllib.quote(email), "campaign_id": campaign_id})
+    #         return redirect('massmail_unsubscribed', urllib.quote(email))
+    return {'campaign_id':campaign_id,
+            'unsubscribed': Unsubscribed.objects.get_or_create(email=email)[0],
+            'email': urllib.quote(email)}
 
 @render_to('massmail/unsubscribed.html')
 def unsubscribed(request, email, campaign_id=None):

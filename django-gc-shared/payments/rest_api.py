@@ -3,8 +3,8 @@
 import os
 
 from django.conf import settings
-from django.core.exceptions import ImproperlyConfigured
-from django.db.models import Q
+from django.core.exceptions import ImproperlyConfigured, ObjectDoesNotExist
+from django.db.models import Q, Max
 from django.http import HttpResponse
 from django.template import RequestContext
 from django.template.loader import render_to_string
@@ -24,6 +24,7 @@ from payments.rest_serializers import WithdrawRequestSerializer, DepositRequestS
 from payments.restricted_countries import restricted_countries_list
 from payments.utils import load_payment_system, get_payment_systems
 from platforms.converter import convert_currency
+from platforms.models import TradingAccount
 from platforms.mt4.external.models import Mt4Quote
 from payments.__init__ import PAYMENT_SYSTEMS_FORMS
 from transfers.forms import InternalTransferForm
@@ -232,15 +233,22 @@ class PaymentViewSet(viewsets.ViewSet):
         obj = form.save(commit=False)
         bank = map(lambda p: p[1], form.get_bank_base(obj.account))
 
+        from geobase.models import Country
+        country = Country.objects.get(pk=request.query_params.get('country')).name_en
         if ps.slug == "bankuah":
             # считаем хитрый украинский НДС
             obj.vat_amount = obj.amount / 6
+
         log.debug("object=%s" % obj)
-        tempfile = render_to_pdf('payments/includes/bank_preview.html', {'object': obj, "bank": bank})
+        tempfile = render_to_pdf('payments/includes/bank_preview.html', {'object': obj,
+                                                                         "bank": bank,
+                                                                         'country': country})
         log.debug("tempfile=%s" % tempfile)
         content = open(tempfile).read()
         log.debug("Content size=%d" % len(content))
         os.remove(tempfile)
+
+
         response = HttpResponse(content, content_type="application/pdf")
         response['Content-Disposition'] = 'attachment; filename="%s"' % filename
         return response
@@ -254,6 +262,10 @@ class PaymentViewSet(viewsets.ViewSet):
             return Response({
                 "form": deposit_form.render_form(),
             }, status=400)
+
+        tmp = TradingAccount.objects.all().aggregate(Max('invoice_amount'))['invoice_amount__max']
+        ta = TradingAccount.objects.all()
+        ta.update(invoice_amount=tmp+1)
 
         if request.data.get("confirmed"):
             return self.process_deposit_confirmed(request, payment_system, deposit_form)

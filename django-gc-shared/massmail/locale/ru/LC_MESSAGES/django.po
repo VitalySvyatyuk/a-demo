@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-07 18:10+0300\n"
+"POT-Creation-Date: 2017-08-28 16:37+0300\n"
 "PO-Revision-Date: 2016-12-28 14:45+0230\n"
 "Last-Translator:   <asharukov@localhost>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,163 +20,178 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
-#: admin.py:35
+#: django-gc-shared/massmail/admin.py:35
 #, fuzzy
 #| msgid "Unsubscribe"
 msgid "Add subscribers"
 msgstr "Отписаться"
 
-#: admin.py:38
+#: django-gc-shared/massmail/admin.py:38
 msgid "Format: email<space>name"
 msgstr ""
 
-#: admin.py:145 tests/test_admin/test_campaignAdminForm.py:30
+#: django-gc-shared/massmail/admin.py:145
+#: django-gc-shared/massmail/tests/test_admin/test_campaignAdminForm.py:30
 msgid "Please choose either delayed campaign or periodical"
 msgstr ""
 
-#: admin.py:151 tests/test_admin/test_campaignAdminForm.py:42
+#: django-gc-shared/massmail/admin.py:151
+#: django-gc-shared/massmail/tests/test_admin/test_campaignAdminForm.py:42
 msgid "Campaign can't be active and scheduled at the same time"
 msgstr ""
 
-#: admin.py:157 tests/test_admin/test_campaignAdminForm.py:53
+#: django-gc-shared/massmail/admin.py:157
+#: django-gc-shared/massmail/tests/test_admin/test_campaignAdminForm.py:53
 msgid "Please choose time for delayed campaign"
 msgstr ""
 
-#: admin.py:162 tests/test_admin/test_campaignAdminForm.py:64
+#: django-gc-shared/massmail/admin.py:162
+#: django-gc-shared/massmail/tests/test_admin/test_campaignAdminForm.py:64
 msgid "Please specify schedule for the campaign"
 msgstr ""
 
-#: admin.py:166 tests/test_admin/test_campaignAdminForm.py:78
+#: django-gc-shared/massmail/admin.py:166
+#: django-gc-shared/massmail/tests/test_admin/test_campaignAdminForm.py:78
 msgid "This date has already passed"
 msgstr ""
 
-#: admin.py:193 models.py:245 models.py:382 models.py:850
+#: django-gc-shared/massmail/admin.py:193
+#: django-gc-shared/massmail/models.py:245
+#: django-gc-shared/massmail/models.py:382
+#: django-gc-shared/massmail/models.py:850
 msgid "Mailing lists"
 msgstr ""
 
-#: admin.py:197
+#: django-gc-shared/massmail/admin.py:197
 msgid "Email and Account page"
 msgstr ""
 
-#: admin.py:200
+#: django-gc-shared/massmail/admin.py:200
 msgid "Schedule"
 msgstr ""
 
-#: admin.py:210
+#: django-gc-shared/massmail/admin.py:210
 msgid "Views"
 msgstr ""
 
-#: admin.py:214
+#: django-gc-shared/massmail/admin.py:214
 msgid "Clicks"
 msgstr ""
 
-#: admin.py:218
+#: django-gc-shared/massmail/admin.py:218
 msgid "Emails sent"
 msgstr ""
 
-#: admin.py:249 tests/test_admin/test_smsCampaignAdminForm.py:40
+#: django-gc-shared/massmail/admin.py:249
+#: django-gc-shared/massmail/tests/test_admin/test_smsCampaignAdminForm.py:40
 msgid "Message length exceeds the maximum length"
 msgstr ""
 
-#: admin.py:268 models.py:426
+#: django-gc-shared/massmail/admin.py:268
+#: django-gc-shared/massmail/models.py:426
 msgid "Messages sent"
 msgstr ""
 
-#: apps.py:15
+#: django-gc-shared/massmail/apps.py:15
 #, fuzzy
 #| msgid "Unsubscribe"
 msgid "Unsubscribed from emails"
 msgstr "Отписаться"
 
-#: management/commands/send_margin_call_sms.py:40
+#: django-gc-shared/massmail/management/commands/send_margin_call_sms.py:40
 #, python-format
 msgid ""
 "Warning! Account %d is close to the margin call! We recommend you to top up "
 "the account to prevent your trades from being forcibly closed. GMI"
 msgstr ""
 
-#: models.py:73
+#: django-gc-shared/massmail/models.py:73
 msgid "Template name"
 msgstr ""
 
-#: models.py:75
+#: django-gc-shared/massmail/models.py:75
 msgid "Subject"
 msgstr ""
 
-#: models.py:76
+#: django-gc-shared/massmail/models.py:76
 msgid "The default subject if a campaign doesn't specify it"
 msgstr ""
 
-#: models.py:77 models.py:823
+#: django-gc-shared/massmail/models.py:77
+#: django-gc-shared/massmail/models.py:823
 msgid "Plaintext message"
 msgstr ""
 
-#: models.py:80 models.py:826
+#: django-gc-shared/massmail/models.py:80
+#: django-gc-shared/massmail/models.py:826
 msgid "HTML message"
 msgstr ""
 
-#: models.py:89
+#: django-gc-shared/massmail/models.py:89
 msgid "Message template"
 msgstr ""
 
-#: models.py:90
+#: django-gc-shared/massmail/models.py:90
 msgid "Message templates"
 msgstr ""
 
-#: models.py:236
+#: django-gc-shared/massmail/models.py:236
 #, fuzzy
 #| msgid "Resubscribe"
 msgid "Number of subscribers"
 msgstr "Подписаться"
 
-#: models.py:241
+#: django-gc-shared/massmail/models.py:241
 #, python-format
 msgid "%s (%s emails)"
 msgstr ""
 
-#: models.py:244
+#: django-gc-shared/massmail/models.py:244
 msgid "Mailing list"
 msgstr ""
 
-#: models.py:358 models.py:429 models.py:866
+#: django-gc-shared/massmail/models.py:358
+#: django-gc-shared/massmail/models.py:429
+#: django-gc-shared/massmail/models.py:866
 #, fuzzy
 #| msgid "Unsubscribe"
 msgid "Unsubscribed"
 msgstr "Отписаться"
 
-#: models.py:370
+#: django-gc-shared/massmail/models.py:370
 msgid "Didn't get the message"
 msgstr ""
 
-#: models.py:371
+#: django-gc-shared/massmail/models.py:371
 msgid "Got the message"
 msgstr ""
 
-#: models.py:372
+#: django-gc-shared/massmail/models.py:372
 msgid "Read the message"
 msgstr ""
 
-#: models.py:373
+#: django-gc-shared/massmail/models.py:373
 msgid "Didn't read the message"
 msgstr ""
 
-#: models.py:374
+#: django-gc-shared/massmail/models.py:374
 msgid "Clicked on a link"
 msgstr ""
 
-#: models.py:375
+#: django-gc-shared/massmail/models.py:375
 msgid "Read, but didn't click on a link"
 msgstr ""
 
-#: models.py:378 models.py:848
+#: django-gc-shared/massmail/models.py:378
+#: django-gc-shared/massmail/models.py:848
 msgid "Campaign name"
 msgstr ""
 
-#: models.py:379
+#: django-gc-shared/massmail/models.py:379
 msgid "Force send"
 msgstr ""
 
-#: models.py:380
+#: django-gc-shared/massmail/models.py:380
 #, fuzzy
 #| msgid "If you really want to unsubscribe, click the button"
 msgid "Forcefully sent to unsubscribed clients"
@@ -184,202 +199,208 @@ msgstr ""
 "Если вы уверены, что хотите отписаться от всех рассылок Grand Capital, "
 "нажмите кнопку"
 
-#: models.py:381
+#: django-gc-shared/massmail/models.py:381
 msgid "Template"
 msgstr ""
 
-#: models.py:384 models.py:852
+#: django-gc-shared/massmail/models.py:384
+#: django-gc-shared/massmail/models.py:852
 msgid "Exclusion lists"
 msgstr ""
 
-#: models.py:385 models.py:853
+#: django-gc-shared/massmail/models.py:385
+#: django-gc-shared/massmail/models.py:853
 msgid "These emails will be excluded from the campaign"
 msgstr ""
 
-#: models.py:388
+#: django-gc-shared/massmail/models.py:388
 msgid "Weight of campaign"
 msgstr ""
 
-#: models.py:389
+#: django-gc-shared/massmail/models.py:389
 msgid "Lower value means this campaign trying to send first"
 msgstr ""
 
-#: models.py:394
+#: django-gc-shared/massmail/models.py:394
 msgid "Hours from previous campaign"
 msgstr ""
 
-#: models.py:395
+#: django-gc-shared/massmail/models.py:395
 msgid ""
 "Users which received mail from previous campaign earlier than this hours "
 "will be ignored"
 msgstr ""
 
-#: models.py:399 models.py:856
+#: django-gc-shared/massmail/models.py:399
+#: django-gc-shared/massmail/models.py:856
 msgid "Active"
 msgstr ""
 
-#: models.py:400 models.py:857
+#: django-gc-shared/massmail/models.py:400
+#: django-gc-shared/massmail/models.py:857
 msgid "Set campaign to Active to send it immediately"
 msgstr ""
 
-#: models.py:401 models.py:858
+#: django-gc-shared/massmail/models.py:401
+#: django-gc-shared/massmail/models.py:858
 msgid "Is sent"
 msgstr ""
 
-#: models.py:403
+#: django-gc-shared/massmail/models.py:403
 msgid "Delayed campaign"
 msgstr ""
 
-#: models.py:404
+#: django-gc-shared/massmail/models.py:404
 msgid "Date of mailing"
 msgstr ""
 
-#: models.py:406
+#: django-gc-shared/massmail/models.py:406
 msgid "Send periodicaly"
 msgstr ""
 
-#: models.py:407
+#: django-gc-shared/massmail/models.py:407
 msgid "Schedule (in cron format)"
 msgstr ""
 
-#: models.py:409
+#: django-gc-shared/massmail/models.py:409
 msgid "Personal greeting"
 msgstr ""
 
-#: models.py:410
+#: django-gc-shared/massmail/models.py:410
 #, fuzzy
 #| msgid "email"
 msgid "Send email"
 msgstr "по email"
 
-#: models.py:411
+#: django-gc-shared/massmail/models.py:411
 msgid "Send to internal messages"
 msgstr ""
 
-#: models.py:412
+#: django-gc-shared/massmail/models.py:412
 msgid "Name in GA"
 msgstr ""
 
-#: models.py:412
+#: django-gc-shared/massmail/models.py:412
 msgid "Name in Google Analytics"
 msgstr ""
 
-#: models.py:414
+#: django-gc-shared/massmail/models.py:414
 msgid "Message subject"
 msgstr ""
 
-#: models.py:418
+#: django-gc-shared/massmail/models.py:418
 msgid "Sender's email"
 msgstr ""
 
-#: models.py:419
+#: django-gc-shared/massmail/models.py:419
 msgid "name@example.com Leave empty to use default address"
 msgstr ""
 
-#: models.py:422
+#: django-gc-shared/massmail/models.py:422
 msgid "Sender's name"
 msgstr ""
 
-#: models.py:423
+#: django-gc-shared/massmail/models.py:423
 msgid "Leave empty to use default name"
 msgstr ""
 
-#: models.py:427 models.py:871
+#: django-gc-shared/massmail/models.py:427
+#: django-gc-shared/massmail/models.py:871
 msgid "Lock is active when campaign is being sent"
 msgstr ""
 
-#: models.py:428
+#: django-gc-shared/massmail/models.py:428
 msgid "Creation date"
 msgstr ""
 
-#: models.py:430
+#: django-gc-shared/massmail/models.py:430
 msgid "Automatical"
 msgstr ""
 
-#: models.py:431
+#: django-gc-shared/massmail/models.py:431
 msgid "Campaign type"
 msgstr ""
 
-#: models.py:434
+#: django-gc-shared/massmail/models.py:434
 msgid "Campaign"
 msgstr ""
 
-#: models.py:435
+#: django-gc-shared/massmail/models.py:435
 msgid "Campaigns"
 msgstr ""
 
-#: models.py:821
+#: django-gc-shared/massmail/models.py:821
 msgid "Key"
 msgstr ""
 
-#: models.py:821
+#: django-gc-shared/massmail/models.py:821
 msgid "Name of the block in the template, for example main_content"
 msgstr ""
 
-#: models.py:834
+#: django-gc-shared/massmail/models.py:834
 msgid "Content block"
 msgstr ""
 
-#: models.py:835
+#: django-gc-shared/massmail/models.py:835
 msgid "Content blocks"
 msgstr ""
 
-#: models.py:859
+#: django-gc-shared/massmail/models.py:859
 msgid "Scheduled"
 msgstr ""
 
-#: models.py:861
+#: django-gc-shared/massmail/models.py:861
 msgid "Send at (date)"
 msgstr ""
 
-#: models.py:862
+#: django-gc-shared/massmail/models.py:862
 msgid "Send at (time)"
 msgstr ""
 
-#: models.py:868
+#: django-gc-shared/massmail/models.py:868
 msgid "Message text"
 msgstr ""
 
-#: models.py:868
+#: django-gc-shared/massmail/models.py:868
 msgid "8 SMS max"
 msgstr ""
 
-#: models.py:869
+#: django-gc-shared/massmail/models.py:869
 msgid "Send only to verified phone numbers"
 msgstr ""
 
-#: templates/admin/massmail/change_form.html:15
+#: django-gc-shared/massmail/templates/admin/massmail/change_form.html:15
 msgid "View manual"
 msgstr ""
 
-#: templates/admin/massmail/change_form.html:17
+#: django-gc-shared/massmail/templates/admin/massmail/change_form.html:17
 msgid "Description"
 msgstr ""
 
-#: templates/admin/massmail/change_form.html:18
+#: django-gc-shared/massmail/templates/admin/massmail/change_form.html:18
 msgid "Next event"
 msgstr ""
 
-#: templates/massmail/subscribed.html:8
+#: django-gc-shared/massmail/templates/massmail/subscribed.html:8
 msgid "Email approved successfully"
 msgstr "Email успешно подтвержден"
 
-#: templates/massmail/subscribed.html:10
+#: django-gc-shared/massmail/templates/massmail/subscribed.html:10
 msgid ""
 "Спасибо что подписались на рассылку. Ваше первое письмо скоро будет "
 "отправлено, а пока Вы можете перейти на главную страницу и продолжить "
 "знакомство с ARUM Capital."
 msgstr ""
 
-#: templates/massmail/subscribed.html:13
+#: django-gc-shared/massmail/templates/massmail/subscribed.html:13
 msgid "Go to main page"
 msgstr "Вернуться на главную"
 
-#: templates/massmail/unsubscribe.html:6
+#: django-gc-shared/massmail/templates/massmail/unsubscribe.html:6
 msgid "Email unsubscribe"
 msgstr "Отписаться от рассылки"
 
-#: templates/massmail/unsubscribe.html:9
+#: django-gc-shared/massmail/templates/massmail/unsubscribe.html:9
 #, fuzzy
 #| msgid ""
 #| "If you don't want to get latest and useful information from Grand "
@@ -390,46 +411,39 @@ msgstr ""
 "Если Вы больше не хотите получать актуальную и полезную информацию от Grand "
 "Capital, нажмите кнопку"
 
-#: templates/massmail/unsubscribe.html:14
+#: django-gc-shared/massmail/templates/massmail/unsubscribe.html:14
 msgid "Unsubscribe"
 msgstr "Отписаться"
 
-#: templates/massmail/unsubscribed.html:7
-msgid "You successfully unsubscribed"
-msgstr "Вы отписались от рассылки Grand Capital"
+#: django-gc-shared/massmail/templates/massmail/unsubscribed.html:7
+msgid "You have successfully unsubscribed from the newsletter."
+msgstr "Вы успешно отписались от рассылки."
 
-#: templates/massmail/unsubscribed.html:9
+#: django-gc-shared/massmail/templates/massmail/unsubscribed.html:9
 msgid "You successfully resubscribed"
-msgstr "Вы подписались на рассылки Grand Capital"
+msgstr "Вы подписались на рассылки"
 
-#: templates/massmail/unsubscribed.html:13
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "                You successfully unsubscribed from Grand Capital mailing "
-#| "list.\n"
-#| "                You can change your mind at any time via the button "
-#| "below\n"
-#| "            "
+#: django-gc-shared/massmail/templates/massmail/unsubscribed.html:14
 msgid ""
 "\n"
-"                You successfully unsubscribed from our mailing lists.\n"
-"                You can change your mind at any time via the button below\n"
-"            "
+"                    <p style=\"text-align:center;font-weight:bold;margin-"
+"bottom: 65px;\">Сожалеем, что Вы решили отписаться от рассылки."
+"<br>Большинство полезных материалов Вы также можете найти в <a href="
+"\"https://ru.arumcapital.eu/blog\">блоге компании \"Arum Capital\"</a>.</p>\n"
+"                "
 msgstr ""
+
+#: django-gc-shared/massmail/templates/massmail/unsubscribed.html:18
+msgid ""
 "\n"
-"Вы отписались от рассылки Grand Capital. Вы в любой момент можете изменить "
-"решение, нажав кнопку"
+"                    <p style=\"text-align:center;font-weight:bold;margin-"
+"bottom: 65px;\">We are sorry that you decided to unsubscribe from the "
+"newsletters.<br>You can also find most useful materials <a href=\"https://"
+"arumcapital.eu/blog\">in the company's blog</a>.</p>\n"
+"                "
+msgstr ""
 
-#: templates/massmail/unsubscribed.html:22
-msgid "Resubscribe"
-msgstr "Подписаться"
-
-#: templates/massmail/unsubscribed.html:28
-msgid "Probably you are interested in other means of communication with us?"
-msgstr "Возможно, Вам удобны другие способы связи?"
-
-#: templates/massmail/unsubscribed.html:31
+#: django-gc-shared/massmail/templates/massmail/unsubscribed.html:29
 #, fuzzy
 #| msgid ""
 #| "\n"
@@ -454,3 +468,38 @@ msgstr ""
 "<p>Спасибо!</p>\n"
 "<p>Возможно, Вам удобны другие способы связи?</p>"
 
+#: django-gc-shared/massmail/templates/massmail/unsubscribed.html:38
+msgid "Configuring subscriptions in your Private Office"
+msgstr "Настроить управление подпиской в личном кабинете"
+
+#: django-gc-shared/massmail/templates/massmail/unsubscribed.html:43
+#: django-gc-shared/massmail/templates/massmail/unsubscribed.html:47
+#, fuzzy
+#| msgid "Go to main page"
+msgid "Main page"
+msgstr "Вернуться на главную"
+
+#, fuzzy
+#~| msgid ""
+#~| "\n"
+#~| "                You successfully unsubscribed from Grand Capital mailing "
+#~| "list.\n"
+#~| "                You can change your mind at any time via the button "
+#~| "below\n"
+#~| "            "
+#~ msgid ""
+#~ "\n"
+#~ "                You successfully unsubscribed from our mailing lists.\n"
+#~ "                You can change your mind at any time via the button "
+#~ "below\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Вы отписались от рассылки Grand Capital. Вы в любой момент можете "
+#~ "изменить решение, нажав кнопку"
+
+#~ msgid "Resubscribe"
+#~ msgstr "Подписаться"
+
+#~ msgid "Probably you are interested in other means of communication with us?"
+#~ msgstr "Возможно, Вам удобны другие способы связи?"
