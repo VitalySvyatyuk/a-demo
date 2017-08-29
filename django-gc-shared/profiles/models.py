@@ -567,7 +567,7 @@ class UserProfile(StateSavingModel):
         if self.registered_from in settings.PRIVATE_OFFICES:
             return settings.PRIVATE_OFFICES[self.registered_from]['domain']
         else:
-            return "arum.uptrader.us"
+            return "arumcapital.eu"
 
     def get_time_zone(self):
         time_zone = None

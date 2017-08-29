@@ -15,4 +15,5 @@ class Command(BaseCommand):
 
         for campaign_type in CampaignType.objects.all():
                 campaign_type.unsubscribed = UserProfile.objects.exclude(subscription__pk=campaign_type.pk).count()
+                campaign_type.subscribed = UserProfile.objects.filter(subscription__pk=campaign_type.pk).count()
                 campaign_type.save()

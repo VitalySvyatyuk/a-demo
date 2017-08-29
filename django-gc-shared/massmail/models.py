@@ -356,6 +356,7 @@ class Subscribed(models.Model):
 class CampaignType(models.Model):
     title = models.CharField(max_length=100)
     unsubscribed = models.PositiveIntegerField(_('Unsubscribed'), default=0)
+    subscribed = models.PositiveIntegerField(_('Subscribed'), default=0)
 
     def __unicode__(self):
         return self.title

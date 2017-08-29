@@ -13,6 +13,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse
 from django.db import DatabaseError
 from django.http import Http404, HttpResponse
@@ -213,8 +214,13 @@ def balance(request):
 @render_to("account_history.html")
 def account_history(request, account_id):
     log.debug("Rendering account history for account {}".format(account_id))
-    crm_staff = request.user.is_superuser
-    log.debug("User is super: {}".format(crm_staff))
+    try:
+        request.user.crm_manager
+    except ObjectDoesNotExist:
+        crm_staff = False
+    else:
+        crm_staff = True
+    log.debug("User is CRM manager: {}".format(crm_staff))
 
     # Managers should be able to see all the history for all the accounts
     if crm_staff:

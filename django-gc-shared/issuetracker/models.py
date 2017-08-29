@@ -378,9 +378,10 @@ def on_comment(sender, instance, created, **kwargs):
 @signals.post_save(sender=IssueAttachment)
 def on_attachment(sender, instance, created, **kwargs):
     notice_type = instance.issue.notice_type()
-    notice(notice_type, event="on_attachment")(
-        sender=instance.user, instance=instance.issue, created=False,
-        attachment=instance)
+    if instance.issue.status != 'closed':
+        notice(notice_type, event="on_attachment")(
+            sender=instance.user, instance=instance.issue, created=False,
+            attachment=instance)
 
 
 # Helpers.

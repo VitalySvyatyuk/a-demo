@@ -596,6 +596,9 @@ msgstr "The country where you live"
 msgid "City"
 msgstr "City"
 
+msgid "Client account"
+msgstr "Client account"
+
 msgid "The city where you live"
 msgstr "The city where you live"
 

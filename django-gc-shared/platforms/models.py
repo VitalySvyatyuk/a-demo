@@ -120,6 +120,7 @@ class TradingAccount(models.Model):
     mt4_id = models.IntegerField(_("Account id"), db_column="mt4_id",
                                  help_text=_("Account ID at the trading platform"),
                                  db_index=True)
+    invoice_amount = models.PositiveIntegerField(_("Invoice amount"), default=1)
     group_name = models.CharField(_("Account type"), max_length=50, blank=True, null=True, db_column="_group")
     creation_ts = models.DateTimeField(_("Creation timestamp"), default=datetime.now)
     is_deleted = models.BooleanField(_("Account deleted"), default=False)

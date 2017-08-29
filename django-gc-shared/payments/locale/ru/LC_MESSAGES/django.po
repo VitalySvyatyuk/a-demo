@@ -33,7 +33,7 @@ msgstr "Адрес банка получателя"
 
 msgid "2, Amathountos street, P.O. Box 56868, 3310, Limassol, Cyprus"
 msgstr ""
-"Кипр, Лимассол, ул. Аматунтос д.2, п/я 56868, индекс 3310, Limassol, Cyprus"
+"2, Amathountos street, P.O. Box 56868, 3310, Limassol, Cyprus"
 
 msgid "Beneficiaries Account Number"
 msgstr "Номер счета получателя"
@@ -44,7 +44,7 @@ msgid "Payment Reference"
 msgstr "Пластиковые карты"
 
 msgid "Top UP of the trading AC"
-msgstr ""
+msgstr "Пополнение торгового счета"
 
 msgid "Bank transfer"
 msgstr "Банковский перевод"
@@ -1417,7 +1417,7 @@ msgid "Withdrawal"
 msgstr "Вывод"
 
 msgid "Invoice"
-msgstr "Счёт"
+msgstr "Счёт-фактура"
 
 msgid "Customer"
 msgstr "Клиент"
@@ -1471,8 +1471,8 @@ msgstr ""
 "его выставления. В назначении платежа<br>должно быть полностью, без "
 "сокращений наименование платежа, указанное в настоящем счете."
 
-msgid "Account ID"
-msgstr "№ аккаунта"
+msgid "Client account"
+msgstr "Счет клиента"
 
 msgid "No bonuses"
 msgstr "Бонусов нет"

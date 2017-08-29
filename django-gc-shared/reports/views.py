@@ -248,9 +248,10 @@ def marketing_inout_report(request):
                 is_committed=True,
                 creation_ts__gte=start,
                 creation_ts__lt=end + timedelta(days=1),
-                account__user__is_staff=False,
         ).select_related(*select_related).order_by('creation_ts'):
             dr = dr.as_leaf_class()
+            if dr.account.user.is_staff:
+                continue
             result = generate_result_data(user=dr.account.user, payment_request=dr, account=dr.account)
             yield csv_writer.writerow([item.encode('utf-8') for item in result])
 
