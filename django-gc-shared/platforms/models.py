@@ -120,6 +120,7 @@ class TradingAccount(models.Model):
     mt4_id = models.IntegerField(_("Account id"), db_column="mt4_id",
                                  help_text=_("Account ID at the trading platform"),
                                  db_index=True)
+    invoice_amount = models.PositiveIntegerField(_("Invoice amount"), default=1)
     group_name = models.CharField(_("Account type"), max_length=50, blank=True, null=True, db_column="_group")
     creation_ts = models.DateTimeField(_("Creation timestamp"), default=datetime.now)
     is_deleted = models.BooleanField(_("Account deleted"), default=False)
@@ -635,16 +636,16 @@ class AbstractTrade(models.Model):
         # type: () -> unicode
         if self.cmd == self.Commands.INOUT:
             if self.profit >= 0:
-                return (u"DEPOSIT order %s at ACC%s at %s on %s"
-                        % (self.comment, self.login, self.close_time, self.profit))
+                return (u"DEPOSIT order %s at %s on %s"
+                        % (self.comment, self.close_time, self.profit))
             else:
-                return (u"WITHDRAW order %s at ACC%s at %s on %s"
-                        % (self.comment, self.login, self.close_time, self.profit))
-        elif self.cmd == self.Commands.CREDIT:
-            return u"CREDIT order %s at ACC%s at %s" % (self.comment, self.login, self.close_time)
+                return (u"WITHDRAW order %s at %s on %s"
+                        % (self.comment, self.close_time, self.profit))
+            
+            return u"CREDIT order %s at %s" % (self.comment, self.close_time)
         else:
-            return u"%s %s order at ACC%s opened at %s" % (self.get_cmd_display(), self.symbol,
-                                                           self.login, self.open_time)
+            return u"%s %s order opened at %s" % (self.get_cmd_display(), self.symbol,
+                                                           self.open_time)
 
     objects = AdvancedManager()
 

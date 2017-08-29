@@ -4,28 +4,22 @@
 
 {% block content %}
     {% if unsubscribed %}
-        <h1>{% trans "You successfully unsubscribed" %}</h1>
+        <h2 style="color:#e8072a;text-align:center;font-size:22px;margin-bottom: 60px;">{% trans "You have successfully unsubscribed from the newsletter." %}</h2>
     {% else %}
-        <h1>{% trans "You successfully resubscribed" %}</h1>
+        <h2 style="color:#e8072a;text-align:center;font-size:22px;margin-bottom: 60px;">{% trans "You successfully resubscribed" %}</h2>
     {% endif %}
     <div class="container">
         {% if unsubscribed %}
-            {% blocktrans %}
-                You successfully unsubscribed from our mailing lists.
-                You can change your mind at any time via the button below
-            {% endblocktrans %}
-            {% if campaign_id %}
-                <form action="/massmail/resubscribe/{{ email }}/{{ campaign_id }}/" name="resubscribe">
+            {% if LANGUAGE_CODE == "ru" %}
+                <p style="text-align:center;font-weight:bold;margin-bottom: 65px;">Сожалеем, что Вы решили отписаться от рассылки.<br>Большинство полезных материалов Вы также можете найти в <a href="https://ru.arumcapital.eu/blog">блоге компании "Arum Capital"</a>.</p>
             {% else %}
-                <form action="/massmail/resubscribe/{{ email }}/" name="resubscribe">
+                <p style="text-align:center;font-weight:bold;margin-bottom: 65px;">We are sorry that you decided to unsubscribe from the newsletters.<br>You can also find most useful materials <a href="https://arumcapital.eu/blog">in the company's blog</a>.</p>
             {% endif %}
-        <input type="submit" value="{% trans 'Resubscribe' %}">
-        </form>
+
         {% endif %}
         <div>&nbsp;</div>
         <div>&nbsp;</div>
         {% if unsubscribed %}
-            <div>{% trans "Probably you are interested in other means of communication with us?" %}</div>
         {% else %}
             <div>
                 {% blocktrans %}
@@ -35,10 +29,19 @@
                 {% endblocktrans %}
             </div>
         {% endif %}
-        <div>
+        <div style="text-align:center;margin-bottom:20px;">
             {% if request.user.is_authenticated %}
-                <a href="/account/profile/subscriptions">{% trans "Go to subscriptions settings" %}</a>
+                <a style="font-weight:bold;" href="/account/profile/subscriptions">{% trans "Configuring subscriptions in your Private Office" %}</a>
             {% endif %}
         </div>
+        {% if LANGUAGE_CODE == "ru" %}
+        <div style="text-align: center;">
+            <a class="button" href="https://ru.arumcapital.eu/">{% trans "Main page" %}</a>
+        </div>
+        {% else %}
+        <div style="text-align: center;">
+            <a class="button" href="https://arumcapital.eu/">{% trans "Main page" %}</a>
+        </div>
+        {% endif %}
     </div>
 {% endblock %}

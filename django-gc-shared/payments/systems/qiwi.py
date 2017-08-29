@@ -13,6 +13,7 @@ from django.core.urlresolvers import reverse
 from django.forms import ValidationError
 from django.http import HttpResponse
 from django.utils.functional import lazy
+from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _, string_concat
 
 from currencies.currencies import RUR
@@ -82,6 +83,12 @@ class DepositForm(base.DepositForm, base.PhonePursePaymentForm):
     redirect_address = "https://bill.qiwi.com/order/external/main.action?"
     commission_rate = Decimal("0.06")
 
+    def __init__(self, *args, **kwargs):
+        super(DepositForm, self).__init__(*args, **kwargs)
+        self.fields["amount"].help_text = mark_safe(_(
+            "<strong>Attention!</strong>"
+            " If you do not have \"verified\" status with QIWI, please specify amount less than 15000 RUB."))
+
     @classmethod
     def is_automatic(cls, instance):
         return True
@@ -105,7 +112,7 @@ class DepositForm(base.DepositForm, base.PhonePursePaymentForm):
             digestmod=hashlib.sha1
         ).digest()
 
-        return request.META["HTTP_X_API_SIGNATURE"] == base64.b64encode(dig)
+        return request.META.get("HTTP_X_API_SIGNATURE") == base64.b64encode(dig)
 
     @classmethod
     def execute(cls, request, instance):
@@ -141,11 +148,11 @@ class DepositForm(base.DepositForm, base.PhonePursePaymentForm):
         if 'currency' in self.cleaned_data and 'amount' in self.cleaned_data:
             amount = convert_currency(self.cleaned_data['amount'], self.cleaned_data['currency'], 'RUB',
                                       for_date=datetime.now().date())[0]
-            if amount > 15000:
-                self.add_error('amount', _("QIWI doesn't support one-time payments of more "
-                                           "than 15000 roubles. If you need to deposit more "
-                                           "money via QIWI, just commit several payments."))
-            elif amount < 5:
+            # if amount > 15000:
+            #     self.add_error('amount', _("QIWI doesn't support one-time payments of more "
+            #                                "than 15000 roubles. If you need to deposit more "
+            #                                "money via QIWI, just commit several payments."))
+            if amount < 5:
                 self.add_error('amount', _("Amount should be above 5 roubles"))
 
         return super(DepositForm, self).clean()

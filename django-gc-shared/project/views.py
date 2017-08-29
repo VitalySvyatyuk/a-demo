@@ -167,22 +167,18 @@ def frontpage(request):
                 .values('symbol', 'bid', 'ask', 'spread', 'direction', 'digits')
         )
 
-        # there is no such DB anymore
-        # open_prices = {
-        #     x.symbol: x
-        #     for x in Mt4OpenPrice.objects.filter(symbol__in=symbols_list)
-        #     }
         for key, pairs in quotes_needed.items():
             result[key] = []
 
             for pair in pairs:
                 try:
-                    quote = filter(lambda x: x["symbol"] == pair, quotes)[0]
+                    quote = filter(lambda x: x["symbol"] == pair, quotes)
+                    if not quote:
+                        log.warn("Quote {} not found in MT4".format(pair))
+                        continue
+                    quote = quote[0]
                     tmp = dict(quote)
 
-        #             q = open_prices[pair]
-
-                    #tmp["open_price"] = q.open_price
                     tmp["spread_digits"] = quote['digits']
                     # prob incorrect calculations
                     tmp["spread"] = "%.1f" % ((tmp["ask"] - tmp["bid"]) * (10 ** (quote['digits']-1)))
