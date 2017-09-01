@@ -102,6 +102,18 @@ class MessageBlockInline(admin.StackedInline):
 class CampaignTypeAdmin(admin.ModelAdmin):
     model = CampaignType
     list_display = ('title', 'unsubscribed', 'subscribed')
+    readonly_fields = ("subscribers", )
+
+    def subscribers(self, obj):
+        from django.utils.html import format_html_join
+        from django.utils.safestring import mark_safe
+        return format_html_join(
+            mark_safe('<br/>'),
+            '{}',
+            ((profile.user.email,) for profile in obj.userprofile_set.all()),
+        ) or "No subscribers found"
+    subscribers.short_description = "Subscribers"
+    subscribers.allow_tags = True
 
 
 class CampaignAdminForm(forms.ModelForm):

@@ -573,13 +573,7 @@ $(document).ready(function(){
 
 // Subscribe form block
 
-$(document).ready(function() {
-  $('#subscribe-form').submit(function(e) {
-    $.post('/subscribe/', $(this).serialize(), function() {
-    });
-    e.preventDefault();
-  })
-});
+
 
 
 // Callback request popup
@@ -608,16 +602,27 @@ function Selected(a) {
    document.getElementById("Block1").style.display='none';
  }
 }
-
-// Requset form on partnership page
-$(document).ready(function(){
-  $('.subscribe-form form').submit(function(e) {
-    $('#success-subscribe-overlay').show();
+$(document).ready(function() {
+  $('#subscribe-form').submit(function(e) {
     e.preventDefault();
-  });
+
+        $.post('/subscribe/', $(this).serialize(), function() {
+    });
+    $('.subscribe-form form')[0].reset();
+    $('#success-subscribe-overlay').show();
+
+    return false;
+  })
+});
+
+$(document).ready(function(){
+//  $('.subscribe-form form').submit(function(e) {
+//    e.preventDefault();
+//    $('.subscribe-form form')[0].reset();
+//    $('#success-subscribe-overlay').show();
+//  });
   $( "#success-subscribe-send button" ).click(function() {
     $('#success-subscribe-overlay').fadeOut();
-    $('.subscribe-form form')[0].reset();
   });
   $(".subscribe-form-checkbox").on("change", function () {
     if (!$(".subscribe-form-checkbox:checked").length)
