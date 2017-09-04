@@ -13,6 +13,7 @@ from geobase.utils import get_geo_data
 from profiles.models import UserProfile
 from profiles.validators import is_partner_account, latin_chars_name
 from sms import send
+from datetime import datetime, timedelta
 
 
 class ProfileRegistrationForm(forms.Form):
