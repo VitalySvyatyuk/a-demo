@@ -225,13 +225,24 @@ html
 					ul.nav__list
 						- include 'marketing_site/components/menus.jade' with main=True
 
+			div.pop-warn.row
+				div.col-md-offset-4.col-md-4.popup-warning.popup-warn-div.row
+					div.col-xs-9
+						p.popup-warn-p.row
+							- trans "Warning! Some troubles on the site. The MT4 platform is not available now. Some additional text. Bla-bla-bla."
+					div.col-xs-3.popup-warning
+						a(href="#").button.but-close.False
+							span.button__text
+								- trans "Close"
+
+
+
 			block content
 
 			nav.footer_nav
 				.container
 					.row
 						- include 'marketing_site/components/menus.jade' with bottom=True
-
 
 			footer.footer
 				.cookies_risk-warning

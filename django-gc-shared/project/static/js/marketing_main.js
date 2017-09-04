@@ -632,3 +632,21 @@ $(document).ready(function(){
   });
 })
 
+// Popup warning
+$(document).ready(function() {
+
+  $(".but-close").click(function(){
+    $('.pop-warn').fadeOut('slow');
+    sessionStorage.setItem("warn-popup", "disabled");
+  });
+
+  if (sessionStorage.getItem("warn-popup") === null) {
+    setTimeout(function() {
+      $('.pop-warn').fadeIn('slow');
+    }, 2000);
+    setTimeout(function() {
+      $('.pop-warn').fadeOut('slow');
+    }, 30000);
+  }
+});
+
