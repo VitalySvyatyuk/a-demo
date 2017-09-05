@@ -235,6 +235,38 @@ html
 							span.button__text
 								- trans "Ok"
 
+
+
+			//if not user.is_authenticated
+			div.email-popup-div
+				form#subscribe-form-popup.row
+					- csrf_token
+					div.col-xs-6.email-popup-left-div
+						img(src="{% static 'img/marketing-site/email-popup/imgpsh_fullsize.png' %}").email-popup-img
+					div.col-xs-6.email-popup-right-div
+						h2.email-popup-h2
+							- trans "EVERYDAY ANALYTICS"
+						p.email-popup-p
+							- trans "Do you want to accept<br><span class='e-span'>analytic surveys</span><br>from practicing trader with an fifteen-year experience?"
+						p(style="margin-top:20px").email-popup-p
+							- trans "Leave you email <span class='e-span'>and be first</span> in the course of events on the trading market!"
+					div.col-xs-6
+						input(type="hidden", name="subscribe-form-checkbox", value="education")
+						input(type="email", name="email", placeholder="Email", required).email-popup-input
+					div(style="text-align:center").col-xs-6
+						button(type="submit").email-popup-but.button.False
+							span.button__text
+								- trans "Subscribe"
+
+
+
+
+
+
+
+
+
+
 			block content
 
 			nav.footer_nav

@@ -1,0 +1,68 @@
+.email-popup-div {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -165px;
+    margin-left: 0;
+    height: 330px;
+    width: 740px;
+    z-index: 800;
+    background: url(../img/marketing-site/email-popup/imgpsh_fullsize.jpg) no-repeat center center;
+}
+
+.email-popup-left-div {
+    height: 267px;
+}
+
+.email-popup-right-div {
+    height: 267px;
+    text-align: center;
+}
+
+.email-popup-img {
+    margin-top: 18px;
+    margin-left: 18px;
+}
+
+.email-popup-h2 {
+    text-shadow: -2px 2px darkslategrey;
+    letter-spacing: 1px;
+    width: 65%;
+    margin: 25px auto 15px;
+    color: whitesmoke;
+
+}
+
+.email-popup-p {
+    text-shadow: -1px 1px darkslategrey;
+    font-weight: 600;
+    width: 65%;
+    margin: 10px auto;
+    color: whitesmoke;
+}
+
+.email-popup-input {
+    line-height: 40px;
+    height: 40px;
+    width: 100%;
+    padding-left: 15px;
+    margin-top: 5px;
+    margin-left: 18px;
+    background-color: whitesmoke;
+    border: none;
+}
+
+.email-popup-but {
+    height: 40px;
+    width: 250px;
+    line-height: 40px;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+.e-span {
+    color: pink;
+}
+

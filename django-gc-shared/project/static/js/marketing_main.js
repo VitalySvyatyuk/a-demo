@@ -650,3 +650,39 @@ $(document).ready(function() {
   }
 });
 
+// Email Popup
+$(document).ready(function() {
+  setTimeout(function() {
+    $(".email-popup-div").show('fast').animate({marginLeft:'-350px', opacity:'1'}, 500);
+    // $('div:not(".email-popup-div")').hide('fast');
+    $("<div/>", {
+      id: "white-screen",
+      style: "position:fixed; background-color:white; opacity:0.9; z-index:700; top:0; width:100%; height:100%; display:none;"
+    }).appendTo("body").fadeIn('fast');
+  }, 2000);
+
+  setTimeout(function() {
+    $("#white-screen").click(function() {
+      $(".email-popup-div").fadeOut('slow');
+      $(this).fadeOut('slow');
+      sessionStorage.setItem("email-popup", "disabled");
+    });
+  }, 5000);
+
+  $(".email-popup-but").submit(function() {
+
+  });
+
+  $('#subscribe-form-popup').submit(function(e) {
+    e.preventDefault();
+
+    $.post('/subscribe/', $(this).serialize(), function() {
+    });
+
+    $(".email-popup-div").fadeOut('slow');
+    $("#white-screen").fadeOut('slow');
+    sessionStorage.setItem("email-popup", "disabled");
+
+    return false;
+  });
+});
