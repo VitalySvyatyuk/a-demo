@@ -5248,7 +5248,3 @@ div.row, .navbar {
 
 .label-danger {
   background-color: #d9534f; }
-
-span.label.label-default.clickable.ng-binding {
-  color: white;
-}

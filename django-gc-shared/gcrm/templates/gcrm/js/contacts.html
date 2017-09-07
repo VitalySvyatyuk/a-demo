@@ -110,10 +110,10 @@
             <span>
               <a ui-sref="contact.feed({id: item.data.id})" ng-bind="::item.data.name"></a>
               <span ng-repeat="tag in item.data.tags" class="small">
-                <span ng-click="toggleTag(tag)" class="label label-default clickable" style="background-color: [[::tag|toColor]]">[[::tag]]</span>
+                <span ng-click="toggleTag(tag)" class="label label-default clickable" style="background-color: [[::tag|toColor]]; color: white;">[[::tag]]</span>
               </span>
               <span ng-repeat="tag in item.data.system_tags" class="small">
-                <span ng-click="toggleTag(tag)" class="label label-default clickable" style="background-color: [[::tag|toColor]]">[[::tag]]</span>
+                <span ng-click="toggleTag(tag)" class="label label-default clickable" style="background-color: [[::tag|toColor]]; color: white;">[[::tag]]</span>
               </span>
             </span>
           </td>
