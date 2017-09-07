@@ -2487,9 +2487,6 @@ msgstr "Хотите получать<br><span class='e-span'>аналитиче
 msgid "Leave you email <span class='e-span'>and be the first one</span> to get information about market!"
 msgstr "Оставьте свой email<br><span class='e-span'>и будьте первым</span><br>в курсе событий на рынке!"
 
-#~ msgid "Leave you email <span class='e-span'>and be the first one</span> to get information about market!"
-#~ msgstr "Оставьте свой email<br><span class='e-span'>и будьте первым</span><br>в курсе событий на рынке!"
-
 msgid "Subscribe"
 msgstr "Подписаться"
 
