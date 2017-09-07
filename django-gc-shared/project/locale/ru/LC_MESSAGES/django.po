@@ -2478,14 +2478,14 @@ msgstr "Пожалуйста, проверьте свою почту и подт
 msgid "EVERYDAY ANALYTICS"
 msgstr "ЕЖЕДНЕВНАЯ АНАЛИТИКА"
 
-msgid "Do you want to get free<br><span class='e-span'>analytical reviews</span><br>from trader with 15 years experience?"
+msgid "Do you want to get free <br><span class='e-span'>analytical reviews</span><br>from traider with 15 years experience?"
 msgstr "Хотите получать<br><span class='e-span'>аналитические обзоры</span> от<br>практикующего трейдера<br>с 15-летним стажем?"
 
 msgid "Do you want to get free<br><span class='e-span'>analytical reviews</span> from trader<br>with 15 years experience?"
-msgstr "Хотите получать<br><span class='e-span'>аналитические обзоры</span> от<br>практикующего трейдера<br>с 15-летним стажем?"
+msgstr "Хотите получать <span class='e-span'>аналитические обзоры</span> от практикующего трейдера<br>с 15-летним стажем?"
 
 msgid "Leave you email <span class='e-span'>and be the first one</span> to get information about market!"
-msgstr "Оставьте свой email<br><span class='e-span'>и будьте первым</span><br>в курсе событий на рынке!"
+msgstr "Оставьте свой email <span class='e-span'>и будьте первым</span> в курсе событий на рынке!"
 
 msgid "Subscribe"
 msgstr "Подписаться"

@@ -573,14 +573,15 @@ $(document).ready(function(){
 $(document).ready(function(){
   setTimeout(function() {
     if($('#cookie-bar').length) {
+      $(this).css({
+        'bottom' : $('.cookies_risk-warning').outerHeight(),
+      });
       $('.warning-info').css({
-        // 'bottom' : '79px',
         'bottom' : $('.cookies_risk-warning').outerHeight() +
                    $('#cookie-bar').outerHeight(),
       });
     } else {
       $('.warning-info').css({
-        // 'bottom' : '34px',
         'bottom' : $('.cookies_risk-warning').outerHeight(),
       });
     }
@@ -605,6 +606,24 @@ $(document).ready(function(){
     sessionStorage.setItem("warning-risk", "disabled");
   });
 });
+
+$(document).ready(function(){
+  $(window).on('resize', function(){
+    if($('#cookie-bar').length) {
+      $(this).css({
+        'bottom' : $('.cookies_risk-warning').outerHeight(),
+      });
+      $('.warning-info').css({
+        'bottom' : $('.cookies_risk-warning').outerHeight() +
+                   $('#cookie-bar').outerHeight(),
+      });
+    } else {
+      $('.warning-info').css({
+        'bottom' : $('.cookies_risk-warning').outerHeight(),
+      });
+    }
+  })
+})
 
 // Requset form on partnership page
 $(document).ready(function(){
@@ -693,20 +712,22 @@ $(document).ready(function() {
         $(".email-popup-div").show('fast').animate({marginLeft: '-150px', opacity: '1'}, 500);
       }
 
-      $("<div/>", {
-        id: "black-screen",
-        style: "position:fixed; background-color:black; opacity:0.7; z-index:700; top:0; width:100%; height:100%; display:none;"
-      }).appendTo("body").fadeIn('fast');
+      $('#black-screen').fadeIn('fast');
     }, 30000);
   };
+})
 
+$(document).ready(function() {
   setTimeout(function () {
     $("#black-screen").click(function () {
       $(".email-popup-div").fadeOut('slow');
       $(this).fadeOut('slow');
       sessionStorage.setItem("email-popup", "disabled");
     });
-  }, 3000);
+  }, 33000);
+})
+
+$(document).ready(function() {
 
   $('.subscribe-form-popup').submit(function (e) {
     e.preventDefault();
