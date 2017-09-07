@@ -19,7 +19,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.generic import View
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, get_language
 
 from platforms.mt4.external.models_other import Mt4Quote, Mt4OpenPrice
 from platforms.models import ChangeQuote
@@ -248,9 +248,10 @@ def send_subscribe_email(request):
     from massmail.models import MailingList
     from project.utils import get_current_domain
 
-    FOR_INVESTOR_MAIL_LIST_ID = u"Руководство успешного инвестора"
-    FOR_TRADER_MAIL_LIST_ID = u"Руководство успешного трейдера"
-    EDUCATION_MAIL_LIST_ID = u"Учебный центр"
+    FOR_INVESTOR_MAIL_LIST_ID = (u"Руководство успешного инвестора", u"Руководство успешного инвестора (EN)")
+    FOR_TRADER_MAIL_LIST_ID = (u"Руководство успешного трейдера", u"Руководство успешного трейдера (EN)")
+    EDUCATION_MAIL_LIST_ID = (u"Учебный центр", u"Учебный центр (EN)")
+    EVERYDAY_ANALYTICS_MAIL_LIST_ID = (u"Ежедневная аналитика", u"Ежедневная аналитика (EN)")
 
     if request.method == "POST":
 
@@ -260,12 +261,15 @@ def send_subscribe_email(request):
         if not mail_list_id:
             # trying to parse index page case
             if u"investor" in subscribe_form_checkbox:
-                mail_list_id.append(FOR_INVESTOR_MAIL_LIST_ID)
+                mail_list_id.append(FOR_INVESTOR_MAIL_LIST_ID[0 if get_language() == "ru" else 1])
             if u"trader" in subscribe_form_checkbox:
-                mail_list_id.append(FOR_TRADER_MAIL_LIST_ID)
+                mail_list_id.append(FOR_TRADER_MAIL_LIST_ID[0 if get_language() == "ru" else 1])
             # trying to parse education page
             if u"education" in subscribe_form_checkbox:
-                mail_list_id.append(EDUCATION_MAIL_LIST_ID)
+                mail_list_id.append(EDUCATION_MAIL_LIST_ID[0 if get_language() == "ru" else 1])
+            # trying to parse pop-up
+            if u"analytics" in subscribe_form_checkbox:
+                mail_list_id.append(EVERYDAY_ANALYTICS_MAIL_LIST_ID[0 if get_language() == "ru" else 1])
 
         email = request.POST.get("email")
         domain = get_current_domain()
