@@ -554,7 +554,56 @@ $(document).ready(function(){
       'bottom' : '0',
       'transition-duration' : '1.5s'
     });
+    if($('#cookie-bar').length) {
+      $('.warning-info').css({
+        'bottom' : $('#cookie-bar').outerHeight(),
+        'transition-duration' : '1.5s'
+      });
+    } else {
+      $('.warning-info').css({
+        'bottom' : '0',
+        'transition-duration' : '1.5s'
+      });
+    }
+
   }, 60000);
+});
+
+// Warning risk
+$(document).ready(function(){
+  setTimeout(function() {
+    if($('#cookie-bar').length) {
+      $('.warning-info').css({
+        // 'bottom' : '79px',
+        'bottom' : $('.cookies_risk-warning').outerHeight() +
+                   $('#cookie-bar').outerHeight(),
+      });
+    } else {
+      $('.warning-info').css({
+        // 'bottom' : '34px',
+        'bottom' : $('.cookies_risk-warning').outerHeight(),
+      });
+    }
+    if (sessionStorage.getItem("warning-risk") === null) {
+        $('.warning-info').fadeIn('fast');
+    }
+  }, 10);
+});
+
+$(document).ready(function(){
+  $('#cookie-bar .cb-enable').click(function() {
+    $('.warning-info').css({
+      'bottom' : $('#cookie-bar').outerHeight(),
+      'transition-duration' : '1.5s'
+    });
+  });
+});
+
+$(document).ready(function(){
+  $('.warning-info-btn').click(function() {
+    $('.warning-info').animate({bottom:'-45px'}, 300).hide('fast');
+    sessionStorage.setItem("warning-risk", "disabled");
+  });
 });
 
 // Requset form on partnership page
@@ -632,57 +681,57 @@ $(document).ready(function(){
   });
 })
 
-// Popup warning
+//Email Popup
 $(document).ready(function() {
+  if (sessionStorage.getItem("email-popup") === null) {
+    setTimeout(function () {
+      if ($(window).width() > 767) {
+        $('.email-sm').addClass('email-popup-div');
+        $(".email-popup-div").show('fast').animate({marginLeft: '-370px', opacity: '1'}, 500);
+      } else {
+        $('.email-xs').addClass('email-popup-div');
+        $(".email-popup-div").show('fast').animate({marginLeft: '-150px', opacity: '1'}, 500);
+      }
 
-  $(".but-close").click(function(){
-    $('.pop-warn').fadeOut('slow');
-    sessionStorage.setItem("warn-popup", "disabled");
-  });
-
-  if (sessionStorage.getItem("warn-popup") === null) {
-    setTimeout(function() {
-      $('.pop-warn').fadeIn('slow');
-    }, 2000);
-    setTimeout(function() {
-      $('.pop-warn').fadeOut('slow');
+      $("<div/>", {
+        id: "black-screen",
+        style: "position:fixed; background-color:black; opacity:0.7; z-index:700; top:0; width:100%; height:100%; display:none;"
+      }).appendTo("body").fadeIn('fast');
     }, 30000);
-  }
-});
+  };
 
-// Email Popup
-$(document).ready(function() {
-  setTimeout(function() {
-    $(".email-popup-div").show('fast').animate({marginLeft:'-350px', opacity:'1'}, 500);
-    // $('div:not(".email-popup-div")').hide('fast');
-    $("<div/>", {
-      id: "white-screen",
-      style: "position:fixed; background-color:white; opacity:0.9; z-index:700; top:0; width:100%; height:100%; display:none;"
-    }).appendTo("body").fadeIn('fast');
-  }, 2000);
-
-  setTimeout(function() {
-    $("#white-screen").click(function() {
+  setTimeout(function () {
+    $("#black-screen").click(function () {
       $(".email-popup-div").fadeOut('slow');
       $(this).fadeOut('slow');
       sessionStorage.setItem("email-popup", "disabled");
     });
-  }, 5000);
+  }, 3000);
 
-  $(".email-popup-but").submit(function() {
-
-  });
-
-  $('#subscribe-form-popup').submit(function(e) {
+  $('.subscribe-form-popup').submit(function (e) {
     e.preventDefault();
-
-    $.post('/subscribe/', $(this).serialize(), function() {
+    $.post('/subscribe/', $(this).serialize(), function () {
     });
 
-    $(".email-popup-div").fadeOut('slow');
-    $("#white-screen").fadeOut('slow');
-    sessionStorage.setItem("email-popup", "disabled");
-
-    return false;
+    $(this).animate({opacity: '0'}, 'slow');
+    if ($(window).width() > 767) {
+      $('.email-popup-thanks').fadeIn('slow');
+      setTimeout(function () {
+          $('.email-popup-thanks').animate({marginLeft: '+=370px', opacity: '0'}, {queue: false, duration: 500});
+          $(".email-popup-div").animate({marginLeft: '+=370px', opacity: '0'}, {queue: false, duration: 500});
+          $("#black-screen").fadeOut('slow');
+          sessionStorage.setItem("email-popup", "disabled");
+      }, 5000);
+    } else {
+      $('.email-popup-thanks-xs').fadeIn('slow');
+      setTimeout(function () {
+        $('.email-popup-thanks-xs').animate({marginLeft: '+=150px', opacity: '0'}, {queue: false, duration: 500});
+        $(".email-popup-div").animate({marginLeft: '+=150px', opacity: '0'}, {queue: false, duration: 500});
+        $("#black-screen").fadeOut('slow');
+        sessionStorage.setItem("email-popup", "disabled");
+      }, 5000);
+    }
   });
+
+  return false;
 });
