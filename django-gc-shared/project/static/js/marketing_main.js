@@ -566,7 +566,7 @@ $(document).ready(function(){
       });
     }
 
-  }, 600000);
+  }, 60000);
 });
 
 // Warning risk
