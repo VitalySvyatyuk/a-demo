@@ -303,14 +303,6 @@ html
 								- trans "Subscribe"
 				div#black-screen
 
-
-
-
-
-
-
-
-
 			block content
 
 			nav.footer_nav
@@ -320,11 +312,15 @@ html
 
 			footer.footer
 				//.warning-info
-				//	.row
-				//		p
-				//			a(href='javascript:void(0)').warning-info-btn
-				//				- trans "Ok"
-				//			- trans "Warning! Some troubles on the site. The MT4 platform is not available now. Some additional text. Bla-bla-bla."
+					.row
+						p
+							a(href='javascript:void(0)').warning-info-btn
+								- trans "Ok"
+							{% if LANGUAGE_CODE == 'ru' %}
+							- trans "Внимание! В работе сайта есть проблемы!"
+							{% else %}
+							- trans "Warning! Some troubles on the site!"
+							{% endif %}
 
 				.cookies_risk-warning
 					.row
