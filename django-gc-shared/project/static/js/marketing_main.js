@@ -573,7 +573,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   setTimeout(function() {
     if($('#cookie-bar').length) {
-      $(this).css({
+      $('#cookie-bar').css({
         'bottom' : $('.cookies_risk-warning').outerHeight(),
       });
       $('.warning-info').css({
