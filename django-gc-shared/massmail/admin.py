@@ -28,6 +28,8 @@ class TemplateAdmin(admin.ModelAdmin):
 # Mailing list admin
 class SubscriberInline(admin.TabularInline):
     model = Subscribed
+    fields = ('id', 'email', 'first_name', 'last_name', 'phone', 'creation_ts')
+    readonly_fields = ('id', 'creation_ts',)
 
 
 class MailingListAdminForm(forms.ModelForm):
