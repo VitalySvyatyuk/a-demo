@@ -333,7 +333,7 @@ class PaymentViewSet(viewsets.ViewSet):
             "html": render_to_string(
                 "payments/quick_payment_redirect.haml",
                 RequestContext(request, {
-                    "form": form.mutate
+                    "form": form.mutate()
                 }))
         })
 
