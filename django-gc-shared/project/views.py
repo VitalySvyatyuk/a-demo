@@ -28,6 +28,7 @@ from uptrader_cms.models import CompanyNews
 
 from payments.models import PaymentMethod
 from project.utils import maybe_ajax
+from massmail.models import MailingList, Subscribed
 
 log = logging.getLogger(__name__)
 
@@ -302,3 +303,15 @@ def send_subscribe_email(request):
         return {'result': 'OK'}
 
 
+def subscribewix(request):
+    if request.method == "POST":
+        ml = MailingList.objects.get(pk=20)
+        data = json.loads(request.body)
+        sub = Subscribed(email=data.get("email", ""),
+                         first_name=data.get("first_name", ""),
+                         last_name=data.get("last_name", ""),
+                         phone=data.get("phone", ""))
+        ml.subscribers.add(sub)
+        ml.subscribers_count += 1
+        ml.save()
+    return

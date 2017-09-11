@@ -347,6 +347,7 @@ class Subscribed(models.Model):
     email = models.EmailField()
     first_name = models.CharField(max_length=255, null=True, blank=True)
     last_name = models.CharField(max_length=255, null=True, blank=True)
+    phone = models.CharField(max_length=255, null=True, blank=True)
     creation_ts = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
