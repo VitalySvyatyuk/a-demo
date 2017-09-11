@@ -466,8 +466,8 @@ msgstr "Спред – разница между ценой продажи (Bid)
 msgid "Spread"
 msgstr "Спред"
 
-msgid "Floating from 0.25 pip"
-msgstr "Плавающий от 0,25 пункта"
+msgid "Floating from 0.2 pip"
+msgstr "Плавающий от 0,2 пункта"
 
 msgid "Limit & Stop Levels are a minimum distance from the current market price that allows pending orders and the Stop Loss and Take Profit market orders."
 msgstr "Limit &amp; Stop Levels – минимальное расстояние от текущей рыночный цены от которого допускается выставление отложенных ордеров и рыночных приказов Stop Loss и Take Profit."
@@ -526,8 +526,8 @@ msgstr "Отличные торговые условия"
 msgid "99,9&#37; of orders are executed within 60 ms"
 msgstr "99,9&#37; ордеров исполняются в течение 60 мс"
 
-msgid "Real market spreads of 0.25 pip"
-msgstr "Реальные рыночные спреды от 0.25 пункта"
+msgid "Real market spreads of 0.2 pip"
+msgstr "Реальные рыночные спреды от 0,2 пункта"
 
 msgid "No Requote and Reject"
 msgstr "Отсутсвие Requote и Reject"
