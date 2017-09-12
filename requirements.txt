@@ -10,6 +10,7 @@ django-ajax-selects==1.4.3
 django-rosetta==0.7.11
 django-paging==0.2.5
 django-coffeescript==0.7.2
+django-cors-headers==2.1.0
 django-filter==0.13.0
 django-pylibmc==0.6.1
 django-otp==0.3.5

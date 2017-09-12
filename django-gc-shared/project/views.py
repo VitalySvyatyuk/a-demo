@@ -29,6 +29,7 @@ from uptrader_cms.models import CompanyNews
 from payments.models import PaymentMethod
 from project.utils import maybe_ajax
 from massmail.models import MailingList, Subscribed
+from django.views.decorators.csrf import csrf_exempt
 
 log = logging.getLogger(__name__)
 
@@ -242,6 +243,7 @@ def partnership(request):
         return {'result': 'OK'}
     return {'request': request}
 
+@csrf_exempt
 @maybe_ajax()
 def send_subscribe_email(request):
 

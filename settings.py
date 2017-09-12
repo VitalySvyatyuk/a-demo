@@ -220,6 +220,7 @@ MIDDLEWARE_CLASSES = (
     'node.middleware.NodeUrlAliasMiddleware',
     'project.middleware.XForwardedForMiddleware',
     'project.middleware.ExceptionUserInfoMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'project.middleware.HeaderSessionMiddleware',
@@ -788,6 +789,11 @@ PARTNER_SUPPORT_EMAIL = defaultdict(
     {
        'ru': 'partner@grandcapital.net',
     },
+)
+
+# DJANGO-CORS-HEADERS
+CORS_ORIGIN_WHITELIST = (
+    'nadinastra8-wixsite-com.usrfiles.com',
 )
 
 ###############################################################################
