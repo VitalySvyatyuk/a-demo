@@ -185,7 +185,9 @@ msgid ""
 "The value of a pip is calculated on the basis of the current rate of a given currency pair."
 "Please select parameters to get pip value and margin."
 msgstr ""
-
+"На этой странице Вы найдете формулу для вычисления стоимости одного пипа."
+"Стоимость пипа рассчитывается на основе текущего курса валютной пары."
+"Пожалуйста, выберите параметры для вычисления стоимости пипа и маржи."
 
 msgid "Pair"
 msgstr ""
