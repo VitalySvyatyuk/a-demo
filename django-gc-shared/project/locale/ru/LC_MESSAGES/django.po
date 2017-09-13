@@ -1449,10 +1449,6 @@ msgstr "Для трейдера"
 msgid "For investors"
 msgstr "Для инвестора"
 
-msgctxt "partnership-btn"
-msgid "Send"
-msgstr "Отправить заявку"
-
 msgid "MetaTrader4 platform"
 msgstr "Платформа MetaTrader 4"
 
