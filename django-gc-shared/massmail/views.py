@@ -16,7 +16,7 @@ from notification import models as notification
 from shared.validators import email_re
 
 
-def subscribe(request, email, signature, mail_list_id, phone="", first_name="", last_name=""):
+def subscribe(request, email, signature, mail_list_id, first_name="", last_name="", phone=""):
 
     if massmail.utils.get_signature(email) != signature or not email_re.match(email):
         raise Http404

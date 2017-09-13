@@ -261,6 +261,10 @@ def send_subscribe_email(request):
         mail_list_id = [request.POST.get("id")] if request.POST.get("id") else []
         subscribe_form_checkbox = request.POST.getlist("subscribe-form-checkbox") or \
                                   [request.POST.get("subscribe-form-checkbox")]
+        first_name = request.POST.get("first_name", "").replace(" ", "")
+        last_name = request.POST.get("last_name", "").replace(" ", "")
+        phone = request.POST.get("phone", "").replace(" ", "")
+
         if not mail_list_id:
             # trying to parse index page case
             if u"investor" in subscribe_form_checkbox:
@@ -294,7 +298,7 @@ def send_subscribe_email(request):
 
             mail_id = '+'.join(mail_ids)
 
-            link = domain + reverse("massmail_subscribe_id", args=(signature, email, mail_id))
+            link = domain + reverse("massmail_subscribe_id", args=(signature, email, mail_id, first_name, last_name, phone))
             email_body = _("Hello! In order to confirm your email, please click here") + "\n" + link
             send_mail(
                 email_subj,
