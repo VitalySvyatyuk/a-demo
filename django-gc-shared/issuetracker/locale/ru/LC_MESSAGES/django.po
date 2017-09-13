@@ -7,452 +7,639 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-20 19:55+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2016-06-20 19:59+0230\n"
 "Last-Translator:   <valexeev@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.11\n"
 
+#: django-gc-shared/issuetracker/admin.py:107
 msgid "Author"
 msgstr "Автор"
 
-msgid "Client information"
-msgstr "Информация о клиенте"
+#: django-gc-shared/issuetracker/admin.py:111
+#: django-gc-shared/issuetracker/admin.py:271
+msgid "Email"
+msgstr ""
 
+#: django-gc-shared/issuetracker/admin.py:113
+#: django-gc-shared/issuetracker/admin.py:273
+msgid "Phone"
+msgstr ""
+
+#: django-gc-shared/issuetracker/admin.py:149
 msgid "Mark select issues as closed"
 msgstr "Пометить выбранные задачи как закрытые"
 
+#: django-gc-shared/issuetracker/admin.py:153
+#: django-gc-shared/issuetracker/admin.py:210
 msgid "Mark select issues as rejected"
 msgstr "Пометить выбранные задачи как отклонённые"
 
+#: django-gc-shared/issuetracker/admin.py:157
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:26
 msgid "Text"
 msgstr "Текст"
 
-#| msgid "change description"
+#: django-gc-shared/issuetracker/admin.py:161
+#: django-gc-shared/issuetracker/models.py:58
 msgid "Internal description"
 msgstr "Внутреннее описание"
 
+#: django-gc-shared/issuetracker/admin.py:189
 msgid "Make transaction"
 msgstr "Провести платёж"
 
+#: django-gc-shared/issuetracker/admin.py:272
+#, fuzzy
+#| msgid "Last name"
+msgid "User name"
+msgstr "Фамилия"
+
+#: django-gc-shared/issuetracker/forms.py:22
+#: django-gc-shared/issuetracker/models.py:159
 msgid "Attachment"
 msgstr "Присоединенный файл"
 
+#: django-gc-shared/issuetracker/forms.py:23
+#: django-gc-shared/issuetracker/rest_serializers.py:57
+#: django-gc-shared/issuetracker/templates/issuetracker/includes/issue_list.html:7
 msgid "Department"
 msgstr "Отдел"
 
+#: django-gc-shared/issuetracker/forms.py:35
+#: django-gc-shared/issuetracker/models.py:154
 #, python-format
 msgid "Supported extensions: %(ext)s. Filesize limit: %(limit)s Mb"
 msgstr "Поддерживаемые расширения: %(ext)s. Макс. объем файла: %(limit)s МБ"
 
+#: django-gc-shared/issuetracker/forms.py:43
 msgid "Unsupported file extension"
 msgstr "Неподдерживаемое расширение "
 
+#: django-gc-shared/issuetracker/forms.py:45
 msgid "File is too big."
 msgstr "Файл слишком большой "
 
+#: django-gc-shared/issuetracker/forms.py:65
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:32
+#: django-gc-shared/issuetracker/templates/issuetracker/includes/issue_list.html:9
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:25
 msgid "Status"
 msgstr "Статус"
 
+#: django-gc-shared/issuetracker/forms.py:66
 msgid "From date"
 msgstr "С"
 
+#: django-gc-shared/issuetracker/forms.py:67
 msgid "To date"
 msgstr "По"
 
+#: django-gc-shared/issuetracker/forms.py:71
 msgid "All"
 msgstr "Все"
 
+#: django-gc-shared/issuetracker/models.py:28
 msgid "New issue"
 msgstr "Новый запрос"
 
+#: django-gc-shared/issuetracker/models.py:29
 msgid "Issue status rejected"
 msgstr "Отклонена"
 
+#: django-gc-shared/issuetracker/models.py:30
 msgid "Answer received"
 msgstr "Ответ получен"
 
+#: django-gc-shared/issuetracker/models.py:31
 msgid "In process"
 msgstr "В работе"
 
+#: django-gc-shared/issuetracker/models.py:32
 msgid "Issue closed"
 msgstr "Запрос закрыт"
 
+#: django-gc-shared/issuetracker/models.py:36
 msgid "In SENDER'S currency"
 msgstr "В валюте ОТПРАВИТЕЛЯ"
 
+#: django-gc-shared/issuetracker/models.py:37
 msgid "In RECEIVER'S currency"
 msgstr "В валюте ПОЛУЧАТЕЛЯ"
 
+#: django-gc-shared/issuetracker/models.py:42
 msgid "status"
 msgstr "статус"
 
+#: django-gc-shared/issuetracker/models.py:45
 msgid "author"
 msgstr "автор"
 
+#: django-gc-shared/issuetracker/models.py:47
 msgid "assignee"
 msgstr "ответственный"
 
+#: django-gc-shared/issuetracker/models.py:49
 msgid "department"
 msgstr "отдел"
 
+#: django-gc-shared/issuetracker/models.py:51
+#: django-gc-shared/issuetracker/models.py:128
+#: django-gc-shared/issuetracker/models.py:142
 msgid "creation timestamp"
 msgstr "время создания"
 
+#: django-gc-shared/issuetracker/models.py:53
 msgid "update timestamp"
 msgstr "время обновления"
 
+#: django-gc-shared/issuetracker/models.py:55
 msgid "deadline"
 msgstr "срок исполнения"
 
+#: django-gc-shared/issuetracker/models.py:56
 msgid "title"
 msgstr "заголовок"
 
+#: django-gc-shared/issuetracker/models.py:57
 msgid "text"
 msgstr "текст"
 
-#| msgid "New comment"
+#: django-gc-shared/issuetracker/models.py:60
 msgid "Internal comment"
 msgstr "Внутренний комментарий"
 
+#: django-gc-shared/issuetracker/models.py:61
 msgid "Not shown to client"
 msgstr "Не видно клиенту"
 
+#: django-gc-shared/issuetracker/models.py:80
+#: django-gc-shared/issuetracker/models.py:124
+#: django-gc-shared/issuetracker/models.py:149
 msgid "issue"
 msgstr "задача"
 
+#: django-gc-shared/issuetracker/models.py:81
 msgid "issues"
 msgstr "задачи"
 
+#: django-gc-shared/issuetracker/models.py:125
+#: django-gc-shared/issuetracker/models.py:150
 msgid "user"
 msgstr "пользователь"
 
+#: django-gc-shared/issuetracker/models.py:126
 msgid "comment text"
 msgstr "текст коментария"
 
+#: django-gc-shared/issuetracker/models.py:134
 msgid "issue comment"
 msgstr "коментарий к задаче"
 
+#: django-gc-shared/issuetracker/models.py:135
 msgid "issue comments"
 msgstr "коментарии к задаче"
 
+#: django-gc-shared/issuetracker/models.py:143
 msgid "change initiator"
 msgstr "кто"
 
+#: django-gc-shared/issuetracker/models.py:144
 msgid "change description"
 msgstr "описание изменений"
 
+#: django-gc-shared/issuetracker/models.py:169
+#: django-gc-shared/issuetracker/models.py:170
 msgid "issue attachment"
 msgstr "присоедененный файл"
 
+#: django-gc-shared/issuetracker/models.py:176
 msgid "<unknown file>"
 msgstr "<неизвестный файл>"
 
+#: django-gc-shared/issuetracker/models.py:182
 msgid "document"
 msgstr "документ"
 
+#: django-gc-shared/issuetracker/models.py:185
 msgid "check document issue"
 msgstr "задача на проверку документа"
 
+#: django-gc-shared/issuetracker/models.py:186
 msgid "check document issues"
 msgstr "задачи на проверку документов"
 
+#: django-gc-shared/issuetracker/models.py:197
 msgid "Set profile fields as \"approved\""
 msgstr "Отметить поля профиля как \"проверенные\""
 
+#: django-gc-shared/issuetracker/models.py:200
 #, python-format
 msgid "Check validity of %s of user %s"
 msgstr "Проверить валидность %s пользователя %s"
 
+#: django-gc-shared/issuetracker/models.py:206
+#, fuzzy
+#| msgid "Approve open ECN.Invest account"
+msgid "Can open ECN.Invest accounts"
+msgstr "Подтверждение открытия ECN.Invest аккаунта"
+
+#: django-gc-shared/issuetracker/models.py:209
+msgid "Approve open ECN.Invest account"
+msgstr "Подтверждение открытия ECN.Invest аккаунта"
+
+#: django-gc-shared/issuetracker/models.py:210
+msgid "Approves open ECN.Invest account"
+msgstr "Подтверждения открытий ECN.Invest аккаунта"
+
+#: django-gc-shared/issuetracker/models.py:220
+msgid "Enable ability to open ECN.Invest accounts"
+msgstr "Дать способность открывать ECN.Invest аккаунт"
+
+#: django-gc-shared/issuetracker/models.py:223
+#, python-format
+msgid "Check validity user %s"
+msgstr "Проверить пользователя %s"
+
+#: django-gc-shared/issuetracker/models.py:227
 msgid "account"
 msgstr "счет"
 
+#: django-gc-shared/issuetracker/models.py:235
+#: django-gc-shared/issuetracker/models.py:236
 msgid "restore account from archive issue"
 msgstr "задача на восстановление счёта из архива"
 
+#: django-gc-shared/issuetracker/models.py:249
 #, python-format
 msgid "Restore account %(account)s of user %(user)s from archive"
 msgstr "Восстановить счёт %(account)s пользователя %(user)s из архива"
 
+#: django-gc-shared/issuetracker/models.py:279
 msgid "user issue"
 msgstr "вопрос пользователя"
 
+#: django-gc-shared/issuetracker/models.py:280
 msgid "user issues"
 msgstr "вопросы пользователей"
 
+#: django-gc-shared/issuetracker/models.py:287
 msgid "sender"
 msgstr "отправитель"
 
+#: django-gc-shared/issuetracker/models.py:289
 msgid "recipient"
 msgstr "получатель"
 
+#: django-gc-shared/issuetracker/models.py:291
 msgid "Recipient's account number."
 msgstr "Номер счета получателя."
 
+#: django-gc-shared/issuetracker/models.py:292
 msgid "amount"
 msgstr "сумма"
 
+#: django-gc-shared/issuetracker/models.py:295
 msgid "Amount of money to transfer"
 msgstr "Сумма для перевода"
 
+#: django-gc-shared/issuetracker/models.py:296
 msgid "Currency"
 msgstr "Валюта"
 
+#: django-gc-shared/issuetracker/models.py:305
 msgid "internal transfer issue"
 msgstr "задача на внутренний перевод"
 
+#: django-gc-shared/issuetracker/models.py:306
 msgid "internal transfer issues"
 msgstr "задачи на внутренний перевод"
 
+#: django-gc-shared/issuetracker/rest_serializers.py:16
+msgid "Common question"
+msgstr ""
+
+#: django-gc-shared/issuetracker/rest_serializers.py:17
+msgid "Technical question"
+msgstr ""
+
+#: django-gc-shared/issuetracker/rest_serializers.py:18
+msgid "Financial question"
+msgstr ""
+
+#: django-gc-shared/issuetracker/rest_serializers.py:50
+#: django-gc-shared/issuetracker/rest_serializers.py:132
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:32
+#: django-gc-shared/issuetracker/templates/js/my/issues.html:29
 msgid "Attachments"
 msgstr "Вложения"
 
+#: django-gc-shared/issuetracker/rest_serializers.py:70
 msgid "Invalid value"
 msgstr "Неправильное значение"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/app_index.html:7
 msgid "Vies statistics"
 msgstr "Статистика"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/approveopenecnissue/change_form.html:19
+msgid "Client information"
+msgstr "Информация о клиенте"
+
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/base_statistics.html:20
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/base_statistics.html:21
 msgid "Request processing stats"
 msgstr "Статистика обработки заявок"
 
-#| msgid "document"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/change_form.html:19
 msgid "Verify documents"
 msgstr "Проверить документы"
 
-#| msgid "Requisit params"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:10
 msgid "Request status"
 msgstr "Статус запроса"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:12
 msgid "Profile data"
 msgstr "Данные профиля"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:13
 msgid "First name"
 msgstr "Имя"
 
-#| msgid "name"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:14
 msgid "Last name"
 msgstr "Фамилия"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:15
 msgid "Middle name"
 msgstr "Отчество"
 
-#| msgid "document"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:17
 msgid "Documents"
 msgstr "Документы"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:21
 msgid "Open in full size"
 msgstr "Открыть в полном размере"
 
-#| msgid "deposit request"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:27
 msgid "Deposit request ID"
 msgstr "ID заявки на ввод средств"
 
-#| msgid "account"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:28
 msgid "Account"
 msgstr "Счёт"
 
-#| msgid "amount"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:29
 msgid "Amount"
 msgstr "сумма"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:30
 msgid "Payment system"
 msgstr "Платёжная система"
 
-#| msgid "By creation date"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:31
 msgid "Creation date"
 msgstr "Дата создания"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:63
 msgid "Unblock"
 msgstr "Разблокировать"
 
-#| msgid "New comment"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:68
 msgid "Rejection comment"
 msgstr "Комментарий к отказу"
 
-#| msgid "deadline"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/checkonchargebackissue/change_form.html:69
 msgid "Decline"
 msgstr "Отклонить"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/dashboard_statistics.html:10
 msgid "Statistics of"
 msgstr "Статистика"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/dashboard_statistics.html:12
 msgid "clients requests' processing"
 msgstr "обработки запросов клиентов"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/dashboard_statistics.html:13
 msgid "document verification"
 msgstr "верификации документов"
 
-#| msgid "Select files"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/dashboard_statistics.html:18
 msgid "Select period"
 msgstr "Выберите период"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/dashboard_statistics.html:18
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:35
 msgid "from"
 msgstr "от"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/dashboard_statistics.html:18
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:35
 msgid "to"
 msgstr "до"
 
-#| msgid "update timestamp"
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/dashboard_statistics.html:18
 msgid "Update stats"
 msgstr "Обновить статистику"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/dashboard_statistics.html:25
 msgid "Number of processed requests"
 msgstr "Кол-во обработанных заявок"
 
+#: django-gc-shared/issuetracker/templates/admin/issuetracker/dashboard_statistics.html:25
 msgid "Name"
 msgstr "Название"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/includes/issue_list.html:6
 msgid "Ticket id"
 msgstr "№ вопроса"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/includes/issue_list.html:8
 msgid "Created"
 msgstr "Создан"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/includes/issue_list.html:10
 msgid "Subject"
 msgstr "Тема"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/includes/issue_list.html:23
 msgid "No tickets"
 msgstr "Нет вопросов"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_create.html:4
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:4
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:5
 msgid "Support"
 msgstr "Поддержка"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_create.html:7
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_create.html:11
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_create_via_ajax.html:6
 msgid "Create issue"
 msgstr "Создать вопрос"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_create.html:15
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:53
 msgid "Probably there is an answer in"
 msgstr "Возможно, интересующий Вас вопрос есть в разделе"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_create.html:15
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:53
 msgid "FAQ"
 msgstr "Часто задаваемые вопросы"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_create_via_ajax.html:10
 msgid "Create"
 msgstr "Создать"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:20
 msgid "Issue #"
 msgstr "Вопрос №"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:24
 msgid "Created on"
 msgstr "Создан"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:36
 msgid "uploaded file"
 msgstr "загруженный файл"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:40
 msgid "No attachments"
 msgstr "Вложений нет"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:43
 msgid "Add attachment"
 msgstr "Добавить вложение"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:46
 msgid "Upload"
 msgstr "Загрузить файл"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:53
 msgid "Comments"
 msgstr "Комментарии"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:67
 msgid "No comments for the issue yet"
 msgstr "На этот вопрос ещё нет ответов"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:70
 msgid "Add comment"
 msgstr "Добавить комментарий"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:74
 msgid "Leave a comment"
 msgstr "Оставить комментарий"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/issue_detail.html:82
 msgid "Back to issue list"
 msgstr "Вернуться в список вопросов"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:21
+#: django-gc-shared/issuetracker/templates/js/my/issues.html:7
 msgid "Support tickets"
 msgstr "Вопросы к техподдержке"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:25
 msgid "You can create a support request here"
 msgstr ""
 "В этом разделе Вы можете создать интересующий Вас вопрос, а так же запрос к "
 "технической поддержке нашей компании."
 
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:30
 msgid "Tickets filter"
 msgstr "Фильтр вопросов"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:33
 msgid "By creation date"
 msgstr "По дате создания"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:40
 msgid "By status"
 msgstr "По статусу"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:44
 msgid "Filter"
 msgstr "Фильтр"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:44
 msgid "or"
 msgstr "или"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:45
 msgid "reset filter"
 msgstr "сбросить фильтр"
 
+#: django-gc-shared/issuetracker/templates/issuetracker/user_issue_list.html:51
 msgid "Create new issue"
 msgstr "Создать новый вопрос"
 
+#: django-gc-shared/issuetracker/templates/js/my/document_upload_success_modal.html:4
+#: django-gc-shared/issuetracker/templates/js/my/issue_create_modal.html:4
 msgid "Create issue ticket"
 msgstr "Создать вопрос"
 
+#: django-gc-shared/issuetracker/templates/js/my/document_upload_success_modal.html:10
 msgid "The document is successfully loaded"
 msgstr "Документ успешно загружен"
 
+#: django-gc-shared/issuetracker/templates/js/my/image_view_modal.html:4
 msgid "View image"
 msgstr "Открыть изображение"
 
-#| msgid "change description"
+#: django-gc-shared/issuetracker/templates/js/my/issue_create_modal.html:51
 msgid "Description"
 msgstr "Подробности"
 
-msgid "Date when the disputed situation happened"
-msgstr "Дата возникновения спорной ситуации"
-
-msgid "Ticket numbers of trades and orders being disputed"
-msgstr "Номера оспариваемых позиций или отложенных ордеров"
-
-msgid ""
-"Articles of acting agreements and regulations which you think were violated"
-msgstr ""
-"Пункты настоящих регламентов, которые, по Вашему мнению, были нарушены"
-
-msgid "How do you propose to settle the dispute"
-msgstr "Ваши предложения по урегулированию спорной ситуации"
-
+#: django-gc-shared/issuetracker/templates/js/my/issue_create_modal.html:60
+#: django-gc-shared/issuetracker/templates/js/my/issue_create_modal.html:64
+#: django-gc-shared/issuetracker/templates/js/my/issues.html:62
 msgid "Select files"
 msgstr "Выбрать файлы"
 
+#: django-gc-shared/issuetracker/templates/js/my/issue_create_modal.html:78
+#: django-gc-shared/issuetracker/templates/js/my/issues.html:59
 msgid "Send"
 msgstr "Отправить"
 
+#: django-gc-shared/issuetracker/templates/js/my/issues.html:8
 msgid "Create ticket"
 msgstr "Создать вопрос"
 
+#: django-gc-shared/issuetracker/templates/js/my/issues.html:52
 msgid "Answer text"
 msgstr "Ответ"
 
+#: django-gc-shared/issuetracker/views.py:69
 #, python-format
 msgid "Issue #%s created"
 msgstr "Задача №%s создана"
 
-msgid "Approve open ECN.Invest account"
-msgstr "Подтверждение открытия ECN.Invest аккаунта"
+#~ msgid "Date when the disputed situation happened"
+#~ msgstr "Дата возникновения спорной ситуации"
 
-msgid "Approves open ECN.Invest account"
-msgstr "Подтверждения открытий ECN.Invest аккаунта"
+#~ msgid "Ticket numbers of trades and orders being disputed"
+#~ msgstr "Номера оспариваемых позиций или отложенных ордеров"
 
-msgid "Enable ability to open ECN.Invest accounts"
-msgstr "Дать способность открывать ECN.Invest аккаунт"
+#~ msgid ""
+#~ "Articles of acting agreements and regulations which you think were "
+#~ "violated"
+#~ msgstr ""
+#~ "Пункты настоящих регламентов, которые, по Вашему мнению, были нарушены"
 
-msgid "Check validity user %s"
-msgstr "Проверить пользователя %s"
-
-
+#~ msgid "How do you propose to settle the dispute"
+#~ msgstr "Ваши предложения по урегулированию спорной ситуации"
 
 #~ msgid "user requisit"
 #~ msgstr "реквизит"
@@ -551,13 +738,15 @@ msgstr "Проверить пользователя %s"
 #~ msgid ""
 #~ "Dear client!\n"
 #~ "\n"
-#~ "We have verified your deposit and now you can continue to trade on your account!\n"
+#~ "We have verified your deposit and now you can continue to trade on your "
+#~ "account!\n"
 #~ "\n"
 #~ "We wish you successful trading!"
 #~ msgstr ""
 #~ "Уважаемый клиент!\n"
 #~ "\n"
-#~ "Мы верифицировали Ваш платёж и теперь Вы можете продолжать торговлю на Вашем  счёте %(account)s!\n"
+#~ "Мы верифицировали Ваш платёж и теперь Вы можете продолжать торговлю на "
+#~ "Вашем  счёте %(account)s!\n"
 #~ "\n"
 #~ "Желаем Вам успешной торговли!"
 
@@ -567,7 +756,8 @@ msgstr "Проверить пользователя %s"
 #~ msgid ""
 #~ "Dear client!\n"
 #~ "\n"
-#~ "Unfortunately, our financial department was unable to verify your deposit with the following reason:\n"
+#~ "Unfortunately, our financial department was unable to verify your deposit "
+#~ "with the following reason:\n"
 #~ "\n"
 #~ "%(finance_dep_comment)s\n"
 #~ "\n"
@@ -577,7 +767,8 @@ msgstr "Проверить пользователя %s"
 #~ msgstr ""
 #~ "Уважаемый клиент,\n"
 #~ "\n"
-#~ "к сожалению, наш финансовый департамент не смог верифицировать ваш платёж по следующей причине:\n"
+#~ "к сожалению, наш финансовый департамент не смог верифицировать ваш платёж "
+#~ "по следующей причине:\n"
 #~ "\n"
 #~ "%(finance_dep_comment)s\n"
 #~ "\n"
@@ -593,10 +784,12 @@ msgstr "Проверить пользователя %s"
 
 #~ msgid ""
 #~ "\n"
-#~ "  User %(author)s attached a new file to this issue: http://%(site_domain)s/static/%(file)s\n"
+#~ "  User %(author)s attached a new file to this issue: http://"
+#~ "%(site_domain)s/static/%(file)s\n"
 #~ msgstr ""
 #~ "\n"
-#~ "Пользователь %(author)s прикрепил новый файл к этому вопросу: http://%(site_domain)s/static/%(file)s\n"
+#~ "Пользователь %(author)s прикрепил новый файл к этому вопросу: http://"
+#~ "%(site_domain)s/static/%(file)s\n"
 
 #~ msgid "The following fields changed"
 #~ msgstr "Слудеющий файл был изменён"
@@ -621,7 +814,8 @@ msgstr "Проверить пользователя %s"
 #~ "В Вашем личном кабинете Вы создали заявку №%(id)s на восстановление счёта "
 #~ "%(acc)s из архива"
 
-#~ msgid "Your GrandCapital account %(issue.account)s was restored from archive."
+#~ msgid ""
+#~ "Your GrandCapital account %(issue.account)s was restored from archive."
 #~ msgstr ""
 #~ "Ваш счёт %(issue.account)s в компании GrandCapital был восстановлен из "
 #~ "архива."
@@ -632,11 +826,15 @@ msgstr "Проверить пользователя %s"
 #~ msgstr "Нам не удалось восстановить Ваш счёт %(issue.account)s из архива."
 
 #~ msgid ""
-#~ "Thank you for submitting a ticket to our issue tracker. It will be reviewed as soon\n"
-#~ "  as possible, and you will receive an answer by e-mail and in your Private Office at our website."
+#~ "Thank you for submitting a ticket to our issue tracker. It will be "
+#~ "reviewed as soon\n"
+#~ "  as possible, and you will receive an answer by e-mail and in your "
+#~ "Private Office at our website."
 #~ msgstr ""
-#~ "Спасибо за то, что отправили своё сообщение в нашу систему поддержки. Оно будет рассмотрено в ближайшее время\n"
-#~ "и Вы получите ответ по электронной почте и в Вашем Личном Кабинете на нашем сайте."
+#~ "Спасибо за то, что отправили своё сообщение в нашу систему поддержки. Оно "
+#~ "будет рассмотрено в ближайшее время\n"
+#~ "и Вы получите ответ по электронной почте и в Вашем Личном Кабинете на "
+#~ "нашем сайте."
 
 #~ msgid "You can view the issue at"
 #~ msgstr "Вы можете посмотреть вопрос здесь: "
@@ -674,8 +872,8 @@ msgstr "Проверить пользователя %s"
 #~ msgstr "Изменён"
 
 #~ msgid ""
-#~ "Attention: if you choose SENDER'S currency, the amount transferred"
-#~ "                    may slightly differ from what you requested"
+#~ "Attention: if you choose SENDER'S currency, the amount "
+#~ "transferred                    may slightly differ from what you requested"
 #~ msgstr ""
 #~ "Внимание: если Вы выберете валюту ОТПРАВИТЕЛЯ, переведённая сумма может "
 #~ "незначительно отличаться от запрошенной Вами"

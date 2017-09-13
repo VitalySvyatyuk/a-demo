@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-21 17:53+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2016-09-30 13:35+0230\n"
 "Last-Translator:   <v.rizhenkov@grandcapital.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,145 +16,249 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.8\n"
 
+#: django-gc-shared/registration/apps.py:11
 #, fuzzy
 #| msgid "Register"
 msgid "User registered"
 msgstr "Зарегистрироваться"
 
+#: django-gc-shared/registration/apps.py:13
 msgid "Password successfully changed"
 msgstr "Пароль успешно изменен"
 
+#: django-gc-shared/registration/backends.py:85
 #, python-format
 msgid "Your password for account at %(hostname)s: %(password)s"
 msgstr "Ваш пароль от личного кабинета %(hostname)s: %(password)s"
 
+#: django-gc-shared/registration/backends.py:88
 msgid "Password was sent by phone"
 msgstr "Пароль отправлен на ваш мобильный телефон"
 
+#: django-gc-shared/registration/forms.py:20
+#: django-gc-shared/registration/forms.py:101
 msgid "First name"
 msgstr "Имя"
 
+#: django-gc-shared/registration/forms.py:23
+#: django-gc-shared/registration/forms.py:27
 msgid "Please use Engilsh only"
 msgstr "Только на английском, используйте латиницу"
 
+#: django-gc-shared/registration/forms.py:24
 msgid "Last name"
 msgstr "Фамилия"
 
+#: django-gc-shared/registration/forms.py:28
+#: django-gc-shared/registration/forms.py:102
+#: django-gc-shared/registration/forms.py:238
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form_by_phone.html:33
 msgid "Mobile phone"
 msgstr "Мобильный телефон"
 
+#: django-gc-shared/registration/forms.py:30
 msgid "Your password will be sent to you by SMS"
 msgstr "Ваш пароль будет отправлен на ваш мобильный телефон"
 
+#: django-gc-shared/registration/forms.py:31
+#: django-gc-shared/registration/forms.py:103
 msgid "E-mail"
 msgstr "E-mail"
 
+#: django-gc-shared/registration/forms.py:32
+#: django-gc-shared/registration/forms.py:104
 msgid "Enter a valid Email address"
 msgstr "Введите верный адрес электронной почты"
 
+#: django-gc-shared/registration/forms.py:33
 msgid "Agent code"
 msgstr "Код агента"
 
+#: django-gc-shared/registration/forms.py:34
 msgid "If you don't know what it is, leave empty"
 msgstr "Если вы не знаете что это, не заполняйте"
 
+#: django-gc-shared/registration/forms.py:36
+#: django-gc-shared/registration/forms.py:105
 msgid "I am over 18 years old"
 msgstr "Мне больше 18 лет"
 
-msgid "Subscribe to get company news (no more than 3 times at week)."
-msgstr "Я согласен получать информационную рассылку о новшествах компании, не более 3 раз в неделю."
-
+#: django-gc-shared/registration/forms.py:69
 #, python-format
-msgid "Email you provided is already registered in our system.<br/>    If you forgot the password, please visit <a href='%(recovery)s'>the password recovery page</a>.<br/>    If you remember your password, use it to log in to your <a href='%(private_office)s'>Private Office</a>"
-msgstr "Адрес электронной почты, который вы предоставили, уже зарегистрирован на другой аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого восстановления пароля личного кабинета</a>.<br/> Если вы помните свой пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
+msgid ""
+"Email you provided is already registered in our system.<br/>    If you "
+"forgot the password, please visit <a href='%(recovery)s'>the password "
+"recovery page</a>.<br/>    If you remember your password, use it to log in "
+"to your <a href='%(private_office)s'>Private Office</a>"
+msgstr ""
+"Адрес электронной почты, который вы предоставили, уже зарегистрирован на "
+"другой аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного "
+"Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого "
+"восстановления пароля личного кабинета</a>.<br/> Если вы помните свой "
+"пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
 
+#: django-gc-shared/registration/forms.py:86
 #, python-format
-msgid "Mobile phone you provided is already registered in our system.<br/>    If you forgot the password, please visit <a href='%(recovery)s'>the password recovery page</a>.<br/>    If you remember your password, use it to log in to your <a href='%(private_office)s'>Private Office</a>"
-msgstr "Номер телефона, который вы предоставили, уже зарегистрирован на другой аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого восстановления пароля личного кабинета</a>.<br/> Если вы помните свой пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
+msgid ""
+"Mobile phone you provided is already registered in our system.<br/>    If "
+"you forgot the password, please visit <a href='%(recovery)s'>the password "
+"recovery page</a>.<br/>    If you remember your password, use it to log in "
+"to your <a href='%(private_office)s'>Private Office</a>"
+msgstr ""
+"Номер телефона, который вы предоставили, уже зарегистрирован на другой "
+"аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного "
+"Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого "
+"восстановления пароля личного кабинета</a>.<br/> Если вы помните свой "
+"пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
 
+#: django-gc-shared/registration/forms.py:123
 #, python-format
-msgid "Email you provided is already registered in our system.<br/>        If you forgot the password, please visit <a href='%(recovery)s'>the password recovery page</a>.<br/>        If you remember your password, use it to log in to your <a href='%(private_office)s'>Private Office</a>"
-msgstr "Адрес электронной почты, который вы предоставили, уже зарегистрирован на другой аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого восстановления пароля личного кабинета</a>.<br/> Если вы помните свой пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
+msgid ""
+"Email you provided is already registered in our system.<br/>        If you "
+"forgot the password, please visit <a href='%(recovery)s'>the password "
+"recovery page</a>.<br/>        If you remember your password, use it to log "
+"in to your <a href='%(private_office)s'>Private Office</a>"
+msgstr ""
+"Адрес электронной почты, который вы предоставили, уже зарегистрирован на "
+"другой аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного "
+"Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого "
+"восстановления пароля личного кабинета</a>.<br/> Если вы помните свой "
+"пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
 
+#: django-gc-shared/registration/forms.py:142
 msgid "Please enter your phone number in international format"
 msgstr "Пожалуйста, введите свой номер телефона в международном формате"
 
+#: django-gc-shared/registration/forms.py:150
 #, python-format
-msgid "Mobile phone you provided is already registered in our system.<br/>            If you forgot the password, please visit <a href='%(recovery)s'>the password recovery page</a>.<br/>            If you remember your password, use it to log in to your <a href='%(private_office)s'>Private Office</a>"
-msgstr "Номер телефона, который вы предоставили, уже зарегистрирован на другой аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого восстановления пароля личного кабинета</a>.<br/> Если вы помните свой пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
+msgid ""
+"Mobile phone you provided is already registered in our system.<br/"
+">            If you forgot the password, please visit <a "
+"href='%(recovery)s'>the password recovery page</a>.<br/>            If you "
+"remember your password, use it to log in to your <a "
+"href='%(private_office)s'>Private Office</a>"
+msgstr ""
+"Номер телефона, который вы предоставили, уже зарегистрирован на другой "
+"аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного "
+"Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого "
+"восстановления пароля личного кабинета</a>.<br/> Если вы помните свой "
+"пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
 
+#: django-gc-shared/registration/forms.py:189
 msgid "Login, E-mail or Mobile phone"
 msgstr "Ваш логин, E-mail или Телефон"
 
+#: django-gc-shared/registration/forms.py:191
 msgid "Password"
 msgstr "Пароль"
 
+#: django-gc-shared/registration/forms.py:192
 msgid "Remember me"
 msgstr "Запомнить меня"
 
+#: django-gc-shared/registration/forms.py:193
 #, python-format
 msgid "Check this if you want to stay logged in for the next %s days"
 msgstr "Отметьте это, если хотите, чтобы система запомнила вас на %s дней"
 
-msgid "Please enter correct login, e-mail address or mobile phone and password. Note that password is case-sensitive."
-msgstr "Пожалуйста, введите правильный логин, адрес электронной почты либо телефон и пароль. Не забудьте, что в пароле прописные и строчные буквы различаются."
+#: django-gc-shared/registration/forms.py:216
+msgid ""
+"Please enter correct login, e-mail address or mobile phone and password. "
+"Note that password is case-sensitive."
+msgstr ""
+"Пожалуйста, введите правильный логин, адрес электронной почты либо телефон и "
+"пароль. Не забудьте, что в пароле прописные и строчные буквы различаются."
 
+#: django-gc-shared/registration/forms.py:222
 msgid "This account is inactive."
 msgstr "Эта учётная запись отключена"
 
+#: django-gc-shared/registration/forms.py:249
 #, python-format
 msgid "Your new password: %s"
 msgstr "Ваш новый пароль: %s"
 
+#: django-gc-shared/registration/models.py:113
 msgid "user"
 msgstr "пользователь"
 
+#: django-gc-shared/registration/models.py:114
 msgid "activation key"
 msgstr "ключ активации"
 
+#: django-gc-shared/registration/models.py:119
 msgid "registration profile"
 msgstr "профиль регистрации"
 
+#: django-gc-shared/registration/models.py:120
 msgid "registration profiles"
 msgstr "профили регистрации"
 
+#: django-gc-shared/registration/templates/registration/activate.html:3
 msgid "Account activation failed"
 msgstr "Не удалось активировать учётную запись"
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_complete.html:5
+#: django-gc-shared/registration/templates/registration/custom_password_reset_complete.html:8
 msgid "Done"
 msgstr "Готово"
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_complete.html:11
 msgid "Password reset successfully"
 msgstr "Пароль успешно восстановлен"
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_complete.html:12
 msgid "sign in"
 msgstr "войти"
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_confirm.html:5
+#: django-gc-shared/registration/templates/registration/custom_password_reset_confirm.html:8
+#: django-gc-shared/registration/templates/registration/custom_password_reset_done.html:4
+#: django-gc-shared/registration/templates/registration/custom_password_reset_done_by_phone.html:5
+#: django-gc-shared/registration/templates/registration/custom_password_reset_done_by_phone.html:8
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form.html:5
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form.html:8
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form_by_phone.html:5
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form_by_phone.html:8
+#: django-gc-shared/registration/templates/registration/password_reset_subject_gc.txt:2
 msgid "Password reset"
 msgstr "Восстановление пароля"
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_confirm.html:13
 msgid "Reset"
 msgstr "Сброс"
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_confirm.html:17
 msgid "Password reset failed"
 msgstr "Не удалось восстановить пароль"
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_done.html:8
 msgid "Email with password reset instructions has been sent."
-msgstr "На ваш электронный адрес было отправлено письмо с инструкциями по восстановлению пароля."
+msgstr ""
+"На ваш электронный адрес было отправлено письмо с инструкциями по "
+"восстановлению пароля."
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_done.html:9
+#: django-gc-shared/registration/templates/registration/custom_password_reset_done_by_phone.html:11
 msgid "Back to main page"
 msgstr "Вернуться на главную"
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_done_by_phone.html:10
 msgid "New password has been sent to your mobile phone"
 msgstr "Новый пароль отправлен на ваш мобильный телефон"
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form.html:12
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form_by_phone.html:12
+#: django-gc-shared/registration/templates/registration/register.html:11
 #, python-format
 msgid "You're already signed in as <strong>%(user)s</strong>."
 msgstr "Вы уже вошли в систему как <strong>%(user)s</strong>."
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form.html:17
 msgid ""
 "\n"
 "      Forgotten your password? Enter your e-mail address below, and we'll\n"
@@ -162,20 +266,27 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"Забыли свой пароль? Введите свой адрес электронной почты ниже и мы отправим вам инструкции по его восстановлению."
+"Забыли свой пароль? Введите свой адрес электронной почты ниже и мы отправим "
+"вам инструкции по его восстановлению."
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form.html:23
 #, python-format
 msgid ""
 "\n"
-"      You can also use <a href=\"%(password_reset_link)s\" style=\"text-decoration: underline;\">password recovery form via SMS</a>\n"
+"      You can also use <a href=\"%(password_reset_link)s\" style=\"text-"
+"decoration: underline;\">password recovery form via SMS</a>\n"
 "    "
 msgstr ""
 "\n"
-"Вы также можете воспользоваться формой <a href=\"%(password_reset_link)s\" style=\"text-decoration: underline;\">восстановления пароля через SMS</a>"
+"Вы также можете воспользоваться формой <a href=\"%(password_reset_link)s\" "
+"style=\"text-decoration: underline;\">восстановления пароля через SMS</a>"
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form.html:35
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form_by_phone.html:39
 msgid "Reset my password"
 msgstr "Восстановить мой пароль"
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form_by_phone.html:17
 msgid ""
 "\n"
 "          Forgotten your password? Enter your mobile phone below, and we'll\n"
@@ -183,26 +294,41 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Забыли свой пароль? Введите номер своего мобильного телефона и мы отправим вам новый пароль."
+"Забыли свой пароль? Введите номер своего мобильного телефона и мы отправим "
+"вам новый пароль."
 
+#: django-gc-shared/registration/templates/registration/custom_password_reset_form_by_phone.html:23
 #, python-format
 msgid ""
 "\n"
-"          You can also use <a href=\"%(password_reset_link)s\" style=\"text-decoration: underline;\">password recovery form via E-Mail</a>\n"
+"          You can also use <a href=\"%(password_reset_link)s\" style=\"text-"
+"decoration: underline;\">password recovery form via E-Mail</a>\n"
 "        "
 msgstr ""
 "\n"
-"Вы также можете воспользоваться формой <a href=\"%(password_reset_link)s\" style=\"text-decoration: underline;\">восстановления пароля через E-Mail</a>"
+"Вы также можете воспользоваться формой <a href=\"%(password_reset_link)s\" "
+"style=\"text-decoration: underline;\">восстановления пароля через E-Mail</a>"
 
+#: django-gc-shared/registration/templates/registration/iframe_registration.html:6
+#: django-gc-shared/registration/templates/registration/iframe_registration.html:142
+#: django-gc-shared/registration/templates/registration/iframe_registration.html:187
+#: django-gc-shared/registration/templates/registration/register.html:5
+#: django-gc-shared/registration/templates/registration/register.html:8
+#: django-gc-shared/registration/templates/registration/register.html:33
 msgid "Register"
 msgstr "Зарегистрироваться"
 
+#: django-gc-shared/registration/templates/registration/iframe_registration.html:137
 msgid "Thanks!"
 msgstr ""
 
+#: django-gc-shared/registration/templates/registration/login.html:5
+#: django-gc-shared/registration/templates/registration/login.html:8
+#: django-gc-shared/registration/templates/registration/login.html:33
 msgid "Sign in"
 msgstr "Войти"
 
+#: django-gc-shared/registration/templates/registration/login.html:15
 #, python-format
 msgid ""
 "\n"
@@ -211,75 +337,124 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"Вы уже вошли как <strong>%(user)s</strong>, <a href=\"%(logout_url)s\" title=\"logout\">выйти</a>?"
+"Вы уже вошли как <strong>%(user)s</strong>, <a href=\"%(logout_url)s\" title="
+"\"logout\">выйти</a>?"
 
+#: django-gc-shared/registration/templates/registration/login.html:20
 #, python-format
 msgid ""
 "\n"
 "                    Please login to open an account or\n"
-"                    <a href=\"%(register_url)s?next=%(next)s\">register</a> in 30 seconds!\n"
+"                    <a href=\"%(register_url)s?next=%(next)s\">register</a> "
+"in 30 seconds!\n"
 "                "
 msgstr ""
 "\n"
-"Чтобы открыть счёт, пожалуйста, войдите или <a href=\"%(register_url)s?next=%(next)s\">зарегистрируйтесь</a> за 30 секунд!"
+"Чтобы открыть счёт, пожалуйста, войдите или <a href=\"%(register_url)s?next="
+"%(next)s\">зарегистрируйтесь</a> за 30 секунд!"
 
+#: django-gc-shared/registration/templates/registration/login.html:38
 #, python-format
 msgid ""
 "\n"
-"                or maybe you've <a href=\"%(password_reset_url)s\" title=\"reset password\">forgotten</a> your password?\n"
+"                or maybe you've <a href=\"%(password_reset_url)s\" title="
+"\"reset password\">forgotten</a> your password?\n"
 "            "
 msgstr ""
 "\n"
-"или, быть может, вы <a href=\"%(password_reset_url)s\" title=\"reset password\">забыли</a> свой пароль?"
+"или, быть может, вы <a href=\"%(password_reset_url)s\" title=\"reset password"
+"\">забыли</a> свой пароль?"
 
+#: django-gc-shared/registration/templates/registration/logout.html:5
 msgid "Logged out"
 msgstr "Вы вышли из системы"
 
+#: django-gc-shared/registration/templates/registration/password_reset_email_gc.html:2
 msgid "You're receiving this email because you requested a password reset."
 msgstr "Вы получили это письмо, потому что запросили восстановление пароля."
 
+#: django-gc-shared/registration/templates/registration/password_reset_email_gc.html:4
 msgid "Please go to the following page and choose a new password:"
 msgstr "Пожалуйста перейдите по ссылке ниже и установите новый пароль:"
 
+#: django-gc-shared/registration/templates/registration/password_reset_email_gc.html:8
 msgid "Your username, in case you've forgotten:"
 msgstr "Ваше имя пользователя:"
 
+#: django-gc-shared/registration/templates/registration/password_reset_email_gc.html:10
 msgid "Thanks for using our site!"
 msgstr "Спасибо за использование наших услуг!"
 
+#: django-gc-shared/registration/templates/registration/password_reset_email_gc.html:12
 msgid "Grand Capital"
 msgstr ""
 
+#: django-gc-shared/registration/templates/registration/register.html:20
 msgid "I agree with the"
 msgstr ""
 
+#: django-gc-shared/registration/templates/registration/register.html:22
 msgctxt "login popup"
 msgid "Privacy Policy"
 msgstr ""
 
-msgid "I agree, that trading leveraged products such as Forex and CFDs carries a high risk and can lead to complete loss of my deposit."
+#: django-gc-shared/registration/templates/registration/register.html:29
+msgid ""
+"I agree, that trading leveraged products such as Forex and CFDs carries a "
+"high risk and can lead to complete loss of my deposit."
 msgstr ""
 
+#: django-gc-shared/registration/templates/registration/register.html:36
 #, python-format
-msgid "or maybe you are <a href=\"%(login_url)s?next=%(next)s\">already a user</a>?"
-msgstr "или, быть может, вы <a href=\"%(login_url)s?next=%(next)s\">уже зарегистрированы</a>?"
+msgid ""
+"or maybe you are <a href=\"%(login_url)s?next=%(next)s\">already a user</a>?"
+msgstr ""
+"или, быть может, вы <a href=\"%(login_url)s?next=%(next)s\">уже "
+"зарегистрированы</a>?"
 
+#: django-gc-shared/registration/templates/registration/register.html:40
 msgid ""
 "\n"
-"                    <p>If you have any questions please contact us by email: <a href=\"mailto:info@arumcapital.eu\">info@arumcapital.eu</a></p>\n"
+"                    <p>If you have any questions please contact us by email: "
+"<a href=\"mailto:info@arumcapital.eu\">info@arumcapital.eu</a></p>\n"
 "                "
 msgstr ""
 "\n"
-"<p>Если у вас есть какие-нибудь вопросы, пожалуйста, свяжитесь с нами по e-mail: <a href=\"mailto:info@arumcapital.eu\">info@arumcapital.eu</a></p>"
+"<p>Если у вас есть какие-нибудь вопросы, пожалуйста, свяжитесь с нами по e-"
+"mail: <a href=\"mailto:info@arumcapital.eu\">info@arumcapital.eu</a></p>"
 
-msgid "Your IP address has been blocked due to 20 unsuccessfull logon attempts. Please wait at least 20 minutes before trying again"
-msgstr "Ваш IP-адрес был заблокирован в связи с 20 неуспешными попытками входа. Пожалуйста подождите по крайней мере 20 минут прежде чем пробовать снова."
+#: django-gc-shared/registration/views.py:74
+msgid "Your password was sent via SMS to your phone number"
+msgstr "Ваш пароль отправлен по SMS на ваш мобильный телефон"
 
-msgid "Your e-mail has not been confirmed or not in the database. Please use the form password recovery through SMS"
-msgstr "Ваш e-mail еще не подтвержден или отсутствует в базе. Пожалуйста, воспользуйтесь формой восстановления пароля через SMS"
+#: django-gc-shared/registration/views.py:158
+msgid ""
+"Your IP address has been blocked due to 20 unsuccessfull logon attempts. "
+"Please wait at least 20 minutes before trying again"
+msgstr ""
+"Ваш IP-адрес был заблокирован в связи с 20 неуспешными попытками входа. "
+"Пожалуйста подождите по крайней мере 20 минут прежде чем пробовать снова."
 
-msgid "Phone number for your account is not confirmed. Please use phone-base password recovery."
-msgstr "Номер телефона для этой учётной записи не подтверждён. Пожалуйста, воспользуйтесь восстановление пароля по телефону."
+#: django-gc-shared/registration/views.py:283
+msgid ""
+"Your e-mail has not been confirmed or not in the database. Please use the "
+"form password recovery through SMS"
+msgstr ""
+"Ваш e-mail еще не подтвержден или отсутствует в базе. Пожалуйста, "
+"воспользуйтесь формой восстановления пароля через SMS"
+
+#: django-gc-shared/registration/views.py:288
+msgid ""
+"Phone number for your account is not confirmed. Please use phone-base "
+"password recovery."
+msgstr ""
+"Номер телефона для этой учётной записи не подтверждён. Пожалуйста, "
+"воспользуйтесь восстановление пароля по телефону."
+
+#~ msgid "Subscribe to get company news (no more than 3 times at week)."
+#~ msgstr ""
+#~ "Я согласен получать информационную рассылку о новшествах компании, не "
+#~ "более 3 раз в неделю."
 
 #~ msgid "Please use latin-based characters only"
 #~ msgstr "Пожалуйста, используйте латиницу"
@@ -288,14 +463,17 @@ msgstr "Номер телефона для этой учётной записи 
 #~ "Dear %(user_profile)s!\n"
 #~ "\n"
 #~ "We congratulate you on the successful registration with %(site_name)s!\n"
-#~ "You can now take advantage of any product, service and promotion of our company.\n"
+#~ "You can now take advantage of any product, service and promotion of our "
+#~ "company.\n"
 #~ "\n"
 #~ "To enter your Private Office you will need:\n"
 #~ msgstr ""
 #~ "Здравствуйте, %(user_profile)s!\n"
 #~ "\n"
-#~ "Поздравляем Вас с успешной регистрацией Личного кабинета в %(site_name)s.\n"
-#~ "Теперь Вы можете воспользоваться всеми продуктами, сервисами и акциями компании.\n"
+#~ "Поздравляем Вас с успешной регистрацией Личного кабинета в "
+#~ "%(site_name)s.\n"
+#~ "Теперь Вы можете воспользоваться всеми продуктами, сервисами и акциями "
+#~ "компании.\n"
 #~ "\n"
 #~ "Для входа в Личный Кабинет вам понадобятся:\n"
 
@@ -319,60 +497,84 @@ msgstr "Номер телефона для этой учётной записи 
 
 #~ msgid ""
 #~ "\n"
-#~ "Your password was created automatically, you can change it in Private Office\n"
+#~ "Your password was created automatically, you can change it in Private "
+#~ "Office\n"
 #~ "(https://%(site_domain)s%(change_password)s), tab Settings, Security.\n"
 #~ msgstr ""
 #~ "\n"
-#~ "Пароль был создан автоматически, в дальнейшем Вы сможете изменить его в Личном кабинете:\n"
-#~ "(https://%(site_domain)s%(change_password)s), раздел Настройки, вкладка Безопасность.\n"
+#~ "Пароль был создан автоматически, в дальнейшем Вы сможете изменить его в "
+#~ "Личном кабинете:\n"
+#~ "(https://%(site_domain)s%(change_password)s), раздел Настройки, вкладка "
+#~ "Безопасность.\n"
 
 #~ msgid ""
 #~ "\n"
 #~ "You are just 3 steps away from earning on the Forex market:\n"
 #~ "\n"
-#~ "1. Select an account type (https://%(site_domain)s%(trading_account_types_url)s) and open it in the Private Office\n"
+#~ "1. Select an account type (https://%(site_domain)s"
+#~ "%(trading_account_types_url)s) and open it in the Private Office\n"
 #~ "\n"
-#~ "2. Deposit money on your account (https://%(site_domain)s%(operations_with_money_url)s)\n"
+#~ "2. Deposit money on your account (https://%(site_domain)s"
+#~ "%(operations_with_money_url)s)\n"
 #~ "\n"
-#~ "3. Download MetaTrader 4 terminal (https://%(site_domain)s%(platforms_mt4_url)s) or use web-terminal (https://%(site_domain)s%(platforms_webtrader_url)s). Web-terminal doesn’t require installation.\n"
+#~ "3. Download MetaTrader 4 terminal (https://%(site_domain)s"
+#~ "%(platforms_mt4_url)s) or use web-terminal (https://%(site_domain)s"
+#~ "%(platforms_webtrader_url)s). Web-terminal doesn’t require installation.\n"
 #~ "\n"
-#~ "Now you can start trading. You have access to more than 330 instruments in Forex, CFD and binary options markets.\n"
+#~ "Now you can start trading. You have access to more than 330 instruments "
+#~ "in Forex, CFD and binary options markets.\n"
 #~ "\n"
 #~ "\n"
 #~ "To trade successfully you can use all special offers from %(site_name)s:\n"
 #~ "\n"
 #~ "·  get best bonuses (https://%(site_domain)s%(bonus_frontpage_url)s);\n"
 #~ "\n"
-#~ "·  trade on your own (https://%(site_domain)s%(trading_account_types_url)s) or invest (https://%(site_domain)s%(pamm_frontpage_url)s) in successful Managers’ accounts;\n"
+#~ "·  trade on your own (https://%(site_domain)s"
+#~ "%(trading_account_types_url)s) or invest (https://%(site_domain)s"
+#~ "%(pamm_frontpage_url)s) in successful Managers’ accounts;\n"
 #~ "\n"
-#~ "·  participate in contests with great prizes (https://%(site_domain)s%(contests_frontpage_url)s);\n"
+#~ "·  participate in contests with great prizes (https://%(site_domain)s"
+#~ "%(contests_frontpage_url)s);\n"
 #~ msgstr ""
 #~ "\n"
 #~ "Вам осталось всего 3 шага до получения прибыли на финансовых рынках:\n"
 #~ "\n"
-#~ "1. Выберите нужный тип счета (https://%(site_domain)s%(trading_account_types_url)s) и откройте его через Личный кабинет.\n"
+#~ "1. Выберите нужный тип счета (https://%(site_domain)s"
+#~ "%(trading_account_types_url)s) и откройте его через Личный кабинет.\n"
 #~ "\n"
-#~ "2. Пополните счет (https://%(site_domain)s%(operations_with_money_url)s) любым удобным способом.\n"
+#~ "2. Пополните счет (https://%(site_domain)s%(operations_with_money_url)s) "
+#~ "любым удобным способом.\n"
 #~ "\n"
-#~ "3. Скачайте терминал MetaTrader 4 (https://%(site_domain)s%(platforms_mt4_url)s) или воспользуйтесь веб-терминалом (https://%(site_domain)s%(platforms_webtrader_url)s), который не требует загрузки.\n"
+#~ "3. Скачайте терминал MetaTrader 4 (https://%(site_domain)s"
+#~ "%(platforms_mt4_url)s) или воспользуйтесь веб-терминалом (https://"
+#~ "%(site_domain)s%(platforms_webtrader_url)s), который не требует "
+#~ "загрузки.\n"
 #~ "\n"
-#~ "Теперь вы можете начинать торговлю: вам доступны более 330 инструментов на рынках форекс, cfd и бинарных опционов.\n"
+#~ "Теперь вы можете начинать торговлю: вам доступны более 330 инструментов "
+#~ "на рынках форекс, cfd и бинарных опционов.\n"
 #~ "\n"
 #~ "\n"
-#~ "Чтобы Ваша работа на рынке была успешной, воспользуйтесь всеми предложениями от %(site_name)s:\n"
+#~ "Чтобы Ваша работа на рынке была успешной, воспользуйтесь всеми "
+#~ "предложениями от %(site_name)s:\n"
 #~ "\n"
-#~ "·  получите самые выгодные бонусы (https://%(site_domain)s%(bonus_frontpage_url)s);\n"
+#~ "·  получите самые выгодные бонусы (https://%(site_domain)s"
+#~ "%(bonus_frontpage_url)s);\n"
 #~ "\n"
-#~ "·  торгуйте сами (https://%(site_domain)s%(trading_account_types_url)s) или инвестируйте (https://%(site_domain)s%(pamm_frontpage_url)s) в счета успешных управляющих;\n"
+#~ "·  торгуйте сами (https://%(site_domain)s%(trading_account_types_url)s) "
+#~ "или инвестируйте (https://%(site_domain)s%(pamm_frontpage_url)s) в счета "
+#~ "успешных управляющих;\n"
 #~ "\n"
-#~ "·  участвуйте в интересных конкурсах (https://%(site_domain)s%(contests_frontpage_url)s) с отличными призами;\n"
+#~ "·  участвуйте в интересных конкурсах (https://%(site_domain)s"
+#~ "%(contests_frontpage_url)s) с отличными призами;\n"
 
 #~ msgid ""
 #~ "\n"
-#~ "·  become a partner (https://%(site_domain)s%(partnership_frontpage_url)s).\n"
+#~ "·  become a partner (https://%(site_domain)s"
+#~ "%(partnership_frontpage_url)s).\n"
 #~ msgstr ""
 #~ "\n"
-#~ "·  становитесь партнером (https://%(site_domain)s%(partnership_frontpage_url)s) компании и зарабатывайте больше.\n"
+#~ "·  становитесь партнером (https://%(site_domain)s"
+#~ "%(partnership_frontpage_url)s) компании и зарабатывайте больше.\n"
 
 #~ msgid ""
 #~ "\n"
@@ -388,26 +590,39 @@ msgstr "Номер телефона для этой учётной записи 
 #~ msgid "Greetings at %(site_name)s!"
 #~ msgstr "Приветствуем вас на %(site_name)s!"
 
-msgid "Your password was sent via SMS to your phone number"
-msgstr "Ваш пароль отправлен по SMS на ваш мобильный телефон"
-
-#~ msgid "Grand Capital Limited is not authorised by the FCA to provide services in the United Kingdom so we don't allow registrations from the UK."
-#~ msgstr "Компания Grand Capital Ltd. не имеет лицензии FCA на осуществление деятельности на территории Соединённого Королевства, в связи с этим регистрация для жителей Великобритании невозможна."
+#~ msgid ""
+#~ "Grand Capital Limited is not authorised by the FCA to provide services in "
+#~ "the United Kingdom so we don't allow registrations from the UK."
+#~ msgstr ""
+#~ "Компания Grand Capital Ltd. не имеет лицензии FCA на осуществление "
+#~ "деятельности на территории Соединённого Королевства, в связи с этим "
+#~ "регистрация для жителей Великобритании невозможна."
 
 #~ msgid "First contact with the client"
 #~ msgstr "Первая связь с клиентом"
 
-#~ msgid "Email you provided is already registered in our system.<br/>If you forgot the password, please visit <a href='%(recovery)s'>the password recovery page</a>.<br/>If you remember your password, use it to log in to your <a href='%(private_office)s'>Private Office</a>"
-#~ msgstr "Адрес электронной почты, который вы предоставили, уже зарегистрирован на другой аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от Личного Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого восстановления пароля личного кабинета</a>.<br/> Если вы помните свой пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
+#~ msgid ""
+#~ "Email you provided is already registered in our system.<br/>If you forgot "
+#~ "the password, please visit <a href='%(recovery)s'>the password recovery "
+#~ "page</a>.<br/>If you remember your password, use it to log in to your <a "
+#~ "href='%(private_office)s'>Private Office</a>"
+#~ msgstr ""
+#~ "Адрес электронной почты, который вы предоставили, уже зарегистрирован на "
+#~ "другой аккаунт Личного Кабинета.<br/> Если вы забыли свой пароль от "
+#~ "Личного Кабинета, перейдите на <a href='%(recovery)s'>страницу быстрого "
+#~ "восстановления пароля личного кабинета</a>.<br/> Если вы помните свой "
+#~ "пароль, то  войдите  в <a href='%(private_office)s'>Личный Кабинет</a>"
 
 #~ msgid ""
 #~ "\n"
-#~ "We are happy to see you among the community of %(site_name)s traders and wish you successful trading!\n"
+#~ "We are happy to see you among the community of %(site_name)s traders and "
+#~ "wish you successful trading!\n"
 #~ "\n"
 #~ "%(site_name)s Team\n"
 #~ msgstr ""
 #~ "\n"
-#~ "Благодарим Вас за то, что Вы присоединились к сообществу трейдеров %(site_name)s. Удачных торгов!\n"
+#~ "Благодарим Вас за то, что Вы присоединились к сообществу трейдеров "
+#~ "%(site_name)s. Удачных торгов!\n"
 #~ "\n"
 #~ "Компания %(site_name)s\n"
 
@@ -429,8 +644,15 @@ msgstr "Ваш пароль отправлен по SMS на ваш мобиль
 #~ msgid "Example: +7 (911) 200-19-55"
 #~ msgstr "Например: +7 (911) 200-19-55"
 
-#~ msgid "Your account is not activated. It will be blocked in %d days. To activate it, please follow the link you received by email. If you have problems with account activation, please contact your personal manager."
-#~ msgstr "Ваша учётная запись не активирована и будет заблокирована через %d дней. Чтобы активировать её, пожалуйста, пройдите по ссылке, которую Вы получили по электронной почте. Если у Вас возникают проблемы с активацией учётной записи, пожалуйста, свяжитесь с Вашим персональным менеджером."
+#~ msgid ""
+#~ "Your account is not activated. It will be blocked in %d days. To activate "
+#~ "it, please follow the link you received by email. If you have problems "
+#~ "with account activation, please contact your personal manager."
+#~ msgstr ""
+#~ "Ваша учётная запись не активирована и будет заблокирована через %d дней. "
+#~ "Чтобы активировать её, пожалуйста, пройдите по ссылке, которую Вы "
+#~ "получили по электронной почте. Если у Вас возникают проблемы с активацией "
+#~ "учётной записи, пожалуйста, свяжитесь с Вашим персональным менеджером."
 
 #~ msgid "Wrong token"
 #~ msgstr "Неверный код"
@@ -438,18 +660,25 @@ msgstr "Ваш пароль отправлен по SMS на ваш мобиль
 #~ msgid "Invalid phone number"
 #~ msgstr "Неверный номер телефона"
 
-#~ msgid "You are asking for too many text messages. Please wait 5 minutes and try again later"
-#~ msgstr "Вы запросили слишком много СМС. Подождите 5 минут и попробуйте еще раз"
+#~ msgid ""
+#~ "You are asking for too many text messages. Please wait 5 minutes and try "
+#~ "again later"
+#~ msgstr ""
+#~ "Вы запросили слишком много СМС. Подождите 5 минут и попробуйте еще раз"
 
-#~ msgid "You are asking for too many calls. Please wait 5 minutes and try again later"
-#~ msgstr "Вы запросили слишком много звонков. Подождите 5 минут и попробуйте еще раз"
+#~ msgid ""
+#~ "You are asking for too many calls. Please wait 5 minutes and try again "
+#~ "later"
+#~ msgstr ""
+#~ "Вы запросили слишком много звонков. Подождите 5 минут и попробуйте еще раз"
 
 #~ msgid "The automated call was queued"
 #~ msgstr "Звонок был поставлен в очередь"
 
 #~ msgid ""
 #~ "\n"
-#~ "            Please press the button below to get the verification token as text message (SMS) on your phone number\n"
+#~ "            Please press the button below to get the verification token "
+#~ "as text message (SMS) on your phone number\n"
 #~ "        "
 #~ msgstr ""
 #~ "\n"
@@ -464,20 +693,26 @@ msgstr "Ваш пароль отправлен по SMS на ваш мобиль
 #~ "            (if you can't receive the message, you can order\n"
 #~ "            an <a id=\"make_call\" class=\"pointer\">automated call</a>)\n"
 #~ "            <br/>\n"
-#~ "            You will receive a unique code which you should enter in the following field:\n"
+#~ "            You will receive a unique code which you should enter in the "
+#~ "following field:\n"
 #~ "        "
 #~ msgstr ""
 #~ "\n"
-#~ "Сообщение было успешно отправлено (если сообщение не дошло, то вы можете <a id=\"make_call\" class=\"pointer\">заказать автоматический звонок</a>)<br/>В сообщении содержится токен, который следует ввести в расположенное ниже поле:"
+#~ "Сообщение было успешно отправлено (если сообщение не дошло, то вы можете "
+#~ "<a id=\"make_call\" class=\"pointer\">заказать автоматический звонок</"
+#~ "a>)<br/>В сообщении содержится токен, который следует ввести в "
+#~ "расположенное ниже поле:"
 
 #~ msgid ""
 #~ "\n"
 #~ "            The call was queued succesfully. You will hear a unique\n"
-#~ "            code (4 digits) which you should enter in the following field:\n"
+#~ "            code (4 digits) which you should enter in the following "
+#~ "field:\n"
 #~ "        "
 #~ msgstr ""
 #~ "\n"
-#~ "Звонок был успешно запланирован. Вы услышите токен (4 цифры), которые следует ввести в расположенное ниже поле: "
+#~ "Звонок был успешно запланирован. Вы услышите токен (4 цифры), которые "
+#~ "следует ввести в расположенное ниже поле: "
 
 #~ msgid "Check"
 #~ msgstr "Проверить"

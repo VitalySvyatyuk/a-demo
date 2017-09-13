@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-06 19:13+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,213 +19,446 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+#: django-gc-shared/crm/admin.py:91
 msgid "Permissions"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:95
 msgid "Telephony"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:98
 msgid "Shift time"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:101
 msgid "Clients assignment"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:117
 msgid "Is active"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:175
 msgid "Client data"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:178
 msgid "Decision"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:190 django-gc-shared/crm/models.py:1058
 msgid "Status"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:195
 msgid "Author"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:201 django-gc-shared/crm/models.py:1043
 msgid "Client"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:205 django-gc-shared/crm/models.py:427
 msgid "Agent code"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:213
 msgid "Address"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:217 django-gc-shared/crm/admin.py:221
+#: django-gc-shared/crm/admin.py:225
 msgid "Empty"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:218
 msgid "Current manager"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:222
 msgid "Requested manager"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:226 django-gc-shared/crm/models.py:1045
 msgid "Previous manager"
 msgstr ""
 
+#: django-gc-shared/crm/admin.py:254
 msgid "Accept all requests which specify new manager"
 msgstr ""
 
+#: django-gc-shared/crm/management/commands/crm_jobs.py:24
 msgid ""
-"According to the deposit request id{r.id}({r.payment_system} {r.amount_money!"
+"According to the deposit request id{r.pk}({r.payment_system} {r.amount_money!"
 "s}) on account {r.account} from {r.creation_ts:%Y/%m/%d %H:%M:%S} the funds "
-"haven't been deposited yet Motivation to deposit with Welcome Bonus 500 "
-"(account %d)"
+"haven't been deposited yet"
 msgstr ""
 
+#: django-gc-shared/crm/management/commands/crm_jobs.py:46
 #, python-format
 msgid "Motivate to deposit Welcome Bonus 500 (account %d)"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:419
 msgid "Has access to all clients"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:420
 msgid "Office head"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:421
 msgid "Can manage office's clients"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:422
 msgid "Date and time of the last client assignment"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:423
 msgid "Auto"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:423
 msgid "Can be assigned to clients automatically"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:425
 msgid "NEXT button"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:426
 msgid "Can get client through the NEXT button"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:428
+msgid "Can set agent codes"
+msgstr ""
+
+#: django-gc-shared/crm/models.py:429
 msgid "Verify calls"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:430
 msgid "Verify that the manager calls the clients they get"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:433
 msgid ""
 "Allowed IP-addresses. Separated by spaces. Specify \"*\" to allow any IP. "
 "Subnets can be specified: 192.168.1.0/25"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:436
 msgid "Day limit"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:437
 msgid ""
 "How much clients per day can be viewed. If not specified, a default value is "
 "used. WARGNING: if you increase this limit make sure that the manager has at "
 "least IP filter enabled"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:441
 msgid "IB account number"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:442
 msgid "Office"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:444
 msgid "Change agent code to the office"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:445
 msgid ""
 "If a user registers with the manager's agent code, change it to the office's "
 "agent code"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:448
 msgid "Works with the office"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:449
 msgid "Works with the clients of the office"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:451
 msgid "Works with languages"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:452
 msgid "Comma-separated language codes, e.g. ru,en,zh-cn"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:454
 msgid "Countries/Regions"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:455
 msgid "Names of countries and regions, separated by spaces. In English."
 msgstr ""
 
+#: django-gc-shared/crm/models.py:459
+msgid "Can view uploaded documents"
+msgstr ""
+
+#: django-gc-shared/crm/models.py:463
 msgid "Can view all calls"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:466
 msgid "Start of the shift"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:467
 msgid "End of the shift"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:469
 msgid "Set tasks for the whole day"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:470
 msgid "Force all the tasks to be set for the whole day"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:474
 msgid "On vacation"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:475
 msgid "On vacation until"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:476
 msgid "Substitute for the vacation"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:489
 msgid "Manager"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:490
 msgid "Managers"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1042
 msgid "Request author"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1046
 msgid "Assign to"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1048
 msgid "Processed"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1050
 msgid "Comment"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1051
 msgid "Rejection reason"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1054
 msgid "New"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1055
 msgid "Approved"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1056
 msgid "Declined"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1060
 msgid "Creation date"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1061
 msgid "Changed at"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1064
 msgid "Manager reassign request"
 msgstr ""
 
+#: django-gc-shared/crm/models.py:1065
 msgid "Manager reassign requests"
 msgstr ""
 
+#: django-gc-shared/crm/rest_api.py:138 django-gc-shared/crm/rest_api.py:146
 msgid "First contact with the client"
 msgstr ""
 
+#: django-gc-shared/crm/templates/crm/account_history.html:120
+msgid "Account history"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_history.html:125
+#, python-format
+msgid "Account history for account %(account)s"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_history.html:128
+msgid "Execution System"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_history.html:129
+msgid "Leverage"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_history.html:130
+msgid "Account Currency"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_history.html:134
+msgid "Balance"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_history.html:141
+msgid "Positions at"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_history.html:151
+msgid "No account history available."
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_body.html:4
+#: django-gc-shared/crm/templates/crm/account_info_history_table_body.html:17
+msgid "ago"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_body.html:19
+msgid "Open"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:3
+msgid "Order ID"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:4
+msgid "Open time"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:5
+msgid "Type"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:6
+msgid "Lots"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:7
+msgid "Symbol"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:8
+msgid "Price"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:9
+msgid "S/L"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:10
+msgid "T/P"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:11
+msgid "Close time"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:12
+msgid "Close price"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:13
+msgid "Commission"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:14
+msgid "Swap"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/account_info_history_table_header.html:15
+msgid "Profit"
+msgstr ""
+
+#: django-gc-shared/crm/templates/crm/main.html:263
+msgid "Filter"
+msgstr ""
+
+#: django-gc-shared/crm/views.py:823
 #, python-brace-format
 msgid "Process chat request received on {0}"
+msgstr ""
+
+#: django-shared/messages/templates/messages/new_templates/inbox.html:48
+msgid "Inbox"
+msgstr ""
+
+#: django-shared/messages/templates/messages/new_templates/inbox.html:69
+#: django-shared/messages/templates/messages/new_templates/inbox.html:131
+msgid "Sender"
+msgstr ""
+
+#: django-shared/messages/templates/messages/new_templates/inbox.html:70
+#: django-shared/messages/templates/messages/new_templates/inbox.html:127
+msgid "Subject"
+msgstr ""
+
+#: django-shared/messages/templates/messages/new_templates/inbox.html:71
+#: django-shared/messages/templates/messages/new_templates/inbox.html:139
+msgid "Date"
+msgstr ""
+
+#: django-shared/messages/templates/messages/new_templates/inbox.html:101
+msgid "Per page"
+msgstr ""
+
+#: django-shared/messages/templates/messages/new_templates/inbox.html:114
+msgid "No messages."
+msgstr ""
+
+#: django-shared/messages/templates/messages/new_templates/inbox.html:120
+msgid "View Message"
+msgstr ""
+
+#: django-shared/messages/templates/messages/new_templates/inbox.html:135
+msgid "Recipient"
+msgstr ""
+
+#: django-shared/messages/templates/messages/new_templates/inbox.html:140
+msgid "DATETIME_FORMAT"
+msgstr ""
+
+#: django-shared/messages/templates/messages/new_templates/inbox.html:156
+msgid "Delete"
+msgstr ""
+
+#: django-shared/messages/templates/messages/new_templates/message_list_item.html:5
+msgid ""
+"Добавить в избранные сообщения. Такие сообщения отображаются наверху списка"
+msgstr ""
+
+#: django-shared/video/models.py:68
+msgid "Youtube video url"
+msgstr ""
+
+#: django-shared/video/models.py:69
+msgid ""
+"A full url to youtube video, e.g. http://www.youtube.com/watch?v=IqaAZi2ppCE"
+msgstr ""
+
+#: django-shared/video/models.py:84
+msgid "Vkontakte embed code"
 msgstr ""

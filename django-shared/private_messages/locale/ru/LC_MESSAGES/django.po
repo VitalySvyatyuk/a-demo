@@ -2,124 +2,189 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Michail Sychev m.sychev@axion-rti.ru, 2009
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-20 21:58+0400\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2014-11-20 21:59+0230\n"
 "Last-Translator: Denis Tom <d.tomilin@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "X-Translated-Using: django-rosetta 0.7.4\n"
 
+#: django-shared/private_messages/admin.py:19
+#: django-shared/private_messages/forms.py:20
+#: django-shared/private_messages/models.py:54
+#: django-shared/private_messages/templates/messages/outbox.html:9
+#: django-shared/private_messages/templates/messages/view.html:13
 msgid "Recipient"
 msgstr "Получатель"
 
+#: django-shared/private_messages/admin.py:21
 msgid "group"
 msgstr "Группа"
 
+#: django-shared/private_messages/admin.py:22
 msgid "Creates the message optionally for all users or a group of users."
 msgstr "Создать сообщения опционально для всех пользователей или группы"
 
+#: django-shared/private_messages/admin.py:29
 msgid "All users"
 msgstr "Все пользователи"
 
+#: django-shared/private_messages/admin.py:45
+#: django-shared/private_messages/models.py:107
 msgid "Message"
 msgstr "Сообщение"
 
+#: django-shared/private_messages/admin.py:52
 msgid "Date/time"
 msgstr "Дата/Время"
 
+#: django-shared/private_messages/fields.py:53
 #, python-format
 msgid "The following usernames are incorrect: %(users)s"
 msgstr "Некорректные имена пользователей: %(users)s"
 
+#: django-shared/private_messages/forms.py:21
+#: django-shared/private_messages/models.py:50
+#: django-shared/private_messages/templates/js/my/messages.html:20
+#: django-shared/private_messages/templates/messages/inbox.html:50
+#: django-shared/private_messages/templates/messages/outbox.html:9
+#: django-shared/private_messages/templates/messages/trash.html:9
+#: django-shared/private_messages/templates/messages/view.html:7
 msgid "Subject"
 msgstr "Тема"
 
+#: django-shared/private_messages/forms.py:22
+#: django-shared/private_messages/models.py:51
 msgid "Body"
 msgstr "Сообщение"
 
+#: django-shared/private_messages/forms.py:35
 msgid "Your account is not activated. You cannot send private messages."
 msgstr ""
 "Ваша учётная запись не активирована. Вы не можете отправлять личные "
 "сообщения."
 
+#: django-shared/private_messages/models.py:53
+#: django-shared/private_messages/templates/js/my/messages.html:19
+#: django-shared/private_messages/templates/messages/inbox.html:49
+#: django-shared/private_messages/templates/messages/trash.html:9
+#: django-shared/private_messages/templates/messages/view.html:9
 msgid "Sender"
 msgstr "Отправитель"
 
+#: django-shared/private_messages/models.py:55
 msgid "Parent message"
 msgstr "Родительское сообщение"
 
+#: django-shared/private_messages/models.py:56
 msgid "sent at"
 msgstr "отправлено"
 
+#: django-shared/private_messages/models.py:57
 msgid "read at"
 msgstr "прочитано"
 
+#: django-shared/private_messages/models.py:58
 msgid "replied at"
 msgstr "отвечено"
 
+#: django-shared/private_messages/models.py:59
 msgid "Sender deleted at"
 msgstr "Отправитель удалил"
 
+#: django-shared/private_messages/models.py:60
 msgid "Recipient deleted at"
 msgstr "Получатель удалил"
 
+#: django-shared/private_messages/models.py:108
 msgid "Messages"
 msgstr "Сообщения"
 
+#: django-shared/private_messages/templates/js/my/messages.html:3
+#: django-shared/private_messages/templates/messages/base.html:8
+#: django-shared/private_messages/templates/messages/inbox.html:23
+#: django-shared/private_messages/templates/messages/new_message.html:10
 msgid "Inbox"
 msgstr "Входящие"
 
+#: django-shared/private_messages/templates/js/my/messages.html:4
+#: django-shared/private_messages/templates/messages/inbox.html:64
+#: django-shared/private_messages/templates/messages/outbox.html:27
+#: django-shared/private_messages/templates/messages/trash.html:27
 msgid "No messages."
 msgstr "Сообщений нет."
 
+#: django-shared/private_messages/templates/js/my/messages.html:7
+#: django-shared/private_messages/templates/js/my/messages.html:44
+#: django-shared/private_messages/templates/messages/view.html:30
 msgid "Delete"
 msgstr "Удалить"
 
+#: django-shared/private_messages/templates/js/my/messages.html:8
 msgid "Mark as read"
 msgstr "Пометить как прочитано"
 
+#: django-shared/private_messages/templates/js/my/messages.html:9
+#: django-shared/private_messages/templates/js/my/messages.html:45
 msgid "Mark as new"
 msgstr "Пометить как новое"
 
+#: django-shared/private_messages/templates/js/my/messages.html:21
+#: django-shared/private_messages/templates/messages/trash.html:9
+#: django-shared/private_messages/templates/messages/view.html:11
 msgid "Date"
 msgstr "Дата"
 
+#: django-shared/private_messages/templates/js/my/messages.html:54
 msgid "Per page"
 msgstr "На страницу"
 
+#: django-shared/private_messages/templates/messages/base.html:9
+#: django-shared/private_messages/templates/messages/outbox.html:4
 msgid "Sent Messages"
 msgstr "Исходящие"
 
+#: django-shared/private_messages/templates/messages/base.html:10
 msgid "New Message"
 msgstr "Новое сообщение"
 
+#: django-shared/private_messages/templates/messages/base.html:11
 msgid "Trash"
 msgstr "Удалённые"
 
+#: django-shared/private_messages/templates/messages/compose.html:4
 msgid "Compose Message"
 msgstr "Новое сообщение"
 
+#: django-shared/private_messages/templates/messages/compose.html:8
 msgid "Send"
 msgstr "Отправить"
 
+#: django-shared/private_messages/templates/messages/inbox.html:51
 msgid "Received"
 msgstr "Получено"
 
+#: django-shared/private_messages/templates/messages/inbox.html:52
+#: django-shared/private_messages/templates/messages/outbox.html:9
+#: django-shared/private_messages/templates/messages/trash.html:9
 msgid "Action"
 msgstr "Действия"
 
+#: django-shared/private_messages/templates/messages/message_list_item.html:19
+#: django-shared/private_messages/templates/messages/outbox.html:20
 msgid "delete"
 msgstr "удалить"
 
+#: django-shared/private_messages/templates/messages/new_message.html:1
 #, python-format
 msgid ""
 "Hello %(recipient)s,\n"
@@ -132,25 +197,35 @@ msgstr ""
 "Вы получили сообщение от %(sender)s\n"
 "со следующим содержанием:"
 
+#: django-shared/private_messages/templates/messages/new_message.html:9
 #, python-format
 msgid "Sent from %(site_url)s"
 msgstr "Отправлено %(site_url)s"
 
+#: django-shared/private_messages/templates/messages/new_message.html:11
+#: django-shared/private_messages/templates/messages/view.html:27
 msgid "Reply"
 msgstr "Ответить"
 
+#: django-shared/private_messages/templates/messages/outbox.html:9
 msgid "Sent"
 msgstr "Отправлено"
 
+#: django-shared/private_messages/templates/messages/outbox.html:19
+#: django-shared/private_messages/templates/messages/trash.html:19
+#: django-shared/private_messages/templates/messages/view.html:12
 msgid "DATETIME_FORMAT"
 msgstr "j. N Y, H:i"
 
+#: django-shared/private_messages/templates/messages/trash.html:4
 msgid "Deleted Messages"
 msgstr "Удалённые сообщения"
 
+#: django-shared/private_messages/templates/messages/trash.html:20
 msgid "undelete"
 msgstr "восстановить"
 
+#: django-shared/private_messages/templates/messages/trash.html:30
 msgid ""
 "Deleted Messages are removed from the trash at unregular intervals, don't "
 "rely on this feature for long-time storage."
@@ -158,126 +233,21 @@ msgstr ""
 "Удалённые сообщения очищаются из корзины через произвольные интервалы,не "
 "используйте эту возможность как долгосрочное хранилище."
 
+#: django-shared/private_messages/templates/messages/view.html:4
 msgid "View Message"
 msgstr "Просмотр сообщений"
 
-#, python-format
-msgid "You have deleted the message '%(message)s'."
-msgstr "Вы удалили сообщение '%(message)s'."
-
-#, python-format
-msgid "You have deleted the message <a href=\"%(message_url)s\">%(message)s</a>."
-msgstr "Вы удалили сообщение <a href=\"%(message_url)s\">%(message)s</a>."
-
-#, fuzzy, python-format
-#| msgid ""
-#| "essage_sender)s has sent you a message:\n"
-#| "essage)s\n"
-#| "essage_body)s\n"
-#| "p://%(current_site)s%(message_url)s"
-msgid ""
-"%(message_sender)s has sent you a message:\n"
-"\n"
-"%(message)s\n"
-"\n"
-"%(message_body)s\n"
-"\n"
-"%(current_site.domain)s%(message_url)s"
-msgstr ""
-"%(message_sender)s отправил Вам на сообщение:\n"
-"\n"
-"%(message)s\n"
-"\n"
-"%(message_body)s\n"
-"\n"
-"https://%(current_site)s%(message_url)s"
-
-#, python-format
-msgid ""
-"You have received the message <a href=\"%(message_url)s\">%(message)s</a> "
-"from %(message_sender)s."
-msgstr ""
-"Вы получили сообщение <a href=\"%(message_url)s\">%(message)s</a> от "
-"%(message_sender)s."
-
-#, python-format
-msgid "You've got a new message from %(message_sender)s"
-msgstr "Для Вас новое сообщение от %(message_sender)s"
-
-#, python-format
-msgid "You have recovered the message '%(message)s'."
-msgstr "Вы восстановили сообщение '%(message)s'."
-
-#, python-format
-msgid ""
-"You have recovered the message <a href=\"%(message_url)s\">%(message)s</a>."
-msgstr "Вы восстановили сообщение <a href=\"%(message_url)s\">%(message)s</a>."
-
-#, python-format
-msgid ""
-"You have replied to '%(message_parent_msg)s' from %(message_recipient)s."
-msgstr ""
-"Вы ответили на сообщение '%(message_parent_msg)s' от %(message_recipient)s."
-
-#, python-format
-msgid ""
-"You have replied to <a href=\"%(message_url)s\">%(message_parent_msg)s</a> "
-"from %(message_recipient)s."
-msgstr ""
-"Вы ответили на <a href=\"%(message_url)s\">%(message_parent_msg)s</a> от "
-"%(message_recipient)s."
-
-#, fuzzy, python-format
-#| msgid ""
-#| "essage_sender)s replied to '%(message_parent_msg)s':\n"
-#| "essage)s\n"
-#| "essage_body)s\n"
-#| "p://%(current_site)s%(message_url)s"
-msgid ""
-"%(message_sender)s replied to '%(message_parent_msg)s':\n"
-"\n"
-"%(message)s\n"
-"\n"
-"%(message_body)s\n"
-"\n"
-"%(current_site.domain)s%(message_url)s"
-msgstr ""
-"%(message_sender)s ответил на '%(message_parent_msg)s':\n"
-"\n"
-"%(message)s\n"
-"\n"
-"%(message_body)s\n"
-"\n"
-"https://%(current_site)s%(message_url)s"
-
-#, python-format
-msgid "%(message_sender)s has sent you a reply to %(message_parent_msg)s."
-msgstr "%(message_sender)s ответил на %(message_parent_msg)s."
-
-#, python-format
-msgid "A reply to your message by %(message_sender)s was received"
-msgstr "%(message_sender)s ответил на Ваше сообщение"
-
-#, python-format
-msgid "You have sent the message '%(message)s' to %(message_recipient)s."
-msgstr ""
-"Вы отправили сообщение '%(message)s' получателю %(message_recipient)s."
-
-#, python-format
-msgid ""
-"You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to "
-"%(message_recipient)s."
-msgstr ""
-"Вы отправили сообщение <a href=\"%(message_url)s\">%(message)s</a> "
-"получателям %(message_recipient)s."
-
+#: django-shared/private_messages/utils.py:28
 #, python-format
 msgid "New Message: %(subject)s"
 msgstr "Новое сообщение: %(subject)s"
 
+#: django-shared/private_messages/views.py:80
+#: django-shared/private_messages/views.py:114
 msgid "Message successfully sent."
 msgstr "Сообщение успешно отправлено."
 
+#: django-shared/private_messages/views.py:120
 #, python-format
 msgid ""
 "%(sender)s wrote:\n"
@@ -286,15 +256,120 @@ msgstr ""
 "%(sender)s написал:\n"
 "%(body)s"
 
+#: django-shared/private_messages/views.py:124
 #, python-format
 msgid "Re: %(subject)s"
 msgstr "Re: %(subject)s"
 
+#: django-shared/private_messages/views.py:161
 msgid "Message successfully deleted."
 msgstr "Сообщение успешно удалено."
 
+#: django-shared/private_messages/views.py:189
 msgid "Message successfully recovered."
 msgstr "Сообщение успешно восстановлено."
+
+#~ msgid "You have deleted the message '%(message)s'."
+#~ msgstr "Вы удалили сообщение '%(message)s'."
+
+#~ msgid ""
+#~ "You have deleted the message <a href=\"%(message_url)s\">%(message)s</a>."
+#~ msgstr "Вы удалили сообщение <a href=\"%(message_url)s\">%(message)s</a>."
+
+#, fuzzy
+#~| msgid ""
+#~| "essage_sender)s has sent you a message:\n"
+#~| "essage)s\n"
+#~| "essage_body)s\n"
+#~| "p://%(current_site)s%(message_url)s"
+#~ msgid ""
+#~ "%(message_sender)s has sent you a message:\n"
+#~ "\n"
+#~ "%(message)s\n"
+#~ "\n"
+#~ "%(message_body)s\n"
+#~ "\n"
+#~ "%(current_site.domain)s%(message_url)s"
+#~ msgstr ""
+#~ "%(message_sender)s отправил Вам на сообщение:\n"
+#~ "\n"
+#~ "%(message)s\n"
+#~ "\n"
+#~ "%(message_body)s\n"
+#~ "\n"
+#~ "https://%(current_site)s%(message_url)s"
+
+#~ msgid ""
+#~ "You have received the message <a href=\"%(message_url)s\">%(message)s</a> "
+#~ "from %(message_sender)s."
+#~ msgstr ""
+#~ "Вы получили сообщение <a href=\"%(message_url)s\">%(message)s</a> от "
+#~ "%(message_sender)s."
+
+#~ msgid "You've got a new message from %(message_sender)s"
+#~ msgstr "Для Вас новое сообщение от %(message_sender)s"
+
+#~ msgid "You have recovered the message '%(message)s'."
+#~ msgstr "Вы восстановили сообщение '%(message)s'."
+
+#~ msgid ""
+#~ "You have recovered the message <a href=\"%(message_url)s\">%(message)s</"
+#~ "a>."
+#~ msgstr ""
+#~ "Вы восстановили сообщение <a href=\"%(message_url)s\">%(message)s</a>."
+
+#~ msgid ""
+#~ "You have replied to '%(message_parent_msg)s' from %(message_recipient)s."
+#~ msgstr ""
+#~ "Вы ответили на сообщение '%(message_parent_msg)s' от "
+#~ "%(message_recipient)s."
+
+#~ msgid ""
+#~ "You have replied to <a href=\"%(message_url)s\">%(message_parent_msg)s</"
+#~ "a> from %(message_recipient)s."
+#~ msgstr ""
+#~ "Вы ответили на <a href=\"%(message_url)s\">%(message_parent_msg)s</a> от "
+#~ "%(message_recipient)s."
+
+#, fuzzy
+#~| msgid ""
+#~| "essage_sender)s replied to '%(message_parent_msg)s':\n"
+#~| "essage)s\n"
+#~| "essage_body)s\n"
+#~| "p://%(current_site)s%(message_url)s"
+#~ msgid ""
+#~ "%(message_sender)s replied to '%(message_parent_msg)s':\n"
+#~ "\n"
+#~ "%(message)s\n"
+#~ "\n"
+#~ "%(message_body)s\n"
+#~ "\n"
+#~ "%(current_site.domain)s%(message_url)s"
+#~ msgstr ""
+#~ "%(message_sender)s ответил на '%(message_parent_msg)s':\n"
+#~ "\n"
+#~ "%(message)s\n"
+#~ "\n"
+#~ "%(message_body)s\n"
+#~ "\n"
+#~ "https://%(current_site)s%(message_url)s"
+
+#~ msgid "%(message_sender)s has sent you a reply to %(message_parent_msg)s."
+#~ msgstr "%(message_sender)s ответил на %(message_parent_msg)s."
+
+#~ msgid "A reply to your message by %(message_sender)s was received"
+#~ msgstr "%(message_sender)s ответил на Ваше сообщение"
+
+#~ msgid "You have sent the message '%(message)s' to %(message_recipient)s."
+#~ msgstr ""
+#~ "Вы отправили сообщение '%(message)s' получателю %(message_recipient)s."
+
+#~ msgid ""
+#~ "You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to "
+#~ "%(message_recipient)s."
+#~ msgstr ""
+#~ "Вы отправили сообщение <a href=\"%(message_url)s\">%(message)s</a> "
+#~ "получателям %(message_recipient)s."
 
 #~ msgid "Message Received"
 #~ msgstr "Сообщение получено"

@@ -7,35 +7,42 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-30 17:32+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2015-10-30 17:33+0230\n"
 "Last-Translator:   <valexeev@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.6\n"
 
-msgid "Transfer between your accounts"
-msgstr "Перевод на свой счет"
-
+#: django-gc-shared/transfers/forms.py:28
 msgid "Transfer to another customer"
 msgstr "Перевод на чужой счет"
 
+#: django-gc-shared/transfers/forms.py:33
+#: django-gc-shared/transfers/forms.py:61
 msgid "Account"
 msgstr "Счет"
 
+#: django-gc-shared/transfers/forms.py:33
+#: django-gc-shared/transfers/forms.py:61
 msgid "Select one of your accounts."
 msgstr "Выберите один из Ваших счетов."
 
+#: django-gc-shared/transfers/forms.py:35
+#: django-gc-shared/transfers/forms.py:36
 msgid "Recipient"
 msgstr "Получатель"
 
+#: django-gc-shared/transfers/forms.py:37
 msgid "Type of transfer"
 msgstr "Тип перевода"
 
+#: django-gc-shared/transfers/forms.py:39
 msgid ""
 "Transfers between your own account happen automatically, transfers to other "
 "customers are carried out manually"
@@ -43,23 +50,28 @@ msgstr ""
 "Перевод на свой счет совершается автоматически, переводы на чужие счета "
 "совершаются вручную"
 
+#: django-gc-shared/transfers/forms.py:81
 msgid "Enter a valid transfer amount."
 msgstr "Введите корректную сумму перевода."
 
+#: django-gc-shared/transfers/forms.py:93
 msgid "You can't transfer funds from this account"
 msgstr "Вы не можете перевести средства с этого счета"
 
+#: django-gc-shared/transfers/forms.py:96
 msgid "You can't transfer money from demo account"
 msgstr "Вы не можете перевести деньги с демо-счёта"
 
+#: django-gc-shared/transfers/forms.py:99
 msgid "Cannot determine the group of sender account"
 msgstr "Невозможно определить тип счета отправителя"
 
+#: django-gc-shared/transfers/forms.py:102
 #, python-format
-#| msgid "Internal transfers are not available for ECN accounts"
 msgid "Internal transfers are not available for %s account group"
 msgstr "Внутренние переводы для счетов типа %s недоступны"
 
+#: django-gc-shared/transfers/forms.py:122
 #, python-format
 msgid ""
 "You should <a href=\"%(link)s\" target=\"_blank\">complete the verification "
@@ -68,6 +80,7 @@ msgstr ""
 "Вы должны <a href=\"%(link)s\" target=\"_blank\">завершить процесс "
 "верификации</a> прежде чем выводить со счёта %(account)s"
 
+#: django-gc-shared/transfers/forms.py:137
 msgid ""
 "Error while getting allowed transfer amount for the chosen account. Contact "
 "the administrator."
@@ -75,6 +88,7 @@ msgstr ""
 "Ошибка при получении максимальной суммы перевода для выбранного счета. "
 "Свяжитесь с администатором."
 
+#: django-gc-shared/transfers/forms.py:144
 #, python-format
 msgid ""
 "The maximum amount of money you can transfer from the chosen account is "
@@ -82,61 +96,77 @@ msgid ""
 msgstr ""
 "Максимальная сумма перевода с выбранного счета составляет %(limit_value)s "
 
-#, python-format
-msgid "(including %s commission due to Welcome Bonus)"
-msgstr "(в том числе, %s комиссия Welcome-бонуса)"
-
+#: django-gc-shared/transfers/forms.py:153
 msgid "You cannot transfer less than 0.01 in chosen currency"
 msgstr "Вы не можете перевести меньше чем 0.01 в валюте отправителя"
 
+#: django-gc-shared/transfers/forms.py:160
+#: django-gc-shared/transfers/forms.py:179
 msgid "This field is required"
 msgstr "Обязательное поле"
 
+#: django-gc-shared/transfers/forms.py:171
 msgid ""
 "This account seems not to be registered in the private office. Register it "
 "first."
 msgstr ""
 "Этот счёт не зарегистрирован в личном кабинете. Вначале зарегистрируйте его."
 
+#: django-gc-shared/transfers/forms.py:186
 msgid "You can't transfer money to demo account"
 msgstr "Вы не можете перевести деньги на демо-счёт"
 
+#: django-gc-shared/transfers/forms.py:190
 msgid "Cannot determine the group of recipient account"
 msgstr "Невозможно определить тип счета получателя"
 
-msgid "Internal transfers are not available for ECN accounts"
-msgstr "Внутренние переводы для ECN счетов недоступны"
-
+#: django-gc-shared/transfers/forms.py:195
 msgid "Using the same account for both recipient and sender is not allowed."
 msgstr "Нельзя использовать один и тот же счет для получателя и отправителя."
 
-msgid "Internal transfers from Fx+ accounts are forbidden."
-msgstr "Внутренние переводы со счетов FX+ запрещены"
-
-msgid "Internal transfers to Fx+ accounts are forbidden."
-msgstr "Внутренние переводы на счета FX+ запрещены"
-
+#: django-gc-shared/transfers/forms.py:258
 msgid "Sender equity level is insufficient for this operation."
 msgstr ""
 "Уровень свободных средств на счёте отправителя недостаточен для этой "
 "операции."
 
+#: django-gc-shared/transfers/templates/notification/manual_transfer_submitted/full.txt:2
 msgid "Internal transfer request has been submitted"
 msgstr "Создана заявка на внутренний перевод средств"
 
+#: django-gc-shared/transfers/templates/notification/manual_transfer_submitted/full.txt:4
 msgid "Sender account"
 msgstr "Счет отправителя"
 
+#: django-gc-shared/transfers/templates/notification/manual_transfer_submitted/full.txt:5
 msgid "Recipient account"
 msgstr "Счет получателя"
 
+#: django-gc-shared/transfers/templates/notification/manual_transfer_submitted/full.txt:6
 msgid "Amount"
 msgstr "Сумма"
 
+#: django-gc-shared/transfers/templates/notification/manual_transfer_submitted/full.txt:8
 msgid "The request will be processed within three business days"
 msgstr "Заявка будет обработана в течение трёх рабочих дней"
 
-#~ msgid "Internal error while doing automatic transfer. Please, try again later"
+#~ msgid "Transfer between your accounts"
+#~ msgstr "Перевод на свой счет"
+
+#~ msgid "(including %s commission due to Welcome Bonus)"
+#~ msgstr "(в том числе, %s комиссия Welcome-бонуса)"
+
+#~ msgid "Internal transfers are not available for ECN accounts"
+#~ msgstr "Внутренние переводы для ECN счетов недоступны"
+
+#~ msgid "Internal transfers from Fx+ accounts are forbidden."
+#~ msgstr "Внутренние переводы со счетов FX+ запрещены"
+
+#~ msgid "Internal transfers to Fx+ accounts are forbidden."
+#~ msgstr "Внутренние переводы на счета FX+ запрещены"
+
+#~ msgid ""
+#~ "Internal error while doing automatic transfer. Please, try again later"
 #~ msgstr "При совершении перевода произошла ошибка. Попробуйте еще раз позже"
 
 #~ msgid "Transfer request #%(id)s created successfully."
@@ -157,15 +187,20 @@ msgstr "Заявка будет обработана в течение трёх 
 #~ msgid ""
 #~ "\n"
 #~ "  <p><b>Internal transfer is processed within 24 hours.</b></p>\n"
-#~ "  <p><b>All positions open at the sender account should be closed before the money could be withdrawn.</b></p>\n"
-#~ "  <p><b>If you know passwords for both accounts, transfer can happen automatically. If this is not the case,\n"
+#~ "  <p><b>All positions open at the sender account should be closed before "
+#~ "the money could be withdrawn.</b></p>\n"
+#~ "  <p><b>If you know passwords for both accounts, transfer can happen "
+#~ "automatically. If this is not the case,\n"
 #~ "  you should request manual transfer.</b></p>\n"
 #~ "  "
 #~ msgstr ""
 #~ "\n"
-#~ "  <p><b>Перевод средств на другой торговый счёт осуществляется в течение суток.</b></p>\n"
-#~ "  <p><b>Все позиции на счёте отправителя должны быть закрыты до списания выводимых средств.</b></p>\n"
-#~ "  <p><b>Если вы знаете пароли от обоих счетов, перевод может быть выполнен в автоматическом режиме.\n"
+#~ "  <p><b>Перевод средств на другой торговый счёт осуществляется в течение "
+#~ "суток.</b></p>\n"
+#~ "  <p><b>Все позиции на счёте отправителя должны быть закрыты до списания "
+#~ "выводимых средств.</b></p>\n"
+#~ "  <p><b>Если вы знаете пароли от обоих счетов, перевод может быть "
+#~ "выполнен в автоматическом режиме.\n"
 #~ "  В обратном случае Вам следует запросить ручной перевод.</b></p>"
 
 #~ msgid "Transfer"
@@ -176,11 +211,11 @@ msgstr "Заявка будет обработана в течение трёх 
 
 #~ msgid ""
 #~ "Sender account password. Required, if you select automatic transfer "
-#~ "(default).<br />Password can be recovered in the section <a href=\"%s\">My "
-#~ "accounts</a>."
+#~ "(default).<br />Password can be recovered in the section <a href=\"%s"
+#~ "\">My accounts</a>."
 #~ msgstr ""
-#~ "Пароль к счету отправителя. Обязателен при автоматическом переводе.<br "
-#~ "/>Восстановить пароль можно в разделе <a href=\"%s\">Мои счета</a>."
+#~ "Пароль к счету отправителя. Обязателен при автоматическом переводе.<br /"
+#~ ">Восстановить пароль можно в разделе <a href=\"%s\">Мои счета</a>."
 
 #~ msgid "Password of recipient account"
 #~ msgstr "Пароль от счёта получателя"
@@ -197,9 +232,11 @@ msgstr "Заявка будет обработана в течение трёх 
 #~ msgstr "Переводы на IB-счета или с них разрешены только в ручном режиме."
 
 #~ msgid ""
-#~ "You should enter passwords for both accounts if you want automatic transfer"
+#~ "You should enter passwords for both accounts if you want automatic "
+#~ "transfer"
 #~ msgstr ""
-#~ "Вы должны ввести пароль к обоим счетам, если желаете автоматический перевод."
+#~ "Вы должны ввести пароль к обоим счетам, если желаете автоматический "
+#~ "перевод."
 
 #~ msgid "The password you entered is incorrect."
 #~ msgstr "Вы ввели неверный пароль."
@@ -208,23 +245,25 @@ msgstr "Заявка будет обработана в течение трёх 
 #~ msgstr "Внутренняя ошибка при проверке пароля: %s."
 
 #~ msgid ""
-#~ "Both of the accounts belong to your private office. Please enter both of the"
-#~ " passwords and then use automatic internal transfer."
+#~ "Both of the accounts belong to your private office. Please enter both of "
+#~ "the passwords and then use automatic internal transfer."
 #~ msgstr ""
 #~ "Оба счёта привязаны к Вашему личному кабинету. Пожалуйста, введите оба "
 #~ "пароля и воспользуйтесь автоматическим внутренним переводом."
 
-#~ msgid "You have open orders on your account. Please close them and try again."
+#~ msgid ""
+#~ "You have open orders on your account. Please close them and try again."
 #~ msgstr ""
-#~ "На вашем счёте есть открытые сделки. Пожалуйста, закройте  их и попробуйте "
-#~ "снова."
+#~ "На вашем счёте есть открытые сделки. Пожалуйста, закройте  их и "
+#~ "попробуйте снова."
 
 #~ msgid "account balance"
 #~ msgstr "Баланс"
 
 #~ msgid ""
-#~ "There was an error checking sender's account for eligibility of transfer."
-#~ "                                    Please try to specify its password."
+#~ "There was an error checking sender's account for eligibility of "
+#~ "transfer.                                    Please try to specify its "
+#~ "password."
 #~ msgstr ""
 #~ "Во время проверки доступности перевода для счёта отправителя возникла "
 #~ "ошибка. Пожалуйста, попробуйте указать его пароль."

@@ -2,150 +2,267 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-07 21:03+0400\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2014-05-07 21:04+0400\n"
 "Last-Translator:   <valexeev@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Translated-Using: django-rosetta 0.7.3\n"
 
+#: django-shared/treemenus/admin.py:40
 #, python-format
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr ""
 
+#: django-shared/treemenus/admin.py:55
 #, fuzzy, python-format
 msgid "The %(name)s \"%(obj)s\" was deleted successfully."
 msgstr "пункт меню \"%s\" был перемещен"
 
+#: django-shared/treemenus/admin.py:189 django-shared/treemenus/admin.py:201
 #, python-format
 msgid "The menu item \"%s\" was moved successfully."
 msgstr "пункт меню \"%s\" был перемещен"
 
+#: django-shared/treemenus/admin.py:191
 #, python-format
 msgid "The menu item \"%s\" is not allowed to move down."
 msgstr "пункт меню \"%s\" невозможно сдвинуть вниз"
 
+#: django-shared/treemenus/admin.py:203
 #, python-format
 msgid "The menu item \"%s\" is not allowed to move up."
 msgstr "пункт меню \"%s\" невозможно сдвинуть вверх"
 
+#: django-shared/treemenus/models.py:27
 msgid "Parent"
 msgstr "Родительский элемент"
 
+#: django-shared/treemenus/models.py:28
+#: django-shared/treemenus/templates/admin/treemenus/menu/change_form.html:25
 msgid "URL"
 msgstr "Адрес"
 
+#: django-shared/treemenus/models.py:29
+#: django-shared/treemenus/templates/admin/treemenus/menu/change_form.html:26
 msgid "Named URL"
 msgstr "Именованный адрес"
 
+#: django-shared/treemenus/models.py:30
 msgid "Regex URL"
 msgstr ""
 
+#: django-shared/treemenus/models.py:31
+msgid "Open in blank page"
+msgstr ""
+
+#: django-shared/treemenus/models.py:31
+msgid "If checked open link in new page"
+msgstr ""
+
+#: django-shared/treemenus/models.py:32
 msgid "Level"
 msgstr "Уровень"
 
+#: django-shared/treemenus/models.py:33
 msgid "Rank"
 msgstr ""
 
+#: django-shared/treemenus/models.py:34 django-shared/treemenus/models.py:290
 msgid "Menu"
 msgstr "Меню"
 
+#: django-shared/treemenus/models.py:36
 msgid "Caption Russian"
 msgstr "Название (рус)"
 
+#: django-shared/treemenus/models.py:37
 msgid "Caption English"
 msgstr "Название (англ)"
 
+#: django-shared/treemenus/models.py:38
 msgid "Caption Indonesian "
 msgstr "Название (индонез)"
 
+#: django-shared/treemenus/models.py:39
 msgid "Caption Chinese"
 msgstr "Название (кит)"
 
+#: django-shared/treemenus/models.py:40
+#, fuzzy
+#| msgid "Caption English"
+msgid "Caption Polish"
+msgstr "Название (англ)"
+
+#: django-shared/treemenus/models.py:41
+#, fuzzy
+#| msgid "Caption Chinese"
+msgid "Caption Portuguese"
+msgstr "Название (кит)"
+
+#: django-shared/treemenus/models.py:42
+#, fuzzy
+msgid "Caption Arabic"
+msgstr "Название (рус)"
+
+#: django-shared/treemenus/models.py:43
+#, fuzzy
+#| msgid "Caption Russian"
+msgid "Caption Ukrainian"
+msgstr "Название (рус)"
+
+#: django-shared/treemenus/models.py:44
+#, fuzzy
+#| msgid "Caption Russian"
+msgid "Caption Persian"
+msgstr "Название (рус)"
+
+#: django-shared/treemenus/models.py:45
+#, fuzzy
+#| msgid "Caption Russian"
+msgid "Caption Armenian"
+msgstr "Название (рус)"
+
+#: django-shared/treemenus/models.py:46
+#, fuzzy
+#| msgid "Caption Russian"
+msgid "Caption Georgian"
+msgstr "Название (рус)"
+
+#: django-shared/treemenus/models.py:47
+#, fuzzy
+#| msgid "Caption English"
+msgid "Caption French"
+msgstr "Название (англ)"
+
+#: django-shared/treemenus/models.py:48
+#, fuzzy
+#| msgid "Caption Chinese"
+msgid "Caption Thai"
+msgstr "Название (кит)"
+
+#: django-shared/treemenus/models.py:50
 msgid "Visibility Condition"
 msgstr "Условие видимости"
 
+#: django-shared/treemenus/models.py:51
 msgid "Perform permission check"
 msgstr "Проверять доступ к странице?"
 
+#: django-shared/treemenus/models.py:52
 msgid "Icon"
 msgstr ""
 
+#: django-shared/treemenus/models.py:53
 msgid "Widget name"
 msgstr ""
 
+#: django-shared/treemenus/models.py:264
 msgid "Name"
 msgstr "Название"
 
+#: django-shared/treemenus/models.py:266
 msgid "Root Item"
 msgstr "Корневой элемент"
 
+#: django-shared/treemenus/models.py:272
 msgid "Root"
 msgstr "Корень"
 
+#: django-shared/treemenus/models.py:291
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/change_form.html:19
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/change_form.html:24
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/delete_confirmation.html:16
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/object_history.html:16
 msgid "Menus"
 msgstr "Меню"
 
+#: django-shared/treemenus/templates/admin/treemenus/menu/change_form.html:8
 #, fuzzy
 msgid "Menu Items"
 msgstr "Меню"
 
+#: django-shared/treemenus/templates/admin/treemenus/menu/change_form.html:11
 msgid "Add an item"
 msgstr ""
 
+#: django-shared/treemenus/templates/admin/treemenus/menu/change_form.html:24
 #, fuzzy
 msgid "Caption"
 msgstr "Название (рус)"
 
+#: django-shared/treemenus/templates/admin/treemenus/menu/change_form.html:27
 msgid "Move"
 msgstr ""
 
+#: django-shared/treemenus/templates/admin/treemenus/menu/change_form.html:37
 #, fuzzy
 msgid "[Root]"
 msgstr "Корень"
 
+#: django-shared/treemenus/templates/admin/treemenus/menu/change_form.html:53
 msgid "Down"
 msgstr ""
 
+#: django-shared/treemenus/templates/admin/treemenus/menu/change_form.html:59
 msgid "Up"
 msgstr ""
 
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/change_form.html:18
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/change_form.html:23
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/delete_confirmation.html:15
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/object_history.html:15
+#: django-shared/treemenus/templates/treemenus/change_form.html:7
 msgid "Home"
 msgstr ""
 
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/change_form.html:21
 msgid "Add Item"
 msgstr ""
 
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/change_form.html:26
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/delete_confirmation.html:18
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/object_history.html:18
 msgid "Items"
 msgstr ""
 
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/delete_confirmation.html:20
+#: django-shared/treemenus/templates/treemenus/change_form.html:22
 msgid "Delete"
 msgstr ""
 
+#: django-shared/treemenus/templates/admin/treemenus/menuitem/object_history.html:20
+#: django-shared/treemenus/templates/treemenus/change_form.html:15
 msgid "History"
 msgstr ""
 
+#: django-shared/treemenus/templates/treemenus/change_form.html:10
 msgid "Add"
 msgstr ""
 
+#: django-shared/treemenus/templates/treemenus/change_form.html:16
 msgid "View on site"
 msgstr ""
 
+#: django-shared/treemenus/templates/treemenus/change_form.html:21
 msgid "Save"
 msgstr ""
 
+#: django-shared/treemenus/templates/treemenus/menu.html:8
 msgid "Main"
 msgstr "Главная"
 
+#: django-shared/treemenus/templates/treemenus/menu_map.html:24
 msgid "Карта сайта"
 msgstr ""

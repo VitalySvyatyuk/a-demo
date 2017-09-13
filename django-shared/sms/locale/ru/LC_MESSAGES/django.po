@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-01 17:25+0400\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2013-08-26 15:52+0400\n"
 "Last-Translator:   <i.tsuvarev@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,156 +20,207 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.2\n"
 
+#: django-shared/sms/backends.py:41
 msgid "Failed to send message"
 msgstr "Ошибка при отсылке смс"
 
+#: django-shared/sms/backends.py:50
 msgid "Message is in the queue"
 msgstr "Сообщение в очереди"
 
+#: django-shared/sms/backends.py:51
 msgid "Message is on the way to the operator"
 msgstr "Сообщение передается оператору"
 
+#: django-shared/sms/backends.py:52
 msgid "Message is on the way to the recipient"
 msgstr "Сообщение отправлено (в пути)"
 
+#: django-shared/sms/backends.py:53
 msgid "Message delivered"
 msgstr "Сообщение доставлено"
 
+#: django-shared/sms/backends.py:54
 msgid "Message failed: out of time"
 msgstr "Не может быть доставлено: время жизни истекло"
 
+#: django-shared/sms/backends.py:55
 msgid "Message failed: cancelled by the operator"
 msgstr "Не может быть доставлено: удалено оператором"
 
+#: django-shared/sms/backends.py:56
 msgid "Message failed: phone malfunction"
 msgstr "Не может быть доставлено: сбой в телефоне"
 
+#: django-shared/sms/backends.py:57
 msgid "Message failed, reason unknown"
 msgstr "Не может быть доставлено: неизвестная причина"
 
+#: django-shared/sms/backends.py:58
 msgid "Message declined"
 msgstr "Сообщение отклонено"
 
+#: django-shared/sms/backends.py:59
 msgid "Wrong API key."
 msgstr "Неверный API_KEY"
 
+#: django-shared/sms/backends.py:60
 msgid "Not enough funds."
 msgstr "Мало средств"
 
+#: django-shared/sms/backends.py:61
 msgid "Invalid receiver number."
 msgstr "Неверный номер получателя"
 
+#: django-shared/sms/backends.py:62
 msgid "Empty message."
 msgstr "Пустое сообщение"
 
+#: django-shared/sms/backends.py:63
 msgid "Sender name not allowed."
 msgstr "Имя отправителя не согласовано с администрацией"
 
+#: django-shared/sms/backends.py:64
 msgid "Message too long."
 msgstr "Слишком длинное сообщение "
 
+#: django-shared/sms/backends.py:65
 msgid "Message limit exceeded"
 msgstr "Исчерпано число сообщений"
 
+#: django-shared/sms/backends.py:66
 msgid "Receiver number not allowed."
 msgstr "Запрещенный номер получателя"
 
+#: django-shared/sms/backends.py:99
 msgid "No errors"
 msgstr "Без ошибок"
 
+#: django-shared/sms/backends.py:100
 msgid "Error login or password"
 msgstr "Неверный логин, пароль"
 
+#: django-shared/sms/backends.py:101
 msgid "Blocked user"
 msgstr "Доступ заблокирован"
 
+#: django-shared/sms/backends.py:102
 msgid "Insufficient funds"
 msgstr "На счете недостаточно средств"
 
+#: django-shared/sms/backends.py:103
 msgid "Blocked ip"
 msgstr "IP заблокирован"
 
+#: django-shared/sms/backends.py:104
 msgid "Http not enabled"
 msgstr "Персональные настройки запрещают отправку по HTTP"
 
+#: django-shared/sms/backends.py:105
 msgid "This server ip not enabled"
 msgstr "P-адрес не указан в персональных настройках"
 
+#: django-shared/sms/backends.py:106
 msgid "Email sending not enabled"
 msgstr "Персональные настройки запрещают отправку по smtp"
 
+#: django-shared/sms/backends.py:107
 msgid "This email not enabled"
 msgstr "Персональные настройки запрещают отправку по smtp"
 
+#: django-shared/sms/backends.py:108
 msgid "Blocked moderator id"
 msgstr "Доступ модератору закрыт"
 
+#: django-shared/sms/backends.py:109
 msgid "Error manual phone list"
 msgstr "Недопустимые символы в адресатах-phone_list"
 
+#: django-shared/sms/backends.py:110
 msgid "Empty message text"
 msgstr "Пустое сообщение"
 
+#: django-shared/sms/backends.py:111
 msgid "Empty phone list"
 msgstr "Не заданы адресаты - phone_list"
 
+#: django-shared/sms/backends.py:112
 msgid "Stop service"
 msgstr "Сервис временно недоступен"
 
+#: django-shared/sms/backends.py:113
 msgid "Error format date"
 msgstr "Неверный формат даты - send_on"
 
+#: django-shared/sms/backends.py:114
 msgid "Double sent from web interface"
 msgstr "Повторная отправка допускается через 10 секунд"
 
+#: django-shared/sms/backends.py:115
 msgid "Error multiaccess"
 msgstr "Процедура отправки занята"
 
+#: django-shared/sms/backends.py:116
 msgid "Incorrect Group"
 msgstr "Неверный формат параметра - Group"
 
+#: django-shared/sms/backends.py:117
 msgid "Empty password"
 msgstr "Не указан пароль - http_password"
 
+#: django-shared/sms/backends.py:118
 msgid "Empty login"
 msgstr "Не указан логин - http_username"
 
+#: django-shared/sms/backends.py:119
 msgid "Invalid FromPhone"
 msgstr "Недозволительное имя отправителя"
 
+#: django-shared/sms/backends.py:120
 msgid "Flood"
 msgstr "Адресаты сформированы перебором"
 
+#: django-shared/sms/models.py:11
 msgid "Receiver number"
 msgstr "Номер получателя"
 
+#: django-shared/sms/models.py:12
 msgid "A number in format +70000000000"
 msgstr "Номер в формате +70000000000"
 
+#: django-shared/sms/models.py:13
 msgid "Sender number"
 msgstr "Номер отправителя"
 
+#: django-shared/sms/models.py:15
 msgid "Leave empty if you don't know what it is"
 msgstr "Оставьте пустым, если не знаете что это"
 
+#: django-shared/sms/models.py:16
 msgid "Message text"
 msgstr "Текст сообщения"
 
+#: django-shared/sms/models.py:16
 msgid "Maximum 160 characters"
 msgstr "Максимальная длина - 160 символов"
 
+#: django-shared/sms/models.py:21
 msgid "SMS message"
 msgstr "Смс сообщение"
 
+#: django-shared/sms/models.py:22
 msgid "SMS messages"
 msgstr "Смс сообщения"
 
+#: django-shared/sms/templates/sms/code.html:6
 msgid "Code"
 msgstr "Код подтверждения"
 
+#: django-shared/sms/templates/sms/code.html:15
 msgid "Enter the confirmation code you have received."
 msgstr "Введите код подтверждения"
 
+#: django-shared/sms/templates/sms/send_sms.html:6
 msgid "Send sms"
 msgstr "Отправить СМС"
 

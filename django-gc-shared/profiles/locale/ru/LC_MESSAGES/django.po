@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-21 20:05+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2017-01-18 15:55+0230\n"
 "Last-Translator: Vasily Alexeev <va@uptrader.us>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,417 +16,640 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.12\n"
 
+#: django-gc-shared/profiles/admin.py:30
 msgid "Personal"
 msgstr "Личные данные"
 
+#: django-gc-shared/profiles/admin.py:33
 msgid "Contacts"
 msgstr "Контакты"
 
+#: django-gc-shared/profiles/admin.py:39
 msgid "Location"
 msgstr "Местоположение"
 
+#: django-gc-shared/profiles/admin.py:42
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:550
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:628
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:665
 msgid "Other"
 msgstr "Другое"
 
+#: django-gc-shared/profiles/admin.py:46
 msgid "ARUM financial information"
 msgstr "Финансовая информаци для ARUM'a"
 
+#: django-gc-shared/profiles/admin.py:52
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:500
 msgid "Type of your activity"
 msgstr "Вид деятельности"
 
+#: django-gc-shared/profiles/admin.py:56
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:692
 msgid "Trading experience"
 msgstr "Опыт торговли"
 
+#: django-gc-shared/profiles/admin.py:76 django-gc-shared/profiles/forms.py:80
+#: django-gc-shared/profiles/models.py:671
+#: django-gc-shared/profiles/models.py:674
+#: django-gc-shared/profiles/models.py:680
+#: django-gc-shared/profiles/models.py:683
+#: django-gc-shared/profiles/rest_serializers.py:187
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:29
 msgid "First name"
 msgstr "Имя"
 
+#: django-gc-shared/profiles/admin.py:80
 #, fuzzy
 #| msgid "username"
 msgid "Surname"
 msgstr "Ник на форуме"
 
+#: django-gc-shared/profiles/admin.py:88
 #, fuzzy
 #| msgid "E-mail"
 msgid "Email"
 msgstr "E-mail"
 
+#: django-gc-shared/profiles/forms.py:23
 msgid "Unsupported file extension"
 msgstr "Неподдерживаемое расширение"
 
+#: django-gc-shared/profiles/forms.py:25
 msgid "File is too big."
 msgstr "Файл слишком большой"
 
+#: django-gc-shared/profiles/forms.py:44 django-gc-shared/profiles/forms.py:64
+#: django-gc-shared/profiles/models.py:707
 #, python-format
 msgid "Supported extensions: %(ext)s. Filesize limit: %(limit)s Mb"
 msgstr "Поддерживаемые расширения: %(ext)s. Макс. объем файла: %(limit)s МБ"
 
+#: django-gc-shared/profiles/forms.py:77
 msgid "Forum username"
 msgstr "Ник на форуме"
 
-msgid "Your username on the forum, only english letters, numbers or underscores allowed"
-msgstr "Ваш ник на форуме, можно вводить только английские буквы, цифры и некоторые символы"
+#: django-gc-shared/profiles/forms.py:78
+msgid ""
+"Your username on the forum, only english letters, numbers or underscores "
+"allowed"
+msgstr ""
+"Ваш ник на форуме, можно вводить только английские буквы, цифры и некоторые "
+"символы"
 
+#: django-gc-shared/profiles/forms.py:82
+#: django-gc-shared/profiles/models.py:671
+#: django-gc-shared/profiles/models.py:674
+#: django-gc-shared/profiles/models.py:680
+#: django-gc-shared/profiles/models.py:683
+#: django-gc-shared/profiles/rest_serializers.py:188
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:30
 msgid "Last name"
 msgstr "Фамилия"
 
+#: django-gc-shared/profiles/forms.py:84
+#: django-gc-shared/profiles/models.py:168
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:31
 msgid "Middle name"
 msgstr "Отчество"
 
+#: django-gc-shared/profiles/forms.py:86
 msgid "e-mail address"
 msgstr "E-mail"
 
+#: django-gc-shared/profiles/forms.py:87
+#: django-gc-shared/profiles/models.py:181
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:29
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:53
 msgid "ICQ"
 msgstr "ICQ"
 
+#: django-gc-shared/profiles/forms.py:88
 msgid "Enter a valid ICQ number."
 msgstr "Введите корректный номер ICQ"
 
+#: django-gc-shared/profiles/forms.py:89
+#: django-gc-shared/profiles/models.py:182
 msgid "Example: 629301132"
 msgstr "Например: 629301132"
 
+#: django-gc-shared/profiles/forms.py:90
+#: django-gc-shared/profiles/models.py:179
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:30
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:57
 msgid "Skype"
 msgstr "Skype"
 
+#: django-gc-shared/profiles/forms.py:91
 msgid "Enter a valid Skype account."
 msgstr "Введите корректный номер Skype"
 
+#: django-gc-shared/profiles/forms.py:92
+#: django-gc-shared/profiles/models.py:180
 msgid "Example: gc_clients"
 msgstr "Например: gc_clients"
 
+#: django-gc-shared/profiles/forms.py:93
+#: django-gc-shared/profiles/models.py:170
+#: django-gc-shared/profiles/models.py:671
+#: django-gc-shared/profiles/models.py:674
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:31
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:32
 msgid "Birthday"
 msgstr "Дата рождения"
 
+#: django-gc-shared/profiles/forms.py:94
 msgid "Example: 28.12.1987"
 msgstr "Например: 28.12.1987"
 
+#: django-gc-shared/profiles/forms.py:95
+#: django-gc-shared/profiles/models.py:171
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:36
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:33
 msgid "Country"
 msgstr "Страна"
 
-msgid "You will receive the subscriptions                you select to your e-mail and via text messages on your phone"
+#: django-gc-shared/profiles/forms.py:112
+msgid ""
+"You will receive the subscriptions                you select to your e-mail "
+"and via text messages on your phone"
 msgstr "Выбранный тип рассылки будет приходить в виде e-mail и SMS."
 
+#: django-gc-shared/profiles/forms.py:170
+#: django-gc-shared/profiles/rest_serializers.py:126
+#: django-gc-shared/profiles/rest_serializers.py:244
 msgid "Illegal symbols"
 msgstr "Недопустимые символы"
 
+#: django-gc-shared/profiles/forms.py:186
+#: django-gc-shared/profiles/rest_serializers.py:208
 msgid "This username already exists"
 msgstr "Такой ник уже зарегистрирован"
 
+#: django-gc-shared/profiles/forms.py:203
+#: django-gc-shared/profiles/rest_serializers.py:215
 msgid "Email you provided is already registered in our system."
 msgstr "Адрес электронной почты, который вы указали, уже используется."
 
+#: django-gc-shared/profiles/forms.py:273
 msgid "E-mail address"
 msgstr "E-mail"
 
+#: django-gc-shared/profiles/forms.py:281
 msgid "Account activation link will         be sent to this e-mail address."
-msgstr "Ссылка на активацию учётной записи будет отправлена на этот адрес электронной почты."
+msgstr ""
+"Ссылка на активацию учётной записи будет отправлена на этот адрес "
+"электронной почты."
 
+#: django-gc-shared/profiles/forms.py:312
 msgid "Wrong password"
 msgstr "Неверный пароль"
 
+#: django-gc-shared/profiles/models.py:125
 msgid "over 100 000"
 msgstr "свыше 100 000"
 
+#: django-gc-shared/profiles/models.py:128
 msgid "below 10 000"
 msgstr "менее 10 000"
 
+#: django-gc-shared/profiles/models.py:131
 msgid "Less than 20%"
 msgstr "Менее 20%"
 
+#: django-gc-shared/profiles/models.py:135
 msgid "Over 80%"
 msgstr "Более 80%"
 
+#: django-gc-shared/profiles/models.py:139
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:741
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:807
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:873
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:939
 msgid "Daily"
 msgstr "Ежедневно"
 
+#: django-gc-shared/profiles/models.py:140
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:742
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:808
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:874
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:940
 msgid "Weekly"
 msgstr "Еженедельно"
 
+#: django-gc-shared/profiles/models.py:141
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:743
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:809
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:875
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:941
 msgid "Monthly"
 msgstr "Ежемесячно"
 
+#: django-gc-shared/profiles/models.py:142
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:744
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:810
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:876
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:942
 msgid "Yearly"
 msgstr "Ежегодно"
 
+#: django-gc-shared/profiles/models.py:146
 msgid "Less than 10 000"
 msgstr "Менее 10 000"
 
+#: django-gc-shared/profiles/models.py:150
 msgid "Over 250 000"
 msgstr "Более 250 000"
 
+#: django-gc-shared/profiles/models.py:154
 msgid "Employed"
 msgstr "Сотрудник"
 
+#: django-gc-shared/profiles/models.py:155
 msgid "Unemployed"
 msgstr "Безработный"
 
+#: django-gc-shared/profiles/models.py:156
 msgid "Self employed"
 msgstr "Предприниматель"
 
+#: django-gc-shared/profiles/models.py:157
 msgid "Retired"
 msgstr "Пенсионер"
 
+#: django-gc-shared/profiles/models.py:158
 msgid "Student"
 msgstr "Студент"
 
+#: django-gc-shared/profiles/models.py:162
 msgid "Investment"
 msgstr "Инвестирование"
 
+#: django-gc-shared/profiles/models.py:163
 msgid "Hedging"
 msgstr "Хеджирование"
 
+#: django-gc-shared/profiles/models.py:164
 msgid "Speculative trading"
 msgstr "Спекулятивная торговля"
 
+#: django-gc-shared/profiles/models.py:172
+#: django-gc-shared/profiles/models.py:224
 msgid "Example: Russia"
 msgstr "Например: Россия"
 
+#: django-gc-shared/profiles/models.py:173
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:44
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:34
 msgid "City"
 msgstr "Город"
 
+#: django-gc-shared/profiles/models.py:174
 msgid "The city where you live"
 msgstr "Город, в котором вы живете"
 
+#: django-gc-shared/profiles/models.py:175
 msgid "State / Province"
 msgstr "Область"
 
+#: django-gc-shared/profiles/models.py:177
 msgid "Residential address"
 msgstr "Адрес проживания"
 
+#: django-gc-shared/profiles/models.py:178
 msgid "Example: pr. Stachek, 8A"
 msgstr "Например: пр. Стачек 8а"
 
+#: django-gc-shared/profiles/models.py:183
 msgid "Home phone"
 msgstr "Домашний телефон"
 
+#: django-gc-shared/profiles/models.py:184
 msgid "Example: 8-800-333-1003"
 msgstr "Например: +7 (812) 333-10-03"
 
+#: django-gc-shared/profiles/models.py:185
 msgid "Work phone"
 msgstr "Рабочий телефон"
 
+#: django-gc-shared/profiles/models.py:186
 msgid "Example: +7 (812) 300-81-96"
 msgstr "Например: +7 (812) 333-10-03"
 
+#: django-gc-shared/profiles/models.py:187
+#: django-gc-shared/profiles/rest_serializers.py:34
 msgid "Mobile phone"
 msgstr "Мобильный телефон"
 
+#: django-gc-shared/profiles/models.py:188
 msgid "Example: +7 (911) 200-19-55"
 msgstr "Например: +7 (812) 333-10-03"
 
+#: django-gc-shared/profiles/models.py:189
 msgid "Avatar"
 msgstr "Фото"
 
+#: django-gc-shared/profiles/models.py:190
 msgid "Your photo"
 msgstr "Ваше фото"
 
+#: django-gc-shared/profiles/models.py:191
 msgid "Social security number"
 msgstr "Номер страхового полиса"
 
+#: django-gc-shared/profiles/models.py:193
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:36
 msgid "TIN"
 msgstr "ИНН"
 
+#: django-gc-shared/profiles/models.py:194
 msgid "Tax identification number"
 msgstr "Индивидуальный номер налогоплательщика"
 
+#: django-gc-shared/profiles/models.py:199
 msgid "Assigned to manager at"
 msgstr ""
 
+#: django-gc-shared/profiles/models.py:202
 msgid "Agent code"
 msgstr "Код агента"
 
+#: django-gc-shared/profiles/models.py:204
 msgid "If you don't know what it is, leave empty"
 msgstr "Если вы не знаете, что это, оставьте поле пустым"
 
+#: django-gc-shared/profiles/models.py:205
 msgid "Did user lose his OTP"
 msgstr "Клиент потерял OTP"
 
+#: django-gc-shared/profiles/models.py:207
 msgid "Details"
 msgstr "Детали"
 
+#: django-gc-shared/profiles/models.py:211
 msgid "Source"
 msgstr "Источник"
 
+#: django-gc-shared/profiles/models.py:214
 msgid "Registered from"
 msgstr ""
 
+#: django-gc-shared/profiles/models.py:218
 msgid "Last activity"
 msgstr ""
 
+#: django-gc-shared/profiles/models.py:221
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:38
 msgid "Nationality"
 msgstr "Гражданство"
 
+#: django-gc-shared/profiles/models.py:225
 msgid "Net capital (USD)"
 msgstr "Чистый капитал (USD)"
 
+#: django-gc-shared/profiles/models.py:227
 msgid "Annual income (USD)"
 msgstr "Годовой доход (USD)"
 
+#: django-gc-shared/profiles/models.py:230
 msgid "Tax residence"
 msgstr "Налоговое резиденство"
 
+#: django-gc-shared/profiles/models.py:232
 msgid "US citizen"
 msgstr "Лицо под юрисдикцией США"
 
+#: django-gc-shared/profiles/models.py:233
 msgid "Employment status"
 msgstr "Род занятости"
 
+#: django-gc-shared/profiles/models.py:235
 msgid "Source of funds"
 msgstr "Источник средств"
 
+#: django-gc-shared/profiles/models.py:236
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:45
 msgid "Nature of business"
 msgstr "Сфера деятельности"
 
+#: django-gc-shared/profiles/models.py:237
 msgid "Monthly financial commitments"
 msgstr "Ежемесячные обязательства"
 
+#: django-gc-shared/profiles/models.py:240
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:47
 msgid "Approximate volume of investments per annum (USD)"
 msgstr "Предполагаемый объем инвестиций в год (USD)"
 
+#: django-gc-shared/profiles/models.py:242
 msgid "Purpose to open an Arum capital account"
 msgstr "Ваша цель открытия счета в Arum Capital"
 
+#: django-gc-shared/profiles/models.py:245
 msgid "Level of education"
 msgstr "Образование"
 
+#: django-gc-shared/profiles/models.py:247
 msgid "Can open ECN.Invest accounts"
 msgstr "Может открывать ECN.Invest аккаунты"
 
+#: django-gc-shared/profiles/models.py:257
 msgid "Is partner"
 msgstr "Является партнером"
 
+#: django-gc-shared/profiles/models.py:257
 msgid "User can browse partner section"
 msgstr "Юзер может просматривать раздел для партнеров"
 
+#: django-gc-shared/profiles/models.py:261
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:213
 msgid "Email is verified"
 msgstr "Email подтвержден"
 
+#: django-gc-shared/profiles/models.py:264
 msgid "User profile"
 msgstr "Профиль пользователя"
 
+#: django-gc-shared/profiles/models.py:265
 msgid "User profiles"
 msgstr "Профили пользователей"
 
+#: django-gc-shared/profiles/models.py:326
 msgid "Registration incomplete"
 msgstr "Регистрация не завершена"
 
+#: django-gc-shared/profiles/models.py:327
 #, fuzzy
 #| msgid "Documents you uploaded"
 msgid "Documents have not been uploaded"
 msgstr "Документы не были отправлены"
 
+#: django-gc-shared/profiles/models.py:328
 msgid "Pending approval"
 msgstr "На проверке"
 
+#: django-gc-shared/profiles/models.py:329
 msgid "Approved"
 msgstr "Проверен"
 
+#: django-gc-shared/profiles/models.py:615
 msgid "Parameter"
 msgstr "Параметр"
 
+#: django-gc-shared/profiles/models.py:616
 msgid "Is the data valid?"
 msgstr "Данные верны?"
 
+#: django-gc-shared/profiles/models.py:618
 msgid "Manager comment"
 msgstr "Коментарий менеджера"
 
+#: django-gc-shared/profiles/models.py:657
 msgid "Proof of Identification"
 msgstr "Документ, удостоверяющий личность"
 
+#: django-gc-shared/profiles/models.py:659
 msgid "Copy of your passport page with the registered residential address"
 msgstr "Копия страницы прописки"
 
+#: django-gc-shared/profiles/models.py:660
 msgid "Proof of residential address"
 msgstr "Подтверждение адреса проживания"
 
+#: django-gc-shared/profiles/models.py:661
 msgid "Driver license"
 msgstr "Водительское удостоверение"
 
+#: django-gc-shared/profiles/models.py:662
 msgid "Credit card back side"
 msgstr "Обратная сторона кредитной карты"
 
+#: django-gc-shared/profiles/models.py:663
 msgid "Credit card front side"
 msgstr "Лицевая сторона кредитной карты"
 
+#: django-gc-shared/profiles/models.py:664
 msgid "Real IB agreement"
 msgstr "Партнерское соглашение"
 
+#: django-gc-shared/profiles/models.py:665
 #, fuzzy
 #| msgid "FX+ agreement"
 msgid "PM agreement"
 msgstr "Скан соглашения FX+"
 
+#: django-gc-shared/profiles/models.py:666
 msgid "Other document"
 msgstr "Другой документ"
 
+#: django-gc-shared/profiles/models.py:677
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:48
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:35
 msgid "Address"
 msgstr "Адрес"
 
+#: django-gc-shared/profiles/models.py:680
+#: django-gc-shared/profiles/models.py:683
 msgid "ID Number"
 msgstr "Серия, номер"
 
+#: django-gc-shared/profiles/models.py:683
 msgid "Issue date"
 msgstr "Дата выдачи"
 
+#: django-gc-shared/profiles/models.py:698
 msgid "Document name"
 msgstr "Название документа"
 
+#: django-gc-shared/profiles/models.py:699
 msgid "Documents was rejected"
 msgstr "Документы были отклонены"
 
+#: django-gc-shared/profiles/models.py:700
 msgid "Document description"
 msgstr "Описание документа"
 
+#: django-gc-shared/profiles/models.py:705
 msgid "File"
 msgstr "Файл"
 
+#: django-gc-shared/profiles/models.py:713
 msgid "Creation timestamp"
 msgstr "Время создания"
 
+#: django-gc-shared/profiles/models.py:716
 msgid "Document fields"
 msgstr "Данные документа"
 
+#: django-gc-shared/profiles/rest_api.py:40
 msgid "Password successfully changed"
 msgstr "Пароль успешно изменён"
 
+#: django-gc-shared/profiles/rest_api.py:55
 msgid "Password successfully recovered"
 msgstr "Пароль успешно восстановлен"
 
+#: django-gc-shared/profiles/rest_api.py:150
+msgid "Bad file extension or size!"
+msgstr "Неверное расширение файла или его размер!"
+
+#: django-gc-shared/profiles/rest_api.py:153
+msgid "No documents uploaded!"
+msgstr "Не загружен ни один документ!"
+
+#: django-gc-shared/profiles/rest_serializers.py:58
 msgid "Cannot edit mobile phone number because it is binded for OTP"
 msgstr "Невозможно редактирование телефона, так как он привязан к OTP"
 
+#: django-gc-shared/profiles/rest_serializers.py:67
 msgid "Mobile phone you provided is already registered in our system."
 msgstr "Номер телефона, который вы указали, уже используется."
 
+#: django-gc-shared/profiles/rest_serializers.py:89
 msgid "Only persons of legal age can be the clients of ARUM CAPITAL"
 msgstr "Клиентами АРУМ КАПИТАЛ могут быть только лица, достигшие 18 лет"
 
+#: django-gc-shared/profiles/rest_serializers.py:96
 msgid "Cannot edit partner code"
 msgstr "Невозможно изменить код агента"
 
+#: django-gc-shared/profiles/rest_serializers.py:103
+#: django-gc-shared/profiles/validators.py:15
 msgid "Wrong partner code"
 msgstr "Неверный код агента"
 
+#: django-gc-shared/profiles/rest_serializers.py:110
+#: django-gc-shared/profiles/rest_serializers.py:115
+#: django-gc-shared/profiles/rest_serializers.py:120
 msgid "Please fill this field"
 msgstr "Пожалуйста заполните это поле"
 
+#: django-gc-shared/profiles/rest_serializers.py:205
 msgid "Only english letters, numbers or underscores allowed"
 msgstr "Используйте только английские буквы, цифры или подчеркивание"
 
+#: django-gc-shared/profiles/rest_serializers.py:219
+#: django-gc-shared/profiles/templates/js/my/profile_registration_info.html:66
 msgid "Please confirm Email"
 msgstr "Пожалуйста подтведите Email"
 
+#: django-gc-shared/profiles/templates/admin/profiles/userprofile/change_form.html:34
 msgid "History"
 msgstr "История"
 
+#: django-gc-shared/profiles/templates/admin/profiles/userprofile/change_form.html:36
 msgid "Reset OTP"
 msgstr "Сбросить OTP"
 
+#: django-gc-shared/profiles/templates/admin/profiles/userprofile/change_form.html:51
 msgid "View on site"
 msgstr "Посмотреть на сайте"
 
+#: django-gc-shared/profiles/templates/admin/profiles/userprofile/change_form.html:86
 msgid "Please correct the error below."
 msgid_plural ""
 "Please\n"
@@ -435,364 +658,671 @@ msgstr[0] "Пожалуйста исправьте ошибки ниже."
 msgstr[1] "Пожалуйста исправьте ошибку ниже."
 msgstr[2] "Пожалуйста исправьте ошибки ниже."
 
+#: django-gc-shared/profiles/templates/js/my/_profile_documents.html:6
 msgid "Upload a copy of the document confirming your personal information"
 msgstr "Загрузите копию документа, подтверждающую Ваши данные."
 
-msgid "Please upload documents which contain your name in Latin- or Cyrillic-based script."
+#: django-gc-shared/profiles/templates/js/my/_profile_documents.html:7
+msgid ""
+"Please upload documents which contain your name in Latin- or Cyrillic-based "
+"script."
 msgstr ""
 
+#: django-gc-shared/profiles/templates/js/my/_profile_documents.html:62
+#: django-gc-shared/profiles/templates/js/my/profile_registration_documents.html:39
 msgid "Choose file"
 msgstr "Выберите файл"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_documents.html:73
+#: django-gc-shared/profiles/templates/profiles/upload_document.html:7
+#: django-gc-shared/profiles/templates/profiles/upload_document.html:12
 msgid "Upload document"
 msgstr "Загрузить документ"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_documents.html:83
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:10
 msgid "Identity confirmed"
 msgstr "Личность подтверждена"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_documents.html:85
+#: django-gc-shared/profiles/templates/js/my/profile_registration_documents.html:76
 msgid "You have uploaded"
 msgstr "Загруженные вами документы"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:5
+#: django-gc-shared/profiles/templates/js/my/profile_base.html:15
 msgid "Personal information"
 msgstr "Персональные данные"
 
-msgid "Your first name in English as it appears on your international passport and/or on your banking cards"
-msgstr "Ваше имя на английском языке как на заграничном паспорте (и/или) на пластиковых картах"
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:20
+msgid ""
+"Your first name in English as it appears on your international passport and/"
+"or on your banking cards"
+msgstr ""
+"Ваше имя на английском языке как на заграничном паспорте (и/или) на "
+"пластиковых картах"
 
-msgid "Your last name in English as it appears on your international passport and/or on your banking cards"
-msgstr "Ваша фамилия на английском языке как на заграничном паспорте (и/или) на пластиковых картах"
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:38
+msgid ""
+"Your last name in English as it appears on your international passport and/"
+"or on your banking cards"
+msgstr ""
+"Ваша фамилия на английском языке как на заграничном паспорте (и/или) на "
+"пластиковых картах"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:56
 msgid "Your middle name in English if it is in your documents"
 msgstr "Ваше отчество на английском если оно указано в Ваших документах"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:72
 msgid "Your desired login to access the site"
 msgstr "Ваш желаемый логин для входа на сайт"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:128
 msgid "The country where you are tax resident and pay your taxes"
 msgstr "Страна, в которой Вы являетесь налоговым резидентом и платите налоги"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:149
 msgid "Your tax identification number"
-msgstr "Ваш индивидуальный номер налогоплатильщика в стране, где Вы являетесь налоговым резидентом"
+msgstr ""
+"Ваш индивидуальный номер налогоплатильщика в стране, где Вы являетесь "
+"налоговым резидентом"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:164
 msgid "Are you US citizen or US person for tax purposes?"
 msgstr "Являетесь ли Вы лицом под юрисдикцией США?"
 
-msgid "A US person for tax purposes is a natural person resident of the USA or a body corporate organized under the laws of the USA as per"
-msgstr "Лицо/субъект под юрисдикцией США, согласно определению налоговой службы США для"
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:165
+msgid ""
+"A US person for tax purposes is a natural person resident of the USA or a "
+"body corporate organized under the laws of the USA as per"
+msgstr ""
+"Лицо/субъект под юрисдикцией США, согласно определению налоговой службы США "
+"для"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:165
 msgid "the definition of the IRS of the USA"
 msgstr "целей налогооблажения"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:172
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:702
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:768
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:834
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:900
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:1112
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:1137
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:1164
 msgid "Yes"
 msgstr "Да"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:180
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:709
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:775
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:841
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:907
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:1120
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:1145
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:1172
 msgid "No"
 msgstr "Нет"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:208
 msgid "Confirm email to start trading"
 msgstr "Подтвердите email для начала торгов"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:254
 msgid "Use Security section to change phone number"
 msgstr "Используйте раздел Безопасность для изменения телефона"
 
-msgid "To confirm phone number, you should create OTP device in Security section"
-msgstr "Для подтверждения телефона, вы должны создать OTP-привязку в разделе Безопасность"
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:259
+msgid ""
+"To confirm phone number, you should create OTP device in Security section"
+msgstr ""
+"Для подтверждения телефона, вы должны создать OTP-привязку в разделе "
+"Безопасность"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:284
 msgid "Address information"
 msgstr "Адрес"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:349
 msgid "Full mailing address including the postal code"
-msgstr "Полный почтовый адрес с указанием почтового индекса Вашего места жительства"
+msgstr ""
+"Полный почтовый адрес с указанием почтового индекса Вашего места жительства"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:367
 msgid "Financial details"
 msgstr "Финансовая информация"
 
-msgid "Financial commitments are the obligation of the account applicant to make certain mandatory payments (including but not limited to loan installments, payments to the family dependents, etc.) over a monthly period. The ratio against the total wealth of the account applicant is to be indicated"
-msgstr "Финансовые обязательства – это обязательные платежи, которые потенциальный инвестор должен совершать ежемесячно (включая, но не ограничиваясь возвратом заемных средств, выплатами иждивенцам и прочие платежи)"
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:421
+msgid ""
+"Financial commitments are the obligation of the account applicant to make "
+"certain mandatory payments (including but not limited to loan installments, "
+"payments to the family dependents, etc.) over a monthly period. The ratio "
+"against the total wealth of the account applicant is to be indicated"
+msgstr ""
+"Финансовые обязательства – это обязательные платежи, которые потенциальный "
+"инвестор должен совершать ежемесячно (включая, но не ограничиваясь возвратом "
+"заемных средств, выплатами иждивенцам и прочие платежи)"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:490
 msgid "Why do we need these details"
 msgstr "Почему нам нужна эта информация"
 
-msgid "As a regulated broker we are required to be in strict compliance with the Know Your Client and Anti-Money Laundering procedures. These measures ensure that you are expressly informed of the trading risks and an account in your name can be set up by yourself only."
-msgstr "От нас, как от регулируемого брокера, требуется строгое соблюдение протоколов \"Знай своего клиента\" и \"Противодействие отмыванию денег\". Эти меры предполагают, что вы полностью уведомлены о торговых рисках, и только вы можете открыть счёт на своё имя"
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:491
+msgid ""
+"As a regulated broker we are required to be in strict compliance with the "
+"Know Your Client and Anti-Money Laundering procedures. These measures ensure "
+"that you are expressly informed of the trading risks and an account in your "
+"name can be set up by yourself only."
+msgstr ""
+"От нас, как от регулируемого брокера, требуется строгое соблюдение "
+"протоколов \"Знай своего клиента\" и \"Противодействие отмыванию денег\". "
+"Эти меры предполагают, что вы полностью уведомлены о торговых рисках, и "
+"только вы можете открыть счёт на своё имя"
 
-msgid "The details you have provided are encrypted in 256-bit technology and shall not be disclosed to any third party under no circumstances."
-msgstr "Предоставленная вами информация шифруется по 256-битной технологии и не предоставляется третьим лицам ни при каких обстоятельствах."
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:492
+msgid ""
+"The details you have provided are encrypted in 256-bit technology and shall "
+"not be disclosed to any third party under no circumstances."
+msgstr ""
+"Предоставленная вами информация шифруется по 256-битной технологии и не "
+"предоставляется третьим лицам ни при каких обстоятельствах."
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:538
 msgid "Income from professional activity"
 msgstr "Доход от деятельности"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:540
 msgid "Savings"
 msgstr "Накопления"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:542
 msgid "Partner/ parent/ family"
 msgstr "Средства партнера/ родителей/ семьи"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:544
 msgid "Investments/ Dividends"
 msgstr "Инвестиции/ Дивиденды"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:546
 msgid "Borrowing"
 msgstr "Заемные средства"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:548
 msgid "Pension"
 msgstr "Пенсия"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:567
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:643
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:679
 msgid "Specify"
 msgstr "Укажите"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:586
 msgid "Accountancy"
 msgstr "Финансы"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:588
 msgid "Admin/ secretarial"
 msgstr "Административная"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:590
 msgid "Agricultural"
 msgstr "Сельское хозяйство"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:592
 msgid "Art"
 msgstr "Искусство"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:594
 msgid "Financial/Banking"
 msgstr "Инвестиции/ Банки"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:596
 msgid "Catering/Hospitality"
 msgstr "Питание / ресторация"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:598
 msgid "Creative/Media"
 msgstr "Медиа"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:600
 msgid "Educational"
 msgstr "Образование"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:602
 msgid "Emergency"
 msgstr "Экстренные службы"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:604
 msgid "Engineering"
 msgstr "Техника"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:606
 msgid "Health/Medicine"
 msgstr "Медицина"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:608
 msgid "IT"
 msgstr "Информационные технологии"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:610
 msgid "Legal"
 msgstr "Право"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:612
 msgid "Leisure/ Entertainment/ Tourism"
 msgstr "Туризм"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:614
 msgid "Manufacturing"
 msgstr "Производство"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:616
 msgid "Marketing/ Advertising/ PR"
 msgstr "Маркетинг/ реклама"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:618
 msgid "Property"
 msgstr "Недвижимость"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:620
 msgid "Sales"
 msgstr "Продажи"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:622
 msgid "Social"
 msgstr "Социальные услуги"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:624
 msgid "Telecom"
 msgstr "Телекоммуникации"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:626
 msgid "Transport/ Logistics"
 msgstr "Транспорт/ Логистика"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:662
 msgid "High school"
 msgstr "Среднее (полное) общее образование"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:663
 msgid "College"
 msgstr "Среднее специальное образование"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:664
 msgid "University"
 msgstr "Высшее образование"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:693
 msgid "Indicate your knowledge and trading experience"
 msgstr "Укажите данные о Вашем опыте"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:696
 msgid "FOREX/CFDs"
 msgstr "FOREX/CFDs"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:714
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:780
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:846
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:912
 msgctxt "for Trading experience xp"
 msgid "Years of experience"
 msgstr "Опыт (период работы)"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:718
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:728
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:740
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:751
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:784
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:794
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:806
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:817
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:850
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:860
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:872
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:883
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:916
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:926
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:938
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:949
 #, fuzzy
 #| msgctxt "choose option in select"
 #| msgid "Choose"
 msgid "Choose"
 msgstr "Пожалуйста, выберите"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:719
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:785
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:851
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:917
 msgid "Less than 1 year"
 msgstr "Менее 1 года"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:720
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:786
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:852
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:918
 msgid "1 to 5 years"
 msgstr "1 – 5 лет"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:721
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:787
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:853
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:919
 msgid "Over 5 years"
 msgstr "Более 5 лет"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:724
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:790
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:856
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:922
 msgid "Average volume of transaction per year (USD) select"
 msgstr "Средний размер одной сделки (USD)"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:729
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:795
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:861
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:927
 msgid "Less than $10 000"
 msgstr "Менее 10 000"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:733
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:799
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:865
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:931
 msgid "Over $250 000"
 msgstr "Более 250 000"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:736
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:802
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:868
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:934
 msgid "Frequency of transactions select"
 msgstr "Как часто совершаете сделки?"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:747
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:813
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:879
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:945
 msgctxt "for Trading experience select"
 msgid "Training received"
 msgstr "Знания"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:752
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:818
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:884
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:950
 msgid "Seminar"
 msgstr "Семинар"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:753
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:819
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:885
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:951
 msgid "Course"
 msgstr "Курсы"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:754
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:820
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:886
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:952
 msgid "Self-trained"
 msgstr "Самостоятельное изучение"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:755
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:821
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:887
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:953
 msgid "Degree holder"
 msgstr "Вуз"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:762
 msgid "Derivative instruments (incl. options, futures, swaps, FRAs, etc.)"
 msgstr "Деривативы (вкл. опционы, фьючерсы, свопы и др.)"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:828
 msgid "Transferable securities"
 msgstr "Ценные бумаги"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:894
 msgid "Units of collective investment undertaking"
 msgstr "Доли инвестиционных фондов"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:1126
 msgid "I have attended a seminar or a course on Forex Trading"
 msgstr "Подтверждаю, что я прошел курс/ семинар по торговле"
 
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:1151
 msgid "Have you ever traded Forex or CFDs?"
 msgstr "Занимались ли Вы когда-нибудь торговлей Forex или CFD? "
 
-msgid "I have previous work experience or relevant qualifications that help me understand the financial products and the risk involved. Forex and CFDs are acceptable for my risk appetite"
-msgstr "Подтверждаю, что у меня есть опыт работы и знания, необходимые для понимания финансовых инструментов и существующих рисков. Риски по продуктам Forex и CFD приемлемы для меня"
+#: django-gc-shared/profiles/templates/js/my/_profile_info.html:1178
+msgid ""
+"I have previous work experience or relevant qualifications that help me "
+"understand the financial products and the risk involved. Forex and CFDs are "
+"acceptable for my risk appetite"
+msgstr ""
+"Подтверждаю, что у меня есть опыт работы и знания, необходимые для понимания "
+"финансовых инструментов и существующих рисков. Риски по продуктам Forex и "
+"CFD приемлемы для меня"
 
+#: django-gc-shared/profiles/templates/js/my/profile_base.html:10
 msgid "Profile settings"
 msgstr "Настройки профиля"
 
+#: django-gc-shared/profiles/templates/js/my/profile_base.html:20
 msgid "Documents"
 msgstr "Документы"
 
+#: django-gc-shared/profiles/templates/js/my/profile_base.html:25
 msgid "Security"
 msgstr "Безопасность"
 
+#: django-gc-shared/profiles/templates/js/my/profile_base.html:30
 msgid "Subscriptions"
 msgstr "Подписки"
 
+#: django-gc-shared/profiles/templates/js/my/profile_info.html:17
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:78
+#: django-gc-shared/profiles/templates/js/my/profile_subscriptions.html:42
+#: django-gc-shared/profiles/templates/profiles/change_password.html:12
+#: django-gc-shared/profiles/templates/profiles/edit_profile.html:67
+#: django-gc-shared/profiles/templates/profiles/unsubscribe_form.html:19
+#: django-gc-shared/profiles/templates/profiles/upload_avatar.html:12
 msgid "Save"
 msgstr "Сохранить"
 
-msgid "You have completed your registration and now you can <a href='[[::BASE_URL]]create'>open a Demo Account</a>. In order to open Live Accounts you need to upload the documents for confirmation of the account."
-msgstr "Вы завершили регистрацию и можете <a href='[[::BASE_URL]]create'>открыть Демо счет</a>, но для работы на реальных счетов Вам необходимо загрузить документы для подтверждения аккаунта."
+#: django-gc-shared/profiles/templates/js/my/profile_registration_documents.html:14
+msgid ""
+"You have completed your registration and now you can <a href='[[::"
+"BASE_URL]]create'>open a Demo Account</a>. In order to open Live Accounts "
+"you need to upload the documents for confirmation of the account."
+msgstr ""
+"Вы завершили регистрацию и можете <a href='[[::BASE_URL]]create'>открыть "
+"Демо счет</a>, но для работы на реальных счетов Вам необходимо загрузить "
+"документы для подтверждения аккаунта."
 
+#: django-gc-shared/profiles/templates/js/my/profile_registration_documents.html:19
 msgid "Upload documents"
 msgstr "Загрузить документы"
 
-msgid "Proof of Identification (POI) – clear colour scanned copy of your <span style='font-weight:bold;'>International Passport</span>. If you do not hold an International Passport, you may provide one other form of valid government-issued identification document (ID card, Driving License). The POI should contain holder’s full name, photo and signature, date of birth, issue/expiry date and document number. In order to open a live trading account this document must be uploaded."
-msgstr "Документ, удостоверяющий личность – четкая цветная скан-копия Вашего <span style='font-weight:bold;'>загранпаспорта</span>. В случае его отсуствия просим предоставить другой удостоверяющий личность документ, выданный компетентными органами (удостоверение личности, водительское удостоверение). Документ должен содержать ФИО владельца, его фото, подпись, дату рождения, а также дату выдачи и срок действия документа, его номер. Данный документ необходим для открытия торгового счета."
+#: django-gc-shared/profiles/templates/js/my/profile_registration_documents.html:25
+msgid ""
+"Proof of Identification (POI) – clear colour scanned copy of your <span "
+"style='font-weight:bold;'>International Passport</span>. If you do not hold "
+"an International Passport, you may provide one other form of valid "
+"government-issued identification document (ID card, Driving License). The "
+"POI should contain holder’s full name, photo and signature, date of birth, "
+"issue/expiry date and document number. In order to open a live trading "
+"account this document must be uploaded."
+msgstr ""
+"Документ, удостоверяющий личность – четкая цветная скан-копия Вашего <span "
+"style='font-weight:bold;'>загранпаспорта</span>. В случае его отсуствия "
+"просим предоставить другой удостоверяющий личность документ, выданный "
+"компетентными органами (удостоверение личности, водительское удостоверение). "
+"Документ должен содержать ФИО владельца, его фото, подпись, дату рождения, а "
+"также дату выдачи и срок действия документа, его номер. Данный документ "
+"необходим для открытия торгового счета."
 
-msgid "For citizens of the Russian Federation, Republic of Belarus, Ukraine, Armenia, Uzbekistan, Tajikistan, Turkmenistan the local passport page with the registered residential address can serve as a proof of residence, <span style='font-weight:bold;'>only in cases</span> where the presented POI document is a different than the local passport. In other words, one document cannot be accepted for multiple use."
-msgstr "Для граждан Российской Федерации, Республики Беларусь, Украины, Армении, Узбекистана, Таджикистана, Туркмении, внутренний паспорт с пропиской может служить подтверждением места жительства <span style='font-weight:bold;'>только в случае</span>, если он не служит для удостоверения личности. Иными словами, один документ подтверждает личность, другой – место жительства."
+#: django-gc-shared/profiles/templates/js/my/profile_registration_documents.html:28
+msgid ""
+"For citizens of the Russian Federation, Republic of Belarus, Ukraine, "
+"Armenia, Uzbekistan, Tajikistan, Turkmenistan the local passport page with "
+"the registered residential address can serve as a proof of residence, <span "
+"style='font-weight:bold;'>only in cases</span> where the presented POI "
+"document is a different than the local passport. In other words, one "
+"document cannot be accepted for multiple use."
+msgstr ""
+"Для граждан Российской Федерации, Республики Беларусь, Украины, Армении, "
+"Узбекистана, Таджикистана, Туркмении, внутренний паспорт с пропиской может "
+"служить подтверждением места жительства <span style='font-weight:"
+"bold;'>только в случае</span>, если он не служит для удостоверения личности. "
+"Иными словами, один документ подтверждает личность, другой – место "
+"жительства."
 
-msgid "Proof of Residential Address (POR) – clear coloured scanned copy of a recent utility bill, bank statement, local authority bill or any other official document stating your name and full address, as written in your online registration with ArumCapital. The POR issue date must be less than <span style='font-weight:bold;'>6 months</span> back."
-msgstr "Подтверждение места жительства – четкая цветная скан-копия счета за коммунальные услуги, выписки со счета в банке или другого документа, где будет указан Ваш адрес проживания и Ваше ФИО. Адрес должен совпадать с адресом, который Вы указали при регистрации в личном кабинете на нашем сайте. Дата такого документа не должна быть позднее <span style='font-weight:bold;'>6 мес</span>. "
+#: django-gc-shared/profiles/templates/js/my/profile_registration_documents.html:31
+msgid ""
+"Proof of Residential Address (POR) – clear coloured scanned copy of a recent "
+"utility bill, bank statement, local authority bill or any other official "
+"document stating your name and full address, as written in your online "
+"registration with ArumCapital. The POR issue date must be less than <span "
+"style='font-weight:bold;'>6 months</span> back."
+msgstr ""
+"Подтверждение места жительства – четкая цветная скан-копия счета за "
+"коммунальные услуги, выписки со счета в банке или другого документа, где "
+"будет указан Ваш адрес проживания и Ваше ФИО. Адрес должен совпадать с "
+"адресом, который Вы указали при регистрации в личном кабинете на нашем "
+"сайте. Дата такого документа не должна быть позднее <span style='font-weight:"
+"bold;'>6 мес</span>. "
 
+#: django-gc-shared/profiles/templates/js/my/profile_registration_documents.html:56
 msgid "Send documents to verify"
 msgstr "Отправить документы на проверку"
 
+#: django-gc-shared/profiles/templates/js/my/profile_registration_documents.html:58
 msgid "Go to account opening"
 msgstr "Перейти к открытию счета"
 
-msgid "Upload at least 1 document"
-msgstr "Загрузите по крайней мере 1 документ"
+#: django-gc-shared/profiles/templates/js/my/profile_registration_documents.html:68
+msgid ""
+"You will be able to open a real accounts after your documents are verified. "
+"Now you can <a href='[[::BASE_URL]]create'>open Demo accounts only.</a>"
+msgstr ""
+"Вы сможете открыть и пополнить реальные счета после проверки Ваших "
+"документов, в данный момент Вы можете <a href='[[::"
+"BASE_URL]]create'>открывать только Демонстрационные счета</a>"
 
-msgid "You will be able to open a real accounts after your documents are verified. Now you can <a href='[[::BASE_URL]]create'>open Demo accounts only.</a>"
-msgstr "Вы сможете открыть и пополнить реальные счета после проверки Ваших документов, в данный момент Вы можете <a href='[[::BASE_URL]]create'>открывать только Демонстрационные счета</a>"
+#: django-gc-shared/profiles/templates/js/my/profile_registration_info.html:14
+msgid ""
+"You have completed fast registration and can <a href='[[::"
+"BASE_URL]]create'>open a Demo Account</a>. In order to open Live Accounts "
+"you are kindly requested to complete registration and upload the documents."
+msgstr ""
+"Вы прошли быструю регистрацию и можете <a href='[[::"
+"BASE_URL]]create'>открыть Демо счет</a>, но для открытия реальных счетов Вам "
+"необходимо завершить регистрацию и загрузить документы."
 
-msgid "You have completed fast registration and can <a href='[[::BASE_URL]]create'>open a Demo Account</a>. In order to open Live Accounts you are kindly requested to complete registration and upload the documents."
-msgstr "Вы прошли быструю регистрацию и можете <a href='[[::BASE_URL]]create'>открыть Демо счет</a>, но для открытия реальных счетов Вам необходимо завершить регистрацию и загрузить документы."
+#: django-gc-shared/profiles/templates/js/my/profile_registration_info.html:18
+msgid ""
+"Attention! Before you proceed, you need to confirm your e-mail. For you sent "
+"a message with a link to activate."
+msgstr ""
+"Внимание! Перед продолжением регистрации. Вам необходимо подтвердить Ваш e-"
+"mail. Вам отправлено сообщение со ссылкой активации."
 
-msgid "Attention! Before you proceed, you need to confirm your e-mail. For you sent a message with a link to activate."
-msgstr "Внимание! Перед продолжением регистрации. Вам необходимо подтвердить Ваш e-mail. Вам отправлено сообщение со ссылкой активации."
-
+#: django-gc-shared/profiles/templates/js/my/profile_registration_info.html:26
 msgid "* Mandatory fields"
 msgstr "* Поля обязательные для заполнения"
 
-msgid "I have previous work experience or relevant qualifications that help me understand the financial products and the risk involved. Forex and CFDs are acceptable for my risk appetite."
-msgstr "Подтверждаю, что у меня есть опыт работы и знания, необходимые для понимания финансовых инструментов и существующих рисков. Риски по продуктам Forex и CFD приемлемы для меня"
+#: django-gc-shared/profiles/templates/js/my/profile_registration_info.html:38
+msgid ""
+"I have previous work experience or relevant qualifications that help me "
+"understand the financial products and the risk involved. Forex and CFDs are "
+"acceptable for my risk appetite."
+msgstr ""
+"Подтверждаю, что у меня есть опыт работы и знания, необходимые для понимания "
+"финансовых инструментов и существующих рисков. Риски по продуктам Forex и "
+"CFD приемлемы для меня"
 
+#: django-gc-shared/profiles/templates/js/my/profile_registration_info.html:55
 msgid "I hereby declare that I have carefully read and understood"
 msgstr "Я заявляю, что внимательно прочитал, полностью понимаю и принимаю"
 
+#: django-gc-shared/profiles/templates/js/my/profile_registration_info.html:55
 msgctxt "super-and"
 msgid "and"
 msgstr "и"
 
+#: django-gc-shared/profiles/templates/js/my/profile_registration_info.html:55
 msgid "Legal Documentation"
 msgstr "Юридическую информацию"
 
+#: django-gc-shared/profiles/templates/js/my/profile_registration_info.html:55
 msgid "with which I fully agree."
 msgstr ", с которыми полностью согласен."
 
+#: django-gc-shared/profiles/templates/js/my/profile_registration_info.html:65
+#: django-gc-shared/profiles/templates/js/my/profile_steps.html:17
 msgid "Complete registration"
 msgstr "Завершение регистрации"
 
+#: django-gc-shared/profiles/templates/js/my/profile_registration_info.html:67
 msgid "Please correct the errors above."
 msgstr "Пожалуйста исправьте ошибки выше."
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:15
 msgid "Security settings"
 msgstr "Настройки безопасности"
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:16
 msgid "You have no OTP device."
 msgstr "У вас нет OTP-привязки"
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:18
 msgid "Currently you use SMS with phone"
 msgstr "В данный момент вы используете SMS на телефон"
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:20
 msgid "Currently you use mobile application"
 msgstr "В данный момент вы используете мобильное приложение"
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:22
 msgid "Change device"
 msgstr "Изменить привязку"
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:29
+#: django-gc-shared/profiles/templates/profiles/change_password.html:6
 msgid "Password change"
 msgstr "Смена пароля"
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:33
 msgid "Old password"
 msgstr "Старый пароль"
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:48
 msgid "New password"
 msgstr "Новый пароль"
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:63
 msgid "Confirm password"
 msgstr "Подтверждение"
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:73
 msgid "Password confirmation doesn't match new password"
 msgstr "Подтверждение пароля не совпадает с новым паролем"
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:86
 msgid "Why should I set up security settings?"
 msgstr "Зачем нужно устанавливать настройки безопасности?"
 
+#: django-gc-shared/profiles/templates/js/my/profile_security.html:89
 msgid ""
 "\n"
 "        <p class=\"offset-bottom-20\">\n"
-"            The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+"            The following actions will require authentication code, which "
+"will be generated using a special mobile app or texted to you via SMS:\n"
 "        </p>\n"
 "        <ul class=\"ul-dashed offset-bottom-20\">\n"
 "            <li>Editing profile data</li>\n"
@@ -803,15 +1333,19 @@ msgid ""
 "            <li>Real account password change</li>\n"
 "        </ul>\n"
 "        <p>\n"
-"            The authentication code will help verify that it is really you who request the operation\n"
-"            and your account was not stolen. This will help to protect you from money theft.\n"
+"            The authentication code will help verify that it is really you "
+"who request the operation\n"
+"            and your account was not stolen. This will help to protect you "
+"from money theft.\n"
 "            The authentication code is generated by a special mobile app or\n"
 "            is sent to your mobile phone via text message (SMS).\n"
 "        </p>\n"
 "    "
 msgstr ""
 "\n"
-"<p class=\"offset-bottom-20\">Если Вы совершите одно из ниже перечисленных действий, будет запрошен код доступа, который позволит определить, что действие производится именно Вами:</p>\n"
+"<p class=\"offset-bottom-20\">Если Вы совершите одно из ниже перечисленных "
+"действий, будет запрошен код доступа, который позволит определить, что "
+"действие производится именно Вами:</p>\n"
 "        <ul class=\"ul-dashed offset-bottom-20\">\n"
 "            <li>Изменение данных в профиле</li>\n"
 "            <li>Создание / изменение / удаление реквизитов для вывода</li>\n"
@@ -821,31 +1355,41 @@ msgstr ""
 "            <li>Смена пароля реального счёта</li>\n"
 "        </ul>\n"
 "<p>\n"
-"Это сделано для того, чтобы обезопасить Вас от несанкционированных взломов личного кабинета с последующим выводом денег. \n"
-"Код доступа генерируется через специальное приложение для мобильных устройств, либо будет выслан посредством SMS.\n"
+"Это сделано для того, чтобы обезопасить Вас от несанкционированных взломов "
+"личного кабинета с последующим выводом денег. \n"
+"Код доступа генерируется через специальное приложение для мобильных "
+"устройств, либо будет выслан посредством SMS.\n"
 "</p>"
 
+#: django-gc-shared/profiles/templates/js/my/profile_steps.html:18
 msgid "in 5 minutes"
 msgstr "5 минут"
 
+#: django-gc-shared/profiles/templates/js/my/profile_steps.html:26
 msgid "Account confirmation"
 msgstr "Подтверждение аккаунта"
 
+#: django-gc-shared/profiles/templates/js/my/profile_steps.html:27
 msgid "Up to 1 day"
 msgstr "до 1 дня"
 
+#: django-gc-shared/profiles/templates/js/my/profile_steps.html:34
 msgid "Start work"
 msgstr "Начало работы"
 
+#: django-gc-shared/profiles/templates/js/my/profile_steps.html:35
 msgid "on live accounts"
 msgstr "на реальных счетах"
 
+#: django-gc-shared/profiles/templates/js/my/profile_subscriptions.html:18
 msgid "Select active subscriptions:"
 msgstr "Выберите активные подписки"
 
+#: django-gc-shared/profiles/templates/profiles/change_pass_done.html:6
 msgid "Your password has been changed successfully"
 msgstr "Ваш пароль успешно изменен!"
 
+#: django-gc-shared/profiles/templates/profiles/change_pass_done.html:8
 msgid ""
 "\n"
 "    <p>Your password has been changed.</p>\n"
@@ -854,270 +1398,360 @@ msgstr ""
 "\n"
 "<p>Ваш пароль был изменен.</p>"
 
+#: django-gc-shared/profiles/templates/profiles/edit_email.html:5
 msgid "Edit profile e-mail"
 msgstr "Редактировать e-mail"
 
+#: django-gc-shared/profiles/templates/profiles/edit_email.html:9
+#: django-gc-shared/profiles/templates/profiles/edit_profile_form.html:14
+#: django-gc-shared/profiles/templates/profiles/edit_profile_form.html:15
 msgid "Edit your e-mail"
 msgstr "Редактировать e-mail"
 
+#: django-gc-shared/profiles/templates/profiles/edit_email.html:13
 msgid "Send verification code"
 msgstr "Отправить код подтверждения"
 
+#: django-gc-shared/profiles/templates/profiles/edit_profile.html:60
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:5
+#: django-gc-shared/profiles/templates/profiles/unsubscribe_form.html:12
+#: django-gc-shared/profiles/templates/profiles/upload_document.html:4
 msgid "My profile"
 msgstr "Мой профиль"
 
+#: django-gc-shared/profiles/templates/profiles/edit_profile.html:63
 msgid "Edit your profile"
 msgstr "Редактировать свой профиль"
 
+#: django-gc-shared/profiles/templates/profiles/edit_profile.html:71
 #, python-format
 msgid ""
 "\n"
 "                <p>To verify your information, you can\n"
-"                    <a href=\"%(profiles_upload_document_url)s\">upload a copy of your document</a></p>\n"
+"                    <a href=\"%(profiles_upload_document_url)s\">upload a "
+"copy of your document</a></p>\n"
 "            "
 msgstr ""
 "\n"
 "<p>Для уточнения предоставленной информации, Вы можете\n"
-" <a href=\"%(profiles_upload_document_url)s\">загрузить копию документа</a></p>"
+" <a href=\"%(profiles_upload_document_url)s\">загрузить копию документа</a></"
+"p>"
 
+#: django-gc-shared/profiles/templates/profiles/edit_profile_form.html:20
 msgid "Confirm your mobile phone number"
 msgstr "Подтвердите номер своего мобильного телефона"
 
+#: django-gc-shared/profiles/templates/profiles/edit_profile_form.html:21
 msgid "Confirm"
 msgstr "Подтвердить"
 
+#: django-gc-shared/profiles/templates/profiles/edit_profile_form.html:28
 #, python-format
 msgid ""
 "\n"
-"            To change your phone number - follow this <a href=\"%(link)s\">link</a>\n"
+"            To change your phone number - follow this <a href=\"%(link)s"
+"\">link</a>\n"
 "        "
 msgstr ""
 "\n"
 "Для смены номера телефона пройдите по <a href=\"%(link)s\">ссылке</a>"
 
+#: django-gc-shared/profiles/templates/profiles/edit_profile_form.html:35
 msgid "Click <strong>Check</strong> to confirm your mobile phone number"
-msgstr "Нажмите <strong>Подтвердить</strong> чтобы подтвердить номер своего мобильного телефона"
+msgstr ""
+"Нажмите <strong>Подтвердить</strong> чтобы подтвердить номер своего "
+"мобильного телефона"
 
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:5
 msgid "My manager"
 msgstr "Мой менеджер"
 
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:8
 msgid "My personal broker"
 msgstr "Мой персональный брокер"
 
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:19
 msgid "No photo available"
 msgstr "Нет фото"
 
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:31
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:61
 msgid "E-mail"
 msgstr "E-mail"
 
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:32
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:71
 msgid "Work Phone"
 msgstr "Рабочий телефон"
 
-msgid "You can get contacts of the manager after you deposit at least $100 to your account."
-msgstr "Возможность доступа к контактным данным менеджера будет открыта после пополнения счёта на сумму не менее 100 USD"
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:36
+msgid ""
+"You can get contacts of the manager after you deposit at least $100 to your "
+"account."
+msgstr ""
+"Возможность доступа к контактным данным менеджера будет открыта после "
+"пополнения счёта на сумму не менее 100 USD"
 
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:42
 msgid "Ask a question"
 msgstr "Задать вопрос"
 
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:46
 msgid "Our contact information:"
 msgstr "Наши контакты:"
 
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:47
 msgid "Phone: 8-800-333-1003 (free accross Russia)"
 msgstr "Телефон: 8-800-333-1003 (бесплатный по России)"
 
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:48
 msgid "E-mail: eng@grandcapital.net"
 msgstr "E-mail: info@grandcapital.net"
 
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:49
 msgid "Skype:  gc_clients"
 msgstr "Skype: gc_clients"
 
+#: django-gc-shared/profiles/templates/profiles/profile_broker.html:50
 msgid "ICQ:  629301132"
 msgstr "ICQ: 629301132"
 
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:14
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:20
 msgid "Edit profile"
 msgstr "Редактировать профиль"
 
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:40
 msgid "State"
 msgstr "Регион"
 
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:67
 msgid "Home Phone"
 msgstr "Домашний телефон"
 
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:75
 msgid "Mobile Phone"
 msgstr "Мобильный телефон"
 
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:86
 msgid "Documents you uploaded"
 msgstr "Загруженные вами документы"
 
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:106
 msgid "Account id"
 msgstr "Номер счета"
 
+#: django-gc-shared/profiles/templates/profiles/profile_detail.html:107
 msgid "Account type"
 msgstr "Тип счета"
 
+#: django-gc-shared/profiles/templates/profiles/profile_todo_list.html:4
 msgid "Complete your profile!"
 msgstr "Заполните свой профиль!"
 
+#: django-gc-shared/profiles/templates/profiles/profile_todo_list.html:12
 msgid "Verify your e-mail"
 msgstr "Подтвердите e-mail"
 
+#: django-gc-shared/profiles/templates/profiles/profile_todo_list.html:19
 msgid "Verify phone number"
 msgstr "Подтвердите телефон"
 
+#: django-gc-shared/profiles/templates/profiles/profile_todo_list.html:26
 msgid "Upload a scan of ID"
 msgstr "Загрузите документ"
 
+#: django-gc-shared/profiles/templates/profiles/profile_todo_list.html:33
 msgid "Specify your address"
 msgstr "Укажите ваш адрес"
 
+#: django-gc-shared/profiles/templates/profiles/profile_todo_list.html:41
 #, python-format
 msgid ""
-"To verify your email address, please follow the link you received when you registered. If you\n"
-"mistyped your email address or didn't receive an activation email, please check if your email is correct\n"
-"<a href=\"%(edit_email_url)s\">here</a> and click \"Save\" to receive another activation email."
-msgstr "Чтобы подтвердить ваш адрес электронной почты, пожалуйста, пройдите по ссылке, которую вы получили при регистрации. Если вы неправильно указали свой e-mail или вам не пришло письмо со ссылкой, пожалуйста, проверьте <a href=\"%(edit_email_url)s\">здесь</a>, что ваш адрес электронной почты указан верно и нажмите \"Сохранить\", чтобы получить новое письмо активации."
+"To verify your email address, please follow the link you received when you "
+"registered. If you\n"
+"mistyped your email address or didn't receive an activation email, please "
+"check if your email is correct\n"
+"<a href=\"%(edit_email_url)s\">here</a> and click \"Save\" to receive "
+"another activation email."
+msgstr ""
+"Чтобы подтвердить ваш адрес электронной почты, пожалуйста, пройдите по "
+"ссылке, которую вы получили при регистрации. Если вы неправильно указали "
+"свой e-mail или вам не пришло письмо со ссылкой, пожалуйста, проверьте <a "
+"href=\"%(edit_email_url)s\">здесь</a>, что ваш адрес электронной почты "
+"указан верно и нажмите \"Сохранить\", чтобы получить новое письмо активации."
 
+#: django-gc-shared/profiles/templates/profiles/unsubscribe_form.html:15
 msgid "Edit your subscription"
 msgstr "Управление подпиской"
 
+#: django-gc-shared/profiles/templates/profiles/upload_avatar.html:5
+#: django-gc-shared/profiles/templates/profiles/upload_avatar.html:8
 msgid "Upload avatar"
 msgstr "Загрузка аватара"
 
+#: django-gc-shared/profiles/templates/profiles/upload_document.html:9
 msgid "Upload copy a document that confirms your date of birth"
 msgstr "Загрузите копию документа, подтверждающую Ваши данные."
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:14
 #, fuzzy
 #| msgid "This username already exists"
 msgid "This document is already verified"
 msgstr "Такой ник уже зарегистрирован"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:15
 msgid "Close"
 msgstr ""
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:23
 #, fuzzy
 #| msgid "Document description"
 msgid "Field description"
 msgstr "Описание документа"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:28
 msgid "Main data"
 msgstr ""
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:37
 msgid "Questionnaire data"
 msgstr ""
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:39
 #, fuzzy
 #| msgid "Net capital (USD)"
 msgid "Net Capital"
 msgstr "Чистый капитал (USD)"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:40
 #, fuzzy
 #| msgid "Annual income (USD)"
 msgid "Annual Income"
 msgstr "Годовой доход (USD)"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:41
 #, fuzzy
 #| msgid "Tax residence"
 msgid "Tax Residence"
 msgstr "Налоговое резиденство"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:42
 #, fuzzy
 #| msgid "US citizen"
 msgid "US Citizen"
 msgstr "Лицо под юрисдикцией США"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:43
 #, fuzzy
 #| msgid "Employment status"
 msgid "Employment Status"
 msgstr "Род занятости"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:44
 #, fuzzy
 #| msgid "Source"
 msgid "Income Source"
 msgstr "Источник"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:46
 #, fuzzy
 #| msgid "Monthly financial commitments"
 msgid "Finanacial Commitments"
 msgstr "Ежемесячные обязательства"
 
-msgid "Acc turnover"
-msgstr ""
-
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:48
 msgid "Purpose"
 msgstr ""
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:49
 msgid "Edu level"
 msgstr ""
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:51
 #, fuzzy
 #| msgid "Units of collective investment undertaking"
 msgid "investment_undertaking"
 msgstr "Доли инвестиционных фондов"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:53
 #, fuzzy
 #| msgid "Transferable securities"
 msgid "transferable_securities"
 msgstr "Ценные бумаги"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:55
 msgid "derivative_instruments"
 msgstr ""
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:57
 msgid "forex_instruments"
 msgstr ""
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:63
 #, fuzzy
 #| msgid "Documents"
 msgid "Document"
 msgstr "Документы"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:64
 msgid "Type"
 msgstr "Тип"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:66
 msgid "Open in full resolution"
 msgstr ""
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:79
 #, fuzzy
 #| msgid "Approved"
 msgid "Approve"
 msgstr "Проверен"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:84
 #, fuzzy
 #| msgid "Manager comment"
 msgid "Reject comment"
 msgstr "Коментарий менеджера"
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:85
 msgid "Reject"
 msgstr ""
 
+#: django-gc-shared/profiles/templates/profiles/verify_document.html:95
 #, fuzzy
 #| msgid "Can open ECN.Invest accounts"
 msgid "Make user able to open Invest accounts"
 msgstr "Может открывать ECN.Invest аккаунты"
 
+#: django-gc-shared/profiles/validators.py:23
+#: django-gc-shared/profiles/validators.py:28
 msgid "Please use latin-based characters only"
 msgstr "Только на английском, используйте латиницу"
 
+#: django-gc-shared/profiles/views.py:43
 #, python-format
 msgid "Successfully uploaded document %s"
 msgstr "Успешно загружен документ %s"
 
+#: django-gc-shared/profiles/views.py:95
 msgid "Avatar was uploaded successfully"
 msgstr "Аватар был успешно загружен"
 
+#: django-gc-shared/profiles/views.py:242
 msgid "You can not change e-mail address more than once every fifteen minutes."
 msgstr "Вы не можете менять адрес электронной почты чаще, чем раз в 15 минут."
 
+#: django-gc-shared/profiles/views.py:245
 msgid "E-mail you provided is already registered in our system."
 msgstr "Адрес электронной почты, который вы указали, уже используется."
 
+#: django-gc-shared/profiles/views.py:258
 msgid "Your e-mail successfully updated"
 msgstr "Ваш адрес электронной почты был успешно изменён"
 
-msgid "Bad file extension or size!"
-msgstr "Неверное расширение файла или его размер!"
-
-msgid "No documents uploaded!"
-msgstr "Не загружен ни один документ!"
+#~ msgid "Upload at least 1 document"
+#~ msgstr "Загрузите по крайней мере 1 документ"
 
 #~ msgid "Anticipated account turnover (USD)"
 #~ msgstr "Предполагаемый оборот по счету (USD)"
@@ -1143,7 +1777,9 @@ msgstr "Не загружен ни один документ!"
 #~ msgid "Forex and CFDs are acceptable for my risk appetite"
 #~ msgstr "Риски по продуктам Forex и CFD приемлемы"
 
-#~ msgid "I hereby declare that I have read carefully and fully agree with the terms and conditions of the"
+#~ msgid ""
+#~ "I hereby declare that I have read carefully and fully agree with the "
+#~ "terms and conditions of the"
 #~ msgstr ""
 #~ "Я заявляю, что внимательно прочитал и полностью понимаю, принимаю и\n"
 #~ "соглашаюсь со следующими соглашениями:"
@@ -1163,11 +1799,22 @@ msgstr "Не загружен ни один документ!"
 #~ msgid "FX experience"
 #~ msgstr "Опыт торговли"
 
-#~ msgid "In order to open a live trading account you are kindly required to provide us with a scanned copy of your national or international passport with your photo and issue date, a driving license or your national ID"
-#~ msgstr "Для открытия торгового счёта от вас требуется предоставить нам изображение разворота национального или международного паспорта с фотографией и датой выдачи, водительских прав или национального удостоверения личности (ID)."
+#~ msgid ""
+#~ "In order to open a live trading account you are kindly required to "
+#~ "provide us with a scanned copy of your national or international passport "
+#~ "with your photo and issue date, a driving license or your national ID"
+#~ msgstr ""
+#~ "Для открытия торгового счёта от вас требуется предоставить нам "
+#~ "изображение разворота национального или международного паспорта с "
+#~ "фотографией и датой выдачи, водительских прав или национального "
+#~ "удостоверения личности (ID)."
 
-#~ msgid "Kindly provide a copy of your recent utility bill, a bank statement with the bank common stamp and a signature of a bank officer."
-#~ msgstr "Пожалуйста, предоставьте копию недавнего счёта за коммунальные услуги, выписку из банковского счёта с печатью банка и подписью сотрудника."
+#~ msgid ""
+#~ "Kindly provide a copy of your recent utility bill, a bank statement with "
+#~ "the bank common stamp and a signature of a bank officer."
+#~ msgstr ""
+#~ "Пожалуйста, предоставьте копию недавнего счёта за коммунальные услуги, "
+#~ "выписку из банковского счёта с печатью банка и подписью сотрудника."
 
 #, fuzzy
 #~| msgid "Degree holder"
@@ -1215,11 +1862,22 @@ msgstr "Не загружен ни один документ!"
 #~ msgid "FOREX, CFD and other instruments"
 #~ msgstr "Форекс, CFD и Другие Инструменты"
 
-#~ msgid "Derivatives are used as a part of my investment purposes and are acceptable for my risk appetite. I accept all the risks involved in trading in these instruments including the risk of losing my entire capital"
-#~ msgstr "Деривативы используются как часть моих инвестиционных целей и приемлемы для меня в отношении рисков. Я понимаю все риски, связанные с торговлей ими, включая возможность потерять весь свой капитал"
+#~ msgid ""
+#~ "Derivatives are used as a part of my investment purposes and are "
+#~ "acceptable for my risk appetite. I accept all the risks involved in "
+#~ "trading in these instruments including the risk of losing my entire "
+#~ "capital"
+#~ msgstr ""
+#~ "Деривативы используются как часть моих инвестиционных целей и приемлемы "
+#~ "для меня в отношении рисков. Я понимаю все риски, связанные с торговлей "
+#~ "ими, включая возможность потерять весь свой капитал"
 
-#~ msgid "I have the necessary professional background and/or experience in financial field."
-#~ msgstr "Я обладаю профессиональными знаниями и / или имею опыт работы в финансовой сфере"
+#~ msgid ""
+#~ "I have the necessary professional background and/or experience in "
+#~ "financial field."
+#~ msgstr ""
+#~ "Я обладаю профессиональными знаниями и / или имею опыт работы в "
+#~ "финансовой сфере"
 
 #~ msgid "Client Agreement"
 #~ msgstr "Клиентское соглашение"
@@ -1239,7 +1897,9 @@ msgstr "Не загружен ни один документ!"
 #~ msgid ""
 #~ "\n"
 #~ "                    <p class=\"offset-bottom-20\">\n"
-#~ "                        The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+#~ "                        The following actions will require authentication "
+#~ "code, which will be generated using a special mobile app or texted to you "
+#~ "via SMS:\n"
 #~ "                    </p>\n"
 #~ "                    <ul class=\"ul-dashed offset-bottom-20\">\n"
 #~ "                        <li>Editing profile data</li>\n"
@@ -1250,31 +1910,41 @@ msgstr "Не загружен ни один документ!"
 #~ "                        <li>Real account password change</li>\n"
 #~ "                    </ul>\n"
 #~ "                    <p>\n"
-#~ "                        The authentication code will help verify that it is really you who request the operation\n"
-#~ "                        and your account was not stolen. This will help to protect you from money theft.\n"
-#~ "                        The authentication code is generated by a special mobile app or\n"
-#~ "                        is sent to your mobile phone via text message (SMS).\n"
+#~ "                        The authentication code will help verify that it "
+#~ "is really you who request the operation\n"
+#~ "                        and your account was not stolen. This will help "
+#~ "to protect you from money theft.\n"
+#~ "                        The authentication code is generated by a special "
+#~ "mobile app or\n"
+#~ "                        is sent to your mobile phone via text message "
+#~ "(SMS).\n"
 #~ "                    </p>\n"
 #~ "                "
 #~ msgstr ""
 #~ "\n"
-#~ "<p class=\"offset-bottom-20\">Если Вы совершите одно из ниже перечисленных действий, будет запрошен код доступа, который позволит определить, что действие производится именно Вами:</p>\n"
+#~ "<p class=\"offset-bottom-20\">Если Вы совершите одно из ниже "
+#~ "перечисленных действий, будет запрошен код доступа, который позволит "
+#~ "определить, что действие производится именно Вами:</p>\n"
 #~ "        <ul class=\"ul-dashed offset-bottom-20\">\n"
 #~ "            <li>Изменение данных в профиле</li>\n"
-#~ "            <li>Создание / изменение / удаление реквизитов для вывода</li>\n"
+#~ "            <li>Создание / изменение / удаление реквизитов для вывода</"
+#~ "li>\n"
 #~ "            <li>Создание заявок на вывод средств</li>\n"
 #~ "            <li>Внутренний перевод</li>\n"
 #~ "            <li>Смена плеча реального счёта</li>\n"
 #~ "            <li>Смена пароля реального счёта</li>\n"
 #~ "        </ul>\n"
 #~ "<p>\n"
-#~ "Это сделано для того, чтобы обезопасить Вас от несанкционированных взломов личного кабинета с последующим выводом денег. \n"
-#~ "Код доступа генерируется через специальное приложение для мобильных устройств, либо будет выслан посредством SMS.\n"
+#~ "Это сделано для того, чтобы обезопасить Вас от несанкционированных "
+#~ "взломов личного кабинета с последующим выводом денег. \n"
+#~ "Код доступа генерируется через специальное приложение для мобильных "
+#~ "устройств, либо будет выслан посредством SMS.\n"
 #~ "</p>"
 
 #~ msgid ""
 #~ "\n"
-#~ "                                To change your phone number - follow this <a href=\"%(link)s\">link</a>\n"
+#~ "                                To change your phone number - follow this "
+#~ "<a href=\"%(link)s\">link</a>\n"
 #~ "                            "
 #~ msgstr ""
 #~ "\n"
@@ -1286,7 +1956,8 @@ msgstr "Не загружен ни один документ!"
 #~ msgid "Ask authorization on login"
 #~ msgstr "Запрашивать OTP при входе в ЛК"
 
-#~ msgid "You will receive only those         newsletter types you choose here."
+#~ msgid ""
+#~ "You will receive only those         newsletter types you choose here."
 #~ msgstr "Вы будете получать только выбранные типы рассылки"
 
 #~ msgid "Your subscription successfully updated"
@@ -1295,51 +1966,70 @@ msgstr "Не загружен ни один документ!"
 #~ msgid "Reviewer comment: \"{}\""
 #~ msgstr "Комментарий проверявшего: \"{}\""
 
-#~ msgid "Client's documents didn't go through, Welcome-accounts are blocked ({}) {}"
-#~ msgstr "Документы клиента не прошли проверку, Welcome-счета заблокированы ({}) {}"
+#~ msgid ""
+#~ "Client's documents didn't go through, Welcome-accounts are blocked ({}) {}"
+#~ msgstr ""
+#~ "Документы клиента не прошли проверку, Welcome-счета заблокированы ({}) {}"
 
 #~ msgid "Client's documents didn't go through ({}) {}"
 #~ msgstr "Документы клиента не прошли проверку ({}) {}"
 
 #~ msgid ""
 #~ "\n"
-#~ "      The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+#~ "      The following actions will require authentication code, which will "
+#~ "be generated using a special mobile app or texted to you via SMS:\n"
 #~ "      "
 #~ msgstr ""
 #~ "\n"
-#~ "Если Вы совершите одно из ниже перечисленных действий, будет запрошен код доступа, который позволит определить, что действие производится именно Вами:"
+#~ "Если Вы совершите одно из ниже перечисленных действий, будет запрошен код "
+#~ "доступа, который позволит определить, что действие производится именно "
+#~ "Вами:"
 
 #~ msgid ""
 #~ "\n"
-#~ "      The authentication code will help verify that it is really you who request the operation\n"
-#~ "      and your account was not stolen. This will help to protect you from money theft.\n"
+#~ "      The authentication code will help verify that it is really you who "
+#~ "request the operation\n"
+#~ "      and your account was not stolen. This will help to protect you from "
+#~ "money theft.\n"
 #~ "      The authentication code is generated by a special mobile app or\n"
 #~ "      is sent to your mobile phone via text message (SMS).\n"
 #~ "       "
 #~ msgstr ""
 #~ "\n"
-#~ "Это сделано для того, чтобы обезопасить Вас от несанкционированных взломов личного кабинета с последующим выводом денег.\n"
-#~ "Код доступа генерируется через специальное приложение для мобильных устройств, либо будет выслан посредством SMS"
+#~ "Это сделано для того, чтобы обезопасить Вас от несанкционированных "
+#~ "взломов личного кабинета с последующим выводом денег.\n"
+#~ "Код доступа генерируется через специальное приложение для мобильных "
+#~ "устройств, либо будет выслан посредством SMS"
 
 #~ msgid ""
 #~ "\n"
-#~ "                        The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+#~ "                        The following actions will require authentication "
+#~ "code, which will be generated using a special mobile app or texted to you "
+#~ "via SMS:\n"
 #~ "                        "
 #~ msgstr ""
 #~ "\n"
-#~ "Если Вы совершите одно из ниже перечисленных действий, будет запрошен код доступа, который позволит определить, что действие производится именно Вами:"
+#~ "Если Вы совершите одно из ниже перечисленных действий, будет запрошен код "
+#~ "доступа, который позволит определить, что действие производится именно "
+#~ "Вами:"
 
 #~ msgid ""
 #~ "\n"
-#~ "                        The authentication code will help verify that it is really you who request the operation\n"
-#~ "                        and your account was not stolen. This will help to protect you from money theft.\n"
-#~ "                        The authentication code is generated by a special mobile app or\n"
-#~ "                        is sent to your mobile phone via text message (SMS).\n"
+#~ "                        The authentication code will help verify that it "
+#~ "is really you who request the operation\n"
+#~ "                        and your account was not stolen. This will help "
+#~ "to protect you from money theft.\n"
+#~ "                        The authentication code is generated by a special "
+#~ "mobile app or\n"
+#~ "                        is sent to your mobile phone via text message "
+#~ "(SMS).\n"
 #~ "                       "
 #~ msgstr ""
 #~ "\n"
-#~ "Это сделано для того, чтобы обезопасить Вас от несанкционированных взломов личного кабинета с последующим выводом денег.\n"
-#~ "Код доступа генерируется через специальное приложение для мобильных устройств, либо будет выслан посредством SMS."
+#~ "Это сделано для того, чтобы обезопасить Вас от несанкционированных "
+#~ "взломов личного кабинета с последующим выводом денег.\n"
+#~ "Код доступа генерируется через специальное приложение для мобильных "
+#~ "устройств, либо будет выслан посредством SMS."
 
 #~ msgid "Phone"
 #~ msgstr "Рабочий телефон"
@@ -1402,7 +2092,9 @@ msgstr "Не загружен ни один документ!"
 #~ msgstr "Неверный код"
 
 #~ msgid "You were redirected to this page because you should use OTP"
-#~ msgstr "Вы были перенаправлены на эту страницу потому что вам нужно создать OTP-связку"
+#~ msgstr ""
+#~ "Вы были перенаправлены на эту страницу потому что вам нужно создать OTP-"
+#~ "связку"
 
 #~ msgid ""
 #~ "Your code: %s \n"
@@ -1421,19 +2113,24 @@ msgstr "Не загружен ни один документ!"
 #~ msgstr "Устройство %s было сохранено"
 
 #~ msgid "You are asking for too many SMS codes. Wait 15 minutes and try again"
-#~ msgstr "Вы запросили слишком много СМС-подтверждений. Подождите 15 минут и обновите страницу"
+#~ msgstr ""
+#~ "Вы запросили слишком много СМС-подтверждений. Подождите 15 минут и "
+#~ "обновите страницу"
 
 #~ msgid "Confirm your phone"
 #~ msgstr "Подтвердите номер вашего мобильного телефона"
 
 #~ msgid ""
 #~ "\n"
-#~ "                You already have text message authentication binded to your phone number.\n"
-#~ "                You can change your phone number <a href=\"%(link)s\">here</a>\n"
+#~ "                You already have text message authentication binded to "
+#~ "your phone number.\n"
+#~ "                You can change your phone number <a href=\"%(link)s"
+#~ "\">here</a>\n"
 #~ "            "
 #~ msgstr ""
 #~ "\n"
-#~ "У вас уже есть привязка к номеру телефона. Для  смены номера пройдите по <a href=\"%(link)s\">ссылке</a>"
+#~ "У вас уже есть привязка к номеру телефона. Для  смены номера пройдите по "
+#~ "<a href=\"%(link)s\">ссылке</a>"
 
 #~ msgid "Check"
 #~ msgstr "Проверить"
@@ -1447,11 +2144,17 @@ msgstr "Не загружен ни один документ!"
 #~ msgid "Invalid phone number"
 #~ msgstr "Неверный номер"
 
-#~ msgid "You are asking for too many text messages. Please wait 5 minutes and try again later"
-#~ msgstr "Вы запросили слишком много СМС. Подождите 5 минут и попробуйте еще раз"
+#~ msgid ""
+#~ "You are asking for too many text messages. Please wait 5 minutes and try "
+#~ "again later"
+#~ msgstr ""
+#~ "Вы запросили слишком много СМС. Подождите 5 минут и попробуйте еще раз"
 
-#~ msgid "You are asking for too many calls. Please wait 5 minutes and try again later"
-#~ msgstr "Вы запросили слишком много звонков. Подождите 5 минут и попробуйте еще раз"
+#~ msgid ""
+#~ "You are asking for too many calls. Please wait 5 minutes and try again "
+#~ "later"
+#~ msgstr ""
+#~ "Вы запросили слишком много звонков. Подождите 5 минут и попробуйте еще раз"
 
 #~ msgid "The automated call was queued"
 #~ msgstr "Звонок был поставлен в очередь"
@@ -1474,29 +2177,42 @@ msgstr "Не загружен ни один документ!"
 #~ msgid ""
 #~ "\n"
 #~ "                                The message was sent succesfully\n"
-#~ "                                (if you can't receive the message, you can order\n"
-#~ "                                an <a id=\"make_call\" class=\"pointer\">automated call</a>)\n"
+#~ "                                (if you can't receive the message, you "
+#~ "can order\n"
+#~ "                                an <a id=\"make_call\" class=\"pointer"
+#~ "\">automated call</a>)\n"
 #~ "                                <br/>\n"
-#~ "                                You will receive a unique code which you should enter in the following field:\n"
+#~ "                                You will receive a unique code which you "
+#~ "should enter in the following field:\n"
 #~ "                            "
 #~ msgstr ""
 #~ "\n"
-#~ "Сообщение было успешно отправлено (если сообщение не дошло, то вы можете <a id=\"make_call\" class=\"pointer\">заказать автоматический звонок</a>)<br/>В сообщении содержится токен, который следует ввести в расположенное ниже поле:"
+#~ "Сообщение было успешно отправлено (если сообщение не дошло, то вы можете "
+#~ "<a id=\"make_call\" class=\"pointer\">заказать автоматический звонок</"
+#~ "a>)<br/>В сообщении содержится токен, который следует ввести в "
+#~ "расположенное ниже поле:"
 
 #~ msgid ""
 #~ "\n"
-#~ "                                The call was queued succesfully. You will hear a unique\n"
-#~ "                                code (4 digits) which you should enter in the following field:\n"
+#~ "                                The call was queued succesfully. You will "
+#~ "hear a unique\n"
+#~ "                                code (4 digits) which you should enter in "
+#~ "the following field:\n"
 #~ "                            "
 #~ msgstr ""
 #~ "\n"
-#~ "Звонок был успешно запланирован. Вы услышите токен (4 цифры), которые следует ввести в расположенное ниже поле:"
+#~ "Звонок был успешно запланирован. Вы услышите токен (4 цифры), которые "
+#~ "следует ввести в расположенное ниже поле:"
 
 #~ msgid "Make binding"
 #~ msgstr "Создать привязку"
 
-#~ msgid "To generate the authentication code using mobile app, follow these 3 simple steps"
-#~ msgstr "Для того, чтобы сгенерировать код через мобильное приложение, выполните 3 простых шага"
+#~ msgid ""
+#~ "To generate the authentication code using mobile app, follow these 3 "
+#~ "simple steps"
+#~ msgstr ""
+#~ "Для того, чтобы сгенерировать код через мобильное приложение, выполните 3 "
+#~ "простых шага"
 
 #~ msgid "Install the application on your mobile phone"
 #~ msgstr "Установите приложение для своего устройства"
@@ -1510,26 +2226,37 @@ msgstr "Не загружен ни один документ!"
 #~ msgid "Open the app and create a new account using the following secret key"
 #~ msgstr "Откройте приложение и создайте учетную запись с секретным ключом"
 
-#~ msgid "or use the 'Scan' option of the app and point your mobile phone's camera at the QRCode below"
-#~ msgstr "или, воспользовавшись опцией установленного приложения «Сканирование», наведите камеру телефона на QR-код (квадратный штрих-код ниже)"
+#~ msgid ""
+#~ "or use the 'Scan' option of the app and point your mobile phone's camera "
+#~ "at the QRCode below"
+#~ msgstr ""
+#~ "или, воспользовавшись опцией установленного приложения «Сканирование», "
+#~ "наведите камеру телефона на QR-код (квадратный штрих-код ниже)"
 
 #~ msgid "Refresh"
 #~ msgstr "Обновить"
 
 #~ msgid ""
 #~ "\n"
-#~ "                                Enter the code generated by the app in the following field\n"
-#~ "                                (if the code doesn't match, please enable time correction in your app's settings):\n"
+#~ "                                Enter the code generated by the app in "
+#~ "the following field\n"
+#~ "                                (if the code doesn't match, please enable "
+#~ "time correction in your app's settings):\n"
 #~ "                            "
 #~ msgstr ""
 #~ "\n"
-#~ "Введите сгенерированный программой код для проверки синхронизации (если код не подходит, включите коррекцию времени в настройках приложения):"
+#~ "Введите сгенерированный программой код для проверки синхронизации (если "
+#~ "код не подходит, включите коррекцию времени в настройках приложения):"
 
 #~ msgid "Request OTP authentication when I login to my Private Office"
 #~ msgstr "Запрашивать OTP-авторизацию при входе в Личный Кабинет"
 
-#~ msgid "You will receive a unique code which you should enter in the following field:"
-#~ msgstr "В сообщении содержится токен, который следует ввести в расположенное ниже поле:"
+#~ msgid ""
+#~ "You will receive a unique code which you should enter in the following "
+#~ "field:"
+#~ msgstr ""
+#~ "В сообщении содержится токен, который следует ввести в расположенное ниже "
+#~ "поле:"
 
 #~ msgid "Requisit data"
 #~ msgstr "Данные реквизита"
@@ -1540,8 +2267,11 @@ msgstr "Не загружен ни один документ!"
 #~ msgid "Enter the code generated by the app in the following field"
 #~ msgstr "Введите сгенерированный программой код для проверки синхронизации"
 
-#~ msgid "Open the mobile app for OTP generation and activate it with the following data:"
-#~ msgstr "Откройте программу для генерации OTP и создайте учетную запись с секретом:"
+#~ msgid ""
+#~ "Open the mobile app for OTP generation and activate it with the following "
+#~ "data:"
+#~ msgstr ""
+#~ "Откройте программу для генерации OTP и создайте учетную запись с секретом:"
 
 #~ msgid "or scan the following QR-code with your camera:"
 #~ msgstr "или же сфотографируйте код:"
@@ -1562,9 +2292,14 @@ msgstr "Не загружен ни один документ!"
 #~ msgstr "Подтвердить"
 
 #~ msgid ""
-#~ "To verify your email, please follow the link you received when you registered. If you have problems\n"
+#~ "To verify your email, please follow the link you received when you "
+#~ "registered. If you have problems\n"
 #~ "    with email verification, please contact your personal manager."
-#~ msgstr "Чтобы подтвердить свой e-mail, пожалуйста, перейдите по ссылке, которую вы должны были получить на него при регистрации. Если у вас возникли какие-либо проблемы с подтверждением вашего адреса электронной почты, пожалуйста, свяжитесь с вашим персональным менеджером."
+#~ msgstr ""
+#~ "Чтобы подтвердить свой e-mail, пожалуйста, перейдите по ссылке, которую "
+#~ "вы должны были получить на него при регистрации. Если у вас возникли "
+#~ "какие-либо проблемы с подтверждением вашего адреса электронной почты, "
+#~ "пожалуйста, свяжитесь с вашим персональным менеджером."
 
 #~ msgid "Next"
 #~ msgstr "Далее"
@@ -1584,8 +2319,11 @@ msgstr "Не загружен ни один документ!"
 #~ msgid "Requisit not validated"
 #~ msgstr "Не подтвержден"
 
-#~ msgid "Your manager Sergey Ilin is on vacation. For that time your manager is Natalia Terenteva"
-#~ msgstr "Ваш менеджер Сергей Ильин в отпуске. Его заменяет Наталья Терентьева"
+#~ msgid ""
+#~ "Your manager Sergey Ilin is on vacation. For that time your manager is "
+#~ "Natalia Terenteva"
+#~ msgstr ""
+#~ "Ваш менеджер Сергей Ильин в отпуске. Его заменяет Наталья Терентьева"
 
 #~ msgid "Code"
 #~ msgstr "Код"
@@ -1606,7 +2344,9 @@ msgstr "Не загружен ни один документ!"
 #~ msgstr "Введите свои паспортные данные"
 
 #~ msgid "Passport scan is needed for money withdrawal"
-#~ msgstr "Скан паспорта необходим для подтверждения ваших данных и вывода средств со счета"
+#~ msgstr ""
+#~ "Скан паспорта необходим для подтверждения ваших данных и вывода средств "
+#~ "со счета"
 
 #~ msgid "Parameter is valid"
 #~ msgstr "Подтверждено"

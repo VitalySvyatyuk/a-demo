@@ -8,35 +8,44 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-02 20:15+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2016-07-02 20:16+0230\n"
 "Last-Translator:   <valexeev@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.11\n"
 
+#: django-gc-shared/otp/forms.py:11
 msgid "Phone number"
 msgstr "Номер телефона"
 
+#: django-gc-shared/otp/forms.py:12
 msgid "Enter your phone number"
 msgstr "Введите номер вашего мобильного телефона"
 
+#: django-gc-shared/otp/forms.py:21 django-gc-shared/otp/forms.py:40
 msgid "Token"
 msgstr "Токен"
 
+#: django-gc-shared/otp/forms.py:21
 msgid "Token from your auth app"
 msgstr "Токен из приложения"
 
+#: django-gc-shared/otp/forms.py:34 django-gc-shared/otp/views.py:96
+#: django-gc-shared/otp/views.py:132
 msgid "Wrong token"
 msgstr "Неверный код"
 
+#: django-gc-shared/otp/forms.py:40
 msgid "Token send by SMS"
 msgstr "Токен из SMS"
 
+#: django-gc-shared/otp/models.py:159
 #, python-format
 msgid ""
 "Your code: %s \n"
@@ -47,13 +56,17 @@ msgstr ""
 "\n"
 "Введите его в поле на странице."
 
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:2
 msgid "Security confirm"
 msgstr "Подтверждение"
 
-#| msgid "The message was sent succesfully"
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:7
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:49
+#: django-gc-shared/otp/templates/otp/security.html:210
 msgid "SMS was sent succesfully"
 msgstr "SMS было успешно отправлено"
 
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:8
 msgid ""
 "Message contains security token which you should enter in the following "
 "field:"
@@ -61,15 +74,30 @@ msgstr ""
 "В сообщении содержится токен, который следует ввести в расположенное ниже "
 "поле:"
 
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:12
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:31
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:44
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:56
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:79
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:38
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:76
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:114
 msgid "Invalid token, try again"
 msgstr "Неправильный токен, попробуйте снова"
 
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:15
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:34
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:47
 msgid "Confirm"
 msgstr "Подтвердить"
 
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:26
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:72
 msgid "Call is successfully planned"
 msgstr "Звонок успешно запланирован"
 
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:27
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:73
 msgid ""
 "You will hear a unique code (4 digits) which you should enter in the "
 "following field:"
@@ -77,58 +105,94 @@ msgstr ""
 "В сообщении содержится токен, который следует ввести в расположенное ниже "
 "поле:"
 
+#: django-gc-shared/otp/templates/js/my/otp_confirm_modal.html:40
 msgid "Enter security token from device:"
 msgstr "Введите токен с устройства:"
 
+#: django-gc-shared/otp/templates/js/my/otp_required_modal.html:3
 msgid "OTP binding required"
 msgstr "Необходима OTP-привязка"
 
+#: django-gc-shared/otp/templates/js/my/otp_required_modal.html:9
 msgid "To perform this action, you need to create OTP binding."
 msgstr "Для совершения данного действия, необходимо создать OTP-привязку"
 
+#: django-gc-shared/otp/templates/js/my/otp_required_modal.html:10
 msgid "Go to security settings"
 msgstr "Перейти в настройки безопасности"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:2
 msgid "Authentication using SMS"
 msgstr "Авторизация через SMS"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:10
 msgid "Please enter your mobile phone number"
 msgstr "Введите номер вашего мобильного телефона"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:40
+#: django-gc-shared/otp/templates/otp/security.html:207
 msgid "Send an SMS"
 msgstr "Отправить СМС"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:50
+#: django-gc-shared/otp/templates/otp/includes/otp_form.html:37
+#: django-gc-shared/otp/templates/otp/security.html:215
 msgid ""
-"You will receive a unique code which you should enter in the following "
-"field:"
+"You will receive a unique code which you should enter in the following field:"
 msgstr ""
 "В сообщении содержится токен, который следует ввести в расположенное ниже "
 "поле:"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:59
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:82
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:41
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:79
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:117
+#: django-gc-shared/otp/templates/otp/security.html:224
+#: django-gc-shared/otp/templates/otp/security.html:278
 msgid "Make binding"
 msgstr "Создать привязку"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:87
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:8
 msgid "You can also use"
 msgstr "Вы можете использовать"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:87
 msgid "mobile app"
 msgstr "Мобильное приложение"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_sms.html:87
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:8
 msgid "for authentication"
 msgstr "для авторизации"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:2
 msgid "Authentication using mobile app"
 msgstr "Авторизация через мобильное приложение"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:9
 msgid "Please choose your mobile's system"
 msgstr "Выберите вашу мобильную ОС"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:17
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:55
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:93
+#: django-gc-shared/otp/templates/otp/security.html:236
 msgid "Install the application on your mobile phone"
 msgstr "Установите приложение для своего устройства"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:21
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:59
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:97
+#: django-gc-shared/otp/templates/otp/security.html:258
 msgid "Open the app and create a new account using the following secret key"
 msgstr "Откройте приложение и создайте учетную запись с секретным ключом"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:22
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:60
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:98
+#: django-gc-shared/otp/templates/otp/security.html:261
 msgid ""
 "or use the 'Scan' option of the app and point your mobile phone's camera at "
 "the QRCode below"
@@ -136,48 +200,67 @@ msgstr ""
 "или, воспользовавшись опцией установленного приложения «Сканирование», "
 "наведите камеру телефона на QR-код (квадратный штрих-код ниже)"
 
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:31
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:69
+#: django-gc-shared/otp/templates/js/my/profile_security_otp_modal_totp.html:107
 msgid ""
 "\n"
 "                Enter the code generated by the app in the following field\n"
-"                (if the code doesn't match, please enable time correction in your app's settings):\n"
+"                (if the code doesn't match, please enable time correction in "
+"your app's settings):\n"
 "            "
 msgstr ""
 "\n"
-"Введите сгенерированный программой код для проверки синхронизации (если код не подходит, включите коррекцию времени в настройках приложения):"
+"Введите сгенерированный программой код для проверки синхронизации (если код "
+"не подходит, включите коррекцию времени в настройках приложения):"
 
+#: django-gc-shared/otp/templates/otp/confirmation.html:10
 msgid "Phone confirmation"
 msgstr "Подтверждение телефона"
 
+#: django-gc-shared/otp/templates/otp/confirmation.html:13
 msgid "Confirm your phone"
 msgstr "Подтвердите номер вашего мобильного телефона"
 
+#: django-gc-shared/otp/templates/otp/confirmation.html:17
 #, python-format
 msgid ""
 "\n"
-"                You already have text message authentication binded to your phone number.\n"
-"                You can change your phone number <a href=\"%(link)s\">here</a>\n"
+"                You already have text message authentication binded to your "
+"phone number.\n"
+"                You can change your phone number <a href=\"%(link)s\">here</"
+"a>\n"
 "            "
 msgstr ""
 "\n"
-"У вас уже есть привязка к номеру телефона. Для  смены номера пройдите по <a href=\"%(link)s\">ссылке</a>"
+"У вас уже есть привязка к номеру телефона. Для  смены номера пройдите по <a "
+"href=\"%(link)s\">ссылке</a>"
 
+#: django-gc-shared/otp/templates/otp/includes/otp_form.html:25
 msgid ""
 "\n"
-"            Please press the button below to get the verification token as text message (SMS) on your phone number\n"
+"            Please press the button below to get the verification token as "
+"text message (SMS) on your phone number\n"
 "            "
 msgstr ""
 "\n"
 "Нажмите кнопку ниже для получения сообщения на ваш телефон"
 
+#: django-gc-shared/otp/templates/otp/includes/otp_form.html:30
 msgid "Send"
 msgstr "Отправить"
 
+#: django-gc-shared/otp/templates/otp/includes/otp_form.html:34
+#: django-gc-shared/otp/templates/otp/security.html:212
 msgid "If you <b>can't receive the message</b>, you can order an"
 msgstr "Если <b>сообщение не дошло</b>, то вы можете заказать"
 
+#: django-gc-shared/otp/templates/otp/includes/otp_form.html:35
+#: django-gc-shared/otp/templates/otp/security.html:213
 msgid "automated call"
 msgstr "автоматический звонок"
 
+#: django-gc-shared/otp/templates/otp/includes/otp_form.html:40
 msgid ""
 "\n"
 "            The call was queued succesfully. You will hear a unique\n"
@@ -185,29 +268,41 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Звонок был успешно запланирован. Вы услышите токен (4 цифры), которые следует ввести в расположенное ниже поле:"
+"Звонок был успешно запланирован. Вы услышите токен (4 цифры), которые "
+"следует ввести в расположенное ниже поле:"
 
+#: django-gc-shared/otp/templates/otp/includes/otp_form.html:49
+#: django-gc-shared/otp/templates/otp/includes/otp_form.html:54
 msgid "Check"
 msgstr "Проверить"
 
+#: django-gc-shared/otp/templates/otp/otp_check.html:5
+#: django-gc-shared/otp/templates/otp/otp_check.html:8
 msgid "OTP check"
 msgstr "OTP проверка"
 
+#: django-gc-shared/otp/templates/otp/otp_check.html:11
 msgid "Your session has been expired. Please, refresh the page and try again"
 msgstr "Сессия завершилась. Обновите страницу и попробуйте еще раз"
 
+#: django-gc-shared/otp/templates/otp/security.html:133
 msgid "My profile"
 msgstr "Мой профиль"
 
+#: django-gc-shared/otp/templates/otp/security.html:136
 msgid "Security settings"
 msgstr "Настройки безопасности"
 
+#: django-gc-shared/otp/templates/otp/security.html:139
 msgid "In this section you can set your security settings."
 msgstr "В этом разделе вы можете установить настройки безопасности системы. "
 
+#: django-gc-shared/otp/templates/otp/security.html:142
 msgid ""
 "\n"
-"                The following actions will require authentication code, which will be generated using a special mobile app or texted to you via SMS:\n"
+"                The following actions will require authentication code, "
+"which will be generated using a special mobile app or texted to you via "
+"SMS:\n"
 "                <br/>\n"
 "                <ul>\n"
 "                    <li>Editing profile data</li>\n"
@@ -218,14 +313,19 @@ msgid ""
 "                    <li>Real account password change</li>\n"
 "                </ul>\n"
 "                <br/>\n"
-"                The authentication code will help verify that it is really you who request the operation\n"
-"                and your account was not stolen. This will help to protect you from money theft.\n"
-"                The authentication code is generated by a special mobile app or\n"
+"                The authentication code will help verify that it is really "
+"you who request the operation\n"
+"                and your account was not stolen. This will help to protect "
+"you from money theft.\n"
+"                The authentication code is generated by a special mobile app "
+"or\n"
 "                is sent to your mobile phone via text message (SMS).\n"
 "            "
 msgstr ""
 "\n"
-"Если Вы совершите одно из ниже перечисленных действий, будет запрошен код доступа, который позволит определить, что действие производится именно Вами:\n"
+"Если Вы совершите одно из ниже перечисленных действий, будет запрошен код "
+"доступа, который позволит определить, что действие производится именно "
+"Вами:\n"
 "<br/>\n"
 "        <ul>\n"
 "            <li>Изменение данных в профиле</li>\n"
@@ -235,30 +335,40 @@ msgstr ""
 "            <li>Смена плеча реального счёта</li>\n"
 "            <li>Смена пароля реального счёта</li>\n"
 "        </ul>\n"
-"Это сделано для того, чтобы обезопасить Вас от несанкционированных взломов личного кабинета с последующим выводом денег. \n"
-"Код доступа генерируется через специальное приложение для мобильных устройств, либо будет выслан посредством SMS."
+"Это сделано для того, чтобы обезопасить Вас от несанкционированных взломов "
+"личного кабинета с последующим выводом денег. \n"
+"Код доступа генерируется через специальное приложение для мобильных "
+"устройств, либо будет выслан посредством SMS."
 
+#: django-gc-shared/otp/templates/otp/security.html:167
 msgid "Currently you use mobile application"
 msgstr "В данный момент используется мобильное приложение"
 
+#: django-gc-shared/otp/templates/otp/security.html:170
 msgid "Currently you use SMS with phone"
 msgstr "В данный момент используются SMS на телефон"
 
+#: django-gc-shared/otp/templates/otp/security.html:175
 msgid "Change device"
 msgstr "Сменить устройство"
 
+#: django-gc-shared/otp/templates/otp/security.html:180
 msgid "Please choose your preferred authentication method:"
 msgstr "Выберите предпочтительный способ аутентификации:"
 
+#: django-gc-shared/otp/templates/otp/security.html:185
 msgid "SMS"
 msgstr "SMS"
 
+#: django-gc-shared/otp/templates/otp/security.html:188
 msgid "OR"
 msgstr "ИЛИ"
 
+#: django-gc-shared/otp/templates/otp/security.html:191
 msgid "Mobile application"
 msgstr "Мобильное приложение"
 
+#: django-gc-shared/otp/templates/otp/security.html:218
 msgid ""
 "The call was queued succesfully. You will hear a unique code (4 digits) "
 "which you should enter in the following field:"
@@ -266,6 +376,7 @@ msgstr ""
 "Звонок был успешно запланирован. Вы услышите код (4 цифры), который следует "
 "ввести в расположенное ниже поле:"
 
+#: django-gc-shared/otp/templates/otp/security.html:233
 msgid ""
 "To generate the authentication code using mobile app, follow these 3 simple "
 "steps"
@@ -273,28 +384,41 @@ msgstr ""
 "Для того, чтобы сгенерировать код через мобильное приложение, выполните 3 "
 "простых шага"
 
+#: django-gc-shared/otp/templates/otp/security.html:238
+#: django-gc-shared/otp/templates/otp/security.html:244
+#: django-gc-shared/otp/templates/otp/security.html:250
 msgid "For"
 msgstr "Для"
 
+#: django-gc-shared/otp/templates/otp/security.html:242
+#: django-gc-shared/otp/templates/otp/security.html:248
+#: django-gc-shared/otp/templates/otp/security.html:254
 msgid "QR-code"
 msgstr "QR-код"
 
+#: django-gc-shared/otp/templates/otp/security.html:264
 msgid "Refresh"
 msgstr "Обновить"
 
+#: django-gc-shared/otp/templates/otp/security.html:268
 msgid ""
 "\n"
-"                        Enter the code generated by the app in the following field\n"
-"                        (if the code doesn't match, please enable time correction in your app's settings):\n"
+"                        Enter the code generated by the app in the following "
+"field\n"
+"                        (if the code doesn't match, please enable time "
+"correction in your app's settings):\n"
 "                    "
 msgstr ""
 "\n"
-"Введите сгенерированный программой код для проверки синхронизации (если код не подходит, включите коррекцию времени в настройках приложения):"
+"Введите сгенерированный программой код для проверки синхронизации (если код "
+"не подходит, включите коррекцию времени в настройках приложения):"
 
+#: django-gc-shared/otp/views.py:344
 #, python-format
 msgid "Device %s has been saved"
 msgstr "Устройство %s было сохранено"
 
+#: django-gc-shared/otp/views.py:352 django-gc-shared/otp/views.py:355
 msgid "Wrong code"
 msgstr "Неверный код"
 
@@ -309,22 +433,22 @@ msgstr "Неверный код"
 
 #~ msgid ""
 #~ "Due to increased number of intrusions to Private Offices of our users via "
-#~ "their e-mail, we ask all customers of Grand Capital, who have real accounts,"
-#~ " to bind their phone number or OTP device to their Private Office before "
-#~ "continuing to use it. This will help you to defend against malicious "
-#~ "attempts to access your accounts in case your e-mail gets hacked. In case "
-#~ "you have any questions on the binding process, please do not hesitate to "
-#~ "contact our customer support"
+#~ "their e-mail, we ask all customers of Grand Capital, who have real "
+#~ "accounts, to bind their phone number or OTP device to their Private "
+#~ "Office before continuing to use it. This will help you to defend against "
+#~ "malicious attempts to access your accounts in case your e-mail gets "
+#~ "hacked. In case you have any questions on the binding process, please do "
+#~ "not hesitate to contact our customer support"
 #~ msgstr ""
-#~ "В связи с участившимися случаями взлома Личных Кабинетов пользователей через"
-#~ " их электронную почту, мы просим всех клиентов компании Grand Capital, "
-#~ "имеющих реальные счета, перед продолжением работы в Личном Кабинете пройти "
-#~ "процедуру привязки телефона или OTP-устройства к своему Личному Кабинету. "
-#~ "Это поможет Вам защититься от мошенников и не дать им получить доступ к "
-#~ "Вашим средствам в компании Grand Capital в случае взлома Вашей электронной "
-#~ "почты. В случае если у Вас возникнут вопросы по процедуре привязки, "
-#~ "пожалуйста, обращайтесь в нашу службу поддержки по телефону или через "
-#~ "онлайн-чат"
+#~ "В связи с участившимися случаями взлома Личных Кабинетов пользователей "
+#~ "через их электронную почту, мы просим всех клиентов компании Grand "
+#~ "Capital, имеющих реальные счета, перед продолжением работы в Личном "
+#~ "Кабинете пройти процедуру привязки телефона или OTP-устройства к своему "
+#~ "Личному Кабинету. Это поможет Вам защититься от мошенников и не дать им "
+#~ "получить доступ к Вашим средствам в компании Grand Capital в случае "
+#~ "взлома Вашей электронной почты. В случае если у Вас возникнут вопросы по "
+#~ "процедуре привязки, пожалуйста, обращайтесь в нашу службу поддержки по "
+#~ "телефону или через онлайн-чат"
 
 #~ msgid ""
 #~ "\n"
@@ -332,11 +456,15 @@ msgstr "Неверный код"
 #~ "            (if you can't receive the message, you can order\n"
 #~ "            an <a id=\"make_call\" class=\"pointer\">automated call</a>)\n"
 #~ "            <br/>\n"
-#~ "            You will receive a unique code which you should enter in the following field:\n"
+#~ "            You will receive a unique code which you should enter in the "
+#~ "following field:\n"
 #~ "        "
 #~ msgstr ""
 #~ "\n"
-#~ "Сообщение было успешно отправлено (если сообщение не дошло, то вы можете <a id=\"make_call\" class=\"pointer\">заказать автоматический звонок</a>)<br/>В сообщении содержится токен, который следует ввести в расположенное ниже поле:"
+#~ "Сообщение было успешно отправлено (если сообщение не дошло, то вы можете "
+#~ "<a id=\"make_call\" class=\"pointer\">заказать автоматический звонок</"
+#~ "a>)<br/>В сообщении содержится токен, который следует ввести в "
+#~ "расположенное ниже поле:"
 
 #~ msgid "You already have the following binding:"
 #~ msgstr "У вас уже есть следующая привязка:"
@@ -356,23 +484,32 @@ msgstr "Неверный код"
 #~ msgid ""
 #~ "\n"
 #~ "                                The message was sent succesfully\n"
-#~ "                                (if you can't receive the message, you can order\n"
-#~ "                                an <a id=\"make_call\" class=\"pointer\">automated call</a>)\n"
+#~ "                                (if you can't receive the message, you "
+#~ "can order\n"
+#~ "                                an <a id=\"make_call\" class=\"pointer"
+#~ "\">automated call</a>)\n"
 #~ "                                <br/>\n"
-#~ "                                You will receive a unique code which you should enter in the following field:\n"
+#~ "                                You will receive a unique code which you "
+#~ "should enter in the following field:\n"
 #~ "                            "
 #~ msgstr ""
 #~ "\n"
-#~ "Сообщение было успешно отправлено (если сообщение не дошло, то вы можете <a id=\"make_call\" class=\"pointer\">заказать автоматический звонок</a>)<br/>В сообщении содержится токен, который следует ввести в расположенное ниже поле:"
+#~ "Сообщение было успешно отправлено (если сообщение не дошло, то вы можете "
+#~ "<a id=\"make_call\" class=\"pointer\">заказать автоматический звонок</"
+#~ "a>)<br/>В сообщении содержится токен, который следует ввести в "
+#~ "расположенное ниже поле:"
 
 #~ msgid ""
 #~ "\n"
-#~ "                                The call was queued succesfully. You will hear a unique\n"
-#~ "                                code (4 digits) which you should enter in the following field:\n"
+#~ "                                The call was queued succesfully. You will "
+#~ "hear a unique\n"
+#~ "                                code (4 digits) which you should enter in "
+#~ "the following field:\n"
 #~ "                            "
 #~ msgstr ""
 #~ "\n"
-#~ "Звонок был успешно запланирован. Вы услышите токен (4 цифры), которые следует ввести в расположенное ниже поле:"
+#~ "Звонок был успешно запланирован. Вы услышите токен (4 цифры), которые "
+#~ "следует ввести в расположенное ниже поле:"
 
 #~ msgid "Personal"
 #~ msgstr "Личные данные"
@@ -402,8 +539,8 @@ msgstr "Неверный код"
 #~ "Your username on the forum, only english letters, numbers or underscores "
 #~ "allowed"
 #~ msgstr ""
-#~ "Ваш ник на форуме, можно вводить только английские буквы, цифры и некоторые "
-#~ "символы"
+#~ "Ваш ник на форуме, можно вводить только английские буквы, цифры и "
+#~ "некоторые символы"
 
 #~ msgid "First name"
 #~ msgstr "Имя"
@@ -442,8 +579,8 @@ msgstr "Неверный код"
 #~ msgstr "Например: 28.12.1987"
 
 #~ msgid ""
-#~ "You will receive the subscriptions                you select to your e-mail "
-#~ "and via text messages on your phone"
+#~ "You will receive the subscriptions                you select to your e-"
+#~ "mail and via text messages on your phone"
 #~ msgstr "Выбранный тип рассылки будет приходить в виде e-mail и SMS."
 
 #~ msgid "Illegal symbols"
@@ -452,7 +589,8 @@ msgstr "Неверный код"
 #~ msgid "This username already exists"
 #~ msgstr "Такой ник уже зарегистрирован"
 
-#~ msgid "You will receive only those         newsletter types you choose here."
+#~ msgid ""
+#~ "You will receive only those         newsletter types you choose here."
 #~ msgstr "Вы будете получать только выбранные типы рассылки"
 
 #~ msgid "E-mail address"
@@ -605,7 +743,8 @@ msgstr "Неверный код"
 
 #~ msgid ""
 #~ "You can not change e-mail address more than once every fifteen minutes."
-#~ msgstr "Вы не можете менять адрес электронной почты чаще, чем раз в 15 минут."
+#~ msgstr ""
+#~ "Вы не можете менять адрес электронной почты чаще, чем раз в 15 минут."
 
 #~ msgid "E-mail you provided is already registered in our system."
 #~ msgstr "Адрес электронной почты, который вы указали, уже используется."
@@ -615,8 +754,8 @@ msgstr "Неверный код"
 
 #~ msgid "You are asking for too many SMS codes. Wait 15 minutes and try again"
 #~ msgstr ""
-#~ "Вы запросили слишком много СМС-подтверждений. Подождите 15 минут и обновите "
-#~ "страницу"
+#~ "Вы запросили слишком много СМС-подтверждений. Подождите 15 минут и "
+#~ "обновите страницу"
 
 #~ msgid "History"
 #~ msgstr "История"
@@ -666,7 +805,8 @@ msgstr "Неверный код"
 
 #~ msgid ""
 #~ "\n"
-#~ "                                    To change your phone number - follow this <a href=\"%(link)s\">link</a>\n"
+#~ "                                    To change your phone number - follow "
+#~ "this <a href=\"%(link)s\">link</a>\n"
 #~ "                                "
 #~ msgstr ""
 #~ "\n"
@@ -680,12 +820,14 @@ msgstr "Неверный код"
 #~ msgid ""
 #~ "\n"
 #~ "                <p>To verify your information, you can\n"
-#~ "                    <a href=\"%(profiles_upload_document_url)s\">upload a copy of your document</a></p>\n"
+#~ "                    <a href=\"%(profiles_upload_document_url)s\">upload a "
+#~ "copy of your document</a></p>\n"
 #~ "            "
 #~ msgstr ""
 #~ "\n"
 #~ "<p>Для уточнения предоставленной информации, Вы можете\n"
-#~ " <a href=\"%(profiles_upload_document_url)s\">загрузить копию документа</a></p>"
+#~ " <a href=\"%(profiles_upload_document_url)s\">загрузить копию документа</"
+#~ "a></p>"
 
 #~ msgid "My manager"
 #~ msgstr "Мой менеджер"
@@ -703,8 +845,8 @@ msgstr "Неверный код"
 #~ msgstr "Рабочий телефон"
 
 #~ msgid ""
-#~ "You can get contacts of the manager after you deposit at least $100 to your "
-#~ "account."
+#~ "You can get contacts of the manager after you deposit at least $100 to "
+#~ "your account."
 #~ msgstr ""
 #~ "Возможность доступа к контактным данным менеджера будет открыта после "
 #~ "пополнения счёта на сумму не менее 100 USD"
@@ -779,15 +921,19 @@ msgstr "Неверный код"
 #~ msgstr "Укажите ваш адрес"
 
 #~ msgid ""
-#~ "To verify your email address, please follow the link you received when you registered. If you\n"
-#~ "mistyped your email address or didn't receive an activation email, please check if your email is correct\n"
-#~ "<a href=\"%(edit_email_url)s\">here</a> and click \"Save\" to receive another activation email."
+#~ "To verify your email address, please follow the link you received when "
+#~ "you registered. If you\n"
+#~ "mistyped your email address or didn't receive an activation email, please "
+#~ "check if your email is correct\n"
+#~ "<a href=\"%(edit_email_url)s\">here</a> and click \"Save\" to receive "
+#~ "another activation email."
 #~ msgstr ""
 #~ "Чтобы подтвердить ваш адрес электронной почты, пожалуйста, пройдите по "
 #~ "ссылке, которую вы получили при регистрации. Если вы неправильно указали "
 #~ "свой e-mail или вам не пришло письмо со ссылкой, пожалуйста, проверьте <a "
 #~ "href=\"%(edit_email_url)s\">здесь</a>, что ваш адрес электронной почты "
-#~ "указан верно и нажмите \"Сохранить\", чтобы получить новое письмо активации."
+#~ "указан верно и нажмите \"Сохранить\", чтобы получить новое письмо "
+#~ "активации."
 
 #~ msgid "Invalid phone number"
 #~ msgstr "Неверный номер"
@@ -799,7 +945,8 @@ msgstr "Неверный код"
 #~ "Вы запросили слишком много СМС. Подождите 5 минут и попробуйте еще раз"
 
 #~ msgid ""
-#~ "You are asking for too many calls. Please wait 5 minutes and try again later"
+#~ "You are asking for too many calls. Please wait 5 minutes and try again "
+#~ "later"
 #~ msgstr ""
 #~ "Вы запросили слишком много звонков. Подождите 5 минут и попробуйте еще раз"
 
@@ -843,13 +990,14 @@ msgstr "Неверный код"
 #~ msgstr "Подтвердить"
 
 #~ msgid ""
-#~ "To verify your email, please follow the link you received when you registered. If you have problems\n"
+#~ "To verify your email, please follow the link you received when you "
+#~ "registered. If you have problems\n"
 #~ "    with email verification, please contact your personal manager."
 #~ msgstr ""
-#~ "Чтобы подтвердить свой e-mail, пожалуйста, перейдите по ссылке, которую вы "
-#~ "должны были получить на него при регистрации. Если у вас возникли какие-либо"
-#~ " проблемы с подтверждением вашего адреса электронной почты, пожалуйста, "
-#~ "свяжитесь с вашим персональным менеджером."
+#~ "Чтобы подтвердить свой e-mail, пожалуйста, перейдите по ссылке, которую "
+#~ "вы должны были получить на него при регистрации. Если у вас возникли "
+#~ "какие-либо проблемы с подтверждением вашего адреса электронной почты, "
+#~ "пожалуйста, свяжитесь с вашим персональным менеджером."
 
 #~ msgid "Next"
 #~ msgstr "Далее"
@@ -872,7 +1020,8 @@ msgstr "Неверный код"
 #~ msgid ""
 #~ "Your manager Sergey Ilin is on vacation. For that time your manager is "
 #~ "Natalia Terenteva"
-#~ msgstr "Ваш менеджер Сергей Ильин в отпуске. Его заменяет Наталья Терентьева"
+#~ msgstr ""
+#~ "Ваш менеджер Сергей Ильин в отпуске. Его заменяет Наталья Терентьева"
 
 #~ msgid "Code"
 #~ msgstr "Код"
@@ -894,8 +1043,8 @@ msgstr "Неверный код"
 
 #~ msgid "Passport scan is needed for money withdrawal"
 #~ msgstr ""
-#~ "Скан паспорта необходим для подтверждения ваших данных и вывода средств со "
-#~ "счета"
+#~ "Скан паспорта необходим для подтверждения ваших данных и вывода средств "
+#~ "со счета"
 
 #~ msgid "Parameter is valid"
 #~ msgstr "Подтверждено"

@@ -8,468 +8,749 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-17 20:42+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2016-05-26 15:28+0230\n"
 "Last-Translator: Denis Tom <d.tomilin@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.8\n"
 
+#: django-gc-shared/gcrm/rest/serializers.py:404
 msgid "Manager has been assigned manualy"
 msgstr "Менеджер перекреплен вручную"
 
+#: django-gc-shared/gcrm/rest/serializers.py:407
 msgid "Manager has been assigned"
 msgstr "Менеджер перекрелен"
 
+#: django-gc-shared/gcrm/rest/serializers.py:414
 msgid "Reasign request to selected manager already exists"
 msgstr "Такая заявка уже существует"
 
+#: django-gc-shared/gcrm/rest/serializers.py:420
 msgid "Reasign request has been created"
 msgstr "Заявка на перекрепление создана"
 
+#: django-gc-shared/gcrm/rest/serializers.py:447
 msgid "You can't select more than 20 contacts for indirect reassign"
 msgstr "Вы не можете перекрепить более чем 20 контактов собственоручно."
 
-#| msgid "Reassignments"
+#: django-gc-shared/gcrm/rest/serializers.py:451
+msgid "You must specify comment for a task"
+msgstr ""
+
+#: django-gc-shared/gcrm/rest/serializers.py:455
+msgid "You must specify agent code"
+msgstr ""
+
+#: django-gc-shared/gcrm/rest/serializers.py:482
+#: django-gc-shared/gcrm/rest/serializers.py:493
 msgid "Mass assignment"
 msgstr "Массовые перекрепление"
 
-#| msgid "Reasign request has been created"
+#: django-gc-shared/gcrm/rest/serializers.py:511
 msgid "Reassign requests was created"
 msgstr "Заявки на перекрепление созданы"
 
-msgid "This code does not exists"
-msgstr "Такой код не существует"
+#: django-gc-shared/gcrm/rest/serializers.py:525
+msgid "Code must be a number"
+msgstr ""
 
+#: django-gc-shared/gcrm/rest/serializers.py:544
 msgid "Agent code was updated successfully"
 msgstr "Код агента обновлен успешно"
 
+#: django-gc-shared/gcrm/rest/viewsets.py:409
+msgid "To get a new client, you need to make a call to the previous one"
+msgstr ""
+
+#: django-gc-shared/gcrm/rest/viewsets.py:418
+msgid "There are no available clients"
+msgstr ""
+
+#: django-gc-shared/gcrm/rest/viewsets.py:426
+msgid "First contact with the client"
+msgstr ""
+
+#: django-gc-shared/gcrm/templates/gcrm/app.html:12
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:26
 msgid "Contacts"
 msgstr "Контакты"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:16
 msgid "Tasks"
 msgstr "Задачи"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:19
 msgid "My tasks"
 msgstr "Мои задачи"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:20
 msgid "All tasks"
 msgstr "Все задачи"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:21
 msgid "Reassignments"
 msgstr "Перекрепления"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:25
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:280
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:233
 msgid "Accounts"
 msgstr "Счета"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:28
 msgid "Analytics"
 msgstr "Аналитика"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:31
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:282
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:239
 msgid "Calls"
 msgstr "Звонки"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:34
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:21
 msgid "Managers"
 msgstr "Менеджеры"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:40
 msgid "Search by contacts"
 msgstr "Поиск по контактам"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:95
 msgid "All Time"
 msgstr "Все время"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:96
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:88
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks.html:12
 msgid "Today"
 msgstr "Сегодня"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:97
 msgid "Yesterday"
 msgstr "Вчера"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:98
 msgid "Last 3 Days"
 msgstr "Последние 3 дня"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:99
 msgid "Last 7 Days"
 msgstr "Последние 7 дней"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:100
 msgid "Last 30 Days"
 msgstr "Последние 30 дней"
 
+#: django-gc-shared/gcrm/templates/gcrm/app.html:101
 msgid "This Month"
 msgstr "Этот месяц"
 
-msgid "Main page"
-msgstr "Главная страница"
-
+#: django-gc-shared/gcrm/templates/gcrm/emails/new_task.html:2
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:80
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.create.html:12
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:43
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:7
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:91
 msgid "Name"
 msgstr "Имя"
 
+#: django-gc-shared/gcrm/templates/gcrm/emails/new_task.html:3
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks_all.html:24
 msgid "Text"
 msgstr "Текст"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/accounts.html:7
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:7
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:7
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks_all.html:7
 msgid "Search"
 msgstr "Поиск"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/accounts.html:21
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:23
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks_all.html:22
 msgid "Contact"
 msgstr "Контакт"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/accounts.html:22
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.payments.html:6
+msgid "Account"
+msgstr "Счет"
+
+#: django-gc-shared/gcrm/templates/gcrm/js/accounts.html:23
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactMt4Account.html:15
 msgid "Balance"
 msgstr "Баланс"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/accounts.html:24
 msgid "Account type"
 msgstr "Тип счета"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/accounts.html:25
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:21
 msgid "Creation time"
 msgstr "Время создания"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/accounts.html:49
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:46
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:56
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:104
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:105
 msgid "No items to display"
 msgstr "Нет элементов для отображения"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:22
 msgid "Payments"
 msgstr "Платежи"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:23
 msgid "Totals calls"
 msgstr "Всего звонков"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:24
 msgid "Answered calls"
 msgstr "Отвеченные звонки"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:25
 msgid "Not answered calls"
 msgstr "Неотвеченные звонки"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:29
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:281
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:236
 msgid "In/Out"
 msgstr "Ввод/Вывод"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:30
 msgid "In"
 msgstr "Ввод"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:31
 msgid "Out"
 msgstr "Вывод"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:33
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:35
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:37
 msgid "Count"
 msgstr "Кол-во"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:34
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:36
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:38
 msgid "Hours"
 msgstr "Часы"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:40
 msgid "By button"
 msgstr "По кнопке"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:41
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:46
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:15
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:59
 msgid "All"
 msgstr "Все"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:60
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:68
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:77
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:96
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:104
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:113
 msgid "h."
 msgstr "ч."
 
+#: django-gc-shared/gcrm/templates/gcrm/js/analytics.html:87
 msgid "Summary"
 msgstr "Суммарно"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:7
 msgid "Search by phone number"
 msgstr "Поиск по номеру телефона"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:21
 msgid "Date"
 msgstr "Дата"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:22
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactNote.html:18
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactNote.html:45
 msgid "From"
 msgstr "От"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:23
 msgid "To"
 msgstr "До"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:24
 msgid "Disposition"
 msgstr "Статус"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:25
 msgid "Duration"
 msgstr "Длительность"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:26
 msgid "Record"
 msgstr "Запись"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:47
 msgid "Answered"
 msgstr "Отвеченные звонки"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:48
 msgid "Not answered"
 msgstr "Неотвеченные звонки"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:64
 msgid "minutes"
 msgstr "минут"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:64
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactCall.html:17
 msgid "sec"
 msgstr "сек"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/calls.html:68
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactCall.html:21
 msgid "Play"
 msgstr "Прослушать"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.accountTypeSelectFilter.html:5
 msgid "Types"
 msgstr "Типы"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactInfo.html:10
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactInfo.html:16
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:8
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.create.html:24
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:127
 msgid "Phone"
 msgstr "Телефон"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactInfo.html:12
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactInfo.html:18
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:10
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:174
 msgid "Address"
 msgstr "Адрес"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactInfo.html:26
+msgid "Enter value"
+msgstr ""
+
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactInfo.html:32
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:19
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:58
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:231
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:178
 msgid "Show on map"
 msgstr "Показать на карте"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactInfo.html:41
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactNote.html:51
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:96
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.create.html:32
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.addManager.html:70
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsAgentCode.html:42
 msgid "Save"
 msgstr "Сохранить"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactInfo.html:44
 msgid "Revert"
 msgstr "Отменить"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactLog.html:29
 msgid "by"
 msgstr "кем"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactMt4Account.html:19
 msgid "bonus"
 msgstr "бонус"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactMt4Account.html:21
 msgid "History"
 msgstr "История"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactMt4Account.html:22
+#, fuzzy
+#| msgid "Client"
+msgid "Clients"
+msgstr "Клиент"
+
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactNote.html:25
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:31
 msgid "Edit"
 msgstr "Изменить"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactNote.html:49
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:94
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:123
 msgid "Comment"
 msgstr "Комментарий"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactNote.html:52
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:97
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:127
 msgid "Cancel"
 msgstr "Отменить"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactNote.html:53
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:98
 msgid "Delete"
 msgstr "Удалить"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactPayment.html:16
 msgid "Deposit to account"
 msgstr "Ввод на счёт"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactPayment.html:16
 msgid "Withdrawal from account"
 msgstr "Вывод со счёта"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:15
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:49
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:80
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:118
 msgid "Task for"
 msgstr "Задача для"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:32
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:126
 msgid "Complete"
 msgstr "Завершить"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:50
 msgid "completed at"
 msgstr "завершено"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:56
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:27
 msgid "Result"
 msgstr "Результат"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:82
 msgid "deadline"
 msgstr "Срок"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:89
 msgid "In 30 minutes"
 msgstr "Через 30 минут"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:90
 msgid "In an hour"
 msgstr "Через час"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:91
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks.html:19
 msgid "Tomorrow"
 msgstr "Завтра"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.contactTask.html:92
 msgid "In a week"
 msgstr "Через неделю"
 
-#| msgid "Count"
+#: django-gc-shared/gcrm/templates/gcrm/js/component.countrySelect.html:10
 msgid "Country"
 msgstr "Страна"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.languageSelect.html:10
 msgid "Languages"
 msgstr "Языки"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.nextButton.html:13
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks.html:5
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks_all.html:55
 msgid "Overdue"
 msgstr "Просрочено"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.nextButton.html:14
 msgid "Next"
 msgstr "Следующий"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.nextButton.html:15
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:18
+#: django-gc-shared/gcrm/templates/gcrm/js/managers.html:18
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:74
 msgid "Actions"
 msgstr "Действия"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.nextButton.html:47
 msgid "Get-a-client™"
 msgstr "Получить клиента"
 
-#| msgid "Registration"
+#: django-gc-shared/gcrm/templates/gcrm/js/component.regionSelect.html:10
 msgid "Region"
 msgstr "Регион"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.tableFooter.html:7
 msgid "Totals: "
 msgstr "Всего: "
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.tagSelectFilter.html:11
 msgid "Tags"
 msgstr "Теги"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.tasksInfo.html:2
 msgid "Reassign tasks"
 msgstr "Задачи перекрепления"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.tasksInfo.html:3
 msgid "Overdue tasks"
 msgstr "Просроченные задачи"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.tasksInfo.html:4
 msgid "Today tasks"
 msgstr "Мои задачи на сегодня"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.userSelect.html:4
+#: django-gc-shared/gcrm/templates/gcrm/js/component.userSelectFilter.html:15
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:118
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:44
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsReassign.html:16
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:30
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks_all.html:21
 msgid "Manager"
 msgstr "Менеджер"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/component.userSelect.html:8
+#: django-gc-shared/gcrm/templates/gcrm/js/component.userSelectFilter.html:7
+#: django-gc-shared/gcrm/templates/gcrm/js/component.userSelectFilter.html:23
 msgid "No manager"
 msgstr "Без менеджера"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:9
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.create.html:18
 msgid "E-mail"
 msgstr "E-mail"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:75
 msgid "Client"
 msgstr "Клиент"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:79
 msgid "Lead"
 msgstr "Лид"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:93
 msgid "ADD TAG"
 msgstr "ДОБАВИТЬ ТЕГ"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:106
 msgid "Save changes"
 msgstr "Сохранить изменения"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:124
 msgid "---Manager not set---"
 msgstr "---Менеджер не задан---"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:128
 msgid "Comment/reason"
 msgstr "Комментарий/причина"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:130
 msgid "Create request"
 msgstr "Создать заявку"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:136
 msgid "Author's comment:"
 msgstr "Комментарий автора:"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:146
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:69
 msgid "Account data"
 msgstr "Данные ЛК"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:151
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:82
 msgid "User"
 msgstr "Пользователь"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:152
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:83
 msgid "Profile"
 msgstr "Профиль"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:157
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:45
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:99
 msgid "Registration"
 msgstr "Регистрация"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:162
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:46
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:103
 msgid "Activity"
 msgstr "Активность"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:165
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:106
 msgid "Details"
 msgstr "Подробности"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:169
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:108
 msgid "Last 10 actions"
 msgstr "Последние 10 действий"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:176
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsReassign.html:68
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:116
 msgid "Agent code"
 msgstr "Код агента"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:180
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:122
 msgid "Partner office"
 msgstr "Партнёрский офис"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:189
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:131
 msgid "OTP using phone"
 msgstr "ОТП-привязка через телефон"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:204
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:145
 msgid "No OTP assigned"
 msgstr "Без ОТП-привязки"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:208
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:150
 msgid "OTP application"
 msgstr "ОТП-привязка через приложение"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:239
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:194
 msgid "Documents"
 msgstr "Документы"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:242
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:197
 msgid "Identity confirmed"
 msgstr "Личность подтверждена"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:245
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:200
 msgid "Identity not confirmed"
 msgstr "Личность не подтверждена"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:256
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:212
 msgid "Partner domains"
 msgstr "Партнёрские домены"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:266
 msgid "Additional details"
 msgstr "Дополнительные данные"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:272
 msgid "Add"
 msgstr "Добавить"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:279
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:230
 msgid "Feed"
 msgstr "Лента"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contact.html:283
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:242
 msgid "Logs"
 msgstr "Логи"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.create.html:7
 msgid "Add a new contact"
 msgstr "Добавить новый контакт"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.create.html:33
 msgid "Save and continue editing"
 msgstr "Сохранить и продолжить редактирование"
 
-#| msgid "Rejected"
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:15
 msgid "Selected"
 msgstr "Выбрано"
 
-#| msgid "Reassignments"
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:21
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsReassign.html:89
 msgid "Reassign"
 msgstr "Перекрепление"
 
-#| msgid "Agent code"
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:22
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsAgentCode.html:8
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsReassign.html:63
 msgid "Set agent code"
 msgstr "Установить код агента"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:30
 msgid "Create"
 msgstr "Создать"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:47
 msgid "Activity types"
 msgstr "Активность"
 
-#| msgid "Additional details"
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:82
 msgid "Additional filters"
 msgstr "Дополнительные фильтры"
 
-#| msgid "Clear filters"
+#: django-gc-shared/gcrm/templates/gcrm/js/contacts.html:83
 msgid "Hide filters"
 msgstr "Скрыть фильтры"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/managers.html:7
 msgid "Add manager"
 msgstr "Добавить менеджера"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/managers.html:17
 msgid "Manager contact"
 msgstr "Менеджеры"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/managers.html:44
 msgid "Change password"
 msgstr "Сменить пароль"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/managers.html:45
 msgid "Revoke user"
 msgstr "Удалить"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.addManager.html:8
 msgid "Add new manager"
 msgstr "Добавление нового менеджера"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.addManager.html:17
 msgid "Register manager on site"
 msgstr "Зарегистрируйте менеджера на сайте"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.addManager.html:23
 msgid "Enter email or phone number and press Search"
 msgstr "Введите почту или номер телефона и нажмите Найти"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.addManager.html:27
 msgid "Email or phone number"
 msgstr "Почта или номер телефона"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.addManager.html:39
 msgid "Select manager"
 msgstr "Выберите менеджера"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.addManager.html:56
 msgid "Select office"
 msgstr "Выберите офис"
 
-#| msgid "Agent code"
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsAgentCode.html:15
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsAgentCode.html:19
 msgid "New code"
 msgstr "Новый код"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsAgentCode.html:34
 msgid ""
 "I want to set agent code to [[objects.countSelected()||objects.count]] "
 "contacts"
@@ -477,107 +758,166 @@ msgstr ""
 "Я хочу установить код агента для [[objects.countSelected()||objects.count]] "
 "контактов"
 
-#| msgid "Reassignments"
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsReassign.html:8
 msgid "Reassigne managers"
 msgstr "Перекрепление менеджеров"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsReassign.html:13
 msgid ""
-"You want to assign these [[objects.countSelected()||objects.count]] contacts"
-" to"
+"You want to assign these [[objects.countSelected()||objects.count]] contacts "
+"to"
 msgstr ""
-"Вы хотите установить код агента для "
-"[[objects.countSelected()||objects.count]] контактов"
+"Вы хотите установить код агента для [[objects.countSelected()||objects."
+"count]] контактов"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsReassign.html:29
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsReassign.html:34
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:45
 msgid "Reason"
 msgstr "Причина"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsReassign.html:46
+msgid "With task"
+msgstr ""
+
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsReassign.html:51
+#, fuzzy
+#| msgid "Author's comment"
+msgid "Task comment"
+msgstr "Комментарий автора"
+
+#: django-gc-shared/gcrm/templates/gcrm/js/modal.contactsReassign.html:82
 msgid "I want to reassign [[objects.countSelected()||objects.count]] contacts"
 msgstr ""
 "Я хочу перекрепить [[objects.countSelected()||objects.count]] контактов"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.feed.html:13
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks.html:8
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks.html:15
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks.html:22
+#, fuzzy
+#| msgid "Show on map"
+msgid "Show more"
+msgstr "Показать на карте"
+
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.feed.html:16
 msgid "Added at"
 msgstr "Добавлено"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:22
 msgid "TAG"
 msgstr "ТЕГ"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:77
 msgid "Lost OTP"
 msgstr "Утеряно OTP"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:95
+#, fuzzy
+#| msgid "Languages"
+msgid "Language"
+msgstr "Языки"
+
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:130
 msgid "Verification"
 msgstr "Верификация"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:155
 msgid "Uses Mobile application"
 msgstr "Использует мобильное приложение"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:183
 msgid "UTM"
 msgstr "UTM"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.html:248
 msgid "Task"
 msgstr "Задача"
 
-msgid "Account"
-msgstr "Счет"
-
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.payments.html:7
 msgid "Deposit"
 msgstr "Ввод"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.payments.html:8
 msgid "Withdraw"
 msgstr "Вывод"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.payments.html:9
 msgid "Payment system"
 msgstr "Платежная система"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/page.contact.payments.html:29
 msgid "Totals"
 msgstr "Всего"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:22
 msgid "Author"
 msgstr "Автор"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:24
 msgid "From whom"
 msgstr "С кого"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:25
 msgid "To whom"
 msgstr "На кого"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:26
 msgid "Author's comment"
 msgstr "Комментарий автора"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:60
 msgid "New"
 msgstr "Новый"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:61
 msgid "Accepted"
 msgstr "Одобрено"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:62
 msgid "Rejected"
 msgstr "Отклонено"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:85
 msgid "Accept"
 msgstr "Одобрить"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:86
 msgid "Reject"
 msgstr "Отклонить"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/reassign_requests.html:88
 msgid "Waiting review"
 msgstr "Ожидает рассмотрения"
 
-msgid "My Tasks"
-msgstr "Мои Задачи"
-
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks_all.html:23
 msgid "Deadline"
 msgstr "Срок"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks_all.html:48
 msgid "All types"
 msgstr "Все типы"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks_all.html:53
 msgid "All status"
 msgstr "Все статусы"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks_all.html:54
 msgid "Opened"
 msgstr "Открытые"
 
+#: django-gc-shared/gcrm/templates/gcrm/js/tasks_all.html:56
 msgid "Closed"
 msgstr "Закрытые"
+
+#~ msgid "This code does not exists"
+#~ msgstr "Такой код не существует"
+
+#~ msgid "Main page"
+#~ msgstr "Главная страница"
+
+#~ msgid "My Tasks"
+#~ msgstr "Мои Задачи"
 
 #~ msgid "Account created"
 #~ msgstr "Создан счёт"

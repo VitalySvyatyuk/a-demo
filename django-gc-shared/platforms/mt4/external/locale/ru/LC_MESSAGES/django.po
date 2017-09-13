@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-25 17:12+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2016-01-18 21:26+0230\n"
 "Last-Translator:   <valexeev@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,98 +20,100 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.6\n"
 
-#: mt4/external/models_other.py:13 mt4/external/models_other.py:99
+#: django-gc-shared/platforms/mt4/external/models_other.py:13
+#: django-gc-shared/platforms/mt4/external/models_other.py:99
 msgid "Symbol"
 msgstr "Символ"
 
-#: mt4/external/models_other.py:16
+#: django-gc-shared/platforms/mt4/external/models_other.py:16
 msgid "Tick size"
 msgstr "Размер тика"
 
-#: mt4/external/models_other.py:19 mt4/external/models_other.py:101
+#: django-gc-shared/platforms/mt4/external/models_other.py:19
+#: django-gc-shared/platforms/mt4/external/models_other.py:101
 msgid "Open price"
 msgstr "Цена открытия"
 
-#: mt4/external/models_other.py:22
+#: django-gc-shared/platforms/mt4/external/models_other.py:22
 msgid "Stop out level"
 msgstr "Уровень стопов"
 
-#: mt4/external/models_other.py:25
+#: django-gc-shared/platforms/mt4/external/models_other.py:25
 msgid "Swap long"
 msgstr "Своп длинных позиций"
 
-#: mt4/external/models_other.py:28
+#: django-gc-shared/platforms/mt4/external/models_other.py:28
 msgid "Swap short"
 msgstr "Своп коротких позиций"
 
-#: mt4/external/models_other.py:31
+#: django-gc-shared/platforms/mt4/external/models_other.py:31
 msgid "Contract size"
 msgstr "Размер контракта"
 
-#: mt4/external/models_other.py:34
+#: django-gc-shared/platforms/mt4/external/models_other.py:34
 msgid "Tick cost"
 msgstr "Цена тика"
 
-#: mt4/external/models_other.py:37
+#: django-gc-shared/platforms/mt4/external/models_other.py:37
 msgid "Margin"
 msgstr "Маржа"
 
-#: mt4/external/models_other.py:40
+#: django-gc-shared/platforms/mt4/external/models_other.py:40
 msgid "Initial margin"
 msgstr "Входная маржа"
 
-#: mt4/external/models_other.py:43
+#: django-gc-shared/platforms/mt4/external/models_other.py:43
 msgid "Currency"
 msgstr "Валюта"
 
-#: mt4/external/models_other.py:46
+#: django-gc-shared/platforms/mt4/external/models_other.py:46
 msgid "Group"
 msgstr "Группа"
 
-#: mt4/external/models_other.py:49
+#: django-gc-shared/platforms/mt4/external/models_other.py:49
 msgid "Min. spread"
 msgstr "Мин. спред"
 
-#: mt4/external/models_other.py:52
+#: django-gc-shared/platforms/mt4/external/models_other.py:52
 msgid "Max. spread"
 msgstr "Макс. спред"
 
-#: mt4/external/models_other.py:55
+#: django-gc-shared/platforms/mt4/external/models_other.py:55
 msgid "Avg. spread"
 msgstr "Средний спред"
 
-#: mt4/external/models_other.py:58
+#: django-gc-shared/platforms/mt4/external/models_other.py:58
 msgid "Spread"
 msgstr "Спред"
 
-#: mt4/external/models_other.py:61
+#: django-gc-shared/platforms/mt4/external/models_other.py:61
 msgid "Margin currency"
 msgstr "Валюта маржи"
 
-#: mt4/external/models_other.py:64
+#: django-gc-shared/platforms/mt4/external/models_other.py:64
 msgid "Title"
 msgstr "Название"
 
-#: mt4/external/models_other.py:67
+#: django-gc-shared/platforms/mt4/external/models_other.py:67
 msgid "Night margin"
 msgstr "Ночная маржа"
 
-#: mt4/external/models_other.py:70
+#: django-gc-shared/platforms/mt4/external/models_other.py:70
 msgid "Commission"
 msgstr "Комиссия"
 
-#: mt4/external/models_other.py:73
+#: django-gc-shared/platforms/mt4/external/models_other.py:73
 msgid "Volume"
 msgstr "Объем"
 
-#: mt4/external/models_other.py:103
+#: django-gc-shared/platforms/mt4/external/models_other.py:103
 msgid "Spread digits"
 msgstr "Кол-во цифр спреда"
 
-#: mt4/external/models_other.py:105
+#: django-gc-shared/platforms/mt4/external/models_other.py:105
 msgid "Execution type"
 msgstr "Тип исполнения"
 
-#: mt4/external/models_other.py:107
+#: django-gc-shared/platforms/mt4/external/models_other.py:107
 msgid "Is trading allowed?"
 msgstr "Торговля разрешена?"

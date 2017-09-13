@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-03 18:30+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2016-11-03 18:01+0230\n"
 "Last-Translator: sdf asdf <test@test.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,335 +16,451 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.8\n"
 
+#: django-gc-shared/uptrader_cms/admin.py:50
+#: django-gc-shared/uptrader_cms/models.py:131
+msgid "Indicator"
+msgstr "Индикатор"
+
+#: django-gc-shared/uptrader_cms/forms.py:22
 msgid "Countries"
 msgstr "Страны"
 
+#: django-gc-shared/uptrader_cms/forms.py:24
 msgid "All countries"
 msgstr "Все страны"
 
+#: django-gc-shared/uptrader_cms/forms.py:28
+#: django-gc-shared/uptrader_cms/models.py:130
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:213
 msgid "Importance"
 msgstr "Важность"
 
+#: django-gc-shared/uptrader_cms/forms.py:29
 msgid "Any"
 msgstr "Любая"
 
+#: django-gc-shared/uptrader_cms/models.py:27
+msgid "Date"
+msgstr "Дата"
+
+#: django-gc-shared/uptrader_cms/models.py:42
+msgid "It will be used as the address of the page"
+msgstr "Будет использован как адрес страницы"
+
+#: django-gc-shared/uptrader_cms/models.py:42
+#: django-gc-shared/uptrader_cms/models.py:84
+msgid "Slug"
+msgstr "Слаг"
+
+#: django-gc-shared/uptrader_cms/models.py:50
+#: django-gc-shared/uptrader_cms/models.py:51
+#: django-gc-shared/uptrader_cms/models.py:61
+#: django-gc-shared/uptrader_cms/views.py:118
 msgid "Company news"
 msgstr "Новости компании"
 
+#: django-gc-shared/uptrader_cms/models.py:70
+msgid "News with current language and slug already exists!"
+msgstr "Новость с таким языком и слагом уже существует!"
+
+#: django-gc-shared/uptrader_cms/models.py:83
+#: django-gc-shared/uptrader_cms/models.py:99
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:207
+msgid "Country"
+msgstr "Страна"
+
+#: django-gc-shared/uptrader_cms/models.py:85
+msgid "Old drupal id"
+msgstr "Старый drupal id"
+
+#: django-gc-shared/uptrader_cms/models.py:87
+msgid "Discount rate"
+msgstr "Ставка"
+
+#: django-gc-shared/uptrader_cms/models.py:93
+msgid "Country for indicator"
+msgstr "Страна для индикатора"
+
+#: django-gc-shared/uptrader_cms/models.py:94
+msgid "Countries for indicators"
+msgstr "Страны для индикаторов"
+
+#: django-gc-shared/uptrader_cms/models.py:98
+msgid "Indicator name"
+msgstr "Название индикатора"
+
+#: django-gc-shared/uptrader_cms/models.py:100
+msgid "FxStreet ID"
+msgstr "Идентификатор FxStreet"
+
+#: django-gc-shared/uptrader_cms/models.py:112
 msgid "Economic indicator"
 msgstr "Экономический индикатор"
 
+#: django-gc-shared/uptrader_cms/models.py:113
 msgid "Economic indicators"
 msgstr "Экономические индикаторы"
 
+#: django-gc-shared/uptrader_cms/models.py:117
 msgid "Usual"
 msgstr "Обычное"
 
+#: django-gc-shared/uptrader_cms/models.py:118
 msgid "Important"
 msgstr "Важное"
 
+#: django-gc-shared/uptrader_cms/models.py:119
 msgid "Very important"
 msgstr "Очень важное"
 
+#: django-gc-shared/uptrader_cms/models.py:123
 msgid "a week before"
 msgstr "за нед. до"
 
+#: django-gc-shared/uptrader_cms/models.py:124
 msgid "quarter"
 msgstr "квартал"
 
+#: django-gc-shared/uptrader_cms/models.py:125
 msgid "month"
 msgstr "месяц"
 
+#: django-gc-shared/uptrader_cms/models.py:129
+msgid "Event name"
+msgstr "Название события"
+
+#: django-gc-shared/uptrader_cms/models.py:132
+msgid "Start typing the name of the indicator"
+msgstr "Начните вводить название индикатора"
+
+#: django-gc-shared/uptrader_cms/models.py:133
+msgid "Event time"
+msgstr "Время события"
+
+#: django-gc-shared/uptrader_cms/models.py:134
+#: django-gc-shared/uptrader_cms/models.py:136
+msgid "Period"
+msgstr "Период"
+
+#: django-gc-shared/uptrader_cms/models.py:137
+msgid "Previous"
+msgstr "Предыдущее"
+
+#: django-gc-shared/uptrader_cms/models.py:139
+msgid "Prediction"
+msgstr "Прогноз"
+
+#: django-gc-shared/uptrader_cms/models.py:141
+msgid "Facts"
+msgstr "Факты"
+
+#: django-gc-shared/uptrader_cms/models.py:147
 msgid "m/m"
 msgstr ""
 
+#: django-gc-shared/uptrader_cms/models.py:148
 msgid "q/q"
 msgstr ""
 
+#: django-gc-shared/uptrader_cms/models.py:149
 msgid "y/y"
 msgstr ""
 
-msgid "Display order from min(first) to max (last)"
-msgstr "Порядок отображения от минимального (первый) до максимального (последний)"
-
-msgid "Priority"
-msgstr "Приоритет"
-
+#: django-gc-shared/uptrader_cms/models.py:150
 #, fuzzy
 #| msgid "4th quarter of"
 msgid "1th quarter"
 msgstr "4 кв."
 
+#: django-gc-shared/uptrader_cms/models.py:151
 #, fuzzy
 #| msgid "2nd quarter of"
 msgid "2nd quarter"
 msgstr "2 кв."
 
+#: django-gc-shared/uptrader_cms/models.py:152
 #, fuzzy
 #| msgid "3rd quarter of"
 msgid "3rd quarter"
 msgstr "3 кв."
 
+#: django-gc-shared/uptrader_cms/models.py:153
+#: django-gc-shared/uptrader_cms/models.py:154
 #, fuzzy
 #| msgid "4th quarter of"
 msgid "4th quarter"
 msgstr "4 кв."
 
+#: django-gc-shared/uptrader_cms/models.py:155
 msgid "bln"
 msgstr ""
 
+#: django-gc-shared/uptrader_cms/models.py:156
 msgid "mln"
 msgstr ""
 
+#: django-gc-shared/uptrader_cms/models.py:157
 msgid "thousand"
 msgstr ""
 
+#: django-gc-shared/uptrader_cms/models.py:158
 msgid "barr"
 msgstr ""
 
+#: django-gc-shared/uptrader_cms/models.py:162
 msgid "4th quarter of"
 msgstr "4 кв."
 
+#: django-gc-shared/uptrader_cms/models.py:163
 msgid "3rd quarter of"
 msgstr "3 кв."
 
+#: django-gc-shared/uptrader_cms/models.py:164
 msgid "2nd quarter of"
 msgstr "2 кв."
 
+#: django-gc-shared/uptrader_cms/models.py:165
 msgid "1st quarter of"
 msgstr "1 кв."
 
+#: django-gc-shared/uptrader_cms/models.py:220
 msgid "Economic event"
 msgstr "Экономическое событие"
 
+#: django-gc-shared/uptrader_cms/models.py:221
 msgid "Economic events"
 msgstr "Экономические события"
 
-msgid "Documents"
-msgstr "Документы"
-
-msgid "Privacy Policy"
-msgstr "Политика конфеденциальности"
-
-msgid "Risk Disclosure"
-msgstr "Соглашение о рисках"
-
-msgid "Regulation"
-msgstr "Регулирование"
-
-msgid "Cookie Policy"
-msgstr "Политика cookies"
-
-msgid "Partners and Representatives"
-msgstr "Партнеры и представительства"
-
+#: django-gc-shared/uptrader_cms/models.py:230
 msgid "Document name"
 msgstr ""
 
-msgid "Category"
-msgstr "Категория"
+#: django-gc-shared/uptrader_cms/models.py:231
+msgid "Priority"
+msgstr "Приоритет"
 
+#: django-gc-shared/uptrader_cms/models.py:231
+msgid "Display order from min(first) to max (last)"
+msgstr ""
+"Порядок отображения от минимального (первый) до максимального (последний)"
+
+#: django-gc-shared/uptrader_cms/models.py:237
 #, python-format
 msgid "Supported extensions: %(ext)s. Filesize limit: %(limit)s Mb"
 msgstr ""
 
+#: django-gc-shared/uptrader_cms/models.py:242
 msgid "File"
 msgstr ""
 
+#: django-gc-shared/uptrader_cms/models.py:259
 msgid "Legal document"
 msgstr ""
 
+#: django-gc-shared/uptrader_cms/models.py:260
 msgid "Legal documents"
 msgstr ""
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:4
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:144
 msgid "Calendar of events"
 msgstr "Календарь событий"
 
-msgid " The economic calendar is one of the most important tools in Forex trading. It is formed by specialists on the basis of past and current performance and demonstrates future projections. "
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:152
+msgid ""
+" The economic calendar is one of the most important tools in Forex trading. "
+"It is formed by specialists on the basis of past and current performance and "
+"demonstrates future projections. "
 msgstr ""
-"Экономический календарь служит одним из важнейших инструментов в торговле на Форекс. Он\n"
+"Экономический календарь служит одним из важнейших инструментов в торговле на "
+"Форекс. Он\n"
 "формируется специалистами на основе прошлых и текущих показателей и\n"
 "демонстрирует прогнозы на будущее."
 
-msgid " Reading the economic calendar is easy. It contains the following parameters: the time of the news, the country index, period, previous value, forecast, the actual value, the degree of importance. "
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:155
+msgid ""
+" Reading the economic calendar is easy. It contains the following "
+"parameters: the time of the news, the country index, period, previous value, "
+"forecast, the actual value, the degree of importance. "
 msgstr ""
-"Читать экономический календарь несложно. В нем присутствуют следующие параметры: время выхода\n"
-"новости, страна, показатель, период, предыдущее значение, прогноз, фактическое значение, степень\n"
+"Читать экономический календарь несложно. В нем присутствуют следующие "
+"параметры: время выхода\n"
+"новости, страна, показатель, период, предыдущее значение, прогноз, "
+"фактическое значение, степень\n"
 "важности."
 
-msgid " Which forex news are the most important? The first one is the discount rate, gross domestic product, unemployment data, sales data for new building, inflation. "
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:158
+msgid ""
+" Which forex news are the most important? The first one is the discount "
+"rate, gross domestic product, unemployment data, sales data for new "
+"building, inflation. "
 msgstr ""
-"Какие новости Форекс являются наиболее важными? В первую очередь это: учетная ставка, валовой\n"
+"Какие новости Форекс являются наиболее важными? В первую очередь это: "
+"учетная ставка, валовой\n"
 "продукт, данные по безработице, данные по продажам новостроя, инфляция."
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:164
 msgid "Current time"
 msgstr "Текущее время"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:178
 msgid "Prior to the news left"
 msgstr "До выхода новостей осталось"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:205
 msgid "Time"
 msgstr "Время"
 
-msgid "Country"
-msgstr "Страна"
-
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:218
 msgid "Event"
 msgstr "Событие"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:219
 msgid "Past"
 msgstr "Прошлое"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:220
 msgid "Forecast"
 msgstr "Прогноз"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:221
 msgid "Fact"
 msgstr "Факт"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/analytics-calendar.html:254
 msgid "There are no events"
 msgstr "Нет событий"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/company_news_detail.html:52
 msgid "Author"
 msgstr "Автор"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/company_news_detail.html:61
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/company_news_list.html:76
 msgid "Categories"
 msgstr "Категории"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/company_news_detail.html:71
 msgid "Other news in category"
 msgstr "Другие новости в категории"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/company_news_detail.html:91
 msgid "News in category"
 msgstr "Новости в категории"
 
-msgid "News"
-msgstr "Новости"
-
-msgid "All news"
-msgstr "Все новости"
-
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/company_news_list.html:62
 msgid "Read more..."
 msgstr "Читать далее..."
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/company_news_list.html:71
 msgid "Hide"
 msgstr ""
 
-msgid "Company News"
-msgstr "Новости компании"
-
-msgid "Read more"
-msgstr "Читать далее"
-
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/object_list.html:37
 msgid "Filter"
 msgstr "Фильтр"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:6
 msgid "Your access to analytics content"
 msgstr "Доступ к разделам аналитики"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:10
 msgid "Analytics type"
 msgstr "Вид аналитики"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:11
 msgid "Access conditions"
 msgstr "Условия предоставления"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:12
 msgid "Access"
 msgstr "Доступ"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:29
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:39
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:44
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:49
 msgid "Available"
 msgstr "Есть"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:31
 msgid "Unavailable"
 msgstr "Нет"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:37
 msgid "Economic calendar"
 msgstr "Экономический календарь"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:38
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:43
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:48
 msgid "Public access"
 msgstr "Публичный доступ"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:42
 msgid "Percent pays"
 msgstr "Процентные ставки"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:47
 msgid "Forexpros.ru news"
 msgstr "Новости Forexpros.ru"
 
+#: django-gc-shared/uptrader_cms/templates/uptrader_cms/user_access.html:52
 msgid ""
 "\n"
-"            This page holds information about which analytics content types you are allowed to access.\n"
+"            This page holds information about which analytics content types "
+"you are allowed to access.\n"
 "        "
 msgstr ""
 "\n"
-"В этом разделе находится информация о Вашей возможности доступа к тому или иному виду аналитического материала."
+"В этом разделе находится информация о Вашей возможности доступа к тому или "
+"иному виду аналитического материала."
 
+#~ msgid "Documents"
+#~ msgstr "Документы"
 
-msgid "Date"
-msgstr "Дата"
+#~ msgid "Privacy Policy"
+#~ msgstr "Политика конфеденциальности"
 
-msgid "It will be used as the address of the page"
-msgstr "Будет использован как адрес страницы"
+#~ msgid "Risk Disclosure"
+#~ msgstr "Соглашение о рисках"
 
-msgid "Slug"
-msgstr "Слаг"
+#~ msgid "Regulation"
+#~ msgstr "Регулирование"
 
-msgid "News with current language and slug already exists!"
-msgstr "Новость с таким языком и слагом уже существует!"
+#~ msgid "Cookie Policy"
+#~ msgstr "Политика cookies"
 
-msgid "Old drupal id"
-msgstr "Старый drupal id"
+#~ msgid "Partners and Representatives"
+#~ msgstr "Партнеры и представительства"
 
-msgid "Discount rate"
-msgstr "Ставка"
+#~ msgid "Category"
+#~ msgstr "Категория"
 
-msgid "Country for indicator"
-msgstr "Страна для индикатора"
+#~ msgid "News"
+#~ msgstr "Новости"
 
-msgid "Countries for indicators"
-msgstr "Страны для индикаторов"
+#~ msgid "All news"
+#~ msgstr "Все новости"
 
-msgid "Indicator name"
-msgstr "Название индикатора"
+#~ msgid "Company News"
+#~ msgstr "Новости компании"
 
-msgid "Description"
-msgstr "Описание"
+#~ msgid "Read more"
+#~ msgstr "Читать далее"
 
-msgid "FxStreet ID"
-msgstr "Идентификатор FxStreet"
-
-msgid "Event name"
-msgstr "Название события"
-
-msgid "Indicator"
-msgstr "Индикатор"
-
-msgid "Start typing the name of the indicator"
-msgstr "Начните вводить название индикатора"
-
-msgid "Event time"
-msgstr "Время события"
-
-msgid "Period"
-msgstr "Период"
-
-msgid "Previous"
-msgstr "Предыдущее"
-
-msgid "Prediction"
-msgstr "Прогноз"
-
-msgid "Facts"
-msgstr "Факты"
-
-
-
+#~ msgid "Description"
+#~ msgstr "Описание"
 
 #~ msgid "Economic calendar. Forex economic calendar"
 #~ msgstr "Экономический календарь. Экономический календарь Forex."
 
 #~ msgid "Forex economic calendar"
 #~ msgstr "Экономический календарь Forex"
-
 
 #~ msgid "Moscow time (GMT +04:00)"
 #~ msgstr "По московскому времени (GMT +04:00)"
@@ -382,11 +498,19 @@ msgstr "Факты"
 #~ msgid "Password"
 #~ msgstr "Пароль"
 
-#~ msgid "Account password. Password can be recovered in the section <a href=\"%s\">My accounts</a>."
-#~ msgstr "Пароль доступа к счёту. Восстановить пароль можно в разделе <a href=\"%s\">Мои счета</a>."
+#~ msgid ""
+#~ "Account password. Password can be recovered in the section <a href=\"%s"
+#~ "\">My accounts</a>."
+#~ msgstr ""
+#~ "Пароль доступа к счёту. Восстановить пароль можно в разделе <a href=\"%s"
+#~ "\">Мои счета</a>."
 
-#~ msgid "You should <a href=\"%(link)s\" target=\"_blank\">complete the verification process</a> before withdrawing from account %(account)s"
-#~ msgstr "Вы должны <a href=\"%(link)s\" target=\"_blank\">пройти верификацию</a>, прежде чем вы сможете выводить деньги со счёта %(account)s"
+#~ msgid ""
+#~ "You should <a href=\"%(link)s\" target=\"_blank\">complete the "
+#~ "verification process</a> before withdrawing from account %(account)s"
+#~ msgstr ""
+#~ "Вы должны <a href=\"%(link)s\" target=\"_blank\">пройти верификацию</a>, "
+#~ "прежде чем вы сможете выводить деньги со счёта %(account)s"
 
 #~ msgid "Error accessing account."
 #~ msgstr "Ошибка доступа к счету."
@@ -429,8 +553,6 @@ msgstr "Факты"
 
 #~ msgid "Forum topic"
 #~ msgstr "Тема на форуме"
-
-
 
 #~ msgid "Name"
 #~ msgstr "Имя"
@@ -514,8 +636,16 @@ msgstr "Факты"
 #~ msgid "Subscribe to video analytics"
 #~ msgstr "Подпишитесь на видеоаналитику"
 
-#~ msgid "Dozens of economic indicators are published in the world every day. The heads of central banks and other influential persons make their statements. Weekly webinar &quot;Market review&quot; is summarizing major news and publications relevant to past and current week."
-#~ msgstr "Каждый день в мире публикуются десятки экономических показателей, выступают главы Центробанков и прочие влиятельные персоны. Еженедельный вебинар \"Обзор рынка. Важные события недели\" посвящен обзору основных новостей и публикаций, актуальных на прошлой и текущей недели."
+#~ msgid ""
+#~ "Dozens of economic indicators are published in the world every day. The "
+#~ "heads of central banks and other influential persons make their "
+#~ "statements. Weekly webinar &quot;Market review&quot; is summarizing major "
+#~ "news and publications relevant to past and current week."
+#~ msgstr ""
+#~ "Каждый день в мире публикуются десятки экономических показателей, "
+#~ "выступают главы Центробанков и прочие влиятельные персоны. Еженедельный "
+#~ "вебинар \"Обзор рынка. Важные события недели\" посвящен обзору основных "
+#~ "новостей и публикаций, актуальных на прошлой и текущей недели."
 
 #~ msgid "Podcasts: forex audio analytics"
 #~ msgstr "Ayдио аналитика"
@@ -541,8 +671,13 @@ msgstr "Факты"
 #~ msgid "Holidays"
 #~ msgstr "Расписание праздников"
 
-#~ msgid "The national holidays of various countries can have a substantial effect on the volatility of the financial markets. As such, we recommend taking into account such information when planning your trading operations."
-#~ msgstr "Национальные праздники могут оказывать значительное влияние на Форекс, поэтому их необходимо учитывать при планировании своих торговых операций."
+#~ msgid ""
+#~ "The national holidays of various countries can have a substantial effect "
+#~ "on the volatility of the financial markets. As such, we recommend taking "
+#~ "into account such information when planning your trading operations."
+#~ msgstr ""
+#~ "Национальные праздники могут оказывать значительное влияние на Форекс, "
+#~ "поэтому их необходимо учитывать при планировании своих торговых операций."
 
 #~ msgid "Holiday"
 #~ msgstr "Праздник"
@@ -561,33 +696,47 @@ msgstr "Факты"
 
 #~ msgid ""
 #~ "\n"
-#~ "        Forex News from Dow Jones is one of leading world agencies of financial information.\n"
-#~ "        The Wall Street Journal publisher is included into News Corporation\n"
+#~ "        Forex News from Dow Jones is one of leading world agencies of "
+#~ "financial information.\n"
+#~ "        The Wall Street Journal publisher is included into News "
+#~ "Corporation\n"
 #~ "    "
 #~ msgstr ""
 #~ "\n"
-#~ "Новости Forex(Форекс) от Dow Jones - одно из ведущих мировых агентств финансовой информации, издатель The Wall Street Journal. Входит в структуру News Corporation"
+#~ "Новости Forex(Форекс) от Dow Jones - одно из ведущих мировых агентств "
+#~ "финансовой информации, издатель The Wall Street Journal. Входит в "
+#~ "структуру News Corporation"
 
 #~ msgid ""
 #~ "\n"
-#~ "        Fundamental analysis by Grand Capital experts: key national economic indicators affecting\n"
+#~ "        Fundamental analysis by Grand Capital experts: key national "
+#~ "economic indicators affecting\n"
 #~ "        Forex traders and currency rates, Forex market forecasts\n"
 #~ "    "
 #~ msgstr ""
 #~ "\n"
-#~ "Обзоры по фундаментальному анализу  от специалистов компании Grand Capital - ключевые макроэкономические показатели состояния национальной экономики, воздействующие на участников валютного рынка Forex (Форекс) и уровень валютных курсов, прогнозы рынка Forex(Форекс)"
+#~ "Обзоры по фундаментальному анализу  от специалистов компании Grand "
+#~ "Capital - ключевые макроэкономические показатели состояния национальной "
+#~ "экономики, воздействующие на участников валютного рынка Forex (Форекс) и "
+#~ "уровень валютных курсов, прогнозы рынка Forex(Форекс)"
 
-#~ msgid "Daily market reviews from Sergei Kostenko, senior trader of Grand Capital"
-#~ msgstr "Ежедневные обзоры рынка от финансового аналитика Grand Capital Сергея Костенко"
+#~ msgid ""
+#~ "Daily market reviews from Sergei Kostenko, senior trader of Grand Capital"
+#~ msgstr ""
+#~ "Ежедневные обзоры рынка от финансового аналитика Grand Capital Сергея "
+#~ "Костенко"
 
 #~ msgid ""
 #~ "\n"
 #~ "        Technical Forex market analysis by Grand Capital experts:\n"
-#~ "        forecasting the direction of prices through the study of past price changes.\n"
+#~ "        forecasting the direction of prices through the study of past "
+#~ "price changes.\n"
 #~ "    "
 #~ msgstr ""
 #~ "\n"
-#~ "Аналитика рынка Forex(Форекс) по техническому  анализу  от специалистов компании Grand Capital - прогнозирование изменений цен в будущем на основе анализа изменений цен в прошлом"
+#~ "Аналитика рынка Forex(Форекс) по техническому  анализу  от специалистов "
+#~ "компании Grand Capital - прогнозирование изменений цен в будущем на "
+#~ "основе анализа изменений цен в прошлом"
 
 #~ msgid "Reviews by categories"
 #~ msgstr "Обзоры по категориям"
@@ -609,16 +758,21 @@ msgstr "Факты"
 
 #~ msgid ""
 #~ "\n"
-#~ "        <p>Grand Capital company has wide staff of analytics, who place actual information about Forex market daily.</p>\n"
-#~ "        <p>In order to get access it is necessary to log into Private Office and keep the following conditions:</p>\n"
+#~ "        <p>Grand Capital company has wide staff of analytics, who place "
+#~ "actual information about Forex market daily.</p>\n"
+#~ "        <p>In order to get access it is necessary to log into Private "
+#~ "Office and keep the following conditions:</p>\n"
 #~ "        <strong>\n"
 #~ "            <p>Presence of a real account with at least $100 on it</p>\n"
 #~ "        </strong>\n"
 #~ "        "
 #~ msgstr ""
 #~ "\n"
-#~ "<p>Компания Grand Capital обладает обширным штатом аналитиков, ежедневно размещающих актуальную информацию о рынке Forex.</p>\n"
-#~ "        <p>Для понимания основ работы на рынке Forex(Форекс), рекомендуем Вам пройти <a href=\"{% not_my \"tutorial_description\" \"base_education\" \"recorded\" %}\">бесплатный базовый семинар обучения</a>.</p>\n"
+#~ "<p>Компания Grand Capital обладает обширным штатом аналитиков, ежедневно "
+#~ "размещающих актуальную информацию о рынке Forex.</p>\n"
+#~ "        <p>Для понимания основ работы на рынке Forex(Форекс), рекомендуем "
+#~ "Вам пройти <a href=\"{% not_my \"tutorial_description\" \"base_education"
+#~ "\" \"recorded\" %}\">бесплатный базовый семинар обучения</a>.</p>\n"
 #~ "        <p>Для доступа необходимо соблюдение следующих условий:</p>"
 
 #~ msgid "FOREX ANALYTICS - Forex forecast, Forex analytics, Forex news"
@@ -633,23 +787,29 @@ msgstr "Факты"
 #~ msgid ""
 #~ "\n"
 #~ "                Daily Forex market reviews.\n"
-#~ "                <span style=\"color: #099999;\">Unique articles</span> from analytics of the company.\n"
+#~ "                <span style=\"color: #099999;\">Unique articles</span> "
+#~ "from analytics of the company.\n"
 #~ "            "
 #~ msgstr ""
 #~ "\n"
-#~ "Ежедневные обзоры рынка Forex. <span style=\"color: #099999;\">Уникальные статьи</span> от аналитиков компании."
+#~ "Ежедневные обзоры рынка Forex. <span style=\"color: #099999;\">Уникальные "
+#~ "статьи</span> от аналитиков компании."
 
 #~ msgid ""
 #~ "\n"
-#~ "                            In order to get access it is nececcary to log in into\n"
-#~ "                            <a href=\"%(link)s?next=%(request.path)s\"> Private Office </a>\n"
+#~ "                            In order to get access it is nececcary to log "
+#~ "in into\n"
+#~ "                            <a href=\"%(link)s?next=%(request.path)s\"> "
+#~ "Private Office </a>\n"
 #~ "                            and keep the following conditions:\n"
 #~ "                        "
 #~ msgstr ""
 #~ "\n"
-#~ "Для доступа необходимо <a href=\"%(link)s?next=%(request.path)s\">войти в личный кабинет</a> и соблюдение следующих условий:"
+#~ "Для доступа необходимо <a href=\"%(link)s?next=%(request.path)s\">войти в "
+#~ "личный кабинет</a> и соблюдение следующих условий:"
 
-#~ msgid "In order to get access it is nececcary to keep the following conditions"
+#~ msgid ""
+#~ "In order to get access it is nececcary to keep the following conditions"
 #~ msgstr "Для доступа необходимо соблюдение следующих условий"
 
 #~ msgid "Authors"
@@ -671,7 +831,8 @@ msgstr "Факты"
 #~ msgstr "условия оферты"
 
 #~ msgid "Internal error while doing payment"
-#~ msgstr "Во время проведения платежа возникла ошибка. Попробуйте еще раз позже"
+#~ msgstr ""
+#~ "Во время проведения платежа возникла ошибка. Попробуйте еще раз позже"
 
 #~ msgid "Grand Capital Analytics"
 #~ msgstr "Аналитика Grand Capital"
@@ -694,17 +855,20 @@ msgstr "Факты"
 #~ msgid "Actual value"
 #~ msgstr "Фактическое значение"
 
-#~ msgid "Internal error while doing payment '                             ': %s"
+#~ msgid ""
+#~ "Internal error while doing payment '                             ': %s"
 #~ msgstr "Внутренняя ошибка при выполнении платежа: %s"
 
 #~ msgid ""
 #~ "\n"
 #~ "                    If you are already regisered, please\n"
-#~ "                    <a href=\"%(auth_login_url)s?next=%(request_path)s\" title=\"Sign in\">Sign in</a>.\n"
+#~ "                    <a href=\"%(auth_login_url)s?next=%(request_path)s\" "
+#~ "title=\"Sign in\">Sign in</a>.\n"
 #~ "                    "
 #~ msgstr ""
 #~ "\n"
-#~ "Если вы уже зарегистрированы, пожалуйста, <a href=\"%(auth_login_url)s?next=%(request_path)s\" title=\"Sign in\">войдите</a>."
+#~ "Если вы уже зарегистрированы, пожалуйста, <a href=\"%(auth_login_url)s?"
+#~ "next=%(request_path)s\" title=\"Sign in\">войдите</a>."
 
 #~ msgid "After signing in, you will be redirected back to this page"
 #~ msgstr "После входа вы вернетесь на эту страницу"

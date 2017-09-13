@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-01 17:25+0400\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2012-10-04 19:08\n"
 "Last-Translator: asda asda <a@a.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,80 +20,78 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
+#: django-shared/node/models.py:19
 msgid "Stripped HTML"
 msgstr "Урезанный HTML"
 
+#: django-shared/node/models.py:20
 msgid "Full HTML"
 msgstr "Полный HTML"
 
+#: django-shared/node/models.py:25
 #, fuzzy
 msgid "Language"
 msgstr "язык"
 
+#: django-shared/node/models.py:28
 msgid "Title"
 msgstr "Название"
 
+#: django-shared/node/models.py:29
 #, fuzzy
 msgid "URL alias"
 msgstr "Короткая ссылка"
 
-msgid "Body"
-msgstr "Текст"
-
-msgid "Body format"
-msgstr "Формат"
-
+#: django-shared/node/models.py:31
 msgid "Published"
 msgstr "Опубликовано"
 
-msgid "Sitemapped"
-msgstr ""
-
+#: django-shared/node/models.py:33
 msgid "Creation timestamp"
 msgstr "Время создания"
 
+#: django-shared/node/models.py:34
 msgid "Update timestamp"
 msgstr "Время обновления"
 
+#: django-shared/node/models.py:35
 msgid "Author"
 msgstr "Автор"
 
+#: django-shared/node/models.py:80
 msgid "Node"
 msgstr "Объект"
 
+#: django-shared/node/models.py:81
 msgid "Nodes"
 msgstr "Все объекты"
 
+#: django-shared/node/models.py:85
 msgid "Header"
 msgstr ""
 
-msgid "Meta keywords"
-msgstr ""
-
-#, fuzzy
-msgid "Meta description"
-msgstr "Описание файла"
-
+#: django-shared/node/models.py:94
 msgid "Page"
 msgstr ""
 
+#: django-shared/node/models.py:95
 msgid "Pages"
 msgstr ""
 
-msgid "SocialSidebarPage"
-msgstr ""
-
-msgid "SocialSidebarPages"
-msgstr ""
-
+#: django-shared/node/models.py:100
 msgid "LoggedInUserPage"
 msgstr ""
 
+#: django-shared/node/models.py:101
 msgid "LoggedInUserPages"
 msgstr ""
 
-msgid "Прочитавшие новость пользователи"
-msgstr ""
+#~ msgid "Body"
+#~ msgstr "Текст"
 
-msgid "InternalNews"
-msgstr ""
+#~ msgid "Body format"
+#~ msgstr "Формат"
+
+#, fuzzy
+#~ msgid "Meta description"
+#~ msgstr "Описание файла"

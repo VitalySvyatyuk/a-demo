@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-06 12:50+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2014-04-10 13:38+0400\n"
 "Last-Translator:   <valexeev@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,194 +20,240 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Translated-Using: django-rosetta 0.7.3\n"
 
-msgid ""
-"You may try any account type on a Demo Account under terms and conditions identical to the real trading account."
+#: django-gc-shared/contract_specs/models.py:88
+msgid "Name"
 msgstr ""
-"Вы можете попробовать любой из типов счетов с условиями идентичными реальным"
-" на Демонстрационном счете."
 
+#: django-gc-shared/contract_specs/models.py:89
+msgid "Slug"
+msgstr ""
+
+#: django-gc-shared/contract_specs/models.py:89
+msgid "short url name"
+msgstr ""
+
+#: django-gc-shared/contract_specs/models.py:95
+#, fuzzy
+#| msgid "Contract specifications for"
+msgid "Instrument specification category"
+msgstr "Спецификации контрактов"
+
+#: django-gc-shared/contract_specs/models.py:96
+#, fuzzy
+#| msgid "Contract specifications for"
+msgid "Instrument specification categories"
+msgstr "Спецификации контрактов"
+
+#: django-gc-shared/contract_specs/models.py:100
 msgid "Instrument"
 msgstr "Инструмент"
 
-msgid "Symbol"
-msgstr "Символ"
+#: django-gc-shared/contract_specs/models.py:101
+msgid "Description"
+msgstr ""
 
+#: django-gc-shared/contract_specs/models.py:102
 msgid "Currency"
 msgstr "Валюта"
 
-msgid "Lot"
-msgstr "Лот"
-
-msgid "Leverage"
-msgstr "Кредитное плечо"
-
-msgid "Calculation is unavailable"
-msgstr "Расчет невозможен"
-
-msgid "Period"
-msgstr "Период"
-
-msgid "Start"
-msgstr "Начало"
-
-msgid "Min time"
-msgstr "Мин. время"
-
-msgid "Max time"
-msgstr "Макс. время"
-
-msgid "Win <5"
+#: django-gc-shared/contract_specs/models.py:103
+msgid "Minimum price change"
 msgstr ""
 
-msgid "Win 5-15"
+#: django-gc-shared/contract_specs/models.py:104
+msgid "Minimum contract size"
 msgstr ""
 
-msgid "Win 15-30"
+#: django-gc-shared/contract_specs/models.py:105
+msgid "Minimum contract size change"
 msgstr ""
 
-msgid "Win >30"
+#: django-gc-shared/contract_specs/models.py:106
+msgid "Pip value per minimum contract"
 msgstr ""
 
-msgid "Loss"
+#: django-gc-shared/contract_specs/models.py:107
+msgid "SWAP Long"
 msgstr ""
 
-msgid "Nil"
+#: django-gc-shared/contract_specs/models.py:108
+msgid "SWAP Short"
 msgstr ""
 
-msgid "Bonus"
+#: django-gc-shared/contract_specs/models.py:109
+msgid "Weekday pledge"
 msgstr ""
 
-msgid "Win"
+#: django-gc-shared/contract_specs/models.py:110
+msgid "Weekend pledge"
 msgstr ""
 
-#, fuzzy
-msgid "Close win"
-msgstr "Цена закрытия"
-
-#, fuzzy
-msgid "Close percent"
-msgstr "Цена закрытия"
-
-msgid "Contract specifications"
-msgstr "Спецификации контрактов"
-
-msgid "Open account"
-msgstr "Открыть счёт"
-
-msgid "Find..."
-msgstr "Найти..."
-
-msgid "Trader's calculator"
-msgstr "Калькулятор трейдера"
-
-msgid "Failed to get the dollar exchange rate against the ruble"
-msgstr "Не удалось получить курс доллара"
-
-msgid "Account type:"
-msgstr "Тип торгового счёта:"
-
-msgid "Micro"
-msgstr ""
-
-msgid "Standard"
-msgstr ""
-
-msgid "ECN"
-msgstr ""
-
-msgid "SwapFree"
-msgstr ""
-
-msgid "Select an item..."
-msgstr "Выберите..."
-
-msgid "Account's currency"
-msgstr "Валюта депозита"
-
-msgid "Balance"
-msgstr "Баланс"
-
-msgid "Operation type"
-msgstr "Тип сделки"
-
+#: django-gc-shared/contract_specs/models.py:111
 msgid "Category"
 msgstr "Категория"
 
-msgid "Open price"
-msgstr "Цена открытия"
+#: django-gc-shared/contract_specs/models.py:117
+#: django-gc-shared/contract_specs/models.py:118
+#, fuzzy
+#| msgid "Contract specification"
+msgid "Instrument specification"
+msgstr "Спецификации контрактов"
 
-msgid "Close price"
-msgstr "Цена закрытия"
+#: django-gc-shared/contract_specs/templates/contract_specs/calculator.html:5
+#: django-gc-shared/contract_specs/templates/contract_specs/calculator.html:160
+msgid "Trader's calculator"
+msgstr "Калькулятор трейдера"
 
-msgid "Volume"
-msgstr "Объём"
-
-msgid "Profit rate"
-msgstr "Курс прибыли"
-
-msgid "Margin rate"
-msgstr "Курс маржи"
-
-msgid "Calculate"
-msgstr "Рассчитать"
-
-msgid "You don't have enough funds for this operation"
-msgstr "У Вас недостаточно средств для проведения этой сделки"
-
-msgid "Trade results"
-msgstr "Результаты торговли"
-
-msgid "Profit"
-msgstr "Прибыль"
-
-msgid "Profit in points"
-msgstr "Прибыль в пунктах"
-
-msgid "Price of a point"
-msgstr "Стоимость пункта"
-
-msgid "Equity"
-msgstr "Средства"
-
-msgid "Maximal loss possible"
-msgstr "Максимально возможный убыток"
-
-msgid "Margin needed"
-msgstr "Необходимый залог"
-
-msgid "Deposit funds"
-msgstr "Пополнить баланс"
-
-
-
-msgid ""
-"\n"
-"                On this page you can find formula for calculating the value of one pip.\n"
-"<br>\n"
-"                The value of a pip is calculated on the basis of the current rate of a given currency pair.\n"
-"<br>\n"
-"                Please select parameters to get pip value and margin."
-msgstr ""
-"\n"
-"                На этой странице Вы найдете формулу для вычисления стоимости одного пипа.\n"
-"<br>\n"
-"                Стоимость пипа рассчитывается на основе текущего курса валютной пары.\n"
-"<br>\n"
-"                Пожалуйста, выберите параметры для вычисления стоимости пипа и маржи."
-
+#: django-gc-shared/contract_specs/templates/contract_specs/calculator.html:170
 msgid "Pair"
 msgstr "Валютная пара"
 
+#: django-gc-shared/contract_specs/templates/contract_specs/calculator.html:171
+msgid "Leverage"
+msgstr "Кредитное плечо"
+
+#: django-gc-shared/contract_specs/templates/contract_specs/calculator.html:172
+msgid "Volume"
+msgstr "Объём"
+
+#: django-gc-shared/contract_specs/templates/contract_specs/calculator.html:173
 msgid "Quote"
 msgstr "Цена"
 
+#: django-gc-shared/contract_specs/templates/contract_specs/calculator.html:174
 msgid "Value of pip"
 msgstr "Стоимость пипа"
 
+#: django-gc-shared/contract_specs/templates/contract_specs/calculator.html:175
 msgid "Margin"
 msgstr "Маржа"
 
+#: django-gc-shared/contract_specs/templates/contract_specs/calculator.html:205
+msgid ""
+"\n"
+"                On this page you can find formula for calculating the value "
+"of one pip.<br>\n"
+"                The value of a pip is calculated on the basis of the current "
+"rate of a given currency pair.<br>\n"
+"                Please select parameters to get pip value and margin.\n"
+"            "
+msgstr ""
+"\n"
+"                На этой странице Вы найдете формулу для вычисления стоимости "
+"одного пипа.<br>\n"
+"                Стоимость пипа рассчитывается на основе текущего "
+"курса валютной пары.<br>\n"
+"                Пожалуйста, выберите параметры для вычисления стоимости пипа и маржи.\n"
+"            "
 
+#: django-gc-shared/contract_specs/templates/contract_specs/instruments.html:84
+msgid "Contract specifications"
+msgstr "Спецификации контрактов"
+
+#: django-gc-shared/contract_specs/templates/contract_specs/instruments.html:85
+msgid "Open account"
+msgstr "Открыть счёт"
+
+#: django-gc-shared/contract_specs/templates/contract_specs/instruments.html:141
+#: django-gc-shared/contract_specs/templates/contract_specs/instruments.html:198
+msgid "Find..."
+msgstr "Найти..."
+
+#~ msgid ""
+#~ "You may try any account type on a Demo Account under terms and conditions "
+#~ "identical to the real trading account."
+#~ msgstr ""
+#~ "Вы можете попробовать любой из типов счетов с условиями идентичными "
+#~ "реальным на Демонстрационном счете."
+
+#~ msgid "Symbol"
+#~ msgstr "Символ"
+
+#~ msgid "Lot"
+#~ msgstr "Лот"
+
+#~ msgid "Calculation is unavailable"
+#~ msgstr "Расчет невозможен"
+
+#~ msgid "Period"
+#~ msgstr "Период"
+
+#~ msgid "Start"
+#~ msgstr "Начало"
+
+#~ msgid "Min time"
+#~ msgstr "Мин. время"
+
+#~ msgid "Max time"
+#~ msgstr "Макс. время"
+
+#, fuzzy
+#~ msgid "Close win"
+#~ msgstr "Цена закрытия"
+
+#, fuzzy
+#~ msgid "Close percent"
+#~ msgstr "Цена закрытия"
+
+#~ msgid "Failed to get the dollar exchange rate against the ruble"
+#~ msgstr "Не удалось получить курс доллара"
+
+#~ msgid "Account type:"
+#~ msgstr "Тип торгового счёта:"
+
+#~ msgid "Select an item..."
+#~ msgstr "Выберите..."
+
+#~ msgid "Account's currency"
+#~ msgstr "Валюта депозита"
+
+#~ msgid "Balance"
+#~ msgstr "Баланс"
+
+#~ msgid "Operation type"
+#~ msgstr "Тип сделки"
+
+#~ msgid "Open price"
+#~ msgstr "Цена открытия"
+
+#~ msgid "Close price"
+#~ msgstr "Цена закрытия"
+
+#~ msgid "Profit rate"
+#~ msgstr "Курс прибыли"
+
+#~ msgid "Margin rate"
+#~ msgstr "Курс маржи"
+
+#~ msgid "Calculate"
+#~ msgstr "Рассчитать"
+
+#~ msgid "You don't have enough funds for this operation"
+#~ msgstr "У Вас недостаточно средств для проведения этой сделки"
+
+#~ msgid "Trade results"
+#~ msgstr "Результаты торговли"
+
+#~ msgid "Profit"
+#~ msgstr "Прибыль"
+
+#~ msgid "Profit in points"
+#~ msgstr "Прибыль в пунктах"
+
+#~ msgid "Price of a point"
+#~ msgstr "Стоимость пункта"
+
+#~ msgid "Equity"
+#~ msgstr "Средства"
+
+#~ msgid "Maximal loss possible"
+#~ msgstr "Максимально возможный убыток"
+
+#~ msgid "Margin needed"
+#~ msgstr "Необходимый залог"
+
+#~ msgid "Deposit funds"
+#~ msgstr "Пополнить баланс"
 
 #~ msgid "Currency 1 rate"
 #~ msgstr "Курс валюты 1"
@@ -294,9 +340,6 @@ msgstr "Маржа"
 #~ "Стандартный биржевой контракт - производный финансовый инструмент, "
 #~ "спецификация которого установлена биржей."
 
-#~ msgid "Contract specification"
-#~ msgstr "Спецификации контрактов"
-
 #~ msgid "is a document which defines most of the trading conditions:"
 #~ msgstr ""
 #~ "- документ, в котором оговаривается большинство параметров контракта:"
@@ -332,9 +375,6 @@ msgstr "Маржа"
 
 #~ msgid "OPTIONS"
 #~ msgstr "Опционы"
-
-#~ msgid "Contract specifications for"
-#~ msgstr "Спецификации контрактов"
 
 #~ msgid "Contract sepcifications"
 #~ msgstr "Спецификации контрактов"

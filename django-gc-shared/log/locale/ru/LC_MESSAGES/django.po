@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-01 17:24+0400\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2013-08-01 21:23+0400\n"
 "Last-Translator:   <i.tsuvarev@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,17 +20,302 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.2\n"
 
-msgid "User IP"
-msgstr "IP"
-
+#: django-gc-shared/log/admin.py:27 django-gc-shared/log/models.py:314
 msgid "User"
 msgstr "Пользователь"
 
+#: django-gc-shared/log/admin.py:28
+msgid "Changing object"
+msgstr ""
+
+#: django-gc-shared/log/admin.py:30
+msgid "Information"
+msgstr ""
+
+#: django-gc-shared/log/models.py:36
+msgid "Удачный логин"
+msgstr ""
+
+#: django-gc-shared/log/models.py:37
+msgid "Неудачный логин"
+msgstr ""
+
+#: django-gc-shared/log/models.py:38
+msgid "Восстановление пароля"
+msgstr ""
+
+#: django-gc-shared/log/models.py:39
+msgid "Удачная смена пароля"
+msgstr ""
+
+#: django-gc-shared/log/models.py:40
+msgid "Неуд. смена пароля"
+msgstr ""
+
+#: django-gc-shared/log/models.py:41
+msgid "Изменение профиля"
+msgstr ""
+
+#: django-gc-shared/log/models.py:42
+msgid "Сохранение профиля"
+msgstr ""
+
+#: django-gc-shared/log/models.py:43
+msgid "Сохранение юзера"
+msgstr ""
+
+#: django-gc-shared/log/models.py:44
+msgid "Валидация профиля"
+msgstr ""
+
+#: django-gc-shared/log/models.py:45
+msgid "Снятие валидации"
+msgstr ""
+
+#: django-gc-shared/log/models.py:46
+msgid "Валидация телефона"
+msgstr ""
+
+#: django-gc-shared/log/models.py:47
+msgid "Загружен документ"
+msgstr ""
+
+#: django-gc-shared/log/models.py:48 django-gc-shared/log/models.py:124
+msgid "Менеджер изменён"
+msgstr ""
+
+#: django-gc-shared/log/models.py:49
+msgid "IB-Менеджер изменён"
+msgstr ""
+
+#: django-gc-shared/log/models.py:50
+msgid "Запрос на смену менеджера одобрен"
+msgstr ""
+
+#: django-gc-shared/log/models.py:51
+msgid "Был взят менеджером"
+msgstr ""
+
+#: django-gc-shared/log/models.py:55
+msgid "Удачный OTP логин"
+msgstr ""
+
+#: django-gc-shared/log/models.py:56
+msgid "Неудачный OTP логин"
+msgstr ""
+
+#: django-gc-shared/log/models.py:57
+msgid "Удачная OTP аутентиф."
+msgstr ""
+
+#: django-gc-shared/log/models.py:58
+msgid "Неудачная OTP аутентиф."
+msgstr ""
+
+#: django-gc-shared/log/models.py:59
+msgid "Создание OTP"
+msgstr ""
+
+#: django-gc-shared/log/models.py:60
+msgid "OTP потерян"
+msgstr ""
+
+#: django-gc-shared/log/models.py:65
+msgid "Создание счета"
+msgstr ""
+
+#: django-gc-shared/log/models.py:66
+msgid "Удаление счета"
+msgstr ""
+
+#: django-gc-shared/log/models.py:67
+msgid "Восст. пароля от счета"
+msgstr ""
+
+#: django-gc-shared/log/models.py:68
+msgid "Смена плеча"
+msgstr ""
+
+#: django-gc-shared/log/models.py:69
+msgid "Сменя стиля опционов"
+msgstr ""
+
+#: django-gc-shared/log/models.py:70
+msgid "Изменён возврат спреда"
+msgstr ""
+
+#: django-gc-shared/log/models.py:71
+msgid "Логин в веб-трейдер"
+msgstr ""
+
+#: django-gc-shared/log/models.py:72
+msgid "Счет заблокирован"
+msgstr ""
+
+#: django-gc-shared/log/models.py:73
+msgid "Счет разблокирован"
+msgstr ""
+
+#: django-gc-shared/log/models.py:77
+msgid "Создание реквизита"
+msgstr ""
+
+#: django-gc-shared/log/models.py:78
+msgid "Изменение реквизита"
+msgstr ""
+
+#: django-gc-shared/log/models.py:79
+msgid "Обновление валидации"
+msgstr ""
+
+#: django-gc-shared/log/models.py:80
+msgid "Удаление реквизита"
+msgstr ""
+
+#: django-gc-shared/log/models.py:81
+msgid "Созд. заявки на ввод"
+msgstr ""
+
+#: django-gc-shared/log/models.py:82
+msgid "Созд. заявки на вывод"
+msgstr ""
+
+#: django-gc-shared/log/models.py:83
+msgid "Внутренний перевод"
+msgstr ""
+
+#: django-gc-shared/log/models.py:84
+msgid "Оплата обучения"
+msgstr ""
+
+#: django-gc-shared/log/models.py:85
+msgid "Оплата консультации"
+msgstr ""
+
+#: django-gc-shared/log/models.py:90
+msgid "Обн. статуса счета"
+msgstr ""
+
+#: django-gc-shared/log/models.py:91
+msgid "Изм. коэфф. копир."
+msgstr ""
+
+#: django-gc-shared/log/models.py:92
+msgid "Изм. коэфф. уведомл."
+msgstr ""
+
+#: django-gc-shared/log/models.py:93
+msgid "Изменение порога откл."
+msgstr ""
+
+#: django-gc-shared/log/models.py:94
+msgid "Сраб. порога откл."
+msgstr ""
+
+#: django-gc-shared/log/models.py:98
+msgid "Подписка GC VPS"
+msgstr ""
+
+#: django-gc-shared/log/models.py:99
+msgid "Продление GC VPS"
+msgstr ""
+
+#: django-gc-shared/log/models.py:103
+msgid "Превышен лимит на просмотр данных пользователей"
+msgstr ""
+
+#: django-gc-shared/log/models.py:106
+msgid "Группа заявок на вывод создана"
+msgstr ""
+
+#: django-gc-shared/log/models.py:107
+msgid "Группа заявок на вывод закрыта"
+msgstr ""
+
+#: django-gc-shared/log/models.py:110
+msgid "Группа заявок на вывод: одобрение изменено"
+msgstr ""
+
+#: django-gc-shared/log/models.py:111
+msgid "Группа заявок на вывод: одобрение снято"
+msgstr ""
+
+#: django-gc-shared/log/models.py:114
+msgid "Заявка на вывод: неудачное снятие"
+msgstr ""
+
+#: django-gc-shared/log/models.py:115
+msgid "Заявка на вывод: заявка отклонена"
+msgstr ""
+
+#: django-gc-shared/log/models.py:116
+msgid "Заявка на вывод: выплата через плагин"
+msgstr ""
+
+#: django-gc-shared/log/models.py:117
+msgid "Заявка на вывод: успешное снятие средств"
+msgstr ""
+
+#: django-gc-shared/log/models.py:118
+msgid "Заявка на вывод готова к выплате"
+msgstr ""
+
+#: django-gc-shared/log/models.py:119
+msgid "Заявка на вывод не готова к выплате"
+msgstr ""
+
+#: django-gc-shared/log/models.py:120
+msgid "Заявка на вывод: выплачено"
+msgstr ""
+
+#: django-gc-shared/log/models.py:123
+msgid "Контакт создан"
+msgstr ""
+
+#: django-gc-shared/log/models.py:125
+msgid "Менеджер изменён по запросу"
+msgstr ""
+
+#: django-gc-shared/log/models.py:126
+msgid "Контакт взят менеджером"
+msgstr ""
+
+#: django-gc-shared/log/models.py:127
+msgid "Менеджеру изменен пароль"
+msgstr ""
+
+#: django-gc-shared/log/models.py:128
+msgid "Менеджеру изменено имя"
+msgstr ""
+
+#: django-gc-shared/log/models.py:129
+msgid "Менеджер удален"
+msgstr ""
+
+#: django-gc-shared/log/models.py:130
+msgid "Добавлен новый менеджер вручную"
+msgstr ""
+
+#: django-gc-shared/log/models.py:313
+msgid "User IP"
+msgstr "IP"
+
+#: django-gc-shared/log/models.py:315
 msgid "Time of change"
 msgstr "Время изменения"
 
+#: django-gc-shared/log/models.py:316
 msgid "Additional parameters"
 msgstr "Информация"
 
+#: django-gc-shared/log/models.py:322
 msgid "Type of action"
 msgstr "Событие"
+
+#: django-gc-shared/log/models.py:330
+msgid "запись лога"
+msgstr ""
+
+#: django-gc-shared/log/models.py:331
+msgid "записи лога"
+msgstr ""

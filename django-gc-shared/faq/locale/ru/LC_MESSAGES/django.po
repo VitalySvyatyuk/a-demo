@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-07 13:38+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2014-07-01 12:27+0400\n"
 "Last-Translator:   <i.tsuvarev@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,93 +20,107 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Translated-Using: django-rosetta 0.7.4\n"
 
+#: django-gc-shared/faq/models.py:19
 msgid "name"
 msgstr "имя"
 
+#: django-gc-shared/faq/models.py:20 django-gc-shared/faq/models.py:41
 msgid "priority"
 msgstr "приоритет"
 
+#: django-gc-shared/faq/models.py:20 django-gc-shared/faq/models.py:41
 msgid "defines order in category list"
 msgstr "определяет порадок в списке категорий"
 
+#: django-gc-shared/faq/models.py:21
 msgid "slug"
 msgstr ""
 
+#: django-gc-shared/faq/models.py:21
 msgid "short url name"
 msgstr "короткое имя для URL"
 
+#: django-gc-shared/faq/models.py:22 django-gc-shared/faq/models.py:44
 msgid "language"
 msgstr "язык"
 
+#: django-gc-shared/faq/models.py:32
 msgid "Category"
 msgstr "Категория"
 
+#: django-gc-shared/faq/models.py:33
 msgid "Categories"
 msgstr "Категории"
 
+#: django-gc-shared/faq/models.py:39
 msgid "question"
 msgstr "вопрос"
 
+#: django-gc-shared/faq/models.py:40
 msgid "answer"
 msgstr "oтвет"
 
+#: django-gc-shared/faq/models.py:43
 msgid "in TOP 10"
 msgstr "в десятке первых"
 
+#: django-gc-shared/faq/models.py:51
 msgid "Quesstion"
 msgstr "Вопрос"
 
+#: django-gc-shared/faq/models.py:52
 msgid "Quesstions"
 msgstr "Вопросы"
 
-msgid "Most frequent questions about"
-msgstr "Частые вопросы по теме "
+#~ msgid "Most frequent questions about"
+#~ msgstr "Частые вопросы по теме "
 
-msgid "FAQ"
-msgstr "Справочник"
+#~ msgid "FAQ"
+#~ msgstr "Справочник"
 
-msgid "Descriptions of trading instruments"
-msgstr "Описание торговых инструментов"
+#~ msgid "Descriptions of trading instruments"
+#~ msgstr "Описание торговых инструментов"
 
-msgid "Top 10"
-msgstr "Топ 10"
+#~ msgid "Top 10"
+#~ msgstr "Топ 10"
 
-msgid ""
-"<span class=\"{{ css_classes.color }}\">Questions and answers</span> on any "
-"topic of interest to you"
-msgstr ""
-"<span class=\"{{ css_classes.color }}\">Вопросы и ответы</span> по любой "
-"интересующей вас теме"
+#~ msgid ""
+#~ "<span class=\"{{ css_classes.color }}\">Questions and answers</span> on "
+#~ "any topic of interest to you"
+#~ msgstr ""
+#~ "<span class=\"{{ css_classes.color }}\">Вопросы и ответы</span> по любой "
+#~ "интересующей вас теме"
 
-msgid ""
-"In this section you will find <span class=\"{{ css_classes."
-"color }}\">descriptions of all symbols</span> available for trading at the "
-"MT4 terminal"
-msgstr ""
-"В этом разделе Вы найдёте <span class=\"{{ css_classes.color }}\">описания "
-"всех инструментов</span>, доступных для торговли в терминале MT4"
+#~ msgid ""
+#~ "In this section you will find <span class=\"{{ css_classes."
+#~ "color }}\">descriptions of all symbols</span> available for trading at "
+#~ "the MT4 terminal"
+#~ msgstr ""
+#~ "В этом разделе Вы найдёте <span class=\"{{ css_classes."
+#~ "color }}\">описания всех инструментов</span>, доступных для торговли в "
+#~ "терминале MT4"
 
-msgid "search through question"
-msgstr "поиск по вопросам"
+#~ msgid "search through question"
+#~ msgstr "поиск по вопросам"
 
-msgid "find a symbol"
-msgstr "поиск символа"
+#~ msgid "find a symbol"
+#~ msgstr "поиск символа"
 
-msgid "Search"
-msgstr "Поиск"
+#~ msgid "Search"
+#~ msgstr "Поиск"
 
-msgid ""
-"\n"
-"                Could not find what you're looking for. Ask other search "
-"criteria,\n"
-"                or try to find an answer to <a href=\"http://forum."
-"grandcapital.ru/\">company forum</a>.\n"
-"            "
-msgstr ""
-"\n"
-"Не удалось найти то, что Вы ищете. Скорректируйте критерии поиска, или "
-"попробуйте найти ответ на <a href=\"http://forum.grandcapital.ru/\">форуме "
-"компании</a>."
+#~ msgid ""
+#~ "\n"
+#~ "                Could not find what you're looking for. Ask other search "
+#~ "criteria,\n"
+#~ "                or try to find an answer to <a href=\"http://forum."
+#~ "grandcapital.ru/\">company forum</a>.\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "Не удалось найти то, что Вы ищете. Скорректируйте критерии поиска, или "
+#~ "попробуйте найти ответ на <a href=\"http://forum.grandcapital.ru/"
+#~ "\">форуме компании</a>."
 
 #~ msgid "already have 10 questions marked as TOP"
 #~ msgstr "уже есть 10 вопросов с этой отметкой"

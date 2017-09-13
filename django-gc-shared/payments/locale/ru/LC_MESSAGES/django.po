@@ -1,9 +1,1370 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"MIME-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 
+#: django-gc-shared/payments/__init__.py:12
+msgid "Beneficiary"
+msgstr "Получатель"
+
+#: django-gc-shared/payments/__init__.py:13
+#: django-gc-shared/payments/systems/bankbase.py:123
+msgid "Beneficiary Bank"
+msgstr "Банк получателя"
+
+#: django-gc-shared/payments/__init__.py:14
+#: django-gc-shared/payments/systems/bankbase.py:128
+msgid "Beneficiary Bank's Code"
+msgstr "Код банка получателя"
+
+#: django-gc-shared/payments/__init__.py:15
+msgid "Beneficiary Bank's Address"
+msgstr "Адрес банка получателя"
+
+#: django-gc-shared/payments/__init__.py:15
+msgid "2, Amathountos street, P.O. Box 56868, 3310, Limassol, Cyprus"
+msgstr ""
+"Кипр, Лимассол, ул. Аматунтос д.2, п/я 56868, индекс 3310, Limassol, Cyprus"
+
+#: django-gc-shared/payments/__init__.py:16
+#: django-gc-shared/payments/systems/bankbase.py:124
+msgid "Beneficiaries Account Number"
+msgstr "Номер счета получателя"
+
+#: django-gc-shared/payments/__init__.py:17
+#, fuzzy
+msgid "Payment Reference"
+msgstr "Пластиковые карты"
+
+#: django-gc-shared/payments/__init__.py:17
+msgid "Top UP of the trading AC"
+msgstr "Пополнение торгового счета"
+
+#: django-gc-shared/payments/__init__.py:34
+#: django-gc-shared/payments/__init__.py:73
+msgid "Bank transfer"
+msgstr "Банковский перевод"
+
+#: django-gc-shared/payments/__init__.py:50
+#: django-gc-shared/payments/__init__.py:78
+msgid "Electronic payment systems"
+msgstr "Электронные платежные системы"
+
+#: django-gc-shared/payments/admin.py:34 django-gc-shared/payments/admin.py:288
+#: django-gc-shared/payments/forms.py:54
+#: django-gc-shared/payments/models.py:260
+#: django-gc-shared/payments/models.py:407
+#: django-gc-shared/payments/models.py:726
+#: django-gc-shared/payments/models.py:901
+#: django-gc-shared/payments/templates/payments/includes/all_accounts_data.html:6
+msgid "Account"
+msgstr "Счет"
+
+#: django-gc-shared/payments/admin.py:37
+#, fuzzy
+msgid "Trading Account ID"
+msgstr "№ аккаунта"
+
+#: django-gc-shared/payments/admin.py:45
+msgid "Your access level doesn't allow you to process payments"
+msgstr "Ваш уровень доступа не позволяет вам проводить платежи"
+
+#: django-gc-shared/payments/admin.py:50
+msgid "Commit payments"
+msgstr "Провести платёж"
+
+#: django-gc-shared/payments/admin.py:59
+msgid "Mark as failed"
+msgstr "Отметить как неудачный"
+
+#: django-gc-shared/payments/admin.py:111
+#: django-gc-shared/payments/admin.py:243
+msgid "Payment system<br>(clickable)"
+msgstr "Платежная система<br>(кликабельно)"
+
+#: django-gc-shared/payments/admin.py:119
+#: django-gc-shared/payments/admin.py:241
+msgid "Trade"
+msgstr "Сделка"
+
+#: django-gc-shared/payments/admin.py:129
+#: django-gc-shared/payments/admin.py:131
+msgid "scan of receipt"
+msgstr "скан расписки"
+
+#: django-gc-shared/payments/admin.py:135
+msgid "manager"
+msgstr "менеджер"
+
+#: django-gc-shared/payments/admin.py:144
+#, fuzzy
+msgid "Client transferred the money"
+msgstr "Деньги зачислены на счёт"
+
+#: django-gc-shared/payments/admin.py:149
+#, fuzzy
+msgid "Money deposited to trading platform"
+msgstr "Да (зачислить на счёт)"
+
+#: django-gc-shared/payments/admin.py:222
+msgid "General"
+msgstr "Основное"
+
+#: django-gc-shared/payments/admin.py:226
+#: django-gc-shared/payments/admin.py:427
+#: django-gc-shared/payments/models.py:80
+msgid "Details"
+msgstr "Детали"
+
+#: django-gc-shared/payments/admin.py:229
+#: django-gc-shared/payments/admin.py:336
+#: django-gc-shared/payments/admin.py:448
+msgid "Status"
+msgstr "Статус"
+
+#: django-gc-shared/payments/admin.py:260
+msgid "Sum"
+msgstr "Сумма"
+
+#: django-gc-shared/payments/admin.py:272
+msgid "Info"
+msgstr "Инфо"
+
+#: django-gc-shared/payments/admin.py:305
+msgid "My attention"
+msgstr "Необходимо моё внимание"
+
+#: django-gc-shared/payments/admin.py:310
+msgid "Needed"
+msgstr "Необходимо"
+
+#: django-gc-shared/payments/admin.py:320
+msgid "Processing stage"
+msgstr "Этап обработки"
+
+#: django-gc-shared/payments/admin.py:325
+msgid "Financial dept."
+msgstr "Финансовый департамент"
+
+#: django-gc-shared/payments/admin.py:326
+msgid "Partnership dept."
+msgstr ""
+
+#: django-gc-shared/payments/admin.py:341
+msgid "Needs approval"
+msgstr "Необходимо одобрение"
+
+#: django-gc-shared/payments/admin.py:342
+msgid "Paying out"
+msgstr "Выплачивается"
+
+#: django-gc-shared/payments/admin.py:343
+#: django-gc-shared/payments/admin.py:447
+#: django-gc-shared/payments/models.py:408
+msgid "Closed"
+msgstr "Закрыто"
+
+#: django-gc-shared/payments/admin.py:344
+msgid "Open"
+msgstr "Открыто"
+
+#: django-gc-shared/payments/admin.py:413
+#: django-gc-shared/payments/models.py:67
+#: django-gc-shared/payments/models.py:324
+#: django-gc-shared/payments/models.py:905
+#: django-gc-shared/payments/systems/base.py:196
+msgid "Amount"
+msgstr "Сумма"
+
+#: django-gc-shared/payments/admin.py:419
+#, python-brace-format
+msgid "{0} h. {1} m."
+msgstr "{0} ч. {1} м."
+
+#: django-gc-shared/payments/admin.py:422
+msgid "Left"
+msgstr "Осталось"
+
+#: django-gc-shared/payments/admin.py:426
+#, python-brace-format
+msgid ""
+"<a onclick=\"winopen('Requests group', '{url}'); return false;\" href="
+"\"{url}\"><b>Details</b></a>"
+msgstr ""
+"<a onclick=\"winopen('Группа заявок', '{url}'); return false;\" href="
+"\"{url}\"><b>Подробности</b></a>"
+
+#: django-gc-shared/payments/admin.py:434
+msgid "Payment systems"
+msgstr "Платежные системы"
+
+#: django-gc-shared/payments/admin.py:440
+#: django-gc-shared/payments/admin.py:442
+msgid "Approvals needed"
+msgstr "Нужны одобрения"
+
+#: django-gc-shared/payments/admin.py:445
+msgid "Paying out to client"
+msgstr "Выплачивается клиенту"
+
+#: django-gc-shared/payments/admin.py:455
+msgid "Your comment"
+msgstr "Ваш комментарий"
+
+#: django-gc-shared/payments/forms.py:29
+msgid "Needs manager's attention"
+msgstr "Требуется внимание менеджера"
+
+#: django-gc-shared/payments/forms.py:31
+msgid "Manager will receive a task in the CRM"
+msgstr "Менеджер получит задачу в CRM"
+
+#: django-gc-shared/payments/forms.py:56
+#: django-gc-shared/payments/models.py:903
+msgid "Transaction type"
+msgstr "Тип транзакции"
+
+#: django-gc-shared/payments/forms.py:75
+msgid "No such account"
+msgstr "Нет такого счёта"
+
+#: django-gc-shared/payments/forms.py:97
+msgid "Not enough funds on account"
+msgstr "На счёте недостаточно средств"
+
+#: django-gc-shared/payments/models.py:45
+msgid "Withdraw the funds I earn"
+msgstr "Вывожу заработаные средства"
+
+#: django-gc-shared/payments/models.py:46
+msgid "In need of money"
+msgstr "Нуждаюсь в деньгах"
+
+#: django-gc-shared/payments/models.py:47
+msgid "Not satisfied with the service"
+msgstr "Не устраивает сервис"
+
+#: django-gc-shared/payments/models.py:48
+msgid "Other reasons"
+msgstr "Другое"
+
+#: django-gc-shared/payments/models.py:53
+msgid "Money waiting"
+msgstr "Ожидается поступление денег"
+
+#: django-gc-shared/payments/models.py:54
+msgid "Processing"
+msgstr "В обработке"
+
+#: django-gc-shared/payments/models.py:55
+msgid "Canceled by client"
+msgstr "Отменена клиентом"
+
+#: django-gc-shared/payments/models.py:56
+msgid "Verification"
+msgstr "Проверка"
+
+#: django-gc-shared/payments/models.py:57
+msgid "Money sending"
+msgstr "Деньги отправляются"
+
+#: django-gc-shared/payments/models.py:58
+msgid "Done"
+msgstr "Выполнен"
+
+#: django-gc-shared/payments/models.py:59
+msgid "Canceled"
+msgstr "Отменён"
+
+#: django-gc-shared/payments/models.py:67
+msgid "Example: 5.2"
+msgstr "Например, 5.2"
+
+#: django-gc-shared/payments/models.py:69
+msgid "Exchange rate at request date"
+msgstr "Обменный курс на момент заявки"
+
+#: django-gc-shared/payments/models.py:70
+msgid "Payment system"
+msgstr "Платежная система"
+
+#: django-gc-shared/payments/models.py:71
+msgid "Balance"
+msgstr "Баланс"
+
+#: django-gc-shared/payments/models.py:71
+msgid "Balance on getting request"
+msgstr "Баланс на момент получения заявки"
+
+#: django-gc-shared/payments/models.py:75
+#: django-gc-shared/payments/models.py:906
+#: django-gc-shared/payments/models.py:959
+#: django-gc-shared/payments/systems/base.py:194
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:144
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:237
+msgid "Currency"
+msgstr "Валюта"
+
+#: django-gc-shared/payments/models.py:76
+msgid "Internal comment"
+msgstr "Внутренний комментарий"
+
+#: django-gc-shared/payments/models.py:77
+msgid "Public comment"
+msgstr "Публичный комментарий"
+
+#: django-gc-shared/payments/models.py:78
+msgid "Manager's comment is shown to client"
+msgstr "Комментарий менеджера виден клиенту"
+
+#: django-gc-shared/payments/models.py:79
+msgid "Creation timestamp"
+msgstr "Время создания"
+
+#: django-gc-shared/payments/models.py:82
+msgid "Is payed"
+msgstr "Оплачено ли"
+
+#: django-gc-shared/payments/models.py:83
+msgid "Is committed"
+msgstr "Оплачен"
+
+#: django-gc-shared/payments/models.py:84
+msgid "When this field changes, client gets a notification"
+msgstr "Когда это поле меняется клиент получает уведомление"
+
+#: django-gc-shared/payments/models.py:87
+msgid "Automatically"
+msgstr "Автоматически"
+
+#: django-gc-shared/payments/models.py:112
+msgid "Request is rejected by client"
+msgstr "Заявка отклонена по просьбе клиента"
+
+#: django-gc-shared/payments/models.py:259
+#: django-gc-shared/payments/systems/base.py:370
+msgid "Purse"
+msgstr "Кошелек"
+
+#: django-gc-shared/payments/models.py:261
+#: django-gc-shared/payments/models.py:727
+msgid "Select one of your accounts"
+msgstr "Выберите один из ваших счетов"
+
+#: django-gc-shared/payments/models.py:263
+#, fuzzy
+msgid "Transaction id"
+msgstr "Тип транзакции"
+
+#: django-gc-shared/payments/models.py:268
+msgid "Deposit request"
+msgstr "Запрос на ввод средств"
+
+#: django-gc-shared/payments/models.py:269
+msgid "Deposit requests"
+msgstr "Запросы на ввод средств"
+
+#: django-gc-shared/payments/models.py:313
+#: django-gc-shared/payments/systems/moneygram.py:74
+#: django-gc-shared/payments/systems/westernunion.py:75
+msgid "Sender"
+msgstr "Sender (Отправитель)"
+
+#: django-gc-shared/payments/models.py:322
+#: django-gc-shared/payments/systems/bankbase.py:83
+msgid "Passport data"
+msgstr "Паспортные данные"
+
+#: django-gc-shared/payments/models.py:331
+msgid "Intermediary Bank’s code"
+msgstr "Код банка-корреспондента"
+
+#: django-gc-shared/payments/models.py:332
+#: django-gc-shared/payments/models.py:335
+msgid "Payment Details"
+msgstr "Назначение платежа"
+
+#: django-gc-shared/payments/models.py:411
+msgid "Departments"
+msgstr "Отделы"
+
+#: django-gc-shared/payments/models.py:412
+msgid "Needs attention"
+msgstr "Требуется внимание"
+
+#: django-gc-shared/payments/models.py:414
+#: django-gc-shared/payments/models.py:689
+msgid "Updated at"
+msgstr "Обновлено"
+
+#: django-gc-shared/payments/models.py:415
+#: django-gc-shared/payments/models.py:690
+msgid "Created at"
+msgstr "Создано"
+
+#: django-gc-shared/payments/models.py:425
+msgid "Can edit approvals"
+msgstr "Может редатикровать одобрения"
+
+#: django-gc-shared/payments/models.py:427
+msgid "Withdraw request group"
+msgstr "Группа заявок на вывод"
+
+#: django-gc-shared/payments/models.py:428
+msgid "Withdraw request groups"
+msgstr "Группы заявок на вывод"
+
+#: django-gc-shared/payments/models.py:540
+msgid "Your account didn't have enough funds when the request was processed."
+msgstr "На момент обработки заявки на Вашем счёте было недостаточно средств."
+
+#: django-gc-shared/payments/models.py:635
+msgid "Dealing room"
+msgstr ""
+
+#: django-gc-shared/payments/models.py:639
+#, fuzzy
+msgid "Back office"
+msgstr "Найти отделение"
+
+#: django-gc-shared/payments/models.py:643
+#, fuzzy
+msgid "Compliance"
+msgstr "Отменить"
+
+#: django-gc-shared/payments/models.py:670
+#, fuzzy
+msgid "Approve withdrawal"
+msgstr "Автоматический вывод"
+
+#: django-gc-shared/payments/models.py:682
+#: django-gc-shared/payments/models.py:734
+msgid "Withdraw Requests Group"
+msgstr "Группы заявок на вывод"
+
+#: django-gc-shared/payments/models.py:683
+msgid "Who made decision"
+msgstr "Автор решения"
+
+#: django-gc-shared/payments/models.py:686
+msgid "Is accepted"
+msgstr "Принят"
+
+#: django-gc-shared/payments/models.py:687
+#: django-gc-shared/payments/models.py:904
+msgid "Comment"
+msgstr "Комментарий"
+
+#: django-gc-shared/payments/models.py:723
+msgid "Requisit"
+msgstr "Выберите реквизит"
+
+#: django-gc-shared/payments/models.py:724
+msgid "Select one of your payment details"
+msgstr "Выберите один из ваших реквизитов"
+
+#: django-gc-shared/payments/models.py:728
+msgid "Reason of withdrawal"
+msgstr "Причина вывода"
+
+#: django-gc-shared/payments/models.py:729
+msgid "Choose the reason of withdrawal"
+msgstr "Выберите причину вывода"
+
+#: django-gc-shared/payments/models.py:731
+#, fuzzy
+msgid "Last transaction id on this account"
+msgstr "Недостаточно средств на счете"
+
+#: django-gc-shared/payments/models.py:735
+msgid "Is ready for payout"
+msgstr "Готово к выплате"
+
+#: django-gc-shared/payments/models.py:736
+msgid "Closed by"
+msgstr "Закрыто"
+
+#: django-gc-shared/payments/models.py:736
+msgid "Who closed the request"
+msgstr "Кто закрыл заявку"
+
+#: django-gc-shared/payments/models.py:739
+msgid "Withdraw request"
+msgstr "Запрос на вывод средств"
+
+#: django-gc-shared/payments/models.py:740
+msgid "Withdraw requests"
+msgstr "Запросы на вывод средств"
+
+#: django-gc-shared/payments/models.py:805
+msgid "Money<br>withdraw<br>from account"
+msgstr "Деньги<br>сняты<br>со счёта"
+
+#: django-gc-shared/payments/models.py:807
+msgid "Money<br>paid out<br>to client"
+msgstr "Деньги<br>выплачены<br>клиенту"
+
+#: django-gc-shared/payments/models.py:810
+msgid "Client<br>made<br>payment"
+msgstr "Клиент<br>совершил<br>платёж"
+
+#: django-gc-shared/payments/models.py:812
+msgid "Money<br>deposited<br>to account"
+msgstr "Деньги<br>зачислены<br>на счёт"
+
+#: django-gc-shared/payments/models.py:833
+msgid "Error getting balance"
+msgstr "Ошибка при получении баланса"
+
+#: django-gc-shared/payments/models.py:902
+msgid "Author"
+msgstr "Автор"
+
+#: django-gc-shared/payments/models.py:909
+msgid "Manual transaction"
+msgstr "Ручная транзакция"
+
+#: django-gc-shared/payments/models.py:910
+msgid "Manual transactions"
+msgstr "Ручные транзакции"
+
+#: django-gc-shared/payments/models.py:929
+#: django-gc-shared/payments/models.py:958
+#: django-gc-shared/payments/templates/payments/includes/profile_data.html:5
+msgid "Name"
+msgstr "Ваше полное имя"
+
+#: django-gc-shared/payments/models.py:930
+msgid "Priority"
+msgstr ""
+
+#: django-gc-shared/payments/models.py:932
+msgid "defines order in list"
+msgstr ""
+
+#: django-gc-shared/payments/models.py:938
+#, fuzzy
+msgid "Payment category"
+msgstr "Пластиковые карты"
+
+#: django-gc-shared/payments/models.py:939
+#, fuzzy
+msgid "Payment categories"
+msgstr "Пластиковые карты"
+
+#: django-gc-shared/payments/models.py:955
+#, fuzzy
+msgid "Payment type"
+msgstr "Платежная система"
+
+#: django-gc-shared/payments/models.py:960
+#, fuzzy
+msgid "Minimum amount"
+msgstr "Пожалуйста, введите корректную сумму"
+
+#: django-gc-shared/payments/models.py:963
+msgid "Maximum amount"
+msgstr ""
+
+#: django-gc-shared/payments/models.py:966
+msgid "Commission"
+msgstr "Комиссия"
+
+#: django-gc-shared/payments/models.py:971
+#, fuzzy
+msgid "Max commision"
+msgstr "комиссия"
+
+#: django-gc-shared/payments/models.py:973
+#, fuzzy
+msgid "Min commision"
+msgstr "комиссия"
+
+#: django-gc-shared/payments/models.py:975
+#, fuzzy
+msgid "Processing times"
+msgstr "Этап обработки"
+
+#: django-gc-shared/payments/models.py:980
+msgid "Category"
+msgstr ""
+
+#: django-gc-shared/payments/models.py:981
+msgid "Image"
+msgstr ""
+
+#: django-gc-shared/payments/models.py:985
+#, fuzzy
+msgid "Payment system image"
+msgstr "Платежная система"
+
+#: django-gc-shared/payments/models.py:986
+msgid "Link to payment process"
+msgstr ""
+
+#: django-gc-shared/payments/models.py:994
+#, fuzzy
+msgid "Payment method"
+msgstr "Платёж проведён"
+
+#: django-gc-shared/payments/models.py:995
+#, fuzzy
+msgid "Payment methods"
+msgstr "Назначение платежа"
+
+#: django-gc-shared/payments/rest_api.py:49
+#: django-gc-shared/payments/rest_api.py:75
+#: django-gc-shared/payments/rest_api.py:101
+msgid "It is too late to cancel this request"
+msgstr "Эту заявку отменить уже нельзя"
+
+#: django-gc-shared/payments/rest_api.py:57
+#: django-gc-shared/payments/rest_api.py:79
+#: django-gc-shared/payments/rest_api.py:110
+msgid "Request successfuly canceled"
+msgstr "Заявка успешна отменена"
+
+#: django-gc-shared/payments/rest_api.py:183
+msgid "Due to technical issues service is temporarily unavailable"
+msgstr "По техническим причинам сервис временно недоступен"
+
+#: django-gc-shared/payments/rest_api.py:199
+#: django-gc-shared/payments/rest_api.py:201
+msgid "Invalid payment system name"
+msgstr "Неверная платёжная система"
+
+#: django-gc-shared/payments/rest_api.py:214
+msgid "You should provide operation type"
+msgstr "Вы должны указать тип операции"
+
+#: django-gc-shared/payments/rest_api.py:225
+msgid "Payment system not found"
+msgstr "Платежная система не найдена"
+
+#: django-gc-shared/payments/rest_api.py:230
+msgid "Data is invalid"
+msgstr "Данные не верны"
+
+#: django-gc-shared/payments/rest_api.py:285
+#: django-gc-shared/payments/systems/qiwi.py:204
+msgid "qiwi_bad_request"
+msgstr ""
+
+#: django-gc-shared/payments/rest_api.py:490
+msgid "Your documents will be checked soon"
+msgstr "Ваши документы скоро будут проверены"
+
+#: django-gc-shared/payments/systems/accentpay.py:29
+#: django-gc-shared/payments/systems/accentpay_cards.py:22
+#: django-gc-shared/payments/systems/accentpay_comepay.py:23
+#: django-gc-shared/payments/systems/accentpay_qiwi.py:25
+#: django-gc-shared/payments/systems/accentpay_sberbank.py:23
+#: django-gc-shared/payments/systems/accentpay_terminal.py:23
+#: django-gc-shared/payments/systems/accentpay_yandex.py:23
+#: django-gc-shared/payments/systems/qiwi.py:40
+msgid "15 minutes"
+msgstr "15 минут"
+
+#: django-gc-shared/payments/systems/accentpay_cards.py:26
+#: django-gc-shared/payments/systems/accentpay_comepay.py:27
+#: django-gc-shared/payments/systems/accentpay_qiwi.py:29
+#: django-gc-shared/payments/systems/accentpay_yandex.py:27
+#: django-gc-shared/payments/systems/forsazh.py:27
+#: django-gc-shared/payments/systems/moneygram.py:33
+#: django-gc-shared/payments/systems/qiwi.py:47
+#: django-gc-shared/payments/systems/westernunion.py:34
+msgid "up to 3 days"
+msgstr "до 3 дней"
+
+#: django-gc-shared/payments/systems/accentpay_comepay.py:54
+#: django-gc-shared/payments/systems/accentpay_qiwi.py:60
+#: django-gc-shared/payments/systems/accentpay_yandex.py:54
+#: django-gc-shared/payments/systems/qiwi.py:216
+msgid "Receiver"
+msgstr "Получатель"
+
+#: django-gc-shared/payments/systems/accentpay_comepay.py:55
+#: django-gc-shared/payments/systems/accentpay_qiwi.py:61
+#: django-gc-shared/payments/systems/accentpay_yandex.py:55
+#: django-gc-shared/payments/systems/qiwi.py:217
+msgid "Fill in your first, last and middle name (if any)"
+msgstr "Укажите ваши ФИО"
+
+#: django-gc-shared/payments/systems/accentpay_qiwi.py:69
+#: django-gc-shared/payments/systems/accentpay_yandex.py:61
+#: django-gc-shared/payments/systems/bankeur.py:96
+#: django-gc-shared/payments/systems/bankrur.py:100
+#: django-gc-shared/payments/systems/bankusd.py:100
+#: django-gc-shared/payments/systems/forsazh.py:78
+#: django-gc-shared/payments/systems/moneybookers.py:203
+#: django-gc-shared/payments/systems/qiwi.py:224
+#: django-gc-shared/payments/systems/westernunion.py:115
+#, python-format
+msgid "Withdrawal of funds from the account - %(time)s"
+msgstr "Вывод денежных средств со счета – %(time)s"
+
+#: django-gc-shared/payments/systems/accentpay_qiwi.py:71
+#: django-gc-shared/payments/systems/accentpay_yandex.py:63
+#: django-gc-shared/payments/systems/bankrur.py:56
+#: django-gc-shared/payments/systems/bankrur.py:102
+#: django-gc-shared/payments/systems/forsazh.py:80
+#: django-gc-shared/payments/systems/qiwi.py:226
+#: django-gc-shared/payments/systems/westernunion.py:117
+#, python-format
+msgid "Rouble transfer commission - %(fee)s"
+msgstr "Комиссия при рублевом переводе – %(fee)s"
+
+#: django-gc-shared/payments/systems/accentpay_qiwi.py:73
+#: django-gc-shared/payments/systems/qiwi.py:228
+#, python-format
+msgid "Maximal sum of withdrawal - %(max_amount)s"
+msgstr "Максимальная сумма снятия – %(max_amount)s"
+
+#: django-gc-shared/payments/systems/accentpay_qiwi.py:75
+#: django-gc-shared/payments/systems/accentpay_yandex.py:67
+#: django-gc-shared/payments/systems/bankeur.py:102
+#: django-gc-shared/payments/systems/bankrur.py:106
+#: django-gc-shared/payments/systems/bankusd.py:106
+#: django-gc-shared/payments/systems/moneybookers.py:209
+#: django-gc-shared/payments/systems/qiwi.py:230
+msgid "Please fill out the form to request withdrawal of funds"
+msgstr "После заполнения формы Вы сформируете заявку на вывод средств."
+
+#: django-gc-shared/payments/systems/accentpay_qiwi.py:85
+#, python-format
+msgid "You cannot withdraw more than %(amount)s in one request"
+msgstr "Нельзя вывести больше %(amount)s за один запрос"
+
+#: django-gc-shared/payments/systems/accentpay_yandex.py:11
+msgid "Yandex.Money"
+msgstr "Яндекс.Деньги"
+
+#: django-gc-shared/payments/systems/accentpay_yandex.py:65
+#: django-gc-shared/payments/systems/bankeur.py:100
+#: django-gc-shared/payments/systems/bankrur.py:104
+#: django-gc-shared/payments/systems/bankusd.py:104
+#: django-gc-shared/payments/systems/forsazh.py:82
+#: django-gc-shared/payments/systems/moneybookers.py:207
+#: django-gc-shared/payments/systems/westernunion.py:119
+#, python-format
+msgid "Minimal sum of withdrawal - %(min_amount)s"
+msgstr "Минимальная сумма снятия – %(min_amount)s"
+
+#: django-gc-shared/payments/systems/accentpay_yandex.py:69
+msgid "Attention! Funds withdrawal is only possible for the same currencies"
+msgstr "Внимание! Вывод средств возможен в одной и той же валюте."
+
+#: django-gc-shared/payments/systems/bankbase.py:17
+msgid "Correspondent"
+msgstr "Банк-корреспондент"
+
+#: django-gc-shared/payments/systems/bankbase.py:18
+msgid "Passport_Data"
+msgstr "Паспортные данные"
+
+#: django-gc-shared/payments/systems/bankbase.py:19
+msgid "Bank_Account"
+msgstr "Номер расчетного счета"
+
+#: django-gc-shared/payments/systems/bankbase.py:20
+msgid "Tin"
+msgstr "ИНН"
+
+#: django-gc-shared/payments/systems/bankbase.py:21
+msgid "Bic"
+msgstr "БИК"
+
+#: django-gc-shared/payments/systems/bankbase.py:80
+msgid "bankbase.deposit.info"
+msgstr ""
+"Ввод средств на торговый счет посредством банковского перевода\n"
+"осуществляется в течение 3-5 банковских дней."
+
+#: django-gc-shared/payments/systems/bankbase.py:82
+#: django-gc-shared/payments/systems/moneygram.py:53
+#: django-gc-shared/payments/systems/westernunion.py:54
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1091
+msgid "Address"
+msgstr "Адрес"
+
+#: django-gc-shared/payments/systems/bankbase.py:122
+msgid "Beneficiary address"
+msgstr "Адрес получателя"
+
+#: django-gc-shared/payments/systems/bankbase.py:122
+msgid "Your city and street address"
+msgstr "Город, улица, дом и квартира. Вводить латиницей"
+
+#: django-gc-shared/payments/systems/bankbase.py:123
+msgid "Your bank's name"
+msgstr "Название банка. Вводить латиницей"
+
+#: django-gc-shared/payments/systems/bankbase.py:126
+msgid "Enter up to 34 symbols"
+msgstr "Введите до 34 символов"
+
+#: django-gc-shared/payments/systems/bankbase.py:127
+msgid "Incorrect IBAN"
+msgstr "Неверный IBAN"
+
+#: django-gc-shared/payments/systems/bankbase.py:130
+msgid "SWIFT code. Enter up to 11 symbols"
+msgstr "SWIFT код. Введите до 11 символов"
+
+#: django-gc-shared/payments/systems/bankbase.py:131
+#: django-gc-shared/payments/systems/bankbase.py:136
+msgid "Incorrect SWIFT code"
+msgstr "Неверный SWIFT-код"
+
+#: django-gc-shared/payments/systems/bankbase.py:132
+msgid "Correspondent bank"
+msgstr "Банк-корреспондент"
+
+#: django-gc-shared/payments/systems/bankbase.py:132
+msgid "Correspondent bank's name"
+msgstr "Название банка-корреспондента. Вводить латиницей"
+
+#: django-gc-shared/payments/systems/bankbase.py:133
+msgid "Correspondent Bank's Code"
+msgstr "Код банка-корреспондента"
+
+#: django-gc-shared/payments/systems/bankbase.py:135
+msgid "Correspondent bank SWIFT code. Enter up to 11 symbols"
+msgstr "SWIFT код банка-корреспондента. Введите до 11 символов"
+
+#: django-gc-shared/payments/systems/bankbase.py:159
+msgid "bankbase.withdraw.info"
+msgstr ""
+"Вывод средств с торгового счета посредством банковского перевода\n"
+"осуществляется в течение 3-5 банковских дней."
+
+#: django-gc-shared/payments/systems/bankeur.py:12
+msgid "Bank transfer (EUR)"
+msgstr "Банковский перевод (Евро)"
+
+#: django-gc-shared/payments/systems/bankeur.py:22
+#: django-gc-shared/payments/systems/bankrur.py:31
+#: django-gc-shared/payments/systems/bankusd.py:22
+#: django-gc-shared/payments/systems/moneygram.py:35
+#: django-gc-shared/payments/systems/westernunion.py:36
+msgid "depends on the originating bank"
+msgstr "зависит от банка отправителя"
+
+#: django-gc-shared/payments/systems/bankeur.py:23
+#: django-gc-shared/payments/systems/bankeur.py:27
+#: django-gc-shared/payments/systems/bankrur.py:33
+#: django-gc-shared/payments/systems/bankrur.py:37
+#: django-gc-shared/payments/systems/bankusd.py:24
+#: django-gc-shared/payments/systems/bankusd.py:28
+msgid "3 to 5 days"
+msgstr "от 3 до 5 дней"
+
+#: django-gc-shared/payments/systems/bankeur.py:45
+#: django-gc-shared/payments/systems/bankrur.py:54
+#: django-gc-shared/payments/systems/bankusd.py:45
+#, python-format
+msgid "Deposit of funds to the account - %(time)s"
+msgstr "Ввод денежных средств на счет – %(time)s"
+
+#: django-gc-shared/payments/systems/bankeur.py:47
+#: django-gc-shared/payments/systems/bankeur.py:98
+#, python-format
+msgid "Euro transfer commission - %(fee)s"
+msgstr "Комиссия при переводе в евро – %(fee)s"
+
+#: django-gc-shared/payments/systems/bankeur.py:49
+#: django-gc-shared/payments/systems/bankrur.py:60
+#: django-gc-shared/payments/systems/bankusd.py:49
+msgid "Please fill out the form to request deposit of funds"
+msgstr "После заполнения формы Вы сформируете заявку на ввод средств."
+
+#: django-gc-shared/payments/systems/bankeur.py:55
+#: django-gc-shared/payments/systems/bankeur.py:80
+#: django-gc-shared/payments/systems/bankrur.py:66
+#: django-gc-shared/payments/systems/bankrur.py:88
+#: django-gc-shared/payments/systems/bankusd.py:58
+#: django-gc-shared/payments/systems/bankusd.py:83
+#: django-gc-shared/payments/systems/base.py:634
+msgid ""
+"First, last and middle name (if any) in latin transcription. Example: Andrei "
+"Ivanovich Denisov"
+msgstr ""
+"Фамилия, имя и отчество (если есть). Вводить латиницей.\n"
+"Например: Denisov Andrei Ivanovich"
+
+#: django-gc-shared/payments/systems/bankeur.py:57
+#: django-gc-shared/payments/systems/bankeur.py:82
+#: django-gc-shared/payments/systems/bankrur.py:69
+#: django-gc-shared/payments/systems/bankrur.py:90
+#: django-gc-shared/payments/systems/bankusd.py:60
+#: django-gc-shared/payments/systems/bankusd.py:87
+msgid "Country of residention of beneficiary"
+msgstr "Страна резиденции получателя"
+
+#: django-gc-shared/payments/systems/bankrur.py:15
+msgid "Payment_Details"
+msgstr "Назначение платежа"
+
+#: django-gc-shared/payments/systems/bankrur.py:16
+msgid "Credit_Card_Number"
+msgstr "Номер карты"
+
+#: django-gc-shared/payments/systems/bankrur.py:19
+msgid "Bank transfer (RUR)"
+msgstr "Банковский перевод (Рубли)"
+
+#: django-gc-shared/payments/systems/bankrur.py:58
+#, python-format
+msgid "Minimal sum of deposit - %(min_amount)s"
+msgstr "Минимальная сумма пополнения – %(min_amount)s"
+
+#: django-gc-shared/payments/systems/bankrur.py:108
+msgid ""
+"<b>Please make sure </b> that your name in payment details matches the one "
+"in your account details"
+msgstr ""
+"Обратите внимание на то, что ФИО в реквизитах получателя должно совпадать с "
+"ФИО того, на кого зарегистрирован торговый счет в компании"
+
+#: django-gc-shared/payments/systems/bankusd.py:12
+msgid "Bank transfer (USD)"
+msgstr "Банковский перевод (Доллары)"
+
+#: django-gc-shared/payments/systems/bankusd.py:47
+#: django-gc-shared/payments/systems/bankusd.py:102
+#: django-gc-shared/payments/systems/moneybookers.py:205
+#, python-format
+msgid "USD transfer commission - %(fee)s"
+msgstr "Комиссия при переводе в долларах – %(fee)s"
+
+#: django-gc-shared/payments/systems/base.py:104
+msgid "Unknown type of account field"
+msgstr "Неизвестный тип аккаунта"
+
+#: django-gc-shared/payments/systems/base.py:109
+msgid "Account does not exist"
+msgstr "Счет не существует"
+
+#: django-gc-shared/payments/systems/base.py:112
+msgid "Can't operate on a demo account."
+msgstr "Невозмножно совершать операции ввода/вывода на демо-счетах"
+
+#: django-gc-shared/payments/systems/base.py:115
+msgid "Deposit/withdrawal operations are unavailable for this account type."
+msgstr "Ввод/вывод средств недоступен для счетов этого типа."
+
+#: django-gc-shared/payments/systems/base.py:194
+#: django-gc-shared/payments/systems/forsazh.py:90
+#: django-gc-shared/payments/systems/westernunion.py:127
+msgid "Choose currency"
+msgstr "Выберите валюту перевода"
+
+#: django-gc-shared/payments/systems/base.py:197
+msgid "Amount of money to deposit."
+msgstr "Определите сумму денег для ввода."
+
+#: django-gc-shared/payments/systems/base.py:198
+msgid ""
+"Attention! Specify the amount after deduction of the system's charge on your "
+"account"
+msgstr ""
+"Внимание! Укажите сумму с учетом вычета комиссии системы - сумму к получению"
+
+#: django-gc-shared/payments/systems/base.py:201
+#: django-gc-shared/payments/systems/base.py:414
+msgid "Comission"
+msgstr "Комиссия"
+
+#: django-gc-shared/payments/systems/base.py:202
+#: django-gc-shared/payments/systems/base.py:415
+msgid "Will be credited"
+msgstr "Будет начислено"
+
+#: django-gc-shared/payments/systems/base.py:216
+#: django-gc-shared/payments/systems/base.py:387
+#, python-format
+msgid "Your %(payment_system)s purse, e.g. %(example)s"
+msgstr ""
+"Ваша учетная запись в платежной системе \"%(payment_system)s\", например "
+"%(example)s"
+
+#: django-gc-shared/payments/systems/base.py:241
+#: django-gc-shared/payments/systems/base.py:400
+#, python-format
+msgid "Wrong %s purse number."
+msgstr "Неверный номер кошелька %s"
+
+#: django-gc-shared/payments/systems/base.py:260
+#, python-format
+msgid "You cant deposit more than %(amount)s with %(system)s"
+msgstr "Нельзя ввести больше %(amount)s через %(system)s"
+
+#: django-gc-shared/payments/systems/base.py:273
+#, python-format
+msgid "You cant deposit less than %(amount)s with %(system)s"
+msgstr "Нельзя ввести меньше %(amount)s через %(system)s"
+
+#: django-gc-shared/payments/systems/base.py:289
+msgid "Wrong amount"
+msgstr "Пожалуйста, введите корректную сумму"
+
+#: django-gc-shared/payments/systems/base.py:300
+#, python-format
+msgid "Minimum deposit amount is %(amount)s %(currency)s"
+msgstr "Минимальная сумма пополнения %(amount)s %(currency)s"
+
+#: django-gc-shared/payments/systems/base.py:305
+#: django-gc-shared/payments/systems/base.py:526
+msgid ""
+"Cannot determine the account balance. Try again later or contact support"
+msgstr ""
+"Ошибка при определении баланса счета. Повторите позже, или свяжитесь с "
+"техподдержкой."
+
+#: django-gc-shared/payments/systems/base.py:431
+msgid "Amount of money to withdraw"
+msgstr "Определите сумму денег для вывода"
+
+#: django-gc-shared/payments/systems/base.py:470
+#, python-format
+msgid ""
+"You should <a href=\"%(link)s\" target=\"_blank\">complete the verification "
+"process</a> before withdrawing from account %(account)s"
+msgstr ""
+"Вы должны <a href=\"%(link)s\" target=\"_blank\">завершить процесс "
+"верификации</a> прежде чем выводить со счёта %(account)s"
+
+#: django-gc-shared/payments/systems/base.py:478
+msgid "You can't withdraw funds from this account"
+msgstr "Вы не можете вывести средства с этого счета"
+
+#: django-gc-shared/payments/systems/base.py:485
+msgid ""
+"Please withdraw funds using the system which you used for deposit, or using "
+"wire transfer"
+msgstr ""
+
+#: django-gc-shared/payments/systems/base.py:506
+#, python-format
+msgid ""
+"Minimal amount of money you can withdraw with this payment system is "
+"%(limit_value)s%(currency)s"
+msgstr ""
+"Минимальное кол-во средств, которое вы можете вывести с помощью этой "
+"платежной системы, равно %(limit_value)s %(currency)s"
+
+#: django-gc-shared/payments/systems/base.py:514
+#, python-format
+msgid "Enter amount more than %s"
+msgstr "Введите сумму больше %s"
+
+#: django-gc-shared/payments/systems/base.py:521
+#, python-format
+msgid ""
+"Maximal amount of money you can withdraw for a chosen account is "
+"%(limit_value)s%(currency)s "
+msgstr ""
+"Максимальное кол-во средств, которое вы можете вывести с этого счета, равно "
+"%(limit_value)s %(currency)s "
+
+#: django-gc-shared/payments/systems/base.py:592
+#: django-gc-shared/payments/systems/base.py:639
+msgid "Your name"
+msgstr "Ваше полное имя"
+
+#: django-gc-shared/payments/systems/base.py:593
+msgid "First, last and middle name (if any). Example: Andrei Ivanovich Denisov"
+msgstr "Фамилия, имя и отчество (если есть). Например: Денисов Андрей Иванович"
+
+#: django-gc-shared/payments/systems/base.py:624
+msgid ""
+"You can't change the name here, if you need to change your profile name, "
+"please contact support"
+msgstr ""
+"Вы не можете изменять свое имя здесь, если вам необходимо сменить имя в "
+"профайле пожалуйста обратитесь в службу поддержки"
+
+#: django-gc-shared/payments/systems/base.py:640
+msgid ""
+"Name, surname. You could use capital Latin letters, hyphen and spaces. "
+"Example: ANDREI DENISOV"
+msgstr "Имя, фамилия. Используйте заглавные латинские буквы, а также дефис"
+
+#: django-gc-shared/payments/systems/base.py:652
+#: django-gc-shared/payments/templates/payments/includes/profile_data.html:8
+msgid "Country"
+msgstr "Страна"
+
+#: django-gc-shared/payments/systems/base.py:652
+msgid "The country where you live"
+msgstr "Страна, где вы живете"
+
+#: django-gc-shared/payments/systems/base.py:668
+#: django-gc-shared/payments/templates/payments/includes/profile_data.html:9
+msgid "City"
+msgstr "Город"
+
+#: django-gc-shared/payments/systems/base.py:669
+msgid "The city where you live"
+msgstr "Город, где вы живете"
+
+#: django-gc-shared/payments/systems/ecommpay.py:23
+#: django-gc-shared/payments/systems/ecommpay.py:28
+#: django-gc-shared/payments/systems/moneybookers.py:39
+#: django-gc-shared/payments/systems/moneybookers.py:45
+#: django-gc-shared/payments/systems/naspay.py:40
+#: django-gc-shared/payments/systems/naspay.py:45
+#: django-gc-shared/payments/systems/neteller.py:25
+#: django-gc-shared/payments/systems/neteller.py:30
+#, fuzzy
+msgid "Within day"
+msgstr "Вывод"
+
+#: django-gc-shared/payments/systems/forsazh.py:60
+#: django-gc-shared/payments/systems/moneygram.py:101
+#: django-gc-shared/payments/systems/westernunion.py:102
+msgid "The country in which you receive transfer"
+msgstr "Страна, в которой будет получен перевод"
+
+#: django-gc-shared/payments/systems/forsazh.py:61
+#: django-gc-shared/payments/systems/moneygram.py:102
+#: django-gc-shared/payments/systems/westernunion.py:103
+msgid "The city in which you receive transfer"
+msgstr "Город, в котором будет получен перевод"
+
+#: django-gc-shared/payments/systems/forsazh.py:70
+#: django-gc-shared/payments/systems/moneygram.py:107
+#: django-gc-shared/payments/systems/westernunion.py:108
+msgid "Only uppercase latin letters and space are allowed"
+msgstr "Разрешены только заглавные латинские буквы и пробел"
+
+#: django-gc-shared/payments/systems/moneybookers.py:24
+msgid "Skrill"
+msgstr ""
+
+#: django-gc-shared/payments/systems/moneybookers.py:71
+#, fuzzy
+msgid "Amount of money to deposit in "
+msgstr "Сумма денег для ввода в RUR, например: 105 или 105.2"
+
+#: django-gc-shared/payments/systems/moneygram.py:19
+msgid "MoneyGram"
+msgstr "MoneyGram"
+
+#: django-gc-shared/payments/systems/moneygram.py:28
+#: django-gc-shared/payments/systems/moneygram.py:30
+#: django-gc-shared/payments/systems/westernunion.py:29
+#: django-gc-shared/payments/systems/westernunion.py:30
+#, python-format
+msgid "According to %s fees"
+msgstr "По тарифам %s"
+
+#: django-gc-shared/payments/systems/moneygram.py:29
+#: django-gc-shared/payments/systems/westernunion.py:31
+msgid "a day"
+msgstr "сутки"
+
+#: django-gc-shared/payments/systems/moneygram.py:52
+#: django-gc-shared/payments/systems/westernunion.py:53
+msgid "State"
+msgstr "Штат"
+
+#: django-gc-shared/payments/systems/moneygram.py:52
+#: django-gc-shared/payments/systems/westernunion.py:53
+msgid "Only for transfers from the U.S."
+msgstr "Только для переводов из США"
+
+#: django-gc-shared/payments/systems/moneygram.py:53
+#: django-gc-shared/payments/systems/westernunion.py:54
+msgid "Please specify the address specified in transfer"
+msgstr "Укажите адрес, указанный при переводе"
+
+#: django-gc-shared/payments/systems/moneygram.py:54
+msgid "Referral number"
+msgstr ""
+
+#: django-gc-shared/payments/systems/moneygram.py:55
+msgid ""
+"8-digit verification number for the copy of the form. For example, 12345678"
+msgstr "8-значный контрольный номер копии бланка. Например, 12345678"
+
+#: django-gc-shared/payments/systems/moneygram.py:57
+#: django-gc-shared/payments/systems/westernunion.py:58
+msgid "Answer to the security question"
+msgstr "Ответ на секретный вопрос"
+
+#: django-gc-shared/payments/systems/moneygram.py:58
+#: django-gc-shared/payments/systems/westernunion.py:59
+msgid "Answer to the question specified while committing the transfer"
+msgstr "Ответ на вопрос, полученный при переводе"
+
+#: django-gc-shared/payments/systems/moneygram.py:59
+#: django-gc-shared/payments/systems/westernunion.py:60
+msgid "Date of transaction"
+msgstr "Дата платежа"
+
+#: django-gc-shared/payments/systems/moneygram.py:60
+#: django-gc-shared/payments/systems/westernunion.py:61
+msgid "Please specify the date the transfer was committed"
+msgstr "Укажите дату совершения платежа"
+
+#: django-gc-shared/payments/systems/moneygram.py:76
+#: django-gc-shared/payments/systems/westernunion.py:77
+msgid "Please specify the country specified in transfer"
+msgstr "Укажите страну, указанную при переводе"
+
+#: django-gc-shared/payments/systems/moneygram.py:77
+#: django-gc-shared/payments/systems/westernunion.py:78
+msgid "Please specify the city specified in transfer"
+msgstr "Укажите город, указанный при переводе"
+
+#: django-gc-shared/payments/systems/moneygram.py:78
+#: django-gc-shared/payments/systems/westernunion.py:79
+msgid "First name, last name. Please, fill in the data strictly in this order."
+msgstr "Имя, отчество, фамилия. Строго в этой последовательности."
+
+#: django-gc-shared/payments/systems/naspay.py:44
+msgid "3.30USD + 0.25% min $1 max $30"
+msgstr ""
+
+#: django-gc-shared/payments/systems/neteller.py:16
+msgid "Neteller"
+msgstr ""
+
+#: django-gc-shared/payments/systems/neteller.py:29
+msgid "2.5% min $1 max $30"
+msgstr ""
+
+#: django-gc-shared/payments/systems/neteller.py:45
+#: django-gc-shared/payments/systems/neteller.py:161
+#, fuzzy
+msgid "Net account"
+msgstr "Расчетный счет"
+
+#: django-gc-shared/payments/systems/neteller.py:46
+#: django-gc-shared/payments/systems/neteller.py:162
+msgid ""
+"Your Neteller's 12-digit Account ID or email address that is associated with "
+"their NETELLER account"
+msgstr ""
+"Ваш NETELLER-идентификатор или адрес почты, привязанный к учетной записи "
+"NETELLER"
+
+#: django-gc-shared/payments/systems/neteller.py:48
+msgid "Secure ID"
+msgstr "Защитный идентификатор"
+
+#: django-gc-shared/payments/systems/neteller.py:48
+msgid "Your Neteller's 6-digit Secure ID"
+msgstr "Ваш шестизначный защитный идентификатор (Secure ID)"
+
+#: django-gc-shared/payments/systems/qiwi.py:25
+msgid "Qiwi"
+msgstr "Qiwi"
+
+#: django-gc-shared/payments/systems/qiwi.py:89
+msgid ""
+"<strong>Attention!</strong> If you do not have \"verified\" status with "
+"QIWI, please specify amount less than 15000 RUB."
+msgstr ""
+"<strong> Внимание!</strong> Если ваш кошелёк не имеет в QIWI статус "
+"\"проверенного\", не указывайте суммы свыше 15000 рублей."
+
+#: django-gc-shared/payments/systems/qiwi.py:156
+msgid "Amount should be above 5 roubles"
+msgstr "Сумма должна быть больше 5 рублей"
+
+#: django-gc-shared/payments/systems/westernunion.py:20
+msgid "Western Union"
+msgstr "Western Union"
+
+#: django-gc-shared/payments/systems/westernunion.py:55
+msgid "Money Transfer Control Number (MTCN)"
+msgstr "Контрольный номер перевода (MTCN)"
+
+#: django-gc-shared/payments/systems/westernunion.py:56
+msgid ""
+"10-digit verification number for the copy of the form. For example, "
+"555-555-5555"
+msgstr "10-значный контрольный номер к копии бланка. Например, 555-555-5555"
+
+#: django-gc-shared/payments/templates/admin/payments/baserequest/change_list.html:22
+#: django-gc-shared/payments/templates/admin/payments/depositrequest/change_list.html:27
+#: django-gc-shared/payments/templates/admin/payments/withdrawrequest/change_list.html:28
+msgid "Loading payment data"
+msgstr "Загрузка данных платежей"
+
+#: django-gc-shared/payments/templates/admin/payments/withdrawrequestsgroup/change_list.html:18
+msgid "Awaiting approval (and are possible to withdraw from account)"
+msgstr "Ожидают одобрение (и могут быть выведены со счёта)"
+
+#: django-gc-shared/payments/templates/admin/payments/withdrawrequestsgroup/change_list.html:31
+msgid "Empty"
+msgstr "Пусто"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:4
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:47
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:178
+msgid "Please choose payment system"
+msgstr "Выберите платёжную систему"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:16
+msgid "Financial operations"
+msgstr "Операции с деньгами"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:20
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:12
+msgid "Deposit funds"
+msgstr "Ввод средств"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:24
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:17
+msgid "Withdraw funds"
+msgstr "Вывод средств"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:27
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:22
+msgid "Internal transfer"
+msgstr "Внутренний перевод"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:34
+#: django-gc-shared/payments/templates/js/my/payments.html:150
+#: django-gc-shared/payments/templates/js/my/payments.html:223
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:35
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:167
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:260
+msgid "Step 1. Transaction details"
+msgstr "Шаг 1. Детали перевода"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:36
+#: django-gc-shared/payments/templates/js/my/payments.html:152
+#: django-gc-shared/payments/templates/js/my/payments.html:225
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:36
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:168
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:261
+msgid "Step 2. Verification"
+msgstr "Шаг 2. Подтверждение данных"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:38
+#: django-gc-shared/payments/templates/js/my/payments.html:154
+#: django-gc-shared/payments/templates/js/my/payments.html:227
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:37
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:169
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:262
+msgid "Step 3. Payment"
+msgstr "Шаг 3. Оплата перевода"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:44
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:44
+msgctxt "deposit"
+msgid "Payment system"
+msgstr "Способ пополнения"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:80
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:80
 msgid ""
 "\n"
 "                        Print out or download the payment order and bring it "
@@ -19,6 +1380,74 @@ msgstr ""
 "Если у Вас нет расчетного счета в банке, Вы можете внести сумму наличными "
 "деньгами, используя платежное поручение."
 
+#: django-gc-shared/payments/templates/js/my/payments.html:86
+#: django-gc-shared/payments/templates/js/my/payments.html:194
+#: django-gc-shared/payments/templates/js/my/payments.html:245
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:86
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:210
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:281
+msgid "Please verify the details:"
+msgstr "Внимательно проверьте данные:"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:94
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:94
+msgid ""
+"Payments from your country may be restricted, in case your payment fails, "
+"see the instructions <a href='/faq/#/SKRILL'>here</a>"
+msgstr ""
+"Платежи из вашей страны могут быть ограничены, в случае если платёж не "
+"пройдёт воспользуйтесь <a href='/faq/#/SKRILL'>инструкцией</a>"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:99
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:99
+msgid ""
+"Attention! Your money has not been transferred yet! To confirm the funds "
+"transfer, press the red button"
+msgstr ""
+"Внимание! Ваши средства еще не переведены! Для подтверждения перевода "
+"средств нажмите красную кнопку"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:103
+#: django-gc-shared/payments/templates/js/my/payments.html:202
+#: django-gc-shared/payments/templates/js/my/payments.html:253
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:103
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:218
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:289
+#: django-gc-shared/payments/templates/payments/instructions/qiwi.html:23
+msgid "Back"
+msgstr "Назад"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:106
+#: django-gc-shared/payments/templates/js/my/payments.html:205
+#: django-gc-shared/payments/templates/js/my/payments.html:256
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:104
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:219
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:290
+msgid "Transfer funds"
+msgstr "Перевести средства"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:114
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:108
+msgid "Download requisits"
+msgstr "Получить реквизиты в PDF"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:118
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:111
+msgid "print requisits"
+msgstr "Распечатать реквизиты"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:118
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:111
+msgid "Print requisits"
+msgstr "Распечатать реквизиты"
+
+#: django-gc-shared/payments/templates/js/my/payments.html:161
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:175
+msgctxt "withdraw"
+msgid "Payment system"
+msgstr "Способ вывода средств"
+
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:125
 msgid ""
 "\n"
 "                    <p class=\"info offset-top-20\">\n"
@@ -50,8 +1479,8 @@ msgstr ""
 "            Зачисление денежных средств на счет клиента, конвертация при "
 "переводе средств между счетами и при выводе\n"
 "            средств\n"
-"            производится по курсам компании, актуальным на момент поступления "
-"платежа или списания средств со счета\n"
+"            производится по курсам компании, актуальным на момент "
+"поступления платежа или списания средств со счета\n"
 "            клиента.<br>\n"
 "            Поле «Сумма к зачислению» носит ознакомительный характер, "
 "зачисление указанной в нем суммы не гарантируется.<br>\n"
@@ -64,175 +1493,12 @@ msgstr ""
 "            на следующий день.<br>\n"
 "</p>"
 
-#, python-format
-msgid ""
-"\n"
-"    <ol class=\"offset-bottom-15\">\n"
-"        <li>\n"
-"            Fill out an application for the money transfer at any Lider "
-"service location,\n"
-"            providing the following information:\n"
-"            <ul>\n"
-"                <li>\n"
-"                    Your name, date and place of birth, passport "
-"information,\n"
-"                    including the residence address (registration); </li>\n"
-"                <li> Receiver's name - <strong>%(PAYMENTS_RECEIVER)s</"
-"strong>; </li>\n"
-"                <li> In the field \"Purpose of transfer\" choose \"Financial "
-"aid\". </li>\n"
-"            </ul>\n"
-"        </li>\n"
-"        <li> Show the identification document; </li>\n"
-"        <li> Make a payment and commission fee according to system’s tariffs. "
-"</li>\n"
-"        <li><strong> Don't forget to get a verification number – transaction "
-"number from the operator. </strong></li>\n"
-"    </ol>\n"
-msgstr ""
-"\n"
-"<ol class=\"offset-bottom-15\">\n"
-"<li>\n"
-"В любом пункте обслуживания Lider заполните Бланк для отправки перевода, "
-"указывая следующие данные:\n"
-"<ul>\n"
-"<li> Свои ФИО, дату, место рождения, паспортные данные, включая адрес места "
-"жительства (регистрации); </li>\n"
-"<li>\n"
-"ФИО получателя перевода – <strong>%(PAYMENTS_RECEIVER)s</strong>;\n"
-"</li>\n"
-"<li> В графе «цель перевода» отметить «материальная помощь». </li>\n"
-"</ul>\n"
-"</li>\n"
-"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
-"<li> Внести сумму перевода и сумму комиссии в соответствии с тарифами "
-"системы. </li>\n"
-"</ol>\n"
-"<strong> Не забудьте получить у оператора контрольный номер перевода - номер "
-"транзакции. </strong>\n"
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:140
+#: django-gc-shared/payments/templates/js/my/payments_mobile.html:233
+msgid "Exchange rates"
+msgstr "Обменный курс"
 
-#, python-format
-msgid ""
-"\n"
-"    <ol class=\"offset-bottom-15\">\n"
-"        <li>\n"
-"            In any %(ps)s office fill in the blank for the transaction "
-"specifying the following data:\n"
-"            <ul>\n"
-"                <li> The receiver of transfer: <strong>%(PAYMENTS_RECEIVER)s</"
-"strong>\n"
-"                    (It is necessary to fill in that field using Capital "
-"Latin letters); </li>\n"
-"                <li> Country of the transfer receiver: Russia; </li>\n"
-"                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
-"            </ul>\n"
-"        </li>\n"
-"        <li> Show your ID;</li>\n"
-"        <li> Put in the sum in cash desk. </li>\n"
-"        <li> Take copy of the blank with 10-figured control number of the "
-"money transfer; </li>\n"
-"    </ol>\n"
-msgstr ""
-"\n"
-"<ol class=\"offset-bottom-15\">\n"
-"<li>\n"
-"В любом пункте обслуживания %(ps)s, заполните Бланк для отправки перевода, "
-"указывая следующие данные:\n"
-"<ul>\n"
-"<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong> (Данное поле "
-"необходимо заполнять заглавными латинскими буквами); </li>\n"
-"<li> Страна направления перевода: Россия; </li>\n"
-"<li> Город направления перевода: Санкт-Петербург. </li>\n"
-"</ul>\n"
-"</li>\n"
-"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
-"<li> Внесите сумму в кассу. </li>\n"
-"</ol>\n"
-"<strong> Не забудьте получить у сотрудника отделения копию бланка с 10-"
-"значным контрольным номером денежного перевода и ответ на секретный вопрос. </"
-"strong>\n"
-
-#, python-format
-msgid ""
-"\n"
-"    <ol class=\"offset-bottom-15\">\n"
-"        <li>\n"
-"            In any MIGOM’s bank-partner branch fill in the form to make the "
-"transaction. While filling in the blank it is necessary to sign the following "
-"data:\n"
-"            <ul>\n"
-"                <li> Transfer recipient: <strong>%(PAYMENTS_RECEIVER)s</"
-"strong>; </li>\n"
-"                <li> Recipient's country: Russia; </li>\n"
-"                <li> Recipient's city: Saint-Petersburg. </li>\n"
-"            </ul>\n"
-"        </li>\n"
-"        <li> Show your ID; </li>\n"
-"        <li> Put in the sum in cash desk; </li>\n"
-"        <li> Take the transaction number consisting of 9 figures from the "
-"bank manager; </li>\n"
-"    </ol>\n"
-msgstr ""
-"\n"
-"<ol class=\"offset-bottom-15\">\n"
-"<li>\n"
-"В любом отделении банка-партнера MIGOM заполните Бланк для отправки перевода. "
-"При заполнении бланка обязательно укажите следующие данные:\n"
-"<ul>\n"
-"<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong>; </li>\n"
-"<li> Страна направления перевода: Россия; </li>\n"
-"<li> Город направления перевода: Санкт-Петербург. </li>\n"
-"</ul>\n"
-"</li>\n"
-"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
-"<li> </li>\n"
-"<li> Внесите сумму в кассу; </li>\n"
-"<li> После того, как Вы отправили денежный перевод, в личном кабинете "
-"заполните представленную форму, указав все данные.</li>\n"
-"</ol>\n"
-"<strong> Не забудьте получить у сотрудника Банка контрольный номер перевода, "
-"состоящий из 9 цифр. </strong>\n"
-
-#, python-format
-msgid ""
-"\n"
-"    <ol class=\"offset-bottom-15\">\n"
-"        <li>\n"
-"            In any MoneyGram office fill in the blank for the transaction "
-"specifying the following data:\n"
-"            <ul>\n"
-"                <li> The receiver of transfer: <strong>%(PAYMENTS_RECEIVER)s</"
-"strong>\n"
-"                    (It is necessary to fill in that field using Capital "
-"Latin letters); </li>\n"
-"                <li> Country of the transfer receiver: Russia; </li>\n"
-"                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
-"            </ul>\n"
-"        </li>\n"
-"        <li> Show your ID; </li>\n"
-"        <li> Put in the sum in cash desk. </li>\n"
-"        <li> Take copy of the blank with 8-figured referral number of the "
-"money transfer; </li>\n"
-"    </ol>\n"
-msgstr ""
-"\n"
-"<ol class=\"offset-bottom-15\">\n"
-"<li>\n"
-"В любом пункте обслуживания MoneyGram, заполните Бланк для отправки перевода, "
-"указывая следующие данные:\n"
-"<ul>\n"
-"<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong> (Данное поле "
-"необходимо заполнять заглавными латинскими буквами); </li>\n"
-"<li> Страна направления перевода: Россия; </li>\n"
-"<li> Город направления перевода: Санкт-Петербург. </li>\n"
-"</ul>\n"
-"</li>\n"
-"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
-"<li> Внесите сумму в кассу. </li>\n"
-"</ol>\n"
-"<strong> Не забудьте получить у сотрудника отделения копию бланка с 8-значным "
-"номером денежного перевода и ответ на секретный вопрос. </strong>\n"
-
+#: django-gc-shared/payments/templates/payments/descriptions/elecsnet/instructions.html:2
 msgid ""
 "\n"
 "    <ol class=\"offset-bottom-15\">\n"
@@ -264,16 +1530,65 @@ msgstr ""
 "<strong>Обязательно возьмите распечатанное извещение, подтверждающее факт "
 "оплаты.</strong>\n"
 
+#: django-gc-shared/payments/templates/payments/descriptions/fastpost/instructions.html:2
+#, python-format
 msgid ""
 "\n"
 "    <ol class=\"offset-bottom-15\">\n"
-"        <li> On the home page www.handybank.ru go to the \"Enter the system\" "
-"section; </li>\n"
+"        <li>\n"
+"            Fill out an application for the money transfer at any Lider "
+"service location,\n"
+"            providing the following information:\n"
+"            <ul>\n"
+"                <li>\n"
+"                    Your name, date and place of birth, passport "
+"information,\n"
+"                    including the residence address (registration); </li>\n"
+"                <li> Receiver's name - <strong>%(PAYMENTS_RECEIVER)s</"
+"strong>; </li>\n"
+"                <li> In the field \"Purpose of transfer\" choose \"Financial "
+"aid\". </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show the identification document; </li>\n"
+"        <li> Make a payment and commission fee according to system’s "
+"tariffs. </li>\n"
+"        <li><strong> Don't forget to get a verification number – transaction "
+"number from the operator. </strong></li>\n"
+"    </ol>\n"
+msgstr ""
+"\n"
+"<ol class=\"offset-bottom-15\">\n"
+"<li>\n"
+"В любом пункте обслуживания Lider заполните Бланк для отправки перевода, "
+"указывая следующие данные:\n"
+"<ul>\n"
+"<li> Свои ФИО, дату, место рождения, паспортные данные, включая адрес места "
+"жительства (регистрации); </li>\n"
+"<li>\n"
+"ФИО получателя перевода – <strong>%(PAYMENTS_RECEIVER)s</strong>;\n"
+"</li>\n"
+"<li> В графе «цель перевода» отметить «материальная помощь». </li>\n"
+"</ul>\n"
+"</li>\n"
+"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
+"<li> Внести сумму перевода и сумму комиссии в соответствии с тарифами "
+"системы. </li>\n"
+"</ol>\n"
+"<strong> Не забудьте получить у оператора контрольный номер перевода - номер "
+"транзакции. </strong>\n"
+
+#: django-gc-shared/payments/templates/payments/descriptions/handybank/instructions.html:2
+msgid ""
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li> On the home page www.handybank.ru go to the \"Enter the system"
+"\" section; </li>\n"
 "        <li> Enter your personal Handy-number and access password; </li>\n"
 "        <li> Choose 'Service payments' section, then – 'Financial services', "
 "then – 'GrandCapital Ltd'; </li>\n"
-"        <li> Choose payment verification method – 'Handy-code' or 'Handy-key' "
-"and execute the transfer; </li>\n"
+"        <li> Choose payment verification method – 'Handy-code' or 'Handy-"
+"key' and execute the transfer; </li>\n"
 "        <li> In a field \"Trading account number\" fill in your login "
 "(trading account number). </li>\n"
 "    </ol>\n"
@@ -298,606 +1613,143 @@ msgstr ""
 "<strong>После совершения платежа, подтвердите свой платеж для финансового "
 "отдела</strong>\n"
 
+#: django-gc-shared/payments/templates/payments/descriptions/migom/instructions.html:2
 #, python-format
 msgid ""
 "\n"
-"    In order to make a pay-in transaction by <strong>%(ps.name)s</strong> you "
-"should:\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any MIGOM’s bank-partner branch fill in the form to make the "
+"transaction. While filling in the blank it is necessary to sign the "
+"following data:\n"
+"            <ul>\n"
+"                <li> Transfer recipient: <strong>%(PAYMENTS_RECEIVER)s</"
+"strong>; </li>\n"
+"                <li> Recipient's country: Russia; </li>\n"
+"                <li> Recipient's city: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID; </li>\n"
+"        <li> Put in the sum in cash desk; </li>\n"
+"        <li> Take the transaction number consisting of 9 figures from the "
+"bank manager; </li>\n"
+"    </ol>\n"
 msgstr ""
 "\n"
-"Введите средства на счет через систему <strong>%(ps.name)s</strong>:\n"
+"<ol class=\"offset-bottom-15\">\n"
+"<li>\n"
+"В любом отделении банка-партнера MIGOM заполните Бланк для отправки "
+"перевода. При заполнении бланка обязательно укажите следующие данные:\n"
+"<ul>\n"
+"<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong>; </li>\n"
+"<li> Страна направления перевода: Россия; </li>\n"
+"<li> Город направления перевода: Санкт-Петербург. </li>\n"
+"</ul>\n"
+"</li>\n"
+"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
+"<li> </li>\n"
+"<li> Внесите сумму в кассу; </li>\n"
+"<li> После того, как Вы отправили денежный перевод, в личном кабинете "
+"заполните представленную форму, указав все данные.</li>\n"
+"</ol>\n"
+"<strong> Не забудьте получить у сотрудника Банка контрольный номер перевода, "
+"состоящий из 9 цифр. </strong>\n"
 
-msgid "(updating)"
-msgstr "(обновляется)"
-
-msgid ""
-"10-digit verification number for the copy of the form. For example, "
-"555-555-5555"
-msgstr "10-значный контрольный номер к копии бланка. Например, 555-555-5555"
-
-msgid "15 minutes"
-msgstr "15 минут"
-
-msgid "2, Amathountos street, P.O. Box 56868, 3310, Limassol, Cyprus"
-msgstr ""
-"Кипр, Лимассол, ул. Аматунтос д.2, п/я 56868, индекс 3310, Limassol, Cyprus"
-
-msgid "2.5% min $1 max $30"
-msgstr ""
-
-msgid "3 to 5 days"
-msgstr "от 3 до 5 дней"
-
-msgid ""
-"8-digit verification number for the copy of the form. For example, 12345678"
-msgstr "8-значный контрольный номер копии бланка. Например, 12345678"
-
-#, python-brace-format
-msgid ""
-"<a onclick=\"winopen('Requests group', '{url}'); return false;\" href="
-"\"{url}\"><b>Details</b></a>"
-msgstr ""
-"<a onclick=\"winopen('Группа заявок', '{url}'); return false;\" href="
-"\"{url}\"><b>Подробности</b></a>"
-
-msgid ""
-"<b>Please make sure </b> that your name in payment details matches the one in "
-"your account details"
-msgstr ""
-"Обратите внимание на то, что ФИО в реквизитах получателя должно совпадать с "
-"ФИО того, на кого зарегистрирован торговый счет в компании"
-
-msgid ""
-"<strong>Attention!</strong> If you do not have \"verified\" status with QIWI, "
-"please specify amount less than 15000 RUB."
-msgstr ""
-"<strong> Внимание!</strong> Если ваш кошелёк не имеет в QIWI статус "
-"\"проверенного\", не указывайте суммы свыше 15000 рублей."
-
-msgid "Accept all requests which specify new manager"
-msgstr ""
-
+#: django-gc-shared/payments/templates/payments/descriptions/moneygram/instructions.html:2
 #, python-format
-msgid "According to %s fees"
-msgstr "По тарифам %s"
-
 msgid ""
-"According to the deposit request id{r.id}({r.payment_system} {r.amount_money!"
-"s}) on account {r.account} from {r.creation_ts:%Y/%m/%d %H:%M:%S} the funds "
-"haven't been deposited yet Motivation to deposit with Welcome Bonus 500 "
-"(account %d)"
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any MoneyGram office fill in the blank for the transaction "
+"specifying the following data:\n"
+"            <ul>\n"
+"                <li> The receiver of transfer: <strong>"
+"%(PAYMENTS_RECEIVER)s</strong>\n"
+"                    (It is necessary to fill in that field using Capital "
+"Latin letters); </li>\n"
+"                <li> Country of the transfer receiver: Russia; </li>\n"
+"                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID; </li>\n"
+"        <li> Put in the sum in cash desk. </li>\n"
+"        <li> Take copy of the blank with 8-figured referral number of the "
+"money transfer; </li>\n"
+"    </ol>\n"
 msgstr ""
+"\n"
+"<ol class=\"offset-bottom-15\">\n"
+"<li>\n"
+"В любом пункте обслуживания MoneyGram, заполните Бланк для отправки "
+"перевода, указывая следующие данные:\n"
+"<ul>\n"
+"<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong> (Данное "
+"поле необходимо заполнять заглавными латинскими буквами); </li>\n"
+"<li> Страна направления перевода: Россия; </li>\n"
+"<li> Город направления перевода: Санкт-Петербург. </li>\n"
+"</ul>\n"
+"</li>\n"
+"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
+"<li> Внесите сумму в кассу. </li>\n"
+"</ol>\n"
+"<strong> Не забудьте получить у сотрудника отделения копию бланка с 8-"
+"значным номером денежного перевода и ответ на секретный вопрос. </strong>\n"
 
-msgid "Account"
-msgstr "Счет"
-
-msgid "Account ID"
-msgstr "№ аккаунта"
-
-msgid "Account details"
-msgstr "Параметры счёта"
-
-msgid "Account does not exist"
-msgstr "Счет не существует"
-
-msgid "Account no.: 036574004"
-msgstr "Номер счета: 036574004"
-
+#: django-gc-shared/payments/templates/payments/descriptions/westernunion/instructions.html:2
+#, python-format
 msgid ""
-"Account payment is made by the Client within 5 (ﬁve) business days from the "
-"moment it’s posted. For payment, use the full,<br>unabridged payment "
-"description indicated for this account."
+"\n"
+"    <ol class=\"offset-bottom-15\">\n"
+"        <li>\n"
+"            In any %(ps)s office fill in the blank for the transaction "
+"specifying the following data:\n"
+"            <ul>\n"
+"                <li> The receiver of transfer: <strong>"
+"%(PAYMENTS_RECEIVER)s</strong>\n"
+"                    (It is necessary to fill in that field using Capital "
+"Latin letters); </li>\n"
+"                <li> Country of the transfer receiver: Russia; </li>\n"
+"                <li> City of the transfer receiver: Saint-Petersburg. </li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li> Show your ID;</li>\n"
+"        <li> Put in the sum in cash desk. </li>\n"
+"        <li> Take copy of the blank with 10-figured control number of the "
+"money transfer; </li>\n"
+"    </ol>\n"
 msgstr ""
-"Оплата Счета производится Клиентом в течение 5 (пяти) рабочих дней с момента "
-"его выставления. В назначении платежа<br>должно быть полностью, без "
-"сокращений наименование платежа, указанное в настоящем счете."
-
-msgid "Additional info"
-msgstr "Доп. информация"
-
-msgid "Address"
-msgstr "Адрес"
-
-msgid ""
-"After your payment is completed, verify your payment for the financial "
-"department."
-msgstr ""
-"После совершения платежа, подтвердите свой платеж для финансового отдела"
-
-msgid "Agent code"
-msgstr ""
-
-msgid "All accounts data"
-msgstr "Данные всех счетов"
-
-msgid ""
-"Allowed IP-addresses. Separated by spaces. Specify \"*\" to allow any IP. "
-"Subnets can be specified: 192.168.1.0/25"
-msgstr ""
-
-msgid "Amount"
-msgstr "Сумма"
-
-msgid "Amount in accounts' currency"
-msgstr "Сумма в валюте счёта"
-
-#, fuzzy
-msgid "Amount of money to deposit in "
-msgstr "Сумма денег для ввода в RUR, например: 105 или 105.2"
-
-msgid "Amount of money to deposit."
-msgstr "Определите сумму денег для ввода."
-
-msgid "Amount of money to withdraw"
-msgstr "Определите сумму денег для вывода"
-
-msgid "Amount should be above 5 roubles"
-msgstr "Сумма должна быть больше 5 рублей"
-
-msgid "Answer to the question specified while committing the transfer"
-msgstr "Ответ на вопрос, полученный при переводе"
-
-msgid "Answer to the security question"
-msgstr "Ответ на секретный вопрос"
-
-msgid "Approvals needed"
-msgstr "Нужны одобрения"
-
-#, fuzzy
-msgid "Approve withdrawal"
-msgstr "Автоматический вывод"
-
-msgid "Approved"
-msgstr "Одобрено"
-
-msgid "Approved (money withdrawn from account)"
-msgstr "Одобрен (деньги сняты)"
-
-msgid "Assign to"
-msgstr ""
-
-msgid "Attention! Funds withdrawal is only possible for the same currencies"
-msgstr "Внимание! Вывод средств возможен в одной и той же валюте."
-
-msgid ""
-"Attention! Specify amount on your account after deduction of the system's "
-"charge"
-msgstr "Внимание! Укажите сумму за вычетом комиссии системы - сумму к получению"
-
-msgid ""
-"Attention! Specify the amount after deduction of the system's charge on your "
-"account"
-msgstr ""
-"Внимание! Укажите сумму с учетом вычета комиссии системы - сумму к получению"
-
-msgid ""
-"Attention! Your money has not been transferred yet! To confirm the funds "
-"transfer, press the red button"
-msgstr ""
-"Внимание! Ваши средства еще не переведены! Для подтверждения перевода средств "
-"нажмите красную кнопку"
-
-msgid "Author"
-msgstr "Автор"
-
-msgid "Auto"
-msgstr ""
-
-msgid "Automatic payment failed."
-msgstr "Автоматический платеж не прошел."
-
-msgid "Automatically"
-msgstr "Автоматически"
-
-msgid "Awaiting approval (and are possible to withdraw from account)"
-msgstr "Ожидают одобрение (и могут быть выведены со счёта)"
-
-msgid "Back"
-msgstr "Назад"
-
-#, fuzzy
-msgid "Back office"
-msgstr "Найти отделение"
-
-msgid "Balance"
-msgstr "Баланс"
-
-msgid "Balance at the time of request"
-msgstr "Баланс на момент подачи заявки"
-
-msgid "Balance on getting request"
-msgstr "Баланс на момент получения заявки"
-
-msgid "Bank Address"
-msgstr "Адрес банка получателя"
-
-msgid "Bank transfer"
-msgstr "Банковский перевод"
-
-msgid "Bank transfer (EUR)"
-msgstr "Банковский перевод (Евро)"
-
-msgid "Bank transfer (RUR)"
-msgstr "Банковский перевод (Рубли)"
-
-msgid "Bank transfer (USD)"
-msgstr "Банковский перевод (Доллары)"
-
-msgid "Bank_Account"
-msgstr "Номер расчетного счета"
-
-msgid "Beneficiaries Account Number"
-msgstr "Номер счета получателя"
-
-msgid "Beneficiary"
-msgstr "Получатель"
-
-msgid "Beneficiary Bank"
-msgstr "Банк получателя"
-
-msgid "Beneficiary Bank's Address"
-msgstr "Адрес банка получателя"
-
-msgid "Beneficiary Bank's Code"
-msgstr "Код банка получателя"
-
-msgid "Beneficiary address"
-msgstr "Адрес получателя"
-
-msgid "Beneﬁciary’s Account"
-msgstr "Счет"
-
-msgid "Beneﬁciary’s Address"
-msgstr "Адрес получателя"
-
-msgid "Beneﬁciary’s Bank"
-msgstr "Банк получателя"
-
-msgid "Beneﬁciary’s Name"
-msgstr "Наименование получателя"
-
-msgid "Bic"
-msgstr "БИК"
-
-msgid "Bonus details"
-msgstr "Параметры бонусов"
-
-msgid "Bonuses"
-msgstr "Бонусы"
-
-msgid "CEO"
-msgstr "Директор"
-
-msgid "Can be assigned to clients automatically"
-msgstr ""
-
-msgid "Can edit approvals"
-msgstr "Может редатикровать одобрения"
-
-msgid "Can get client through the NEXT button"
-msgstr ""
-
-msgid "Can manage office's clients"
-msgstr ""
-
-msgid "Can view all calls"
-msgstr ""
-
-msgid "Can't get balance"
-msgstr "Не удалось получить баланс"
-
-msgid "Can't operate on a demo account."
-msgstr "Невозмножно совершать операции ввода/вывода на демо-счетах"
-
-#, fuzzy
-msgid "Cancel"
-msgstr "Отменён"
-
-msgid "Canceled"
-msgstr "Отменён"
-
-msgid "Canceled by client"
-msgstr "Отменена клиентом"
-
-msgid "Cancelled"
-msgstr "Отменён"
-
-msgid "Cannot determine the account balance. Try again later or contact support"
-msgstr ""
-"Ошибка при определении баланса счета. Повторите позже, или свяжитесь с "
-"техподдержкой."
-
-msgid "Category"
-msgstr ""
-
-msgid "Change agent code to the office"
-msgstr ""
-
-msgid "Changed at"
-msgstr ""
-
-msgid "Choose currency"
-msgstr "Выберите валюту перевода"
-
-msgid "Choose the reason of withdrawal"
-msgstr "Выберите причину вывода"
-
-msgid "City"
-msgstr "Город"
-
-msgid "Client"
-msgstr "Клиент"
-
-msgid "Client account"
-msgstr "Счет клиента"
-
-msgid "Client data"
-msgstr ""
-
-msgid "Client made payment"
-msgstr "Клиент сделал платёж"
-
-#, fuzzy
-msgid "Client transferred the money"
-msgstr "Деньги зачислены на счёт"
-
-msgid "Client will receive"
-msgstr "Клиент получит"
-
-msgid "Client<br>made<br>payment"
-msgstr "Клиент<br>совершил<br>платёж"
-
-msgid "Clients assignment"
-msgstr ""
-
-msgid "Close"
-msgstr "Закрыть"
-
-msgid "Closed"
-msgstr "Закрыто"
-
-msgid "Closed by"
-msgstr "Закрыто"
-
-msgid "Comission"
-msgstr "Комиссия"
-
-msgid "Comma-separated language codes, e.g. ru,en,zh-cn"
-msgstr ""
-
-msgid "Comment"
-msgstr "Комментарий"
-
-msgid "Commission"
-msgstr "Комиссия"
-
-msgid "Commit payments"
-msgstr "Провести платёж"
-
-#, fuzzy
-msgid "Compliance"
-msgstr "Отменить"
-
+"\n"
+"<ol class=\"offset-bottom-15\">\n"
+"<li>\n"
+"В любом пункте обслуживания %(ps)s, заполните Бланк для отправки перевода, "
+"указывая следующие данные:\n"
+"<ul>\n"
+"<li> Получатель перевода: <strong>%(PAYMENTS_RECEIVER)s</strong> (Данное "
+"поле необходимо заполнять заглавными латинскими буквами); </li>\n"
+"<li> Страна направления перевода: Россия; </li>\n"
+"<li> Город направления перевода: Санкт-Петербург. </li>\n"
+"</ul>\n"
+"</li>\n"
+"<li> Предъявите документ, удостоверяющий Вашу личность; </li>\n"
+"<li> Внесите сумму в кассу. </li>\n"
+"</ol>\n"
+"<strong> Не забудьте получить у сотрудника отделения копию бланка с 10-"
+"значным контрольным номером денежного перевода и ответ на секретный вопрос. "
+"</strong>\n"
+
+#: django-gc-shared/payments/templates/payments/forms/deposit/base.html:32
+#: django-gc-shared/payments/templates/payments/forms/deposit/ecommpay.html:26
+#: django-gc-shared/payments/templates/payments/forms/deposit/naspay.html:26
+#: django-gc-shared/payments/templates/payments/forms/transfer.html:44
+#: django-gc-shared/payments/templates/payments/forms/withdraw/base.html:32
+#: django-gc-shared/payments/templates/payments/forms/withdraw/naspay.html:30
+#: django-gc-shared/payments/templates/payments/forms/withdraw/visa-mastercard.html:30
 msgctxt "button"
 msgid "Continue"
 msgstr "Продолжить"
 
-msgid "Correspondent"
-msgstr "Банк-корреспондент"
-
-msgid "Correspondent Bank's Code"
-msgstr "Код банка-корреспондента"
-
-msgid "Correspondent bank"
-msgstr "Банк-корреспондент"
-
-msgid "Correspondent bank SWIFT code. Enter up to 11 symbols"
-msgstr "SWIFT код банка-корреспондента. Введите до 11 символов"
-
-msgid "Correspondent bank's name"
-msgstr "Название банка-корреспондента. Вводить латиницей"
-
-msgid "Countries/Regions"
-msgstr ""
-
-msgid "Country"
-msgstr "Страна"
-
-msgid "Country of residention of beneficiary"
-msgstr "Страна резиденции получателя"
-
-msgid "Created at"
-msgstr "Создано"
-
-msgid "Creation date"
-msgstr ""
-
-msgid "Creation timestamp"
-msgstr "Время создания"
-
-msgid "Credit_Card_Number"
-msgstr "Номер карты"
-
-msgid "Currency"
-msgstr "Валюта"
-
-msgid "Current balance"
-msgstr "Текущий баланс на счете"
-
-msgid "Current balance on account"
-msgstr "Текущий баланс счёта"
-
-msgid "Current manager"
-msgstr ""
-
-msgid "Customer"
-msgstr "Клиент"
-
-msgid "Data is invalid"
-msgstr "Данные не верны"
-
-msgid "Date"
-msgstr "Дата"
-
-msgid "Date and time of the last client assignment"
-msgstr ""
-
-msgid "Date of transaction"
-msgstr "Дата платежа"
-
-msgid "Day limit"
-msgstr ""
-
-msgid "Dealing room"
-msgstr ""
-
-msgid "Decision"
-msgstr ""
-
-msgid "Decline"
-msgstr "Отклонить"
-
-msgid "Declined"
-msgstr ""
-
-msgid "Declining request"
-msgstr "Отклонение заявки"
-
-msgid "Departments"
-msgstr "Отделы"
-
-msgid "Deposit"
-msgstr "Пополнить"
-
-msgid "Deposit funds"
-msgstr "Ввод средств"
-
-#, python-format
-msgid "Deposit of funds to the account - %(time)s"
-msgstr "Ввод денежных средств на счет – %(time)s"
-
-msgid "Deposit request"
-msgstr "Запрос на ввод средств"
-
-msgid "Deposit requests"
-msgstr "Запросы на ввод средств"
-
-msgid "Deposit stats"
-msgstr "Статистика ввода"
-
-msgid "Deposit systems details"
-msgstr "Системы ввода"
-
-msgid "Deposit systems from IB"
-msgstr "Системы пополнения партнёра"
-
-msgid "Deposit/withdrawal operations are unavailable for this account type."
-msgstr "Ввод/вывод средств недоступен для счетов этого типа."
-
-msgid "Description (Payment Reference)"
-msgstr "Наименование (назначение платежа)"
-
-msgid "Details"
-msgstr "Детали"
-
-msgid "Done"
-msgstr "Выполнен"
-
-msgid "Download requisits"
-msgstr "Получить реквизиты в PDF"
-
-msgid "Due to technical issues service is temporarily unavailable"
-msgstr "По техническим причинам сервис временно недоступен"
-
-msgid "Electronic payment systems"
-msgstr "Электронные платежные системы"
-
-msgid "Empty"
-msgstr "Пусто"
-
-msgid "End of the shift"
-msgstr ""
-
-#, python-format
-msgid "Enter amount more than %s"
-msgstr "Введите сумму больше %s"
-
-msgid "Enter comment or choose one from the list"
-msgstr "Введите комментарий или выберите из списка"
-
-msgid "Enter up to 34 symbols"
-msgstr "Введите до 34 символов"
-
-msgid "Error getting balance"
-msgstr "Ошибка при получении баланса"
-
-#, python-format
-msgid "Euro transfer commission - %(fee)s"
-msgstr "Комиссия при переводе в евро – %(fee)s"
-
-msgid "Example: 5.2"
-msgstr "Например, 5.2"
-
-msgid "Exchange rate at request date"
-msgstr "Обменный курс на момент заявки"
-
-msgid "Exchange rates"
-msgstr "Обменный курс"
-
-msgid "Fill in your first, last and middle name (if any)"
-msgstr "Укажите ваши ФИО"
-
-msgid "Financial dept."
-msgstr "Финансовый департамент"
-
-msgid "Financial operations"
-msgstr "Операции с деньгами"
-
-msgid "First contact with the client"
-msgstr ""
-
-msgid "First name, last name. Please, fill in the data strictly in this order."
-msgstr "Имя, отчество, фамилия. Строго в этой последовательности."
-
-msgid ""
-"First, last and middle name (if any) in latin transcription. Example: Andrei "
-"Ivanovich Denisov"
-msgstr ""
-"Фамилия, имя и отчество (если есть). Вводить латиницей.\n"
-"Например: Denisov Andrei Ivanovich"
-
-msgid "First, last and middle name (if any). Example: Andrei Ivanovich Denisov"
-msgstr "Фамилия, имя и отчество (если есть). Например: Денисов Андрей Иванович"
-
-msgid "Force all the tasks to be set for the whole day"
-msgstr ""
-
-msgid "General"
-msgstr "Основное"
-
-msgid "Group level"
-msgstr "Уровень группы"
-
-msgid "Has access to all clients"
-msgstr ""
-
-msgid ""
-"How much clients per day can be viewed. If not specified, a default value is "
-"used. WARGNING: if you increase this limit make sure that the manager has at "
-"least IP filter enabled"
-msgstr ""
-
-msgid "IB account number"
-msgstr ""
-
-msgid ""
-"If a user registers with the manager's agent code, change it to the office's "
-"agent code"
-msgstr ""
-
-msgid "Image"
-msgstr ""
-
+#: django-gc-shared/payments/templates/payments/forms/deposit/webmoney.html:8
 msgid ""
 "In case there's a problem with automatic transfer, please transfer the money "
 "manually to one of the following purses and send the details of the transfer "
@@ -907,956 +1759,462 @@ msgstr ""
 "перевод вручную на один из следующих кошельков и сообщить данные перевода в "
 "клиентскую поддержку:"
 
-msgid "In need of money"
-msgstr "Нуждаюсь в деньгах"
+#: django-gc-shared/payments/templates/payments/includes/account_data.html:4
+msgid "Current balance on account"
+msgstr "Текущий баланс счёта"
 
-msgid "In queue"
-msgstr "В очереди"
+#: django-gc-shared/payments/templates/payments/includes/account_data.html:9
+msgid "Can't get balance"
+msgstr "Не удалось получить баланс"
 
-msgid "In/Out/Inout/Credit"
-msgstr ""
+#: django-gc-shared/payments/templates/payments/includes/all_accounts_data.html:10
+#: django-gc-shared/payments/templates/payments/includes/payment_data.html:4
+msgid "Deposit"
+msgstr "Пополнить"
 
-msgid "Incorrect IBAN"
-msgstr "Неверный IBAN"
+#: django-gc-shared/payments/templates/payments/includes/all_accounts_data.html:14
+msgid "Withdrawal"
+msgstr "Вывод"
 
-msgid "Incorrect SWIFT code"
-msgstr "Неверный SWIFT-код"
-
-msgid "Info"
-msgstr "Инфо"
-
-msgid "Intermediary Bank’s code"
-msgstr "Код банка-корреспондента"
-
-msgid "Internal comment"
-msgstr "Внутренний комментарий"
-
-msgid "Internal transfer"
-msgstr "Внутренний перевод"
-
-msgid "Invalid payment system name"
-msgstr "Неверная платёжная система"
-
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1086
 msgid "Invoice"
 msgstr "Счёт"
 
-msgid "Is accepted"
-msgstr "Принят"
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1087
+msgid "Customer"
+msgstr "Клиент"
 
-msgid "Is active"
-msgstr ""
-
-msgid "Is committed"
-msgstr "Оплачен"
-
-msgid "Is payed"
-msgstr "Оплачено ли"
-
-msgid "Is ready for payout"
-msgstr "Готово к выплате"
-
-msgid "It is too late to cancel this request"
-msgstr "Эту заявку отменить уже нельзя"
-
-#, fuzzy
-msgid "Last transaction id"
-msgstr "Создать транзакцию"
-
-#, fuzzy
-msgid "Last transaction id on this account"
-msgstr "Недостаточно средств на счете"
-
-msgid "Left"
-msgstr "Осталось"
-
-msgid "Link to payment process"
-msgstr ""
-
-msgid "Loading account data"
-msgstr "Загрузка данных счёта"
-
-msgid "Loading payment data"
-msgstr "Загрузка данных платежей"
-
-msgid "Make"
-msgstr "Создать"
-
-msgid "Make transaction"
-msgstr "Создать транзакцию"
-
-msgid "Manager"
-msgstr "Менеджер"
-
-msgid "Manager reassign request"
-msgstr ""
-
-msgid "Manager reassign requests"
-msgstr ""
-
-msgid "Manager will receive a task in the CRM"
-msgstr "Менеджер получит задачу в CRM"
-
-msgid "Manager's comment is shown to client"
-msgstr "Комментарий менеджера виден клиенту"
-
-msgid "Managers"
-msgstr ""
-
-msgid "Manual transaction"
-msgstr "Ручная транзакция"
-
-msgid "Manual transactions"
-msgstr "Ручные транзакции"
-
-msgid "Mark as failed"
-msgstr "Отметить как неудачный"
-
-#, fuzzy
-msgid "Max commision"
-msgstr "комиссия"
-
-msgid "Max deposit per day"
-msgstr "Макс. сумма в сутки"
-
-msgid "Max deposit per month"
-msgstr "Макс. сумма в месяц"
-
-msgid "Max one-time deposit"
-msgstr "Макс. разовый платеж"
-
-msgid "Max transactions per day"
-msgstr "Макс. транзакций в день"
-
-#, python-format
-msgid ""
-"Maximal amount of money you can withdraw for a chosen account is "
-"%(limit_value)s%(currency)s "
-msgstr ""
-"Максимальное кол-во средств, которое вы можете вывести с этого счета, равно "
-"%(limit_value)s %(currency)s "
-
-#, python-format
-msgid "Maximal sum of withdrawal - %(max_amount)s"
-msgstr "Максимальная сумма снятия – %(max_amount)s"
-
-msgid "Maximum amount"
-msgstr ""
-
-#, fuzzy
-msgid "Min commision"
-msgstr "комиссия"
-
-#, python-format
-msgid ""
-"Minimal amount of money you can withdraw with this payment system is "
-"%(limit_value)s%(currency)s"
-msgstr ""
-"Минимальное кол-во средств, которое вы можете вывести с помощью этой "
-"платежной системы, равно %(limit_value)s %(currency)s"
-
-#, python-format
-msgid "Minimal sum of deposit - %(min_amount)s"
-msgstr "Минимальная сумма пополнения – %(min_amount)s"
-
-#, python-format
-msgid "Minimal sum of withdrawal - %(min_amount)s"
-msgstr "Минимальная сумма снятия – %(min_amount)s"
-
-#, fuzzy
-msgid "Minimum amount"
-msgstr "Пожалуйста, введите корректную сумму"
-
-#, python-format
-msgid "Minimum deposit amount is %(amount)s %(currency)s"
-msgstr "Минимальная сумма пополнения %(amount)s %(currency)s"
-
-msgid "Mobile phone"
-msgstr "Мобильный телефон"
-
-msgid "Money Transfer Control Number (MTCN)"
-msgstr "Контрольный номер перевода (MTCN)"
-
-#, fuzzy
-msgid "Money deposited to trading platform"
-msgstr "Да (зачислить на счёт)"
-
-msgid "Money sending"
-msgstr "Деньги отправляются"
-
-msgid "Money transferred to account"
-msgstr "Деньги зачислены на счёт"
-
-msgid "Money waiting"
-msgstr "Ожидается поступление денег"
-
-msgid "Money<br>deposited<br>to account"
-msgstr "Деньги<br>зачислены<br>на счёт"
-
-msgid "Money<br>paid out<br>to client"
-msgstr "Деньги<br>выплачены<br>клиенту"
-
-msgid "Money<br>withdraw<br>from account"
-msgstr "Деньги<br>сняты<br>со счёта"
-
-msgid "MoneyGram"
-msgstr "MoneyGram"
-
-#, python-format
-msgid "Motivate to deposit Welcome Bonus 500 (account %d)"
-msgstr ""
-
-msgid "My attention"
-msgstr "Необходимо моё внимание"
-
-msgid "NEXT button"
-msgstr ""
-
-msgid "Name"
-msgstr "Ваше полное имя"
-
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1088
 msgctxt "invoice-full-name"
 msgid "Name"
 msgstr "Ф. И. О."
 
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1096
+msgid "Description (Payment Reference)"
+msgstr "Наименование (назначение платежа)"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1097
+msgid "Price"
+msgstr ""
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1098
+msgid "Total Amount"
+msgstr "Итого"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1105
+msgid "Wiring Details"
+msgstr "Реквизиты для перечисления"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1111
+msgid "Beneﬁciary’s Name"
+msgstr "Наименование получателя"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1117
+msgid "Beneﬁciary’s Bank"
+msgstr "Банк получателя"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1123
+msgid "SWIFT Code"
+msgstr "SWIFT-код"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1131
+msgid "Beneﬁciary’s Address"
+msgstr "Адрес получателя"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1137
+msgid "Bank Address"
+msgstr "Адрес банка получателя"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1143
+msgid "Beneﬁciary’s Account"
+msgstr "Счет"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1153
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1159
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1161
+msgid "Date"
+msgstr "Дата"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1155
+msgid "CEO"
+msgstr "Директор"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1158
+msgid "Сustomer"
+msgstr "Клиент"
+
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1162
 msgid ""
-"Name, surname. You could use capital Latin letters, hyphen and spaces. "
-"Example: ANDREI DENISOV"
-msgstr "Имя, фамилия. Используйте заглавные латинские буквы, а также дефис"
-
-msgid "Names of countries and regions, separated by spaces. In English."
+"Account payment is made by the Client within 5 (ﬁve) business days from the "
+"moment it’s posted. For payment, use the full,<br>unabridged payment "
+"description indicated for this account."
 msgstr ""
+"Оплата Счета производится Клиентом в течение 5 (пяти) рабочих дней с момента "
+"его выставления. В назначении платежа<br>должно быть полностью, без "
+"сокращений наименование платежа, указанное в настоящем счете."
 
-msgid "Needed"
-msgstr "Необходимо"
+#: django-gc-shared/payments/templates/payments/includes/bank_preview.html:1163
+msgid "Client account"
+msgstr "Счет клиента"
 
-msgid "Needs approval"
-msgstr "Необходимо одобрение"
-
-msgid "Needs attention"
-msgstr "Требуется внимание"
-
-msgid "Needs manager's attention"
-msgstr "Требуется внимание менеджера"
-
-#, fuzzy
-msgid "Net account"
-msgstr "Расчетный счет"
-
-msgid "Neteller"
-msgstr ""
-
-msgid "New"
-msgstr ""
-
+#: django-gc-shared/payments/templates/payments/includes/bonuses.html:14
 msgid "No bonuses"
 msgstr "Бонусов нет"
 
+#: django-gc-shared/payments/templates/payments/includes/documents.html:7
 msgid "No documents"
 msgstr "Документов нет"
 
-msgid "No pending requests"
-msgstr "Нет новых заявок"
+#: django-gc-shared/payments/templates/payments/includes/payment_data.html:4
+msgid "System"
+msgstr "Система"
 
-msgid "No such account"
-msgstr "Нет такого счёта"
+#: django-gc-shared/payments/templates/payments/includes/payment_data.html:4
+msgid "Ratio"
+msgstr "Отношение"
 
-msgid "Not enough funds on account"
-msgstr "На счёте недостаточно средств"
+#: django-gc-shared/payments/templates/payments/includes/profile_data.html:4
+msgid "Username"
+msgstr "Имя пользователя"
 
-msgid "Not satisfied with the service"
-msgstr "Не устраивает сервис"
+#: django-gc-shared/payments/templates/payments/includes/profile_data.html:6
+msgid "Surname"
+msgstr "Фамилия"
 
-msgid "Not valid bank account"
-msgstr "Неверный номер счета"
+#: django-gc-shared/payments/templates/payments/includes/profile_data.html:7
+msgid "Mobile phone"
+msgstr "Мобильный телефон"
 
-msgid "Not yet"
-msgstr "Ещё нет"
-
-msgid "Number of In/Out operations"
-msgstr "Кол-во операций ввода/вывода"
-
-msgid "Number of closed trades"
-msgstr "Кол-во закрытых позиций"
-
-msgid "Office"
-msgstr ""
-
-msgid "Office head"
-msgstr ""
-
-msgid "On vacation"
-msgstr ""
-
-msgid "On vacation until"
-msgstr ""
-
-msgid "Only for transfers from the U.S."
-msgstr "Только для переводов из США"
-
-msgid "Only uppercase latin letters and space are allowed"
-msgstr "Разрешены только заглавные латинские буквы и пробел"
-
-msgid "Open"
-msgstr "Открыто"
-
-msgid "Other reasons"
-msgstr "Другое"
-
-msgid "Paid out"
-msgstr "Выплачено"
-
-msgid "Parameters"
-msgstr "Параметры"
-
-msgid "Partnership dept."
-msgstr ""
-
-msgid "Passport data"
-msgstr "Паспортные данные"
-
-msgid "Passport_Data"
-msgstr "Паспортные данные"
-
-msgid "Paying out"
-msgstr "Выплачивается"
-
-msgid "Paying out to client"
-msgstr "Выплачивается клиенту"
-
-msgid "Payment Details"
-msgstr "Назначение платежа"
-
-#, fuzzy
-msgid "Payment Reference"
-msgstr "Пластиковые карты"
-
-#, fuzzy
-msgid "Payment categories"
-msgstr "Пластиковые карты"
-
-#, fuzzy
-msgid "Payment category"
-msgstr "Пластиковые карты"
-
-#, fuzzy
-msgid "Payment committed"
-msgstr "Платёж проведён"
-
-msgid "Payment data"
-msgstr "Данные платежа"
-
-msgid "Payment details"
-msgstr "Параметры платежа"
-
-#, fuzzy
-msgid "Payment method"
-msgstr "Платёж проведён"
-
-#, fuzzy
-msgid "Payment methods"
-msgstr "Назначение платежа"
-
-msgid "Payment system"
-msgstr "Платежная система"
-
-msgctxt "deposit"
-msgid "Payment system"
-msgstr "Способ пополнения"
-
+#: django-gc-shared/payments/templates/payments/instructions/mixplat.html:3
+#: django-gc-shared/payments/templates/payments/instructions/qiwi.html:3
+#: django-gc-shared/payments/templates/payments/instructions/webmoney.html:3
 msgctxt "redirect_button"
 msgid "Payment system"
 msgstr "Платежная система"
 
-msgctxt "withdraw"
-msgid "Payment system"
-msgstr "Способ вывода средств"
-
-#, fuzzy
-msgid "Payment system image"
-msgstr "Платежная система"
-
-msgid "Payment system not found"
-msgstr "Платежная система не найдена"
-
-msgid "Payment system<br>(clickable)"
-msgstr "Платежная система<br>(кликабельно)"
-
-msgid "Payment systems"
-msgstr "Платежные системы"
-
-#, fuzzy
-msgid "Payment type"
-msgstr "Платежная система"
-
-msgid "Payment_Details"
-msgstr "Назначение платежа"
-
+#: django-gc-shared/payments/templates/payments/instructions/webmoney.html:7
 msgid ""
-"Payments from your country may be restricted, in case your payment fails, see "
-"the instructions <a href='/faq/#/SKRILL'>here</a>"
+"Please transfer the money to one of the following purses and send the "
+"details of the transfer to our support department"
 msgstr ""
-"Платежи из вашей страны могут быть ограничены, в случае если платёж не "
-"пройдёт воспользуйтесь <a href='/faq/#/SKRILL'>инструкцией</a>"
+"Переведите деньги на один из указанных кошельков и сообщите данные перевода "
+"в клиентскую поддержку"
 
-msgid "Percent"
-msgstr "Процент"
-
-msgid "Permissions"
-msgstr ""
-
-msgid "Please choose payment system"
-msgstr "Выберите платёжную систему"
-
-msgid "Please fill out the form to request deposit of funds"
-msgstr "После заполнения формы Вы сформируете заявку на ввод средств."
-
-msgid "Please fill out the form to request withdrawal of funds"
-msgstr "После заполнения формы Вы сформируете заявку на вывод средств."
-
-msgid "Please specify the address specified in transfer"
-msgstr "Укажите адрес, указанный при переводе"
-
-msgid "Please specify the city specified in transfer"
-msgstr "Укажите город, указанный при переводе"
-
-msgid "Please specify the country specified in transfer"
-msgstr "Укажите страну, указанную при переводе"
-
-msgid "Please specify the date the transfer was committed"
-msgstr "Укажите дату совершения платежа"
-
-msgid ""
-"Please transfer the money to one of the following purses and send the details "
-"of the transfer to our support department"
-msgstr ""
-"Переведите деньги на один из указанных кошельков и сообщите данные перевода в "
-"клиентскую поддержку"
-
-msgid "Please verify the details:"
-msgstr "Внимательно проверьте данные:"
-
-msgid ""
-"Please withdraw funds using the system which you used for deposit, or using "
-"wire transfer"
-msgstr ""
-
-msgid "Press the button to go to the payment system"
-msgstr "Нажмите кнопку для перехода в платежную систему"
-
-msgid "Previous manager"
-msgstr ""
-
-msgid "Price"
-msgstr ""
-
-msgid "Print requisits"
-msgstr "Распечатать реквизиты"
-
-msgid "Priority"
-msgstr ""
-
-#, python-brace-format
-msgid "Process chat request received on {0}"
-msgstr ""
-
-msgid "Processed"
-msgstr ""
-
-msgid "Processing"
-msgstr "В обработке"
-
-msgid "Processing fee"
-msgstr "Комиссия"
-
-msgid "Processing stage"
-msgstr "Этап обработки"
-
-#, fuzzy
-msgid "Processing times"
-msgstr "Этап обработки"
-
-msgid "Profile data"
-msgstr "Данные профиля"
-
-msgid "Profit"
-msgstr "Прибыль"
-
-msgid "Profit per deposit"
-msgstr "Профит на депозит"
-
-msgid "Public comment"
-msgstr "Публичный комментарий"
-
-msgid "Purse"
-msgstr "Кошелек"
-
-msgid "Purse (account)"
-msgstr "Кошелёк"
-
-msgid "Qiwi"
-msgstr "Qiwi"
-
-msgid "Ratio"
-msgstr "Отношение"
-
-msgid "Ready for payout"
-msgstr "Готово к выплате"
-
-msgid "Reason"
-msgstr "Причина"
-
-msgid "Reason of withdrawal"
-msgstr "Причина вывода"
-
-msgid "Receiver"
-msgstr "Получатель"
-
-msgid "Referral number"
-msgstr ""
-
-msgid "Rejection reason"
-msgstr ""
-
-msgid "Relative profit"
-msgstr "Относительная прибыль"
-
-msgid "Request"
-msgstr "Заявка"
-
-msgid "Request author"
-msgstr ""
-
-msgid "Request details"
-msgstr "Параметры заявки"
-
-msgid "Request is rejected by client"
-msgstr "Заявка отклонена по просьбе клиента"
-
-msgid "Request successfuly canceled"
-msgstr "Заявка успешна отменена"
-
-msgid "Requested manager"
-msgstr ""
-
-msgid "Requests group"
-msgstr "Группы заявок на вывод"
-
-msgid "Requests list"
-msgstr "Список заявок"
-
-msgid "Requisit"
-msgstr "Выберите реквизит"
-
-msgid "Resolving"
-msgstr "В обработке"
-
-msgid "Return to your acc"
-msgstr "Вернуться в ваш профиль"
-
+#: django-gc-shared/payments/templates/payments/instructions/webmoney.html:21
 msgid "Return to your account"
 msgstr "Вернуться в личный кабинет"
 
-#, python-format
-msgid "Rouble transfer commission - %(fee)s"
-msgstr "Комиссия при рублевом переводе – %(fee)s"
+#: django-gc-shared/payments/views.py:67
+msgid "Automatic payment failed."
+msgstr "Автоматический платеж не прошел."
 
-msgid "SWIFT Code"
-msgstr "SWIFT-код"
+#: django-gc-shared/payments/views.py:367
+msgid "No pending requests"
+msgstr "Нет новых заявок"
 
-msgid "SWIFT code. Enter up to 11 symbols"
-msgstr "SWIFT код. Введите до 11 символов"
+#~ msgid ""
+#~ "\n"
+#~ "    In order to make a pay-in transaction by <strong>%(ps.name)s</strong> "
+#~ "you should:\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Введите средства на счет через систему <strong>%(ps.name)s</strong>:\n"
 
-msgid "Save"
-msgstr "Сохранить"
+#~ msgid "(updating)"
+#~ msgstr "(обновляется)"
 
-msgid "Secure ID"
-msgstr "Защитный идентификатор"
+#~ msgid "Account ID"
+#~ msgstr "№ аккаунта"
 
-msgid "Select one of your accounts"
-msgstr "Выберите один из ваших счетов"
+#~ msgid "Account details"
+#~ msgstr "Параметры счёта"
 
-msgid "Select one of your payment details"
-msgstr "Выберите один из ваших реквизитов"
+#~ msgid "Account no.: 036574004"
+#~ msgstr "Номер счета: 036574004"
 
-msgid "Sender"
-msgstr "Sender (Отправитель)"
+#~ msgid "Additional info"
+#~ msgstr "Доп. информация"
 
-msgid "Set tasks for the whole day"
-msgstr ""
+#~ msgid ""
+#~ "After your payment is completed, verify your payment for the financial "
+#~ "department."
+#~ msgstr ""
+#~ "После совершения платежа, подтвердите свой платеж для финансового отдела"
 
-msgid "Shift time"
-msgstr ""
+#~ msgid "All accounts data"
+#~ msgstr "Данные всех счетов"
 
-msgid "Skrill"
-msgstr ""
+#~ msgid "Amount in accounts' currency"
+#~ msgstr "Сумма в валюте счёта"
 
-msgid "Start of the shift"
-msgstr ""
+#~ msgid "Approved"
+#~ msgstr "Одобрено"
 
-msgid "State"
-msgstr "Штат"
+#~ msgid "Approved (money withdrawn from account)"
+#~ msgstr "Одобрен (деньги сняты)"
 
-msgid "Status"
-msgstr "Статус"
+#~ msgid ""
+#~ "Attention! Specify amount on your account after deduction of the system's "
+#~ "charge"
+#~ msgstr ""
+#~ "Внимание! Укажите сумму за вычетом комиссии системы - сумму к получению"
 
-msgid "Step 1. Transaction details"
-msgstr "Шаг 1. Детали перевода"
+#~ msgid "Balance at the time of request"
+#~ msgstr "Баланс на момент подачи заявки"
 
-msgid "Step 2. Verification"
-msgstr "Шаг 2. Подтверждение данных"
+#~ msgid "Bonus details"
+#~ msgstr "Параметры бонусов"
 
-msgid "Step 3. Payment"
-msgstr "Шаг 3. Оплата перевода"
-
-msgid "Substitute for the vacation"
-msgstr ""
-
-msgid "Sum"
-msgstr "Сумма"
-
-msgid "Surname"
-msgstr "Фамилия"
-
-msgid "System"
-msgstr "Система"
-
-msgid "Tasks for"
-msgstr "Задачи для"
-
-msgid "Telephony"
-msgstr ""
-
-msgid "The city in which you receive transfer"
-msgstr "Город, в котором будет получен перевод"
-
-msgid "The city where you live"
-msgstr "Город, где вы живете"
-
-msgid "The country in which you receive transfer"
-msgstr "Страна, в которой будет получен перевод"
-
-msgid "The country where you live"
-msgstr "Страна, где вы живете"
-
-msgid ""
-"This request can't be declined because it is already withdrawn from trading "
-"account."
-msgstr "Эту заявку нельзя отменить потому что она уже снята со счёта."
-
-msgid "This request is already processed"
-msgstr "Эта заявка уже обработана."
-
-msgid "Time left. Date of the first request:"
-msgstr "Осталось времени. Дата первой заявки:"
-
-msgid "Tin"
-msgstr "ИНН"
-
-msgid "Top UP of the trading AC"
-msgstr "Пополнение торгового счета"
-
-msgid "Total Amount"
-msgstr "Итого"
-
-msgid "Total profit"
-msgstr "Общий профит"
-
-msgid "Total volume"
-msgstr "Общиё объём"
-
-msgid "Trade"
-msgstr "Сделка"
-
-msgid "Trade history"
-msgstr "История сделок"
+#~ msgid "Bonuses"
+#~ msgstr "Бонусы"
 
 #, fuzzy
-msgid "Trading Account ID"
-msgstr "№ аккаунта"
+#~ msgid "Cancel"
+#~ msgstr "Отменён"
+
+#~ msgid "Cancelled"
+#~ msgstr "Отменён"
+
+#~ msgid "Client"
+#~ msgstr "Клиент"
+
+#~ msgid "Client made payment"
+#~ msgstr "Клиент сделал платёж"
+
+#~ msgid "Client will receive"
+#~ msgstr "Клиент получит"
+
+#~ msgid "Close"
+#~ msgstr "Закрыть"
+
+#~ msgid "Current balance"
+#~ msgstr "Текущий баланс на счете"
+
+#~ msgid "Decline"
+#~ msgstr "Отклонить"
+
+#~ msgid "Declining request"
+#~ msgstr "Отклонение заявки"
+
+#~ msgid "Deposit stats"
+#~ msgstr "Статистика ввода"
+
+#~ msgid "Deposit systems details"
+#~ msgstr "Системы ввода"
+
+#~ msgid "Deposit systems from IB"
+#~ msgstr "Системы пополнения партнёра"
+
+#~ msgid "Enter comment or choose one from the list"
+#~ msgstr "Введите комментарий или выберите из списка"
+
+#~ msgid "Group level"
+#~ msgstr "Уровень группы"
+
+#~ msgid "In queue"
+#~ msgstr "В очереди"
 
 #, fuzzy
-msgid "Transaction id"
-msgstr "Тип транзакции"
+#~ msgid "Last transaction id"
+#~ msgstr "Создать транзакцию"
 
-msgid "Transaction type"
-msgstr "Тип транзакции"
+#~ msgid "Loading account data"
+#~ msgstr "Загрузка данных счёта"
 
-msgid "Transfer funds"
-msgstr "Перевести средства"
+#~ msgid "Make"
+#~ msgstr "Создать"
 
-msgid "Type"
-msgstr ""
+#~ msgid "Make transaction"
+#~ msgstr "Создать транзакцию"
 
-#, python-format
-msgid "USD transfer commission - %(fee)s"
-msgstr "Комиссия при переводе в долларах – %(fee)s"
+#~ msgid "Manager"
+#~ msgstr "Менеджер"
 
-msgid "Unknown type of account field"
-msgstr "Неизвестный тип аккаунта"
+#~ msgid "Max deposit per day"
+#~ msgstr "Макс. сумма в сутки"
 
-msgid "Updated at"
-msgstr "Обновлено"
+#~ msgid "Max deposit per month"
+#~ msgstr "Макс. сумма в месяц"
 
-msgid "Uploaded documents"
-msgstr "Загруженные документы"
+#~ msgid "Max one-time deposit"
+#~ msgstr "Макс. разовый платеж"
 
-msgid "Username"
-msgstr "Имя пользователя"
+#~ msgid "Max transactions per day"
+#~ msgstr "Макс. транзакций в день"
 
-msgid "Verification"
-msgstr "Проверка"
+#~ msgid "Money transferred to account"
+#~ msgstr "Деньги зачислены на счёт"
 
-msgid "Verify calls"
-msgstr ""
+#~ msgid "Not valid bank account"
+#~ msgstr "Неверный номер счета"
 
-msgid "Verify that the manager calls the clients they get"
-msgstr ""
+#~ msgid "Not yet"
+#~ msgstr "Ещё нет"
 
-msgid "View account history"
-msgstr "История счёта"
+#~ msgid "Number of In/Out operations"
+#~ msgstr "Кол-во операций ввода/вывода"
 
-msgid "Waiting"
-msgstr "Ожидает"
+#~ msgid "Number of closed trades"
+#~ msgstr "Кол-во закрытых позиций"
 
-msgid "Western Union"
-msgstr "Western Union"
+#~ msgid "Paid out"
+#~ msgstr "Выплачено"
 
-msgid "What"
-msgstr "Что"
-
-msgid "When this field changes, client gets a notification"
-msgstr "Когда это поле меняется клиент получает уведомление"
-
-msgid "Who (IP)"
-msgstr "Кто (IP)"
-
-msgid "Who closed the request"
-msgstr "Кто закрыл заявку"
-
-msgid "Who made decision"
-msgstr "Автор решения"
-
-msgid "Will be credited"
-msgstr "Будет начислено"
-
-msgid "Wiring Details"
-msgstr "Реквизиты для перечисления"
-
-msgid "Withdraw Requests Group"
-msgstr "Группы заявок на вывод"
-
-msgid "Withdraw funds"
-msgstr "Вывод средств"
-
-msgid "Withdraw request"
-msgstr "Запрос на вывод средств"
-
-msgid "Withdraw request group"
-msgstr "Группа заявок на вывод"
-
-msgid "Withdraw request groups"
-msgstr "Группы заявок на вывод"
-
-msgid "Withdraw requests"
-msgstr "Запросы на вывод средств"
-
-msgid "Withdraw the funds I earn"
-msgstr "Вывожу заработаные средства"
-
-msgid "Withdrawal"
-msgstr "Вывод"
-
-#, python-format
-msgid "Withdrawal of funds from the account - %(time)s"
-msgstr "Вывод денежных средств со счета – %(time)s"
-
-msgid "Withdrawal reason"
-msgstr "Причина вывода"
-
-msgid "Withdrawal requests for account"
-msgstr "Заявки на вывод со счёта"
-
-msgid "Withdrawal sum"
-msgstr "Сумма вывода"
-
-msgid "Withdrawn from acc"
-msgstr "Снято со счёта"
+#~ msgid "Parameters"
+#~ msgstr "Параметры"
 
 #, fuzzy
-msgid "Within day"
-msgstr "Вывод"
+#~ msgid "Payment committed"
+#~ msgstr "Платёж проведён"
 
-msgid "Works with languages"
-msgstr ""
+#~ msgid "Payment data"
+#~ msgstr "Данные платежа"
 
-msgid "Works with the clients of the office"
-msgstr ""
+#~ msgid "Payment details"
+#~ msgstr "Параметры платежа"
 
-msgid "Works with the office"
-msgstr ""
+#~ msgid "Percent"
+#~ msgstr "Процент"
 
-#, python-format
-msgid "Wrong %s purse number."
-msgstr "Неверный номер кошелька %s"
+#~ msgid "Press the button to go to the payment system"
+#~ msgstr "Нажмите кнопку для перехода в платежную систему"
 
-msgid "Wrong amount"
-msgstr "Пожалуйста, введите корректную сумму"
+#~ msgid "Processing fee"
+#~ msgstr "Комиссия"
 
-msgid "Yandex.Money"
-msgstr "Яндекс.Деньги"
+#~ msgid "Profile data"
+#~ msgstr "Данные профиля"
 
-msgid "Yes"
-msgstr "Да"
+#~ msgid "Profit"
+#~ msgstr "Прибыль"
 
-msgid "Yes (deposit to trading platform)"
-msgstr "Да (зачислить на счёт)"
+#~ msgid "Profit per deposit"
+#~ msgstr "Профит на депозит"
 
-msgid "Yes (withdraw from trading platform)"
-msgstr "Да (вывести со счёта)"
+#~ msgid "Purse (account)"
+#~ msgstr "Кошелёк"
 
-msgid "You"
-msgstr "Вы"
+#~ msgid "Ready for payout"
+#~ msgstr "Готово к выплате"
 
-msgid ""
-"You can't change the name here, if you need to change your profile name, "
-"please contact support"
-msgstr ""
-"Вы не можете изменять свое имя здесь, если вам необходимо сменить имя в "
-"профайле пожалуйста обратитесь в службу поддержки"
+#~ msgid "Reason"
+#~ msgstr "Причина"
 
-msgid "You can't withdraw funds from this account"
-msgstr "Вы не можете вывести средства с этого счета"
+#~ msgid "Relative profit"
+#~ msgstr "Относительная прибыль"
 
-#, python-format
-msgid "You cannot withdraw more than %(amount)s in one request"
-msgstr "Нельзя вывести больше %(amount)s за один запрос"
+#~ msgid "Request"
+#~ msgstr "Заявка"
 
-#, python-format
-msgid "You cant deposit less than %(amount)s with %(system)s"
-msgstr "Нельзя ввести меньше %(amount)s через %(system)s"
+#~ msgid "Request details"
+#~ msgstr "Параметры заявки"
 
-#, python-format
-msgid "You cant deposit more than %(amount)s with %(system)s"
-msgstr "Нельзя ввести больше %(amount)s через %(system)s"
+#~ msgid "Requests group"
+#~ msgstr "Группы заявок на вывод"
 
-#, python-format
-msgid ""
-"You should <a href=\"%(link)s\" target=\"_blank\">complete the verification "
-"process</a> before withdrawing from account %(account)s"
-msgstr ""
-"Вы должны <a href=\"%(link)s\" target=\"_blank\">завершить процесс "
-"верификации</a> прежде чем выводить со счёта %(account)s"
+#~ msgid "Requests list"
+#~ msgstr "Список заявок"
 
-msgid "You should provide operation type"
-msgstr "Вы должны указать тип операции"
+#~ msgid "Resolving"
+#~ msgstr "В обработке"
 
-#, python-format
-msgid "Your %(payment_system)s purse, e.g. %(example)s"
-msgstr ""
-"Ваша учетная запись в платежной системе \"%(payment_system)s\", например "
-"%(example)s"
+#~ msgid "Return to your acc"
+#~ msgstr "Вернуться в ваш профиль"
 
-msgid ""
-"Your Neteller's 12-digit Account ID or email address that is associated with "
-"their NETELLER account"
-msgstr ""
-"Ваш NETELLER-идентификатор или адрес почты, привязанный к учетной записи "
-"NETELLER"
+#~ msgid "Save"
+#~ msgstr "Сохранить"
 
-msgid "Your Neteller's 6-digit Secure ID"
-msgstr "Ваш шестизначный защитный идентификатор (Secure ID)"
+#~ msgid "Tasks for"
+#~ msgstr "Задачи для"
 
-msgid "Your access level doesn't allow you to process payments"
-msgstr "Ваш уровень доступа не позволяет вам проводить платежи"
+#~ msgid ""
+#~ "This request can't be declined because it is already withdrawn from "
+#~ "trading account."
+#~ msgstr "Эту заявку нельзя отменить потому что она уже снята со счёта."
 
-msgid "Your account didn't have enough funds when the request was processed."
-msgstr "На момент обработки заявки на Вашем счёте было недостаточно средств."
+#~ msgid "This request is already processed"
+#~ msgstr "Эта заявка уже обработана."
 
-msgid "Your bank's name"
-msgstr "Название банка. Вводить латиницей"
+#~ msgid "Time left. Date of the first request:"
+#~ msgstr "Осталось времени. Дата первой заявки:"
 
-msgid "Your city and street address"
-msgstr "Город, улица, дом и квартира. Вводить латиницей"
+#~ msgid "Total profit"
+#~ msgstr "Общий профит"
 
-msgid "Your comment"
-msgstr "Ваш комментарий"
+#~ msgid "Total volume"
+#~ msgstr "Общиё объём"
 
-msgid "Your comment, if needed"
-msgstr "Ваш комментарий, если нужно"
+#~ msgid "Trade history"
+#~ msgstr "История сделок"
 
-msgid "Your country is not using IBAN codes"
-msgstr "В вашей стране не используется IBAN"
+#~ msgid "Uploaded documents"
+#~ msgstr "Загруженные документы"
 
-msgid "Your documents will be checked soon"
-msgstr "Ваши документы скоро будут проверены"
+#~ msgid "View account history"
+#~ msgstr "История счёта"
 
-msgid "Your name"
-msgstr "Ваше полное имя"
+#~ msgid "Waiting"
+#~ msgstr "Ожидает"
 
-msgid "a day"
-msgstr "сутки"
+#~ msgid "What"
+#~ msgstr "Что"
 
-msgid "balance"
-msgstr "баланс"
+#~ msgid "Who (IP)"
+#~ msgstr "Кто (IP)"
 
-msgid "bankbase.deposit.info"
-msgstr ""
-"Ввод средств на торговый счет посредством банковского перевода\n"
-"осуществляется в течение 3-5 банковских дней."
+#~ msgid "Withdrawal reason"
+#~ msgstr "Причина вывода"
 
-msgid "bankbase.withdraw.info"
-msgstr ""
-"Вывод средств с торгового счета посредством банковского перевода\n"
-"осуществляется в течение 3-5 банковских дней."
+#~ msgid "Withdrawal requests for account"
+#~ msgstr "Заявки на вывод со счёта"
 
-msgid "commission"
-msgstr "комиссия"
+#~ msgid "Withdrawal sum"
+#~ msgstr "Сумма вывода"
 
-msgid "defines order in list"
-msgstr ""
+#~ msgid "Withdrawn from acc"
+#~ msgstr "Снято со счёта"
 
-msgid "depends on the originating bank"
-msgstr "зависит от банка отправителя"
+#~ msgid "Yes"
+#~ msgstr "Да"
 
-msgid "exchange rate"
-msgstr "Курс обмена"
+#~ msgid "Yes (deposit to trading platform)"
+#~ msgstr "Да (зачислить на счёт)"
 
-msgid "h"
-msgstr "ч"
+#~ msgid "Yes (withdraw from trading platform)"
+#~ msgstr "Да (вывести со счёта)"
 
-msgid "leverage"
-msgstr "кредитное плечо"
+#~ msgid "You"
+#~ msgstr "Вы"
 
-msgid "m"
-msgstr "м"
+#~ msgid "Your comment, if needed"
+#~ msgstr "Ваш комментарий, если нужно"
 
-msgid "manager"
-msgstr "менеджер"
+#~ msgid "Your country is not using IBAN codes"
+#~ msgstr "В вашей стране не используется IBAN"
 
-msgid "no bonuses"
-msgstr "бонусов нет"
+#~ msgid "balance"
+#~ msgstr "баланс"
 
-msgid "print requisits"
-msgstr "Распечатать реквизиты"
+#~ msgid "commission"
+#~ msgstr "комиссия"
 
-msgid "qiwi_bad_request"
-msgstr ""
+#~ msgid "exchange rate"
+#~ msgstr "Курс обмена"
 
-msgid "scan of receipt"
-msgstr "скан расписки"
+#~ msgid "h"
+#~ msgstr "ч"
 
-msgid "show"
-msgstr "показать"
+#~ msgid "leverage"
+#~ msgstr "кредитное плечо"
 
-msgid "up to 3 days"
-msgstr "до 3 дней"
+#~ msgid "m"
+#~ msgstr "м"
 
-#, python-brace-format
-msgid "{0} h. {1} m."
-msgstr "{0} ч. {1} м."
+#~ msgid "no bonuses"
+#~ msgstr "бонусов нет"
 
-msgid "Сustomer"
-msgstr "Клиент"
+#~ msgid "show"
+#~ msgstr "показать"
 
 #~ msgid ""
 #~ "\n"
@@ -1884,17 +2242,17 @@ msgstr "Клиент"
 #~ "                            by the customer.<br><br>\n"
 #~ "                            Deposit of funds to customer's account, "
 #~ "currency conversion between accounts and while withdrawing funds\n"
-#~ "                            is carried out according to company's internal "
-#~ "rates effective at the time of funds arrival or at the\n"
+#~ "                            is carried out according to company's "
+#~ "internal rates effective at the time of funds arrival or at the\n"
 #~ "                            time of the withdrawal.<br><br>\n"
 #~ "                            \"Amount\" field is only for information, we "
 #~ "do not guarantee deposit of the exact amount of funds stated.<br><br>\n"
 #~ "                            One customer may create not more than 10 "
 #~ "withdrawal requests in a day.<br><br>\n"
-#~ "                            Funds withdrawal is conducted by our Financial "
-#~ "department from Monday to Friday from 9:00 to 18:00 (MSK).\n"
-#~ "                            Withdrawal requests, created after 16:00 (MSK) "
-#~ "are processed the next working day.\n"
+#~ "                            Funds withdrawal is conducted by our "
+#~ "Financial department from Monday to Friday from 9:00 to 18:00 (MSK).\n"
+#~ "                            Withdrawal requests, created after 16:00 "
+#~ "(MSK) are processed the next working day.\n"
 #~ "                        </p>\n"
 #~ "                    "
 #~ msgstr ""
@@ -1902,8 +2260,8 @@ msgstr "Клиент"
 #~ "<p>Важная информация о переводе</p>\n"
 #~ "\n"
 #~ "        <p class=\"info\">\n"
-#~ "            Переводы от третьих лиц не принимаются. Все расходы, связанные "
-#~ "с возвратом перевода на реквизиты\n"
+#~ "            Переводы от третьих лиц не принимаются. Все расходы, "
+#~ "связанные с возвратом перевода на реквизиты\n"
 #~ "            отправителя,\n"
 #~ "            оплачиваются за счет клиента.<br><br>\n"
 #~ "            Зачисление денежных средств на счет клиента, конвертация при "
@@ -1940,12 +2298,12 @@ msgstr "Клиент"
 
 #~ msgid ""
 #~ "\n"
-#~ "                        When you withdraw funds, please make sure that you "
-#~ "have enough money on your\n"
+#~ "                        When you withdraw funds, please make sure that "
+#~ "you have enough money on your\n"
 #~ "                        trading account and all your trading orders are "
 #~ "closed. Please do not open\n"
-#~ "                        new trading orders before funds are withdrawn from "
-#~ "your account.\n"
+#~ "                        new trading orders before funds are withdrawn "
+#~ "from your account.\n"
 #~ "                    "
 #~ msgstr ""
 #~ "\n"
@@ -2001,11 +2359,11 @@ msgstr "Клиент"
 #~ "%(LANGUAGE_CODE)s\" target=\"_blank\" onclick=\"if(navigator.userAgent."
 #~ "toLowerCase().indexOf('opera') != -1 &amp;&amp; window.event."
 #~ "preventDefault) window.event.preventDefault();this.newWindow = window."
-#~ "open('http://grandcapital.ru/webim/client.php?locale=%(LANGUAGE_CODE)s&amp;"
-#~ "url='+escape(document.location.href)+'&amp;referrer='+escape(document."
-#~ "referrer), 'webim', 'toolbar=0,scrollbars=0,location=0,status=1,menubar=0,"
-#~ "width=640,height=480,resizable=1');this.newWindow.focus();this.newWindow."
-#~ "opener=window;return false;\">онлайн</a>."
+#~ "open('http://grandcapital.ru/webim/client.php?locale="
+#~ "%(LANGUAGE_CODE)s&amp;url='+escape(document.location.href)+'&amp;"
+#~ "referrer='+escape(document.referrer), 'webim', 'toolbar=0,scrollbars=0,"
+#~ "location=0,status=1,menubar=0,width=640,height=480,resizable=1');this."
+#~ "newWindow.focus();this.newWindow.opener=window;return false;\">онлайн</a>."
 
 #~ msgid ""
 #~ "\n"
@@ -2061,8 +2419,8 @@ msgstr "Клиент"
 #~ "<p>Важная информация о переводе</p>\n"
 #~ "\n"
 #~ "        <p class=\"info\">\n"
-#~ "            Переводы от третьих лиц не принимаются. Все расходы, связанные "
-#~ "с возвратом перевода на реквизиты\n"
+#~ "            Переводы от третьих лиц не принимаются. Все расходы, "
+#~ "связанные с возвратом перевода на реквизиты\n"
 #~ "            отправителя,\n"
 #~ "            оплачиваются за счет клиента.<br><br>\n"
 #~ "            Зачисление денежных средств на счет клиента, конвертация при "
@@ -2204,15 +2562,15 @@ msgstr "Клиент"
 #~ "            by the customer.<br><br>\n"
 #~ "            Deposit of funds to customer's account, currency conversion "
 #~ "between accounts and while withdrawing funds\n"
-#~ "            is carried out according to company's internal rates effective "
-#~ "at the time of funds arrival or at the\n"
+#~ "            is carried out according to company's internal rates "
+#~ "effective at the time of funds arrival or at the\n"
 #~ "            time of the withdrawal.<br><br>\n"
 #~ "            \"Amount\" field is only for information, we do not guarantee "
 #~ "deposit of the exact amount of funds stated.<br><br>\n"
 #~ "            One customer may create not more than 10 withdrawal requests "
 #~ "in a day.<br><br>\n"
-#~ "            Funds withdrawal is conducted by our Financial department from "
-#~ "Monday to Friday from 9:00 to 18:00 (MSK).\n"
+#~ "            Funds withdrawal is conducted by our Financial department "
+#~ "from Monday to Friday from 9:00 to 18:00 (MSK).\n"
 #~ "            Withdrawal requests, created after 16:00 (MSK) are processed "
 #~ "the next working day.\n"
 #~ "        </p>\n"
@@ -2222,8 +2580,8 @@ msgstr "Клиент"
 #~ "<p>Важная информация о переводе</p>\n"
 #~ "\n"
 #~ "        <p class=\"info\">\n"
-#~ "            Переводы от третьих лиц не принимаются. Все расходы, связанные "
-#~ "с возвратом перевода на реквизиты\n"
+#~ "            Переводы от третьих лиц не принимаются. Все расходы, "
+#~ "связанные с возвратом перевода на реквизиты\n"
 #~ "            отправителя,\n"
 #~ "            оплачиваются за счет клиента.<br><br>\n"
 #~ "            Зачисление денежных средств на счет клиента, конвертация при "
@@ -2266,8 +2624,8 @@ msgstr "Клиент"
 #~ "      "
 #~ msgstr ""
 #~ "\n"
-#~ "У вас нет реквизитов <strong>%(payment_system)s</strong>, на которые можно "
-#~ "выводить деньги"
+#~ "У вас нет реквизитов <strong>%(payment_system)s</strong>, на которые "
+#~ "можно выводить деньги"
 
 #~ msgid ""
 #~ "\n"
@@ -2475,11 +2833,12 @@ msgstr "Клиент"
 
 #~ msgid ""
 #~ "\n"
-#~ "Please upload your ID scan or photo to your Private Office during 10 days\n"
+#~ "Please upload your ID scan or photo to your Private Office during 10 "
+#~ "days\n"
 #~ msgstr ""
 #~ "\n"
-#~ "Пожалуйста, загрузите скан паспорта, (скан документа, подтверждающего Вашу "
-#~ "личность) в Ваш личный кабинет в течение 10-ти дней\n"
+#~ "Пожалуйста, загрузите скан паспорта, (скан документа, подтверждающего "
+#~ "Вашу личность) в Ваш личный кабинет в течение 10-ти дней\n"
 
 #~ msgid ""
 #~ "\n"
@@ -2722,15 +3081,16 @@ msgstr "Клиент"
 #~ "strong> Specify amount on your account after deduction of the system's "
 #~ "charge"
 #~ msgstr ""
-#~ "Сумма денег для ввода в выбранной валюте (как минимум 10 денежных единиц), "
-#~ "например: 105 или 105.2<br/><strong>Внимание!</strong> Укажите сумму за "
-#~ "вычетом комиссии системы - сумму к получению"
+#~ "Сумма денег для ввода в выбранной валюте (как минимум 10 денежных "
+#~ "единиц), например: 105 или 105.2<br/><strong>Внимание!</strong> Укажите "
+#~ "сумму за вычетом комиссии системы - сумму к получению"
 
 #~ msgid "Amount of money to withdraw (in your account's currency)"
 #~ msgstr "Сумма денег для вывода в валюте счета"
 
 #~ msgid ""
-#~ "Amount of money to withdraw in <span class=\"currency\">%(currency)s</span>"
+#~ "Amount of money to withdraw in <span class=\"currency\">%(currency)s</"
+#~ "span>"
 #~ msgstr ""
 #~ "Сумма денег для вывода в <span class=\"currency\">%(currency)s</span>, "
 #~ "например: 105 или 105.2"
@@ -2872,8 +3232,8 @@ msgstr "Клиент"
 #~ "Dear client!\n"
 #~ "\n"
 #~ "You just made a deposit of %(usd_amount)s to your account %(account)s.\n"
-#~ "For transactions larger than $800 our payment system requires us to verify "
-#~ "the customer's data for security reasons.\n"
+#~ "For transactions larger than $800 our payment system requires us to "
+#~ "verify the customer's data for security reasons.\n"
 #~ "\n"
 #~ "To pass this verification you need to upload scans or photos of the "
 #~ "following documents:\n"
@@ -2888,8 +3248,8 @@ msgstr "Клиент"
 #~ "- or -\n"
 #~ "3. A second document confirming your ID (driving license, etc.)\n"
 #~ "\n"
-#~ "After you pass the verification, you will be able to start trading on your "
-#~ "account %(account)s.\n"
+#~ "After you pass the verification, you will be able to start trading on "
+#~ "your account %(account)s.\n"
 #~ "\n"
 #~ "We care about your security!"
 #~ msgstr ""
@@ -2980,8 +3340,8 @@ msgstr "Клиент"
 #~ "Enter protection code to protect the payment. If you don't know what it "
 #~ "is, leave empty"
 #~ msgstr ""
-#~ "Введите код протекции для увеличения безопасности платежа. Если не знаете, "
-#~ "что это, оставьте пустым."
+#~ "Введите код протекции для увеличения безопасности платежа. Если не "
+#~ "знаете, что это, оставьте пустым."
 
 #~ msgid "Enter up to 12 digits"
 #~ msgstr "Введите не более 12 цифр"
@@ -3092,9 +3452,10 @@ msgstr "Клиент"
 
 #~ msgid ""
 #~ "Hello! Your application for withdrawal of funds on the account №"
-#~ "%(account_id)s is transferred in the financial department for approval and "
-#~ "money transfer. It won’t take long. If you have any questions, please, "
-#~ "write to us in Private Office https://grandbroker.com/account/trading"
+#~ "%(account_id)s is transferred in the financial department for approval "
+#~ "and money transfer. It won’t take long. If you have any questions, "
+#~ "please, write to us in Private Office https://grandbroker.com/account/"
+#~ "trading"
 #~ msgstr ""
 #~ "Здравствуйте! \n"
 #~ "Ваша заявка на вывод средств по счету №%(account_id)s передана в "
@@ -3106,12 +3467,12 @@ msgstr "Клиент"
 #~ msgid ""
 #~ "Hello! Your application for withdrawal of funds on the account №"
 #~ "%(account_id)s is transferred to check in the technical department. It "
-#~ "won’t take long. If you have any questions, please, write to us in Private "
-#~ "Office https://grandbroker.com/account/trading"
+#~ "won’t take long. If you have any questions, please, write to us in "
+#~ "Private Office https://grandbroker.com/account/trading"
 #~ msgstr ""
 #~ "Здравствуйте! \n"
-#~ "Ваша заявка на вывод средств по счету №%(account_id)s передана на проверку "
-#~ "в отдел технической поддержки. Это не займет много времени.\n"
+#~ "Ваша заявка на вывод средств по счету №%(account_id)s передана на "
+#~ "проверку в отдел технической поддержки. Это не займет много времени.\n"
 #~ "Если у Вас появились вопросы, пожалуйста, напишите нам в Личном кабинете "
 #~ "https://grandcapital.ru/account/issues "
 
@@ -3123,7 +3484,8 @@ msgstr "Клиент"
 
 #~ msgid "If enabled, the report may take a long time to generate"
 #~ msgstr ""
-#~ "Если включена эта опция, создание отчета может занять продолжительное время"
+#~ "Если включена эта опция, создание отчета может занять продолжительное "
+#~ "время"
 
 #~ msgid ""
 #~ "If you don't have a bank account, you can deposit cash using the payment "
@@ -3182,8 +3544,8 @@ msgstr "Клиент"
 #~ "LiqPay withdrawal is temporarily disabled due to technical issues. Please "
 #~ "use another system."
 #~ msgstr ""
-#~ "Вывод через LiqPay временно недоступен по техническим причинам. Пожалуйста "
-#~ "используйте любую другую систему."
+#~ "Вывод через LiqPay временно недоступен по техническим причинам. "
+#~ "Пожалуйста используйте любую другую систему."
 
 #~ msgid "LiqPay.com"
 #~ msgstr "LiqPay.com"
@@ -3247,9 +3609,9 @@ msgstr "Клиент"
 
 #~ msgid ""
 #~ "Our financial department received your request for withdrawal, but it may "
-#~ "be denied, because you should use the same system that you used to deposit "
-#~ "the majority of funds. In your case %(plural)s %(most_used)s, so you "
-#~ "should use %(systems)s"
+#~ "be denied, because you should use the same system that you used to "
+#~ "deposit the majority of funds. In your case %(plural)s %(most_used)s, so "
+#~ "you should use %(systems)s"
 #~ msgstr ""
 #~ "Ваша заявка поступит в наш финансовый отдел, но, возможно, она будет "
 #~ "отклонена, так как вывод средств осуществляется системой, соответствующей "
@@ -3306,7 +3668,8 @@ msgstr "Клиент"
 #~ "%(payment_system)s"
 
 #~ msgid ""
-#~ "Please wait while you are being transferred to the payment system's website"
+#~ "Please wait while you are being transferred to the payment system's "
+#~ "website"
 #~ msgstr "Подождите, пока идет перенаправление на сайт платежной системы"
 
 #~ msgid "Please wait, the request is being created"
@@ -3409,7 +3772,8 @@ msgstr "Клиент"
 #~ msgid "Step 3. Authentication"
 #~ msgstr "Шаг 3. Аутентификация"
 
-#~ msgid "Submit it to your bank to transfer funds from one account to another."
+#~ msgid ""
+#~ "Submit it to your bank to transfer funds from one account to another."
 #~ msgstr ""
 #~ "Передайте его в отделение своего банка, для перевода средств со счета на "
 #~ "счет."
@@ -3428,11 +3792,13 @@ msgstr "Клиент"
 #~ "money                                        (not the city you are in, "
 #~ "etc.). State for transfers from U.S. only."
 #~ msgstr ""
-#~ "Город, из которого Вы отправили перевод(не город Вашего проживания и т.д.)."
+#~ "Город, из которого Вы отправили перевод(не город Вашего проживания и т."
+#~ "д.)."
 
 #~ msgid ""
 #~ "The city from which you sent the money (not the city you are in, etc.)"
-#~ msgstr "Город, из которого Вы отправили перевод (не город Вашего проживания)"
+#~ msgstr ""
+#~ "Город, из которого Вы отправили перевод (не город Вашего проживания)"
 
 #~ msgid ""
 #~ "The country from which you sent the money (not the country you are from, "
@@ -3486,9 +3852,9 @@ msgstr "Клиент"
 #~ "произвести платеж в личном кабинете, заполнив реквизиты карты"
 
 #~ msgid ""
-#~ "To deposit funds using money order, you should make the order in an office "
-#~ "of your money order system. After that you should confirm the payment in "
-#~ "your Private Office"
+#~ "To deposit funds using money order, you should make the order in an "
+#~ "office of your money order system. After that you should confirm the "
+#~ "payment in your Private Office"
 #~ msgstr ""
 #~ "Для пополнения торгового счета через денежный перевод, Вам необходимо "
 #~ "оплатить перевод в отделении систем денежных переводов. После этого "
@@ -3517,14 +3883,15 @@ msgstr "Клиент"
 #~ "сформировать заявку на вывод в личном кабинете"
 
 #~ msgid ""
-#~ "To withdraw funds from your account using money order, you should create a "
-#~ "withdrawal request in your Private Office, get from us the number of the "
-#~ "order, and use it to receive your money in any office of the money order "
-#~ "system."
+#~ "To withdraw funds from your account using money order, you should create "
+#~ "a withdrawal request in your Private Office, get from us the number of "
+#~ "the order, and use it to receive your money in any office of the money "
+#~ "order system."
 #~ msgstr ""
 #~ "Для снятия средств с торгового счета через денежный перевод, Вам "
-#~ "необходимо сформировать заявку в личном кабинете, получить номер перевода, "
-#~ "и обратиться с ним в любой пункт обслуживания системы денежных переводов"
+#~ "необходимо сформировать заявку в личном кабинете, получить номер "
+#~ "перевода, и обратиться с ним в любой пункт обслуживания системы денежных "
+#~ "переводов"
 
 #~ msgid ""
 #~ "To withdraw funds to an e-Wallet, you should create withdraw request in "
@@ -3534,8 +3901,8 @@ msgstr "Клиент"
 #~ "Вам необходимо сформировать заявку на вывод в личном кабинете"
 
 #~ msgid ""
-#~ "Today you have already created withdrawal requests for %(amount)s which is "
-#~ "maximal amount per day for this system. You can withdraw more of your "
+#~ "Today you have already created withdrawal requests for %(amount)s which "
+#~ "is maximal amount per day for this system. You can withdraw more of your "
 #~ "funds using <a href='%(link)s'>Bank transfer</a>"
 #~ msgstr ""
 #~ "Сегодня вы уже запросили вывод на сумму, превышающую дневной максимум для "
@@ -3844,8 +4211,8 @@ msgstr "Клиент"
 #~ msgstr ""
 #~ "Ваша учётная запись не активирована. Для вывода средств Вы должны её "
 #~ "активировать. Для этого пройдите, пожалуйста, по ссылке, которую Вы "
-#~ "получили по электронной почте. Если у Вас возникают проблемы с активацией, "
-#~ "обратитесь, пожалуйста, к Вашему персональному менеджеру."
+#~ "получили по электронной почте. Если у Вас возникают проблемы с "
+#~ "активацией, обратитесь, пожалуйста, к Вашему персональному менеджеру."
 
 #~ msgid "Your account number at FasaPay. For example FP0023"
 #~ msgstr "Номер Вашего счёта в системе FasaPay, например FP0023"
@@ -3865,7 +4232,8 @@ msgstr "Клиент"
 #~ msgid "Your login (e-mail) at OKPAY"
 #~ msgstr "Ваше имя пользователя (e-mail) в OKPAY"
 
-#~ msgid "Your profile data was successfully updated with data from account %s."
+#~ msgid ""
+#~ "Your profile data was successfully updated with data from account %s."
 #~ msgstr "Данные вашего профиля были обновлены, используя данные счета %s."
 
 #~ msgid "Your regional office are not allowed to withdraw or deposit."
@@ -3935,13 +4303,13 @@ msgstr "Клиент"
 
 #~ msgid "chronopay.deposit.info"
 #~ msgstr ""
-#~ "Ввод средств на торговый счет посредством системы Chronopay осуществляется "
-#~ "в течение суток."
+#~ "Ввод средств на торговый счет посредством системы Chronopay "
+#~ "осуществляется в течение суток."
 
 #~ msgid "contact.deposit.info"
 #~ msgstr ""
-#~ "Ввод средств на торговый счет посредством системы Contaсt осуществляется в "
-#~ "течение суток."
+#~ "Ввод средств на торговый счет посредством системы Contaсt осуществляется "
+#~ "в течение суток."
 
 #~ msgid "depends on amount and region"
 #~ msgstr "зависит от суммы и региона"
@@ -3959,8 +4327,8 @@ msgstr "Клиент"
 
 #~ msgid "fastpost.deposit.info"
 #~ msgstr ""
-#~ "Ввод средств на торговый счет посредством «Быстрая почта» осуществляется в "
-#~ "течение суток."
+#~ "Ввод средств на торговый счет посредством «Быстрая почта» осуществляется "
+#~ "в течение суток."
 
 #~ msgid "fastpost.withdraw.info"
 #~ msgstr ""
@@ -3980,8 +4348,8 @@ msgstr "Клиент"
 
 #~ msgid "leader.deposit.info"
 #~ msgstr ""
-#~ "Ввод средств на торговый счет посредством системы «Лидер» осуществляется в "
-#~ "течение суток."
+#~ "Ввод средств на торговый счет посредством системы «Лидер» осуществляется "
+#~ "в течение суток."
 
 #~ msgid "leader.withdraw.info"
 #~ msgstr ""
@@ -4005,8 +4373,8 @@ msgstr "Клиент"
 
 #~ msgid "liqpay.withdraw.info"
 #~ msgstr ""
-#~ "В связи с плановой перерегистрацией платежной системы LiqPay, выводы через "
-#~ "эту систему приостановлены до 25-28 сентября. <br>\n"
+#~ "В связи с плановой перерегистрацией платежной системы LiqPay, выводы "
+#~ "через эту систему приостановлены до 25-28 сентября. <br>\n"
 #~ "Но мы можем вывести Вам средства <a href=\"/trading/operations_with_money/"
 #~ "\">любой другой</a> удобной для Вас платежной системой с нашего сайта."
 

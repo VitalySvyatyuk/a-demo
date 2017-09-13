@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-01 17:25+0400\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2014-03-18 13:14+0400\n"
 "Last-Translator: 11  <i.tsuvarev@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,58 +20,94 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.2\n"
 
+#: django-shared/geobase/models.py:55 django-shared/geobase/models.py:149
+#: django-shared/geobase/models.py:178
 msgid "Name"
 msgstr "Имя"
 
+#: django-shared/geobase/models.py:57
+msgid "Slug"
+msgstr ""
+
+#: django-shared/geobase/models.py:57
+msgid "Unique string for url generating"
+msgstr ""
+
+#: django-shared/geobase/models.py:58 django-shared/geobase/models.py:148
+msgid "Code"
+msgstr ""
+
+#: django-shared/geobase/models.py:59
+msgid "Weight"
+msgstr ""
+
+#: django-shared/geobase/models.py:60
+msgid "Phone code"
+msgstr ""
+
+#: django-shared/geobase/models.py:61
+msgid "This country is primary in this phone code group"
+msgstr ""
+
+#: django-shared/geobase/models.py:64
+msgid "Language"
+msgstr ""
+
+#: django-shared/geobase/models.py:70 django-shared/geobase/models.py:146
+#: django-shared/geobase/models.py:176
+msgid "Country"
+msgstr "Страна"
+
+#: django-shared/geobase/models.py:71
+msgid "Countries"
+msgstr "Страны"
+
+#: django-shared/geobase/models.py:155 django-shared/geobase/models.py:177
+msgid "Region"
+msgstr "Регион"
+
+#: django-shared/geobase/models.py:156
+msgid "Regions"
+msgstr "Регионы"
+
+#: django-shared/geobase/models.py:179
 #, fuzzy
 msgid "Name Eng"
 msgstr "Имя"
 
-msgid "Slug"
-msgstr ""
-
-msgid "Unique string for url generating"
-msgstr ""
-
-msgid "Code"
-msgstr ""
-
-msgid "Weight"
-msgstr ""
-
-msgid "Phone code"
-msgstr ""
-
-msgid "This country is primary in this phone code group"
-msgstr ""
-
-msgid "Country"
-msgstr "Страна"
-
-msgid "Countries"
-msgstr "Страны"
-
-msgid "Agent code"
-msgstr ""
-
-msgid "Region"
-msgstr "Регион"
-
-msgid "Regions"
-msgstr "Регионы"
-
+#: django-shared/geobase/models.py:184
 msgid "City"
 msgstr "Город"
 
+#: django-shared/geobase/models.py:185
 msgid "Cities"
 msgstr "Города"
 
+#: django-shared/geobase/phone_code_widget.py:65
 #, python-format
 msgid "Select a valid choice. %(value)s is not one of the available choices."
 msgstr ""
 
+#: django-shared/geobase/phone_code_widget.py:231
 msgid "Phone number should contain only digits"
 msgstr "Номер телефона должен состоять из чисел"
 
+#: django-shared/geobase/phone_code_widget.py:233
 msgid "Enter your phone number"
 msgstr "Введите номер вашего мобильного телефона "
+
+#: django-shared/geobase/rest_fields.py:23
+msgid "Country code is required"
+msgstr ""
+
+#: django-shared/geobase/rest_fields.py:25
+msgid "Phone number is required"
+msgstr ""
+
+#: django-shared/geobase/rest_fields.py:30
+msgid "Invalid country"
+msgstr ""
+
+#: django-shared/geobase/rest_fields.py:35
+msgid "Invalid phone tail"
+msgstr ""

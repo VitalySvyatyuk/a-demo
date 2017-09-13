@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-01 17:24+0400\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2011-06-08 22:01\n"
 "Last-Translator:   <katson@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,44 +20,46 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Translated-Using: django-rosetta 0.6.0\n"
 
+#: django-gc-shared/currencies/currencies.py:108
 msgid "US Dollar"
 msgstr "Доллар США"
 
-msgid "RUR symbol"
-msgstr "руб."
-
+#: django-gc-shared/currencies/currencies.py:116
 msgid "Russian rouble"
 msgstr "Российский рубль"
 
-msgid "Euro"
-msgstr "Евро"
+#~ msgid "RUR symbol"
+#~ msgstr "руб."
 
-msgid "Gold"
-msgstr "Золото"
+#~ msgid "Euro"
+#~ msgstr "Евро"
 
-msgid "Silver"
-msgstr "Серебро"
+#~ msgid "Gold"
+#~ msgstr "Золото"
 
-msgid "Platinum"
-msgstr "Платина"
+#~ msgid "Silver"
+#~ msgstr "Серебро"
 
-msgid "Palladium"
-msgstr "Палладий"
+#~ msgid "Platinum"
+#~ msgstr "Платина"
 
-msgid "UAH symbol"
-msgstr "грн."
+#~ msgid "Palladium"
+#~ msgstr "Палладий"
 
-msgid "Ukrainian hryvnia"
-msgstr "Украинская гривна"
+#~ msgid "UAH symbol"
+#~ msgstr "грн."
 
-msgid "Great Britain Pound"
-msgstr "Британский фунт"
+#~ msgid "Ukrainian hryvnia"
+#~ msgstr "Украинская гривна"
 
-msgid "Swiss franc"
-msgstr "Швейцарский франк"
+#~ msgid "Great Britain Pound"
+#~ msgstr "Британский фунт"
 
-msgid "Japanese yen"
-msgstr "Японская йена"
+#~ msgid "Swiss franc"
+#~ msgstr "Швейцарский франк"
+
+#~ msgid "Japanese yen"
+#~ msgstr "Японская йена"
 
 #~ msgid "RUR"
 #~ msgstr "руб."

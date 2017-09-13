@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-02 12:20+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2016-05-23 20:10+0230\n"
 "Last-Translator:   <mrboruslee@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,20 +20,21 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.11\n"
 
-#: forms.py:21
+#: django-gc-shared/referral/forms.py:21
 msgid "You don't have a RealIB account"
 msgstr "У Вас нет счёта RealIB"
 
-#: forms.py:25
+#: django-gc-shared/referral/forms.py:25
 msgid "You've already made a request for certificate creation"
 msgstr "Вы уже подавали заявку на создание сертификата"
 
-#: forms.py:57 templates/js/my/_referral_domain_select.html:3
-#: templates/referral/partner_api_keys.html:21
+#: django-gc-shared/referral/forms.py:57
+#: django-gc-shared/referral/templates/js/my/_referral_domain_select.html:3
+#: django-gc-shared/referral/templates/referral/partner_api_keys.html:21
 msgid "Domain"
 msgstr "Домен"
 
-#: forms.py:58
+#: django-gc-shared/referral/forms.py:58
 msgid ""
 "API will be valid for the domain and all its subdomains. Example: "
 "grandcapital.ru"
@@ -41,177 +42,175 @@ msgstr ""
 "API будет действительно для домена и всех его поддоменов. Пример: "
 "grandcapital.ru"
 
-#: forms.py:65
+#: django-gc-shared/referral/forms.py:65
 msgid "Partner account"
 msgstr "Счёт партнёра"
 
-#: forms.py:66
+#: django-gc-shared/referral/forms.py:66
 msgid ""
 "Referral number of this account will be used for links from this domain."
 msgstr ""
 "Реферальный номер данного счета будет привязан ко всем материалам домена. "
 
-#: models.py:27 templates/referral/partner_api_keys.html:22
+#: django-gc-shared/referral/models.py:27
+#: django-gc-shared/referral/templates/referral/partner_api_keys.html:22
 msgid "Agent code"
 msgstr "Код агента"
 
-#: models.py:29
+#: django-gc-shared/referral/models.py:29
 msgid "Click count"
 msgstr "Счетчик кликов"
 
-#: models.py:31
+#: django-gc-shared/referral/models.py:31
 msgid "Unique click count"
 msgstr "Счетчик уникальных кликов"
 
-#: models.py:39
+#: django-gc-shared/referral/models.py:39
 msgid "Agent code click"
 msgstr "Переход по партнерской ссылке"
 
-#: models.py:40
+#: django-gc-shared/referral/models.py:40
 msgid "Agent code clicks"
 msgstr "Переходы по партнерской ссылке"
 
-#: models.py:62
+#: django-gc-shared/referral/models.py:62
 msgid "Application for certificate creation"
 msgstr "Заявка на создание сертификата"
 
-#: models.py:63
+#: django-gc-shared/referral/models.py:63
 msgid "Applications for certificate creation"
 msgstr "Заявки на создание сертификата"
 
-#: models.py:69
+#: django-gc-shared/referral/models.py:69
 msgid "Created"
 msgstr "Создано"
 
-#: models.py:74
+#: django-gc-shared/referral/models.py:74
 msgid "Partner domain"
 msgstr "Домен"
 
-#: models.py:90
+#: django-gc-shared/referral/models.py:90
 msgid "Your name"
 msgstr "Ваше имя"
 
-#: models.py:91
+#: django-gc-shared/referral/models.py:91
 msgid "Phone number"
 msgstr "Телефон"
 
-#: models.py:92
+#: django-gc-shared/referral/models.py:92
 msgid "E-mail"
 msgstr "E-mail"
 
-#: templates/js/my/_referral_account_select.html:3
+#: django-gc-shared/referral/templates/js/my/_referral_account_select.html:3
 msgid "Account"
 msgstr "Счет"
 
-#: templates/js/my/_referral_account_select.html:6
+#: django-gc-shared/referral/templates/js/my/_referral_account_select.html:6
 msgid "Сhoose one of your accounts"
 msgstr "Выберите один из ваших счетов"
 
-#: templates/js/my/_referral_account_select.html:13
+#: django-gc-shared/referral/templates/js/my/_referral_account_select.html:13
 msgid "Open account"
 msgstr "Счёт партнёра"
 
-#: templates/js/my/_referral_account_select.html:15
+#: django-gc-shared/referral/templates/js/my/_referral_account_select.html:15
 msgid "Clicks"
 msgstr "Клики"
 
-#: templates/js/my/_referral_domain_select.html:8
+#: django-gc-shared/referral/templates/js/my/_referral_domain_select.html:8
 msgid "Save"
 msgstr "Сохранить"
 
-#: templates/js/my/_referral_domain_select.html:9
+#: django-gc-shared/referral/templates/js/my/_referral_domain_select.html:9
 msgid "Cancel"
 msgstr "Отменить"
 
-#: templates/js/my/_referral_domain_select.html:26
+#: django-gc-shared/referral/templates/js/my/_referral_domain_select.html:26
 msgid "Add domain"
 msgstr "Добавить домен"
 
-#: templates/js/my/_referral_domain_select.html:27
+#: django-gc-shared/referral/templates/js/my/_referral_domain_select.html:27
 msgid "Delete domain"
 msgstr "Удалить домен"
 
-#: templates/js/my/referral.html:5
-#: templates/referral/partnership_program.html:35
+#: django-gc-shared/referral/templates/js/my/referral.html:5
+#: django-gc-shared/referral/templates/referral/partnership_program.html:35
 msgid "Partnership"
 msgstr "Партнёрство"
 
-#: templates/js/my/referral.html:14
+#: django-gc-shared/referral/templates/js/my/referral.html:14
 msgid "Banners"
 msgstr "Баннеры"
 
-#: templates/js/my/referral.html:19
+#: django-gc-shared/referral/templates/js/my/referral.html:19
 msgid "Informers"
 msgstr "Информеры"
 
-#: templates/js/my/referral_link.html:2
+#: django-gc-shared/referral/templates/js/my/referral_link.html:2
 msgid "Referral link"
 msgstr "Реферальная ссылка"
 
-#: templates/js/my/referral_link.html:7
+#: django-gc-shared/referral/templates/js/my/referral_link.html:7
 msgid "Desired page"
 msgstr "Желаемая страница"
 
-#: templates/js/my/referral_link.html:13
+#: django-gc-shared/referral/templates/js/my/referral_link.html:13
 msgid "Your referral link"
 msgstr "Ваша реферальная ссылка"
 
-#: templates/js/my/referral_link.html:16
+#: django-gc-shared/referral/templates/js/my/referral_link.html:16
 msgid "or"
 msgstr "или"
 
-#: templates/js/my/referral_link.html:22
+#: django-gc-shared/referral/templates/js/my/referral_link.html:22
 msgid "Site page"
 msgstr "Страницы сайта"
 
-#: templates/js/my/referral_link.html:27
+#: django-gc-shared/referral/templates/js/my/referral_link.html:27
 msgid "Select product"
 msgstr "Выберите продукт"
 
-#: templates/js/my/referral_link.html:28
-#| msgid "Landing page"
+#: django-gc-shared/referral/templates/js/my/referral_link.html:28
 msgid "Main page"
 msgstr "Главная страница"
 
-#: templates/js/my/referral_link.html:29
-#| msgid "Account"
+#: django-gc-shared/referral/templates/js/my/referral_link.html:29
 msgid "Account types"
 msgstr "Типы счетов"
 
-#: templates/js/my/referral_link.html:30
-#| msgid "Trading Platform"
+#: django-gc-shared/referral/templates/js/my/referral_link.html:30
 msgid "Trading platforms comparison"
 msgstr "Сравнение торговых платформ"
 
-#: templates/js/my/referral_link.html:31
+#: django-gc-shared/referral/templates/js/my/referral_link.html:31
 msgid "ARUM.MT platform"
 msgstr "Платформа ARUM.MT"
 
-#: templates/js/my/referral_link.html:32
+#: django-gc-shared/referral/templates/js/my/referral_link.html:32
 msgid "ARUM.PRO platform"
 msgstr "Платформа ARUM.PRO"
 
-#: templates/js/my/referral_link.html:33
+#: django-gc-shared/referral/templates/js/my/referral_link.html:33
 msgid "ARUM.WEB platform"
 msgstr "Платформа ARUM.WEB"
 
-#: templates/js/my/referral_link.html:34
+#: django-gc-shared/referral/templates/js/my/referral_link.html:34
 msgid "ARUM.Invest platform"
 msgstr "Платформа ARUM.Invest"
 
-#: templates/js/my/referral_link.html:35
+#: django-gc-shared/referral/templates/js/my/referral_link.html:35
 msgid "Economic calendar"
 msgstr "Экономический календарь"
 
-#: templates/js/my/referral_link.html:36
+#: django-gc-shared/referral/templates/js/my/referral_link.html:36
 msgid "Client Advantages"
 msgstr "Преимущества для клиентов"
 
-#: templates/js/my/referral_offline.html:2
+#: django-gc-shared/referral/templates/js/my/referral_offline.html:2
 msgid "Offline materials"
 msgstr "Оффлайн материалы"
 
-#: templates/js/my/referral_offline.html:5
+#: django-gc-shared/referral/templates/js/my/referral_offline.html:5
 msgid ""
 "\n"
 "        We provide our partners with high quality branded products. These "
@@ -224,21 +223,21 @@ msgstr ""
 "поможет Вам в привлечении клиентов и обеспечит узнаваемость компании в "
 "широких масштабах."
 
-#: templates/js/my/referral_offline.html:13
+#: django-gc-shared/referral/templates/js/my/referral_offline.html:13
 msgid "Guidebook"
 msgstr "Гайдбук"
 
-#: templates/js/my/referral_offline.html:14
+#: django-gc-shared/referral/templates/js/my/referral_offline.html:14
 msgid "Corporate style in printed products usage recommendations"
 msgstr ""
 "Рекомендации по использованию корпоративного стиля в полиграфической "
 "продукции"
 
-#: templates/js/my/referral_offline.html:21
+#: django-gc-shared/referral/templates/js/my/referral_offline.html:21
 msgid "Guidebook's materials in vector format"
 msgstr "Материалы гайдбука в векторном формате"
 
-#: templates/notification/referral_account_created/full.txt:2
+#: django-gc-shared/referral/templates/notification/referral_account_created/full.txt:2
 #, python-format
 msgid ""
 "Dear %(user_fullname)s !\n"
@@ -264,15 +263,15 @@ msgstr ""
 "С уважением,\n"
 "партнерский отдел Grand Capital\n"
 
-#: templates/notification/referral_account_created/short.txt:1
+#: django-gc-shared/referral/templates/notification/referral_account_created/short.txt:1
 msgid "Referral account created"
 msgstr "Создан счёт в партнёрской группе"
 
-#: templates/referral/_partnership_reward.html:3
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:3
 msgid "Your reward"
 msgstr "Ваше вознаграждение"
 
-#: templates/referral/_partnership_reward.html:5
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:5
 msgid ""
 "We do not differentiate between old and new partners. All the partners of "
 "Grand&nbsp;Capital\n"
@@ -285,7 +284,7 @@ msgstr ""
 "сотрудничества. По всем инструментам – Forex, CFD, ECN и бинарные опционы – "
 "партнеры всегда получают повышенные вознаграждения."
 
-#: templates/referral/_partnership_reward.html:9
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:9
 msgid ""
 "The sum of the partners reward is formed from the sum of  In / Out, volume "
 "of trade and groups of instruments:"
@@ -293,36 +292,36 @@ msgstr ""
 "Сумма формируется, исходя из суммы In/Out, объема торговли и группы "
 "инструментов:"
 
-#: templates/referral/_partnership_reward.html:14
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:14
 msgid "Reward"
 msgstr "Вознаграждение"
 
-#: templates/referral/_partnership_reward.html:17
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:17
 msgid "In/Out up to"
 msgstr "In/Out до"
 
-#: templates/referral/_partnership_reward.html:20
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:20
 msgid "In/Out over"
 msgstr "In/Out свыше"
 
-#: templates/referral/_partnership_reward.html:26
-#: templates/referral/_partnership_reward.html:71
-#: templates/referral/_partnership_reward.html:113
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:26
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:71
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:113
 msgid "Reward for 1 standard lot"
 msgstr "Вознаграждение за 1 стандартный лот"
 
-#: templates/referral/_partnership_reward.html:27
-#: templates/referral/_partnership_reward.html:28
-#: templates/referral/_partnership_reward.html:107
-#: templates/referral/_partnership_reward.html:168
-#: templates/referral/_partnership_reward.html:173
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:27
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:28
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:107
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:168
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:173
 #, python-format
 msgid "From %(from)s till %(till)s"
 msgstr "От %(from)s до %(till)s"
 
-#: templates/referral/_partnership_reward.html:32
-#: templates/referral/_partnership_reward.html:78
-#: templates/referral/_partnership_reward.html:118
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:32
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:78
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:118
 #, python-format
 msgid ""
 "\n"
@@ -336,9 +335,9 @@ msgstr ""
 "Вознаграждение за 1 стандартный лот в виде %% от комиссии компании для "
 "группы инструментов CFD"
 
-#: templates/referral/_partnership_reward.html:42
-#: templates/referral/_partnership_reward.html:87
-#: templates/referral/_partnership_reward.html:127
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:42
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:87
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:127
 #, python-format
 msgid ""
 "\n"
@@ -350,7 +349,7 @@ msgstr ""
 "Вознаграждение за 1 стандартный лот в виде %% от комиссии компании для "
 "счетов типа ECN"
 
-#: templates/referral/_partnership_reward.html:51
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:51
 msgid ""
 "\n"
 "                    Reward for the volume of trade for Options type "
@@ -360,27 +359,27 @@ msgstr ""
 "\n"
 "Вознаграждение за объем торговли для счетов типа Options"
 
-#: templates/referral/_partnership_reward.html:65
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:65
 #, python-format
 msgid "From %(from)s"
 msgstr "От %(from)s"
 
-#: templates/referral/_partnership_reward.html:73
-#: templates/referral/_partnership_reward.html:114
-#: templates/referral/partnership_program.html:461
-#: templates/referral/partnership_program.html:462
-#: templates/referral/partnership_program.html:463
-#: templates/referral/partnership_program.html:464
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:73
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:114
+#: django-gc-shared/referral/templates/referral/partnership_program.html:461
+#: django-gc-shared/referral/templates/referral/partnership_program.html:462
+#: django-gc-shared/referral/templates/referral/partnership_program.html:463
+#: django-gc-shared/referral/templates/referral/partnership_program.html:464
 msgid "from"
 msgstr "от"
 
-#: templates/referral/_partnership_reward.html:73
-#: templates/referral/_partnership_reward.html:114
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:73
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:114
 msgid "to"
 msgstr ""
 
-#: templates/referral/_partnership_reward.html:95
-#: templates/referral/_partnership_reward.html:135
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:95
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:135
 #, python-format
 msgid ""
 "\n"
@@ -391,7 +390,7 @@ msgstr ""
 "\n"
 "Вознаграждение за объем торговли в виде %% от In/Out для счетов типа Options"
 
-#: templates/referral/_partnership_reward.html:150
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:150
 msgid ""
 "\n"
 "                        Additionally for all account types you will get a "
@@ -412,29 +411,29 @@ msgstr ""
 "Options) за отчетный период (начисляется единократно в отношении каждого "
 "отдельного клиента)"
 
-#: templates/referral/_partnership_reward.html:160
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:160
 msgid "Number of clients"
 msgstr "Количество клиентов"
 
-#: templates/referral/_partnership_reward.html:163
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:163
 #, python-format
 msgid "Till %(till)s"
 msgstr "До %(till)s"
 
-#: templates/referral/_partnership_reward.html:178
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:178
 #, python-format
 msgid "More than %(from)s"
 msgstr "Свыше %(from)s"
 
-#: templates/referral/_partnership_reward.html:183
+#: django-gc-shared/referral/templates/referral/_partnership_reward.html:183
 msgid "Bonus for 1 (one) client"
 msgstr "Размер бонуса за 1 (одного) клиента"
 
-#: templates/referral/documents.html:4
+#: django-gc-shared/referral/templates/referral/documents.html:4
 msgid "Partner documents"
 msgstr "Документы партнера"
 
-#: templates/referral/documents.html:6
+#: django-gc-shared/referral/templates/referral/documents.html:6
 msgid ""
 "\n"
 "            <p>Upload in Private Office following documents to take full "
@@ -453,11 +452,11 @@ msgstr ""
 "    <p>2. Скан/фотографию подписанного вами \"Приложения к партнерскому "
 "соглашению\"</p>"
 
-#: templates/referral/documents.html:12
+#: django-gc-shared/referral/templates/referral/documents.html:12
 msgid "Partnership Agreement"
 msgstr "Партнерское соглашение"
 
-#: templates/referral/documents.html:14
+#: django-gc-shared/referral/templates/referral/documents.html:14
 msgid ""
 "\n"
 "                Partnership Agreement determines the Company and Partner "
@@ -471,20 +470,20 @@ msgstr ""
 "взаимодействия, размер и порядок выплаты партнерского вознаграждения, а "
 "также определяет принцип взаимодействия партнера с клиентами."
 
-#: templates/referral/documents.html:19
+#: django-gc-shared/referral/templates/referral/documents.html:19
 msgid "Download Agreement"
 msgstr "Скачать соглашение"
 
-#: templates/referral/documents.html:23
+#: django-gc-shared/referral/templates/referral/documents.html:23
 msgid "Partner Certificate"
 msgstr "Сертификат партнера"
 
-#: templates/referral/documents.html:25
+#: django-gc-shared/referral/templates/referral/documents.html:25
 msgid "The Certificate will be created on Your name and sent on Your email"
 msgstr ""
 "Сертификат будет создан на Ваше имя и отправлен Вам по электронной почте"
 
-#: templates/referral/partner_api_keys.html:10
+#: django-gc-shared/referral/templates/referral/partner_api_keys.html:10
 msgid ""
 "On this page you can get an API key and HTML code of a registration form "
 "that\n"
@@ -502,23 +501,23 @@ msgstr ""
 "        Все зарегистрированные таким образом счета будут привязаны к Вашему\n"
 "        партнёрскому счёту."
 
-#: templates/referral/partner_api_keys.html:23
+#: django-gc-shared/referral/templates/referral/partner_api_keys.html:23
 msgid "Action"
 msgstr "Ссылка"
 
-#: templates/referral/partner_api_keys.html:31
+#: django-gc-shared/referral/templates/referral/partner_api_keys.html:31
 msgid "Delete"
 msgstr "Удалить."
 
-#: templates/referral/partner_api_keys.html:44
+#: django-gc-shared/referral/templates/referral/partner_api_keys.html:44
 msgid "Get new key"
 msgstr "Получить новый ключ"
 
-#: templates/referral/partner_certificate.html:14
+#: django-gc-shared/referral/templates/referral/partner_certificate.html:14
 msgid "Get partner's certificate"
 msgstr "Получить сертификат партнера"
 
-#: templates/referral/partner_certificate.html:17
+#: django-gc-shared/referral/templates/referral/partner_certificate.html:17
 msgid ""
 "\n"
 "                Get a Partner's Certificate, proving that you are an "
@@ -534,13 +533,13 @@ msgstr ""
 "ваши паспортные данные. Пожалуйста, загрузите в Личный Кабинет следующие "
 "документы:"
 
-#: templates/referral/partner_certificate.html:24
+#: django-gc-shared/referral/templates/referral/partner_certificate.html:24
 msgid "A scan or photo of your ID"
 msgstr ""
 "Скан/фотографию паспорта (разворот с именем и фотографией и страницу с "
 "регистрацией по месту жительства)"
 
-#: templates/referral/partner_certificate.html:27
+#: django-gc-shared/referral/templates/referral/partner_certificate.html:27
 #, python-format
 msgid ""
 "\n"
@@ -552,7 +551,7 @@ msgstr ""
 "Скан/фотографию подписанного вами <a href=\"%(link)s\">Приложения к "
 "партнерскому соглашению</a>"
 
-#: templates/referral/partner_certificate.html:35
+#: django-gc-shared/referral/templates/referral/partner_certificate.html:35
 #, python-format
 msgid ""
 "\n"
@@ -564,55 +563,54 @@ msgstr ""
 "Загрузить необходимые документы вы можете <a href=\"%(upload_url)s\">здесь</"
 "a>"
 
-#: templates/referral/partner_certificate.html:42
+#: django-gc-shared/referral/templates/referral/partner_certificate.html:42
 msgid "Get printed certificate"
 msgstr "Получить"
 
-#: templates/referral/partnership_program.html:47
+#: django-gc-shared/referral/templates/referral/partnership_program.html:47
 msgid "Partner Programs"
 msgstr "Партнёрские программы Форекс"
 
-#: templates/referral/partnership_program.html:51
-#| msgid "Start partnership"
+#: django-gc-shared/referral/templates/referral/partnership_program.html:51
 msgid "Select partnership program"
 msgstr "Начать сотрудничество"
 
-#: templates/referral/partnership_program.html:54
-#: templates/referral/partnership_program.html:72
+#: django-gc-shared/referral/templates/referral/partnership_program.html:54
+#: django-gc-shared/referral/templates/referral/partnership_program.html:72
 msgid "Web partner"
 msgstr "Веб-партнер"
 
-#: templates/referral/partnership_program.html:56
-#: templates/referral/partnership_program.html:79
+#: django-gc-shared/referral/templates/referral/partnership_program.html:56
+#: django-gc-shared/referral/templates/referral/partnership_program.html:79
 msgid "CPA"
 msgstr "CPA"
 
-#: templates/referral/partnership_program.html:58
+#: django-gc-shared/referral/templates/referral/partnership_program.html:58
 msgid "Regional representative"
 msgstr "Региональный представитель"
 
-#: templates/referral/partnership_program.html:59
-#: templates/referral/partnership_program.html:92
-#: templates/referral/partnership_program.html:548
+#: django-gc-shared/referral/templates/referral/partnership_program.html:59
+#: django-gc-shared/referral/templates/referral/partnership_program.html:92
+#: django-gc-shared/referral/templates/referral/partnership_program.html:548
 msgid "Franchising"
 msgstr "Франчайзинг"
 
-#: templates/referral/partnership_program.html:60
-#: templates/referral/partnership_program.html:98
+#: django-gc-shared/referral/templates/referral/partnership_program.html:60
+#: django-gc-shared/referral/templates/referral/partnership_program.html:98
 #, fuzzy
 #| msgid "Site page"
 msgid "White Label"
 msgstr "Страницы сайта"
 
-#: templates/referral/partnership_program.html:86
+#: django-gc-shared/referral/templates/referral/partnership_program.html:86
 msgid "Regional</span><br><span>representative"
 msgstr "Региональный</span><br><span>представитель"
 
-#: templates/referral/partnership_program.html:109
+#: django-gc-shared/referral/templates/referral/partnership_program.html:109
 msgid "Web partnership"
 msgstr "Веб-партнерство"
 
-#: templates/referral/partnership_program.html:115
+#: django-gc-shared/referral/templates/referral/partnership_program.html:115
 msgid ""
 "\n"
 "                                    Web partnership - it is the possibility "
@@ -641,52 +639,52 @@ msgstr ""
 "интернет-ресурс (сайт, блог, форум, группа в социальных сетях и др.), через "
 "который вы будете привлекать клиентов. "
 
-#: templates/referral/partnership_program.html:127
-#: templates/referral/partnership_program.html:258
+#: django-gc-shared/referral/templates/referral/partnership_program.html:127
+#: django-gc-shared/referral/templates/referral/partnership_program.html:258
 msgid "Become a web partner"
 msgstr "Стать веб-партнером"
 
-#: templates/referral/partnership_program.html:132
-#: templates/referral/partnership_program.html:284
-#: templates/referral/partnership_program.html:412
-#: templates/referral/partnership_program.html:572
-#: templates/referral/partnership_program.html:742
+#: django-gc-shared/referral/templates/referral/partnership_program.html:132
+#: django-gc-shared/referral/templates/referral/partnership_program.html:284
+#: django-gc-shared/referral/templates/referral/partnership_program.html:412
+#: django-gc-shared/referral/templates/referral/partnership_program.html:572
+#: django-gc-shared/referral/templates/referral/partnership_program.html:742
 msgid "How it works"
 msgstr "Как это работает"
 
-#: templates/referral/partnership_program.html:137
-#: templates/referral/partnership_program.html:289
-#: templates/referral/partnership_program.html:417
-#: templates/referral/partnership_program.html:577
+#: django-gc-shared/referral/templates/referral/partnership_program.html:137
+#: django-gc-shared/referral/templates/referral/partnership_program.html:289
+#: django-gc-shared/referral/templates/referral/partnership_program.html:417
+#: django-gc-shared/referral/templates/referral/partnership_program.html:577
 msgid "You attract clients"
 msgstr "Вы привлекаете клиентов"
 
-#: templates/referral/partnership_program.html:141
-#: templates/referral/partnership_program.html:293
+#: django-gc-shared/referral/templates/referral/partnership_program.html:141
+#: django-gc-shared/referral/templates/referral/partnership_program.html:293
 msgid "Clients from your site, blog, groups in social networks"
 msgstr "Клиенты с вашего сайта, блога, группы в соц. сети"
 
-#: templates/referral/partnership_program.html:145
-#: templates/referral/partnership_program.html:297
-#: templates/referral/partnership_program.html:425
-#: templates/referral/partnership_program.html:592
+#: django-gc-shared/referral/templates/referral/partnership_program.html:145
+#: django-gc-shared/referral/templates/referral/partnership_program.html:297
+#: django-gc-shared/referral/templates/referral/partnership_program.html:425
+#: django-gc-shared/referral/templates/referral/partnership_program.html:592
 msgid "Clients make trades on our company accounts"
 msgstr "Клиенты совершают сделки на счетах, открытых в нашей компании"
 
-#: templates/referral/partnership_program.html:149
-#: templates/referral/partnership_program.html:429
-#: templates/referral/partnership_program.html:596
+#: django-gc-shared/referral/templates/referral/partnership_program.html:149
+#: django-gc-shared/referral/templates/referral/partnership_program.html:429
+#: django-gc-shared/referral/templates/referral/partnership_program.html:596
 msgid "You receive a reward for the trades or operations that they make"
 msgstr "Вы получаете вознаграждение за каждую сделку"
 
-#: templates/referral/partnership_program.html:156
-#: templates/referral/partnership_program.html:436
-#: templates/referral/partnership_program.html:623
-#: templates/referral/partnership_program.html:766
+#: django-gc-shared/referral/templates/referral/partnership_program.html:156
+#: django-gc-shared/referral/templates/referral/partnership_program.html:436
+#: django-gc-shared/referral/templates/referral/partnership_program.html:623
+#: django-gc-shared/referral/templates/referral/partnership_program.html:766
 msgid "Benefits"
 msgstr "Преимущества"
 
-#: templates/referral/partnership_program.html:158
+#: django-gc-shared/referral/templates/referral/partnership_program.html:158
 msgid ""
 "Grand Capital has the largest partners' commissions in the industry – from "
 "$15 per lot"
@@ -694,11 +692,11 @@ msgstr ""
 "Grand Capital платит самые высокие партнерские вознаграждения на рынке – от "
 "$15 с лота"
 
-#: templates/referral/partnership_program.html:159
+#: django-gc-shared/referral/templates/referral/partnership_program.html:159
 msgid "You work with a a major well-known company"
 msgstr "Вы работаете с крупной известной компанией"
 
-#: templates/referral/partnership_program.html:160
+#: django-gc-shared/referral/templates/referral/partnership_program.html:160
 msgid ""
 "Grand Capitals investment products and online-trading services are in high "
 "demand on the market"
@@ -706,73 +704,73 @@ msgstr ""
 "Инвестиционные продукты Grand Capital и сервисы онлайн-трейдинга широко "
 "востребованы на рынке"
 
-#: templates/referral/partnership_program.html:161
+#: django-gc-shared/referral/templates/referral/partnership_program.html:161
 msgid "No initial investments required"
 msgstr "Без стартовых вложений"
 
-#: templates/referral/partnership_program.html:162
-#: templates/referral/partnership_program.html:443
+#: django-gc-shared/referral/templates/referral/partnership_program.html:162
+#: django-gc-shared/referral/templates/referral/partnership_program.html:443
 msgid "There are no limits on profit made"
 msgstr "Нет никаких ограничений по прибыли"
 
-#: templates/referral/partnership_program.html:163
+#: django-gc-shared/referral/templates/referral/partnership_program.html:163
 msgid ""
 "You and your clients receive access to all of the Grand Capital services"
 msgstr "Вы и ваши клиенты получают доступ ко всем сервисам Grand Capital"
 
-#: templates/referral/partnership_program.html:164
+#: django-gc-shared/referral/templates/referral/partnership_program.html:164
 msgid "Your clients will be serviced by Grand Capital"
 msgstr "Обслуживанием ваших клиентов занимается Grand Capital"
 
-#: templates/referral/partnership_program.html:165
+#: django-gc-shared/referral/templates/referral/partnership_program.html:165
 msgid "You can expand a partners network  all around the world"
 msgstr "Вы можете развивать партнерскую сеть по всему миру"
 
-#: templates/referral/partnership_program.html:170
+#: django-gc-shared/referral/templates/referral/partnership_program.html:170
 msgid "Example of real earnings"
 msgstr "Пример реального заработка"
 
-#: templates/referral/partnership_program.html:172
+#: django-gc-shared/referral/templates/referral/partnership_program.html:172
 msgid "Igor,Moscow"
 msgstr "Игорь, Москва"
 
-#: templates/referral/partnership_program.html:175
+#: django-gc-shared/referral/templates/referral/partnership_program.html:175
 msgid "5 days"
 msgstr "5 дней"
 
-#: templates/referral/partnership_program.html:175
+#: django-gc-shared/referral/templates/referral/partnership_program.html:175
 msgid "1 client"
 msgstr "1 клиент"
 
-#: templates/referral/partnership_program.html:176
+#: django-gc-shared/referral/templates/referral/partnership_program.html:176
 msgid "1 month"
 msgstr "1 месяц"
 
-#: templates/referral/partnership_program.html:176
+#: django-gc-shared/referral/templates/referral/partnership_program.html:176
 msgid "15 clients, 500$"
 msgstr "15 клиентов, 500$"
 
-#: templates/referral/partnership_program.html:177
+#: django-gc-shared/referral/templates/referral/partnership_program.html:177
 msgid "3 months"
 msgstr "3 месяца"
 
-#: templates/referral/partnership_program.html:177
+#: django-gc-shared/referral/templates/referral/partnership_program.html:177
 msgid "100 clients, 3500$ per month"
 msgstr "100 клиентов, 3500$ в месяц"
 
-#: templates/referral/partnership_program.html:178
+#: django-gc-shared/referral/templates/referral/partnership_program.html:178
 msgid "12 months"
 msgstr "12 месяцев"
 
-#: templates/referral/partnership_program.html:178
+#: django-gc-shared/referral/templates/referral/partnership_program.html:178
 msgid "more than 300 clients, 12650$ per month"
 msgstr "больше 300 клиентов, 12650$ в месяц"
 
-#: templates/referral/partnership_program.html:188
+#: django-gc-shared/referral/templates/referral/partnership_program.html:188
 msgid "Multilevel partnership"
 msgstr "Многоуровневое партнерство"
 
-#: templates/referral/partnership_program.html:190
+#: django-gc-shared/referral/templates/referral/partnership_program.html:190
 msgid ""
 "\n"
 "                                    You can earn revenue from attracting not "
@@ -788,7 +786,7 @@ msgstr ""
 "субпартнеров. Партнер Grand Capital, зарегистрировавшийся через Вас, "
 "становится Вашим субпартнером, от прибыли которого Вы также получаете доход"
 
-#: templates/referral/partnership_program.html:197
+#: django-gc-shared/referral/templates/referral/partnership_program.html:197
 msgid ""
 "\n"
 "                                    In the diagram on the right you can see "
@@ -803,55 +801,55 @@ msgstr ""
 "субпартнеров. Для Вашего удобства в партнерском отчете Вы будете получать "
 "детализацию расчетов по каждому субпартнеру"
 
-#: templates/referral/partnership_program.html:208
+#: django-gc-shared/referral/templates/referral/partnership_program.html:208
 msgid "Grand Capital partner"
 msgstr "Cам партнёр"
 
-#: templates/referral/partnership_program.html:209
+#: django-gc-shared/referral/templates/referral/partnership_program.html:209
 msgid "Standard reward"
 msgstr "Cтандартное вознаграждение"
 
-#: templates/referral/partnership_program.html:212
-#: templates/referral/partnership_program.html:216
+#: django-gc-shared/referral/templates/referral/partnership_program.html:212
+#: django-gc-shared/referral/templates/referral/partnership_program.html:216
 msgid "Level"
 msgstr "Уровень"
 
-#: templates/referral/partnership_program.html:224
-#: templates/referral/partnership_program.html:471
-#: templates/referral/partnership_program.html:789
+#: django-gc-shared/referral/templates/referral/partnership_program.html:224
+#: django-gc-shared/referral/templates/referral/partnership_program.html:471
+#: django-gc-shared/referral/templates/referral/partnership_program.html:789
 msgid "Our support"
 msgstr "Наша поддержка"
 
-#: templates/referral/partnership_program.html:228
+#: django-gc-shared/referral/templates/referral/partnership_program.html:228
 msgid "Transparent partners statistics in the Personal cabinet"
 msgstr "Прозрачная партнерская статистика в Личном кабинете"
 
-#: templates/referral/partnership_program.html:232
+#: django-gc-shared/referral/templates/referral/partnership_program.html:232
 msgid "Advertising<br>materials"
 msgstr "Рекламные<br>материалы"
 
-#: templates/referral/partnership_program.html:236
+#: django-gc-shared/referral/templates/referral/partnership_program.html:236
 msgid "Ready strategy<br>to attract clients"
 msgstr "Готовая стратегия<br>привлечения клиентов"
 
-#: templates/referral/partnership_program.html:240
+#: django-gc-shared/referral/templates/referral/partnership_program.html:240
 msgid "Partners department<br>specialists consultation"
 msgstr "Консультации специалистов<br>технической поддержки"
 
-#: templates/referral/partnership_program.html:244
+#: django-gc-shared/referral/templates/referral/partnership_program.html:244
 msgid "Representative<br>Certificate"
 msgstr "Сертификат<br>партнера"
 
-#: templates/referral/partnership_program.html:248
-#: templates/referral/partnership_program.html:379
+#: django-gc-shared/referral/templates/referral/partnership_program.html:248
+#: django-gc-shared/referral/templates/referral/partnership_program.html:379
 msgid "Free education"
 msgstr "Бесплатное обучение"
 
-#: templates/referral/partnership_program.html:268
+#: django-gc-shared/referral/templates/referral/partnership_program.html:268
 msgid "CPA (cost per action)"
 msgstr ""
 
-#: templates/referral/partnership_program.html:274
+#: django-gc-shared/referral/templates/referral/partnership_program.html:274
 #, python-format
 msgid ""
 "CPA is a simple program that allows you to earn $%(commission)s for every "
@@ -861,55 +859,55 @@ msgid ""
 "the peak of their popularity now."
 msgstr ""
 
-#: templates/referral/partnership_program.html:279
-#: templates/referral/partnership_program.html:384
-#| msgid "Become a web partner"
+#: django-gc-shared/referral/templates/referral/partnership_program.html:279
+#: django-gc-shared/referral/templates/referral/partnership_program.html:384
 msgid "Become a CPA partner"
 msgstr "Стать веб-партнером"
 
-#: templates/referral/partnership_program.html:301
+#: django-gc-shared/referral/templates/referral/partnership_program.html:301
 msgid "You get fixed commission for each client"
 msgstr ""
 
-#: templates/referral/partnership_program.html:310
+#: django-gc-shared/referral/templates/referral/partnership_program.html:308
+msgid "Advantages of CPA at Grand Capital"
+msgstr ""
+
+#: django-gc-shared/referral/templates/referral/partnership_program.html:310
 #, python-format
 msgid "Commission fixed at %(amount)s for each client attracted"
 msgstr ""
 
-#: templates/referral/partnership_program.html:311
+#: django-gc-shared/referral/templates/referral/partnership_program.html:311
 msgid ""
 "You can easily calculate your commission as it is based on the number of "
 "clients you’ve attracted"
 msgstr ""
 
-#: templates/referral/partnership_program.html:312
-#| msgid "No initial investments required"
+#: django-gc-shared/referral/templates/referral/partnership_program.html:312
 msgid "No risks or initial investments"
 msgstr "Без стартовых вложений"
 
-#: templates/referral/partnership_program.html:313
-#| msgid "You attract clients"
+#: django-gc-shared/referral/templates/referral/partnership_program.html:313
 msgid "You can attract unlimited number of clients"
 msgstr "Вы привлекаете клиентов"
 
-#: templates/referral/partnership_program.html:314
-#| msgid "Your only trading conditions"
+#: django-gc-shared/referral/templates/referral/partnership_program.html:314
 msgid "No hidden conditions"
 msgstr "Без скрытых условий"
 
-#: templates/referral/partnership_program.html:315
+#: django-gc-shared/referral/templates/referral/partnership_program.html:315
 msgid "Your statistics are available in your personal account"
 msgstr ""
 
-#: templates/referral/partnership_program.html:320
+#: django-gc-shared/referral/templates/referral/partnership_program.html:320
 msgid "Fixed commission"
 msgstr "Ваше вознаграждение"
 
-#: templates/referral/partnership_program.html:320
+#: django-gc-shared/referral/templates/referral/partnership_program.html:320
 msgid "for each client"
 msgstr "для всех клиентов"
 
-#: templates/referral/partnership_program.html:321
+#: django-gc-shared/referral/templates/referral/partnership_program.html:321
 #, python-format
 msgid ""
 "The commission is deposited to your account right after the client has made "
@@ -917,66 +915,67 @@ msgid ""
 "placed."
 msgstr ""
 
-#: templates/referral/partnership_program.html:331
-#| msgid "You get money for their transactions"
+#: django-gc-shared/referral/templates/referral/partnership_program.html:327
+msgid "Advantages of trading binary options at Grand Capital"
+msgstr ""
+
+#: django-gc-shared/referral/templates/referral/partnership_program.html:331
+#, fuzzy, python-format
+#| msgid "Profit up to 86%% per transaction"
 msgid "Profit up to 86%% per transaction"
 msgstr "Прибыль до 86% с транзакции"
 
-#: templates/referral/partnership_program.html:335
+#: django-gc-shared/referral/templates/referral/partnership_program.html:335
 msgid "Early closure"
 msgstr "Раннее закрытие"
 
-#: templates/referral/partnership_program.html:339
+#: django-gc-shared/referral/templates/referral/partnership_program.html:339
 #, fuzzy
 #| msgid "Select instruments:"
 msgid "Over 40 trading instruments"
 msgstr "Более 40 инструментов"
 
-#: templates/referral/partnership_program.html:343
+#: django-gc-shared/referral/templates/referral/partnership_program.html:343
 msgid "Easy to get clients interested with great promotions and bonuses"
 msgstr ""
 
-#: templates/referral/partnership_program.html:347
+#: django-gc-shared/referral/templates/referral/partnership_program.html:347
 msgid "Binary options in MetaTrader4 and Web-Terminal"
 msgstr ""
 
-#: templates/referral/partnership_program.html:351
+#: django-gc-shared/referral/templates/referral/partnership_program.html:351
 msgid "Most convenient payment options"
 msgstr ""
 
-#: templates/referral/partnership_program.html:355
+#: django-gc-shared/referral/templates/referral/partnership_program.html:355
 msgid "What you get"
 msgstr ""
 
-#: templates/referral/partnership_program.html:359
-#| msgid "Transparent partners statistics in the Personal cabinet"
+#: django-gc-shared/referral/templates/referral/partnership_program.html:359
 msgid "Transparent statistics in your Private Office"
 msgstr "Прозрачная партнерская статистика в Личном кабинете"
 
-#: templates/referral/partnership_program.html:363
-#| msgid "Materials"
+#: django-gc-shared/referral/templates/referral/partnership_program.html:363
 msgid "Promo materials"
 msgstr "Материалы"
 
-#: templates/referral/partnership_program.html:367
-#| msgid "Ready strategy<br>to attract clients"
+#: django-gc-shared/referral/templates/referral/partnership_program.html:367
 msgid "Ready-to-go strategies to attract more clients"
 msgstr "Готовая стратегия привлечения клиентов"
 
-#: templates/referral/partnership_program.html:371
+#: django-gc-shared/referral/templates/referral/partnership_program.html:371
 msgid "Assistance of our partnership department"
 msgstr "Помощь со стороны нашего партнерского отдела"
 
-#: templates/referral/partnership_program.html:375
-#| msgid "Partner Certificate"
+#: django-gc-shared/referral/templates/referral/partnership_program.html:375
 msgid "Partner certificate"
 msgstr "Сертификат партнера"
 
-#: templates/referral/partnership_program.html:393
+#: django-gc-shared/referral/templates/referral/partnership_program.html:393
 msgid "Regional  representative"
 msgstr "Региональный представитель"
 
-#: templates/referral/partnership_program.html:399
+#: django-gc-shared/referral/templates/referral/partnership_program.html:399
 msgid ""
 "\n"
 "                               Regional representative program give the "
@@ -995,21 +994,23 @@ msgstr ""
 "Capital. Статус регионального представителя позволяет работать от имени "
 "компании в вашем городе и получать повышенное партнерское вознаграждение"
 
-#: templates/referral/partnership_program.html:407
-#: templates/referral/partnership_program.html:505
-msgid "Become a regional representative"
-msgstr "Стать региональным представителем"
+#: django-gc-shared/referral/templates/referral/partnership_program.html:407
+#: django-gc-shared/referral/templates/referral/partnership_program.html:505
+#, fuzzy
+#| msgid "Become a web partner"
+msgid "Become a regional partner"
+msgstr "Стать веб-партнером"
 
-#: templates/referral/partnership_program.html:421
-#: templates/referral/partnership_program.html:588
+#: django-gc-shared/referral/templates/referral/partnership_program.html:421
+#: django-gc-shared/referral/templates/referral/partnership_program.html:588
 msgid "Your office"
 msgstr "Ваш офис"
 
-#: templates/referral/partnership_program.html:438
+#: django-gc-shared/referral/templates/referral/partnership_program.html:438
 msgid "Increased commissions - discussed individually"
 msgstr "Повышенные комиссионные – обсуждаются индивидуально"
 
-#: templates/referral/partnership_program.html:439
+#: django-gc-shared/referral/templates/referral/partnership_program.html:439
 msgid ""
 "The status of the regional representative of a major company implies a "
 "higher level of client confidence"
@@ -1017,11 +1018,11 @@ msgstr ""
 "Статус регионального представителя крупной компании подразумевает более "
 "высокий уровень доверия клиентов"
 
-#: templates/referral/partnership_program.html:440
+#: django-gc-shared/referral/templates/referral/partnership_program.html:440
 msgid "You can use all of the company's  licenses"
 msgstr "Вы можете пользоваться всеми лицензиями компании"
 
-#: templates/referral/partnership_program.html:441
+#: django-gc-shared/referral/templates/referral/partnership_program.html:441
 msgid ""
 "Easy to interest the client – Grand Capital's investment products and "
 "services are in high demand on the market"
@@ -1029,110 +1030,110 @@ msgstr ""
 "Легко заинтересовать клиента - инвестиционные продукты Grand Capital и "
 "сервисы онлайн-трейдинга широко востребованы на рынке"
 
-#: templates/referral/partnership_program.html:442
+#: django-gc-shared/referral/templates/referral/partnership_program.html:442
 msgid "Individual page of the representative on the Grand Capital's web site"
 msgstr "Индивидуальная страница представительства на сайте Grand Capital"
 
-#: templates/referral/partnership_program.html:444
+#: django-gc-shared/referral/templates/referral/partnership_program.html:444
 msgid "Access to all of the Grand Capital Services"
 msgstr "Доступ ко всем сервисам Grand Capital"
 
-#: templates/referral/partnership_program.html:445
+#: django-gc-shared/referral/templates/referral/partnership_program.html:445
 msgid ""
 "Ability to conduct training in your office regarding the Grand Capital "
 "programs"
 msgstr ""
 "Возможность проводить обучение в своем офисе по программам Grand Capital"
 
-#: templates/referral/partnership_program.html:449
+#: django-gc-shared/referral/templates/referral/partnership_program.html:449
 msgid "Requirements for the representative"
 msgstr "Требования к представителю"
 
-#: templates/referral/partnership_program.html:451
+#: django-gc-shared/referral/templates/referral/partnership_program.html:451
 msgid "Having your own office"
 msgstr "Наличие собственного офиса"
 
-#: templates/referral/partnership_program.html:452
+#: django-gc-shared/referral/templates/referral/partnership_program.html:452
 msgid "Be a legal entity"
 msgstr "Зарегистрированное юридическое лицо"
 
-#: templates/referral/partnership_program.html:453
+#: django-gc-shared/referral/templates/referral/partnership_program.html:453
 msgid "Knowledge of the specifics of the financial markets"
 msgstr "Знание специфики финансовых рынков"
 
-#: templates/referral/partnership_program.html:454
+#: django-gc-shared/referral/templates/referral/partnership_program.html:454
 msgid "High-quality consulting and training of the clients"
 msgstr "Качественное консультирование и обучение клиентов"
 
-#: templates/referral/partnership_program.html:455
+#: django-gc-shared/referral/templates/referral/partnership_program.html:455
 msgid "Grand Capital's Approval of your marketing activities"
 msgstr "Согласование с Grand Capital своей маркетинговой активности"
 
-#: templates/referral/partnership_program.html:458
+#: django-gc-shared/referral/templates/referral/partnership_program.html:458
 msgid "Example of results"
 msgstr "Пример работы офиса"
 
-#: templates/referral/partnership_program.html:461
+#: django-gc-shared/referral/templates/referral/partnership_program.html:461
 msgid "The expenses for opening the office:"
 msgstr "Затраты на открытие офиса:"
 
-#: templates/referral/partnership_program.html:461
-#: templates/referral/partnership_program.html:463
+#: django-gc-shared/referral/templates/referral/partnership_program.html:461
+#: django-gc-shared/referral/templates/referral/partnership_program.html:463
 msgid "till"
 msgstr "до"
 
-#: templates/referral/partnership_program.html:462
+#: django-gc-shared/referral/templates/referral/partnership_program.html:462
 msgid "Monthly expenses:"
 msgstr "Ежемесячные затраты:"
 
-#: templates/referral/partnership_program.html:463
+#: django-gc-shared/referral/templates/referral/partnership_program.html:463
 msgid "Office staff:"
 msgstr "Штат:"
 
-#: templates/referral/partnership_program.html:463
+#: django-gc-shared/referral/templates/referral/partnership_program.html:463
 msgid "employees"
 msgstr "сотрудников"
 
-#: templates/referral/partnership_program.html:464
+#: django-gc-shared/referral/templates/referral/partnership_program.html:464
 msgid "Average monthly income:"
 msgstr "Среднемесячный доход:"
 
-#: templates/referral/partnership_program.html:475
+#: django-gc-shared/referral/templates/referral/partnership_program.html:475
 msgid "Ready-to launch and development model for your business"
 msgstr "Готовая модель по запуску и развитию своего бизнеса"
 
-#: templates/referral/partnership_program.html:479
+#: django-gc-shared/referral/templates/referral/partnership_program.html:479
 msgid "Working and proven techniques to attract new customers"
 msgstr "Отработанные и проверенные методики привлечения клиентов"
 
-#: templates/referral/partnership_program.html:483
+#: django-gc-shared/referral/templates/referral/partnership_program.html:483
 msgid "Ongoing technical support for your office and clients"
 msgstr "Постоянная техническая поддержка офиса и клиентов"
 
-#: templates/referral/partnership_program.html:487
+#: django-gc-shared/referral/templates/referral/partnership_program.html:487
 msgid "No need to buy software"
 msgstr "Отсутствие необходимости<br>в покупке ПО"
 
-#: templates/referral/partnership_program.html:491
+#: django-gc-shared/referral/templates/referral/partnership_program.html:491
 msgid "Work under a well-known brand with the right to use all licenses"
 msgstr "Работа под известным брендом с правом использования всех лицензий"
 
-#: templates/referral/partnership_program.html:495
+#: django-gc-shared/referral/templates/referral/partnership_program.html:495
 msgid "Individual conditions of cooperation"
 msgstr "Индивидуальные условия сотрудничества"
 
-#: templates/referral/partnership_program.html:512
+#: django-gc-shared/referral/templates/referral/partnership_program.html:512
 msgid ""
 "Application for collaboration on the \"Regional representative\" program"
 msgstr "Заявка на сотрудничество по программе \"Региональный представитель\""
 
-#: templates/referral/partnership_program.html:538
-#: templates/referral/partnership_program.html:711
-#: templates/referral/partnership_program.html:848
+#: django-gc-shared/referral/templates/referral/partnership_program.html:538
+#: django-gc-shared/referral/templates/referral/partnership_program.html:711
+#: django-gc-shared/referral/templates/referral/partnership_program.html:848
 msgid "Send application"
 msgstr "Отправить заявку"
 
-#: templates/referral/partnership_program.html:554
+#: django-gc-shared/referral/templates/referral/partnership_program.html:554
 msgid ""
 "\n"
 "                                Participate in the development of Grand "
@@ -1163,43 +1164,43 @@ msgstr ""
 "Все это позволяет избежать многих ошибок и построить собственное успешное "
 "дело при поддержке крупной компании"
 
-#: templates/referral/partnership_program.html:567
-#: templates/referral/partnership_program.html:676
-#: templates/referral/partnership_program.html:737
-#: templates/referral/partnership_program.html:815
+#: django-gc-shared/referral/templates/referral/partnership_program.html:567
+#: django-gc-shared/referral/templates/referral/partnership_program.html:676
+#: django-gc-shared/referral/templates/referral/partnership_program.html:737
+#: django-gc-shared/referral/templates/referral/partnership_program.html:815
 msgid "Begin Partnership"
 msgstr "Начать сотрудничество"
 
-#: templates/referral/partnership_program.html:581
-#: templates/referral/partnership_program.html:614
+#: django-gc-shared/referral/templates/referral/partnership_program.html:581
+#: django-gc-shared/referral/templates/referral/partnership_program.html:614
 msgid "Your independent income"
 msgstr "Ваш независимый доход"
 
-#: templates/referral/partnership_program.html:582
-#: templates/referral/partnership_program.html:603
+#: django-gc-shared/referral/templates/referral/partnership_program.html:582
+#: django-gc-shared/referral/templates/referral/partnership_program.html:603
 msgid "Income from<br>consulting services"
 msgstr "Доход от <br>консультационных услуг"
 
-#: templates/referral/partnership_program.html:583
-#: templates/referral/partnership_program.html:607
+#: django-gc-shared/referral/templates/referral/partnership_program.html:583
+#: django-gc-shared/referral/templates/referral/partnership_program.html:607
 msgid "Income from<br>client training"
 msgstr "Доход от<br>обучение клиентов"
 
-#: templates/referral/partnership_program.html:584
-#: templates/referral/partnership_program.html:611
+#: django-gc-shared/referral/templates/referral/partnership_program.html:584
+#: django-gc-shared/referral/templates/referral/partnership_program.html:611
 msgid "Other income"
 msgstr "Прочие доходы"
 
-#: templates/referral/partnership_program.html:625
+#: django-gc-shared/referral/templates/referral/partnership_program.html:625
 msgid "High brand recognition - franchise of a known company Grand Capital"
 msgstr ""
 "Высокая узнаваемость бренда - франшиза известной компании Grand Capital"
 
-#: templates/referral/partnership_program.html:626
+#: django-gc-shared/referral/templates/referral/partnership_program.html:626
 msgid "Large market potential - stable demand for trading services"
 msgstr "Большой потенциал рынка - стабильный спрос на услуги трейдинга"
 
-#: templates/referral/partnership_program.html:627
+#: django-gc-shared/referral/templates/referral/partnership_program.html:627
 msgid ""
 "Complete services package: training, advertising, software, support, a "
 "personal page on the Grand Capital web site"
@@ -1207,30 +1208,30 @@ msgstr ""
 "Полный пакет услуг: обучение, реклама, программное обеспечение, поддержка, "
 "персональная страница на сайте компании Grand Capital"
 
-#: templates/referral/partnership_program.html:628
+#: django-gc-shared/referral/templates/referral/partnership_program.html:628
 msgid "Unconditional Franchise"
 msgstr "Безусловная франшиза"
 
-#: templates/referral/partnership_program.html:629
+#: django-gc-shared/referral/templates/referral/partnership_program.html:629
 msgid "No royalty"
 msgstr "Отсутствие роялти"
 
-#: templates/referral/partnership_program.html:630
+#: django-gc-shared/referral/templates/referral/partnership_program.html:630
 msgid ""
 "Several sources of income: from clients trades, training, consulting and "
 "others"
 msgstr ""
 "Несколько источников дохода: от сделок клиентов, обучения, консалтинга и пр."
 
-#: templates/referral/partnership_program.html:634
+#: django-gc-shared/referral/templates/referral/partnership_program.html:634
 msgid "Requirements for franchisees"
 msgstr "Требования к франчайзи"
 
-#: templates/referral/partnership_program.html:636
+#: django-gc-shared/referral/templates/referral/partnership_program.html:636
 msgid "Franchisee shall comply with the internal regulations of the company"
 msgstr "Франчайзи обязан соблюдать внутренний регламент компании"
 
-#: templates/referral/partnership_program.html:637
+#: django-gc-shared/referral/templates/referral/partnership_program.html:637
 msgid ""
 "Office of the franchisee must be branded in accordance with the requirements "
 "of Grand Capital"
@@ -1238,7 +1239,7 @@ msgstr ""
 "Офис франчайзи должен быть брендирован в соответствии с требованиями Grand "
 "Capital"
 
-#: templates/referral/partnership_program.html:638
+#: django-gc-shared/referral/templates/referral/partnership_program.html:638
 msgid ""
 "Attracting and customer service should be carried out only by the scheme, "
 "which will be provided on training"
@@ -1246,7 +1247,7 @@ msgstr ""
 "Привлечение и обслуживание клиентов должно осуществляться только по схеме, "
 "которая будет предоставлена на обучении"
 
-#: templates/referral/partnership_program.html:639
+#: django-gc-shared/referral/templates/referral/partnership_program.html:639
 msgid ""
 "Franchisee shall ensure the normal operation of the office and finance "
 "office operating expenses"
@@ -1254,43 +1255,43 @@ msgstr ""
 "Франчайзи обязан обеспечить нормальную работу офиса и финансировать "
 "операционные расходы офиса"
 
-#: templates/referral/partnership_program.html:640
+#: django-gc-shared/referral/templates/referral/partnership_program.html:640
 msgid "Proposal for a franchise is not a public offer"
 msgstr "Предложение по франчайзингу не является публичной офертой"
 
-#: templates/referral/partnership_program.html:646
+#: django-gc-shared/referral/templates/referral/partnership_program.html:646
 msgid "Our Support"
 msgstr "Наша поддержка"
 
-#: templates/referral/partnership_program.html:650
+#: django-gc-shared/referral/templates/referral/partnership_program.html:650
 msgid "Ready promotional<br>materials"
 msgstr "Готовые рекламные<br>материалы"
 
-#: templates/referral/partnership_program.html:654
+#: django-gc-shared/referral/templates/referral/partnership_program.html:654
 msgid "Attracting customers<br>through own<br>representatives"
 msgstr "Привлечение клиентов<br>через систему<br>собственных представительств"
 
-#: templates/referral/partnership_program.html:658
+#: django-gc-shared/referral/templates/referral/partnership_program.html:658
 msgid "We provide<br>all the software"
 msgstr "Предоставляем все<br>программное обеспечение"
 
-#: templates/referral/partnership_program.html:662
+#: django-gc-shared/referral/templates/referral/partnership_program.html:662
 msgid "Technical support<br>of your clients"
 msgstr "Постоянная техническая поддержка офиса<br>и клиентов"
 
-#: templates/referral/partnership_program.html:666
+#: django-gc-shared/referral/templates/referral/partnership_program.html:666
 msgid "You get access to<br>all of the Grand Capital<br>training materials"
 msgstr "Вы получаете доступ<br>ко всем обучающим<br>материалам Grand Capital"
 
-#: templates/referral/partnership_program.html:670
+#: django-gc-shared/referral/templates/referral/partnership_program.html:670
 msgid "Individual counseling and<br>training of the franchisees"
 msgstr "Индивидуальные консультации и<br>обучение франчайзи"
 
-#: templates/referral/partnership_program.html:684
+#: django-gc-shared/referral/templates/referral/partnership_program.html:684
 msgid "Application for collaboration on the \"Franchising\" program"
 msgstr "Заявка на сотрудничество по программе \"Франчайзинг\""
 
-#: templates/referral/partnership_program.html:727
+#: django-gc-shared/referral/templates/referral/partnership_program.html:727
 msgid ""
 "\n"
 "                                White Label partners program was developed "
@@ -1314,7 +1315,7 @@ msgstr ""
 "сервисов интернет-трейдинга. При этом White Label привлекает и обслуживает "
 "клиентов под собственным брендом"
 
-#: templates/referral/partnership_program.html:747
+#: django-gc-shared/referral/templates/referral/partnership_program.html:747
 msgid ""
 "Your clients. Your income depends only on your activity - the income is not "
 "limited in any way"
@@ -1322,19 +1323,19 @@ msgstr ""
 "Ваши клиенты. Прибыль зависит только от вашей активности – доходы ничем не "
 "ограничены"
 
-#: templates/referral/partnership_program.html:751
+#: django-gc-shared/referral/templates/referral/partnership_program.html:751
 msgid "Your legal entity<br>under your own brand"
 msgstr "Ваше юридическое лицо под своим брендом"
 
-#: templates/referral/partnership_program.html:755
+#: django-gc-shared/referral/templates/referral/partnership_program.html:755
 msgid "Trading Platform"
 msgstr "Торговая платформа"
 
-#: templates/referral/partnership_program.html:759
+#: django-gc-shared/referral/templates/referral/partnership_program.html:759
 msgid "Clients make trades on<br>your company accounts"
 msgstr "Клиенты совершают сделки на счетах вашей компании"
 
-#: templates/referral/partnership_program.html:768
+#: django-gc-shared/referral/templates/referral/partnership_program.html:768
 msgid ""
 "You can position yourself as an independent broker, without spending the "
 "money to buy the MetaTrader 4 terminal"
@@ -1342,16 +1343,16 @@ msgstr ""
 "Вы может позиционировать себя как независимый брокер, не тратя при этом "
 "деньги на покупку терминала MetaTrader 4"
 
-#: templates/referral/partnership_program.html:769
+#: django-gc-shared/referral/templates/referral/partnership_program.html:769
 msgid "Large market potential - strong demand for online trading services"
 msgstr ""
 "Большой потенциал рынка - стабильный спрос на услуги интернет-трейдинга"
 
-#: templates/referral/partnership_program.html:770
+#: django-gc-shared/referral/templates/referral/partnership_program.html:770
 msgid "Increased customer base by attracting new clients"
 msgstr "Расширение клиентской базы за счет привлечения новых клиентов"
 
-#: templates/referral/partnership_program.html:771
+#: django-gc-shared/referral/templates/referral/partnership_program.html:771
 msgid ""
 "Huge selection of tools - more than 330 financial instruments (CFD, Futures, "
 "Stocks, Indices, Options, Forex)"
@@ -1359,84 +1360,84 @@ msgstr ""
 "Огромный выбор инструментов – более 330 финансовых инструментов (CFD, "
 "Futures, Stocks, Indices, Options, Forex)"
 
-#: templates/referral/partnership_program.html:772
+#: django-gc-shared/referral/templates/referral/partnership_program.html:772
 msgid "Profitable spreads and commissions"
 msgstr "Выгодные спреды и комиссии"
 
-#: templates/referral/partnership_program.html:773
+#: django-gc-shared/referral/templates/referral/partnership_program.html:773
 msgid "Full financial and legal independence"
 msgstr "Полная финансовая и юридическая независимость"
 
-#: templates/referral/partnership_program.html:774
+#: django-gc-shared/referral/templates/referral/partnership_program.html:774
 msgid "Individual conditions for each White Label"
 msgstr "Индивидуальные условия для каждого White Label"
 
-#: templates/referral/partnership_program.html:778
+#: django-gc-shared/referral/templates/referral/partnership_program.html:778
 msgid "Requirements"
 msgstr "Требования"
 
-#: templates/referral/partnership_program.html:780
+#: django-gc-shared/referral/templates/referral/partnership_program.html:780
 msgid "Initial capital to start up the business"
 msgstr "Стартовый капитал на создание и раскрутку "
 
-#: templates/referral/partnership_program.html:781
+#: django-gc-shared/referral/templates/referral/partnership_program.html:781
 msgid "Database of live clients"
 msgstr "База живых клиентов"
 
-#: templates/referral/partnership_program.html:782
+#: django-gc-shared/referral/templates/referral/partnership_program.html:782
 msgid "Knowledge of the financial services market"
 msgstr "Знание рынка финансовых услуг"
 
-#: templates/referral/partnership_program.html:783
+#: django-gc-shared/referral/templates/referral/partnership_program.html:783
 msgid "Registered legal entity"
 msgstr "Зарегистрированное юридическое лицо"
 
-#: templates/referral/partnership_program.html:793
+#: django-gc-shared/referral/templates/referral/partnership_program.html:793
 msgid "The use of Grand Capitals trading resources"
 msgstr "Использование торговых возможностей Grand Capital"
 
-#: templates/referral/partnership_program.html:797
+#: django-gc-shared/referral/templates/referral/partnership_program.html:797
 msgid "Consultation with technical support specialists"
 msgstr "Консультации специалистов технической поддержки"
 
-#: templates/referral/partnership_program.html:801
+#: django-gc-shared/referral/templates/referral/partnership_program.html:801
 msgid "Software updates"
 msgstr "Обновления ПО"
 
-#: templates/referral/partnership_program.html:805
+#: django-gc-shared/referral/templates/referral/partnership_program.html:805
 msgid "Free training<br>for your staff"
 msgstr "Бесплатное обучение<br>вашего персонала"
 
-#: templates/referral/partnership_program.html:809
+#: django-gc-shared/referral/templates/referral/partnership_program.html:809
 msgid "Joint development of<br>strategies to promote"
 msgstr "Совместная разработка стратегии продвижения"
 
-#: templates/referral/partnership_program.html:822
+#: django-gc-shared/referral/templates/referral/partnership_program.html:822
 msgid "Application for collaboration on the \"White Label\" program"
 msgstr "Заявка на сотрудничество по программе \"White Label\""
 
-#: templates/referral/redirect_count.html:5
+#: django-gc-shared/referral/templates/referral/redirect_count.html:5
 msgid "Partner tools"
 msgstr "Инструменты партнера"
 
-#: templates/referral/redirect_count.html:8
+#: django-gc-shared/referral/templates/referral/redirect_count.html:8
 msgid "Redirects from referral link"
 msgstr "Переходы по реферальной ссылке"
 
-#: templates/referral/redirect_count.html:19
+#: django-gc-shared/referral/templates/referral/redirect_count.html:19
 msgid "Traffic rate"
 msgstr "Объемы траффика"
 
-#: templates/referral/redirect_count.html:36
-#: templates/referral/redirect_count.html:44
+#: django-gc-shared/referral/templates/referral/redirect_count.html:36
+#: django-gc-shared/referral/templates/referral/redirect_count.html:44
 msgid "No clicks"
 msgstr "Не было переходов по партнерской ссылке"
 
-#: templates/referral/redirect_count.html:50
+#: django-gc-shared/referral/templates/referral/redirect_count.html:50
 msgid "You have no accounts"
 msgstr "У вас нет партнерских счетов"
 
-#: templates/referral/verify_partner.html:12
+#: django-gc-shared/referral/templates/referral/verify_partner.html:12
 #, python-format
 msgid ""
 "\n"
@@ -1461,25 +1462,27 @@ msgstr ""
 "        Кроме того, также потребуется скан вашего паспорта, вы также можете "
 "загрузить его с помощью формы ниже."
 
-#: templates/referral/verify_partner.html:22
+#: django-gc-shared/referral/templates/referral/verify_partner.html:22
 msgid "Upload"
 msgstr "Загрузить"
 
-#: views.py:44
+#: django-gc-shared/referral/views.py:44
 #, python-format
 msgid "You have created a request for printed certificate # %i"
 msgstr "Вы создали заявку на создание сертификата, № %i"
 
-#: views.py:76
+#: django-gc-shared/referral/views.py:76
 msgid "Failed to remove the domain."
 msgstr "Не удалось удалить домен."
 
-#: views.py:81
+#: django-gc-shared/referral/views.py:81
 msgid "Domain was successfully deleted."
 msgstr "Домен был успешно удален."
 
-#: views.py:120
+#: django-gc-shared/referral/views.py:120
 #, python-format
 msgid "Successfully uploaded document %s"
 msgstr "Документ \"%s\" был успешно загружен"
 
+#~ msgid "Become a regional representative"
+#~ msgstr "Стать региональным представителем"

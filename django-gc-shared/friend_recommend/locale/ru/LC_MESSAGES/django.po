@@ -8,68 +8,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-14 22:10+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2016-06-14 22:11+0230\n"
 "Last-Translator:   <valexeev@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Translated-Using: django-rosetta 0.7.11\n"
 
+#: django-gc-shared/friend_recommend/models.py:13
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_modal.html:12
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_side_modal.html:11
 msgid "Friend's name"
 msgstr "Имя друга"
 
+#: django-gc-shared/friend_recommend/models.py:14
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_modal.html:28
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_side_modal.html:23
 msgid "Friend's email"
 msgstr "Email друга"
 
+#: django-gc-shared/friend_recommend/rest_serializers.py:23
 msgid "Account"
 msgstr "Счёт"
 
+#: django-gc-shared/friend_recommend/rest_serializers.py:24
 msgid "Select one of your accounts."
 msgstr "Выберите один из ваших счетов."
 
+#: django-gc-shared/friend_recommend/templates/friend_recommend/_recommend_form_ajax.html:4
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_modal.html:2
 msgid "Recommend us to a friend"
 msgstr "Порекомендуйте нас другу"
 
+#: django-gc-shared/friend_recommend/templates/friend_recommend/_recommend_form_ajax.html:6
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_modal.html:8
 msgid "We justify your expectations"
 msgstr "Мы оправдываем ваши ожидания"
 
+#: django-gc-shared/friend_recommend/templates/friend_recommend/_recommend_form_ajax.html:7
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_modal.html:9
 msgid "Tell friends about us!"
 msgstr "Расскажите о нас друзьям"
 
+#: django-gc-shared/friend_recommend/templates/friend_recommend/_recommend_form_ajax.html:11
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_modal.html:62
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_side_modal.html:51
 msgid "Recommend"
 msgstr "Рекомендовать"
 
+#: django-gc-shared/friend_recommend/templates/friend_recommend/_recommend_form_ajax.html:15
 msgid "We pay for your reference. To get your payments become our Partner"
 msgstr ""
 "Мы платим Вам за Ваши рекомендации. \n"
 "Что бы получать вознаграждение за приглашенных друзей станьте нашим партнером"
 
+#: django-gc-shared/friend_recommend/templates/friend_recommend/_recommend_form_ajax.html:16
 msgid "Become a partner"
 msgstr "Стать партнером"
 
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_modal.html:7
 msgid "Have you enjoyed working with us?"
 msgstr "Вам понравилось работать с нами?"
 
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_modal.html:44
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_side_modal.html:36
 msgid "IB account"
 msgstr "Партнёрский счёт"
 
-msgid "We pay for your reference. Become our Partner"
-msgstr ""
-"Мы платим Вам за Ваши рекомендации. \n"
-"Чтобы получать вознаграждение за приглашенных друзей станьте нашим партнером."
-
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_side_modal.html:3
 msgid "Refer friends"
 msgstr "Приглашайте друзей"
 
+#: django-gc-shared/friend_recommend/templates/js/my/friend_invitation_side_modal.html:5
 msgid "and get rewards for&nbsp;the&nbsp;trading of&nbsp;each one"
 msgstr "и получайте вознаграждение за&nbsp;торговлю каждого"
 
+#: django-gc-shared/friend_recommend/views.py:25
 msgid "Thank you for recommending us!"
 msgstr "Спасибо за то, что рекомендуете нас!"
+
+#~ msgid "We pay for your reference. Become our Partner"
+#~ msgstr ""
+#~ "Мы платим Вам за Ваши рекомендации. \n"
+#~ "Чтобы получать вознаграждение за приглашенных друзей станьте нашим "
+#~ "партнером."
 
 #~ msgid "Refer friends to&nbsp;Grand&nbsp;Capital"
 #~ msgstr "Приглашайте друзей в&nbsp;Grand&nbsp;Capital"

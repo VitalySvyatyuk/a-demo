@@ -2,357 +2,488 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-21 17:44+0400\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2014-11-21 17:45+0230\n"
 "Last-Translator: Denis Tom <d.tomilin@grandcapital.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.4\n"
 
+#: django-gc-shared/reports/__init__.py:31
+#: django-gc-shared/reports/templates/reports/closed_trades.html:5
 msgid "Closed trade report"
 msgstr "Отчёт по закрытым позициям"
 
-msgid "FULL profit report by account"
-msgstr "Полный отчёт по прибыли по счёту"
-
-msgid "Deposits by payment system report"
-msgstr "Отчёт по вводам с разных платежных систем"
-
-msgid "Deposits by account group"
-msgstr "Ввод средств по группам счетов"
-
-msgid "Investors report"
-msgstr "Отчёт по инвесторам"
-
-msgid "FULL profit report"
-msgstr "Полный отчёт по прибыли"
-
-msgid "PAMM managers report"
-msgstr "Отчёт по управляющим"
-
-msgid "Withdraws by system"
-msgstr "Отчёт по выводам с разных платежных систем"
-
-msgid "All managers report"
-msgstr "Отчёт по всем менеджерам"
-
-msgid "Manager's summary report"
-msgstr "Менеджерский суммарный отчет"
-
-msgid "Regional managers summary report"
-msgstr "Региональный отчёт"
-
-msgid "My partner accounts report"
-msgstr "Отчёт по моим партнёрским счетам"
-
-msgid "Deposit and withdrawal report"
-msgstr "Отчёт по вводу выводу"
-
+#: django-gc-shared/reports/__init__.py:44
+#: django-gc-shared/reports/templates/reports/summary.html:5
 msgid "Summary report"
 msgstr "Суммарный отчёт"
 
-msgid "Account regdate report"
-msgstr "Отчёт по открытию новых счетов"
-
-msgid "All partners report, new edition"
-msgstr "Суммарный отчёт по всем партнёрам, новая редакция"
-
-msgid "Full deposit withdrawal"
-msgstr "Полный отчёт по вводу выводу"
-
-msgid "orur"
-msgstr "ввод RUR через офис"
-
-msgid "ousd"
-msgstr "ввод USD через офис"
-
+#: django-gc-shared/reports/forms.py:25 django-gc-shared/reports/forms.py:187
+#: django-gc-shared/reports/rest_serializers.py:23
 msgid "Start date"
 msgstr "Дата начала"
 
+#: django-gc-shared/reports/forms.py:26 django-gc-shared/reports/forms.py:188
+#: django-gc-shared/reports/rest_serializers.py:24
 msgid "End date"
 msgstr "Дата окончания (включительно)"
 
+#: django-gc-shared/reports/forms.py:52 django-gc-shared/reports/forms.py:57
+#: django-gc-shared/reports/rest_serializers.py:32
+#: django-gc-shared/reports/rest_serializers.py:39
+#: django-gc-shared/reports/templates/reports/summary.html:11
 msgid "Account"
 msgstr "Счет"
 
+#: django-gc-shared/reports/forms.py:53
+#: django-gc-shared/reports/rest_serializers.py:33
 msgid "ID of the account you want to generate report for."
 msgstr "Номер счета"
 
+#: django-gc-shared/reports/forms.py:58
+#: django-gc-shared/reports/rest_serializers.py:40
 msgid "Select one of your accounts."
 msgstr "Выберите один из счетов"
 
+#: django-gc-shared/reports/forms.py:75
+#: django-gc-shared/reports/rest_serializers.py:68
 msgid "Include"
 msgstr "Включить"
 
+#: django-gc-shared/reports/forms.py:76
 msgid "Include accounts from these groups. Empty means ALL accounts"
 msgstr ""
 "Включить в отчет счета из этих групп. Оставьте пустым для включения ВСЕХ "
 "счетов"
 
+#: django-gc-shared/reports/forms.py:77
 #, python-format
 msgid ". Click <a href=\"%s\">here</a> to view group contents."
 msgstr ". Нажмите <a href=\"%s\">здесь</a>, чтобы посмотреть группы счетов"
 
+#: django-gc-shared/reports/forms.py:83
+#: django-gc-shared/reports/rest_serializers.py:74
 msgid "Exclude"
 msgstr "Исключить"
 
+#: django-gc-shared/reports/forms.py:84
 msgid "Exclude accounts from these groups"
 msgstr "Исключить из отчета счета из этих групп"
 
+#: django-gc-shared/reports/forms.py:103
+#: django-gc-shared/reports/rest_serializers.py:106
 msgid "Report type"
 msgstr "Отчет"
 
+#: django-gc-shared/reports/forms.py:105
+#: django-gc-shared/reports/rest_serializers.py:108
 msgid "Choose one of the report types"
 msgstr "Выберите тип отчета"
 
+#: django-gc-shared/reports/forms.py:143
+#: django-gc-shared/reports/rest_serializers.py:121
 msgid "The end date of the period must be later than the start date"
 msgstr "Конец интервала должен быть после его начала"
 
+#: django-gc-shared/reports/forms.py:146
+#: django-gc-shared/reports/rest_serializers.py:124
 msgid "You can't order a report for a period longer than 65 days"
 msgstr "Вы не можете заказать отчёт за период более 65 дней"
 
+#: django-gc-shared/reports/forms.py:174
+#: django-gc-shared/reports/rest_api.py:35
+#: django-gc-shared/reports/templates/reports/base_report.html:26
 msgid "for account"
 msgstr "для счета"
 
+#: django-gc-shared/reports/forms.py:177
+#: django-gc-shared/reports/rest_api.py:38
 #, python-format
 msgid "for account groups %(include)s without groups %(exclude)s"
 msgstr "для групп счетов %(include)s, за исключением групп %(exclude)s"
 
+#: django-gc-shared/reports/forms.py:182
+#: django-gc-shared/reports/rest_api.py:43
 #, python-format
 msgid "for account group %s"
 msgstr "для групп счетов %s"
 
+#: django-gc-shared/reports/models.py:44
 msgid "Slug"
 msgstr ""
 
+#: django-gc-shared/reports/models.py:91
 msgid "Account group"
 msgstr "Группа счетов"
 
+#: django-gc-shared/reports/models.py:92
 msgid "Account groups"
 msgstr "Группы счетов"
 
+#: django-gc-shared/reports/models.py:114
 msgid "Saved report"
 msgstr "Сохраненный отчет"
 
+#: django-gc-shared/reports/models.py:115
 msgid "Saved reports"
 msgstr "Сохраненные отчёты"
 
+#: django-gc-shared/reports/templates/js/my/reports_list.html:4
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:72
+#: django-gc-shared/reports/templates/reports/report_list.html:62
 msgid "Available reports"
 msgstr "Доступные отчеты"
 
-msgid "Name"
-msgstr "Имя"
-
-msgid "Status"
-msgstr "Состояние"
-
-msgid "Date"
-msgstr "Дата"
-
-msgid "View"
-msgstr "Просмотреть"
-
-msgid "In progress"
-msgstr "В обработке"
-
-msgid "Loading..."
-msgstr "Загрузка..."
-
-msgid "No more reports found"
-msgstr "Не найдено более отчётов"
-
-msgid "These account groups will always be excluded:"
-msgstr "Эти группы счетов будут исключены из отчёта:"
-
-msgid "Order report"
-msgstr "Заказать отчёт"
-
-#, python-format
-msgid ""
-"Unfortunately, generation of your report \"%(name)s\" failed due to an internal server error. Our IT personnel has been notified of this issue.\n"
-"\n"
-"Please wait 5-10 minutes and try again. Do not hesitate to contact our support team should it fail again.\n"
-msgstr ""
-"К сожалению, при генерации Вашего отчёта \"%(name)s\" произошла ошибка. Наши специалисты уже были оповещены об этом.\n"
-"\n"
-"Пожалуйста, подождите 5-10 минут и попробуйте снова. При повторении ошибки свяжитесь с нашей службой поддержки.\n"
-
-#, python-format
-msgid "Generation of your report %(name)s failed"
-msgstr "Генерация вашего отчёта \"%(name)s\" не удалась."
-
-#, python-format
-#| msgid ""
-#| "ld like to inform you, that the generation of your report \"%(name)sas been finished.\n"
-#| "n view it here: %(link)s\n"
-msgid ""
-"We would like to inform you, that the generation of your report \"%(name)s\" has been finished.\n"
-"\n"
-"You can view it here: https://grandcapital.net%(link)s\n"
-msgstr ""
-"Сообщаем Вам, что генерация отчёта \"%(name)s\" закончена.\n"
-"\n"
-"Вы можете посмотреть его здесь: %(link)s\n"
-
-#, python-format
-msgid "Your report %(name)s has been generated"
-msgstr "Ваш отчёт \"%(name)s\" был сгенерирован"
-
-msgid "Sorry"
-msgstr "Извините"
-
-msgid "Reports are available only for customers with IB accounts."
-msgstr "Отчеты доступны только клиентам, открывшим партнерский счет"
-
-msgid "Open an IB account"
-msgstr "Открыть партнерский счет"
-
-msgid "All partners summary report"
-msgstr "Суммарный отчет по всем партнёрам"
-
-msgid "All partners summary report 2013 edition"
-msgstr "Суммарный отчёт по всем партнёрам, редакция 2013"
-
-msgid "Back"
-msgstr "Назад"
-
-msgid "Calculate report"
-msgstr "Рассчитать отчет"
-
-msgid "No data found"
-msgstr "Нет данных"
-
-msgid "balance"
-msgstr "баланс"
-
-msgid "Ticket"
-msgstr "Тикет"
-
-msgid "Operation type"
-msgstr "Тип операции"
-
-msgid "Symbol"
-msgstr "Символ"
-
-msgid "Open time"
-msgstr "Время открытия"
-
-msgid "Close time"
-msgstr "Время закрытия"
-
-msgid "Open price"
-msgstr "Цена открытия"
-
-msgid "Close price"
-msgstr "Цена закрытия"
-
-msgid "Difference"
-msgstr "Разница"
-
-msgid "Volume"
-msgstr "Объем"
-
-msgid "Swap"
-msgstr ""
-
-msgid "Profit"
-msgstr "Прибыль"
-
-msgid "Totals for"
-msgstr "Итого для"
-
-msgid "Deposit"
-msgstr "Ввод"
-
-msgid "Withdraw"
-msgstr "Вывод"
-
-msgid "Deposit withdrawl report"
-msgstr "Отчет по вводу-выводу"
-
-msgid "Deal"
-msgstr "Сделка"
-
-msgid "Account type"
-msgstr "Тип счёта"
-
-msgid "Comment"
-msgstr "Комментарий"
-
-msgid "Amount"
-msgstr "Сумма"
-
-msgid "Agent name"
-msgstr "Имя агента"
-
-msgid "Agent"
-msgstr "Агент"
-
-msgid "Reports"
-msgstr "Отчеты"
-
+#: django-gc-shared/reports/templates/js/my/reports_list.html:5
+#: django-gc-shared/reports/templates/js/my/reports_order_modal.html:2
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:73
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:145
 msgid "New report"
 msgstr "Новый отчет"
 
+#: django-gc-shared/reports/templates/js/my/reports_list.html:10
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:78
+#: django-gc-shared/reports/templates/reports/report_list.html:221
+#: django-gc-shared/reports/templates/reports/summary.html:13
+msgid "Name"
+msgstr "Имя"
+
+#: django-gc-shared/reports/templates/js/my/reports_list.html:11
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:79
+#: django-gc-shared/reports/templates/reports/report_list.html:222
+msgid "Status"
+msgstr "Состояние"
+
+#: django-gc-shared/reports/templates/js/my/reports_list.html:12
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:80
+#: django-gc-shared/reports/templates/reports/report_list.html:224
+msgid "Date"
+msgstr "Дата"
+
+#: django-gc-shared/reports/templates/js/my/reports_list.html:19
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:96
+#: django-gc-shared/reports/templates/reports/report_list.html:243
+msgid "View"
+msgstr "Просмотреть"
+
+#: django-gc-shared/reports/templates/js/my/reports_list.html:20
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:94
+#: django-gc-shared/reports/templates/reports/report_list.html:238
+msgid "In progress"
+msgstr "В обработке"
+
+#: django-gc-shared/reports/templates/js/my/reports_list.html:27
+msgid "Loading..."
+msgstr "Загрузка..."
+
+#: django-gc-shared/reports/templates/js/my/reports_list.html:28
+msgid "No more reports found"
+msgstr "Не найдено более отчётов"
+
+#: django-gc-shared/reports/templates/js/my/reports_order_modal.html:144
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:307
+#: django-gc-shared/reports/templates/reports/report_list.html:201
+msgid "These account groups will always be excluded:"
+msgstr "Эти группы счетов будут исключены из отчёта:"
+
+#: django-gc-shared/reports/templates/js/my/reports_order_modal.html:152
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:318
+#: django-gc-shared/reports/templates/reports/report_list.html:212
+msgid "Order report"
+msgstr "Заказать отчёт"
+
+#: django-gc-shared/reports/templates/reports/403.html:8
+msgid "Sorry"
+msgstr "Извините"
+
+#: django-gc-shared/reports/templates/reports/403.html:11
+msgid "Reports are available only for customers with IB accounts."
+msgstr "Отчеты доступны только клиентам, открывшим партнерский счет"
+
+#: django-gc-shared/reports/templates/reports/403.html:14
+msgid "Open an IB account"
+msgstr "Открыть партнерский счет"
+
+#: django-gc-shared/reports/templates/reports/base_report.html:30
+msgid "Back"
+msgstr "Назад"
+
+#: django-gc-shared/reports/templates/reports/base_report.html:42
+msgid "Calculate report"
+msgstr "Рассчитать отчет"
+
+#: django-gc-shared/reports/templates/reports/base_report.html:57
+msgid "No data found"
+msgstr "Нет данных"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:11
+msgid "balance"
+msgstr "баланс"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:15
+msgid "Ticket"
+msgstr "Тикет"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:16
+msgid "Operation type"
+msgstr "Тип операции"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:17
+msgid "Symbol"
+msgstr "Символ"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:18
+msgid "Open time"
+msgstr "Время открытия"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:19
+msgid "Close time"
+msgstr "Время закрытия"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:20
+msgid "Open price"
+msgstr "Цена открытия"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:21
+msgid "Close price"
+msgstr "Цена закрытия"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:22
+msgid "Difference"
+msgstr "Разница"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:23
+#: django-gc-shared/reports/templates/reports/summary.html:19
+msgid "Volume"
+msgstr "Объем"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:24
+msgid "Swap"
+msgstr ""
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:25
+#: django-gc-shared/reports/templates/reports/summary.html:22
+msgid "Profit"
+msgstr "Прибыль"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:48
+msgid "Totals for"
+msgstr "Итого для"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:51
+#: django-gc-shared/reports/templates/reports/summary.html:15
+msgid "Deposit"
+msgstr "Ввод"
+
+#: django-gc-shared/reports/templates/reports/closed_trades.html:53
+msgid "Withdraw"
+msgstr "Вывод"
+
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:5
+#: django-gc-shared/reports/templates/reports/report_list.html:5
+msgid "Reports"
+msgstr "Отчеты"
+
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:92
+#: django-gc-shared/reports/templates/reports/report_list.html:236
 msgid "Ready"
 msgstr "Готово"
 
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:104
+#: django-gc-shared/reports/templates/reports/report_list.html:252
 msgid "You haven't ordered any reports yet"
 msgstr "У вас ещё нет заказанных отчётов"
 
+#: django-gc-shared/reports/templates/reports/new_templates/report_list.html:129
 msgid "Per page"
 msgstr "На страницу"
 
+#: django-gc-shared/reports/templates/reports/report_list.html:215
 msgid "Ordered reports"
 msgstr "Заказанные отчёты"
 
+#: django-gc-shared/reports/templates/reports/report_list.html:217
 msgid "Refresh"
 msgstr "Обновить"
 
+#: django-gc-shared/reports/templates/reports/report_list.html:223
 msgid "Link"
 msgstr "Ссылка"
 
+#: django-gc-shared/reports/templates/reports/summary.html:12
+msgid "Account type"
+msgstr "Тип счёта"
+
+#: django-gc-shared/reports/templates/reports/summary.html:14
 msgid "Agent code"
 msgstr "Код агента"
 
+#: django-gc-shared/reports/templates/reports/summary.html:16
 msgid "Withdrawl"
 msgstr "Вывод"
 
+#: django-gc-shared/reports/templates/reports/summary.html:17
 msgid "In/Out"
 msgstr "ввод/вывод"
 
+#: django-gc-shared/reports/templates/reports/summary.html:18
 msgid "Credit"
 msgstr "Кредит"
 
+#: django-gc-shared/reports/templates/reports/summary.html:20
+msgid "Commission"
+msgstr ""
+
+#: django-gc-shared/reports/templates/reports/summary.html:21
+#, fuzzy
+#| msgid "Competitions"
+msgid "Options"
+msgstr "Конкурсные начисления"
+
+#: django-gc-shared/reports/templates/reports/summary.html:23
 msgid "Last Balance"
 msgstr "Последний баланс"
 
+#: django-gc-shared/reports/templates/reports/summary.html:24
 msgid "Unrealized P/L"
 msgstr ""
 
+#: django-gc-shared/reports/templates/reports/summary.html:25
 msgid "Equity"
 msgstr "Средства"
 
+#: django-gc-shared/reports/views.py:61
 msgid "You aren't allowed to view reports of that type for account"
 msgstr "У вас недостаточно прав для просмотра этого отчета для счета"
 
+#: django-gc-shared/reports/views.py:139
 msgid ""
-"Your report order has been received and is now being processed."
-"                       You will receive an email when the processing "
-"finishes."
+"Your report order has been received and is now being "
+"processed.                       You will receive an email when the "
+"processing finishes."
 msgstr ""
 "Ваша заявка на отчёт получена и находится в процессе обработки. Когда отчёт "
 "будет сгенерирован, Вы получите сообщение по электронной почте."
+
+#~ msgid "FULL profit report by account"
+#~ msgstr "Полный отчёт по прибыли по счёту"
+
+#~ msgid "Deposits by payment system report"
+#~ msgstr "Отчёт по вводам с разных платежных систем"
+
+#~ msgid "Deposits by account group"
+#~ msgstr "Ввод средств по группам счетов"
+
+#~ msgid "Investors report"
+#~ msgstr "Отчёт по инвесторам"
+
+#~ msgid "FULL profit report"
+#~ msgstr "Полный отчёт по прибыли"
+
+#~ msgid "PAMM managers report"
+#~ msgstr "Отчёт по управляющим"
+
+#~ msgid "Withdraws by system"
+#~ msgstr "Отчёт по выводам с разных платежных систем"
+
+#~ msgid "All managers report"
+#~ msgstr "Отчёт по всем менеджерам"
+
+#~ msgid "Manager's summary report"
+#~ msgstr "Менеджерский суммарный отчет"
+
+#~ msgid "Regional managers summary report"
+#~ msgstr "Региональный отчёт"
+
+#~ msgid "My partner accounts report"
+#~ msgstr "Отчёт по моим партнёрским счетам"
+
+#~ msgid "Deposit and withdrawal report"
+#~ msgstr "Отчёт по вводу выводу"
+
+#~ msgid "Account regdate report"
+#~ msgstr "Отчёт по открытию новых счетов"
+
+#~ msgid "All partners report, new edition"
+#~ msgstr "Суммарный отчёт по всем партнёрам, новая редакция"
+
+#~ msgid "Full deposit withdrawal"
+#~ msgstr "Полный отчёт по вводу выводу"
+
+#~ msgid "orur"
+#~ msgstr "ввод RUR через офис"
+
+#~ msgid "ousd"
+#~ msgstr "ввод USD через офис"
+
+#~ msgid ""
+#~ "Unfortunately, generation of your report \"%(name)s\" failed due to an "
+#~ "internal server error. Our IT personnel has been notified of this issue.\n"
+#~ "\n"
+#~ "Please wait 5-10 minutes and try again. Do not hesitate to contact our "
+#~ "support team should it fail again.\n"
+#~ msgstr ""
+#~ "К сожалению, при генерации Вашего отчёта \"%(name)s\" произошла ошибка. "
+#~ "Наши специалисты уже были оповещены об этом.\n"
+#~ "\n"
+#~ "Пожалуйста, подождите 5-10 минут и попробуйте снова. При повторении "
+#~ "ошибки свяжитесь с нашей службой поддержки.\n"
+
+#~ msgid "Generation of your report %(name)s failed"
+#~ msgstr "Генерация вашего отчёта \"%(name)s\" не удалась."
+
+#~| msgid ""
+#~| "ld like to inform you, that the generation of your report \"%(name)sas "
+#~| "been finished.\n"
+#~| "n view it here: %(link)s\n"
+#~ msgid ""
+#~ "We would like to inform you, that the generation of your report \"%(name)s"
+#~ "\" has been finished.\n"
+#~ "\n"
+#~ "You can view it here: https://grandcapital.net%(link)s\n"
+#~ msgstr ""
+#~ "Сообщаем Вам, что генерация отчёта \"%(name)s\" закончена.\n"
+#~ "\n"
+#~ "Вы можете посмотреть его здесь: %(link)s\n"
+
+#~ msgid "Your report %(name)s has been generated"
+#~ msgstr "Ваш отчёт \"%(name)s\" был сгенерирован"
+
+#~ msgid "All partners summary report"
+#~ msgstr "Суммарный отчет по всем партнёрам"
+
+#~ msgid "All partners summary report 2013 edition"
+#~ msgstr "Суммарный отчёт по всем партнёрам, редакция 2013"
+
+#~ msgid "Deposit withdrawl report"
+#~ msgstr "Отчет по вводу-выводу"
+
+#~ msgid "Deal"
+#~ msgstr "Сделка"
+
+#~ msgid "Comment"
+#~ msgstr "Комментарий"
+
+#~ msgid "Amount"
+#~ msgstr "Сумма"
+
+#~ msgid "Agent name"
+#~ msgstr "Имя агента"
+
+#~ msgid "Agent"
+#~ msgstr "Агент"
 
 #~ msgid "All accounts"
 #~ msgstr "Все счета"
@@ -402,9 +533,6 @@ msgstr ""
 #~ msgid "Compensations"
 #~ msgstr "Сумма компенсаций"
 
-#~ msgid "Competitions"
-#~ msgstr "Конкурсные начисления"
-
 #~ msgid "For help"
 #~ msgstr "Начисления за помощь"
 
@@ -430,7 +558,8 @@ msgstr ""
 #~ msgstr "Генерировать отчет по этому типу счетов"
 
 #~ msgid "The report may take longer to generate, when enabled."
-#~ msgstr "При включении этой опции создание отчета может занять больше времени."
+#~ msgstr ""
+#~ "При включении этой опции создание отчета может занять больше времени."
 
 #~ msgid "Overall totals"
 #~ msgstr "Суммарный итог"

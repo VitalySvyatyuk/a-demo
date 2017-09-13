@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-03 19:15+0300\n"
+"POT-Creation-Date: 2017-09-13 12:26+0300\n"
 "PO-Revision-Date: 2016-09-23 17:52+0230\n"
 "Last-Translator:   <v.rizhenkov@grandcapital.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,107 +16,134 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.7.8\n"
 
+#: django-gc-shared/education/models.py:23
 msgid "Seminar"
 msgstr "Семинар"
 
+#: django-gc-shared/education/models.py:24
+#: django-gc-shared/education/models.py:105
 msgid "Slug"
 msgstr "Слаг"
 
+#: django-gc-shared/education/models.py:24
+#: django-gc-shared/education/models.py:105
 msgid "Machine name (for URL's)"
 msgstr "Машинное имя (для ссылок)"
 
+#: django-gc-shared/education/models.py:26
 msgid "Price"
 msgstr "Цена"
 
+#: django-gc-shared/education/models.py:58
 msgid "For beginners"
 msgstr "Вводные"
 
+#: django-gc-shared/education/models.py:59
 msgid "For advanced traders"
 msgstr "Для опытных трейдеров"
 
+#: django-gc-shared/education/models.py:60
 msgid "Market reviews"
 msgstr "Аналитические обзоры рынков"
 
+#: django-gc-shared/education/models.py:61
 msgid "For partners"
 msgstr "Для партнеров"
 
+#: django-gc-shared/education/models.py:66
 msgid "Webinar category"
 msgstr "Категория вебинара"
 
+#: django-gc-shared/education/models.py:67
 msgid "Webinar description"
 msgstr "Описание вебинара"
 
+#: django-gc-shared/education/models.py:68
 msgid "Favorite webinar"
 msgstr "Избранный вебинар"
 
+#: django-gc-shared/education/models.py:69
 msgid "If selected it is shown next to the webinars calendar"
 msgstr "Если выбрана, то показывается рядом с календарем вебинаров"
 
+#: django-gc-shared/education/models.py:70
 msgid "Room password"
 msgstr "Пароль от комнаты"
 
+#: django-gc-shared/education/models.py:71
 msgid "Webinar leader"
 msgstr "Ведущий вебинара"
 
+#: django-gc-shared/education/models.py:75
 msgid "Webinar"
 msgstr "Вебинар"
 
+#: django-gc-shared/education/models.py:76
 msgid "Webinars"
 msgstr "Вебинары"
 
+#: django-gc-shared/education/models.py:106
 msgid "Webinar date"
 msgstr "Дата проведения"
 
+#: django-gc-shared/education/models.py:107
 msgid "Link to webinar room"
 msgstr "Ссылка на вебинарную комнату"
 
+#: django-gc-shared/education/models.py:159
 msgid "User"
 msgstr "Пользователь"
 
+#: django-gc-shared/education/models.py:160
 msgid "Registration time"
 msgstr "Время регистрации"
 
+#: django-gc-shared/education/models.py:161
 msgid "Paid"
 msgstr "Оплачен"
 
+#: django-gc-shared/education/models.py:162
 msgid "Paid time"
 msgstr "Время оплаты"
 
+#: django-gc-shared/education/models.py:192
+#: django-gc-shared/education/models.py:193
 msgid "Registration for the webinar"
 msgstr "Регистрация на вебинар"
 
-msgctxt "educational page"
-msgid "Educational Center"
-msgstr "Учебный центр"
+#~ msgctxt "educational page"
+#~ msgid "Educational Center"
+#~ msgstr "Учебный центр"
 
-msgid "About FOREX"
-msgstr "Что такое forex"
+#~ msgid "About FOREX"
+#~ msgstr "Что такое forex"
 
-msgid "Glossary"
-msgstr "Словарь терминов"
+#~ msgid "Glossary"
+#~ msgstr "Словарь терминов"
 
 #, fuzzy
-#| msgid "Registration"
-msgid "Register"
-msgstr "Регистрация"
+#~| msgid "Registration"
+#~ msgid "Register"
+#~ msgstr "Регистрация"
 
-msgid "Other terms"
-msgstr "Другие термины"
+#~ msgid "Other terms"
+#~ msgstr "Другие термины"
 
-msgid "All terms"
-msgstr "Все термины"
+#~ msgid "All terms"
+#~ msgstr "Все термины"
 
-msgid "Register for the webinar"
-msgstr "Записаться на вебинар"
+#~ msgid "Register for the webinar"
+#~ msgstr "Записаться на вебинар"
 
-msgid "Upcoming webinars"
-msgstr "Предстоящие вебинары"
+#~ msgid "Upcoming webinars"
+#~ msgstr "Предстоящие вебинары"
 
-msgid "All webinars"
-msgstr "Все вебинары"
+#~ msgid "All webinars"
+#~ msgstr "Все вебинары"
 
 #~ msgid "Study centre"
 #~ msgstr "Учебный центр"
@@ -136,11 +163,19 @@ msgstr "Все вебинары"
 #~ msgid "Account password"
 #~ msgstr "Пароль счета"
 
-#~ msgid "Account password. Password can be recovered in the section <a href=\"%s\">My accounts</a>."
-#~ msgstr "Пароль доступа к счёту. Восстановить пароль можно в разделе <a href=\"%s\">Мои счета</a>."
+#~ msgid ""
+#~ "Account password. Password can be recovered in the section <a href=\"%s"
+#~ "\">My accounts</a>."
+#~ msgstr ""
+#~ "Пароль доступа к счёту. Восстановить пароль можно в разделе <a href=\"%s"
+#~ "\">Мои счета</a>."
 
-#~ msgid "You should <a href=\"%(link)s\" target=\"_blank\">complete the verification process</a> before withdrawing from account %(account)s"
-#~ msgstr "Вы должны завершить <a href=\"%(link)s\" target=\"_blank\">процес верификации</a> прежде чем выводить средства со счёта %(account)s"
+#~ msgid ""
+#~ "You should <a href=\"%(link)s\" target=\"_blank\">complete the "
+#~ "verification process</a> before withdrawing from account %(account)s"
+#~ msgstr ""
+#~ "Вы должны завершить <a href=\"%(link)s\" target=\"_blank\">процес "
+#~ "верификации</a> прежде чем выводить средства со счёта %(account)s"
 
 #~ msgid "Not enough money to withdraw"
 #~ msgstr "Недостаточно свободных средств, доступных для вывода"
@@ -197,7 +232,8 @@ msgstr "Все вебинары"
 #~ msgstr "Прошедшие вебинары"
 
 #~ msgid "Information about webinars you have registered for"
-#~ msgstr "В этом разделе находится информация о Ваших регистрациях на вебинары"
+#~ msgstr ""
+#~ "В этом разделе находится информация о Ваших регистрациях на вебинары"
 
 #~ msgid "Starts at"
 #~ msgstr "Дата начала"
@@ -226,8 +262,12 @@ msgstr "Все вебинары"
 #~ msgid "You don't have any webinar registrations yet"
 #~ msgstr "У вас нет регистраций на вебинары"
 
-#~ msgid "You can register for a webinar or access recordings of the finished webinars"
-#~ msgstr "Вы можете зарегистрироваться для участия в вебинаре, а так же получить доступ к записям прошедших вебинаров"
+#~ msgid ""
+#~ "You can register for a webinar or access recordings of the finished "
+#~ "webinars"
+#~ msgstr ""
+#~ "Вы можете зарегистрироваться для участия в вебинаре, а так же получить "
+#~ "доступ к записям прошедших вебинаров"
 
 #~ msgid "Your application has been accepted!"
 #~ msgstr "Ваша заявка была принята в обработку!"
@@ -246,15 +286,25 @@ msgstr "Все вебинары"
 
 #~ msgid ""
 #~ "\n"
-#~ "                        When you choose to learn Forex at Grand Capital, you choose polished methodologies and\n"
-#~ "                        rich toolset to use the newly-acquired skills. Having a solid foundation, you will not only\n"
-#~ "                        profitably trade on the Forex market, but will be able to become a successfull member of our\n"
-#~ "                        partnership program and competently invest your funds in our\n"
-#~ "                        <a href=\"%(link)s\">Managed Accounts service</a>\n"
+#~ "                        When you choose to learn Forex at Grand Capital, "
+#~ "you choose polished methodologies and\n"
+#~ "                        rich toolset to use the newly-acquired skills. "
+#~ "Having a solid foundation, you will not only\n"
+#~ "                        profitably trade on the Forex market, but will be "
+#~ "able to become a successfull member of our\n"
+#~ "                        partnership program and competently invest your "
+#~ "funds in our\n"
+#~ "                        <a href=\"%(link)s\">Managed Accounts service</"
+#~ "a>\n"
 #~ "                    "
 #~ msgstr ""
 #~ "\n"
-#~ "Выбирая обучение Forex в Grand Capital, вы делаете ставку на отработанные методики и богатый инструментарий для реализации полученных навыков. Обладая прочной образовательной базой, вы будете не только прибыльно торговать на Forex, но также сможете стать успешным участником нашей партнерской программы и грамотно инвестировать средства в сервисе <a href=\"%(link)s\">Управляемые счета</a>"
+#~ "Выбирая обучение Forex в Grand Capital, вы делаете ставку на отработанные "
+#~ "методики и богатый инструментарий для реализации полученных навыков. "
+#~ "Обладая прочной образовательной базой, вы будете не только прибыльно "
+#~ "торговать на Forex, но также сможете стать успешным участником нашей "
+#~ "партнерской программы и грамотно инвестировать средства в сервисе <a href="
+#~ "\"%(link)s\">Управляемые счета</a>"
 
 #~ msgid "%s paid"
 #~ msgstr "%s оплачено"
@@ -283,20 +333,24 @@ msgstr "Все вебинары"
 
 #~ msgid ""
 #~ "\n"
-#~ "                            We offer free webinars for traders of any level of skill - beginners and experts alike.\n"
+#~ "                            We offer free webinars for traders of any "
+#~ "level of skill - beginners and experts alike.\n"
 #~ "                        "
 #~ msgstr ""
 #~ "\n"
-#~ "Мы предлагаем бесплатные вебинары для трейдеров любого уровня — и новичков, и тех, кто уверенно чувствует себя на финансовых рынках."
+#~ "Мы предлагаем бесплатные вебинары для трейдеров любого уровня — и "
+#~ "новичков, и тех, кто уверенно чувствует себя на финансовых рынках."
 
 #~ msgid ""
 #~ "\n"
 #~ "                            To take part in a webinar you need to\n"
-#~ "                            <a href=\"%(link_reg)s\">register a Private Office</a> at our website\n"
+#~ "                            <a href=\"%(link_reg)s\">register a Private "
+#~ "Office</a> at our website\n"
 #~ "                        "
 #~ msgstr ""
 #~ "\n"
-#~ "Чтобы принять участие в вебинаре необходимо <a href=\"%(link_reg)s\">зарегистрировать Личный Кабинет Трейдера</a>"
+#~ "Чтобы принять участие в вебинаре необходимо <a href=\"%(link_reg)s"
+#~ "\">зарегистрировать Личный Кабинет Трейдера</a>"
 
 #~ msgid "Register an account"
 #~ msgstr "Стать клиентом"
@@ -305,7 +359,8 @@ msgstr "Все вебинары"
 #~ msgstr "Применить"
 
 #~ msgid "Error happened while doing payment. Please try again later"
-#~ msgstr "Во время проведения платежа произошла ошибка. Попробуйте еще раз позже"
+#~ msgstr ""
+#~ "Во время проведения платежа произошла ошибка. Попробуйте еще раз позже"
 
 #~ msgid "Name"
 #~ msgstr "ФИО"
@@ -328,5 +383,9 @@ msgstr "Все вебинары"
 #~ msgid "Youtube video url"
 #~ msgstr "Ссылка на вебинар"
 
-#~ msgid "A full url to youtube video, e.g. http://www.youtube.com/watch?v=IqaAZi2ppCE"
-#~ msgstr "Ссылка на YouTube-видео, например,  http://www.youtube.com/watch?v=IqaAZi2ppCE"
+#~ msgid ""
+#~ "A full url to youtube video, e.g. http://www.youtube.com/watch?"
+#~ "v=IqaAZi2ppCE"
+#~ msgstr ""
+#~ "Ссылка на YouTube-видео, например,  http://www.youtube.com/watch?"
+#~ "v=IqaAZi2ppCE"
