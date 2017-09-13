@@ -453,8 +453,6 @@ msgstr ""
 "Forex и CFDs, несет высокий риск. Вы можете потерять инвестированные "
 "средства. Пожалуйста, ознакомьтесь с"
 
-#, fuzzy
-#~| msgid "Risk Disclosure"
 msgctxt "warning popup"
 msgid "Risk Disclosure"
 msgstr "Уведомление о рисках"
@@ -1451,9 +1449,7 @@ msgstr "Для трейдера"
 msgid "For investors"
 msgstr "Для инвестора"
 
-#, fuzzy
-#~| msgctxt "partnership-btn"
-#~| msgid "Send"
+msgctxt "partnership-btn"
 msgid "Send"
 msgstr "Отправить заявку"
 
