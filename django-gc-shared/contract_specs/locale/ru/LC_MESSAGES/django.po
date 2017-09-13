@@ -181,12 +181,12 @@ msgstr "Пополнить баланс"
 
 
 msgid ""
-"On this page you can find formula for calculating the value of one pip."
-"The value of a pip is calculated on the basis of the current rate of a given currency pair."
+"On this page you can find formula for calculating the value of one pip.<br>"
+"The value of a pip is calculated on the basis of the current rate of a given currency pair.<br>"
 "Please select parameters to get pip value and margin."
 msgstr ""
-"На этой странице Вы найдете формулу для вычисления стоимости одного пипа."
-"Стоимость пипа рассчитывается на основе текущего курса валютной пары."
+"На этой странице Вы найдете формулу для вычисления стоимости одного пипа.<br>"
+"Стоимость пипа рассчитывается на основе текущего курса валютной пары.<br>"
 "Пожалуйста, выберите параметры для вычисления стоимости пипа и маржи."
 
 msgid "Pair"
