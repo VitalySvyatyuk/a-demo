@@ -38,5 +38,7 @@ urlpatterns = patterns(
     url(r"^404/$", TemplateView.as_view(
         template_name="marketing_site/pages/404.jade"), name="404",),
     url(r"^subscribe/$", "send_subscribe_email", name="send_subscribe_email",),
+    url(r"^popup-count/$", "popup_count", name="popup_count",),
+    url(r"^popup-subscribed-count/$", "popup_subscribed_count", name="popup_subscribed_count", ),
     # url(r"^subscribewix/$", "subscribewix"),
 )

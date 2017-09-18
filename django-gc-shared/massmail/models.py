@@ -354,6 +354,15 @@ class Subscribed(models.Model):
         return u'%s: %s' % (self.mailing_list, self.email)
 
 
+class PopupCount(models.Model):
+    """
+    How many times popup appeared on the screen
+    and how many times it has been clicked
+    """
+    appeared = models.PositiveIntegerField('Appeared', default=0)
+    subscribed = models.PositiveIntegerField('Subscribed', default=0)
+
+
 class CampaignType(models.Model):
     title = models.CharField(max_length=100)
     unsubscribed = models.PositiveIntegerField(_('Unsubscribed'), default=0)

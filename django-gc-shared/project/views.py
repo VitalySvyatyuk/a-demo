@@ -29,6 +29,7 @@ from uptrader_cms.models import CompanyNews
 from payments.models import PaymentMethod
 from project.utils import maybe_ajax
 from massmail.models import MailingList, Subscribed
+
 from django.views.decorators.csrf import csrf_exempt
 
 log = logging.getLogger(__name__)
@@ -308,6 +309,31 @@ def send_subscribe_email(request):
             )
         return {'result': 'OK'}
 
+@csrf_exempt
+@maybe_ajax()
+def popup_count(request):
+
+    if request.method == "POST":
+        from massmail.models import PopupCount
+        from django.db.models import F
+
+        PopupCount.objects.filter(id=1).update(appeared=F('appeared') + 1)
+        return {'result': 'OK'}
+    else:
+        return {'result': 'Not OK'}
+
+@csrf_exempt
+@maybe_ajax()
+def popup_subscribed_count(request):
+
+    if request.method == "POST":
+        from massmail.models import PopupCount
+        from django.db.models import F
+
+        PopupCount.objects.filter(id=1).update(subscribed=F('subscribed') + 1)
+        return {'result': 'OK'}
+    else:
+        return {'result': 'Not OK'}
 
 # def subscribewix(request):
 #     if request.method == "POST":

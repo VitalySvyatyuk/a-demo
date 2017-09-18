@@ -52,7 +52,6 @@ def subscribe(request, email, signature, mail_list_id, first_name="", last_name=
     else:
         return redirect('subscribed')
 
-
 @render_to('massmail/unsubscribed.html')
 def unsubscribe(request, email, signature, campaign_id=None):
     email = urllib.unquote(email)

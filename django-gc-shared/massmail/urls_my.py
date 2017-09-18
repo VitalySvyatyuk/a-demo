@@ -19,5 +19,6 @@ urlpatterns = patterns('massmail.views',
         name='massmail_resubscribe_id'),
     url(r"^subscribe/(?P<signature>\w+)/(?P<email>[^/]+)/(?P<mail_list_id>[0-9+]+)/(?P<first_name>.*)/(?P<last_name>.*)/(?P<phone>.*)/$", "subscribe",
         name="massmail_subscribe_id"),
+    # url(r"^popup_c/$", "popup_c", name="popup_c"),
     url(r"subscribed", TemplateView.as_view(template_name='massmail/subscribed.html'), name="subscribed")
 )

@@ -711,7 +711,8 @@ $(document).ready(function() {
         $('.email-xs').addClass('email-popup-div');
         $(".email-popup-div").show('fast').animate({marginLeft: '-150px', opacity: '1'}, 500);
       }
-
+      // Здесь запись в БД, что попап-таки появился на экране
+      $.post('/popup-count/', $(this).serialize(), function () {});
       $('#black-screen').fadeIn('fast');
     }, 30000);
   };
@@ -733,6 +734,9 @@ $(document).ready(function() {
     e.preventDefault();
     $.post('/subscribe/', $(this).serialize(), function () {
     });
+
+    // Здесь запись в БД, что подписка в попапе была выполнена
+    $.post('/popup-subscribed-count/', $(this).serialize(), function () {});
 
     $(this).animate({opacity: '0'}, 'slow');
     if ($(window).width() > 767) {
