@@ -84,6 +84,10 @@ class MailingListAdmin(admin.ModelAdmin):
         if obj.pk:
             massmail.tasks.recount_email_count.delay(obj.pk)
 
+class PopupCountAdmin(admin.ModelAdmin):
+    model = PopupCount
+    fields = ('appeared', 'subscribed')
+    list_display = ('appeared', 'subscribed')
 
 class MessageBlockAdminForm(forms.ModelForm):
 
@@ -288,3 +292,4 @@ admin.site.register(Campaign, CampaignAdmin)
 admin.site.register(Unsubscribed, UnsubscribedAdmin)
 admin.site.register(CampaignType, CampaignTypeAdmin)
 admin.site.register(SmsCampaign, SmsCampaignAdmin)
+admin.site.register(PopupCount, PopupCountAdmin)
