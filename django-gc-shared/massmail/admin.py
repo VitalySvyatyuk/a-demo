@@ -88,7 +88,7 @@ class PopupCountAdmin(admin.ModelAdmin):
     model = PopupCount
     fields = ('appeared', 'subscribed')
     list_display = ('appeared', 'subscribed')
-# COMMENT
+
 class MessageBlockAdminForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
