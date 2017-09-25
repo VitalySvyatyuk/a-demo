@@ -1,6 +1,6 @@
 {% extends "marketing_site/layout.jade" %}
 
-{% load staticfiles analytics_tags app_tags i18n %}
+{% load staticfiles analytics_tags app_tags i18n l10n %}
 {% block title %}{% trans 'Calendar of events' %} - {{ block.super }}{% endblock %}
 
 {% block new_css %} {{ block.super }}
@@ -83,7 +83,7 @@ $(function() {
 
     var current_time = $("#current_time");
     setInterval(function() {
-        current_time.text(moment().tz("Europe/Moscow").format("H:mm"));
+        current_time.text(moment().tz("{{ tz_name }}").format("HH:mm"));
     }, 1000 * 10);
 
     var startDate;
@@ -164,9 +164,9 @@ $(function() {
                     <div class="title">{% trans 'Current time' %}</div>
                     <span class="timer">
                         <span class="clock-icon"></span>
-                    <span id="current_time" class="time-hours">{% now "H:i" %}</span>
+                    <span id="current_time" class="time-hours">{{ local_time|time:"h:i" }}</span>
                     </span>
-                    <span class="text">(GMT +3:00 MSK)</span>
+                    <span class="text">{{ tz }}</span>
                 </div>
             </div>
             <div class="col-sm-12 col-lg-4 column calendar">

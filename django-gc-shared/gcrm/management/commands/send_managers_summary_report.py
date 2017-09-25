@@ -70,7 +70,7 @@ def send_report(to, date_from, date_to, managers=None):
         u'Отчёт по работе менеджеров за {} - {}'.format(date_from, date_to - timedelta(1)),
         message='-',
         html_message=html_content,
-        from_email="security@grandcapital.net",
+        from_email="info@arumcapital.eu",
         recipient_list=recipients)
 
 
