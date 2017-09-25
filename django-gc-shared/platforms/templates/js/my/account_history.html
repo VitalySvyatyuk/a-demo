@@ -20,8 +20,8 @@
 
         <div ng-show="showRangeFilter" class="offset-bottom-20 history-interval">
             <div class="input-wrapper">
-                <input ng-model="dateFrom" type="text" gc-datepicker max-date="dateTo"/>
-                <input ng-model="dateTo" type="text" gc-datepicker min-date="dateFrom"/>
+                <input ng-model="dateFrom" type="text" historyDatepicker max-date="dateTo"/>
+                <input ng-model="dateTo" type="text" historyDatepicker min-date="dateFrom"/>
                 <button class="button picker" ng-click="filterRange()">{% trans "Filter" %}</button>
             </div>
         </div>

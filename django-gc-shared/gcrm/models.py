@@ -269,7 +269,7 @@ class Task(StatefullModel):
         })
         self.assignee.email_user(
             'GCRM Task: {}'.format(self.text), '-',
-            from_email="security@grandcapital.net",
+            from_email="info@arumcapital.eu",
             html_message=html_content
         )
 

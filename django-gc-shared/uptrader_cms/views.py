@@ -7,6 +7,8 @@ from dateutil.relativedelta import relativedelta
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils.html import strip_entities
 from django.utils.translation import ugettext_lazy as _, get_language
+
+from geobase.utils import get_local_time_tz
 from uptrader_cms.forms import CalendarForm
 from uptrader_cms.models import IndicatorEvent, CompanyNews, LegalDocument
 from project.templatetags.app_tags import as_timestamp
@@ -84,6 +86,7 @@ def get_calendar_data(request, weekly=True):
         nearest_event = []
         nearest_events = []
 
+    tz, local_time, tz_name = get_local_time_tz(request)
     return {
         'events': qs,
         'form': form,
@@ -91,6 +94,9 @@ def get_calendar_data(request, weekly=True):
         'nearest_events': json.dumps(nearest_events),
         'to_nearest_event': delta_str,
         'current_week': current_week,
+        'tz': tz,
+        'local_time': local_time,
+        'tz_name': tz_name,
     }
 
 

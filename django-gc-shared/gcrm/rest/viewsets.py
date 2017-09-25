@@ -205,7 +205,9 @@ class ContactFilter(FilterSet):
                     Q(user__last_name__icontains=word) |
                     Q(user__first_name__icontains=word) |
                     Q(user__profile__middle_name__icontains=word) |
-                    Q(user__profile__phone_mobile__icontains=word)
+                    Q(user__profile__phone_mobile__icontains=word) |
+
+                    Q(user__accounts__mt4_id__icontains=word)
                 )
         return queryset.filter(searches)
 

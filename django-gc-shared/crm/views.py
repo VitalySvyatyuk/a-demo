@@ -382,7 +382,7 @@ def check_user_data_view_quota(user, ip=None):
             subject = "%s has exceeded his %s CRM limit" % (user.email, limit_type)
             send_mail(subject=subject,
                       message="At %s %s from IP %s" % (datetime.now(), subject, ip),
-                      from_email="security@grandcapital.net",
+                      from_email="info@arumcapital.eu",
                       recipient_list=('valexeev@grandcapital.net', 'kozlovsky@grandcapital.net'))
 
     view_count_last_ten_minutes = AccountDataView.objects.\

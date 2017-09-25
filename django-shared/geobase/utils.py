@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+import pytz
 from django.db.models import Q
 from django.conf import settings
-
+from datetime import datetime
 from geobase.models import Country, City
 
 
@@ -78,3 +79,31 @@ def get_geo_data(request):
         'country': country,
         'region': region,
     }
+
+
+def get_local_time_zone(request):
+    country, state = get_geo_data(request).values()
+    time_zone = None
+    if state:
+        time_zone = state.get_time_zone()
+    if not time_zone and country:
+        time_zone = country.get_time_zone()
+    # below are very ugly  hacks to get time zone in format 'TZ_NAME +03:00',
+    # because pytz has different attrs for '+0300' and 'TZ_NAME'
+    tz_time = datetime.now(time_zone).strftime('%z')
+    tz_name = datetime.now(time_zone).strftime('%Z')
+    import re
+    tz_name = 'GMT' if bool(re.search(r'\d', tz_name)) else tz_name
+    if tz_name == tz_time:
+        tz_name = 'GMT'
+    utc = '({0} {1})'.format(tz_name, (tz_time[0:-2] + ':' + tz_time[-2:]))
+
+    return time_zone, utc
+
+
+def get_local_time_tz(request):
+    time_zone, utc = get_local_time_zone(request)
+    if time_zone is None:
+        return "(GMT +3:00 MSK)", pytz.timezone("Europe/Moscow").localize(datetime.now())\
+            .astimezone(pytz.timezone("Europe/Moscow")).time(), "Europe/Moscow"
+    return utc, pytz.timezone("Europe/Moscow").localize(datetime.now()).astimezone(time_zone).time(), str(time_zone)

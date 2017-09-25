@@ -113,7 +113,10 @@ def split_phone_number(phone):
     ).order_by('-phone_code', '-is_primary').first()
     if not country:
         return None, None, None
-    return '+' + str(country.phone_code), digits[len(str(country.phone_code)):], country
+    phone_num = digits[len(str(country.phone_code)):]
+    if len(phone_num) < 5:
+        return None, None, None
+    return '+' + str(country.phone_code), phone_num, country
 
 
 class CountryPhoneCodeWidget(MultiWidget):
