@@ -351,10 +351,7 @@ class UserProfile(StateSavingModel):
                            'net_capital', 'annual_income']
         complete_profile = all(getattr(self, f) for f in required_fields) and self.email_verified
 
-        user_documents = UserDocument.objects.filter(user=self.user).values_list('is_rejected')
-
-
-        if user_documents and all([i[0] for i in user_documents]):
+        if not UserDocument.objects.filter(user=self.user, is_rejected=False).exists():
             return self.INCOMPLETE
         if complete_profile:
             if self.has_valid_documents():

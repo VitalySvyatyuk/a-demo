@@ -68,6 +68,6 @@ class HasContactsLimit(permissions.BasePermission):
                     request.META.get('REMOTE_ADDR'),
                     request.META.get('HTTP_USER_AGENT')
                 ),
-                from_email="security@grandcapital.net",
+                from_email="info@arumcapital.eu",
                 recipient_list=('valexeev@grandcapital.net', 'kozlovsky@grandcapital.net')
             )

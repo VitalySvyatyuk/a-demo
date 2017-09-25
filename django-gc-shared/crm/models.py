@@ -214,7 +214,7 @@ class AccountDataView(models.Model):
                 send_mail(subject=subject,
                           message="At %s %s from IP %s with User-Agent %s" % (datetime.now(), subject, ip,
                                                                               user_agent),
-                          from_email="security@grandcapital.net",
+                          from_email="info@arumcapital.eu",
                           recipient_list=('valexeev@grandcapital.net', 'kozlovsky@grandcapital.net'))
 
         if user.crm_manager and user.crm_manager.daily_limit:

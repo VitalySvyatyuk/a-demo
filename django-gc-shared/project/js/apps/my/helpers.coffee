@@ -58,6 +58,25 @@
     scope.$watch 'minDate', (val) ->
       el.datepicker "option", "minDate", val if val
 
+@app.directive 'historydatepicker', () ->
+  require: 'ngModel'
+  scope:
+    maxDate: '='
+    minDate: '='
+  link: (scope, el, attr, ngModel) ->
+    el.datepicker
+      changeMonth: true
+      changeYear: true
+      defaultDate: "2017-09-01"
+      yearRange: "1900:#{new Date().getFullYear()}"
+      dateFormat: "yy-mm-dd"
+      onSelect: (dateText) ->
+        scope.$apply () ->
+          ngModel.$setViewValue dateText
+    scope.$watch 'maxDate', (val) ->
+      el.datepicker "option", "maxDate", val if val
+    scope.$watch 'minDate', (val) ->
+      el.datepicker "option", "minDate", val if val
 
 @app.directive 'equalize', ($timeout) ->
   link: (scope, el, attr) ->
