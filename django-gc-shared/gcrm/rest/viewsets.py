@@ -209,7 +209,7 @@ class ContactFilter(FilterSet):
 
                     Q(user__accounts__mt4_id__icontains=word)
                 )
-        return queryset.filter(searches)
+        return queryset.filter(searches).distinct()
 
 
 class ContactViewSet(viewsets.ModelViewSet):
