@@ -574,7 +574,7 @@ msgstr ""
 "протоколу и исполнение по лучшим ценам в стакане ликвидности."
 
 msgid "STP/ECN License from CySec"
-msgstr "Лицензия CySEC класса B"
+msgstr "Лицензия CySEC класса A"
 
 msgid ""
 "Mandatory execution of all the transactions<br> with an independent "
@@ -582,7 +582,7 @@ msgid ""
 msgstr "Обязательный вывод всех сделок <br>на внешнего контрагента."
 
 msgid "STP/ECN License from FCA"
-msgstr "Лицензия FCA класса B"
+msgstr "Лицензия FCA класса A"
 
 msgid "Liquidity of our Liquidity Provider"
 msgstr "Ликвидность"
