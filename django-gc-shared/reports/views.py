@@ -225,6 +225,7 @@ def marketing_inout_report(request):
         else:
             result.append("")
         result.append(unicode(user.date_joined.date()))
+        result.append(u', '.join(user.gcrm_contact.tags))
         if utm is not None:
             result.extend([utm.utm_source, utm.utm_medium, utm.utm_campaign,
                            unicode(utm.utm_timestamp or ""), utm.referrer,
@@ -235,6 +236,7 @@ def marketing_inout_report(request):
             result.append(user.profile.manager.get_full_name())
         else:
             result.append("None")
+        result.append('https://arumcapital.eu' + user.gcrm_contact.get_absolute_url())
         return result
 
     def deposit_data_generator(csv_writer, start, end):

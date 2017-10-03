@@ -3,7 +3,7 @@
 <ul id="lang" class="lang-list" data-dropdown-content="">
   {% for key, value in LANGUAGE_SETTINGS.items|order_items %}
       {% if LANGUAGE_CODE != key %}
-          <li data-value="{{ key }}"><a href="{{ value.redirect_to }}{{ request.path }}"><span class="lang-{{ key }}"></span>{{ key|language_name_local }}</a></li>
+          <li data-value="{{ key }}"><a href="{% url "switch_language" key %}?next={{ request.path|urlencode }}"><span class="lang-{{ key }}"></span>{{ key|language_name_local }}</a></li>
       {% endif %}
   {% endfor %}
 </ul>

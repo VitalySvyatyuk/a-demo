@@ -358,8 +358,8 @@ msgstr "Локирование позиций – возможность отк�
 msgid "Hedging of positions "
 msgstr "Локирование позиций"
 
-msgid "Commission for a complete transaction is charged twice (opening/ closing of a position) at the moment when the position is opened. The figure is calculated based on the nominal cost of the position, equal to 1 000 000 USD."
-msgstr "За полную транзакцию комиссия берется в двойном размере (открытие / закрытие позиции) в момент открытия сделки. Значение рассчитано, исходя из номинальной стоимости позиций, равной 1 000 000 USD"
+msgid "Commission for a complete transaction is charged twice (opening/ closing of a position) at the moment when the position is opened. The figure is calculated based on the nominal cost of the position, equal to 100 000 USD."
+msgstr "За полную транзакцию комиссия берется в двойном размере (открытие / закрытие позиции) в момент открытия сделки. Значение рассчитано, исходя из номинальной стоимости позиций, равной 100 000 USD"
 
 msgid "Commission"
 msgstr "Комиссия"
