@@ -61,6 +61,7 @@ urlpatterns = patterns("",
     url(r"^crm/", include("crm.urls")),
     url(r"^gcrm/", include("gcrm.urls", namespace='gcrm')),
     url(r'^notification/', include('notification.urls', namespace="notification")),
+    url(r'switch_language/(?P<language_code>.*)$', 'project.views.switch_language', name='switch_language')
 )
 
 # Static files are usually served by web server, but the built-in

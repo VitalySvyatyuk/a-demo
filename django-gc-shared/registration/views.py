@@ -224,13 +224,15 @@ def login(request, next=None, *args, **kwargs):
                                                           request.GET.get("next", "/"))
 
             if settings.XDOMAINS and not request.user.profile.registered_from:
-                request.session['login_ts'] = time.time()
+                request.session['redirect_ts'] = time.time()
                 request.session['xnext'] = next_url
+                session_hashed = hashlib.md5(request.session.session_key).hexdigest()
+                cache.set('sess_' + session_hashed, request.session.session_key, 30)
 
                 redirect_to = '{}://{}{}?token={}'.format(request.META['wsgi.url_scheme'],
                                                           settings.XDOMAINS[0],
                                                           reverse('xdomain_auth'),
-                                                          hashlib.md5(request.session.session_key).hexdigest())
+                                                          session_hashed)
             else:
                 redirect_to = next_url
 
@@ -315,19 +317,22 @@ def password_reset_by_phone_done(request):
     )
 
 
-
 def xdomain_auth(request):
+    loop_auth = request.GET.get('loop_auth', True)
+    if loop_auth == "False":
+        loop_auth = False
     if 'token' in request.GET:
         from django.contrib.sessions.models import Session
         token = request.GET.get('token')
+        session_key = cache.get('sess_' + token)
         try:
-            s = Session.objects.raw("SELECT * FROM django_session WHERE md5(session_key)=%s LIMIT 1", [token])[0]
+            s = Session.objects.filter(session_key=session_key)[0]
         except IndexError:
             return HttpResponseForbidden()
 
         data = s.get_decoded()
 
-        if 'login_ts' not in data or (time.time() - data['login_ts']) > 30:
+        if 'redirect_ts' not in data or (time.time() - data['redirect_ts']) > 30:
             return HttpResponseForbidden()
 
         engine = import_module(settings.SESSION_ENGINE)
@@ -335,9 +340,12 @@ def xdomain_auth(request):
         request.session.accessed = True
         request.session.modified = True  # Tell session middleware to send new cookie for sure
 
+        if not loop_auth:
+            return HttpResponseRedirect(data['xnext'])
+
         try:
             domain = '{}://{}{}?token={}'.format(request.META['wsgi.url_scheme'],
-                                                 settings.XDOMAINS[settings.XDOMAINS.index(request.get_host())+1],
+                                                 settings.XDOMAINS[settings.XDOMAINS.index(request.get_host()) + 1],
                                                  reverse('xdomain_auth'),
                                                  token)
         except IndexError:

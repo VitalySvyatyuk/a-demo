@@ -112,7 +112,7 @@ html
 										| {{ LANGUAGE_CODE|language_name_local }}
 								for key, value in LANGUAGE_SETTINGS.items|order_items
 									if LANGUAGE_CODE != key
-										a.dropdown__item.header__location_item(href="{{ value.redirect_to }}{{ request.path }}")
+										a.dropdown__item.header__location_item(href="{% url 'switch_language' key %}?next={{ request.path|urlencode }}")
 											span.dropdown__btn.header__location_btn
 												.header__location_dropdown__img_box.header__location_dropdown__img_box--inside-dropdown
 													span.flag-icon.header__location_dropdown__img(class="flag-icon-{{ key }}")
@@ -149,7 +149,7 @@ html
 											| {{ LANGUAGE_CODE|language_name_local }}
 									for key, value in LANGUAGE_SETTINGS.items|order_items
 										if LANGUAGE_CODE != key
-											a.dropdown__item.header__location_item(href="{{ value.redirect_to }}{{ request.path }}")
+											a.dropdown__item.header__location_item(href="{% url 'switch_language' key %}?next={{ request.path|urlencode }}")
 												span.dropdown__btn.header__location_btn
 													.header__location_dropdown__img_box.header__location_dropdown__img_box--inside-dropdown
 														span.flag-icon.header__location_dropdown__img(class="flag-icon-{{ key }}")

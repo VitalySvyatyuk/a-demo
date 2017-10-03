@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
-
+import hashlib
 import json
 import logging
 
+import time
+
+from django.core.cache import cache
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
 import settings
@@ -37,6 +40,23 @@ log = logging.getLogger(__name__)
 
 def render_template(request, category, name):
     return render(request, "js/{category}/{name}.html".format(category=category, name=name))
+
+
+def switch_language(request, language_code):
+    if language_code not in settings.LANGUAGE_SETTINGS:
+        language_code = "en"
+
+    if not request.session.session_key:  # Cookies disabled? Or a bot
+        return redirect(settings.LANGUAGE_SETTINGS[language_code]['redirect_to'] + request.GET.get('next', '/'))
+
+    request.session['redirect_ts'] = time.time()
+    request.session['xnext'] = request.GET.get('next', '/')
+    session_hashed = hashlib.md5(request.session.session_key).hexdigest()
+    cache.set('sess_' + session_hashed, request.session.session_key, 30)
+    redirect_to = '{}{}?token={}&loop_auth=False'.format(settings.LANGUAGE_SETTINGS[language_code]['redirect_to'],
+                                                         reverse('xdomain_auth'),
+                                                         session_hashed)
+    return redirect(redirect_to)
 
 
 class LoginRequiredMixin(object):
