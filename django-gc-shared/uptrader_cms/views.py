@@ -42,21 +42,23 @@ def object_list(request, model, field_name='event_date', items_per_page=20,
 def get_calendar_data(request, weekly=True):
     qs = IndicatorEvent.objects.order_by("event_date")
     form = CalendarForm(request.GET or None)
-    current_week = None
+    current_day = None
 
     if form.is_valid():
         if form.cleaned_data["country"]:
             qs = qs.filter(indicator__country=form.cleaned_data["country"])
         if form.cleaned_data["importance"]:
             qs = qs.filter(importance=form.cleaned_data["importance"])
-        if form.cleaned_data["start_date"] and form.cleaned_data["end_date"]:
-            current_week = form.cleaned_data["start_date"], form.cleaned_data["end_date"]
+
+        if form.cleaned_data["day"]:  # change to single day
+            current_day = form.cleaned_data["day"]
+            # current_week = form.cleaned_data["start_date"], form.cleaned_data["end_date"]
             # week_for_range is needed to include events of end_date in select
-            week_for_range = form.cleaned_data["start_date"], form.cleaned_data["end_date"] + timedelta(1)
-            qs = qs.filter(event_date__range=week_for_range)
+            # week_for_range = form.cleaned_data["start_date"], form.cleaned_data["end_date"] + timedelta(1)
+            qs = qs.filter(event_date=current_day)
 
     if weekly:
-        if current_week is None:
+        if current_day is None:
             today = datetime.now().date()
             current_week = (today, today + timedelta(days=7-today.weekday()))
             qs = qs.filter(event_date__range=current_week)
@@ -93,7 +95,6 @@ def get_calendar_data(request, weekly=True):
         'nearest_event': nearest_event,
         'nearest_events': json.dumps(nearest_events),
         'to_nearest_event': delta_str,
-        'current_week': current_week,
         'tz': tz,
         'local_time': local_time,
         'tz_name': tz_name,

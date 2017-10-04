@@ -29,5 +29,6 @@ class CalendarForm(forms.Form):
         choices=(("", _("Any")),) + IMPORTANCE_CHOICES,
         required=False,
         widget=forms.Select(attrs={'class': 'input_box__input select'}),)
-    start_date = forms.DateField(widget=forms.HiddenInput, required=False)
-    end_date = forms.DateField(widget=forms.HiddenInput, required=False)
+    # start_date = forms.DateField(widget=forms.HiddenInput, required=False)
+    # end_date = forms.DateField(widget=forms.HiddenInput, required=False)
+    day = forms.DateField(widget=forms.HiddenInput, required=False)
