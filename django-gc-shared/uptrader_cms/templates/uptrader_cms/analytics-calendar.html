@@ -86,8 +86,7 @@ $(function() {
         current_time.text(moment().tz("{{ tz_name }}").format("HH:mm"));
     }, 1000 * 10);
 
-    var startDate;
-    var endDate;
+    var day;
 
     var selectCurrentWeek = function() {
         window.setTimeout(function() {
@@ -102,18 +101,16 @@ $(function() {
         selectOtherMonths: true,
         onSelect: function(dateText, inst) {
             var date = $(this).datepicker('getDate');
-            startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 1);
-            endDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 7);
+            day = new Date(date.getFullYear(), date.getMonth(), date.getDate());
             var dateFormat = inst.settings.dateFormat || $.datepicker._defaults.dateFormat;
-            $("[name='start_date']").val($.datepicker.formatDate(dateFormat, startDate, inst.settings));
-            $("[name='end_date']").val($.datepicker.formatDate(dateFormat, endDate, inst.settings));
+            $("[name='day']").val($.datepicker.formatDate(dateFormat, day, inst.settings));
 
             selectCurrentWeek();
             $("form#calendar_form").submit();
         },
         beforeShowDay: function(date) {
             var cssClass = '';
-            if (date >= startDate && date <= endDate)
+            if (date == day)
                 cssClass = 'ui-datepicker-current-day';
             return [true, cssClass];
         },
@@ -188,7 +185,7 @@ $(function() {
         </div>
     </div>
     <form id="calendar_form" action="." method="GET">
-        {{ form.start_date }} {{ form.end_date }}
+        {{ form.day }}
         <div class="table-responsive adaptive-table-wrapper">
             <table class="table adaptive-table">
                 <colgroup>

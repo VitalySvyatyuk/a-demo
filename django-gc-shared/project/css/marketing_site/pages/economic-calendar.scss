@@ -123,7 +123,7 @@
     tbody tr {
       cursor: pointer;
     }
-    tbody tr:hover td {
+    tbody tr td:hover {
       background-color: lighten(#ececec, 2%);
     }
     a {
