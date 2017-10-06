@@ -49,13 +49,12 @@ def get_calendar_data(request, weekly=True):
             qs = qs.filter(indicator__country=form.cleaned_data["country"])
         if form.cleaned_data["importance"]:
             qs = qs.filter(importance=form.cleaned_data["importance"])
-
         if form.cleaned_data["day"]:  # change to single day
             current_day = form.cleaned_data["day"]
             # current_week = form.cleaned_data["start_date"], form.cleaned_data["end_date"]
             # week_for_range is needed to include events of end_date in select
             # week_for_range = form.cleaned_data["start_date"], form.cleaned_data["end_date"] + timedelta(1)
-            qs = qs.filter(event_date=current_day)
+            qs = qs.filter(event_date__contains=current_day)
 
     if weekly:
         if current_day is None:
